@@ -1,0 +1,39 @@
+* Masala Chai SPICE netlist 2382
+
+* Voltage Source
+V1 1 3 DC VDD 
+
+* Resistor
+R1 1 2 20k
+
+* PMOS Transistors
+M1 2 10 3 3 PMOS W=20u L=1u
+M2 2 9 3 3 PMOS W=10u L=1u
+M3 2 6 3 3 PMOS W=20u L=1u
+M4 2 7 3 3 PMOS W=10u L=1u
+M5 2 8 3 3 PMOS W=5u L=1u
+M6 2 11 3 3 PMOS W=80u L=1u
+M7 2 12 3 3 PMOS W=40u L=1u
+M8 2 13 3 3 PMOS W=20u L=1u
+M9 2 14 3 3 PMOS W=80u L=1u
+
+* NMOS Transistors
+M10 5 4 3 3 NMOS W=128u L=1u
+M11 5 3 3 3 NMOS W=1u L=1u
+M12 6 5 3 3 NMOS W=32u L=1u
+M13 8 5 3 3 NMOS W=32u L=1u
+M14 9 5 3 3 NMOS W=32u L=1u
+M15 10 5 3 3 NMOS W=64u L=1u
+M16 11 5 3 3 NMOS W=16u L=1u
+M17 12 5 3 3 NMOS W=8u L=1u
+M18 13 4 3 3 NMOS W=128u L=1u
+
+* Current Sources
+I1 99 3 DC 10uA
+I2 3 8 DC 10uA
+I3 3 4 DC 10uA
+I4 2 5 DC 5uA
+I5 2 9 DC 2.5uA
+
+* .end to specify end of netlist
+.end
