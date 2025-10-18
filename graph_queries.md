@@ -1,5 +1,6 @@
 # G_p Query:
 Performance metrics: gain, CMRR, UGF. 
+
 Identify relationships among these performance metrics for the given circuit netlist. Output entries of the form (Metric A, Relationship, Metric B), where Relationship can only be of type ‘trade-off’, ‘directly-proportional’, ‘ambiguous’. 
 
 Netlist:

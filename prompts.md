@@ -10,4 +10,6 @@ Based on the provided incomplete analog circuit netlist, think step by step as f
 
 Incomplete netlist:
 
-# 
+# Notes
+
+add specification to have unique parameters for each device

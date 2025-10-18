@@ -1,0 +1,105 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {"id": "dev:VDD", "type": "device"},
+    {"id": "dev:VVSS", "type": "device"},
+    {"id": "dev:VIN1", "type": "device"},
+    {"id": "dev:VIN2", "type": "device"},
+    {"id": "dev:ISS",  "type": "device"},
+    {"id": "dev:M2",   "type": "device"},
+    {"id": "dev:M3",   "type": "device"},
+    {"id": "dev:M0",   "type": "device"},
+    {"id": "dev:M1",   "type": "device"},
+    {"id": "dev:R1",   "type": "device"},
+    {"id": "dev:R0",   "type": "device"},
+
+    {"id": "net:VDD",   "type": "net"},
+    {"id": "net:0",     "type": "net"},
+    {"id": "net:VSS",   "type": "net"},
+    {"id": "net:VIN1",  "type": "net"},
+    {"id": "net:VIN2",  "type": "net"},
+    {"id": "net:IB1",   "type": "net"},
+    {"id": "net:VOUT1", "type": "net"},
+    {"id": "net:VOUT2", "type": "net"},
+    {"id": "net:net14", "type": "net"},
+
+    {"id": "VDD",   "type": "x"},
+    {"id": "ITAIL", "type": "x"},
+    {"id": "WN0",   "type": "x"},
+    {"id": "LN0",   "type": "x"},
+    {"id": "WN1",   "type": "x"},
+    {"id": "LN1",   "type": "x"},
+    {"id": "WP2",   "type": "x"},
+    {"id": "LP2",   "type": "x"},
+    {"id": "WP3",   "type": "x"},
+    {"id": "LP3",   "type": "x"},
+    {"id": "RCM1",  "type": "x"},
+    {"id": "RCM2",  "type": "x"},
+    {"id": "VCM",   "type": "x"},
+    {"id": "VID",   "type": "x"}
+  ], 
+  "links": [
+    {"source": "dev:VDD", "target": "net:VDD"},
+    {"source": "dev:VDD", "target": "net:0"},
+
+    {"source": "dev:VVSS", "target": "net:VSS"},
+    {"source": "dev:VVSS", "target": "net:0"},
+
+    {"source": "dev:VIN1", "target": "net:VIN1"},
+    {"source": "dev:VIN1", "target": "net:0"},
+
+    {"source": "dev:VIN2", "target": "net:VIN2"},
+    {"source": "dev:VIN2", "target": "net:0"},
+
+    {"source": "dev:ISS",  "target": "net:IB1"},
+    {"source": "dev:ISS",  "target": "net:0"},
+
+    {"source": "dev:M2", "target": "net:VOUT1"},
+    {"source": "dev:M2", "target": "net:net14"},
+    {"source": "dev:M2", "target": "net:VDD"},
+
+    {"source": "dev:M3", "target": "net:VOUT2"},
+    {"source": "dev:M3", "target": "net:net14"},
+    {"source": "dev:M3", "target": "net:VDD"},
+
+    {"source": "dev:M0", "target": "net:VOUT1"},
+    {"source": "dev:M0", "target": "net:VIN1"},
+    {"source": "dev:M0", "target": "net:IB1"},
+    {"source": "dev:M0", "target": "net:VSS"},
+
+    {"source": "dev:M1", "target": "net:VOUT2"},
+    {"source": "dev:M1", "target": "net:VIN2"},
+    {"source": "dev:M1", "target": "net:IB1"},
+    {"source": "dev:M1", "target": "net:VSS"},
+
+    {"source": "dev:R1", "target": "net:VOUT1"},
+    {"source": "dev:R1", "target": "net:net14"},
+
+    {"source": "dev:R0", "target": "net:net14"},
+    {"source": "dev:R0", "target": "net:VOUT2"},
+
+    
+    {"source": "dev:VDD",  "target": "VDD"},
+    {"source": "dev:ISS",  "target": "ITAIL"},
+
+    {"source": "dev:M0",   "target": "WN0"},
+    {"source": "dev:M0",   "target": "LN0"},
+    {"source": "dev:M1",   "target": "WN1"},
+    {"source": "dev:M1",   "target": "LN1"},
+
+    {"source": "dev:M2",   "target": "WP2"},
+    {"source": "dev:M2",   "target": "LP2"},
+    {"source": "dev:M3",   "target": "WP3"},
+    {"source": "dev:M3",   "target": "LP3"},
+
+    {"source": "dev:R1",   "target": "RCM1"},
+    {"source": "dev:R0",   "target": "RCM2"},
+
+    {"source": "dev:VIN1", "target": "VCM"},
+    {"source": "dev:VIN1", "target": "VID"},
+    {"source": "dev:VIN2", "target": "VCM"},
+    {"source": "dev:VIN2", "target": "VID"}
+  ]
+}
