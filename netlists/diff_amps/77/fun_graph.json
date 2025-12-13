@@ -1,0 +1,116 @@
+{
+"nodes": [
+{"id": "Gain",                     "type": "performance"},
+{"id": "CMRR",                     "type": "performance"},
+{"id": "UGF",                      "type": "performance"},
+{"id": "Power",                    "type": "performance"},
+
+
+{"id": "Differential pair M0-M1",  "type": "substructure"},
+{"id": "Active load M2-M3",        "type": "substructure"},
+{"id": "Load resistors R0-R1",     "type": "substructure"},
+{"id": "Tail bias at IB1",         "type": "substructure"},
+
+{"id": "W_M0",                     "type": "parameter"},
+{"id": "L_M0",                     "type": "parameter"},
+{"id": "W_M1",                     "type": "parameter"},
+{"id": "L_M1",                     "type": "parameter"},
+{"id": "W_M2",                     "type": "parameter"},
+{"id": "L_M2",                     "type": "parameter"},
+{"id": "W_M3",                     "type": "parameter"},
+{"id": "L_M3",                     "type": "parameter"},
+{"id": "R0",                       "type": "parameter"},
+{"id": "R1",                       "type": "parameter"},
+{"id": "IB1",                      "type": "parameter"},
+{"id": "VB1",                      "type": "parameter"}
+
+
+],
+"links": [
+{"source": "Gain",   "target": "CMRR", "relation": "directly-proportional"},
+{"source": "Gain",   "target": "UGF",  "relation": "trade-off"},
+{"source": "CMRR",   "target": "UGF",  "relation": "trade-off"},
+{"source": "Power",  "target": "UGF",  "relation": "directly-proportional"},
+{"source": "Gain",   "target": "Power","relation": "ambiguous"},
+{"source": "CMRR",   "target": "Power","relation": "ambiguous"},
+
+
+{"source": "Differential pair M0-M1", "target": "Gain",  "relation": "influences"},
+{"source": "Differential pair M0-M1", "target": "CMRR",  "relation": "influences"},
+{"source": "Differential pair M0-M1", "target": "UGF",   "relation": "influences"},
+{"source": "Differential pair M0-M1", "target": "Power", "relation": "influences"},
+
+{"source": "Active load M2-M3",       "target": "Gain",  "relation": "influences"},
+{"source": "Active load M2-M3",       "target": "CMRR",  "relation": "influences"},
+
+{"source": "Load resistors R0-R1",    "target": "Gain",  "relation": "influences"},
+{"source": "Load resistors R0-R1",    "target": "UGF",   "relation": "influences"},
+{"source": "Load resistors R0-R1",    "target": "Power", "relation": "influences"},
+
+{"source": "Tail bias at IB1",        "target": "Gain",  "relation": "influences"},
+{"source": "Tail bias at IB1",        "target": "UGF",   "relation": "influences"},
+{"source": "Tail bias at IB1",        "target": "Power", "relation": "influences"},
+
+{"source": "W_M0", "target": "Differential pair M0-M1", "relation": "belongs-to"},
+{"source": "L_M0", "target": "Differential pair M0-M1", "relation": "belongs-to"},
+{"source": "W_M1", "target": "Differential pair M0-M1", "relation": "belongs-to"},
+{"source": "L_M1", "target": "Differential pair M0-M1", "relation": "belongs-to"},
+
+{"source": "W_M2", "target": "Active load M2-M3",       "relation": "belongs-to"},
+{"source": "L_M2", "target": "Active load M2-M3",       "relation": "belongs-to"},
+{"source": "W_M3", "target": "Active load M2-M3",       "relation": "belongs-to"},
+{"source": "L_M3", "target": "Active load M2-M3",       "relation": "belongs-to"},
+
+{"source": "R0",   "target": "Load resistors R0-R1",    "relation": "belongs-to"},
+{"source": "R1",   "target": "Load resistors R0-R1",    "relation": "belongs-to"},
+
+{"source": "IB1",  "target": "Tail bias at IB1",        "relation": "belongs-to"},
+{"source": "VB1",  "target": "Active load M2-M3",       "relation": "belongs-to"},
+
+{"source": "W_M0", "target": "Gain",  "relation": "directly-proportional"},
+{"source": "W_M0", "target": "UGF",   "relation": "directly-proportional"},
+{"source": "W_M0", "target": "CMRR",  "relation": "directly-proportional"},
+
+{"source": "L_M0", "target": "Gain",  "relation": "directly-proportional"},
+{"source": "L_M0", "target": "UGF",   "relation": "inversely-proportional"},
+{"source": "L_M0", "target": "CMRR",  "relation": "directly-proportional"},
+
+{"source": "W_M1", "target": "Gain",  "relation": "directly-proportional"},
+{"source": "W_M1", "target": "UGF",   "relation": "directly-proportional"},
+{"source": "W_M1", "target": "CMRR",  "relation": "directly-proportional"},
+
+{"source": "L_M1", "target": "Gain",  "relation": "directly-proportional"},
+{"source": "L_M1", "target": "UGF",   "relation": "inversely-proportional"},
+{"source": "L_M1", "target": "CMRR",  "relation": "directly-proportional"},
+
+{"source": "W_M2", "target": "Gain",  "relation": "directly-proportional"},
+{"source": "W_M2", "target": "CMRR",  "relation": "directly-proportional"},
+{"source": "W_M2", "target": "Power", "relation": "directly-proportional"},
+
+{"source": "L_M2", "target": "Gain",  "relation": "directly-proportional"},
+{"source": "L_M2", "target": "UGF",   "relation": "inversely-proportional"},
+
+{"source": "W_M3", "target": "Gain",  "relation": "directly-proportional"},
+{"source": "W_M3", "target": "CMRR",  "relation": "directly-proportional"},
+{"source": "W_M3", "target": "Power", "relation": "directly-proportional"},
+
+{"source": "L_M3", "target": "Gain",  "relation": "directly-proportional"},
+{"source": "L_M3", "target": "UGF",   "relation": "inversely-proportional"},
+
+{"source": "R0",   "target": "Gain",  "relation": "directly-proportional"},
+{"source": "R0",   "target": "UGF",   "relation": "inversely-proportional"},
+{"source": "R0",   "target": "Power", "relation": "inversely-proportional"},
+{"source": "R0",   "target": "CMRR",  "relation": "directly-proportional"},
+
+{"source": "R1",   "target": "Gain",  "relation": "directly-proportional"},
+{"source": "R1",   "target": "UGF",   "relation": "inversely-proportional"},
+{"source": "R1",   "target": "Power", "relation": "inversely-proportional"},
+{"source": "R1",   "target": "CMRR",  "relation": "directly-proportional"},
+
+{"source": "IB1",  "target": "Gain",  "relation": "directly-proportional"},
+{"source": "IB1",  "target": "UGF",   "relation": "directly-proportional"},
+{"source": "IB1",  "target": "Power", "relation": "directly-proportional"}
+
+
+]
+}

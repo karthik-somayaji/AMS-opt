@@ -1,0 +1,32 @@
+{
+  "feature_dim": 26,
+  "type_order": [
+    "performance",
+    "sub-structure",
+    "parameter",
+    "net",
+    "device",
+    "terminal"
+  ],
+  "subcat_slots": 4,
+  "meaning_dim": 16,
+  "performance_meanings": [
+    "Gain",
+    "CMRR",
+    "UGF",
+    "Power",
+    "Gain-ambiguous",
+    "Gain-trade-off",
+    "Gain-directly-proportional",
+    "CMRR-ambiguous",
+    "CMRR-trade-off",
+    "CMRR-directly-proportional",
+    "UGF-ambiguous",
+    "UGF-trade-off",
+    "UGF-directly-proportional",
+    "Power-ambiguous",
+    "Power-trade-off",
+    "Power-directly-proportional"
+  ],
+  "substructure_types": []
+}
