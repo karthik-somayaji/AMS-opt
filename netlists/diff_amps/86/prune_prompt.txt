@@ -1,0 +1,16 @@
+Given the following SPICE netlist of a differential amplifier, identify 3 components that can be deleted without significantly compromising the functionality of the circuit.
+
+For each component you identify, provide a short explanation (1-2 sentences) describing why removing it would have minimal impact and any caveats or dependencies to be aware of.
+
+Return the answer as a JSON array of objects with keys: 'component', 'reason', 'impact_estimate'.
+
+Netlist (file: 86.cir):
+ * AnalogGenie 86
+M2 (VOUT2 VIN2 net08 VSS) nmos4
+M0 (VOUT1 VIN1 net08 VSS) nmos4
+M1 (net08 VB1 VSS VSS) nmos4
+M4 (VOUT2 net010 VDD VDD) pmos4
+M3 (VOUT1 net010 VDD VDD) pmos4
+R1 (VOUT2 net010) resistor
+R0 (net010 VOUT1) resistor
+ 
