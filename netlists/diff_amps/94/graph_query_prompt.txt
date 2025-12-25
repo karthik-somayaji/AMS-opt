@@ -1,0 +1,50 @@
+
+Given a circuit netlist and a set of performance metrics, do the following and output everything together as plain tuple lists, without any explanations:
+
+1. **Infer P-graph (performance–performance relations).**
+   Output entries of the form:
+   `(Metric_A, Relationship, Metric_B)`
+   where `Relationship ∈ { 'trade-off', 'directly-proportional', 'ambiguous' }`.
+
+2. **Infer PS-graph (substructure–performance relations).**
+   First, identify meaningful circuit substructures (e.g., “M0-M1 differential pair”, “M2-M3 active load current mirror”, “R0-R1 load resistors”).
+   Then output entries of the form:
+   `(Substructure, 'influences', Metric)`
+   only if that substructure significantly affects the metric.
+
+3. **Infer PSX-graph (parameter–substructure–performance relations).**
+   Treat device sizes, bias currents, resistances, etc. as design parameters (e.g., `W_M0, L_M0, IB1, R0, R1, VB1`).
+   Output:
+
+   * `(Parameter, 'belongs-to', Substructure)` if the parameter structurally belongs to that substructure.
+   * `(Parameter, Relationship, Metric)` where `Relationship ∈ { 'directly-proportional', 'inversely-proportional' }`, indicating how increasing the parameter value affects the metric.
+
+**Important formatting constraints:**
+
+* Use exactly the tuple formats above.
+* Use only the allowed relationship labels.
+* Do **not** include any explanations, text, or headings—only the tuples.
+
+Given the above instructions, construct the above tuples as entries of a knowledge graph. Specifically, output a json format where all nodes (nodes in P, PS and PSX graphs) are listed under the field 'nodes'.
+For example:
+"nodes": [
+    {"id": "Active load",              "type": "substructure"},
+    {"id": "CMRR",                     "type": "performance"},
+    {"id": "Differential pair",        "type": "substructure"}, etc]
+    
+ All tuples in the graphs should be listed under a 'links' field as a list of dictionaries.
+ For example: "links": [
+    {"source": "Gain", "target": "CMRR", "relation": "ambiguous"}, etc]
+
+
+Netlist:
+```
+* AnalogGenie 94
+R1 (VOUT2 VDD) resistor
+R0 (VOUT1 VDD) resistor
+R2 (net07 VOUT1) resistor
+M2 (VOUT2 VIN2 net07 VSS) nmos4
+M0 (VOUT1 VIN1 net07 VSS) nmos4
+M1 (net07 VB1 VSS VSS) nmos4
+```
+

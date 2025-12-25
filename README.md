@@ -328,6 +328,20 @@ python get_netlist_to_SG.py \
 ```
 
 #### Step 2: Transform Functional Graph
+a)First generate query to feed into LLM to get functional graph
+
+```bash
+python scripts/generate_fun_graph_prompt.py --circuit netlists/diff_amps/NEW_ID/
+
+```
+
+b) Next, generate query to feed into LLM to get prunable elements
+
+```bash 
+python scripts/generate_prune_prompt.py --circuit netlists/diff_amps/NEW_ID/ --out netlists/diff_amps/NEW_ID/prune_prompt.txt
+```
+
+c) Next, transform the functional graph to counter edge types.
 ```bash
 python scripts/transform_fun_graph.py \
   --in netlists/diff_amps/NEW_ID/fun_graph.json \
