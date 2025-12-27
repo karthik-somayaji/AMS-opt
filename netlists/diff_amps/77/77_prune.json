@@ -1,0 +1,17 @@
+[
+{
+"component": "R0 (VDD–VOUT2)",
+"reason": "R0 is a passive load in parallel with the active PMOS load M3; if its resistance is relatively large (as is typical for bias/linearization resistors), removing it still leaves M3 to provide a load and bias path for VOUT2, so the basic differential action is preserved.",
+"impact_estimate": "Slight change in VOUT2’s DC operating point and gain (typically higher gain and different common-mode), but the branch still functions as an output as long as M3 and the tail current bias are correctly set."
+},
+{
+"component": "R1 (VDD–VOUT1)",
+"reason": "R1 plays the same role on the VOUT1 branch as R0 does on VOUT2: a parallel resistive load on top of the active PMOS load M2, so removing it still leaves M2 to set the load and bias, preserving the core differential amplifier behavior.",
+"impact_estimate": "Similar to R0, removing R1 slightly alters VOUT1’s gain and common-mode level but does not fundamentally break amplification if M2 and the tail current source remain properly biased."
+},
+{
+"component": "M3 (PMOS load on VOUT2)",
+"reason": "If the design only needs a single-ended output at VOUT1, the entire VOUT2 branch (including M3 as its active load) becomes non-essential; the remaining network M0–M2–R1 still forms a valid single-ended gain stage referenced to VIN1.",
+"impact_estimate": "You lose a true fully differential output and the benefits of symmetry/CMRR, and VOUT2 can no longer be used as a proper output, but the circuit still provides a usable amplifier path from VIN1 to VOUT1."
+}
+]

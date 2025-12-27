@@ -1,0 +1,7 @@
+[
+  {
+    "component": "R2 (net07 VOUT1)",
+    "reason": "R2 connects the common source node (net07) to one output (VOUT1), providing local feedback / bias stabilization but not forming part of the essential signal path of the differential pair itself. If VB1 is chosen to bias M1 correctly, removing R2 still leaves a conventional differential pair with resistive loads R0 and R1, so the amplifier continues to function, albeit with somewhat changed gain and common-mode behavior.",
+    "impact_estimate": "Low–moderate: main differential functionality and both outputs remain, but bias point, common-mode range, and linearity may shift; VB1 may need retuning."
+  }
+]

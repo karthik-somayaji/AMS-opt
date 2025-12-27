@@ -1,0 +1,18 @@
+[
+{
+"component": "R0 (net14–VOUT2 resistor)",
+"reason": "R0 is part of a resistive sensing/averaging path that helps set the output common-mode by feeding a function of the outputs into the bias node (net14). If net14 is biased elsewhere (or you keep R1 so net14 is still weakly referenced), removing R0 usually preserves differential signal-path operation, but common-mode regulation becomes weaker and output swing/clipping risk increases. ([Engineering People][1])",
+"impact_estimate": "Low-to-Medium (low if net14 has an alternative bias/reference; medium if this is the only CM/bias path)"
+},
+{
+"component": "R1 (VOUT1–net14 resistor)",
+"reason": "Like R0, R1 primarily contributes to common-mode sensing/biasing via net14 rather than the core transconductance of the NMOS input pair; deleting it can have minimal impact if net14 is still properly defined (e.g., via R0 or an explicit bias). Caveat: with only one (or neither) resistor, the circuit’s output common-mode is less controlled and DC operating point can drift. ([Engineering People][1])",
+"impact_estimate": "Low-to-Medium (low if net14 remains well-biased; medium if net14 would otherwise float)"
+},
+{
+"component": "M3 (VOUT2-side PMOS active load)",
+"reason": "If you don’t need a fully-differential output, you can remove one load device and treat the amplifier as a differential-input, single-ended-output stage (using the remaining output node). Caveat: the removed side’s output node will no longer be properly pulled up, so you should ignore that output (or terminate it appropriately), and expect reduced symmetry/CMRR versus the fully differential form. ([Engineering LibreTexts][2])",
+"impact_estimate": "Medium (signal amplification remains possible single-ended, but differential-output functionality and symmetry degrade)"
+}
+]
+
