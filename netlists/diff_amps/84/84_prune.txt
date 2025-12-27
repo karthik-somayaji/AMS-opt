@@ -1,0 +1,17 @@
+[
+{
+"component": "M2 (VOUT2 VIN2 net08 VSS)",
+"reason": "M2 is the input transistor for the second (VIN2–VOUT2) branch of the differential pair; removing it converts the circuit from a fully differential amplifier to a single-ended amplifier using only the VIN1–VOUT1 branch, while the biasing tail device M1 and the rest of the core still operate normally.",
+"impact_estimate": "You lose true differential operation and CMRR on the removed side, but the remaining branch (M0, M3, R0, M1) will still behave as a usable single-ended gain stage if VIN1 and bias nodes are set appropriately."
+},
+{
+"component": "M4 (VOUT2 VB2 net013 net013)",
+"reason": "M4 provides the PMOS active load for the VOUT2 branch; if M2 is removed, M4 no longer carries signal current, so it can also be deleted without affecting the operation of the remaining VOUT1 branch.",
+"impact_estimate": "With M2 already removed, deleting M4 simply removes an unused load device; ensure that no other circuitry depends on VOUT2 or on the bias current through M4/R1."
+},
+{
+"component": "R1 (VDD net013)",
+"reason": "R1 is only used to bias the source of M4; once M2 and M4 are removed, net013 becomes unused, so R1 can be safely eliminated without impacting the biasing or gain of the VIN1–VOUT1 branch.",
+"impact_estimate": "Eliminating R1 removes an idle bias path; there is no impact on the remaining amplifier branch, provided no external blocks were referencing net013 or the VOUT2 side."
+}
+]

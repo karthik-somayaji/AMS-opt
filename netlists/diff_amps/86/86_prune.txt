@@ -1,0 +1,13 @@
+[
+{
+"component": "R0",
+"reason": "R0 forms part of the resistive network that biases the common gate node (net010) of the PMOS active loads and provides some common-mode feedback; the core differential action (NMOS pair + tail current source + PMOS loads) still works if only one of R0/R1 is present to bias that node. ([All About Circuits][1])",
+"impact_estimate": "Low–moderate: differential gain and common-mode operating point will shift slightly and symmetry may degrade, but as long as R1 remains (or another bias path to net010 exists) the amplifier will continue to function."
+},
+{
+"component": "R1",
+"reason": "R1 is the complementary resistor to R0 in the same bias/feedback network for the PMOS active loads; removing R1 alone (with R0 left in place) likewise leaves a valid DC path to bias net010 so the main transconductance path of the differential pair is preserved. ([All About Circuits][1])",
+"impact_estimate": "Low–moderate: similar to removing R0, you slightly disturb common-mode feedback and output symmetry, but the essential bias path from VDD through the PMOS loads and tail current source remains intact and the differential amplifier still operates."
+}
+]
+
