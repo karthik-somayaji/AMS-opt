@@ -1,0 +1,2269 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "gain",
+      "type": "performance"
+    },
+    {
+      "id": "delay",
+      "type": "performance"
+    },
+    {
+      "id": "offset",
+      "type": "performance"
+    },
+    {
+      "id": "hysteresis",
+      "type": "performance"
+    },
+    {
+      "id": "power",
+      "type": "performance"
+    },
+    {
+      "id": "PMOS input differential pair M1-M2",
+      "type": "substructure"
+    },
+    {
+      "id": "NMOS cross-coupled pair M3-M4",
+      "type": "substructure"
+    },
+    {
+      "id": "NMOS bias transistor M5",
+      "type": "substructure"
+    },
+    {
+      "id": "Clocked PMOS tail M0",
+      "type": "substructure"
+    },
+    {
+      "id": "Inner PMOS regenerative network M8-M9-M10",
+      "type": "substructure"
+    },
+    {
+      "id": "PMOS output pair M11-M12",
+      "type": "substructure"
+    },
+    {
+      "id": "NMOS latch network M13-M16-M14-M15",
+      "type": "substructure"
+    },
+    {
+      "id": "Reset NMOS pair M6-M7",
+      "type": "substructure"
+    },
+    {
+      "id": "W_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M8",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M8",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M11",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M11",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M13",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M13",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M6",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M6",
+      "type": "parameter"
+    },
+    {
+      "id": "gain-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "gain-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "gain-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "delay-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "delay-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "delay-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "offset-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "offset-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "offset-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "hysteresis-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "hysteresis-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "hysteresis-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "power-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "power-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "power-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "W_M1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M0-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M0-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M8-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M8-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M8-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M8-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M11-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M11-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M11-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M11-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M13-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M13-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M13-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M13-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M6-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M6-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M6-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M6-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "dev:M12",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M12:D",
+      "type": "terminal",
+      "device": "M12",
+      "role": "D"
+    },
+    {
+      "id": "term:M12:G",
+      "type": "terminal",
+      "device": "M12",
+      "role": "G"
+    },
+    {
+      "id": "term:M12:S",
+      "type": "terminal",
+      "device": "M12",
+      "role": "S"
+    },
+    {
+      "id": "net:VOUT1",
+      "type": "net"
+    },
+    {
+      "id": "net:net41",
+      "type": "net"
+    },
+    {
+      "id": "net:net48",
+      "type": "net"
+    },
+    {
+      "id": "dev:M11",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M11:D",
+      "type": "terminal",
+      "device": "M11",
+      "role": "D"
+    },
+    {
+      "id": "term:M11:G",
+      "type": "terminal",
+      "device": "M11",
+      "role": "G"
+    },
+    {
+      "id": "term:M11:S",
+      "type": "terminal",
+      "device": "M11",
+      "role": "S"
+    },
+    {
+      "id": "net:VOUT2",
+      "type": "net"
+    },
+    {
+      "id": "net:net38",
+      "type": "net"
+    },
+    {
+      "id": "net:net49",
+      "type": "net"
+    },
+    {
+      "id": "dev:M10",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M10:D",
+      "type": "terminal",
+      "device": "M10",
+      "role": "D"
+    },
+    {
+      "id": "term:M10:G",
+      "type": "terminal",
+      "device": "M10",
+      "role": "G"
+    },
+    {
+      "id": "term:M10:S",
+      "type": "terminal",
+      "device": "M10",
+      "role": "S"
+    },
+    {
+      "id": "net:net18",
+      "type": "net"
+    },
+    {
+      "id": "dev:M9",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M9:D",
+      "type": "terminal",
+      "device": "M9",
+      "role": "D"
+    },
+    {
+      "id": "term:M9:G",
+      "type": "terminal",
+      "device": "M9",
+      "role": "G"
+    },
+    {
+      "id": "term:M9:S",
+      "type": "terminal",
+      "device": "M9",
+      "role": "S"
+    },
+    {
+      "id": "dev:M8",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M8:D",
+      "type": "terminal",
+      "device": "M8",
+      "role": "D"
+    },
+    {
+      "id": "term:M8:G",
+      "type": "terminal",
+      "device": "M8",
+      "role": "G"
+    },
+    {
+      "id": "term:M8:S",
+      "type": "terminal",
+      "device": "M8",
+      "role": "S"
+    },
+    {
+      "id": "net:VCLK3",
+      "type": "net"
+    },
+    {
+      "id": "net:VDD",
+      "type": "net"
+    },
+    {
+      "id": "dev:M2",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M2:D",
+      "type": "terminal",
+      "device": "M2",
+      "role": "D"
+    },
+    {
+      "id": "term:M2:G",
+      "type": "terminal",
+      "device": "M2",
+      "role": "G"
+    },
+    {
+      "id": "term:M2:S",
+      "type": "terminal",
+      "device": "M2",
+      "role": "S"
+    },
+    {
+      "id": "net:VIN2",
+      "type": "net"
+    },
+    {
+      "id": "net:net24",
+      "type": "net"
+    },
+    {
+      "id": "dev:M1",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M1:D",
+      "type": "terminal",
+      "device": "M1",
+      "role": "D"
+    },
+    {
+      "id": "term:M1:G",
+      "type": "terminal",
+      "device": "M1",
+      "role": "G"
+    },
+    {
+      "id": "term:M1:S",
+      "type": "terminal",
+      "device": "M1",
+      "role": "S"
+    },
+    {
+      "id": "net:VIN1",
+      "type": "net"
+    },
+    {
+      "id": "dev:M0",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M0:D",
+      "type": "terminal",
+      "device": "M0",
+      "role": "D"
+    },
+    {
+      "id": "term:M0:G",
+      "type": "terminal",
+      "device": "M0",
+      "role": "G"
+    },
+    {
+      "id": "term:M0:S",
+      "type": "terminal",
+      "device": "M0",
+      "role": "S"
+    },
+    {
+      "id": "net:VCLK1",
+      "type": "net"
+    },
+    {
+      "id": "dev:M16",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M16:D",
+      "type": "terminal",
+      "device": "M16",
+      "role": "D"
+    },
+    {
+      "id": "term:M16:G",
+      "type": "terminal",
+      "device": "M16",
+      "role": "G"
+    },
+    {
+      "id": "term:M16:S",
+      "type": "terminal",
+      "device": "M16",
+      "role": "S"
+    },
+    {
+      "id": "net:VCLK2",
+      "type": "net"
+    },
+    {
+      "id": "net:VSS",
+      "type": "net"
+    },
+    {
+      "id": "dev:M15",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M15:D",
+      "type": "terminal",
+      "device": "M15",
+      "role": "D"
+    },
+    {
+      "id": "term:M15:G",
+      "type": "terminal",
+      "device": "M15",
+      "role": "G"
+    },
+    {
+      "id": "term:M15:S",
+      "type": "terminal",
+      "device": "M15",
+      "role": "S"
+    },
+    {
+      "id": "dev:M14",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M14:D",
+      "type": "terminal",
+      "device": "M14",
+      "role": "D"
+    },
+    {
+      "id": "term:M14:G",
+      "type": "terminal",
+      "device": "M14",
+      "role": "G"
+    },
+    {
+      "id": "term:M14:S",
+      "type": "terminal",
+      "device": "M14",
+      "role": "S"
+    },
+    {
+      "id": "dev:M13",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M13:D",
+      "type": "terminal",
+      "device": "M13",
+      "role": "D"
+    },
+    {
+      "id": "term:M13:G",
+      "type": "terminal",
+      "device": "M13",
+      "role": "G"
+    },
+    {
+      "id": "term:M13:S",
+      "type": "terminal",
+      "device": "M13",
+      "role": "S"
+    },
+    {
+      "id": "dev:M7",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M7:D",
+      "type": "terminal",
+      "device": "M7",
+      "role": "D"
+    },
+    {
+      "id": "term:M7:G",
+      "type": "terminal",
+      "device": "M7",
+      "role": "G"
+    },
+    {
+      "id": "term:M7:S",
+      "type": "terminal",
+      "device": "M7",
+      "role": "S"
+    },
+    {
+      "id": "dev:M6",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M6:D",
+      "type": "terminal",
+      "device": "M6",
+      "role": "D"
+    },
+    {
+      "id": "term:M6:G",
+      "type": "terminal",
+      "device": "M6",
+      "role": "G"
+    },
+    {
+      "id": "term:M6:S",
+      "type": "terminal",
+      "device": "M6",
+      "role": "S"
+    },
+    {
+      "id": "dev:M5",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M5:D",
+      "type": "terminal",
+      "device": "M5",
+      "role": "D"
+    },
+    {
+      "id": "term:M5:G",
+      "type": "terminal",
+      "device": "M5",
+      "role": "G"
+    },
+    {
+      "id": "term:M5:S",
+      "type": "terminal",
+      "device": "M5",
+      "role": "S"
+    },
+    {
+      "id": "net:net23",
+      "type": "net"
+    },
+    {
+      "id": "dev:M4",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M4:D",
+      "type": "terminal",
+      "device": "M4",
+      "role": "D"
+    },
+    {
+      "id": "term:M4:G",
+      "type": "terminal",
+      "device": "M4",
+      "role": "G"
+    },
+    {
+      "id": "term:M4:S",
+      "type": "terminal",
+      "device": "M4",
+      "role": "S"
+    },
+    {
+      "id": "dev:M3",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M3:D",
+      "type": "terminal",
+      "device": "M3",
+      "role": "D"
+    },
+    {
+      "id": "term:M3:G",
+      "type": "terminal",
+      "device": "M3",
+      "role": "G"
+    },
+    {
+      "id": "term:M3:S",
+      "type": "terminal",
+      "device": "M3",
+      "role": "S"
+    },
+    {
+      "id": "W_M12",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M12",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M10",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M10",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M9",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M9",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M16",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M16",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M15",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M15",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M14",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M14",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M4",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "dev:M12",
+      "target": "term:M12:D"
+    },
+    {
+      "source": "dev:M12",
+      "target": "term:M12:G"
+    },
+    {
+      "source": "dev:M12",
+      "target": "term:M12:S"
+    },
+    {
+      "source": "term:M12:D",
+      "target": "net:VOUT1"
+    },
+    {
+      "source": "term:M12:G",
+      "target": "net:net41"
+    },
+    {
+      "source": "term:M12:S",
+      "target": "net:net48"
+    },
+    {
+      "source": "dev:M11",
+      "target": "term:M11:D"
+    },
+    {
+      "source": "dev:M11",
+      "target": "term:M11:G"
+    },
+    {
+      "source": "dev:M11",
+      "target": "term:M11:S"
+    },
+    {
+      "source": "term:M11:D",
+      "target": "net:VOUT2"
+    },
+    {
+      "source": "term:M11:G",
+      "target": "net:net38"
+    },
+    {
+      "source": "term:M11:S",
+      "target": "net:net49"
+    },
+    {
+      "source": "dev:M10",
+      "target": "term:M10:D"
+    },
+    {
+      "source": "dev:M10",
+      "target": "term:M10:G"
+    },
+    {
+      "source": "dev:M10",
+      "target": "term:M10:S"
+    },
+    {
+      "source": "term:M10:D",
+      "target": "net:net48"
+    },
+    {
+      "source": "term:M10:G",
+      "target": "net:VOUT2"
+    },
+    {
+      "source": "term:M10:S",
+      "target": "net:net18"
+    },
+    {
+      "source": "dev:M9",
+      "target": "term:M9:D"
+    },
+    {
+      "source": "dev:M9",
+      "target": "term:M9:G"
+    },
+    {
+      "source": "dev:M9",
+      "target": "term:M9:S"
+    },
+    {
+      "source": "term:M9:D",
+      "target": "net:net49"
+    },
+    {
+      "source": "term:M9:G",
+      "target": "net:VOUT1"
+    },
+    {
+      "source": "term:M9:S",
+      "target": "net:net18"
+    },
+    {
+      "source": "dev:M8",
+      "target": "term:M8:D"
+    },
+    {
+      "source": "dev:M8",
+      "target": "term:M8:G"
+    },
+    {
+      "source": "dev:M8",
+      "target": "term:M8:S"
+    },
+    {
+      "source": "term:M8:D",
+      "target": "net:net18"
+    },
+    {
+      "source": "term:M8:G",
+      "target": "net:VCLK3"
+    },
+    {
+      "source": "term:M8:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:M2",
+      "target": "term:M2:D"
+    },
+    {
+      "source": "dev:M2",
+      "target": "term:M2:G"
+    },
+    {
+      "source": "dev:M2",
+      "target": "term:M2:S"
+    },
+    {
+      "source": "term:M2:D",
+      "target": "net:net41"
+    },
+    {
+      "source": "term:M2:G",
+      "target": "net:VIN2"
+    },
+    {
+      "source": "term:M2:S",
+      "target": "net:net24"
+    },
+    {
+      "source": "dev:M1",
+      "target": "term:M1:D"
+    },
+    {
+      "source": "dev:M1",
+      "target": "term:M1:G"
+    },
+    {
+      "source": "dev:M1",
+      "target": "term:M1:S"
+    },
+    {
+      "source": "term:M1:D",
+      "target": "net:net38"
+    },
+    {
+      "source": "term:M1:G",
+      "target": "net:VIN1"
+    },
+    {
+      "source": "term:M1:S",
+      "target": "net:net24"
+    },
+    {
+      "source": "dev:M0",
+      "target": "term:M0:D"
+    },
+    {
+      "source": "dev:M0",
+      "target": "term:M0:G"
+    },
+    {
+      "source": "dev:M0",
+      "target": "term:M0:S"
+    },
+    {
+      "source": "term:M0:D",
+      "target": "net:net24"
+    },
+    {
+      "source": "term:M0:G",
+      "target": "net:VCLK1"
+    },
+    {
+      "source": "term:M0:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:M16",
+      "target": "term:M16:D"
+    },
+    {
+      "source": "dev:M16",
+      "target": "term:M16:G"
+    },
+    {
+      "source": "dev:M16",
+      "target": "term:M16:S"
+    },
+    {
+      "source": "term:M16:D",
+      "target": "net:VOUT1"
+    },
+    {
+      "source": "term:M16:G",
+      "target": "net:VCLK2"
+    },
+    {
+      "source": "term:M16:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:M15",
+      "target": "term:M15:D"
+    },
+    {
+      "source": "dev:M15",
+      "target": "term:M15:G"
+    },
+    {
+      "source": "dev:M15",
+      "target": "term:M15:S"
+    },
+    {
+      "source": "term:M15:D",
+      "target": "net:VOUT1"
+    },
+    {
+      "source": "term:M15:G",
+      "target": "net:VOUT2"
+    },
+    {
+      "source": "term:M15:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:M14",
+      "target": "term:M14:D"
+    },
+    {
+      "source": "dev:M14",
+      "target": "term:M14:G"
+    },
+    {
+      "source": "dev:M14",
+      "target": "term:M14:S"
+    },
+    {
+      "source": "term:M14:D",
+      "target": "net:VOUT2"
+    },
+    {
+      "source": "term:M14:G",
+      "target": "net:VOUT1"
+    },
+    {
+      "source": "term:M14:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:M13",
+      "target": "term:M13:D"
+    },
+    {
+      "source": "dev:M13",
+      "target": "term:M13:G"
+    },
+    {
+      "source": "dev:M13",
+      "target": "term:M13:S"
+    },
+    {
+      "source": "term:M13:D",
+      "target": "net:VOUT2"
+    },
+    {
+      "source": "term:M13:G",
+      "target": "net:VCLK2"
+    },
+    {
+      "source": "term:M13:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:M7",
+      "target": "term:M7:D"
+    },
+    {
+      "source": "dev:M7",
+      "target": "term:M7:G"
+    },
+    {
+      "source": "dev:M7",
+      "target": "term:M7:S"
+    },
+    {
+      "source": "term:M7:D",
+      "target": "net:net41"
+    },
+    {
+      "source": "term:M7:G",
+      "target": "net:VCLK2"
+    },
+    {
+      "source": "term:M7:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:M6",
+      "target": "term:M6:D"
+    },
+    {
+      "source": "dev:M6",
+      "target": "term:M6:G"
+    },
+    {
+      "source": "dev:M6",
+      "target": "term:M6:S"
+    },
+    {
+      "source": "term:M6:D",
+      "target": "net:net38"
+    },
+    {
+      "source": "term:M6:G",
+      "target": "net:VCLK2"
+    },
+    {
+      "source": "term:M6:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:M5",
+      "target": "term:M5:D"
+    },
+    {
+      "source": "dev:M5",
+      "target": "term:M5:G"
+    },
+    {
+      "source": "dev:M5",
+      "target": "term:M5:S"
+    },
+    {
+      "source": "term:M5:D",
+      "target": "net:net23"
+    },
+    {
+      "source": "term:M5:G",
+      "target": "net:VDD"
+    },
+    {
+      "source": "term:M5:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:M4",
+      "target": "term:M4:D"
+    },
+    {
+      "source": "dev:M4",
+      "target": "term:M4:G"
+    },
+    {
+      "source": "dev:M4",
+      "target": "term:M4:S"
+    },
+    {
+      "source": "term:M4:D",
+      "target": "net:net38"
+    },
+    {
+      "source": "term:M4:G",
+      "target": "net:net41"
+    },
+    {
+      "source": "term:M4:S",
+      "target": "net:net23"
+    },
+    {
+      "source": "dev:M3",
+      "target": "term:M3:D"
+    },
+    {
+      "source": "dev:M3",
+      "target": "term:M3:G"
+    },
+    {
+      "source": "dev:M3",
+      "target": "term:M3:S"
+    },
+    {
+      "source": "term:M3:D",
+      "target": "net:net41"
+    },
+    {
+      "source": "term:M3:G",
+      "target": "net:net38"
+    },
+    {
+      "source": "term:M3:S",
+      "target": "net:net23"
+    },
+    {
+      "source": "gain-trade-off",
+      "target": "delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "gain-ambiguous",
+      "target": "offset-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "gain-directly-proportional",
+      "target": "hysteresis-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "gain-trade-off",
+      "target": "power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "delay-ambiguous",
+      "target": "offset-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "delay-ambiguous",
+      "target": "hysteresis-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "delay-trade-off",
+      "target": "power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "offset-ambiguous",
+      "target": "hysteresis-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "offset-ambiguous",
+      "target": "power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "hysteresis-trade-off",
+      "target": "power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "PMOS input differential pair M1-M2",
+      "target": "gain",
+      "relation": "connects"
+    },
+    {
+      "source": "PMOS input differential pair M1-M2",
+      "target": "delay",
+      "relation": "connects"
+    },
+    {
+      "source": "PMOS input differential pair M1-M2",
+      "target": "offset",
+      "relation": "connects"
+    },
+    {
+      "source": "PMOS input differential pair M1-M2",
+      "target": "power",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS cross-coupled pair M3-M4",
+      "target": "gain",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS cross-coupled pair M3-M4",
+      "target": "delay",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS cross-coupled pair M3-M4",
+      "target": "hysteresis",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS cross-coupled pair M3-M4",
+      "target": "offset",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS cross-coupled pair M3-M4",
+      "target": "power",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS bias transistor M5",
+      "target": "gain",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS bias transistor M5",
+      "target": "delay",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS bias transistor M5",
+      "target": "offset",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS bias transistor M5",
+      "target": "power",
+      "relation": "connects"
+    },
+    {
+      "source": "Clocked PMOS tail M0",
+      "target": "gain",
+      "relation": "connects"
+    },
+    {
+      "source": "Clocked PMOS tail M0",
+      "target": "delay",
+      "relation": "connects"
+    },
+    {
+      "source": "Clocked PMOS tail M0",
+      "target": "power",
+      "relation": "connects"
+    },
+    {
+      "source": "Inner PMOS regenerative network M8-M9-M10",
+      "target": "gain",
+      "relation": "connects"
+    },
+    {
+      "source": "Inner PMOS regenerative network M8-M9-M10",
+      "target": "delay",
+      "relation": "connects"
+    },
+    {
+      "source": "Inner PMOS regenerative network M8-M9-M10",
+      "target": "hysteresis",
+      "relation": "connects"
+    },
+    {
+      "source": "Inner PMOS regenerative network M8-M9-M10",
+      "target": "offset",
+      "relation": "connects"
+    },
+    {
+      "source": "Inner PMOS regenerative network M8-M9-M10",
+      "target": "power",
+      "relation": "connects"
+    },
+    {
+      "source": "PMOS output pair M11-M12",
+      "target": "gain",
+      "relation": "connects"
+    },
+    {
+      "source": "PMOS output pair M11-M12",
+      "target": "delay",
+      "relation": "connects"
+    },
+    {
+      "source": "PMOS output pair M11-M12",
+      "target": "hysteresis",
+      "relation": "connects"
+    },
+    {
+      "source": "PMOS output pair M11-M12",
+      "target": "power",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS latch network M13-M16-M14-M15",
+      "target": "gain",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS latch network M13-M16-M14-M15",
+      "target": "delay",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS latch network M13-M16-M14-M15",
+      "target": "hysteresis",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS latch network M13-M16-M14-M15",
+      "target": "offset",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS latch network M13-M16-M14-M15",
+      "target": "power",
+      "relation": "connects"
+    },
+    {
+      "source": "Reset NMOS pair M6-M7",
+      "target": "delay",
+      "relation": "connects"
+    },
+    {
+      "source": "Reset NMOS pair M6-M7",
+      "target": "power",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1",
+      "target": "PMOS input differential pair M1-M2",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1",
+      "target": "PMOS input differential pair M1-M2",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "NMOS cross-coupled pair M3-M4",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "NMOS cross-coupled pair M3-M4",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5",
+      "target": "NMOS bias transistor M5",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M5",
+      "target": "NMOS bias transistor M5",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M0",
+      "target": "Clocked PMOS tail M0",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M0",
+      "target": "Clocked PMOS tail M0",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M8",
+      "target": "Inner PMOS regenerative network M8-M9-M10",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M8",
+      "target": "Inner PMOS regenerative network M8-M9-M10",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M11",
+      "target": "PMOS output pair M11-M12",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11",
+      "target": "PMOS output pair M11-M12",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M13",
+      "target": "NMOS latch network M13-M16-M14-M15",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M13",
+      "target": "NMOS latch network M13-M16-M14-M15",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M6",
+      "target": "Reset NMOS pair M6-M7",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M6",
+      "target": "Reset NMOS pair M6-M7",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1-directly-proportional",
+      "target": "gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1-inversely-proportional",
+      "target": "delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1-inversely-proportional",
+      "target": "offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1-directly-proportional",
+      "target": "power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1-directly-proportional",
+      "target": "gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1-directly-proportional",
+      "target": "delay-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1-inversely-proportional",
+      "target": "offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1-inversely-proportional",
+      "target": "power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3-directly-proportional",
+      "target": "gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3-inversely-proportional",
+      "target": "delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3-inversely-proportional",
+      "target": "offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3-directly-proportional",
+      "target": "power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3-directly-proportional",
+      "target": "hysteresis-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3-directly-proportional",
+      "target": "gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3-directly-proportional",
+      "target": "delay-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3-inversely-proportional",
+      "target": "offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3-inversely-proportional",
+      "target": "power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3-directly-proportional",
+      "target": "hysteresis-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5-directly-proportional",
+      "target": "gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5-inversely-proportional",
+      "target": "delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5-inversely-proportional",
+      "target": "offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5-directly-proportional",
+      "target": "power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M5-directly-proportional",
+      "target": "gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M5-directly-proportional",
+      "target": "delay-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M5-inversely-proportional",
+      "target": "offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M5-inversely-proportional",
+      "target": "power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M0-directly-proportional",
+      "target": "gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M0-inversely-proportional",
+      "target": "delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M0-inversely-proportional",
+      "target": "offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M0-directly-proportional",
+      "target": "power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M0-directly-proportional",
+      "target": "gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M0-directly-proportional",
+      "target": "delay-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M0-inversely-proportional",
+      "target": "offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M0-inversely-proportional",
+      "target": "power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M8-directly-proportional",
+      "target": "gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M8-inversely-proportional",
+      "target": "delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M8-inversely-proportional",
+      "target": "offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M8-directly-proportional",
+      "target": "power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M8-directly-proportional",
+      "target": "hysteresis-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M8-directly-proportional",
+      "target": "gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M8-directly-proportional",
+      "target": "delay-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M8-inversely-proportional",
+      "target": "offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M8-inversely-proportional",
+      "target": "power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M8-directly-proportional",
+      "target": "hysteresis-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M11-directly-proportional",
+      "target": "gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M11-inversely-proportional",
+      "target": "delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M11-inversely-proportional",
+      "target": "offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M11-directly-proportional",
+      "target": "power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M11-directly-proportional",
+      "target": "hysteresis-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11-directly-proportional",
+      "target": "gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11-directly-proportional",
+      "target": "delay-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11-inversely-proportional",
+      "target": "offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11-inversely-proportional",
+      "target": "power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11-directly-proportional",
+      "target": "hysteresis-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M13-directly-proportional",
+      "target": "gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M13-inversely-proportional",
+      "target": "delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M13-inversely-proportional",
+      "target": "offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M13-directly-proportional",
+      "target": "power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M13-directly-proportional",
+      "target": "hysteresis-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M13-directly-proportional",
+      "target": "gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M13-directly-proportional",
+      "target": "delay-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M13-inversely-proportional",
+      "target": "offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M13-inversely-proportional",
+      "target": "power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M13-directly-proportional",
+      "target": "hysteresis-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M6-directly-proportional",
+      "target": "gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M6-inversely-proportional",
+      "target": "delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M6-inversely-proportional",
+      "target": "offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M6-directly-proportional",
+      "target": "power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M6-directly-proportional",
+      "target": "gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M6-directly-proportional",
+      "target": "delay-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M6-inversely-proportional",
+      "target": "offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M6-inversely-proportional",
+      "target": "power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "gain",
+      "target": "gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "gain",
+      "target": "gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "gain",
+      "target": "gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "delay",
+      "target": "delay-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "delay",
+      "target": "delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "delay",
+      "target": "delay-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "offset",
+      "target": "offset-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "offset",
+      "target": "offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "offset",
+      "target": "offset-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "hysteresis",
+      "target": "hysteresis-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "hysteresis",
+      "target": "hysteresis-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "hysteresis",
+      "target": "hysteresis-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "power",
+      "target": "power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "power",
+      "target": "power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "power",
+      "target": "power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1",
+      "target": "W_M1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1",
+      "target": "W_M1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1",
+      "target": "L_M1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1",
+      "target": "L_M1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "W_M3-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "W_M3-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "L_M3-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "L_M3-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5",
+      "target": "W_M5-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5",
+      "target": "W_M5-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M5",
+      "target": "L_M5-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M5",
+      "target": "L_M5-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M0",
+      "target": "W_M0-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M0",
+      "target": "W_M0-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M0",
+      "target": "L_M0-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M0",
+      "target": "L_M0-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M8",
+      "target": "W_M8-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M8",
+      "target": "W_M8-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M8",
+      "target": "L_M8-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M8",
+      "target": "L_M8-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M11",
+      "target": "W_M11-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M11",
+      "target": "W_M11-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11",
+      "target": "L_M11-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11",
+      "target": "L_M11-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M13",
+      "target": "W_M13-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M13",
+      "target": "W_M13-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M13",
+      "target": "L_M13-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M13",
+      "target": "L_M13-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M6",
+      "target": "W_M6-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M6",
+      "target": "W_M6-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M6",
+      "target": "L_M6-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M6",
+      "target": "L_M6-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "dev:M12",
+      "target": "W_M12"
+    },
+    {
+      "source": "dev:M12",
+      "target": "L_M12"
+    },
+    {
+      "source": "dev:M11",
+      "target": "W_M11"
+    },
+    {
+      "source": "dev:M11",
+      "target": "L_M11"
+    },
+    {
+      "source": "dev:M10",
+      "target": "W_M10"
+    },
+    {
+      "source": "dev:M10",
+      "target": "L_M10"
+    },
+    {
+      "source": "dev:M9",
+      "target": "W_M9"
+    },
+    {
+      "source": "dev:M9",
+      "target": "L_M9"
+    },
+    {
+      "source": "dev:M8",
+      "target": "W_M8"
+    },
+    {
+      "source": "dev:M8",
+      "target": "L_M8"
+    },
+    {
+      "source": "dev:M2",
+      "target": "W_M2"
+    },
+    {
+      "source": "dev:M2",
+      "target": "L_M2"
+    },
+    {
+      "source": "dev:M1",
+      "target": "W_M1"
+    },
+    {
+      "source": "dev:M1",
+      "target": "L_M1"
+    },
+    {
+      "source": "dev:M0",
+      "target": "W_M0"
+    },
+    {
+      "source": "dev:M0",
+      "target": "L_M0"
+    },
+    {
+      "source": "dev:M16",
+      "target": "W_M16"
+    },
+    {
+      "source": "dev:M16",
+      "target": "L_M16"
+    },
+    {
+      "source": "dev:M15",
+      "target": "W_M15"
+    },
+    {
+      "source": "dev:M15",
+      "target": "L_M15"
+    },
+    {
+      "source": "dev:M14",
+      "target": "W_M14"
+    },
+    {
+      "source": "dev:M14",
+      "target": "L_M14"
+    },
+    {
+      "source": "dev:M13",
+      "target": "W_M13"
+    },
+    {
+      "source": "dev:M13",
+      "target": "L_M13"
+    },
+    {
+      "source": "dev:M7",
+      "target": "W_M7"
+    },
+    {
+      "source": "dev:M7",
+      "target": "L_M7"
+    },
+    {
+      "source": "dev:M6",
+      "target": "W_M6"
+    },
+    {
+      "source": "dev:M6",
+      "target": "L_M6"
+    },
+    {
+      "source": "dev:M5",
+      "target": "W_M5"
+    },
+    {
+      "source": "dev:M5",
+      "target": "L_M5"
+    },
+    {
+      "source": "dev:M4",
+      "target": "W_M4"
+    },
+    {
+      "source": "dev:M4",
+      "target": "L_M4"
+    },
+    {
+      "source": "dev:M3",
+      "target": "W_M3"
+    },
+    {
+      "source": "dev:M3",
+      "target": "L_M3"
+    }
+  ]
+}

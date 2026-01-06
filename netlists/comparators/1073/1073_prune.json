@@ -1,0 +1,17 @@
+[
+{
+"component": "M2",
+"reason": "M2 is one of the cross-coupled PMOS load devices between net15 and net43; removing it halves the PMOS positive feedback but leaves M3 and the NMOS cross-coupled network (M7/M8) to provide regeneration.",
+"impact_estimate": "Minor: reduces regeneration strength and may slightly slow decision and degrade noise margin, but core comparator functionality is retained at moderate speeds."
+},
+{
+"component": "M7",
+"reason": "M7 forms one branch of the NMOS cross-coupling between net15, net43 and the intermediate node net20; with M8 still present, there remains a regenerative path and the main differential comparison can still occur.",
+"impact_estimate": "Minor to moderate: weakens regeneration on one side and can introduce a small offset/asymmetry, but the latch and decision behavior remain qualitatively intact."
+},
+{
+"component": "M10",
+"reason": "M10 is an NMOS that precharges net20 toward VDD under VCLK1; removing it eliminates an active precharge for this internal node, but the node can still be driven/discharged through the input transistors and latch network.",
+"impact_estimate": "Moderate: dynamic performance and reset behavior degrade (especially at high clock rates), yet for slower operation the comparator can still resolve input differences using the remaining devices."
+}
+]

@@ -1,0 +1,148 @@
+{
+"nodes": [
+{"id": "gain", "type": "performance"},
+{"id": "delay", "type": "performance"},
+{"id": "offset", "type": "performance"},
+{"id": "hysteresis", "type": "performance"},
+{"id": "power", "type": "performance"},
+
+
+{"id": "M1-M2 input differential pair", "type": "substructure"},
+{"id": "M7-M6 PMOS cross-coupled latch", "type": "substructure"},
+{"id": "M10-M9 NMOS cross-coupled latch", "type": "substructure"},
+{"id": "M0 precharge PMOS", "type": "substructure"},
+{"id": "M3-M4 clocked NMOS reset pair", "type": "substructure"},
+{"id": "M8-M5 PMOS regeneration pair", "type": "substructure"},
+{"id": "M11-M12 NMOS discharge pair", "type": "substructure"},
+
+{"id": "W_M1", "type": "parameter"},
+{"id": "L_M1", "type": "parameter"},
+{"id": "W_M2", "type": "parameter"},
+{"id": "L_M2", "type": "parameter"},
+{"id": "W_M7", "type": "parameter"},
+{"id": "W_M6", "type": "parameter"},
+{"id": "W_M10", "type": "parameter"},
+{"id": "W_M9", "type": "parameter"},
+{"id": "W_M0", "type": "parameter"},
+{"id": "W_M3", "type": "parameter"},
+{"id": "W_M4", "type": "parameter"}
+
+
+],
+"links": [
+{"source": "gain", "target": "delay", "relation": "trade-off"},
+{"source": "gain", "target": "offset", "relation": "trade-off"},
+{"source": "gain", "target": "hysteresis", "relation": "ambiguous"},
+{"source": "gain", "target": "power", "relation": "trade-off"},
+{"source": "delay", "target": "offset", "relation": "ambiguous"},
+{"source": "delay", "target": "hysteresis", "relation": "ambiguous"},
+{"source": "delay", "target": "power", "relation": "trade-off"},
+{"source": "offset", "target": "hysteresis", "relation": "ambiguous"},
+{"source": "offset", "target": "power", "relation": "trade-off"},
+{"source": "hysteresis", "target": "power", "relation": "ambiguous"},
+
+
+{"source": "M1-M2 input differential pair", "target": "gain", "relation": "influences"},
+{"source": "M1-M2 input differential pair", "target": "delay", "relation": "influences"},
+{"source": "M1-M2 input differential pair", "target": "offset", "relation": "influences"},
+{"source": "M1-M2 input differential pair", "target": "hysteresis", "relation": "influences"},
+
+{"source": "M7-M6 PMOS cross-coupled latch", "target": "gain", "relation": "influences"},
+{"source": "M7-M6 PMOS cross-coupled latch", "target": "delay", "relation": "influences"},
+{"source": "M7-M6 PMOS cross-coupled latch", "target": "offset", "relation": "influences"},
+{"source": "M7-M6 PMOS cross-coupled latch", "target": "hysteresis", "relation": "influences"},
+{"source": "M7-M6 PMOS cross-coupled latch", "target": "power", "relation": "influences"},
+
+{"source": "M10-M9 NMOS cross-coupled latch", "target": "gain", "relation": "influences"},
+{"source": "M10-M9 NMOS cross-coupled latch", "target": "delay", "relation": "influences"},
+{"source": "M10-M9 NMOS cross-coupled latch", "target": "offset", "relation": "influences"},
+{"source": "M10-M9 NMOS cross-coupled latch", "target": "hysteresis", "relation": "influences"},
+{"source": "M10-M9 NMOS cross-coupled latch", "target": "power", "relation": "influences"},
+
+{"source": "M0 precharge PMOS", "target": "delay", "relation": "influences"},
+{"source": "M0 precharge PMOS", "target": "power", "relation": "influences"},
+{"source": "M0 precharge PMOS", "target": "hysteresis", "relation": "influences"},
+
+{"source": "M3-M4 clocked NMOS reset pair", "target": "delay", "relation": "influences"},
+{"source": "M3-M4 clocked NMOS reset pair", "target": "power", "relation": "influences"},
+{"source": "M3-M4 clocked NMOS reset pair", "target": "hysteresis", "relation": "influences"},
+
+{"source": "M8-M5 PMOS regeneration pair", "target": "gain", "relation": "influences"},
+{"source": "M8-M5 PMOS regeneration pair", "target": "delay", "relation": "influences"},
+{"source": "M8-M5 PMOS regeneration pair", "target": "hysteresis", "relation": "influences"},
+{"source": "M8-M5 PMOS regeneration pair", "target": "power", "relation": "influences"},
+
+{"source": "M11-M12 NMOS discharge pair", "target": "delay", "relation": "influences"},
+{"source": "M11-M12 NMOS discharge pair", "target": "hysteresis", "relation": "influences"},
+{"source": "M11-M12 NMOS discharge pair", "target": "power", "relation": "influences"},
+
+{"source": "W_M1", "target": "M1-M2 input differential pair", "relation": "belongs-to"},
+{"source": "L_M1", "target": "M1-M2 input differential pair", "relation": "belongs-to"},
+{"source": "W_M2", "target": "M1-M2 input differential pair", "relation": "belongs-to"},
+{"source": "L_M2", "target": "M1-M2 input differential pair", "relation": "belongs-to"},
+
+{"source": "W_M7", "target": "M7-M6 PMOS cross-coupled latch", "relation": "belongs-to"},
+{"source": "W_M6", "target": "M7-M6 PMOS cross-coupled latch", "relation": "belongs-to"},
+
+{"source": "W_M10", "target": "M10-M9 NMOS cross-coupled latch", "relation": "belongs-to"},
+{"source": "W_M9", "target": "M10-M9 NMOS cross-coupled latch", "relation": "belongs-to"},
+
+{"source": "W_M0", "target": "M0 precharge PMOS", "relation": "belongs-to"},
+
+{"source": "W_M3", "target": "M3-M4 clocked NMOS reset pair", "relation": "belongs-to"},
+{"source": "W_M4", "target": "M3-M4 clocked NMOS reset pair", "relation": "belongs-to"},
+
+{"source": "W_M1", "target": "gain", "relation": "directly-proportional"},
+{"source": "W_M1", "target": "delay", "relation": "inversely-proportional"},
+{"source": "W_M1", "target": "offset", "relation": "inversely-proportional"},
+{"source": "W_M1", "target": "power", "relation": "directly-proportional"},
+
+{"source": "W_M2", "target": "gain", "relation": "directly-proportional"},
+{"source": "W_M2", "target": "delay", "relation": "inversely-proportional"},
+{"source": "W_M2", "target": "offset", "relation": "inversely-proportional"},
+{"source": "W_M2", "target": "power", "relation": "directly-proportional"},
+
+{"source": "L_M1", "target": "gain", "relation": "directly-proportional"},
+{"source": "L_M1", "target": "delay", "relation": "directly-proportional"},
+{"source": "L_M1", "target": "offset", "relation": "inversely-proportional"},
+
+{"source": "L_M2", "target": "gain", "relation": "directly-proportional"},
+{"source": "L_M2", "target": "delay", "relation": "directly-proportional"},
+{"source": "L_M2", "target": "offset", "relation": "inversely-proportional"},
+
+{"source": "W_M7", "target": "gain", "relation": "directly-proportional"},
+{"source": "W_M7", "target": "delay", "relation": "inversely-proportional"},
+{"source": "W_M7", "target": "hysteresis", "relation": "directly-proportional"},
+{"source": "W_M7", "target": "power", "relation": "directly-proportional"},
+
+{"source": "W_M6", "target": "gain", "relation": "directly-proportional"},
+{"source": "W_M6", "target": "delay", "relation": "inversely-proportional"},
+{"source": "W_M6", "target": "hysteresis", "relation": "directly-proportional"},
+{"source": "W_M6", "target": "power", "relation": "directly-proportional"},
+
+{"source": "W_M10", "target": "gain", "relation": "directly-proportional"},
+{"source": "W_M10", "target": "delay", "relation": "inversely-proportional"},
+{"source": "W_M10", "target": "hysteresis", "relation": "directly-proportional"},
+{"source": "W_M10", "target": "power", "relation": "directly-proportional"},
+
+{"source": "W_M9", "target": "gain", "relation": "directly-proportional"},
+{"source": "W_M9", "target": "delay", "relation": "inversely-proportional"},
+{"source": "W_M9", "target": "hysteresis", "relation": "directly-proportional"},
+{"source": "W_M9", "target": "power", "relation": "directly-proportional"},
+
+{"source": "W_M0", "target": "gain", "relation": "directly-proportional"},
+{"source": "W_M0", "target": "delay", "relation": "inversely-proportional"},
+{"source": "W_M0", "target": "offset", "relation": "inversely-proportional"},
+{"source": "W_M0", "target": "power", "relation": "directly-proportional"},
+
+{"source": "W_M3", "target": "delay", "relation": "inversely-proportional"},
+{"source": "W_M3", "target": "hysteresis", "relation": "inversely-proportional"},
+{"source": "W_M3", "target": "power", "relation": "directly-proportional"},
+
+{"source": "W_M4", "target": "delay", "relation": "inversely-proportional"},
+{"source": "W_M4", "target": "hysteresis", "relation": "inversely-proportional"},
+{"source": "W_M4", "target": "power", "relation": "directly-proportional"}
+
+
+]
+}

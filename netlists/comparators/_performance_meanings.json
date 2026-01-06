@@ -1,0 +1,26 @@
+{
+  "performance_meanings": [
+    "gain",
+    "power",
+    "delay",
+    "offset",
+    "hysteresis"
+  ],
+  "mapping": {
+    "gain": [
+      "gain"
+    ],
+    "power": [
+      "power"
+    ],
+    "delay": [
+      "delay"
+    ],
+    "offset": [
+      "offset"
+    ],
+    "hysteresis": [
+      "hysteresis"
+    ]
+  }
+}

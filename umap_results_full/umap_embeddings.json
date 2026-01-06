@@ -1,0 +1,107 @@
+{
+  "embeddings": [
+    [
+      7.284355640411377,
+      8.59033489227295
+    ],
+    [
+      8.146278381347656,
+      8.475932121276855
+    ],
+    [
+      8.711889266967773,
+      8.811326026916504
+    ],
+    [
+      7.739524841308594,
+      9.063385963439941
+    ],
+    [
+      8.273724555969238,
+      9.307028770446777
+    ],
+    [
+      4.577306270599365,
+      7.542271137237549
+    ],
+    [
+      3.6807267665863037,
+      7.09969425201416
+    ],
+    [
+      4.208544731140137,
+      6.822480201721191
+    ],
+    [
+      4.9029541015625,
+      8.056785583496094
+    ],
+    [
+      4.997310638427734,
+      7.242958068847656
+    ],
+    [
+      3.5739383697509766,
+      7.658200740814209
+    ]
+  ],
+  "metadata": [
+    {
+      "circuit_id": "75",
+      "family": "diff_amps",
+      "embedding_norm": 0.4761802852153778
+    },
+    {
+      "circuit_id": "77",
+      "family": "diff_amps",
+      "embedding_norm": 0.6985903382301331
+    },
+    {
+      "circuit_id": "84",
+      "family": "diff_amps",
+      "embedding_norm": 0.4364830553531647
+    },
+    {
+      "circuit_id": "86",
+      "family": "diff_amps",
+      "embedding_norm": 0.5044334530830383
+    },
+    {
+      "circuit_id": "94",
+      "family": "diff_amps",
+      "embedding_norm": 0.9304195642471313
+    },
+    {
+      "circuit_id": "1045",
+      "family": "comparators",
+      "embedding_norm": 0.6265812516212463
+    },
+    {
+      "circuit_id": "1046",
+      "family": "comparators",
+      "embedding_norm": 1.0429576635360718
+    },
+    {
+      "circuit_id": "1051",
+      "family": "comparators",
+      "embedding_norm": 0.9112522602081299
+    },
+    {
+      "circuit_id": "1065",
+      "family": "comparators",
+      "embedding_norm": 0.6584185361862183
+    },
+    {
+      "circuit_id": "1071",
+      "family": "comparators",
+      "embedding_norm": 0.43059396743774414
+    },
+    {
+      "circuit_id": "1073",
+      "family": "comparators",
+      "embedding_norm": 3.078974962234497
+    }
+  ],
+  "embedding_dim": 2,
+  "num_circuits": 11
+}

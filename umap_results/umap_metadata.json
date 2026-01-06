@@ -1,0 +1,30 @@
+{
+  "circuit_labels": [
+    "comparators_1051",
+    "comparators_1065",
+    "comparators_1045",
+    "comparators_1046",
+    "comparators_1071",
+    "comparators_1073",
+    "diff_amps_86",
+    "diff_amps_84",
+    "diff_amps_94",
+    "diff_amps_75",
+    "diff_amps_77"
+  ],
+  "family_labels": [
+    "comparators",
+    "comparators",
+    "comparators",
+    "comparators",
+    "comparators",
+    "comparators",
+    "diff_amps",
+    "diff_amps",
+    "diff_amps",
+    "diff_amps",
+    "diff_amps"
+  ],
+  "num_circuits": 11,
+  "embedding_dim": 2
+}

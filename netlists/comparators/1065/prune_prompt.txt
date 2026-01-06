@@ -1,0 +1,21 @@
+Given the following SPICE netlist of a comparator, identify 3 components that can be deleted without significantly compromising the functionality of the circuit.
+
+For each component you identify, provide a short explanation (1-2 sentences) describing why removing it would have minimal impact and any caveats or dependencies to be aware of.
+
+Return the answer as a JSON array of objects with keys: 'component', 'reason', 'impact_estimate'.
+
+Netlist (file: 1065.cir):
+ M1 (VOUT2 VCLK1 VDD VB2) pmos4
+M0 (VOUT1 VCLK1 VDD VB2) pmos4
+M10 (net12 VCLK2 VSS VSS) nmos4
+M9 (net19 VCLK2 VSS VSS) nmos4
+M8 (VOUT2 VOUT1 net19 VSS) nmos4
+M7 (VOUT1 VOUT2 net19 VSS) nmos4
+M6 (net36 VOUT1 net12 VSS) nmos4
+M5 (net37 VOUT2 net12 VSS) nmos4
+M4 (VOUT2 VIN1 net36 VSS) nmos4
+M3 (VOUT1 VIN2 net37 VSS) nmos4
+M2 (VCLK1 VB1 VCLK2 VSS) nmos4
+C1 (VOUT1 VSS) capacitor
+C0 (VOUT2 VSS) capacitor
+ 
