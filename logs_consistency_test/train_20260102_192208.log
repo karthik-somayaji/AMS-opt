@@ -1,0 +1,140 @@
+2026-01-02 19:22:08,868 - __main__ - INFO - Starting training with config: gnn_training/config/consistency_test_config.yaml
+2026-01-02 19:22:08,868 - __main__ - INFO - Config: {
+  "data": {
+    "batch_size": 8,
+    "cache_graphs": false,
+    "circuits": {
+      "comparators": [
+        1051,
+        1065,
+        1045,
+        1046,
+        1071
+      ],
+      "diff_amps": [
+        86,
+        84,
+        94
+      ]
+    },
+    "data_dir": "/home/karthik/sim_clean/AMS-opt/netlists",
+    "family_balance": "equal",
+    "pos_neg_ratio": 1.0,
+    "shuffle": true,
+    "test_circuits": {
+      "comparators": [
+        1073
+      ],
+      "diff_amps": [
+        75,
+        77
+      ]
+    }
+  },
+  "early_stopping": {
+    "min_delta": 0.0001,
+    "patience": 5
+  },
+  "logging": {
+    "log_level": "INFO",
+    "tensorboard_dir": "./logs_consistency_test",
+    "verbose": true
+  },
+  "loss": {
+    "hard_neg_weight": 1.0,
+    "temperature": 0.07,
+    "type": "nt_xent",
+    "consistency": {
+      "enabled": true,
+      "type": "margin",
+      "weight": 0.1,
+      "margin": 0.5,
+      "max_dist": 2.0,
+      "temperature": 1.0
+    }
+  },
+  "model": {
+    "dropout": 0.1,
+    "embedding_dim": 128,
+    "hidden_dims": [
+      64,
+      64,
+      32
+    ],
+    "input_dim": 26,
+    "projection_dim": 128,
+    "use_batch_norm": true
+  },
+  "optimizer": {
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "lr": 0.001,
+    "type": "adam",
+    "weight_decay": 1e-05
+  },
+  "scheduler": {
+    "type": "cosine"
+  },
+  "training": {
+    "checkpoint_dir": "./checkpoints_consistency_test",
+    "device": "cpu",
+    "epochs": 3,
+    "log_interval": 1,
+    "seed": 42,
+    "val_interval": 1
+  }
+}
+2026-01-02 19:22:08,869 - __main__ - INFO - Using device: cpu
+2026-01-02 19:22:08,872 - __main__ - INFO - Model architecture:
+ContrastiveGINModel(
+  (encoder): GINEncoder(
+    (gin_layers): ModuleList(
+      (0): GINConv(
+        (mlp): Sequential(
+          (0): Linear(in_features=26, out_features=64, bias=True)
+          (1): ReLU()
+          (2): Linear(in_features=64, out_features=64, bias=True)
+        )
+      )
+      (1): GINConv(
+        (mlp): Sequential(
+          (0): Linear(in_features=64, out_features=64, bias=True)
+          (1): ReLU()
+          (2): Linear(in_features=64, out_features=64, bias=True)
+        )
+      )
+      (2): GINConv(
+        (mlp): Sequential(
+          (0): Linear(in_features=64, out_features=32, bias=True)
+          (1): ReLU()
+          (2): Linear(in_features=32, out_features=32, bias=True)
+        )
+      )
+    )
+    (batch_norms): ModuleList(
+      (0-1): 2 x BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (dropout): Dropout(p=0.1, inplace=False)
+    (readout_mlp): Sequential(
+      (0): Linear(in_features=32, out_features=128, bias=True)
+      (1): ReLU()
+      (2): Linear(in_features=128, out_features=128, bias=True)
+    )
+  )
+  (projection_head): ProjectionHead(
+    (mlp): Sequential(
+      (0): Linear(in_features=128, out_features=128, bias=True)
+      (1): ReLU()
+      (2): Linear(in_features=128, out_features=128, bias=True)
+    )
+  )
+)
+2026-01-02 19:22:08,872 - __main__ - INFO - Loss function: nt_xent
+2026-01-02 19:22:08,872 - __main__ - INFO - Consistency loss enabled: type=margin, weight=0.1
+2026-01-02 19:22:09,427 - __main__ - INFO - Optimizer: adam
+2026-01-02 19:22:09,430 - __main__ - INFO - Train circuits: {'comparators': [1051, 1065, 1045, 1046, 1071], 'diff_amps': [86, 84, 94]}
+2026-01-02 19:22:09,430 - __main__ - INFO - Test circuits: {'comparators': [1073], 'diff_amps': [75, 77]}
+2026-01-02 19:22:09,439 - __main__ - INFO - Starting training...

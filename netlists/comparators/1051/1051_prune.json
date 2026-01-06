@@ -1,0 +1,17 @@
+[
+{
+"component": "M3",
+"reason": "M3, together with M4 and the tail device M5, forms an auxiliary cross-coupled NMOS latch on the internal nodes net38/net41, adding extra regeneration/hysteresis but not being required for the basic comparison, which is still handled by the main differential pair and output latch network. Removing M3 (along with M4 and M5) mainly reduces this secondary positive-feedback path.",
+"impact_estimate": "Minor: slightly reduced hysteresis and regeneration speed on internal nodes, core comparator function preserved."
+},
+{
+"component": "M4",
+"reason": "M4 is the complementary device to M3 in the same auxiliary cross-coupled NMOS latch on net38/net41, again only enhancing positive feedback rather than providing the primary signal path. Deleting M4 together with M3 and M5 removes this secondary latch while leaving the main pMOS/nMOS latch around VOUT1/VOUT2 fully functional.",
+"impact_estimate": "Minor: small loss of internal gain/reinforcement, but differential comparison and output latching remain intact."
+},
+{
+"component": "M5",
+"reason": "M5 serves as an always-on tail current sink for the M3/M4 pair (its gate is tied to VDD and it only biases node net23), and it does not directly drive any signal nodes. Once M3 and M4 are removed, M5 becomes completely unused, so deleting it has effectively no impact on the rest of the comparator.",
+"impact_estimate": "Negligible: only affects the now-removed auxiliary latch branch, no change to main comparator behavior."
+}
+]

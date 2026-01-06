@@ -1,0 +1,68 @@
+data:
+  batch_size: 8
+  cache_graphs: false
+  circuits:
+    comparators:
+    - 1051
+    - 1065
+    - 1045
+    - 1046
+    - 1071
+    diff_amps:
+    - 86
+    - 84
+    - 94
+  data_dir: /home/karthik/sim_clean/AMS-opt/netlists
+  family_balance: equal
+  pos_neg_ratio: 1.0
+  shuffle: true
+  test_circuits:
+    comparators:
+    - 1073
+    diff_amps:
+    - 75
+    - 77
+early_stopping:
+  min_delta: 0.0001
+  patience: 5
+logging:
+  log_level: INFO
+  tensorboard_dir: ./logs_consistency_test
+  verbose: true
+loss:
+  consistency:
+    enabled: true
+    margin: 0.5
+    max_dist: 2.0
+    temperature: 1.0
+    type: margin
+    weight: 0.1
+  hard_neg_weight: 1.0
+  temperature: 0.07
+  type: nt_xent
+model:
+  dropout: 0.1
+  embedding_dim: 128
+  hidden_dims:
+  - 64
+  - 64
+  - 32
+  input_dim: 26
+  projection_dim: 128
+  use_batch_norm: true
+optimizer:
+  betas:
+  - 0.9
+  - 0.999
+  lr: 0.001
+  type: adam
+  weight_decay: 1.0e-05
+scheduler:
+  type: cosine
+training:
+  checkpoint_dir: ./checkpoints_consistency_test
+  device: cpu
+  epochs: 3
+  log_interval: 1
+  seed: 42
+  val_interval: 1

@@ -1,0 +1,77 @@
+# Default configuration for contrastive GNN training
+
+# Data configuration
+data:
+  data_dir: "/home/karthik/sim_clean/AMS-opt/netlists"
+  
+  # Circuit families and their circuit IDs
+  # Format: {family_name: [list of circuit IDs]}
+  circuits:
+    diff_amps: [75, 77, 84, 86]
+    # ldo: [1, 2, 3]
+    # comparators: [1, 2, 3]
+  
+  # Test split: which circuits to reserve for testing (by family)
+  test_circuits:
+    diff_amps: [94]
+    # ldo: [3]
+    # comparators: [3]
+  
+  # Batch configuration
+  batch_size: 32
+  pos_neg_ratio: 1.0  # ratio of positive to negative samples
+  
+  # Family balancing strategy: 'equal' (equal circuits per family) or 'proportional' (by num circuits)
+  family_balance: "equal"
+  
+  # Data loading
+  cache_graphs: false  # whether to cache graphs in memory
+  shuffle: true  # shuffle batches
+
+# Model configuration
+model:
+  input_dim: 10  # circuit node feature dimension (from GNN encoding)
+  hidden_dims: [64, 64, 32]  # GIN layer hidden dimensions
+  embedding_dim: 128  # final encoder embedding dimension
+  projection_dim: 128  # projection head output dimension
+  dropout: 0.1
+  use_batch_norm: true
+
+# Loss configuration
+loss:
+  type: "nt_xent"  # "nt_xent" or "weighted_nt_xent"
+  temperature: 0.07  # scaling parameter for logits
+  hard_neg_weight: 1.0  # (for weighted_nt_xent) weight for hard negatives
+
+# Optimizer configuration
+optimizer:
+  type: "adam"  # "adam", "sgd"
+  lr: 1e-3
+  weight_decay: 1e-5
+  betas: [0.9, 0.999]  # (for adam)
+  momentum: 0.9  # (for sgd)
+
+# Learning rate scheduler
+scheduler:
+  type: "cosine"  # "cosine", "step", "exponential"
+  total_epochs: 100
+
+# Training configuration
+training:
+  epochs: 100
+  log_interval: 10  # log every N steps
+  val_interval: 5  # validate every N epochs
+  checkpoint_dir: "./checkpoints"
+  seed: 42
+  device: "cuda"  # "cuda" or "cpu"
+
+# Early stopping
+early_stopping:
+  patience: 10
+  min_delta: 1e-4
+
+# Logging
+logging:
+  tensorboard_dir: "./logs"
+  log_level: "INFO"
+  verbose: true

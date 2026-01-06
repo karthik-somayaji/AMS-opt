@@ -1,5 +1,19 @@
 ## Complete Pipeline Example
 
+### Pre-Processing: Collect Unique Substructures (Once per Family)
+
+Before processing any circuits in a family, scan all `comb_graph.json` files to collect and normalize substructure types. This generates a canonical ordered list used by `comb_graph_to_gnn.py`:
+
+```bash
+python scripts/collect_substructures.py \
+  --family diff_amps \
+  --out netlists/diff_amps/_substructures_ordered.json
+```
+
+This creates `netlists/diff_amps/_substructures_ordered.json` with normalized, globally-ordered substructure types (e.g., `differential pair`, `active load`, `bias`, etc.). Do this once after you have all `comb_graph.json` files for the family.
+
+---
+
 ### Processing a New Circuit
 
 Suppose you have a new differential amplifier circuit in `netlists/diff_amps/NEW_ID/`:
@@ -43,13 +57,28 @@ python scripts/combine_graphs.py \
 ```
 
 #### Step 4: Build GNN Features
+
+a) Collect sub-structures :
+
+```bash
+python3 scripts/collect_substructures.py --family comparators --out netlists/comparators/_substructures_ordered.json
+```
+
+b) Get features
 ```bash
 python scripts/comb_graph_to_gnn.py \
   --in netlists/diff_amps/NEW_ID/comb_graph.json
 ```
 
 #### Batch Processing All Circuits
+
+**Important**: Before running batch processing, ensure you've run `collect_substructures.py` for your family:
+
 ```bash
+# Once per family: collect canonical substructures
+python scripts/collect_substructures.py --family diff_amps --out netlists/diff_amps/_substructures_ordered.json
+
+# Then batch process all circuits
 for d in netlists/diff_amps/*/; do
   echo "Processing $d"
   python get_netlist_to_SG.py --netlist-path "$d"/*.cir --output-jsonl "$d/str_graph.json"
@@ -60,3 +89,10 @@ done
 ```
 
 ---
+#####################
+
+cd /home/karthik/sim_clean/AMS-opt && python3 -m gnn_training.scripts.train --config gnn_training/config/full_training_config.yaml 2>&1 | tail -150
+
+cd /home/karthik/sim_clean/AMS-opt && python3 scripts/visualize_embeddings_umap.py 2>&1
+
+#####################

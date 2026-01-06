@@ -1,0 +1,17 @@
+[
+{
+"component": "M8",
+"reason": "M8 is an auxiliary PMOS pull-up from VOUT1 to VDD controlled by the internal node net30; the output node VOUT1 already has a strong pull-up path via the cross-coupled PMOS M7 (gate=VOUT2, source=VDD).",
+"impact_estimate": "Removing M8 mainly reduces pull-up strength and regeneration speed on the VOUT1 side; the latch still functions correctly but may have slightly worse noise margin and slower decision time."
+},
+{
+"component": "M5",
+"reason": "M5 plays the same auxiliary role for VOUT2 as M8 does for VOUT1, providing an extra PMOS pull-up from VOUT2 to VDD driven by net17 while VOUT2 already has a pull-up through the cross-coupled PMOS M6.",
+"impact_estimate": "Eliminating M5 symmetrically reduces pull-up strength and regeneration speed on the VOUT2 side; comparator functionality is preserved, though dynamic performance and offset symmetry may degrade modestly."
+},
+{
+"component": "M3",
+"reason": "M3 is a clock-gated NMOS that directly discharges the internal node net30 to VSS during reset, but net30 can still be discharged indirectly via the differential pair (M1/M2) and NMOS latch path during evaluation.",
+"impact_estimate": "Removing M3 will mainly slow or weaken the reset of net30 and can introduce some memory between clock cycles if the clock period is very short; for sufficiently slow clocks, the comparator still operates with only modest impact on accuracy."
+}
+]

@@ -1,0 +1,714 @@
+{
+"nodes": [
+{
+"id": "gain",
+"type": "performance"
+},
+{
+"id": "delay",
+"type": "performance"
+},
+{
+"id": "offset",
+"type": "performance"
+},
+{
+"id": "hysteresis",
+"type": "performance"
+},
+{
+"id": "power",
+"type": "performance"
+},
+{
+"id": "Input differential pair M10-M9",
+"type": "substructure"
+},
+{
+"id": "Regenerative PMOS latch M2-M1",
+"type": "substructure"
+},
+{
+"id": "Regenerative NMOS latch M5-M4",
+"type": "substructure"
+},
+{
+"id": "Output pull-down pair M6-M3",
+"type": "substructure"
+},
+{
+"id": "Clocked PMOS tail M0",
+"type": "substructure"
+},
+{
+"id": "Precharge PMOS pair M8-M7",
+"type": "substructure"
+},
+{
+"id": "Clocked NMOS reset M11",
+"type": "substructure"
+},
+{
+"id": "W_M10",
+"type": "parameter"
+},
+{
+"id": "L_M10",
+"type": "parameter"
+},
+{
+"id": "W_M9",
+"type": "parameter"
+},
+{
+"id": "L_M9",
+"type": "parameter"
+},
+{
+"id": "W_M2",
+"type": "parameter"
+},
+{
+"id": "L_M2",
+"type": "parameter"
+},
+{
+"id": "W_M1",
+"type": "parameter"
+},
+{
+"id": "L_M1",
+"type": "parameter"
+},
+{
+"id": "W_M5",
+"type": "parameter"
+},
+{
+"id": "L_M5",
+"type": "parameter"
+},
+{
+"id": "W_M4",
+"type": "parameter"
+},
+{
+"id": "L_M4",
+"type": "parameter"
+},
+{
+"id": "W_M0",
+"type": "parameter"
+},
+{
+"id": "L_M0",
+"type": "parameter"
+},
+{
+"id": "W_M8",
+"type": "parameter"
+},
+{
+"id": "L_M8",
+"type": "parameter"
+},
+{
+"id": "W_M7",
+"type": "parameter"
+},
+{
+"id": "L_M7",
+"type": "parameter"
+},
+{
+"id": "W_M11",
+"type": "parameter"
+},
+{
+"id": "L_M11",
+"type": "parameter"
+}
+],
+"links": [
+{
+"source": "gain",
+"target": "delay",
+"relation": "trade-off"
+},
+{
+"source": "gain",
+"target": "offset",
+"relation": "ambiguous"
+},
+{
+"source": "gain",
+"target": "hysteresis",
+"relation": "ambiguous"
+},
+{
+"source": "gain",
+"target": "power",
+"relation": "directly-proportional"
+},
+{
+"source": "delay",
+"target": "offset",
+"relation": "ambiguous"
+},
+{
+"source": "delay",
+"target": "hysteresis",
+"relation": "ambiguous"
+},
+{
+"source": "delay",
+"target": "power",
+"relation": "trade-off"
+},
+{
+"source": "offset",
+"target": "hysteresis",
+"relation": "ambiguous"
+},
+{
+"source": "offset",
+"target": "power",
+"relation": "ambiguous"
+},
+{
+"source": "hysteresis",
+"target": "power",
+"relation": "ambiguous"
+},
+{
+"source": "Input differential pair M10-M9",
+"target": "gain",
+"relation": "influences"
+},
+{
+"source": "Input differential pair M10-M9",
+"target": "delay",
+"relation": "influences"
+},
+{
+"source": "Input differential pair M10-M9",
+"target": "offset",
+"relation": "influences"
+},
+{
+"source": "Input differential pair M10-M9",
+"target": "power",
+"relation": "influences"
+},
+{
+"source": "Regenerative PMOS latch M2-M1",
+"target": "gain",
+"relation": "influences"
+},
+{
+"source": "Regenerative PMOS latch M2-M1",
+"target": "delay",
+"relation": "influences"
+},
+{
+"source": "Regenerative PMOS latch M2-M1",
+"target": "offset",
+"relation": "influences"
+},
+{
+"source": "Regenerative PMOS latch M2-M1",
+"target": "hysteresis",
+"relation": "influences"
+},
+{
+"source": "Regenerative PMOS latch M2-M1",
+"target": "power",
+"relation": "influences"
+},
+{
+"source": "Regenerative NMOS latch M5-M4",
+"target": "gain",
+"relation": "influences"
+},
+{
+"source": "Regenerative NMOS latch M5-M4",
+"target": "delay",
+"relation": "influences"
+},
+{
+"source": "Regenerative NMOS latch M5-M4",
+"target": "offset",
+"relation": "influences"
+},
+{
+"source": "Regenerative NMOS latch M5-M4",
+"target": "hysteresis",
+"relation": "influences"
+},
+{
+"source": "Regenerative NMOS latch M5-M4",
+"target": "power",
+"relation": "influences"
+},
+{
+"source": "Output pull-down pair M6-M3",
+"target": "delay",
+"relation": "influences"
+},
+{
+"source": "Output pull-down pair M6-M3",
+"target": "hysteresis",
+"relation": "influences"
+},
+{
+"source": "Output pull-down pair M6-M3",
+"target": "power",
+"relation": "influences"
+},
+{
+"source": "Clocked PMOS tail M0",
+"target": "gain",
+"relation": "influences"
+},
+{
+"source": "Clocked PMOS tail M0",
+"target": "delay",
+"relation": "influences"
+},
+{
+"source": "Clocked PMOS tail M0",
+"target": "power",
+"relation": "influences"
+},
+{
+"source": "Precharge PMOS pair M8-M7",
+"target": "delay",
+"relation": "influences"
+},
+{
+"source": "Precharge PMOS pair M8-M7",
+"target": "hysteresis",
+"relation": "influences"
+},
+{
+"source": "Precharge PMOS pair M8-M7",
+"target": "power",
+"relation": "influences"
+},
+{
+"source": "Clocked NMOS reset M11",
+"target": "delay",
+"relation": "influences"
+},
+{
+"source": "Clocked NMOS reset M11",
+"target": "hysteresis",
+"relation": "influences"
+},
+{
+"source": "Clocked NMOS reset M11",
+"target": "power",
+"relation": "influences"
+},
+{
+"source": "W_M10",
+"target": "Input differential pair M10-M9",
+"relation": "belongs-to"
+},
+{
+"source": "W_M10",
+"target": "gain",
+"relation": "directly-proportional"
+},
+{
+"source": "W_M10",
+"target": "delay",
+"relation": "inversely-proportional"
+},
+{
+"source": "W_M10",
+"target": "power",
+"relation": "directly-proportional"
+},
+{
+"source": "L_M10",
+"target": "Input differential pair M10-M9",
+"relation": "belongs-to"
+},
+{
+"source": "L_M10",
+"target": "gain",
+"relation": "inversely-proportional"
+},
+{
+"source": "L_M10",
+"target": "delay",
+"relation": "directly-proportional"
+},
+{
+"source": "L_M10",
+"target": "power",
+"relation": "directly-proportional"
+},
+{
+"source": "W_M9",
+"target": "Input differential pair M10-M9",
+"relation": "belongs-to"
+},
+{
+"source": "W_M9",
+"target": "gain",
+"relation": "directly-proportional"
+},
+{
+"source": "W_M9",
+"target": "delay",
+"relation": "inversely-proportional"
+},
+{
+"source": "W_M9",
+"target": "power",
+"relation": "directly-proportional"
+},
+{
+"source": "L_M9",
+"target": "Input differential pair M10-M9",
+"relation": "belongs-to"
+},
+{
+"source": "L_M9",
+"target": "gain",
+"relation": "inversely-proportional"
+},
+{
+"source": "L_M9",
+"target": "delay",
+"relation": "directly-proportional"
+},
+{
+"source": "L_M9",
+"target": "power",
+"relation": "directly-proportional"
+},
+{
+"source": "W_M2",
+"target": "Regenerative PMOS latch M2-M1",
+"relation": "belongs-to"
+},
+{
+"source": "W_M2",
+"target": "gain",
+"relation": "directly-proportional"
+},
+{
+"source": "W_M2",
+"target": "delay",
+"relation": "inversely-proportional"
+},
+{
+"source": "W_M2",
+"target": "power",
+"relation": "directly-proportional"
+},
+{
+"source": "L_M2",
+"target": "Regenerative PMOS latch M2-M1",
+"relation": "belongs-to"
+},
+{
+"source": "L_M2",
+"target": "gain",
+"relation": "inversely-proportional"
+},
+{
+"source": "L_M2",
+"target": "delay",
+"relation": "directly-proportional"
+},
+{
+"source": "L_M2",
+"target": "power",
+"relation": "directly-proportional"
+},
+{
+"source": "W_M1",
+"target": "Regenerative PMOS latch M2-M1",
+"relation": "belongs-to"
+},
+{
+"source": "W_M1",
+"target": "gain",
+"relation": "directly-proportional"
+},
+{
+"source": "W_M1",
+"target": "delay",
+"relation": "inversely-proportional"
+},
+{
+"source": "W_M1",
+"target": "power",
+"relation": "directly-proportional"
+},
+{
+"source": "L_M1",
+"target": "Regenerative PMOS latch M2-M1",
+"relation": "belongs-to"
+},
+{
+"source": "L_M1",
+"target": "gain",
+"relation": "inversely-proportional"
+},
+{
+"source": "L_M1",
+"target": "delay",
+"relation": "directly-proportional"
+},
+{
+"source": "L_M1",
+"target": "power",
+"relation": "directly-proportional"
+},
+{
+"source": "W_M5",
+"target": "Regenerative NMOS latch M5-M4",
+"relation": "belongs-to"
+},
+{
+"source": "W_M5",
+"target": "gain",
+"relation": "directly-proportional"
+},
+{
+"source": "W_M5",
+"target": "delay",
+"relation": "inversely-proportional"
+},
+{
+"source": "W_M5",
+"target": "power",
+"relation": "directly-proportional"
+},
+{
+"source": "L_M5",
+"target": "Regenerative NMOS latch M5-M4",
+"relation": "belongs-to"
+},
+{
+"source": "L_M5",
+"target": "gain",
+"relation": "inversely-proportional"
+},
+{
+"source": "L_M5",
+"target": "delay",
+"relation": "directly-proportional"
+},
+{
+"source": "L_M5",
+"target": "power",
+"relation": "directly-proportional"
+},
+{
+"source": "W_M4",
+"target": "Regenerative NMOS latch M5-M4",
+"relation": "belongs-to"
+},
+{
+"source": "W_M4",
+"target": "gain",
+"relation": "directly-proportional"
+},
+{
+"source": "W_M4",
+"target": "delay",
+"relation": "inversely-proportional"
+},
+{
+"source": "W_M4",
+"target": "power",
+"relation": "directly-proportional"
+},
+{
+"source": "L_M4",
+"target": "Regenerative NMOS latch M5-M4",
+"relation": "belongs-to"
+},
+{
+"source": "L_M4",
+"target": "gain",
+"relation": "inversely-proportional"
+},
+{
+"source": "L_M4",
+"target": "delay",
+"relation": "directly-proportional"
+},
+{
+"source": "L_M4",
+"target": "power",
+"relation": "directly-proportional"
+},
+{
+"source": "W_M0",
+"target": "Clocked PMOS tail M0",
+"relation": "belongs-to"
+},
+{
+"source": "W_M0",
+"target": "gain",
+"relation": "directly-proportional"
+},
+{
+"source": "W_M0",
+"target": "delay",
+"relation": "inversely-proportional"
+},
+{
+"source": "W_M0",
+"target": "power",
+"relation": "directly-proportional"
+},
+{
+"source": "L_M0",
+"target": "Clocked PMOS tail M0",
+"relation": "belongs-to"
+},
+{
+"source": "L_M0",
+"target": "gain",
+"relation": "inversely-proportional"
+},
+{
+"source": "L_M0",
+"target": "delay",
+"relation": "directly-proportional"
+},
+{
+"source": "L_M0",
+"target": "power",
+"relation": "directly-proportional"
+},
+{
+"source": "W_M8",
+"target": "Precharge PMOS pair M8-M7",
+"relation": "belongs-to"
+},
+{
+"source": "W_M8",
+"target": "gain",
+"relation": "directly-proportional"
+},
+{
+"source": "W_M8",
+"target": "delay",
+"relation": "inversely-proportional"
+},
+{
+"source": "W_M8",
+"target": "power",
+"relation": "directly-proportional"
+},
+{
+"source": "L_M8",
+"target": "Precharge PMOS pair M8-M7",
+"relation": "belongs-to"
+},
+{
+"source": "L_M8",
+"target": "gain",
+"relation": "inversely-proportional"
+},
+{
+"source": "L_M8",
+"target": "delay",
+"relation": "directly-proportional"
+},
+{
+"source": "L_M8",
+"target": "power",
+"relation": "directly-proportional"
+},
+{
+"source": "W_M7",
+"target": "Precharge PMOS pair M8-M7",
+"relation": "belongs-to"
+},
+{
+"source": "W_M7",
+"target": "gain",
+"relation": "directly-proportional"
+},
+{
+"source": "W_M7",
+"target": "delay",
+"relation": "inversely-proportional"
+},
+{
+"source": "W_M7",
+"target": "power",
+"relation": "directly-proportional"
+},
+{
+"source": "L_M7",
+"target": "Precharge PMOS pair M8-M7",
+"relation": "belongs-to"
+},
+{
+"source": "L_M7",
+"target": "gain",
+"relation": "inversely-proportional"
+},
+{
+"source": "L_M7",
+"target": "delay",
+"relation": "directly-proportional"
+},
+{
+"source": "L_M7",
+"target": "power",
+"relation": "directly-proportional"
+},
+{
+"source": "W_M11",
+"target": "Clocked NMOS reset M11",
+"relation": "belongs-to"
+},
+{
+"source": "W_M11",
+"target": "gain",
+"relation": "directly-proportional"
+},
+{
+"source": "W_M11",
+"target": "delay",
+"relation": "inversely-proportional"
+},
+{
+"source": "W_M11",
+"target": "power",
+"relation": "directly-proportional"
+},
+{
+"source": "L_M11",
+"target": "Clocked NMOS reset M11",
+"relation": "belongs-to"
+},
+{
+"source": "L_M11",
+"target": "gain",
+"relation": "inversely-proportional"
+},
+{
+"source": "L_M11",
+"target": "delay",
+"relation": "directly-proportional"
+},
+{
+"source": "L_M11",
+"target": "power",
+"relation": "directly-proportional"
+}
+]
+}

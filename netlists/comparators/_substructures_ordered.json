@@ -1,0 +1,78 @@
+{
+  "ordered_substructures": [
+    "latch",
+    "pmos transistor",
+    "nmos transistor",
+    "differential pair",
+    "regenerative latch",
+    "bias network",
+    "c0 c1 load capacitors",
+    "clock tail network",
+    "clocked load network",
+    "clocked tail network (",
+    "output pull down pair"
+  ],
+  "mapping": {
+    "differential pair": [
+      "M1-M2 input differential pair",
+      "M8-M9 input differential pair",
+      "Input differential pair 1 (M12-M13)",
+      "M3-M4 input differential pair",
+      "Input differential pair M10-M9",
+      "Input differential pair 2 (M15-M16)"
+    ],
+    "latch": [
+      "M15-M14 NMOS latch pair",
+      "Regenerative PMOS latch M2-M1",
+      "M5-M6 intermediate latch pair",
+      "M7-M6 PMOS cross-coupled latch",
+      "Regenerative NMOS latch M5-M4",
+      "PMOS latch & precharge network (M0-M6, M1-M4)",
+      "M10-M9 NMOS cross-coupled latch",
+      "M12-M7 PMOS latch pair",
+      "NMOS latch network M13-M16-M14-M15",
+      "NMOS latch network (M5-M9, M7-M8)"
+    ],
+    "clocked load network": [
+      "M3-M4-M2-M5-M6 clocked load network"
+    ],
+    "regenerative latch": [
+      "M7-M8 regeneration pair",
+      "M16-M17-M18-M10-M11 regeneration network",
+      "M8-M5 PMOS regeneration pair"
+    ],
+    "bias network": [
+      "M0-M1 bias network"
+    ],
+    "output pull down pair": [
+      "Output pull-down pair M6-M3"
+    ],
+    "pmos transistor": [
+      "PMOS output pair M11-M12",
+      "M0-M1 precharge PMOS pair",
+      "Inner PMOS regenerative network M8-M9-M10",
+      "PMOS input differential pair M1-M2",
+      "M0 precharge PMOS",
+      "Clocked PMOS tail M0",
+      "Precharge PMOS pair M8-M7"
+    ],
+    "nmos transistor": [
+      "Clocked NMOS reset M11",
+      "NMOS cross-coupled pair M3-M4",
+      "Reset NMOS pair M6-M7",
+      "Clocked precharge NMOS (M10-M11)",
+      "M3-M4 clocked NMOS reset pair",
+      "M11-M12 NMOS discharge pair",
+      "NMOS bias transistor M5"
+    ],
+    "clock tail network": [
+      "M2-M9-M10 clock-tail network"
+    ],
+    "c0 c1 load capacitors": [
+      "C0-C1 load capacitors"
+    ],
+    "clocked tail network (": [
+      "Clocked tail network (M14-M17)"
+    ]
+  }
+}

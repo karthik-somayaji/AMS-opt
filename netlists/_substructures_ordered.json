@@ -1,0 +1,23 @@
+{
+  "ordered_substructures": [
+    "latch",
+    "differential pair",
+    "load resistors",
+    "bias",
+    "precharge pmos",
+    "clocked nmos reset",
+    "active load",
+    "tail current source",
+    "clocked pmos tail",
+    "clock tail network",
+    "clocked load network",
+    "output pull down pair",
+    "nmos cross coupled pair",
+    "inner pmos regenerative network",
+    "pmos output pair",
+    "c0 c1 load capacitors",
+    "nmos discharge pair",
+    "clocked precharge nmos (",
+    "current mirror"
+  ]
+}
