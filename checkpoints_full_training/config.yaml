@@ -32,12 +32,13 @@ logging:
 loss:
   consistency:
     enabled: true
-    margin: 0.8
+    margin: 0.7
     max_dist: 1.0
     temperature: 1.0
     type: margin
-    weight: 0.1
+    weight: 0.0
   hard_neg_weight: 1.0
+  nt_xent_weight: 0.9
   temperature: 0.07
   type: nt_xent
 model:

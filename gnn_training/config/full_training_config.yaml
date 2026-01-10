@@ -33,11 +33,12 @@ loss:
   hard_neg_weight: 1.0
   temperature: 0.07
   type: nt_xent
+  nt_xent_weight: 0.9 #0.5
   consistency:
     enabled: true
     type: margin
-    weight: 0.1 #0.1
-    margin: 0.8 #0.5
+    weight: 0.0 #0.25
+    margin: 0.7 #0.5
     max_dist: 1.0 #2.0
     temperature: 1.0
 model:

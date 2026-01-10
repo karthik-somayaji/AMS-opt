@@ -42,6 +42,12 @@ class MultiCircuitBatchSampler:
             self.hard_neg_miners[family] = HardNegativeMiner(
                 [str(c) for c in cids], data_dir, family
             )
+
+        # Map circuit_id -> family for building batch similarity matrices
+        self.circuit_to_family = {}
+        for family, cids in circuit_specs.items():
+            for cid in cids:
+                self.circuit_to_family[str(cid)] = family
         
         # Compute batch composition
         self._compute_batch_sizes()
@@ -123,11 +129,22 @@ class MultiCircuitBatchSampler:
                     batch['labels'].append(0)
         
         # Compute similarity matrix for consistency loss
-        # Use miners from the first family (all have same circuit overlap precomputed)
         if batch['anchor_circuit_ids']:
-            first_family = batch['families'][0]
-            miner = self.hard_neg_miners[first_family]
-            similarity_matrix = miner.get_batch_similarity_matrix(batch['anchor_circuit_ids'])
+            cids = batch['anchor_circuit_ids']
+            n = len(cids)
+            similarity_matrix = [[0.0] * n for _ in range(n)]
+            for i, cid1 in enumerate(cids):
+                for j, cid2 in enumerate(cids):
+                    if i == j:
+                        similarity_matrix[i][j] = 1.0
+                        continue
+                    fam1 = self.circuit_to_family.get(cid1)
+                    fam2 = self.circuit_to_family.get(cid2)
+                    if fam1 is None or fam2 is None or fam1 != fam2:
+                        similarity_matrix[i][j] = 0.0
+                        continue
+                    miner = self.hard_neg_miners[fam1]
+                    similarity_matrix[i][j] = float(miner.overlap_scores.get((cid1, cid2), 0.0))
             batch['similarity_matrix'] = similarity_matrix
         
         return batch

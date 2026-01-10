@@ -93,6 +93,8 @@ done
 
 cd /home/karthik/sim_clean/AMS-opt && python3 -m gnn_training.scripts.train --config gnn_training/config/full_training_config.yaml 2>&1 | tail -150
 
+python3 -m gnn_training.scripts.train --config gnn_training/config/full_training_config.yaml
+
 cd /home/karthik/sim_clean/AMS-opt && python3 scripts/visualize_embeddings_umap.py 2>&1
 
 #####################

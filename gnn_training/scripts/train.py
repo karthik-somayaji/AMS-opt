@@ -107,6 +107,10 @@ def main(config_path: str = None, **kwargs):
         raise ValueError(f"Unknown loss type: {loss_config['type']}")
     
     logger.info(f"Loss function: {loss_config['type']}")
+
+    # Optional weighting between NT-Xent and consistency terms
+    nt_xent_weight = float(loss_config.get('nt_xent_weight', 1.0))
+    logger.info(f"NT-Xent weight: {nt_xent_weight}")
     
     # Build consistency loss if enabled
     consistency_loss_fn = None
@@ -167,7 +171,8 @@ def main(config_path: str = None, **kwargs):
     # Create trainer and validator
     tb_writer = SummaryWriter(config['logging']['tensorboard_dir'])
     trainer = Trainer(model, loss_fn, optimizer, device, checkpoint_dir, tb_writer,
-                      consistency_loss_fn=consistency_loss_fn, consistency_weight=consistency_weight)
+                      consistency_loss_fn=consistency_loss_fn, consistency_weight=consistency_weight,
+                      nt_xent_weight=nt_xent_weight)
     validator = Validator(device)
     
     # Early stopping
