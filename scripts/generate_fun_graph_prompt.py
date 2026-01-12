@@ -25,7 +25,13 @@ def find_netlist_in_dir(d: str) -> Optional[str]:
 
 
 PROMPT_TEMPLATE = """
-Given a circuit netlist and a set of performance metrics, do the following and output everything together as plain tuple lists, without any explanations:
+Given a circuit netlist and the following performance metrics, do the following and output everything together as plain tuple lists, without any explanations:
+
+Performance metrics:
+- Gain
+- CMRR
+- UGF
+- Power
 
 1. **Infer P-graph (performance–performance relations).**
    Output entries of the form:
@@ -52,16 +58,19 @@ Given a circuit netlist and a set of performance metrics, do the following and o
 * Do **not** include any explanations, text, or headings—only the tuples.
 
 Given the above instructions, construct the above tuples as entries of a knowledge graph. Specifically, output a json format where all nodes (nodes in P, PS and PSX graphs) are listed under the field 'nodes'.
+
 For example:
 "nodes": [
-    {{"id": "Active load",              "type": "substructure"}},
-    {{"id": "CMRR",                     "type": "performance"}},
-    {{"id": "Differential pair",        "type": "substructure"}}, etc]
-    
- All tuples in the graphs should be listed under a 'links' field as a list of dictionaries.
- For example: "links": [
-    {{"source": "Gain", "target": "CMRR", "relation": "ambiguous"}}, etc]
+    {{"id": "Active load",       "type": "substructure"}},
+    {{"id": "CMRR",              "type": "performance"}},
+    {{"id": "Differential pair", "type": "substructure"}}
+]
 
+All tuples in the graphs should be listed under a 'links' field as a list of dictionaries.
+For example:
+"links": [
+    {{"source": "Gain", "target": "CMRR", "relation": "ambiguous"}}
+]
 
 Netlist:
 ```

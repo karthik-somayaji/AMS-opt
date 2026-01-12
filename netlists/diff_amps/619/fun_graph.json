@@ -1,0 +1,408 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "M0-M1 NMOS differential pair",
+      "type": "substructure"
+    },
+    {
+      "id": "M2-M3 PMOS current-mirror active load",
+      "type": "substructure"
+    },
+    {
+      "id": "M4 PMOS output device (pull-up)",
+      "type": "substructure"
+    },
+    {
+      "id": "R0 output load resistor",
+      "type": "substructure"
+    },
+    {
+      "id": "IB1 bias node / tail-current bias",
+      "type": "substructure"
+    },
+    {
+      "id": "W_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "R0",
+      "type": "parameter"
+    },
+    {
+      "id": "VDD",
+      "type": "parameter"
+    },
+    {
+      "id": "VSS",
+      "type": "parameter"
+    },
+    {
+      "id": "IB1",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain",
+      "target": "UGF",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Gain",
+      "target": "Power",
+      "relation": "trade-off"
+    },
+    {
+      "source": "UGF",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "Gain",
+      "target": "CMRR",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "UGF",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "M0-M1 NMOS differential pair",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M1 NMOS differential pair",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M1 NMOS differential pair",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M1 NMOS differential pair",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M3 PMOS current-mirror active load",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M3 PMOS current-mirror active load",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M3 PMOS current-mirror active load",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M4 PMOS output device (pull-up)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M4 PMOS output device (pull-up)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M4 PMOS output device (pull-up)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "R0 output load resistor",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "R0 output load resistor",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "R0 output load resistor",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "IB1 bias node / tail-current bias",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "IB1 bias node / tail-current bias",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "IB1 bias node / tail-current bias",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "IB1 bias node / tail-current bias",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "W_M0",
+      "target": "M0-M1 NMOS differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M0",
+      "target": "M0-M1 NMOS differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M1",
+      "target": "M0-M1 NMOS differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M1",
+      "target": "M0-M1 NMOS differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M2",
+      "target": "M2-M3 PMOS current-mirror active load",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M2",
+      "target": "M2-M3 PMOS current-mirror active load",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M3",
+      "target": "M2-M3 PMOS current-mirror active load",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M3",
+      "target": "M2-M3 PMOS current-mirror active load",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M4",
+      "target": "M4 PMOS output device (pull-up)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M4",
+      "target": "M4 PMOS output device (pull-up)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R0",
+      "target": "R0 output load resistor",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IB1",
+      "target": "IB1 bias node / tail-current bias",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VDD",
+      "target": "M2-M3 PMOS current-mirror active load",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VDD",
+      "target": "M4 PMOS output device (pull-up)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VSS",
+      "target": "M0-M1 NMOS differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VSS",
+      "target": "R0 output load resistor",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M0",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M1",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M1",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M1",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M2",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M3",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M2",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M3",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M2",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M3",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M4",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M4",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M4",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M4",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R0",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Gain",
+      "relation": "inversely-proportional"
+    }
+  ]
+}

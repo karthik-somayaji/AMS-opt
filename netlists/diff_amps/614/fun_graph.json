@@ -1,0 +1,190 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "Q0-Q1 differential BJT pair",
+      "type": "substructure"
+    },
+    {
+      "id": "R0 tail emitter resistor",
+      "type": "substructure"
+    },
+    {
+      "id": "R0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Q0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Q1",
+      "type": "parameter"
+    },
+    {
+      "id": "VIN1",
+      "type": "parameter"
+    },
+    {
+      "id": "VIN2",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain",
+      "target": "UGF",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Gain",
+      "target": "Power",
+      "relation": "trade-off"
+    },
+    {
+      "source": "CMRR",
+      "target": "Gain",
+      "relation": "trade-off"
+    },
+    {
+      "source": "CMRR",
+      "target": "UGF",
+      "relation": "trade-off"
+    },
+    {
+      "source": "CMRR",
+      "target": "Power",
+      "relation": "trade-off"
+    },
+    {
+      "source": "UGF",
+      "target": "Power",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Q0-Q1 differential BJT pair",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "Q0-Q1 differential BJT pair",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "Q0-Q1 differential BJT pair",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "Q0-Q1 differential BJT pair",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "R0 tail emitter resistor",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "R0 tail emitter resistor",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "R0 tail emitter resistor",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "R0 tail emitter resistor",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "R0",
+      "target": "R0 tail emitter resistor",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_Q0",
+      "target": "Q0-Q1 differential BJT pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_Q1",
+      "target": "Q0-Q1 differential BJT pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VIN1",
+      "target": "Q0-Q1 differential BJT pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VIN2",
+      "target": "Q0-Q1 differential BJT pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R0",
+      "target": "Gain",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R0",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R0",
+      "target": "Power",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_Q0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q0",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q0",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q1",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q1",
+      "target": "Power",
+      "relation": "directly-proportional"
+    }
+  ]
+}

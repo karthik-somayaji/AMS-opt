@@ -28,11 +28,11 @@
       "type": "substructure"
     },
     {
-      "id": "M3-M4 PMOS active loads",
+      "id": "M3-M4 PMOS active load",
       "type": "substructure"
     },
     {
-      "id": "R0-R1 load resistors",
+      "id": "R0-R1 resistive load",
       "type": "substructure"
     },
     {
@@ -60,6 +60,10 @@
       "type": "parameter"
     },
     {
+      "id": "VB1",
+      "type": "parameter"
+    },
+    {
       "id": "W_M3",
       "type": "parameter"
     },
@@ -84,7 +88,11 @@
       "type": "parameter"
     },
     {
-      "id": "VB1",
+      "id": "VDD",
+      "type": "parameter"
+    },
+    {
+      "id": "VSS",
       "type": "parameter"
     },
     {
@@ -184,6 +192,14 @@
       "type": "parameter"
     },
     {
+      "id": "VB1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VB1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
       "id": "W_M3-directly-proportional",
       "type": "parameter"
     },
@@ -232,11 +248,19 @@
       "type": "parameter"
     },
     {
-      "id": "VB1-directly-proportional",
+      "id": "VDD-directly-proportional",
       "type": "parameter"
     },
     {
-      "id": "VB1-inversely-proportional",
+      "id": "VDD-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VSS-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VSS-inversely-proportional",
       "type": "parameter"
     },
     {
@@ -539,18 +563,23 @@
       "target": "net:VOUT1"
     },
     {
-      "source": "Gain-ambiguous",
-      "target": "CMRR-ambiguous",
-      "relation": "connects"
-    },
-    {
       "source": "Gain-trade-off",
       "target": "UGF-trade-off",
       "relation": "connects"
     },
     {
-      "source": "Gain-directly-proportional",
+      "source": "Gain-trade-off",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF-directly-proportional",
       "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR-ambiguous",
+      "target": "Gain-ambiguous",
       "relation": "connects"
     },
     {
@@ -564,18 +593,8 @@
       "relation": "connects"
     },
     {
-      "source": "UGF-directly-proportional",
-      "target": "Power-directly-proportional",
-      "relation": "connects"
-    },
-    {
       "source": "M0-M2 differential pair",
       "target": "Gain",
-      "relation": "connects"
-    },
-    {
-      "source": "M0-M2 differential pair",
-      "target": "CMRR",
       "relation": "connects"
     },
     {
@@ -584,12 +603,7 @@
       "relation": "connects"
     },
     {
-      "source": "M1 tail current source",
-      "target": "Gain",
-      "relation": "connects"
-    },
-    {
-      "source": "M1 tail current source",
+      "source": "M0-M2 differential pair",
       "target": "CMRR",
       "relation": "connects"
     },
@@ -600,37 +614,47 @@
     },
     {
       "source": "M1 tail current source",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "M1 tail current source",
       "target": "Power",
       "relation": "connects"
     },
     {
-      "source": "M3-M4 PMOS active loads",
+      "source": "M3-M4 PMOS active load",
       "target": "Gain",
       "relation": "connects"
     },
     {
-      "source": "M3-M4 PMOS active loads",
+      "source": "M3-M4 PMOS active load",
       "target": "UGF",
       "relation": "connects"
     },
     {
-      "source": "M3-M4 PMOS active loads",
+      "source": "M3-M4 PMOS active load",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "M3-M4 PMOS active load",
       "target": "Power",
       "relation": "connects"
     },
     {
-      "source": "R0-R1 load resistors",
+      "source": "R0-R1 resistive load",
       "target": "Gain",
       "relation": "connects"
     },
     {
-      "source": "R0-R1 load resistors",
+      "source": "R0-R1 resistive load",
       "target": "UGF",
       "relation": "connects"
     },
     {
-      "source": "R0-R1 load resistors",
-      "target": "Power",
+      "source": "R0-R1 resistive load",
+      "target": "CMRR",
       "relation": "connects"
     },
     {
@@ -670,32 +694,47 @@
     },
     {
       "source": "W_M3",
-      "target": "M3-M4 PMOS active loads",
+      "target": "M3-M4 PMOS active load",
       "relation": "connects"
     },
     {
       "source": "L_M3",
-      "target": "M3-M4 PMOS active loads",
+      "target": "M3-M4 PMOS active load",
       "relation": "connects"
     },
     {
       "source": "W_M4",
-      "target": "M3-M4 PMOS active loads",
+      "target": "M3-M4 PMOS active load",
       "relation": "connects"
     },
     {
       "source": "L_M4",
-      "target": "M3-M4 PMOS active loads",
+      "target": "M3-M4 PMOS active load",
       "relation": "connects"
     },
     {
       "source": "R0",
-      "target": "R0-R1 load resistors",
+      "target": "R0-R1 resistive load",
       "relation": "connects"
     },
     {
       "source": "R1",
-      "target": "R0-R1 load resistors",
+      "target": "R0-R1 resistive load",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD",
+      "target": "M3-M4 PMOS active load",
+      "relation": "connects"
+    },
+    {
+      "source": "VSS",
+      "target": "M0-M2 differential pair",
+      "relation": "connects"
+    },
+    {
+      "source": "VSS",
+      "target": "M1 tail current source",
       "relation": "connects"
     },
     {
@@ -709,13 +748,8 @@
       "relation": "connects"
     },
     {
-      "source": "W_M0-directly-proportional",
-      "target": "Power-directly-proportional",
-      "relation": "connects"
-    },
-    {
-      "source": "L_M0-inversely-proportional",
-      "target": "Gain-trade-off",
+      "source": "L_M0-directly-proportional",
+      "target": "Gain-directly-proportional",
       "relation": "connects"
     },
     {
@@ -734,13 +768,8 @@
       "relation": "connects"
     },
     {
-      "source": "W_M2-directly-proportional",
-      "target": "Power-directly-proportional",
-      "relation": "connects"
-    },
-    {
-      "source": "L_M2-inversely-proportional",
-      "target": "Gain-trade-off",
+      "source": "L_M2-directly-proportional",
+      "target": "Gain-directly-proportional",
       "relation": "connects"
     },
     {
@@ -749,8 +778,18 @@
       "relation": "connects"
     },
     {
-      "source": "W_M1-directly-proportional",
-      "target": "Gain-directly-proportional",
+      "source": "VB1-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB1-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB1-directly-proportional",
+      "target": "CMRR-directly-proportional",
       "relation": "connects"
     },
     {
@@ -765,27 +804,12 @@
     },
     {
       "source": "L_M1-inversely-proportional",
-      "target": "Gain-trade-off",
-      "relation": "connects"
-    },
-    {
-      "source": "L_M1-inversely-proportional",
       "target": "UGF-trade-off",
       "relation": "connects"
     },
     {
-      "source": "VB1-directly-proportional",
-      "target": "Gain-directly-proportional",
-      "relation": "connects"
-    },
-    {
-      "source": "VB1-directly-proportional",
-      "target": "UGF-directly-proportional",
-      "relation": "connects"
-    },
-    {
-      "source": "VB1-directly-proportional",
-      "target": "Power-directly-proportional",
+      "source": "L_M1-directly-proportional",
+      "target": "CMRR-directly-proportional",
       "relation": "connects"
     },
     {
@@ -794,8 +818,8 @@
       "relation": "connects"
     },
     {
-      "source": "W_M3-inversely-proportional",
-      "target": "UGF-trade-off",
+      "source": "W_M3-directly-proportional",
+      "target": "UGF-directly-proportional",
       "relation": "connects"
     },
     {
@@ -819,8 +843,8 @@
       "relation": "connects"
     },
     {
-      "source": "W_M4-inversely-proportional",
-      "target": "UGF-trade-off",
+      "source": "W_M4-directly-proportional",
+      "target": "UGF-directly-proportional",
       "relation": "connects"
     },
     {
@@ -849,11 +873,6 @@
       "relation": "connects"
     },
     {
-      "source": "R0-inversely-proportional",
-      "target": "Power-trade-off",
-      "relation": "connects"
-    },
-    {
       "source": "R1-directly-proportional",
       "target": "Gain-directly-proportional",
       "relation": "connects"
@@ -864,8 +883,13 @@
       "relation": "connects"
     },
     {
-      "source": "R1-inversely-proportional",
-      "target": "Power-trade-off",
+      "source": "VDD-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VSS-directly-proportional",
+      "target": "Power-directly-proportional",
       "relation": "connects"
     },
     {
@@ -989,6 +1013,16 @@
       "relation": "connects"
     },
     {
+      "source": "VB1",
+      "target": "VB1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB1",
+      "target": "VB1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
       "source": "W_M3",
       "target": "W_M3-directly-proportional",
       "relation": "connects"
@@ -1049,13 +1083,23 @@
       "relation": "connects"
     },
     {
-      "source": "VB1",
-      "target": "VB1-directly-proportional",
+      "source": "VDD",
+      "target": "VDD-directly-proportional",
       "relation": "connects"
     },
     {
-      "source": "VB1",
-      "target": "VB1-inversely-proportional",
+      "source": "VDD",
+      "target": "VDD-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VSS",
+      "target": "VSS-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VSS",
+      "target": "VSS-inversely-proportional",
       "relation": "connects"
     },
     {
