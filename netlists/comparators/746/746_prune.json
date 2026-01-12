@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R6",
+    "reason": "R6 is an explicit pull-down/load on VOUT2; if the next stage (or measurement/testbench) already provides a defined load or if VOUT2 is primarily driven by the active devices (Q5/Q6/Q4/Q2), removing this resistor usually won’t break the core differential-to-output action. Caveat: without an alternate DC load, VOUT2’s static level, output swing, and settling may change or become less well-defined.",
+    "impact_estimate": "Low if an external load exists; Medium to High if R6 is the only DC load on VOUT2."
+  },
+  {
+    "component": "R5",
+    "reason": "R5 is the symmetric pull-down/load on VOUT1 and similarly mainly sets output bias/loading rather than enabling the internal signal path; the circuit can still switch/amplify without it when another load is present. Caveat: removing it can change output common-mode, swing, and recovery time if no other load defines VOUT1.",
+    "impact_estimate": "Low if an external load exists; Medium to High if R5 is the only DC load on VOUT1."
+  },
+  {
+    "component": "R7",
+    "reason": "R7 provides a bleed/clamp for the latch control emitter node net14; the latch/control action can still occur if net14 is otherwise constrained by the base drives (VLATCH1/VTRACK1) and device junctions. Caveat: removing R7 can leave net14 more floating, worsening reset/startup behavior and increasing sensitivity to leakage and metastability.",
+    "impact_estimate": "Low to Medium (mostly affects latch-node stabilization and reset robustness)."
+  }
+]

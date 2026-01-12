@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R3",
+    "reason": "R3 is a resistive pull-up/load from VDD to VOUT1; if the next stage or testbench already provides a defined load/pull-up (or VOUT1 is sensed differentially with another load), removing it usually won’t break the internal differential/latch behavior. Caveat: if R3 is the only DC path defining VOUT1’s high level, VOUT1 can float and output swing/bias will change significantly.",
+    "impact_estimate": "Low if an external pull-up/load exists; High if R3 is the only DC load on VOUT1."
+  },
+  {
+    "component": "R4",
+    "reason": "R4 is the symmetric pull-up/load from VDD to VOUT2 and can similarly be removed when an external load/pull-up exists, with minimal impact on the core cross-coupled action through Q5/Q6 and the output devices. Caveat: without R4 (and without another load), VOUT2 may not reach/hold a defined high level and static bias can drift.",
+    "impact_estimate": "Low if an external pull-up/load exists; High if R4 is the only DC load on VOUT2."
+  },
+  {
+    "component": "R0",
+    "reason": "R0 provides a resistive coupling between net01 and net8 that mainly shapes bias/feedback between the VIN1-side internal node and the cross-coupled node; the circuit can still function with the primary cross-coupling handled by Q5/Q6 and biasing via VB1 (Q1/Q3). Caveat: removing R0 may change the effective hysteresis/offset and can reduce symmetry or stability margins depending on how R0 is used to balance the two sides.",
+    "impact_estimate": "Low to Medium (function remains, but threshold/offset/hysteresis may shift)."
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R0",
+    "reason": "R0 is a resistive pull-up/load from VDD to VOUT1; if the following stage or testbench already provides a load/pull-up (or VOUT1 is interpreted as a current-mode node), removing R0 usually won’t break the internal differential/latch action. Caveat: if R0 is the only DC path defining VOUT1’s high level, removing it can leave VOUT1 floating and change output swing/bias.",
+    "impact_estimate": "Low if an external pull-up/load exists; High if R0 is the only DC load on VOUT1."
+  },
+  {
+    "component": "R1",
+    "reason": "R1 is the symmetric pull-up/load from VDD to VOUT2 and similarly can be omitted when an external load/pull-up exists, with minimal impact on the internal cross-coupled BJT behavior. Caveat: without R1 (and without any alternate load), VOUT2 may not reach/hold a defined high state and static bias can drift.",
+    "impact_estimate": "Low if an external pull-up/load exists; High if R1 is the only DC load on VOUT2."
+  },
+  {
+    "component": "R2",
+    "reason": "R2 is an emitter degeneration / tail reference resistor that mainly stabilizes the common emitter node net05 and improves bias robustness; the differential pair (Q1/Q5) can still function if net05 is otherwise driven or biased by the environment. Caveat: removing R2 reduces bias stabilization, can increase sensitivity to mismatch/leakage, and may shift the operating point and input offset.",
+    "impact_estimate": "Medium (core function remains, but bias stability/offset may worsen)."
+  }
+]

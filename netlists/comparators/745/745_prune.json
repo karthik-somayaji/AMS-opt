@@ -1,0 +1,17 @@
+[
+  {
+    "component": "D0",
+    "reason": "D0 mainly provides a clamp/reference from net32 to VDD for the Q1 branch; if net32 is not used elsewhere and the branch is only for bias shaping, removing D0 typically preserves the core differential PMOS/NMOS switching around net3/net6. Caveat: if this diode sets a critical bias ceiling or provides startup clamping, removing it can shift IB1-related bias and affect operating point under some conditions.",
+    "impact_estimate": "Low to Medium (bias/reference behavior may shift, core function remains)."
+  },
+  {
+    "component": "D1",
+    "reason": "D1 is the symmetric clamp/reference for the Q2 branch (net29→VDD) and often serves the same protective/bias-limiting role rather than the main signal path. Caveat: removing it can change the IB3-related bias limit and transient recovery if net29 would otherwise swing excessively.",
+    "impact_estimate": "Low to Medium (mainly affects bias limiting and robustness)."
+  },
+  {
+    "component": "R1",
+    "reason": "R1 provides a resistive pull-down/bleeder on net26 (the Q3/Q2 branch node), which is typically used to stabilize bias or discharge the node; the main differential core (M2-M5 with M0/M1) can still operate without this bleed if net26 is otherwise defined. Caveat: net26 may float more during startup or transitions, potentially causing slower settling or extra offset in the bias branch.",
+    "impact_estimate": "Low if net26 is otherwise well-defined; Medium if the bias branch relies on the bleed for stable startup/settling."
+  }
+]

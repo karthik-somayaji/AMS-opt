@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M16",
+    "reason": "M16 is an NMOS that adds an extra discharge/compare path from VREF2 into net036; if VIN2 is the primary signal input and VREF2 is held constant or can be tied externally, the core latch/regeneration still works without this parallel device. Caveat: removing it eliminates the explicit reference-compare functionality on that side (net036 becomes VIN2-only driven), which may change trip point behavior.",
+    "impact_estimate": "Low if VREF2 is not used or is fixed externally; Medium if true VIN2-vs-VREF2 comparison is required."
+  },
+  {
+    "component": "M10",
+    "reason": "M10 is the symmetric NMOS reference device for the other input side (VIN1 vs VREF1); if VREF1 is not actively used (or VIN1 is compared directly against a fixed/common-mode), the latch still resolves using the remaining input device M11. Caveat: removing it removes that reference leg and shifts the intended decision threshold and offset behavior.",
+    "impact_estimate": "Low if VREF1 is unused/fixed; Medium if VIN1-vs-VREF1 comparison sets the threshold."
+  },
+  {
+    "component": "M14",
+    "reason": "M14 is a PMOS cross-coupled device between VOUT1 and VOUT2 that strengthens positive feedback, but the latch still retains regeneration via the remaining cross-coupled PMOS (M4) and the VLATCH1-gated pull-ups (M15/M3). Caveat: removing it reduces regeneration strength and may increase decision time or metastability probability under low overdrive.",
+    "impact_estimate": "Low to Medium (function remains, but speed/regeneration margin can degrade)."
+  }
+]

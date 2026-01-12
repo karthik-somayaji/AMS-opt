@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0",
+    "reason": "C0 is an output load/decoupling capacitor from VOUT1 to VSS; removing it generally preserves the DC transfer and switching functionality and mainly affects transient smoothing and bandwidth. Caveat: without C0, output ringing/noise may increase and the simulated delay can look faster (less realistic load).",
+    "impact_estimate": "Low for DC behavior; Medium for transient response/noise shaping."
+  },
+  {
+    "component": "C1",
+    "reason": "C1 is a coupling capacitor between internal nodes net4 and net3 that primarily shapes dynamic behavior (feedthrough/compensation) rather than establishing the core conduction paths. Caveat: removing it can change edge rates, kickback/charge sharing, and stability margins if the circuit relies on that coupling for timing or noise reduction.",
+    "impact_estimate": "Low to Medium (core function remains, but dynamics can shift)."
+  },
+  {
+    "component": "M2",
+    "reason": "M2 is a gated NMOS from VOUT1 to net4 controlled by VCONT3 that often acts as an optional discharge/conditioning path; the main output behavior can still be provided by M1 (pull-down) and M5 (pull-up) with net4 driven through the input network. Caveat: if VCONT3 is used as an explicit reset/enable, removing M2 reduces controllability (reset/discharge timing may degrade).",
+    "impact_estimate": "Low if VCONT3 is not critical; Medium if reset/enable behavior is required."
+  }
+]
