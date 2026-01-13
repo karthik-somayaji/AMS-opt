@@ -1,0 +1,353 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "M2-M3 NMOS differential pair",
+      "type": "substructure"
+    },
+    {
+      "id": "M0-M1 PMOS pull-up loads (VB1-biased)",
+      "type": "substructure"
+    },
+    {
+      "id": "M4 NMOS tail current source (VB2-biased)",
+      "type": "substructure"
+    },
+    {
+      "id": "M6-M7 PMOS bias current mirror/source (IB1)",
+      "type": "substructure"
+    },
+    {
+      "id": "R0-R1 resistive load / output resistors (net36 to outputs)",
+      "type": "substructure"
+    },
+    {
+      "id": "W_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "VB2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M6",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M6",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "IB1",
+      "type": "parameter"
+    },
+    {
+      "id": "VB1",
+      "type": "parameter"
+    },
+    {
+      "id": "R0",
+      "type": "parameter"
+    },
+    {
+      "id": "R1",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain",
+      "target": "UGF",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Gain",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "UGF",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "CMRR",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "UGF",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "M2-M3 NMOS differential pair",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M3 NMOS differential pair",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M3 NMOS differential pair",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M3 NMOS differential pair",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M4 NMOS tail current source (VB2-biased)",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M4 NMOS tail current source (VB2-biased)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M4 NMOS tail current source (VB2-biased)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M4 NMOS tail current source (VB2-biased)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M1 PMOS pull-up loads (VB1-biased)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M1 PMOS pull-up loads (VB1-biased)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M1 PMOS pull-up loads (VB1-biased)",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M1 PMOS pull-up loads (VB1-biased)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M6-M7 PMOS bias current mirror/source (IB1)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M6-M7 PMOS bias current mirror/source (IB1)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M6-M7 PMOS bias current mirror/source (IB1)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "R0-R1 resistive load / output resistors (net36 to outputs)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "R0-R1 resistive load / output resistors (net36 to outputs)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "R0-R1 resistive load / output resistors (net36 to outputs)",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "R0-R1 resistive load / output resistors (net36 to outputs)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "W_M2",
+      "target": "M2-M3 NMOS differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M2",
+      "target": "M2-M3 NMOS differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M3",
+      "target": "M2-M3 NMOS differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M3",
+      "target": "M2-M3 NMOS differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M0",
+      "target": "M0-M1 PMOS pull-up loads (VB1-biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M0",
+      "target": "M0-M1 PMOS pull-up loads (VB1-biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M1",
+      "target": "M0-M1 PMOS pull-up loads (VB1-biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M1",
+      "target": "M0-M1 PMOS pull-up loads (VB1-biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VB1",
+      "target": "M0-M1 PMOS pull-up loads (VB1-biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M4",
+      "target": "M4 NMOS tail current source (VB2-biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M4",
+      "target": "M4 NMOS tail current source (VB2-biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VB2",
+      "target": "M4 NMOS tail current source (VB2-biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M6",
+      "target": "M6-M7 PMOS bias current mirror/source (IB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M6",
+      "target": "M6-M7 PMOS bias current mirror/source (IB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M7",
+      "target": "M6-M7 PMOS bias current mirror/source (IB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M7",
+      "target": "M6-M7 PMOS bias current mirror/source (IB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IB1",
+      "target": "M6-M7 PMOS bias current mirror/source (IB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R0",
+      "target": "R0-R1 resistive load / output resistors (net36 to outputs)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R1",
+      "target": "R0-R1 resistive load / output resistors (net36 to outputs)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M2",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M2",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M2",
+      "target": "Gain",
+      "relation": "ambiguously-proportional"
+    }
+  ]
+}

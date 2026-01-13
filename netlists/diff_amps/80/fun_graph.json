@@ -1,0 +1,425 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "M0-M1 differential pair (VIN1/VIN2)",
+      "type": "substructure"
+    },
+    {
+      "id": "M2-M3 differential pair (VIN3/VIN4)",
+      "type": "substructure"
+    },
+    {
+      "id": "M4-M5 tail current sources (IB1, VCONT1/VCONT2)",
+      "type": "substructure"
+    },
+    {
+      "id": "R1-R1 resistive loads (VDD to VOUT1/VOUT2)",
+      "type": "substructure"
+    },
+    {
+      "id": "W_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "R1_VOUT1",
+      "type": "parameter"
+    },
+    {
+      "id": "R1_VOUT2",
+      "type": "parameter"
+    },
+    {
+      "id": "IB1",
+      "type": "parameter"
+    },
+    {
+      "id": "VCONT1",
+      "type": "parameter"
+    },
+    {
+      "id": "VCONT2",
+      "type": "parameter"
+    },
+    {
+      "id": "VDD",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain",
+      "target": "UGF",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Gain",
+      "target": "Power",
+      "relation": "trade-off"
+    },
+    {
+      "source": "UGF",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "CMRR",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "UGF",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "M0-M1 differential pair (VIN1/VIN2)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M1 differential pair (VIN1/VIN2)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M1 differential pair (VIN1/VIN2)",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M3 differential pair (VIN3/VIN4)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M3 differential pair (VIN3/VIN4)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M3 differential pair (VIN3/VIN4)",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M4-M5 tail current sources (IB1, VCONT1/VCONT2)",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M4-M5 tail current sources (IB1, VCONT1/VCONT2)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M4-M5 tail current sources (IB1, VCONT1/VCONT2)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "R1-R1 resistive loads (VDD to VOUT1/VOUT2)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "R1-R1 resistive loads (VDD to VOUT1/VOUT2)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "R1-R1 resistive loads (VDD to VOUT1/VOUT2)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "W_M0",
+      "target": "M0-M1 differential pair (VIN1/VIN2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M0",
+      "target": "M0-M1 differential pair (VIN1/VIN2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M1",
+      "target": "M0-M1 differential pair (VIN1/VIN2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M1",
+      "target": "M0-M1 differential pair (VIN1/VIN2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M2",
+      "target": "M2-M3 differential pair (VIN3/VIN4)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M2",
+      "target": "M2-M3 differential pair (VIN3/VIN4)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M3",
+      "target": "M2-M3 differential pair (VIN3/VIN4)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M3",
+      "target": "M2-M3 differential pair (VIN3/VIN4)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M4",
+      "target": "M4-M5 tail current sources (IB1, VCONT1/VCONT2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M4",
+      "target": "M4-M5 tail current sources (IB1, VCONT1/VCONT2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M5",
+      "target": "M4-M5 tail current sources (IB1, VCONT1/VCONT2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M5",
+      "target": "M4-M5 tail current sources (IB1, VCONT1/VCONT2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IB1",
+      "target": "M4-M5 tail current sources (IB1, VCONT1/VCONT2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VCONT1",
+      "target": "M4-M5 tail current sources (IB1, VCONT1/VCONT2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VCONT2",
+      "target": "M4-M5 tail current sources (IB1, VCONT1/VCONT2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R1_VOUT1",
+      "target": "R1-R1 resistive loads (VDD to VOUT1/VOUT2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R1_VOUT2",
+      "target": "R1-R1 resistive loads (VDD to VOUT1/VOUT2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VDD",
+      "target": "R1-R1 resistive loads (VDD to VOUT1/VOUT2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M1",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M1",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M2",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M2",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M2",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M2",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M3",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M3",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M3",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M3",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R1_VOUT1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R1_VOUT1",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R1_VOUT2",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R1_VOUT2",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M4",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M5",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M4",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M5",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "VDD",
+      "target": "Power",
+      "relation": "directly-proportional"
+    }
+  ]
+}

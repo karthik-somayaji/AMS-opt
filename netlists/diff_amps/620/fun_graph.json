@@ -1,0 +1,300 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "Q0-Q1 input differential pair",
+      "type": "substructure"
+    },
+    {
+      "id": "Q2-Q3 current-mirror active load",
+      "type": "substructure"
+    },
+    {
+      "id": "R0 tail/emitter degeneration resistor",
+      "type": "substructure"
+    },
+    {
+      "id": "W_Q0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Q1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Q2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Q3",
+      "type": "parameter"
+    },
+    {
+      "id": "IS_Q0",
+      "type": "parameter"
+    },
+    {
+      "id": "IS_Q1",
+      "type": "parameter"
+    },
+    {
+      "id": "IS_Q2",
+      "type": "parameter"
+    },
+    {
+      "id": "IS_Q3",
+      "type": "parameter"
+    },
+    {
+      "id": "R0",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain",
+      "target": "UGF",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Gain",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "UGF",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "CMRR",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "UGF",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "Q0-Q1 input differential pair",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "Q0-Q1 input differential pair",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "Q0-Q1 input differential pair",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "Q0-Q1 input differential pair",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "Q2-Q3 current-mirror active load",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "Q2-Q3 current-mirror active load",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "Q2-Q3 current-mirror active load",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "R0 tail/emitter degeneration resistor",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "R0 tail/emitter degeneration resistor",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "R0 tail/emitter degeneration resistor",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "R0 tail/emitter degeneration resistor",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "W_Q0",
+      "target": "Q0-Q1 input differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_Q1",
+      "target": "Q0-Q1 input differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_Q2",
+      "target": "Q2-Q3 current-mirror active load",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_Q3",
+      "target": "Q2-Q3 current-mirror active load",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IS_Q0",
+      "target": "Q0-Q1 input differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IS_Q1",
+      "target": "Q0-Q1 input differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IS_Q2",
+      "target": "Q2-Q3 current-mirror active load",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IS_Q3",
+      "target": "Q2-Q3 current-mirror active load",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R0",
+      "target": "R0 tail/emitter degeneration resistor",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_Q0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q0",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q1",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q2",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q3",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q2",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q3",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IS_Q0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IS_Q1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IS_Q0",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IS_Q1",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IS_Q0",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IS_Q1",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IS_Q2",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IS_Q3",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R0",
+      "target": "Gain",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R0",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R0",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R0",
+      "target": "Power",
+      "relation": "inversely-proportional"
+    }
+  ]
+}

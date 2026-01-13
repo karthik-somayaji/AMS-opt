@@ -20,19 +20,19 @@
       "type": "performance"
     },
     {
-      "id": "M0-M2 differential pair",
+      "id": "M0-M2 NMOS differential pair",
       "type": "substructure"
     },
     {
-      "id": "M1 tail current source",
+      "id": "M1 tail current source (NMOS bias)",
       "type": "substructure"
     },
     {
-      "id": "R0-R1 load resistors",
+      "id": "R0-R1 resistive loads to VDD",
       "type": "substructure"
     },
     {
-      "id": "R2 source-degeneration resistor",
+      "id": "R2 interconnect / degeneration between net07 and VOUT1",
       "type": "substructure"
     },
     {
@@ -60,6 +60,10 @@
       "type": "parameter"
     },
     {
+      "id": "VB1",
+      "type": "parameter"
+    },
+    {
       "id": "R0",
       "type": "parameter"
     },
@@ -72,7 +76,7 @@
       "type": "parameter"
     },
     {
-      "id": "VB1",
+      "id": "VDD",
       "type": "parameter"
     },
     {
@@ -172,6 +176,14 @@
       "type": "parameter"
     },
     {
+      "id": "VB1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VB1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
       "id": "R0-directly-proportional",
       "type": "parameter"
     },
@@ -196,11 +208,11 @@
       "type": "parameter"
     },
     {
-      "id": "VB1-directly-proportional",
+      "id": "VDD-directly-proportional",
       "type": "parameter"
     },
     {
-      "id": "VB1-inversely-proportional",
+      "id": "VDD-inversely-proportional",
       "type": "parameter"
     },
     {
@@ -418,18 +430,23 @@
       "target": "net:VSS"
     },
     {
-      "source": "Gain-directly-proportional",
-      "target": "CMRR-directly-proportional",
-      "relation": "connects"
-    },
-    {
       "source": "Gain-trade-off",
       "target": "UGF-trade-off",
       "relation": "connects"
     },
     {
-      "source": "Gain-ambiguous",
-      "target": "Power-ambiguous",
+      "source": "Gain-trade-off",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR-ambiguous",
+      "target": "Gain-ambiguous",
       "relation": "connects"
     },
     {
@@ -438,128 +455,128 @@
       "relation": "connects"
     },
     {
-      "source": "Power-directly-proportional",
-      "target": "UGF-directly-proportional",
+      "source": "CMRR-ambiguous",
+      "target": "Power-ambiguous",
       "relation": "connects"
     },
     {
-      "source": "Power-ambiguous",
-      "target": "Gain-ambiguous",
-      "relation": "connects"
-    },
-    {
-      "source": "Power-ambiguous",
-      "target": "CMRR-ambiguous",
-      "relation": "connects"
-    },
-    {
-      "source": "M0-M2 differential pair",
+      "source": "M0-M2 NMOS differential pair",
       "target": "Gain",
       "relation": "connects"
     },
     {
-      "source": "M0-M2 differential pair",
+      "source": "M0-M2 NMOS differential pair",
       "target": "CMRR",
       "relation": "connects"
     },
     {
-      "source": "M0-M2 differential pair",
+      "source": "M0-M2 NMOS differential pair",
       "target": "UGF",
       "relation": "connects"
     },
     {
-      "source": "M1 tail current source",
+      "source": "M1 tail current source (NMOS bias)",
       "target": "Gain",
       "relation": "connects"
     },
     {
-      "source": "M1 tail current source",
+      "source": "M1 tail current source (NMOS bias)",
       "target": "CMRR",
       "relation": "connects"
     },
     {
-      "source": "M1 tail current source",
+      "source": "M1 tail current source (NMOS bias)",
       "target": "UGF",
       "relation": "connects"
     },
     {
-      "source": "M1 tail current source",
+      "source": "M1 tail current source (NMOS bias)",
       "target": "Power",
       "relation": "connects"
     },
     {
-      "source": "R0-R1 load resistors",
+      "source": "R0-R1 resistive loads to VDD",
       "target": "Gain",
       "relation": "connects"
     },
     {
-      "source": "R0-R1 load resistors",
+      "source": "R0-R1 resistive loads to VDD",
       "target": "UGF",
       "relation": "connects"
     },
     {
-      "source": "R2 source-degeneration resistor",
+      "source": "R0-R1 resistive loads to VDD",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "R2 interconnect / degeneration between net07 and VOUT1",
       "target": "Gain",
       "relation": "connects"
     },
     {
-      "source": "R2 source-degeneration resistor",
+      "source": "R2 interconnect / degeneration between net07 and VOUT1",
       "target": "CMRR",
       "relation": "connects"
     },
     {
-      "source": "R2 source-degeneration resistor",
+      "source": "R2 interconnect / degeneration between net07 and VOUT1",
       "target": "UGF",
       "relation": "connects"
     },
     {
       "source": "W_M0",
-      "target": "M0-M2 differential pair",
+      "target": "M0-M2 NMOS differential pair",
       "relation": "connects"
     },
     {
       "source": "L_M0",
-      "target": "M0-M2 differential pair",
+      "target": "M0-M2 NMOS differential pair",
       "relation": "connects"
     },
     {
       "source": "W_M2",
-      "target": "M0-M2 differential pair",
+      "target": "M0-M2 NMOS differential pair",
       "relation": "connects"
     },
     {
       "source": "L_M2",
-      "target": "M0-M2 differential pair",
+      "target": "M0-M2 NMOS differential pair",
       "relation": "connects"
     },
     {
       "source": "W_M1",
-      "target": "M1 tail current source",
+      "target": "M1 tail current source (NMOS bias)",
       "relation": "connects"
     },
     {
       "source": "L_M1",
-      "target": "M1 tail current source",
-      "relation": "connects"
-    },
-    {
-      "source": "R0",
-      "target": "R0-R1 load resistors",
-      "relation": "connects"
-    },
-    {
-      "source": "R1",
-      "target": "R0-R1 load resistors",
-      "relation": "connects"
-    },
-    {
-      "source": "R2",
-      "target": "R2 source-degeneration resistor",
+      "target": "M1 tail current source (NMOS bias)",
       "relation": "connects"
     },
     {
       "source": "VB1",
-      "target": "M1 tail current source",
+      "target": "M1 tail current source (NMOS bias)",
+      "relation": "connects"
+    },
+    {
+      "source": "R0",
+      "target": "R0-R1 resistive loads to VDD",
+      "relation": "connects"
+    },
+    {
+      "source": "R1",
+      "target": "R0-R1 resistive loads to VDD",
+      "relation": "connects"
+    },
+    {
+      "source": "R2",
+      "target": "R2 interconnect / degeneration between net07 and VOUT1",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD",
+      "target": "R0-R1 resistive loads to VDD",
       "relation": "connects"
     },
     {
@@ -569,22 +586,12 @@
     },
     {
       "source": "W_M0-directly-proportional",
-      "target": "CMRR-directly-proportional",
-      "relation": "connects"
-    },
-    {
-      "source": "W_M0-inversely-proportional",
-      "target": "UGF-trade-off",
+      "target": "UGF-directly-proportional",
       "relation": "connects"
     },
     {
       "source": "L_M0-directly-proportional",
       "target": "Gain-directly-proportional",
-      "relation": "connects"
-    },
-    {
-      "source": "L_M0-directly-proportional",
-      "target": "CMRR-directly-proportional",
       "relation": "connects"
     },
     {
@@ -599,22 +606,12 @@
     },
     {
       "source": "W_M2-directly-proportional",
-      "target": "CMRR-directly-proportional",
-      "relation": "connects"
-    },
-    {
-      "source": "W_M2-inversely-proportional",
-      "target": "UGF-trade-off",
+      "target": "UGF-directly-proportional",
       "relation": "connects"
     },
     {
       "source": "L_M2-directly-proportional",
       "target": "Gain-directly-proportional",
-      "relation": "connects"
-    },
-    {
-      "source": "L_M2-directly-proportional",
-      "target": "CMRR-directly-proportional",
       "relation": "connects"
     },
     {
@@ -624,7 +621,7 @@
     },
     {
       "source": "W_M1-directly-proportional",
-      "target": "Gain-directly-proportional",
+      "target": "Power-directly-proportional",
       "relation": "connects"
     },
     {
@@ -634,11 +631,6 @@
     },
     {
       "source": "W_M1-directly-proportional",
-      "target": "Power-directly-proportional",
-      "relation": "connects"
-    },
-    {
-      "source": "L_M1-directly-proportional",
       "target": "Gain-directly-proportional",
       "relation": "connects"
     },
@@ -648,13 +640,18 @@
       "relation": "connects"
     },
     {
-      "source": "L_M1-inversely-proportional",
-      "target": "UGF-trade-off",
+      "source": "VB1-directly-proportional",
+      "target": "Power-directly-proportional",
       "relation": "connects"
     },
     {
-      "source": "L_M1-inversely-proportional",
-      "target": "Power-trade-off",
+      "source": "VB1-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB1-directly-proportional",
+      "target": "Gain-directly-proportional",
       "relation": "connects"
     },
     {
@@ -668,6 +665,11 @@
       "relation": "connects"
     },
     {
+      "source": "R0-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
       "source": "R1-directly-proportional",
       "target": "Gain-directly-proportional",
       "relation": "connects"
@@ -678,13 +680,13 @@
       "relation": "connects"
     },
     {
-      "source": "R2-inversely-proportional",
-      "target": "Gain-trade-off",
+      "source": "R1-directly-proportional",
+      "target": "Power-directly-proportional",
       "relation": "connects"
     },
     {
-      "source": "R2-directly-proportional",
-      "target": "CMRR-directly-proportional",
+      "source": "R2-inversely-proportional",
+      "target": "Gain-trade-off",
       "relation": "connects"
     },
     {
@@ -693,17 +695,7 @@
       "relation": "connects"
     },
     {
-      "source": "VB1-directly-proportional",
-      "target": "Gain-directly-proportional",
-      "relation": "connects"
-    },
-    {
-      "source": "VB1-directly-proportional",
-      "target": "UGF-directly-proportional",
-      "relation": "connects"
-    },
-    {
-      "source": "VB1-directly-proportional",
+      "source": "VDD-directly-proportional",
       "target": "Power-directly-proportional",
       "relation": "connects"
     },
@@ -828,6 +820,16 @@
       "relation": "connects"
     },
     {
+      "source": "VB1",
+      "target": "VB1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB1",
+      "target": "VB1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
       "source": "R0",
       "target": "R0-directly-proportional",
       "relation": "connects"
@@ -858,13 +860,13 @@
       "relation": "connects"
     },
     {
-      "source": "VB1",
-      "target": "VB1-directly-proportional",
+      "source": "VDD",
+      "target": "VDD-directly-proportional",
       "relation": "connects"
     },
     {
-      "source": "VB1",
-      "target": "VB1-inversely-proportional",
+      "source": "VDD",
+      "target": "VDD-inversely-proportional",
       "relation": "connects"
     },
     {

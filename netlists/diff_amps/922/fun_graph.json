@@ -1,0 +1,617 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "M2-M3 NMOS differential pair",
+      "type": "substructure"
+    },
+    {
+      "id": "M4 NMOS tail current source",
+      "type": "substructure"
+    },
+    {
+      "id": "M0-M1 PMOS active loads",
+      "type": "substructure"
+    },
+    {
+      "id": "M10-M11 NMOS output pull-down current sources",
+      "type": "substructure"
+    },
+    {
+      "id": "M6-M12 bias / CMFB path",
+      "type": "substructure"
+    },
+    {
+      "id": "R0-R1 resistive load / sensing network",
+      "type": "substructure"
+    },
+    {
+      "id": "M5 PMOS bias device",
+      "type": "substructure"
+    },
+    {
+      "id": "M7 PMOS bias / mirror device",
+      "type": "substructure"
+    },
+    {
+      "id": "M8-M9 NMOS diode-connected bias devices",
+      "type": "substructure"
+    },
+    {
+      "id": "W_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M10",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M10",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M11",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M11",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M6",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M6",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M12",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M12",
+      "type": "parameter"
+    },
+    {
+      "id": "R0",
+      "type": "parameter"
+    },
+    {
+      "id": "R1",
+      "type": "parameter"
+    },
+    {
+      "id": "VB1",
+      "type": "parameter"
+    },
+    {
+      "id": "VB2",
+      "type": "parameter"
+    },
+    {
+      "id": "IB1",
+      "type": "parameter"
+    },
+    {
+      "id": "IB2",
+      "type": "parameter"
+    },
+    {
+      "id": "IB3",
+      "type": "parameter"
+    },
+    {
+      "id": "VCM1",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain",
+      "target": "UGF",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Gain",
+      "target": "Power",
+      "relation": "trade-off"
+    },
+    {
+      "source": "UGF",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "CMRR",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "UGF",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "M2-M3 NMOS differential pair",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M3 NMOS differential pair",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M3 NMOS differential pair",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M4 NMOS tail current source",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M4 NMOS tail current source",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M4 NMOS tail current source",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M1 PMOS active loads",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M1 PMOS active loads",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M1 PMOS active loads",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M10-M11 NMOS output pull-down current sources",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M10-M11 NMOS output pull-down current sources",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M10-M11 NMOS output pull-down current sources",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M6-M12 bias / CMFB path",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M6-M12 bias / CMFB path",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M6-M12 bias / CMFB path",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "R0-R1 resistive load / sensing network",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "R0-R1 resistive load / sensing network",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M5 PMOS bias device",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M7 PMOS bias / mirror device",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M8-M9 NMOS diode-connected bias devices",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "W_M2",
+      "target": "M2-M3 NMOS differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M2",
+      "target": "M2-M3 NMOS differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M3",
+      "target": "M2-M3 NMOS differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M3",
+      "target": "M2-M3 NMOS differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M4",
+      "target": "M4 NMOS tail current source",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M4",
+      "target": "M4 NMOS tail current source",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M0",
+      "target": "M0-M1 PMOS active loads",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M0",
+      "target": "M0-M1 PMOS active loads",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M1",
+      "target": "M0-M1 PMOS active loads",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M1",
+      "target": "M0-M1 PMOS active loads",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M10",
+      "target": "M10-M11 NMOS output pull-down current sources",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M10",
+      "target": "M10-M11 NMOS output pull-down current sources",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M11",
+      "target": "M10-M11 NMOS output pull-down current sources",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M11",
+      "target": "M10-M11 NMOS output pull-down current sources",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M6",
+      "target": "M6-M12 bias / CMFB path",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M6",
+      "target": "M6-M12 bias / CMFB path",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M12",
+      "target": "M6-M12 bias / CMFB path",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M12",
+      "target": "M6-M12 bias / CMFB path",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R0",
+      "target": "R0-R1 resistive load / sensing network",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R1",
+      "target": "R0-R1 resistive load / sensing network",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VB1",
+      "target": "M0-M1 PMOS active loads",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VB2",
+      "target": "M5 PMOS bias device",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IB1",
+      "target": "M10-M11 NMOS output pull-down current sources",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IB2",
+      "target": "M10-M11 NMOS output pull-down current sources",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IB3",
+      "target": "M6-M12 bias / CMFB path",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VCM1",
+      "target": "M6-M12 bias / CMFB path",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M2",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M2",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M2",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M2",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M2",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M2",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M3",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M3",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M3",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M3",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M3",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M3",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M4",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M4",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M4",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M4",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M4",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M1",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M1",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M10",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M10",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M10",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M11",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M11",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M11",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB2",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB2",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB3",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB3",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R0",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R1",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    }
+  ]
+}

@@ -1,0 +1,715 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "Q0-Q1 differential pair",
+      "type": "substructure"
+    },
+    {
+      "id": "R1-R2 collector load resistors",
+      "type": "substructure"
+    },
+    {
+      "id": "R0-R3 emitter degeneration resistors",
+      "type": "substructure"
+    },
+    {
+      "id": "R4 emitter coupling resistor",
+      "type": "substructure"
+    },
+    {
+      "id": "VDD-VSS supply rails",
+      "type": "substructure"
+    },
+    {
+      "id": "Q0",
+      "type": "device"
+    },
+    {
+      "id": "Q1",
+      "type": "device"
+    },
+    {
+      "id": "R0",
+      "type": "device"
+    },
+    {
+      "id": "R1",
+      "type": "device"
+    },
+    {
+      "id": "R2",
+      "type": "device"
+    },
+    {
+      "id": "R3",
+      "type": "device"
+    },
+    {
+      "id": "R4",
+      "type": "device"
+    },
+    {
+      "id": "Area_Q0",
+      "type": "parameter"
+    },
+    {
+      "id": "Area_Q1",
+      "type": "parameter"
+    },
+    {
+      "id": "beta_Q0",
+      "type": "parameter"
+    },
+    {
+      "id": "beta_Q1",
+      "type": "parameter"
+    },
+    {
+      "id": "R0_value",
+      "type": "parameter"
+    },
+    {
+      "id": "R1_value",
+      "type": "parameter"
+    },
+    {
+      "id": "R2_value",
+      "type": "parameter"
+    },
+    {
+      "id": "R3_value",
+      "type": "parameter"
+    },
+    {
+      "id": "R4_value",
+      "type": "parameter"
+    },
+    {
+      "id": "VDD",
+      "type": "parameter"
+    },
+    {
+      "id": "VSS",
+      "type": "parameter"
+    },
+    {
+      "id": "Gain-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Gain-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Gain-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Power-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Power-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Power-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Area_Q0-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "Area_Q0-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "Area_Q1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "Area_Q1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "beta_Q0-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "beta_Q0-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "beta_Q1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "beta_Q1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R0_value-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R0_value-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R1_value-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R1_value-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R2_value-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R2_value-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R3_value-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R3_value-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R4_value-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R4_value-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VDD-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VDD-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VSS-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VSS-inversely-proportional",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain-trade-off",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain-ambiguous",
+      "target": "Power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain-ambiguous",
+      "target": "CMRR-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR-trade-off",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR-ambiguous",
+      "target": "Power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Q0-Q1 differential pair",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "Q0-Q1 differential pair",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "Q0-Q1 differential pair",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "Q0-Q1 differential pair",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "R1-R2 collector load resistors",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "R1-R2 collector load resistors",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "R1-R2 collector load resistors",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-R3 emitter degeneration resistors",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-R3 emitter degeneration resistors",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-R3 emitter degeneration resistors",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-R3 emitter degeneration resistors",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "R4 emitter coupling resistor",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "R4 emitter coupling resistor",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD-VSS supply rails",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "Area_Q0",
+      "target": "Q0-Q1 differential pair",
+      "relation": "connects"
+    },
+    {
+      "source": "Area_Q1",
+      "target": "Q0-Q1 differential pair",
+      "relation": "connects"
+    },
+    {
+      "source": "beta_Q0",
+      "target": "Q0-Q1 differential pair",
+      "relation": "connects"
+    },
+    {
+      "source": "beta_Q1",
+      "target": "Q0-Q1 differential pair",
+      "relation": "connects"
+    },
+    {
+      "source": "R0_value",
+      "target": "R0-R3 emitter degeneration resistors",
+      "relation": "connects"
+    },
+    {
+      "source": "R3_value",
+      "target": "R0-R3 emitter degeneration resistors",
+      "relation": "connects"
+    },
+    {
+      "source": "R1_value",
+      "target": "R1-R2 collector load resistors",
+      "relation": "connects"
+    },
+    {
+      "source": "R2_value",
+      "target": "R1-R2 collector load resistors",
+      "relation": "connects"
+    },
+    {
+      "source": "R4_value",
+      "target": "R4 emitter coupling resistor",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD",
+      "target": "VDD-VSS supply rails",
+      "relation": "connects"
+    },
+    {
+      "source": "VSS",
+      "target": "VDD-VSS supply rails",
+      "relation": "connects"
+    },
+    {
+      "source": "Area_Q0-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Area_Q1-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Area_Q0-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Area_Q1-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Area_Q0-directly-proportional",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Area_Q1-directly-proportional",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "beta_Q0-directly-proportional",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "beta_Q1-directly-proportional",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "beta_Q0-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "beta_Q1-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R1_value-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R2_value-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R1_value-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R2_value-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R1_value-inversely-proportional",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R2_value-inversely-proportional",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R0_value-inversely-proportional",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R3_value-inversely-proportional",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R0_value-directly-proportional",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R3_value-directly-proportional",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R0_value-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R3_value-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R0_value-inversely-proportional",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R3_value-inversely-proportional",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R4_value-directly-proportional",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R4_value-inversely-proportional",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VSS-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Area_Q0",
+      "target": "Area_Q0-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Area_Q0",
+      "target": "Area_Q0-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Area_Q1",
+      "target": "Area_Q1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Area_Q1",
+      "target": "Area_Q1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "beta_Q0",
+      "target": "beta_Q0-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "beta_Q0",
+      "target": "beta_Q0-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "beta_Q1",
+      "target": "beta_Q1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "beta_Q1",
+      "target": "beta_Q1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R0_value",
+      "target": "R0_value-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R0_value",
+      "target": "R0_value-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R1_value",
+      "target": "R1_value-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R1_value",
+      "target": "R1_value-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R2_value",
+      "target": "R2_value-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R2_value",
+      "target": "R2_value-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R3_value",
+      "target": "R3_value-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R3_value",
+      "target": "R3_value-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R4_value",
+      "target": "R4_value-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R4_value",
+      "target": "R4_value-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD",
+      "target": "VDD-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD",
+      "target": "VDD-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VSS",
+      "target": "VSS-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VSS",
+      "target": "VSS-inversely-proportional",
+      "relation": "connects"
+    }
+  ]
+}

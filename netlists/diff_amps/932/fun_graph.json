@@ -1,0 +1,666 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "M12-M13 differential input pair",
+      "type": "substructure"
+    },
+    {
+      "id": "M14-M15-M16-M17-M18 tail current source and bias network",
+      "type": "substructure"
+    },
+    {
+      "id": "M10-M11 NMOS cascode/common-gate output devices",
+      "type": "substructure"
+    },
+    {
+      "id": "M2-M3 PMOS active load devices",
+      "type": "substructure"
+    },
+    {
+      "id": "M4-M5 PMOS current mirror / bias distribution",
+      "type": "substructure"
+    },
+    {
+      "id": "M6-M7-M8-M9 PMOS output stage / CMFB sensing branch",
+      "type": "substructure"
+    },
+    {
+      "id": "M0-M1 PMOS bias devices",
+      "type": "substructure"
+    },
+    {
+      "id": "W_M12",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M12",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M13",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M13",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M14",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M14",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M15",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M15",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M16",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M16",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M17",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M17",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M18",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M18",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M10",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M10",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M11",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M11",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M6",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M6",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M8",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M8",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M9",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M9",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "Itail",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain",
+      "target": "UGF",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Gain",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "UGF",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "CMRR",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "UGF",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "M12-M13 differential input pair",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M12-M13 differential input pair",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M12-M13 differential input pair",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M14-M15-M16-M17-M18 tail current source and bias network",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M14-M15-M16-M17-M18 tail current source and bias network",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M14-M15-M16-M17-M18 tail current source and bias network",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M10-M11 NMOS cascode/common-gate output devices",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M10-M11 NMOS cascode/common-gate output devices",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M3 PMOS active load devices",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M3 PMOS active load devices",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M4-M5 PMOS current mirror / bias distribution",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M4-M5 PMOS current mirror / bias distribution",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M6-M7-M8-M9 PMOS output stage / CMFB sensing branch",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M6-M7-M8-M9 PMOS output stage / CMFB sensing branch",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M6-M7-M8-M9 PMOS output stage / CMFB sensing branch",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "W_M12",
+      "target": "M12-M13 differential input pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M12",
+      "target": "M12-M13 differential input pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M13",
+      "target": "M12-M13 differential input pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M13",
+      "target": "M12-M13 differential input pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M14",
+      "target": "M14-M15-M16-M17-M18 tail current source and bias network",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M14",
+      "target": "M14-M15-M16-M17-M18 tail current source and bias network",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M15",
+      "target": "M14-M15-M16-M17-M18 tail current source and bias network",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M15",
+      "target": "M14-M15-M16-M17-M18 tail current source and bias network",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M16",
+      "target": "M14-M15-M16-M17-M18 tail current source and bias network",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M16",
+      "target": "M14-M15-M16-M17-M18 tail current source and bias network",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M17",
+      "target": "M14-M15-M16-M17-M18 tail current source and bias network",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M17",
+      "target": "M14-M15-M16-M17-M18 tail current source and bias network",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M18",
+      "target": "M14-M15-M16-M17-M18 tail current source and bias network",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M18",
+      "target": "M14-M15-M16-M17-M18 tail current source and bias network",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M10",
+      "target": "M10-M11 NMOS cascode/common-gate output devices",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M10",
+      "target": "M10-M11 NMOS cascode/common-gate output devices",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M11",
+      "target": "M10-M11 NMOS cascode/common-gate output devices",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M11",
+      "target": "M10-M11 NMOS cascode/common-gate output devices",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M2",
+      "target": "M2-M3 PMOS active load devices",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M2",
+      "target": "M2-M3 PMOS active load devices",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M3",
+      "target": "M2-M3 PMOS active load devices",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M3",
+      "target": "M2-M3 PMOS active load devices",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M4",
+      "target": "M4-M5 PMOS current mirror / bias distribution",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M4",
+      "target": "M4-M5 PMOS current mirror / bias distribution",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M5",
+      "target": "M4-M5 PMOS current mirror / bias distribution",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M5",
+      "target": "M4-M5 PMOS current mirror / bias distribution",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M6",
+      "target": "M6-M7-M8-M9 PMOS output stage / CMFB sensing branch",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M6",
+      "target": "M6-M7-M8-M9 PMOS output stage / CMFB sensing branch",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M7",
+      "target": "M6-M7-M8-M9 PMOS output stage / CMFB sensing branch",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M7",
+      "target": "M6-M7-M8-M9 PMOS output stage / CMFB sensing branch",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M8",
+      "target": "M6-M7-M8-M9 PMOS output stage / CMFB sensing branch",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M8",
+      "target": "M6-M7-M8-M9 PMOS output stage / CMFB sensing branch",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M9",
+      "target": "M6-M7-M8-M9 PMOS output stage / CMFB sensing branch",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M9",
+      "target": "M6-M7-M8-M9 PMOS output stage / CMFB sensing branch",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M0",
+      "target": "M0-M1 PMOS bias devices",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M0",
+      "target": "M0-M1 PMOS bias devices",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M1",
+      "target": "M0-M1 PMOS bias devices",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M1",
+      "target": "M0-M1 PMOS bias devices",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "Itail",
+      "target": "M14-M15-M16-M17-M18 tail current source and bias network",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M12",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M12",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M12",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M13",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M13",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M13",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M12",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M12",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M13",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M13",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "Itail",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "Itail",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "Itail",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "L_M14",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M15",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M16",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M17",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M18",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M10",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M11",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M10",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M11",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M2",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M3",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M2",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M3",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M6",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M7",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M8",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M9",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M6",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M9",
+      "target": "Power",
+      "relation": "directly-proportional"
+    }
+  ]
+}

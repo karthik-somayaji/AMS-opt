@@ -1,0 +1,219 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "M0-M1 differential pair",
+      "type": "substructure"
+    },
+    {
+      "id": "R0-R1 load resistors",
+      "type": "substructure"
+    },
+    {
+      "id": "W_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "R0",
+      "type": "parameter"
+    },
+    {
+      "id": "R1",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain",
+      "target": "UGF",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Gain",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "UGF",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "UGF",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "M0-M1 differential pair",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M1 differential pair",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M1 differential pair",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "R0-R1 load resistors",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "R0-R1 load resistors",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "R0-R1 load resistors",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "R0-R1 load resistors",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "W_M0",
+      "target": "M0-M1 differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M0",
+      "target": "M0-M1 differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M1",
+      "target": "M0-M1 differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M1",
+      "target": "M0-M1 differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R0",
+      "target": "R0-R1 load resistors",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R1",
+      "target": "R0-R1 load resistors",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M1",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M1",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R0",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R0",
+      "target": "Power",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R1",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R1",
+      "target": "Power",
+      "relation": "inversely-proportional"
+    }
+  ]
+}

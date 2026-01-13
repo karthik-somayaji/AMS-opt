@@ -1,0 +1,388 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "Q0-Q1 differential BJT pair",
+      "type": "substructure"
+    },
+    {
+      "id": "R0 tail emitter resistor",
+      "type": "substructure"
+    },
+    {
+      "id": "R0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Q0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Q1",
+      "type": "parameter"
+    },
+    {
+      "id": "VIN1",
+      "type": "parameter"
+    },
+    {
+      "id": "VIN2",
+      "type": "parameter"
+    },
+    {
+      "id": "Gain-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Gain-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Gain-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Power-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Power-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Power-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "R0-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R0-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Q0-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Q0-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Q1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Q1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VIN1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VIN1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VIN2-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VIN2-inversely-proportional",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain-trade-off",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain-trade-off",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR-trade-off",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR-trade-off",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR-trade-off",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF-trade-off",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Q0-Q1 differential BJT pair",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "Q0-Q1 differential BJT pair",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "Q0-Q1 differential BJT pair",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "Q0-Q1 differential BJT pair",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "R0 tail emitter resistor",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "R0 tail emitter resistor",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "R0 tail emitter resistor",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "R0 tail emitter resistor",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "R0",
+      "target": "R0 tail emitter resistor",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Q0",
+      "target": "Q0-Q1 differential BJT pair",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Q1",
+      "target": "Q0-Q1 differential BJT pair",
+      "relation": "connects"
+    },
+    {
+      "source": "VIN1",
+      "target": "Q0-Q1 differential BJT pair",
+      "relation": "connects"
+    },
+    {
+      "source": "VIN2",
+      "target": "Q0-Q1 differential BJT pair",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-inversely-proportional",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-inversely-proportional",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Q0-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Q0-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Q0-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Q1-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Q1-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Q1-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R0",
+      "target": "R0-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R0",
+      "target": "R0-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Q0",
+      "target": "W_Q0-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Q0",
+      "target": "W_Q0-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Q1",
+      "target": "W_Q1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Q1",
+      "target": "W_Q1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VIN1",
+      "target": "VIN1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VIN1",
+      "target": "VIN1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VIN2",
+      "target": "VIN2-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VIN2",
+      "target": "VIN2-inversely-proportional",
+      "relation": "connects"
+    }
+  ]
+}

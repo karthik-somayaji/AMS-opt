@@ -1,0 +1,92 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "dev:R0",
+      "type": "device",
+      "device_type": "resistor"
+    },
+    {
+      "id": "net:net5",
+      "type": "net"
+    },
+    {
+      "id": "net:VSS",
+      "type": "net"
+    },
+    {
+      "id": "dev:Q1",
+      "type": "device",
+      "device_type": "npn"
+    },
+    {
+      "id": "net:IOUT2",
+      "type": "net"
+    },
+    {
+      "id": "net:VIN2",
+      "type": "net"
+    },
+    {
+      "id": "net:0",
+      "type": "net"
+    },
+    {
+      "id": "dev:Q0",
+      "type": "device",
+      "device_type": "npn"
+    },
+    {
+      "id": "net:IOUT1",
+      "type": "net"
+    },
+    {
+      "id": "net:VIN1",
+      "type": "net"
+    }
+  ],
+  "links": [
+    {
+      "source": "dev:R0",
+      "target": "net:net5"
+    },
+    {
+      "source": "dev:R0",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:Q1",
+      "target": "net:IOUT2"
+    },
+    {
+      "source": "dev:Q1",
+      "target": "net:VIN2"
+    },
+    {
+      "source": "dev:Q1",
+      "target": "net:net5"
+    },
+    {
+      "source": "dev:Q1",
+      "target": "net:0"
+    },
+    {
+      "source": "dev:Q0",
+      "target": "net:IOUT1"
+    },
+    {
+      "source": "dev:Q0",
+      "target": "net:VIN1"
+    },
+    {
+      "source": "dev:Q0",
+      "target": "net:net5"
+    },
+    {
+      "source": "dev:Q0",
+      "target": "net:0"
+    }
+  ]
+}
