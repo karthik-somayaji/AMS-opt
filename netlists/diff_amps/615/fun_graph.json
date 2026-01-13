@@ -1,0 +1,181 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "M0-M1 NMOS input pair (shared tail bias at IB1)",
+      "type": "substructure"
+    },
+    {
+      "id": "W_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "IB1",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain",
+      "target": "UGF",
+      "relation": "trade-off"
+    },
+    {
+      "source": "UGF",
+      "target": "Power",
+      "relation": "trade-off"
+    },
+    {
+      "source": "CMRR",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "UGF",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "M0-M1 NMOS input pair (shared tail bias at IB1)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M1 NMOS input pair (shared tail bias at IB1)",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M1 NMOS input pair (shared tail bias at IB1)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M1 NMOS input pair (shared tail bias at IB1)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "W_M0",
+      "target": "M0-M1 NMOS input pair (shared tail bias at IB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M0",
+      "target": "M0-M1 NMOS input pair (shared tail bias at IB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M1",
+      "target": "M0-M1 NMOS input pair (shared tail bias at IB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M1",
+      "target": "M0-M1 NMOS input pair (shared tail bias at IB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IB1",
+      "target": "M0-M1 NMOS input pair (shared tail bias at IB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M1",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M1",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M1",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Gain",
+      "relation": "inversely-proportional"
+    }
+  ]
+}

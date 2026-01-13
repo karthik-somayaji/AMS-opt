@@ -1,0 +1,409 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "Q0-Q1 differential pair",
+      "type": "substructure"
+    },
+    {
+      "id": "R1-R2 collector load resistors",
+      "type": "substructure"
+    },
+    {
+      "id": "R0-R3 emitter degeneration resistors",
+      "type": "substructure"
+    },
+    {
+      "id": "R4 emitter coupling resistor",
+      "type": "substructure"
+    },
+    {
+      "id": "VDD-VSS supply rails",
+      "type": "substructure"
+    },
+    {
+      "id": "Q0",
+      "type": "device"
+    },
+    {
+      "id": "Q1",
+      "type": "device"
+    },
+    {
+      "id": "R0",
+      "type": "device"
+    },
+    {
+      "id": "R1",
+      "type": "device"
+    },
+    {
+      "id": "R2",
+      "type": "device"
+    },
+    {
+      "id": "R3",
+      "type": "device"
+    },
+    {
+      "id": "R4",
+      "type": "device"
+    },
+    {
+      "id": "Area_Q0",
+      "type": "parameter"
+    },
+    {
+      "id": "Area_Q1",
+      "type": "parameter"
+    },
+    {
+      "id": "beta_Q0",
+      "type": "parameter"
+    },
+    {
+      "id": "beta_Q1",
+      "type": "parameter"
+    },
+    {
+      "id": "R0_value",
+      "type": "parameter"
+    },
+    {
+      "id": "R1_value",
+      "type": "parameter"
+    },
+    {
+      "id": "R2_value",
+      "type": "parameter"
+    },
+    {
+      "id": "R3_value",
+      "type": "parameter"
+    },
+    {
+      "id": "R4_value",
+      "type": "parameter"
+    },
+    {
+      "id": "VDD",
+      "type": "parameter"
+    },
+    {
+      "id": "VSS",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain",
+      "target": "UGF",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Gain",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "Gain",
+      "target": "CMRR",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "UGF",
+      "relation": "trade-off"
+    },
+    {
+      "source": "CMRR",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "UGF",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "Q0-Q1 differential pair",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "Q0-Q1 differential pair",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "Q0-Q1 differential pair",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "Q0-Q1 differential pair",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "R1-R2 collector load resistors",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "R1-R2 collector load resistors",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "R1-R2 collector load resistors",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "R0-R3 emitter degeneration resistors",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "R0-R3 emitter degeneration resistors",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "R0-R3 emitter degeneration resistors",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "R0-R3 emitter degeneration resistors",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "R4 emitter coupling resistor",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "R4 emitter coupling resistor",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "VDD-VSS supply rails",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "Area_Q0",
+      "target": "Q0-Q1 differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "Area_Q1",
+      "target": "Q0-Q1 differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "beta_Q0",
+      "target": "Q0-Q1 differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "beta_Q1",
+      "target": "Q0-Q1 differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R0_value",
+      "target": "R0-R3 emitter degeneration resistors",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R3_value",
+      "target": "R0-R3 emitter degeneration resistors",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R1_value",
+      "target": "R1-R2 collector load resistors",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R2_value",
+      "target": "R1-R2 collector load resistors",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R4_value",
+      "target": "R4 emitter coupling resistor",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VDD",
+      "target": "VDD-VSS supply rails",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VSS",
+      "target": "VDD-VSS supply rails",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "Area_Q0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "Area_Q1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "Area_Q0",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "Area_Q1",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "Area_Q0",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "Area_Q1",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "beta_Q0",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "beta_Q1",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "beta_Q0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "beta_Q1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R1_value",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R2_value",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R1_value",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R2_value",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R1_value",
+      "target": "Power",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R2_value",
+      "target": "Power",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R0_value",
+      "target": "Gain",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R3_value",
+      "target": "Gain",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R0_value",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R3_value",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R0_value",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R3_value",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R0_value",
+      "target": "Power",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R3_value",
+      "target": "Power",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R4_value",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R4_value",
+      "target": "Gain",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "VDD",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "VSS",
+      "target": "Power",
+      "relation": "directly-proportional"
+    }
+  ]
+}

@@ -1,0 +1,401 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "Q0-Q1 PNP differential pair",
+      "type": "substructure"
+    },
+    {
+      "id": "Q2-Q3 PNP current mirror active load",
+      "type": "substructure"
+    },
+    {
+      "id": "Q4-Q5 NPN current mirror / tail current sink",
+      "type": "substructure"
+    },
+    {
+      "id": "IB1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Q0",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Q0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Q1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Q1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Q2",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Q2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Q3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Q3",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Q4",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Q4",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Q5",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Q5",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain",
+      "target": "UGF",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Gain",
+      "target": "Power",
+      "relation": "trade-off"
+    },
+    {
+      "source": "UGF",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "CMRR",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "UGF",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "Q0-Q1 PNP differential pair",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "Q0-Q1 PNP differential pair",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "Q0-Q1 PNP differential pair",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "Q0-Q1 PNP differential pair",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "Q2-Q3 PNP current mirror active load",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "Q2-Q3 PNP current mirror active load",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "Q2-Q3 PNP current mirror active load",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "Q4-Q5 NPN current mirror / tail current sink",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "Q4-Q5 NPN current mirror / tail current sink",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "Q4-Q5 NPN current mirror / tail current sink",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "Q4-Q5 NPN current mirror / tail current sink",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "IB1",
+      "target": "Q2-Q3 PNP current mirror active load",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IB1",
+      "target": "Q0-Q1 PNP differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IB1",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Gain",
+      "relation": "trade-off"
+    },
+    {
+      "source": "IB1",
+      "target": "CMRR",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "W_Q0",
+      "target": "Q0-Q1 PNP differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_Q0",
+      "target": "Q0-Q1 PNP differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_Q1",
+      "target": "Q0-Q1 PNP differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_Q1",
+      "target": "Q0-Q1 PNP differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_Q2",
+      "target": "Q2-Q3 PNP current mirror active load",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_Q2",
+      "target": "Q2-Q3 PNP current mirror active load",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_Q3",
+      "target": "Q2-Q3 PNP current mirror active load",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_Q3",
+      "target": "Q2-Q3 PNP current mirror active load",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_Q4",
+      "target": "Q4-Q5 NPN current mirror / tail current sink",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_Q4",
+      "target": "Q4-Q5 NPN current mirror / tail current sink",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_Q5",
+      "target": "Q4-Q5 NPN current mirror / tail current sink",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_Q5",
+      "target": "Q4-Q5 NPN current mirror / tail current sink",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_Q0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q0",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q0",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_Q0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_Q0",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_Q1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q1",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q1",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_Q1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_Q1",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_Q2",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q2",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_Q2",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_Q2",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_Q3",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q3",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_Q3",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_Q3",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_Q4",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q4",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q4",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_Q4",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_Q4",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_Q5",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q5",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_Q5",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_Q5",
+      "target": "CMRR",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_Q5",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    }
+  ]
+}

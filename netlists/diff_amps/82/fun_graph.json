@@ -1,0 +1,412 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "R0-R1 load resistors",
+      "type": "substructure"
+    },
+    {
+      "id": "M0-M5 differential input pair",
+      "type": "substructure"
+    },
+    {
+      "id": "M1-M2 cross-coupled gain cell",
+      "type": "substructure"
+    },
+    {
+      "id": "M3-M4 cross-coupled gain cell",
+      "type": "substructure"
+    },
+    {
+      "id": "IB1 bias current source",
+      "type": "substructure"
+    },
+    {
+      "id": "R0",
+      "type": "parameter"
+    },
+    {
+      "id": "R1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "IB1",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain",
+      "target": "UGF",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Gain",
+      "target": "Power",
+      "relation": "trade-off"
+    },
+    {
+      "source": "UGF",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "Gain",
+      "target": "CMRR",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "UGF",
+      "target": "CMRR",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "M0-M5 differential input pair",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M5 differential input pair",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M5 differential input pair",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "IB1 bias current source",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "IB1 bias current source",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "IB1 bias current source",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "R0-R1 load resistors",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "R0-R1 load resistors",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M1-M2 cross-coupled gain cell",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M1-M2 cross-coupled gain cell",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M3-M4 cross-coupled gain cell",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M3-M4 cross-coupled gain cell",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "R0",
+      "target": "R0-R1 load resistors",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R1",
+      "target": "R0-R1 load resistors",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M0",
+      "target": "M0-M5 differential input pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M0",
+      "target": "M0-M5 differential input pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M5",
+      "target": "M0-M5 differential input pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M5",
+      "target": "M0-M5 differential input pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M1",
+      "target": "M1-M2 cross-coupled gain cell",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M1",
+      "target": "M1-M2 cross-coupled gain cell",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M2",
+      "target": "M1-M2 cross-coupled gain cell",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M2",
+      "target": "M1-M2 cross-coupled gain cell",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M3",
+      "target": "M3-M4 cross-coupled gain cell",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M3",
+      "target": "M3-M4 cross-coupled gain cell",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M4",
+      "target": "M3-M4 cross-coupled gain cell",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M4",
+      "target": "M3-M4 cross-coupled gain cell",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IB1",
+      "target": "IB1 bias current source",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R0",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R1",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Gain",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M5",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M5",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M5",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M2",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M3",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M4",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M1",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M2",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M3",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M4",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M2",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M3",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M4",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M1",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M2",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M3",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M4",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    }
+  ]
+}

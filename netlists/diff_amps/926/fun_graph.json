@@ -1,0 +1,622 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "M3-M4 PMOS differential pair",
+      "type": "substructure"
+    },
+    {
+      "id": "M7-M8 NMOS tail current sources (bias VB2)",
+      "type": "substructure"
+    },
+    {
+      "id": "M1 PMOS bias current source (VCM1)",
+      "type": "substructure"
+    },
+    {
+      "id": "M2-M0 PMOS active loads / current sources (bias VB1)",
+      "type": "substructure"
+    },
+    {
+      "id": "M9-M5 NMOS common-source output devices",
+      "type": "substructure"
+    },
+    {
+      "id": "C1 compensation/load capacitor (net23-VOUT1)",
+      "type": "substructure"
+    },
+    {
+      "id": "C0 compensation/load capacitor (net12-VOUT2)",
+      "type": "substructure"
+    },
+    {
+      "id": "W_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M8",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M8",
+      "type": "parameter"
+    },
+    {
+      "id": "VB2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "VCM1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "VB1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M9",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M9",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "C1",
+      "type": "parameter"
+    },
+    {
+      "id": "C0",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain",
+      "target": "UGF",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Gain",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "UGF",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "CMRR",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "UGF",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "M3-M4 PMOS differential pair",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M3-M4 PMOS differential pair",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M3-M4 PMOS differential pair",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M3-M4 PMOS differential pair",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M7-M8 NMOS tail current sources (bias VB2)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M7-M8 NMOS tail current sources (bias VB2)",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M7-M8 NMOS tail current sources (bias VB2)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M7-M8 NMOS tail current sources (bias VB2)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M1 PMOS bias current source (VCM1)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M1 PMOS bias current source (VCM1)",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M1 PMOS bias current source (VCM1)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M1 PMOS bias current source (VCM1)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M0 PMOS active loads / current sources (bias VB1)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M0 PMOS active loads / current sources (bias VB1)",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M0 PMOS active loads / current sources (bias VB1)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M0 PMOS active loads / current sources (bias VB1)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M9-M5 NMOS common-source output devices",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M9-M5 NMOS common-source output devices",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M9-M5 NMOS common-source output devices",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "C1 compensation/load capacitor (net23-VOUT1)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "C1 compensation/load capacitor (net23-VOUT1)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "C0 compensation/load capacitor (net12-VOUT2)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "C0 compensation/load capacitor (net12-VOUT2)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "W_M3",
+      "target": "M3-M4 PMOS differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M3",
+      "target": "M3-M4 PMOS differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M4",
+      "target": "M3-M4 PMOS differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M4",
+      "target": "M3-M4 PMOS differential pair",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M7",
+      "target": "M7-M8 NMOS tail current sources (bias VB2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M7",
+      "target": "M7-M8 NMOS tail current sources (bias VB2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M8",
+      "target": "M7-M8 NMOS tail current sources (bias VB2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M8",
+      "target": "M7-M8 NMOS tail current sources (bias VB2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VB2",
+      "target": "M7-M8 NMOS tail current sources (bias VB2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M1",
+      "target": "M1 PMOS bias current source (VCM1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M1",
+      "target": "M1 PMOS bias current source (VCM1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VCM1",
+      "target": "M1 PMOS bias current source (VCM1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M2",
+      "target": "M2-M0 PMOS active loads / current sources (bias VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M2",
+      "target": "M2-M0 PMOS active loads / current sources (bias VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M0",
+      "target": "M2-M0 PMOS active loads / current sources (bias VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M0",
+      "target": "M2-M0 PMOS active loads / current sources (bias VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VB1",
+      "target": "M2-M0 PMOS active loads / current sources (bias VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M9",
+      "target": "M9-M5 NMOS common-source output devices",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M9",
+      "target": "M9-M5 NMOS common-source output devices",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M5",
+      "target": "M9-M5 NMOS common-source output devices",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M5",
+      "target": "M9-M5 NMOS common-source output devices",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "C1",
+      "target": "C1 compensation/load capacitor (net23-VOUT1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "C0",
+      "target": "C0 compensation/load capacitor (net12-VOUT2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M3",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M3",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M4",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M4",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M3",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M3",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M4",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M4",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M7",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M7",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M8",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M8",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M7",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M7",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M8",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M8",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "VB2",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "VB2",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "VB2",
+      "target": "Gain",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M1",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M1",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M1",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "VCM1",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M2",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M2",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M2",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M2",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "VB1",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "VB1",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M9",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M9",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M5",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M5",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M9",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M9",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M5",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M5",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "C1",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "C0",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    }
+  ]
+}
