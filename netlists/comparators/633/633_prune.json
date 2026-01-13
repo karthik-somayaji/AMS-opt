@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M10",
+    "reason": "M10 is a diode-connected NMOS tied to the IB1 node; if IB1 is provided as an external bias (current/voltage) at the top level, this device is redundant and can be removed without changing the small-signal signal path. Caveat: if this subcircuit relies on M10 to establish the on-chip bias reference for mirroring, removing it will break or destabilize the biasing.",
+    "impact_estimate": "Low if IB1 is externally driven; High if IB1 is internally generated using M10."
+  },
+  {
+    "component": "M4",
+    "reason": "M4 helps generate/set the cascode/bias node net19 from net18; since net19 is already tied to VB1 through R0, M4 can often be removed with minimal impact if VB1 is a stiff bias source. Caveat: removing M4 may reduce bias self-tracking with process/temperature and can affect startup or bias robustness depending on how VB1 is generated.",
+    "impact_estimate": "Low to Medium (depends on VB1 stiffness and whether net19 needs self-biasing)."
+  },
+  {
+    "component": "M2",
+    "reason": "M2 is a diode-connected PMOS (gate=drain=net18) that mainly provides a bias/bleeder path and can be removed if net18 is already well-defined by the remaining PMOS/NMOS network. Caveat: deleting it can shift the DC operating point at net18 (and thus gain/bandwidth) and may reduce startup stability if net18 would otherwise be weakly defined.",
+    "impact_estimate": "Medium (usually still functional, but DC bias point and speed/noise may shift)."
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M24",
+    "reason": "M24 is an NMOS pull-down on net042 that mainly helps clamp/discharge the internal latch node; the regenerative latch (M21/M22 plus the pMOS cross-coupled pair) can still resolve without this extra bleed if VLATCH1 timing provides sufficient reset. Caveat: removing it may worsen reset/initialization and increase metastability risk in some operating corners.",
+    "impact_estimate": "Low to Medium (mostly affects latch reset robustness and startup)."
+  },
+  {
+    "component": "M23",
+    "reason": "M23 is the symmetric pull-down on net038 (paired with M24) and similarly behaves as an auxiliary clamp rather than a core signal-path device; the latch can still function without it if other discharge paths exist. Caveat: removing it can increase asymmetry and make the latch more sensitive to leakage/mismatch, slightly shifting offset.",
+    "impact_estimate": "Low to Medium (reset/offset robustness may degrade)."
+  },
+  {
+    "component": "M5",
+    "reason": "M5 is a diode-connected NMOS (gate=drain=net11) that primarily clamps/defines an internal bias/helper node used by the precharge/discharge network; if net11 is already well-controlled by M3/M13/M14 activity, M5 can often be removed without breaking the main differential-to-latch function. Caveat: net11 may float or become more leakage-sensitive, affecting preamp operating point and speed.",
+    "impact_estimate": "Low to Medium (bias-node stability and speed may shift)."
+  }
+]

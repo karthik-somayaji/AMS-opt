@@ -1,0 +1,1773 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "Bandwidth",
+      "type": "performance"
+    },
+    {
+      "id": "Delay",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "Offset",
+      "type": "performance"
+    },
+    {
+      "id": "KickbackNoise",
+      "type": "performance"
+    },
+    {
+      "id": "OutputSwing",
+      "type": "performance"
+    },
+    {
+      "id": "Metastability",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "Clocked input differential pair (M4,M3) with tail switch (M7) and clocked node (net11)",
+      "type": "substructure"
+    },
+    {
+      "id": "Local cross-coupled regeneration (M5,M6) around net20/net23",
+      "type": "substructure"
+    },
+    {
+      "id": "Secondary cross-coupled regeneration / latch core (M21,M22) on net46/net49 with clocked enable (M24,M29,M28)",
+      "type": "substructure"
+    },
+    {
+      "id": "Output pull devices (M44,M43) and PMOS loads (M38,M37) to VOUT1/VOUT2",
+      "type": "substructure"
+    },
+    {
+      "id": "Bias network VB1/VB2 generating bias nodes (M47,M46,M45,M40,M39)",
+      "type": "substructure"
+    },
+    {
+      "id": "Clock distribution / precharge devices (M2,M12,M15,M24,M26,M28,M29)",
+      "type": "substructure"
+    },
+    {
+      "id": "W_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M6",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M6",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M21",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M21",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M22",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M22",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M24",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M24",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M28",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M28",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M29",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M29",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M43",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M43",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M44",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M44",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M37",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M37",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M38",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M38",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M45",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M45",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M46",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M46",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M47",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M47",
+      "type": "parameter"
+    },
+    {
+      "id": "VIN1",
+      "type": "parameter"
+    },
+    {
+      "id": "VIN2",
+      "type": "parameter"
+    },
+    {
+      "id": "VCLK1",
+      "type": "parameter"
+    },
+    {
+      "id": "VCLK2",
+      "type": "parameter"
+    },
+    {
+      "id": "VB1",
+      "type": "parameter"
+    },
+    {
+      "id": "VB2",
+      "type": "parameter"
+    },
+    {
+      "id": "VDD",
+      "type": "parameter"
+    },
+    {
+      "id": "VSS",
+      "type": "parameter"
+    },
+    {
+      "id": "Gain-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Gain-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Gain-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Bandwidth-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Bandwidth-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Bandwidth-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Delay-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Delay-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Delay-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Power-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Power-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Power-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Offset-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Offset-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Offset-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "KickbackNoise-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "KickbackNoise-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "KickbackNoise-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "OutputSwing-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "OutputSwing-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "OutputSwing-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Metastability-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Metastability-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Metastability-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "W_M3-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M4-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M4-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M4-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M4-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M7-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M7-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M7-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M7-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M6-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M6-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M6-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M6-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M21-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M21-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M21-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M21-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M22-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M22-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M22-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M22-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M24-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M24-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M24-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M24-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M28-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M28-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M28-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M28-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M29-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M29-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M29-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M29-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M43-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M43-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M43-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M43-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M44-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M44-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M44-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M44-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M37-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M37-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M37-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M37-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M38-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M38-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M38-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M38-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M45-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M45-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M45-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M45-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M46-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M46-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M46-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M46-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M47-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M47-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M47-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M47-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VIN1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VIN1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VIN2-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VIN2-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VCLK1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VCLK1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VCLK2-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VCLK2-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VB1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VB1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VB2-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VB2-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VDD-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VDD-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VSS-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VSS-inversely-proportional",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain-trade-off",
+      "target": "Bandwidth-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain-trade-off",
+      "target": "Delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Power-trade-off",
+      "target": "Delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Power-trade-off",
+      "target": "Bandwidth-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Delay-trade-off",
+      "target": "Metastability-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Offset-trade-off",
+      "target": "CMRR-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "KickbackNoise-directly-proportional",
+      "target": "Offset-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain-directly-proportional",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "OutputSwing-ambiguous",
+      "target": "Gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Clocked input differential pair (M4,M3) with tail switch (M7) and clocked node (net11)",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "Clocked input differential pair (M4,M3) with tail switch (M7) and clocked node (net11)",
+      "target": "Offset",
+      "relation": "connects"
+    },
+    {
+      "source": "Clocked input differential pair (M4,M3) with tail switch (M7) and clocked node (net11)",
+      "target": "KickbackNoise",
+      "relation": "connects"
+    },
+    {
+      "source": "Clocked input differential pair (M4,M3) with tail switch (M7) and clocked node (net11)",
+      "target": "Bandwidth",
+      "relation": "connects"
+    },
+    {
+      "source": "Local cross-coupled regeneration (M5,M6) around net20/net23",
+      "target": "Delay",
+      "relation": "connects"
+    },
+    {
+      "source": "Local cross-coupled regeneration (M5,M6) around net20/net23",
+      "target": "Metastability",
+      "relation": "connects"
+    },
+    {
+      "source": "Local cross-coupled regeneration (M5,M6) around net20/net23",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "Secondary cross-coupled regeneration / latch core (M21,M22) on net46/net49 with clocked enable (M24,M29,M28)",
+      "target": "Delay",
+      "relation": "connects"
+    },
+    {
+      "source": "Secondary cross-coupled regeneration / latch core (M21,M22) on net46/net49 with clocked enable (M24,M29,M28)",
+      "target": "Metastability",
+      "relation": "connects"
+    },
+    {
+      "source": "Secondary cross-coupled regeneration / latch core (M21,M22) on net46/net49 with clocked enable (M24,M29,M28)",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "Secondary cross-coupled regeneration / latch core (M21,M22) on net46/net49 with clocked enable (M24,M29,M28)",
+      "target": "KickbackNoise",
+      "relation": "connects"
+    },
+    {
+      "source": "Output pull devices (M44,M43) and PMOS loads (M38,M37) to VOUT1/VOUT2",
+      "target": "OutputSwing",
+      "relation": "connects"
+    },
+    {
+      "source": "Output pull devices (M44,M43) and PMOS loads (M38,M37) to VOUT1/VOUT2",
+      "target": "Delay",
+      "relation": "connects"
+    },
+    {
+      "source": "Output pull devices (M44,M43) and PMOS loads (M38,M37) to VOUT1/VOUT2",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "Bias network VB1/VB2 generating bias nodes (M47,M46,M45,M40,M39)",
+      "target": "Offset",
+      "relation": "connects"
+    },
+    {
+      "source": "Bias network VB1/VB2 generating bias nodes (M47,M46,M45,M40,M39)",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "Bias network VB1/VB2 generating bias nodes (M47,M46,M45,M40,M39)",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "Clock distribution / precharge devices (M2,M12,M15,M24,M26,M28,M29)",
+      "target": "Delay",
+      "relation": "connects"
+    },
+    {
+      "source": "Clock distribution / precharge devices (M2,M12,M15,M24,M26,M28,M29)",
+      "target": "KickbackNoise",
+      "relation": "connects"
+    },
+    {
+      "source": "Clock distribution / precharge devices (M2,M12,M15,M24,M26,M28,M29)",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "Clocked input differential pair (M4,M3) with tail switch (M7) and clocked node (net11)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "Clocked input differential pair (M4,M3) with tail switch (M7) and clocked node (net11)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M4",
+      "target": "Clocked input differential pair (M4,M3) with tail switch (M7) and clocked node (net11)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M4",
+      "target": "Clocked input differential pair (M4,M3) with tail switch (M7) and clocked node (net11)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M7",
+      "target": "Clocked input differential pair (M4,M3) with tail switch (M7) and clocked node (net11)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M7",
+      "target": "Clocked input differential pair (M4,M3) with tail switch (M7) and clocked node (net11)",
+      "relation": "connects"
+    },
+    {
+      "source": "VIN1",
+      "target": "Clocked input differential pair (M4,M3) with tail switch (M7) and clocked node (net11)",
+      "relation": "connects"
+    },
+    {
+      "source": "VIN2",
+      "target": "Clocked input differential pair (M4,M3) with tail switch (M7) and clocked node (net11)",
+      "relation": "connects"
+    },
+    {
+      "source": "VCLK2",
+      "target": "Clocked input differential pair (M4,M3) with tail switch (M7) and clocked node (net11)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5",
+      "target": "Local cross-coupled regeneration (M5,M6) around net20/net23",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M5",
+      "target": "Local cross-coupled regeneration (M5,M6) around net20/net23",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M6",
+      "target": "Local cross-coupled regeneration (M5,M6) around net20/net23",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M6",
+      "target": "Local cross-coupled regeneration (M5,M6) around net20/net23",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M21",
+      "target": "Secondary cross-coupled regeneration / latch core (M21,M22) on net46/net49 with clocked enable (M24,M29,M28)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M21",
+      "target": "Secondary cross-coupled regeneration / latch core (M21,M22) on net46/net49 with clocked enable (M24,M29,M28)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M22",
+      "target": "Secondary cross-coupled regeneration / latch core (M21,M22) on net46/net49 with clocked enable (M24,M29,M28)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M22",
+      "target": "Secondary cross-coupled regeneration / latch core (M21,M22) on net46/net49 with clocked enable (M24,M29,M28)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M24",
+      "target": "Secondary cross-coupled regeneration / latch core (M21,M22) on net46/net49 with clocked enable (M24,M29,M28)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M24",
+      "target": "Secondary cross-coupled regeneration / latch core (M21,M22) on net46/net49 with clocked enable (M24,M29,M28)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M28",
+      "target": "Secondary cross-coupled regeneration / latch core (M21,M22) on net46/net49 with clocked enable (M24,M29,M28)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M28",
+      "target": "Secondary cross-coupled regeneration / latch core (M21,M22) on net46/net49 with clocked enable (M24,M29,M28)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M29",
+      "target": "Secondary cross-coupled regeneration / latch core (M21,M22) on net46/net49 with clocked enable (M24,M29,M28)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M29",
+      "target": "Secondary cross-coupled regeneration / latch core (M21,M22) on net46/net49 with clocked enable (M24,M29,M28)",
+      "relation": "connects"
+    },
+    {
+      "source": "VCLK1",
+      "target": "Secondary cross-coupled regeneration / latch core (M21,M22) on net46/net49 with clocked enable (M24,M29,M28)",
+      "relation": "connects"
+    },
+    {
+      "source": "VCLK2",
+      "target": "Secondary cross-coupled regeneration / latch core (M21,M22) on net46/net49 with clocked enable (M24,M29,M28)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M43",
+      "target": "Output pull devices (M44,M43) and PMOS loads (M38,M37) to VOUT1/VOUT2",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M43",
+      "target": "Output pull devices (M44,M43) and PMOS loads (M38,M37) to VOUT1/VOUT2",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M44",
+      "target": "Output pull devices (M44,M43) and PMOS loads (M38,M37) to VOUT1/VOUT2",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M44",
+      "target": "Output pull devices (M44,M43) and PMOS loads (M38,M37) to VOUT1/VOUT2",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M37",
+      "target": "Output pull devices (M44,M43) and PMOS loads (M38,M37) to VOUT1/VOUT2",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M37",
+      "target": "Output pull devices (M44,M43) and PMOS loads (M38,M37) to VOUT1/VOUT2",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M38",
+      "target": "Output pull devices (M44,M43) and PMOS loads (M38,M37) to VOUT1/VOUT2",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M38",
+      "target": "Output pull devices (M44,M43) and PMOS loads (M38,M37) to VOUT1/VOUT2",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M45",
+      "target": "Bias network VB1/VB2 generating bias nodes (M47,M46,M45,M40,M39)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M45",
+      "target": "Bias network VB1/VB2 generating bias nodes (M47,M46,M45,M40,M39)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M46",
+      "target": "Bias network VB1/VB2 generating bias nodes (M47,M46,M45,M40,M39)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M46",
+      "target": "Bias network VB1/VB2 generating bias nodes (M47,M46,M45,M40,M39)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M47",
+      "target": "Bias network VB1/VB2 generating bias nodes (M47,M46,M45,M40,M39)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M47",
+      "target": "Bias network VB1/VB2 generating bias nodes (M47,M46,M45,M40,M39)",
+      "relation": "connects"
+    },
+    {
+      "source": "VB1",
+      "target": "Bias network VB1/VB2 generating bias nodes (M47,M46,M45,M40,M39)",
+      "relation": "connects"
+    },
+    {
+      "source": "VB2",
+      "target": "Bias network VB1/VB2 generating bias nodes (M47,M46,M45,M40,M39)",
+      "relation": "connects"
+    },
+    {
+      "source": "VCLK1",
+      "target": "Clock distribution / precharge devices (M2,M12,M15,M24,M26,M28,M29)",
+      "relation": "connects"
+    },
+    {
+      "source": "VCLK2",
+      "target": "Clock distribution / precharge devices (M2,M12,M15,M24,M26,M28,M29)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M4-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3-directly-proportional",
+      "target": "KickbackNoise-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M4-directly-proportional",
+      "target": "KickbackNoise-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3-inversely-proportional",
+      "target": "Bandwidth-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M4-inversely-proportional",
+      "target": "Bandwidth-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M7-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M7-inversely-proportional",
+      "target": "Delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5-inversely-proportional",
+      "target": "Delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M6-inversely-proportional",
+      "target": "Delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M6-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5-inversely-proportional",
+      "target": "Metastability-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M6-inversely-proportional",
+      "target": "Metastability-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M21-inversely-proportional",
+      "target": "Delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M22-inversely-proportional",
+      "target": "Delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M21-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M22-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M21-inversely-proportional",
+      "target": "Metastability-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M22-inversely-proportional",
+      "target": "Metastability-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M37-directly-proportional",
+      "target": "OutputSwing-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M38-directly-proportional",
+      "target": "OutputSwing-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M43-inversely-proportional",
+      "target": "Delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M44-inversely-proportional",
+      "target": "Delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M37-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M38-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M43-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M44-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M46",
+      "target": "Offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M47",
+      "target": "Offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "VB1",
+      "target": "Power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "VB2",
+      "target": "Power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "VCLK1",
+      "target": "Delay-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "VCLK2",
+      "target": "Delay-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "VCLK1",
+      "target": "KickbackNoise-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "VCLK2",
+      "target": "KickbackNoise-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Bandwidth",
+      "target": "Bandwidth-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Bandwidth",
+      "target": "Bandwidth-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Bandwidth",
+      "target": "Bandwidth-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Delay",
+      "target": "Delay-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Delay",
+      "target": "Delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Delay",
+      "target": "Delay-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Offset",
+      "target": "Offset-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Offset",
+      "target": "Offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Offset",
+      "target": "Offset-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "KickbackNoise",
+      "target": "KickbackNoise-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "KickbackNoise",
+      "target": "KickbackNoise-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "KickbackNoise",
+      "target": "KickbackNoise-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "OutputSwing",
+      "target": "OutputSwing-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "OutputSwing",
+      "target": "OutputSwing-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "OutputSwing",
+      "target": "OutputSwing-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Metastability",
+      "target": "Metastability-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Metastability",
+      "target": "Metastability-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Metastability",
+      "target": "Metastability-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "W_M3-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "W_M3-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "L_M3-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "L_M3-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M4",
+      "target": "W_M4-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M4",
+      "target": "W_M4-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M4",
+      "target": "L_M4-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M4",
+      "target": "L_M4-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M7",
+      "target": "W_M7-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M7",
+      "target": "W_M7-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M7",
+      "target": "L_M7-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M7",
+      "target": "L_M7-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5",
+      "target": "W_M5-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5",
+      "target": "W_M5-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M5",
+      "target": "L_M5-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M5",
+      "target": "L_M5-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M6",
+      "target": "W_M6-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M6",
+      "target": "W_M6-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M6",
+      "target": "L_M6-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M6",
+      "target": "L_M6-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M21",
+      "target": "W_M21-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M21",
+      "target": "W_M21-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M21",
+      "target": "L_M21-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M21",
+      "target": "L_M21-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M22",
+      "target": "W_M22-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M22",
+      "target": "W_M22-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M22",
+      "target": "L_M22-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M22",
+      "target": "L_M22-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M24",
+      "target": "W_M24-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M24",
+      "target": "W_M24-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M24",
+      "target": "L_M24-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M24",
+      "target": "L_M24-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M28",
+      "target": "W_M28-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M28",
+      "target": "W_M28-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M28",
+      "target": "L_M28-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M28",
+      "target": "L_M28-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M29",
+      "target": "W_M29-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M29",
+      "target": "W_M29-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M29",
+      "target": "L_M29-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M29",
+      "target": "L_M29-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M43",
+      "target": "W_M43-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M43",
+      "target": "W_M43-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M43",
+      "target": "L_M43-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M43",
+      "target": "L_M43-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M44",
+      "target": "W_M44-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M44",
+      "target": "W_M44-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M44",
+      "target": "L_M44-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M44",
+      "target": "L_M44-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M37",
+      "target": "W_M37-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M37",
+      "target": "W_M37-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M37",
+      "target": "L_M37-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M37",
+      "target": "L_M37-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M38",
+      "target": "W_M38-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M38",
+      "target": "W_M38-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M38",
+      "target": "L_M38-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M38",
+      "target": "L_M38-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M45",
+      "target": "W_M45-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M45",
+      "target": "W_M45-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M45",
+      "target": "L_M45-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M45",
+      "target": "L_M45-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M46",
+      "target": "W_M46-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M46",
+      "target": "W_M46-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M46",
+      "target": "L_M46-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M46",
+      "target": "L_M46-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M47",
+      "target": "W_M47-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M47",
+      "target": "W_M47-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M47",
+      "target": "L_M47-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M47",
+      "target": "L_M47-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VIN1",
+      "target": "VIN1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VIN1",
+      "target": "VIN1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VIN2",
+      "target": "VIN2-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VIN2",
+      "target": "VIN2-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VCLK1",
+      "target": "VCLK1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VCLK1",
+      "target": "VCLK1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VCLK2",
+      "target": "VCLK2-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VCLK2",
+      "target": "VCLK2-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB1",
+      "target": "VB1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB1",
+      "target": "VB1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB2",
+      "target": "VB2-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB2",
+      "target": "VB2-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD",
+      "target": "VDD-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD",
+      "target": "VDD-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VSS",
+      "target": "VSS-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VSS",
+      "target": "VSS-inversely-proportional",
+      "relation": "connects"
+    }
+  ]
+}

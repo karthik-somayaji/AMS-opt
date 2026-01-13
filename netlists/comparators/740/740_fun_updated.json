@@ -1,0 +1,1329 @@
+{
+  "nodes": [
+    {
+      "id": "DC gain",
+      "type": "performance"
+    },
+    {
+      "id": "Bandwidth",
+      "type": "performance"
+    },
+    {
+      "id": "Propagation delay",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "Input-referred noise",
+      "type": "performance"
+    },
+    {
+      "id": "Input offset",
+      "type": "performance"
+    },
+    {
+      "id": "Slew rate",
+      "type": "performance"
+    },
+    {
+      "id": "Output swing",
+      "type": "performance"
+    },
+    {
+      "id": "Input capacitance",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "Kickback noise",
+      "type": "performance"
+    },
+    {
+      "id": "Cross-coupled PMOS latch (M3-M4-M14-M15)",
+      "type": "substructure"
+    },
+    {
+      "id": "NMOS input compare branch 1 (M10-M11-M9)",
+      "type": "substructure"
+    },
+    {
+      "id": "NMOS input compare branch 2 (M16-M17-M12)",
+      "type": "substructure"
+    },
+    {
+      "id": "NMOS latch gating / evaluation (M5-M13)",
+      "type": "substructure"
+    },
+    {
+      "id": "VLATCH1 control",
+      "type": "parameter"
+    },
+    {
+      "id": "VDD",
+      "type": "parameter"
+    },
+    {
+      "id": "VREF1",
+      "type": "parameter"
+    },
+    {
+      "id": "VREF2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M14",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M14",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M15",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M15",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M13",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M13",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M9",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M9",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M12",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M12",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M10",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M10",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M11",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M11",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M16",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M16",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M17",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M17",
+      "type": "parameter"
+    },
+    {
+      "id": "DC gain-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "DC gain-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "DC gain-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Bandwidth-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Bandwidth-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Bandwidth-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Propagation delay-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Propagation delay-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Propagation delay-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Power-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Power-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Power-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Input-referred noise-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Input-referred noise-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Input-referred noise-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Input offset-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Input offset-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Input offset-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Slew rate-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Slew rate-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Slew rate-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Output swing-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Output swing-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Output swing-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Input capacitance-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Input capacitance-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Input capacitance-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Kickback noise-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Kickback noise-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Kickback noise-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "VLATCH1 control-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VLATCH1 control-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VDD-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VDD-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VREF1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VREF1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VREF2-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VREF2-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M4-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M4-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M4-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M4-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M14-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M14-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M14-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M14-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M15-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M15-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M15-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M15-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M13-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M13-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M13-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M13-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M9-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M9-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M9-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M9-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M12-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M12-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M12-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M12-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M10-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M10-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M10-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M10-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M11-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M11-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M11-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M11-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M16-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M16-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M16-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M16-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M17-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M17-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M17-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M17-inversely-proportional",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "DC gain-trade-off",
+      "target": "Bandwidth-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Power-trade-off",
+      "target": "Propagation delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Power-trade-off",
+      "target": "Input-referred noise-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Input capacitance-directly-proportional",
+      "target": "Propagation delay-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Slew rate-trade-off",
+      "target": "Propagation delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Bandwidth-trade-off",
+      "target": "Propagation delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR-trade-off",
+      "target": "Input offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Kickback noise-directly-proportional",
+      "target": "Input offset-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Kickback noise-directly-proportional",
+      "target": "Input-referred noise-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Output swing-ambiguous",
+      "target": "Propagation delay-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Cross-coupled PMOS latch (M3-M4-M14-M15)",
+      "target": "Propagation delay",
+      "relation": "connects"
+    },
+    {
+      "source": "Cross-coupled PMOS latch (M3-M4-M14-M15)",
+      "target": "Slew rate",
+      "relation": "connects"
+    },
+    {
+      "source": "Cross-coupled PMOS latch (M3-M4-M14-M15)",
+      "target": "Output swing",
+      "relation": "connects"
+    },
+    {
+      "source": "Cross-coupled PMOS latch (M3-M4-M14-M15)",
+      "target": "Kickback noise",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS input compare branch 1 (M10-M11-M9)",
+      "target": "Input offset",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS input compare branch 1 (M10-M11-M9)",
+      "target": "Input-referred noise",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS input compare branch 1 (M10-M11-M9)",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS input compare branch 1 (M10-M11-M9)",
+      "target": "Kickback noise",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS input compare branch 1 (M10-M11-M9)",
+      "target": "Bandwidth",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS input compare branch 2 (M16-M17-M12)",
+      "target": "Input offset",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS input compare branch 2 (M16-M17-M12)",
+      "target": "Input-referred noise",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS input compare branch 2 (M16-M17-M12)",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS input compare branch 2 (M16-M17-M12)",
+      "target": "Kickback noise",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS input compare branch 2 (M16-M17-M12)",
+      "target": "Bandwidth",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS latch gating / evaluation (M5-M13)",
+      "target": "Propagation delay",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS latch gating / evaluation (M5-M13)",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS latch gating / evaluation (M5-M13)",
+      "target": "Kickback noise",
+      "relation": "connects"
+    },
+    {
+      "source": "VLATCH1 control",
+      "target": "NMOS latch gating / evaluation (M5-M13)",
+      "relation": "connects"
+    },
+    {
+      "source": "VLATCH1 control",
+      "target": "Cross-coupled PMOS latch (M3-M4-M14-M15)",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD",
+      "target": "Cross-coupled PMOS latch (M3-M4-M14-M15)",
+      "relation": "connects"
+    },
+    {
+      "source": "VREF1",
+      "target": "NMOS input compare branch 1 (M10-M11-M9)",
+      "relation": "connects"
+    },
+    {
+      "source": "VREF2",
+      "target": "NMOS input compare branch 2 (M16-M17-M12)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "Cross-coupled PMOS latch (M3-M4-M14-M15)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "Cross-coupled PMOS latch (M3-M4-M14-M15)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M4",
+      "target": "Cross-coupled PMOS latch (M3-M4-M14-M15)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M4",
+      "target": "Cross-coupled PMOS latch (M3-M4-M14-M15)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M14",
+      "target": "Cross-coupled PMOS latch (M3-M4-M14-M15)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M14",
+      "target": "Cross-coupled PMOS latch (M3-M4-M14-M15)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M15",
+      "target": "Cross-coupled PMOS latch (M3-M4-M14-M15)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M15",
+      "target": "Cross-coupled PMOS latch (M3-M4-M14-M15)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5",
+      "target": "NMOS latch gating / evaluation (M5-M13)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M5",
+      "target": "NMOS latch gating / evaluation (M5-M13)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M13",
+      "target": "NMOS latch gating / evaluation (M5-M13)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M13",
+      "target": "NMOS latch gating / evaluation (M5-M13)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M9",
+      "target": "NMOS input compare branch 1 (M10-M11-M9)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M9",
+      "target": "NMOS input compare branch 1 (M10-M11-M9)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M10",
+      "target": "NMOS input compare branch 1 (M10-M11-M9)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M10",
+      "target": "NMOS input compare branch 1 (M10-M11-M9)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M11",
+      "target": "NMOS input compare branch 1 (M10-M11-M9)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11",
+      "target": "NMOS input compare branch 1 (M10-M11-M9)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M12",
+      "target": "NMOS input compare branch 2 (M16-M17-M12)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M12",
+      "target": "NMOS input compare branch 2 (M16-M17-M12)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M16",
+      "target": "NMOS input compare branch 2 (M16-M17-M12)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M16",
+      "target": "NMOS input compare branch 2 (M16-M17-M12)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M17",
+      "target": "NMOS input compare branch 2 (M16-M17-M12)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M17",
+      "target": "NMOS input compare branch 2 (M16-M17-M12)",
+      "relation": "connects"
+    },
+    {
+      "source": "VLATCH1 control-inversely-proportional",
+      "target": "Propagation delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "VLATCH1 control-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VLATCH1 control-directly-proportional",
+      "target": "Kickback noise-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M14-inversely-proportional",
+      "target": "Propagation delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M14-directly-proportional",
+      "target": "Slew rate-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M14-directly-proportional",
+      "target": "Kickback noise-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M11-directly-proportional",
+      "target": "Input capacitance-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M11-inversely-proportional",
+      "target": "Input-referred noise-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M11-inversely-proportional",
+      "target": "Input offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11-directly-proportional",
+      "target": "DC gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11-inversely-proportional",
+      "target": "Bandwidth-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD-directly-proportional",
+      "target": "Output swing-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD",
+      "target": "Propagation delay-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "DC gain",
+      "target": "DC gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "DC gain",
+      "target": "DC gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "DC gain",
+      "target": "DC gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Bandwidth",
+      "target": "Bandwidth-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Bandwidth",
+      "target": "Bandwidth-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Bandwidth",
+      "target": "Bandwidth-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Propagation delay",
+      "target": "Propagation delay-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Propagation delay",
+      "target": "Propagation delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Propagation delay",
+      "target": "Propagation delay-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Input-referred noise",
+      "target": "Input-referred noise-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Input-referred noise",
+      "target": "Input-referred noise-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Input-referred noise",
+      "target": "Input-referred noise-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Input offset",
+      "target": "Input offset-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Input offset",
+      "target": "Input offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Input offset",
+      "target": "Input offset-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Slew rate",
+      "target": "Slew rate-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Slew rate",
+      "target": "Slew rate-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Slew rate",
+      "target": "Slew rate-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Output swing",
+      "target": "Output swing-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Output swing",
+      "target": "Output swing-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Output swing",
+      "target": "Output swing-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Input capacitance",
+      "target": "Input capacitance-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Input capacitance",
+      "target": "Input capacitance-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Input capacitance",
+      "target": "Input capacitance-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Kickback noise",
+      "target": "Kickback noise-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Kickback noise",
+      "target": "Kickback noise-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Kickback noise",
+      "target": "Kickback noise-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VLATCH1 control",
+      "target": "VLATCH1 control-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VLATCH1 control",
+      "target": "VLATCH1 control-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD",
+      "target": "VDD-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD",
+      "target": "VDD-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VREF1",
+      "target": "VREF1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VREF1",
+      "target": "VREF1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VREF2",
+      "target": "VREF2-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VREF2",
+      "target": "VREF2-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "W_M3-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "W_M3-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "L_M3-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "L_M3-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M4",
+      "target": "W_M4-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M4",
+      "target": "W_M4-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M4",
+      "target": "L_M4-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M4",
+      "target": "L_M4-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M14",
+      "target": "W_M14-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M14",
+      "target": "W_M14-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M14",
+      "target": "L_M14-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M14",
+      "target": "L_M14-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M15",
+      "target": "W_M15-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M15",
+      "target": "W_M15-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M15",
+      "target": "L_M15-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M15",
+      "target": "L_M15-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5",
+      "target": "W_M5-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5",
+      "target": "W_M5-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M5",
+      "target": "L_M5-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M5",
+      "target": "L_M5-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M13",
+      "target": "W_M13-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M13",
+      "target": "W_M13-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M13",
+      "target": "L_M13-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M13",
+      "target": "L_M13-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M9",
+      "target": "W_M9-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M9",
+      "target": "W_M9-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M9",
+      "target": "L_M9-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M9",
+      "target": "L_M9-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M12",
+      "target": "W_M12-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M12",
+      "target": "W_M12-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M12",
+      "target": "L_M12-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M12",
+      "target": "L_M12-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M10",
+      "target": "W_M10-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M10",
+      "target": "W_M10-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M10",
+      "target": "L_M10-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M10",
+      "target": "L_M10-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M11",
+      "target": "W_M11-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M11",
+      "target": "W_M11-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11",
+      "target": "L_M11-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11",
+      "target": "L_M11-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M16",
+      "target": "W_M16-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M16",
+      "target": "W_M16-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M16",
+      "target": "L_M16-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M16",
+      "target": "L_M16-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M17",
+      "target": "W_M17-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M17",
+      "target": "W_M17-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M17",
+      "target": "L_M17-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M17",
+      "target": "L_M17-inversely-proportional",
+      "relation": "connects"
+    }
+  ]
+}

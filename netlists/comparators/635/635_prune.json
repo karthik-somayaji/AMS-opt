@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M0",
+    "reason": "M0 is a diode-connected PMOS (gate=drain=IB1) that mainly serves as a local bias reference/clamp for the IB1 node; if IB1 is supplied externally as a well-defined bias, M0 is redundant. Caveat: if IB1 is generated inside this cell using M0, removing it will break the intended biasing.",
+    "impact_estimate": "Low if IB1 is externally driven; High if IB1 is internally generated."
+  },
+  {
+    "component": "M3",
+    "reason": "M3 is a diode-connected NMOS (gate=drain=IIN1) that primarily clamps/defines the IIN1 node’s DC level; the core output stage (M1/M2/M6) can still function if IIN1 is driven by a stiff source. Caveat: without M3, IIN1 may float under high-impedance drive, causing operating-point uncertainty.",
+    "impact_estimate": "Low to Medium (depends on how IIN1 is driven)."
+  },
+  {
+    "component": "M4",
+    "reason": "M4 provides an additional NMOS path between IIN2 and IIN1 (gated by IIN1) that behaves like a nonlinear coupling/limiter; removing it typically preserves the main bias-to-output transfer through net5 and VOUT1. Caveat: it may reduce input conditioning/linearity or change the effective thresholding behavior if the design relies on this coupling.",
+    "impact_estimate": "Medium (function remains, but input behavior/transfer characteristic may change)."
+  }
+]

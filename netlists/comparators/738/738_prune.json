@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M2",
+    "reason": "M2 is a diode-connected NMOS (gate=drain=net9) that mainly clamps/defines the net9 node; the signal path through M0/M1 and the VOUT1 pull-down can still operate if net9 is driven strongly by the input side. Caveat: removing it can leave net9 less well-defined (worse startup/settling, more sensitivity to leakage), which may shift operating point or increase noise.",
+    "impact_estimate": "Low to Medium (mostly bias-node robustness)."
+  },
+  {
+    "component": "C0",
+    "reason": "C0 is a coupling/compensation capacitor between VOUT1 and the control node net18; removing it typically preserves DC functionality and basic amplification, just with less filtering/compensation. Caveat: without C0, transient behavior (ringing, kickback/noise shaping, stability) can degrade depending on how net18 is used.",
+    "impact_estimate": "Low for DC / quasi-static operation; Medium for transient/stability-sensitive operation."
+  },
+  {
+    "component": "R0",
+    "reason": "R0 provides a resistive pull-up/load from VDD to VOUT1; if the next stage or a measurement/testbench already provides a load/pull-up or if VOUT1 is meant to be actively driven by other circuitry, this resistor can be removed without breaking the internal differential core. Caveat: removing R0 can leave VOUT1 floating (no defined high level) and can significantly change output swing and bias if no alternate load exists.",
+    "impact_estimate": "Low if an external load/pull-up exists; High if R0 is the only DC load defining VOUT1."
+  }
+]

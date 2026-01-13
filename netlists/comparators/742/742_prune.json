@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M6",
+    "reason": "M6 is a diode-connected NMOS (gate=drain=net35) that primarily clamps/bleeds the internal latch node net35; the latch core and output pull devices can still resolve without this extra clamp if reset/discharge is handled by other paths (e.g., M10/M13 and cross-coupling). Caveat: removing it can worsen startup/reset behavior and increase sensitivity to leakage on net35.",
+    "impact_estimate": "Low to Medium (mainly affects latch-node stabilization and reset robustness)."
+  },
+  {
+    "component": "M7",
+    "reason": "M7 is the symmetric diode-connected NMOS (gate=drain=net44) serving the same clamp/bleed role for net44; the differential/regenerative action remains via M8/M9 and the output devices. Caveat: removing it can introduce more floating-node behavior on net44 and slightly increase offset/metastability risk under weak overdrive.",
+    "impact_estimate": "Low to Medium (bias/robustness shifts, functionality typically remains)."
+  },
+  {
+    "component": "R3",
+    "reason": "R3 is a resistive pull-up/load from VDD to VOUT2; if the next stage or testbench already provides a defined load/pull-up (or VOUT2 is primarily driven by the PMOS pull-up M15/M17 network), removing R3 often won’t break internal operation. Caveat: if R3 is the only DC path defining VOUT2 high level or static bias, removing it can leave VOUT2 less well-defined and change output swing/bias.",
+    "impact_estimate": "Low if an external load/pull-up exists; High if R3 is the only output load defining VOUT2."
+  }
+]
