@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M27",
+    "reason": "M27 is a PMOS that ties net0106 to VDD with gate at VSS (always-on load); net0106 is only used as a gate drive for M28, so if M28’s role is non-critical/auxiliary, removing M27 usually just removes that bias source and does not break the main VIN-to-VOUT comparison path.",
+    "impact_estimate": "Low-to-moderate (may weaken/disable the M28-controlled branch; main core can still function if that branch is redundant)."
+  },
+  {
+    "component": "M20",
+    "reason": "M20 is an always-on PMOS precharge/pull-up for net68; net68 is primarily involved in the VCLK2-controlled biasing through M18, so removing M20 mainly affects reset/precharge strength and not the fundamental differential decision mechanism.",
+    "impact_estimate": "Low (slower or less complete precharge of net68; possible increased cycle-to-cycle memory)."
+  },
+  {
+    "component": "M19",
+    "reason": "M19 is an always-on PMOS precharge/pull-up for net69; net69 is used in a clocked bias path via M16, so removing M19 typically impacts initialization of that helper node rather than the core differential pair and regenerative paths.",
+    "impact_estimate": "Low (slower precharge of net69; potentially more sensitivity to previous state during fast clocking)."
+  }
+]

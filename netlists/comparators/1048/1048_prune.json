@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M15",
+    "reason": "M15 is a diode-connected PMOS from net36 to VDD; with R0/R1 already pulling VOUT1/VOUT2 toward net36, removing M15 mainly changes the common-mode reference/weak precharge but keeps the core differential/latch structure intact.",
+    "impact_estimate": "Low-to-moderate (net36 may float or shift unless driven elsewhere; output common-mode and settling may change)."
+  },
+  {
+    "component": "M6",
+    "reason": "M6 is a diode-connected NMOS (net20 tied to its own gate) acting as a clamp/bias element; removing it typically only alters biasing of the net12/net20 helper branch but the main VOUT1/VOUT2 regeneration path remains.",
+    "impact_estimate": "Low (may change internal node voltages and speed; could increase susceptibility to leakage/mismatch)."
+  },
+  {
+    "component": "M5",
+    "reason": "M5 is a diode-connected NMOS (net12 tied to its own gate) similar to M6; it mainly provides a local clamp/bias on net12 and can be removed while preserving the overall comparator/differential action.",
+    "impact_estimate": "Low (internal bias point shifts; may affect offset and dynamic behavior, but topology still functions)."
+  }
+]

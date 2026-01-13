@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M6",
+    "reason": "M6 is a clocked PMOS pull-up device on VOUT2; if M7/M0 still provide the main pull-up/feedback path for that node, removing M6 mainly reduces precharge/clocked assist strength and may slow or weaken one phase of operation.",
+    "impact_estimate": "Low-to-moderate (reduced precharge/clocked pull-up on VOUT2; possible slower start-up under some clocking)."
+  },
+  {
+    "component": "M5",
+    "reason": "M5 is the symmetric clocked PMOS pull-up for VOUT1; with M4/M1 still sustaining the latch/pull-up behavior, deleting M5 usually keeps the latch functional but reduces clocked boosting/precharge on VOUT1.",
+    "impact_estimate": "Low-to-moderate (reduced precharge/clocked pull-up on VOUT1; potential speed degradation)."
+  },
+  {
+    "component": "M12",
+    "reason": "M12 appears to be a clocked NMOS that biases/discharges the common net22; if net22 can still be held/bias-defined through the input devices (M10/M11) and parasitics, removing M12 mostly affects reset/equalization of the input tail during a clock phase.",
+    "impact_estimate": "Low-to-moderate (clocked reset/equalization of net22 weakened; may increase memory/kickback between cycles)."
+  }
+]

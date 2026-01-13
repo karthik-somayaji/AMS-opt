@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M8",
+    "reason": "M8 is a duplicate PMOS tied to the same nodes as M13 (net85, VCLK1, VDD, VDD), so removing it mainly reduces effective pull-up strength/capacitance without changing topology.",
+    "impact_estimate": "Low (slower charging of net85 / reduced drive; could slightly increase delay or imbalance)."
+  },
+  {
+    "component": "M7",
+    "reason": "M7 is a duplicate PMOS tied to the same nodes as M12 (net71, VCLK1, VDD, VDD), so it can be removed while preserving the same functional role on net71.",
+    "impact_estimate": "Low (reduced pull-up on net71; may worsen speed or symmetry if net71/net85 need matched strength)."
+  },
+  {
+    "component": "M5",
+    "reason": "M5 provides one of the two NMOS cross-coupling paths between VOUT1 and VOUT2; the latch can still operate with the remaining cross-coupled device (M4), though with weaker regeneration and less symmetric behavior.",
+    "impact_estimate": "Low-to-moderate (reduced regeneration/greater metastability risk; may increase decision time and sensitivity to mismatch)."
+  }
+]

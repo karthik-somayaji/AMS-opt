@@ -1,0 +1,69 @@
+[NETLIST_FILE] /Users/heyangni/Desktop/comparators/1060.cir
+
+
+Given a circuit netlist and a set of performance metrics, do the following and output everything together as plain tuple lists, without any explanations:
+
+1. **Infer P-graph (performance–performance relations).**
+   Output entries of the form:
+   `(Metric_A, Relationship, Metric_B)`
+   where `Relationship ∈ { 'trade-off', 'directly-proportional', 'ambiguous' }`.
+
+2. **Infer PS-graph (substructure–performance relations).**
+   First, identify meaningful circuit substructures (e.g., “M0-M1 differential pair”, “M2-M3 active load current mirror”, “R0-R1 load resistors”).
+   Then output entries of the form:
+   `(Substructure, 'influences', Metric)`
+   only if that substructure significantly affects the metric.
+
+3. **Infer PSX-graph (parameter–substructure–performance relations).**
+   Treat device sizes, bias currents, resistances, etc. as design parameters (e.g., `W_M0, L_M0, IB1, R0, R1, VB1`).
+   Output:
+
+   * `(Parameter, 'belongs-to', Substructure)` if the parameter structurally belongs to that substructure.
+   * `(Parameter, Relationship, Metric)` where `Relationship ∈ { 'directly-proportional', 'inversely-proportional' }`, indicating how increasing the parameter value affects the metric.
+
+**Important formatting constraints:**
+
+* Use exactly the tuple formats above.
+* Use only the allowed relationship labels.
+* Do **not** include any explanations, text, or headings—only the tuples.
+
+Given the above instructions, construct the above tuples as entries of a knowledge graph. Specifically, output a json format where all nodes (nodes in P, PS and PSX graphs) are listed under the field 'nodes'.
+For example:
+"nodes": [
+    {"id": "Active load",              "type": "substructure"},
+    {"id": "CMRR",                     "type": "performance"},
+    {"id": "Differential pair",        "type": "substructure"}, etc]
+
+All tuples in the graphs should be listed under a 'links' field as a list of dictionaries.
+For example: "links": [
+    {"source": "Gain", "target": "CMRR", "relation": "ambiguous"}, etc]
+
+
+Netlist:
+R5 (net32 net39) resistor
+R4 (net44 net32) resistor
+R3 (net46 VSS) resistor
+R2 (net45 VSS) resistor
+R1 (VDD net37) resistor
+R0 (VDD net15) resistor
+Q24 (net39 net39 VSS 0) npn
+Q23 (net26 net26 net44 0) npn
+Q22 (net42 net42 net26 0) npn
+Q21 (VDD VDD net42 0) npn
+Q20 (net9 net32 net45 0) npn
+Q19 (net14 net32 net46 0) npn
+Q18 (net19 net39 VSS 0) npn
+Q17 (net22 net9 net19 0) npn
+Q16 (net17 net14 net19 0) npn
+Q15 (net11 VIN2 net9 0) npn
+Q14 (net11 VIN1 net14 0) npn
+Q13 (LOGICQ1 net26 net11 0) npn
+Q12 (LOGICQ2 net26 net11 0) npn
+Q11 (net21 VIN3 net22 0) npn
+Q10 (net21 VIN3 net17 0) npn
+Q9 (net37 LOGICQ2 net21 0) npn
+Q8 (net15 LOGICQ1 net21 0) npn
+Q5 (net15 VIN4 net17 0) npn
+Q4 (net37 VIN4 net22 0) npn
+Q1 (VDD net15 LOGICQ2 0) npn
+Q0 (VDD net37 LOGICQ1 0) npn

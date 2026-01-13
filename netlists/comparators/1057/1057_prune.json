@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M12",
+    "reason": "M12 is a clocked NMOS that primarily discharges/controls the internal node net11; if VIN3 (the tail/bias node) and the input devices already provide adequate switching, removing M12 typically preserves basic comparator action but reduces explicit reset/isolating behavior on net11.",
+    "impact_estimate": "Low-to-moderate (net11 may retain charge; possible slower recovery or more memory effect between cycles)."
+  },
+  {
+    "component": "M11",
+    "reason": "M11 is a PMOS pull-up from VDD to VOUT1 gated by net35; there is already a direct clocked pull-up path via M13 (VCLK1) and a feedback pull-up device (M8), so removing M11 often leaves VOUT1 still actively driven high but with reduced strength in one phase.",
+    "impact_estimate": "Low (reduced drive/speed on VOUT1 high transitions; more imbalance vs VOUT2 unless resized)."
+  },
+  {
+    "component": "M15",
+    "reason": "M15 is a PMOS pull-up from VDD to VOUT2 gated by net21; VOUT2 also has a direct clocked pull-up (M14) and a feedback pull-up device (M7), so removing M15 usually keeps regeneration and output validity while weakening one of the auxiliary pull-up paths.",
+    "impact_estimate": "Low (slower VOUT2 high transitions / slightly worse robustness under PVT; potential offset due to asymmetry)."
+  }
+]
