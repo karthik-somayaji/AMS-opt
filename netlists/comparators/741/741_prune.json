@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M2",
+    "reason": "M2 is a diode-connected PMOS (gate=drain=net38) that mainly provides a local clamp/bias reference for the internal node net38; the main VIN2→VOUT2 path can still operate via M4 and the PMOS load M3 without this extra diode load. Caveat: removing M2 can leave net38 less well-defined under weak drive/leakage, shifting the DC operating point and potentially increasing susceptibility to noise.",
+    "impact_estimate": "Low to Medium (mostly affects internal node bias robustness)."
+  },
+  {
+    "component": "M1",
+    "reason": "M1 is the symmetric diode-connected PMOS on net10 (gate=drain=net10) and similarly acts as a clamp/bias helper rather than a required signal-path device; VIN1→VOUT1 can still function via M5 and PMOS load M0. Caveat: net10 bias/stability may degrade and offset/noise can increase if the node becomes more floating.",
+    "impact_estimate": "Low to Medium (bias point and offset/noise robustness may shift)."
+  },
+  {
+    "component": "M11",
+    "reason": "M11 is an NMOS diode/bleeder from net24 to VSS with its gate tied to VDD; it mainly provides a discharge/clamp for the cross-coupled NMOS gate node net24, while net24 is still driven by the outputs through M8/M9. Caveat: removing it can slow reset/discharge of net24 and increase sensitivity to leakage, but the latch/coupling action can remain functional.",
+    "impact_estimate": "Low to Medium (reset/settling robustness may degrade)."
+  }
+]

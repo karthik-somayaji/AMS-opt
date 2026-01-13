@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0",
+    "reason": "C0 only provides dynamic coupling/bootstrapping between net57 and net58; removing it typically preserves the DC switching topology while reducing speed, kickback shaping, or transient filtering.",
+    "impact_estimate": "Low (functional behavior remains; worse transient response/noise)."
+  },
+  {
+    "component": "M6",
+    "reason": "M6 is a clocked pull-down device on VOUT2 controlled by VCLK2; the core regeneration/switching between VOUT1/VOUT2 is still provided by the cross-coupled pair (M4/M5) and the input pair (M9/M10), so deleting M6 mainly weakens/changes reset or precharge behavior.",
+    "impact_estimate": "Low-to-moderate (may degrade reset/discharge speed for VOUT2 under VCLK2)."
+  },
+  {
+    "component": "M3",
+    "reason": "M3 is the symmetric clocked pull-down on VOUT1 (VCLK2-controlled); removing it generally keeps comparator regeneration via M4/M5 and input steering via M9/M10, but can unbalance discharge/reset dynamics.",
+    "impact_estimate": "Low-to-moderate (asymmetry in reset/discharge; possible offset/speed hit)."
+  }
+]

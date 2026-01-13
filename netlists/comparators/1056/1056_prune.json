@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M1",
+    "reason": "M1 is one of the two cross-coupled PMOS pull-ups; keeping only one side (M0) often preserves latch regeneration, but with reduced symmetry and weaker pull-up on one node.",
+    "impact_estimate": "Low-to-moderate (slower regeneration / more offset; risk of imbalance if sizing isn’t adjusted)."
+  },
+  {
+    "component": "M6",
+    "reason": "M6 is a VLATCH1-gated PMOS that provides an additional pull-up path tied to the opposite output; removing it typically keeps the latch functional via the remaining PMOS network but reduces kick/assist during latching.",
+    "impact_estimate": "Low (some loss of speed/robustness during latch phase; may increase sensitivity to PVT)."
+  },
+  {
+    "component": "M9",
+    "reason": "M9 is a VLATCH1-controlled NMOS that mainly helps discharge/enable the internal tail node net24; if M7/M8 already provide sufficient regenerative action, removing M9 usually keeps operation but weakens reset/enable control.",
+    "impact_estimate": "Low-to-moderate (net24 may not discharge as cleanly; possible slower/less deterministic latch timing)."
+  }
+]

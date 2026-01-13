@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0",
+    "reason": "C0 is a shunt capacitor on net42 (likely a dynamic storage/decoupling node); removing it generally preserves the core latch/differential functionality while mainly affecting transient behavior, noise filtering, and kickback.",
+    "impact_estimate": "Low-to-moderate (more noise/kickback on net42; possible change in speed/metastability margin)."
+  },
+  {
+    "component": "M18",
+    "reason": "M18 is a clock/bias-gated PMOS tied to VIN3 and net57; if VIN3 is an auxiliary input (e.g., precharge/offset trim) not required in the minimal operating mode, M18 can be removed with net57 still biased by M17.",
+    "impact_estimate": "Low (only if VIN3 path is non-essential; otherwise reduced precharge/offset control)."
+  },
+  {
+    "component": "M19",
+    "reason": "M19 is an auxiliary NMOS tied to VIN4 feeding net42 through net56 bias; if VIN4 is optional (e.g., additional input/trim/discharge control), removing M19 keeps the main VIN1/VIN2 latch path intact while dropping that auxiliary modulation.",
+    "impact_estimate": "Low (only if VIN4 path is non-essential; otherwise alters operating mode or common-mode control)."
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0",
+    "reason": "C0 is a decoupling/charge-holding capacitor on the internal clock/bias node net69; removing it typically keeps functionality but reduces filtering and makes net69 more susceptible to switching noise.",
+    "impact_estimate": "Low (more ripple/kickback on net69; possible small noise/metastability penalty)."
+  },
+  {
+    "component": "M1",
+    "reason": "M1 only discharges/clamps net69 to VSS when VCLK2 is active; if net69 is already strongly controlled by M11 and the clocking network, M1 is often redundant and mainly improves reset speed/robustness.",
+    "impact_estimate": "Low-to-moderate (slower net69 discharge/reset; may increase memory effects across cycles)."
+  },
+  {
+    "component": "M8",
+    "reason": "M8 is a precharge/pull-up device that biases net60 from VDD under VCLK1; if the input NMOS (M10) and the PMOS/load path (M14/M12/M0) provide sufficient restoration, removing M8 mainly reduces precharge strength rather than breaking operation.",
+    "impact_estimate": "Moderate (weaker/slow net60 precharge; could degrade speed or input-referred offset depending on timing)."
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0",
+    "reason": "C0 is a shunt capacitor on net13 that mainly shapes transient behavior (slew, kickback, filtering); removing it generally keeps the core switching/regeneration intact but reduces noise filtering and can increase ringing.",
+    "impact_estimate": "Low (DC/topology preserved; transient/noise behavior worsens)."
+  },
+  {
+    "component": "M5",
+    "reason": "M5 is a VCLK3-controlled PMOS feeding net37; the signal path from VIN2 to the regen pair still exists through M9/M7, so removing M5 mainly affects precharge/equalization strength and timing rather than the existence of regeneration.",
+    "impact_estimate": "Low-to-moderate (slower/less reliable precharge for the VIN2 side under some clocks)."
+  },
+  {
+    "component": "M4",
+    "reason": "M4 is the symmetric VCLK3-controlled PMOS feeding net40; deleting it typically preserves the VIN1→M8/M6 regeneration path but changes precharge/reset symmetry and can increase offset or metastability in marginal conditions.",
+    "impact_estimate": "Low-to-moderate (functional compare remains; worse symmetry/offset/reset margin)."
+  }
+]

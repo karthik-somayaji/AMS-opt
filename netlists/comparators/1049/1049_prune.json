@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C2",
+    "reason": "C2 is a supply/clock-domain decoupling or feedthrough capacitor (VDD to net44); removing it usually preserves the DC and logical regeneration behavior, mainly affecting noise immunity and transient kickback.",
+    "impact_estimate": "Low (more supply/clock feedthrough and possibly higher metastability/noise sensitivity)."
+  },
+  {
+    "component": "C1",
+    "reason": "C1 (net66 to net72) behaves like a dynamic coupling/bootstrapping capacitor between a clocked node and a bias/load node; deleting it typically keeps the core latch/differential path functional but reduces dynamic gain/speed shaping.",
+    "impact_estimate": "Low-to-moderate (slower or less decisive regeneration; changes in kickback/charge-sharing)."
+  },
+  {
+    "component": "C0",
+    "reason": "C0 (net14 to net82) is another coupling/charge-sharing capacitor tied to a clocked/bias node; removing it mainly changes edge behavior and internal node slewing without breaking the main switching path.",
+    "impact_estimate": "Low-to-moderate (timing and dynamic offset may shift; increased sensitivity to clock skew)."
+  }
+]

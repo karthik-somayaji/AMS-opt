@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C1",
+    "reason": "C1 is a bias/clock-side capacitor tied to IB4 and net50; removing it typically only reduces filtering/charge-holding on that bias/clock node and does not break the core differential/latch operation.",
+    "impact_estimate": "Low (more bias ripple/kickback on IB4/net50; possible small speed/noise penalty)."
+  },
+  {
+    "component": "C0",
+    "reason": "C0 similarly provides local decoupling/charge storage for IB3 and net18; deleting it usually preserves functionality but reduces bias stabilization and increases susceptibility to transient disturbance.",
+    "impact_estimate": "Low (increased bias noise on IB3/net18; may degrade metastability margin slightly)."
+  },
+  {
+    "component": "M24",
+    "reason": "M24 is a diode-connected/stacked NMOS branch on net38 referenced to IB5; if net38 is not a critical internal reference for the main signal path, removing M24 mainly changes bias loading and may slightly shift operating points rather than disabling the latch/sense function.",
+    "impact_estimate": "Low-to-moderate (bias point/loading on net38/IB5 changes; could affect offset or common-mode range depending on how net38 is used)."
+  }
+]

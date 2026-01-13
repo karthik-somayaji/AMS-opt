@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M6",
+    "reason": "M6 is a clocked PMOS that feeds net14 from net19; net14 already has a direct clocked pull-up via M2 and is cross-coupled to net19 via M1, so removing M6 typically preserves latch regeneration but reduces one reinforcement path.",
+    "impact_estimate": "Low-to-moderate (slightly slower/less robust regeneration, especially at low VDD or with heavy load)."
+  },
+  {
+    "component": "M3",
+    "reason": "M3 is a clocked PMOS that pulls net19 up; net19 is also supported by the clocked device M4 (from net14) and the cross-coupled PMOS M1, so removing M3 usually still allows net19 to charge during evaluate but with weaker pull-up strength.",
+    "impact_estimate": "Low (slower net19 precharge/evaluate; possible increased sensitivity to mismatch)."
+  },
+  {
+    "component": "M11",
+    "reason": "M11 is a clocked NMOS that discharges/controls the common source node net17; if net17 can be biased/discharged sufficiently through the input NMOS pair (M9/M10) during operation, removing M11 often keeps basic comparison behavior but reduces explicit reset/isolation on net17.",
+    "impact_estimate": "Low-to-moderate (more memory effect on net17 between cycles; potential slower recovery and higher kickback)."
+  }
+]

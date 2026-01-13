@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M7",
+    "reason": "M7 is diode-connected (gate and drain both at IB1), so it mainly serves as a local bias/reference device to establish the IB1-related gate voltage for other NMOS bias transistors. If IB1 (or the corresponding bias Vgs) is provided externally by an ideal/current-bias block, M7 can be removed with minimal impact on the amplifier’s small-signal structure.",
+    "impact_estimate": "Low-to-moderate (low if IB1 bias is supplied externally; high if this netlist relies on M7 to generate the bias internally)."
+  },
+  {
+    "component": "M1",
+    "reason": "M1 is diode-connected (net8 tied to both drain and gate), typically used to generate a PMOS bias/reference for a mirror chain (e.g., setting the gate voltage used by M0 and related devices). If net8’s bias is instead driven by an external reference (or you replace the PMOS bias chain with an ideal current source/load), M1 can be deleted without fundamentally changing the connectivity of the core gain device(s).",
+    "impact_estimate": "Low-to-moderate (low if net8 bias is externally provided; moderate if M1 is required to set the operating point of the PMOS load network)."
+  },
+  {
+    "component": "M3",
+    "reason": "M3 looks like a PMOS device providing an output-side pull-up/current-source action from VDD into VOUT1 controlled by net12. In pruning contexts, if you are willing to accept reduced output swing or you plan to replace the output load with an ideal current source (or rely on the NMOS pull-down path only), M3 can sometimes be removed while keeping a ‘functional’ but degraded differential-to-single-ended behavior.",
+    "impact_estimate": "Moderate-to-high (moderate if replaced by an ideal load/current source; high if you need full gain/output swing and proper DC bias at VOUT1)."
+  }
+]

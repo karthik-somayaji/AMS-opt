@@ -1,11 +1,12 @@
+[NETLIST_FILE] /Users/heyangni/Desktop/comparators/633.cir
 
-Given a comparator circuit netlist and a set of performance metrics, do the following and output everything together as plain tuple lists, without any explanations:
+
+Given a circuit netlist and a set of performance metrics, do the following and output everything together as plain tuple lists, without any explanations:
 
 1. **Infer P-graph (performance–performance relations).**
    Output entries of the form:
    `(Metric_A, Relationship, Metric_B)`
    where `Relationship ∈ { 'trade-off', 'directly-proportional', 'ambiguous' }`.
-   Here performance metrics can only be gain, delay, offset, hysteresis and power.
 
 2. **Infer PS-graph (substructure–performance relations).**
    First, identify meaningful circuit substructures (e.g., “M0-M1 differential pair”, “M2-M3 active load current mirror”, “R0-R1 load resistors”).
@@ -32,34 +33,24 @@ For example:
     {"id": "Active load",              "type": "substructure"},
     {"id": "CMRR",                     "type": "performance"},
     {"id": "Differential pair",        "type": "substructure"}, etc]
-    
- All tuples in the graphs should be listed under a 'links' field as a list of dictionaries.
- For example: "links": [
+
+All tuples in the graphs should be listed under a 'links' field as a list of dictionaries.
+For example: "links": [
     {"source": "Gain", "target": "CMRR", "relation": "ambiguous"}, etc]
 
 
 Netlist:
-```
-M13 (LOGICQ2 net21 VDD VDD) pmos4
-M12 (LOGICQ2 LOGICQ1 VDD VDD) pmos4
-M9 (net51 VIN2 net13 VDD) pmos4
-M8 (net26 VIN1 net13 VDD) pmos4
-M7 (LOGICQ1 LOGICQ2 VDD VDD) pmos4
-M6 (LOGICQ1 net33 VDD VDD) pmos4
-M5 (net33 VCLK1 VDD VDD) pmos4
-M4 (net33 net21 VDD VDD) pmos4
-M3 (net21 net33 VDD VDD) pmos4
-M2 (net21 VCLK1 VDD VDD) pmos4
-M1 (net13 IB1 VDD VDD) pmos4
-M0 (IB1 IB1 VDD VDD) pmos4
-M20 (net58 net21 VSS VSS) nmos4
-M19 (net57 net33 VSS VSS) nmos4
-M18 (net26 net51 VSS VSS) nmos4
-M17 (net51 net26 VSS VSS) nmos4
-M16 (net51 VCLK2 net26 VSS) nmos4
-M15 (LOGICQ2 LOGICQ1 net58 VSS) nmos4
-M14 (LOGICQ1 LOGICQ2 net57 VSS) nmos4
-M11 (net33 VCLK1 net26 VSS) nmos4
-M10 (net21 VCLK1 net51 VSS) nmos4
-```
-
+M12 (VOUT1 net21 VSS VSS) nmos4
+M11 (net21 IB1 VSS VSS) nmos4
+M10 (IB1 IB1 VSS VSS) nmos4
+M9 (net13 IB1 VSS VSS) nmos4
+M8 (net18 net19 net13 VSS) nmos4
+M7 (net10 VIN1 net13 VSS) nmos4
+M6 (VOUT1 net21 VDD VDD) pmos4
+M5 (net21 net18 VDD VDD) pmos4
+M4 (net19 net18 VDD VDD) pmos4
+M3 (net10 net18 VDD VDD) pmos4
+M2 (net18 net18 VDD VDD) pmos4
+M1 (net18 net10 VDD VDD) pmos4
+M0 (net10 net10 VDD VDD) pmos4
+R0 (net19 VB1) resistor

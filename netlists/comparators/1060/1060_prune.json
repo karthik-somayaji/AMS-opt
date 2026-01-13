@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R5",
+    "reason": "R5 forms a series link between net32 and net39 (with net39 locally biased/clamped by Q24/Q18); removing it mainly changes the local bias/coupling of the helper node and typically won’t eliminate the core VIN-to-LOGICQ regenerative decision path.",
+    "impact_estimate": "Low-to-moderate (may shift bias point and affect speed/noise margin, but functionality usually remains)."
+  },
+  {
+    "component": "Q24",
+    "reason": "Q24 is a diode-connected clamp (collector=base=net39) to VSS that mainly stabilizes net39; the latch/core can still operate without this clamp, though net39 may float more and become more process/temperature sensitive.",
+    "impact_estimate": "Low (reduced bias stability; possible increased offset/variation)."
+  },
+  {
+    "component": "R4",
+    "reason": "R4 ties net44 to net32 and works with Q23/Q22/Q21 as a bias/reference shaping network; if net44-driven biasing is not strictly required for the main compare/latch action, removing R4 mostly reduces that auxiliary bias path without breaking the signal path from VIN1/VIN2 to LOGIC outputs.",
+    "impact_estimate": "Low-to-moderate (may alter operating point or disable a trimming/reference assist path; main function can still persist)."
+  }
+]

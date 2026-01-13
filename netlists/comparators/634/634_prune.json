@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M19",
+    "reason": "M19 is a diode-connected NMOS (gate=drain=net8) that mainly provides a clamp/bleeder to define net8’s DC level; the core differential signal path can still operate without it if net8 is already well-defined by M15/M18. Caveat: removing it can make net8 a weaker node (startup/settling may degrade) and can increase sensitivity to leakage and charge injection.",
+    "impact_estimate": "Low to Medium (mostly affects DC stabilization and robustness)."
+  },
+  {
+    "component": "M8",
+    "reason": "M8 is a diode-connected NMOS (gate=drain=net32) that serves primarily as a bias/clamp element for the net32 bias node; if net32 is sufficiently set by the surrounding network (M11/M13 and R0), removing M8 typically won’t break basic amplification behavior. Caveat: net32 may float or shift under PVT corners without this clamp, impacting gain/speed.",
+    "impact_estimate": "Low to Medium (bias-point stability may shift)."
+  },
+  {
+    "component": "M3",
+    "reason": "M3 is a diode-connected PMOS (gate=drain=net4) that largely provides a bias reference/bleeder for net4; since net4 is also tied to net32 through R0 and connected to VDD via M0, the circuit can often remain functional without M3. Caveat: removing M3 changes the DC bias at net4, which can ripple into M0’s biasing and alter operating points and headroom.",
+    "impact_estimate": "Medium (typically still works, but DC bias and headroom may change)."
+  }
+]

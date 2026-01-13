@@ -1,0 +1,1039 @@
+{
+  "nodes": [
+    {
+      "id": "DC gain",
+      "type": "performance"
+    },
+    {
+      "id": "Bandwidth",
+      "type": "performance"
+    },
+    {
+      "id": "Propagation delay",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "Input-referred noise",
+      "type": "performance"
+    },
+    {
+      "id": "Input offset",
+      "type": "performance"
+    },
+    {
+      "id": "Slew rate",
+      "type": "performance"
+    },
+    {
+      "id": "Output swing",
+      "type": "performance"
+    },
+    {
+      "id": "Input capacitance",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "Kickback noise",
+      "type": "performance"
+    },
+    {
+      "id": "PSRR",
+      "type": "performance"
+    },
+    {
+      "id": "NMOS input / control path (M0-M3)",
+      "type": "substructure"
+    },
+    {
+      "id": "Output stage pull-up/pull-down (M1-M2-M5)",
+      "type": "substructure"
+    },
+    {
+      "id": "Coupling / load capacitors (C0-C1)",
+      "type": "substructure"
+    },
+    {
+      "id": "VCONT1",
+      "type": "parameter"
+    },
+    {
+      "id": "VCONT2",
+      "type": "parameter"
+    },
+    {
+      "id": "VCONT3",
+      "type": "parameter"
+    },
+    {
+      "id": "VIN1",
+      "type": "parameter"
+    },
+    {
+      "id": "VDD",
+      "type": "parameter"
+    },
+    {
+      "id": "C0",
+      "type": "parameter"
+    },
+    {
+      "id": "C1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "DC gain-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "DC gain-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "DC gain-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Bandwidth-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Bandwidth-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Bandwidth-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Propagation delay-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Propagation delay-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Propagation delay-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Power-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Power-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Power-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Input-referred noise-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Input-referred noise-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Input-referred noise-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Input offset-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Input offset-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Input offset-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Slew rate-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Slew rate-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Slew rate-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Output swing-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Output swing-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Output swing-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Input capacitance-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Input capacitance-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Input capacitance-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Kickback noise-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Kickback noise-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Kickback noise-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "PSRR-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "PSRR-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "PSRR-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "VCONT1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VCONT1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VCONT2-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VCONT2-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VCONT3-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VCONT3-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VIN1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VIN1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VDD-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VDD-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "C0-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "C0-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "C1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "C1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M0-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M0-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M2-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M2-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M2-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M2-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5-inversely-proportional",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "DC gain-trade-off",
+      "target": "Bandwidth-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Power-trade-off",
+      "target": "Propagation delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Power-trade-off",
+      "target": "Input-referred noise-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Input capacitance-directly-proportional",
+      "target": "Propagation delay-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Slew rate-trade-off",
+      "target": "Propagation delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Bandwidth-trade-off",
+      "target": "Propagation delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Kickback noise-directly-proportional",
+      "target": "Input offset-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Kickback noise-directly-proportional",
+      "target": "Input-referred noise-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Output swing-ambiguous",
+      "target": "Propagation delay-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS input / control path (M0-M3)",
+      "target": "Propagation delay",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS input / control path (M0-M3)",
+      "target": "Input capacitance",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS input / control path (M0-M3)",
+      "target": "Kickback noise",
+      "relation": "connects"
+    },
+    {
+      "source": "NMOS input / control path (M0-M3)",
+      "target": "Bandwidth",
+      "relation": "connects"
+    },
+    {
+      "source": "Output stage pull-up/pull-down (M1-M2-M5)",
+      "target": "Output swing",
+      "relation": "connects"
+    },
+    {
+      "source": "Output stage pull-up/pull-down (M1-M2-M5)",
+      "target": "Slew rate",
+      "relation": "connects"
+    },
+    {
+      "source": "Output stage pull-up/pull-down (M1-M2-M5)",
+      "target": "Propagation delay",
+      "relation": "connects"
+    },
+    {
+      "source": "Output stage pull-up/pull-down (M1-M2-M5)",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "Coupling / load capacitors (C0-C1)",
+      "target": "Bandwidth",
+      "relation": "connects"
+    },
+    {
+      "source": "Coupling / load capacitors (C0-C1)",
+      "target": "Propagation delay",
+      "relation": "connects"
+    },
+    {
+      "source": "Coupling / load capacitors (C0-C1)",
+      "target": "Kickback noise",
+      "relation": "connects"
+    },
+    {
+      "source": "Coupling / load capacitors (C0-C1)",
+      "target": "Input capacitance",
+      "relation": "connects"
+    },
+    {
+      "source": "VCONT1",
+      "target": "NMOS input / control path (M0-M3)",
+      "relation": "connects"
+    },
+    {
+      "source": "VCONT2",
+      "target": "NMOS input / control path (M0-M3)",
+      "relation": "connects"
+    },
+    {
+      "source": "VCONT3",
+      "target": "Output stage pull-up/pull-down (M1-M2-M5)",
+      "relation": "connects"
+    },
+    {
+      "source": "VIN1",
+      "target": "NMOS input / control path (M0-M3)",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD",
+      "target": "Output stage pull-up/pull-down (M1-M2-M5)",
+      "relation": "connects"
+    },
+    {
+      "source": "C0",
+      "target": "Coupling / load capacitors (C0-C1)",
+      "relation": "connects"
+    },
+    {
+      "source": "C1",
+      "target": "Coupling / load capacitors (C0-C1)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M0",
+      "target": "NMOS input / control path (M0-M3)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M0",
+      "target": "NMOS input / control path (M0-M3)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "NMOS input / control path (M0-M3)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "NMOS input / control path (M0-M3)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1",
+      "target": "Output stage pull-up/pull-down (M1-M2-M5)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1",
+      "target": "Output stage pull-up/pull-down (M1-M2-M5)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M2",
+      "target": "Output stage pull-up/pull-down (M1-M2-M5)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M2",
+      "target": "Output stage pull-up/pull-down (M1-M2-M5)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5",
+      "target": "Output stage pull-up/pull-down (M1-M2-M5)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M5",
+      "target": "Output stage pull-up/pull-down (M1-M2-M5)",
+      "relation": "connects"
+    },
+    {
+      "source": "C0-inversely-proportional",
+      "target": "Bandwidth-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "C0-directly-proportional",
+      "target": "Propagation delay-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "C1-inversely-proportional",
+      "target": "Bandwidth-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "C1-directly-proportional",
+      "target": "Propagation delay-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "C1-inversely-proportional",
+      "target": "Kickback noise-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "VCONT1-inversely-proportional",
+      "target": "Propagation delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "VCONT1-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VCONT2-inversely-proportional",
+      "target": "Propagation delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "VCONT2-directly-proportional",
+      "target": "Kickback noise-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VCONT3-inversely-proportional",
+      "target": "Propagation delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "VCONT3-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1-inversely-proportional",
+      "target": "Propagation delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1-directly-proportional",
+      "target": "Slew rate-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD-directly-proportional",
+      "target": "Output swing-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD",
+      "target": "Propagation delay-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "DC gain",
+      "target": "DC gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "DC gain",
+      "target": "DC gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "DC gain",
+      "target": "DC gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Bandwidth",
+      "target": "Bandwidth-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Bandwidth",
+      "target": "Bandwidth-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Bandwidth",
+      "target": "Bandwidth-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Propagation delay",
+      "target": "Propagation delay-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Propagation delay",
+      "target": "Propagation delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Propagation delay",
+      "target": "Propagation delay-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Input-referred noise",
+      "target": "Input-referred noise-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Input-referred noise",
+      "target": "Input-referred noise-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Input-referred noise",
+      "target": "Input-referred noise-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Input offset",
+      "target": "Input offset-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Input offset",
+      "target": "Input offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Input offset",
+      "target": "Input offset-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Slew rate",
+      "target": "Slew rate-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Slew rate",
+      "target": "Slew rate-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Slew rate",
+      "target": "Slew rate-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Output swing",
+      "target": "Output swing-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Output swing",
+      "target": "Output swing-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Output swing",
+      "target": "Output swing-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Input capacitance",
+      "target": "Input capacitance-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Input capacitance",
+      "target": "Input capacitance-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Input capacitance",
+      "target": "Input capacitance-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Kickback noise",
+      "target": "Kickback noise-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Kickback noise",
+      "target": "Kickback noise-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Kickback noise",
+      "target": "Kickback noise-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "PSRR",
+      "target": "PSRR-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "PSRR",
+      "target": "PSRR-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "PSRR",
+      "target": "PSRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VCONT1",
+      "target": "VCONT1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VCONT1",
+      "target": "VCONT1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VCONT2",
+      "target": "VCONT2-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VCONT2",
+      "target": "VCONT2-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VCONT3",
+      "target": "VCONT3-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VCONT3",
+      "target": "VCONT3-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VIN1",
+      "target": "VIN1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VIN1",
+      "target": "VIN1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD",
+      "target": "VDD-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VDD",
+      "target": "VDD-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "C0",
+      "target": "C0-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "C0",
+      "target": "C0-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "C1",
+      "target": "C1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "C1",
+      "target": "C1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M0",
+      "target": "W_M0-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M0",
+      "target": "W_M0-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M0",
+      "target": "L_M0-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M0",
+      "target": "L_M0-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1",
+      "target": "W_M1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1",
+      "target": "W_M1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1",
+      "target": "L_M1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1",
+      "target": "L_M1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M2",
+      "target": "W_M2-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M2",
+      "target": "W_M2-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M2",
+      "target": "L_M2-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M2",
+      "target": "L_M2-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "W_M3-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "W_M3-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "L_M3-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "L_M3-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5",
+      "target": "W_M5-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5",
+      "target": "W_M5-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M5",
+      "target": "L_M5-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M5",
+      "target": "L_M5-inversely-proportional",
+      "relation": "connects"
+    }
+  ]
+}
