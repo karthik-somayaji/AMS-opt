@@ -1,11 +1,10 @@
 
-Given a comparator circuit netlist and a set of performance metrics, do the following and output everything together as plain tuple lists, without any explanations:
+Given a circuit netlist and a set of performance metrics, do the following and output everything together as plain tuple lists, without any explanations:
 
 1. **Infer P-graph (performance–performance relations).**
    Output entries of the form:
    `(Metric_A, Relationship, Metric_B)`
    where `Relationship ∈ { 'trade-off', 'directly-proportional', 'ambiguous' }`.
-   Here performance metrics can only be gain, delay, offset, hysteresis and power.
 
 2. **Infer PS-graph (substructure–performance relations).**
    First, identify meaningful circuit substructures (e.g., “M0-M1 differential pair”, “M2-M3 active load current mirror”, “R0-R1 load resistors”).
