@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R0 (VDD net56) resistor",
+    "reason": "R0 is in parallel with R1 between the same two nodes (VDD and net56), so it only changes the effective resistance value. Deleting one of the two resistors leaves the bias path intact; the remaining resistor still ties net56 to VDD.",
+    "impact_estimate": "Low (main effect is altered bias strength at net56; keep R1 sized appropriately)."
+  },
+  {
+    "component": "R1 (net56 VDD) resistor",
+    "reason": "Like R0, R1 is redundant because it connects the same two nodes as R0; removing it preserves the same topology with a single pull-up/bias resistor. Functionality remains as long as one resistor remains to provide the intended DC bias/load for net56.",
+    "impact_estimate": "Low (equivalent resistance changes; do not remove both R0 and R1 unless net56 bias is provided elsewhere)."
+  },
+  {
+    "component": "M4 (net49 net57 VSS VSS) nmos4",
+    "reason": "M4 appears to be an auxiliary NMOS from net49 to VSS controlled by net57; the core differential pair action (M2/M3 sharing net49) can still operate without this extra clamp/feedback device. Removing it typically only affects common-mode control/linearity or startup behavior rather than basic differential amplification.",
+    "impact_estimate": "Low-to-Moderate (may change tail-node behavior, CM stability, or distortion; depends on how net57 is biased by M6/M8)."
+  }
+]

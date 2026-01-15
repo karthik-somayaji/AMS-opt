@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M4 (net15 VCONT2 IB1 VSS) nmos4",
+    "reason": "M4 only provides a controllable bias/current-sink for the VIN3/VIN4 differential pair (M2/M3). If you don’t need that second differential branch (or can accept it being inactive), removing M4 largely just disables that half without breaking the remaining branch.",
+    "impact_estimate": "Low if VIN3/VIN4 branch is unused; Medium if both differential branches are required."
+  },
+  {
+    "component": "M5 (net8 VCONT1 IB1 VSS) nmos4",
+    "reason": "M5 is the analogous controllable bias/current-sink for the VIN1/VIN2 differential pair (M0/M1). If that branch is not needed, deleting M5 mostly disables it while the rest of the circuit can still operate with the other branch (assuming it remains properly biased).",
+    "impact_estimate": "Low if VIN1/VIN2 branch is unused; Medium if both branches are required."
+  },
+  {
+    "component": "R1 (VDD VOUT1) resistor (one of the two identical loads)",
+    "reason": "The two R1 load resistors are duplicated (same refdes used twice) and one can be removed if you are willing to sacrifice one output node (e.g., keep only VOUT2 as a single-ended output). The remaining side can still function as an amplifier output with its load, but you lose differential symmetry/CMRR.",
+    "impact_estimate": "Low for single-ended use; High if true differential outputs and matching are required."
+  }
+]

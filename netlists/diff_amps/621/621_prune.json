@@ -1,0 +1,17 @@
+[
+  {
+    "component": "Q5 (net1 net1 VSS 0) npn",
+    "reason": "Q5 is a diode-connected NPN (collector tied to base) likely used as a simple clamp or bias reference at net1; in many differential stages the core signal path (VIN1→Q1/Q0/Q2→VOUT1) still operates without this local clamp/reference. Removing it usually just changes the DC bias at net1 and reduces any protective clamping action.",
+    "impact_estimate": "Low to moderate: DC operating point at net1 may shift and saturation recovery/clipping behavior may worsen, but small-signal gain/function often remains."
+  },
+  {
+    "component": "Q4 (VOUT1 net1 VSS 0) npn",
+    "reason": "Q4 appears to be an NPN pull-down/transconductance device controlled by net1; in many simplified differential-amplifier representations, the output can still be taken from the PNP load side (e.g., Q2) without this extra output-stage device. Deleting Q4 mainly reduces output drive/swing or changes output polarity/loading rather than breaking the basic biasing of the input pair.",
+    "impact_estimate": "Moderate: output impedance/swing and drive capability change; may still function if VOUT1 is lightly loaded and the remaining PNP stage provides a usable output."
+  },
+  {
+    "component": "Q3 (VSS VSS net6 0) pnp",
+    "reason": "Q3 is diode-connected (collector tied to base) PNP, typically used to generate or stabilize a bias at net6 for Q2; if IB1 already provides a sufficiently stiff bias/current, Q3 can be redundant. Removing it mostly affects bias stability and temperature tracking rather than the existence of amplification.",
+    "impact_estimate": "Low to moderate: net6 bias becomes less defined/less temperature-compensated; circuit may still amplify but with altered quiescent current and offset."
+  }
+]

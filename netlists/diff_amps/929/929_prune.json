@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M4 (net30 VB2 VDD VDD) pmos4",
+    "reason": "M4 is a PMOS pull-up/cascode device on the VOUT2 load branch; deleting it simplifies the PMOS load stack and the stage can still function as a differential pair with active loads (M5 still provides a pull-up path). Caveat: you lose cascode gain/PSRR and may need to adjust biasing (VB2) or device sizing to keep operating point and headroom acceptable.",
+    "impact_estimate": "Low-to-moderate (functionality preserved; gain/output swing/PSRR degrade)."
+  },
+  {
+    "component": "M3 (net31 VB2 VDD VDD) pmos4",
+    "reason": "Same role as M4 but on the VOUT1 branch; removing it keeps a symmetric simplified topology while retaining basic differential amplification through M1/M2 with loads via M5/M6. Caveat: removal reduces output resistance and common-mode rejection; best done together with M4 to maintain branch symmetry.",
+    "impact_estimate": "Low-to-moderate (functionality preserved; matching-dependent specs degrade)."
+  },
+  {
+    "component": "M0 (net11 VB1 VDD VDD) pmos4",
+    "reason": "M0 appears to bias/provide a PMOS current source (tail/current reference) feeding the input pair sources at net11; for basic functional testing it can be replaced by an ideal current source or tied bias arrangement, so deleting it does not inherently break the differential signal path. Caveat: without M0 you must supply a valid bias/current into net11 externally or the input devices (M1/M2) will not be properly biased.",
+    "impact_estimate": "Low if replaced by an external/ideal bias; high if simply removed with no substitute (stage may turn off)."
+  }
+]

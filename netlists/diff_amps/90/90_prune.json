@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M4 (VOUT2 VOUT1 VDD VDD) pmos4",
+    "reason": "M4 is one half of the PMOS cross-coupled load; if you remove it, the circuit can still function as a differential pair with an active load provided the remaining PMOS device (M3) still supplies a pull-up path. Caveat: this breaks symmetry and reduces differential gain/output swing on the VOUT2 side, and may introduce output offset.",
+    "impact_estimate": "Low-to-moderate (works but becomes unbalanced; degraded gain/CMRR and asymmetric outputs)."
+  },
+  {
+    "component": "M3 (VOUT1 VOUT2 VDD VDD) pmos4",
+    "reason": "Similarly, M3 can be removed while leaving M4 to provide the pull-up action, so the core NMOS differential pair with tail device still operates. Caveat: only remove one of M3/M4 (not both), otherwise you lose the PMOS load entirely and outputs will not pull up properly.",
+    "impact_estimate": "Low-to-moderate (still operates but with significant imbalance and reduced differential performance)."
+  },
+  {
+    "component": "M2 (VOUT2 VIN2 net017 VSS) nmos4",
+    "reason": "Removing one input transistor reduces the circuit to a single-ended common-source stage that still produces an output at VOUT1 using the same tail current source (M1) and load network. Caveat: you lose true differential operation (no differential gain/CMRR), and VOUT2 becomes largely undefined unless otherwise biased/loaded.",
+    "impact_estimate": "Moderate (core amplification remains on one side, but differential functionality is lost)."
+  }
+]

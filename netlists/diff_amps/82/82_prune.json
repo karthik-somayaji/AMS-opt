@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R1 (VDD VOUT2)",
+    "reason": "R1 is just a pull-up/load for the VOUT2 node; if you only care about the VOUT1 side (single-ended use) or you are not using VOUT2, removing R1 won’t affect the operation of the remaining half. Caveat: without R1, VOUT2 becomes effectively unloaded and may float or sit at an undefined level depending on leakage and transistor states.",
+    "impact_estimate": "Low if VOUT2 is unused; High if true differential outputs are required."
+  },
+  {
+    "component": "R0 (VDD VOUT1)",
+    "reason": "Similarly, R0 is the resistive load/pull-up for VOUT1; if you only use VOUT2 (single-ended) or don’t need VOUT1, deleting R0 has minimal impact on the other output branch. Caveat: VOUT1 will be undefined/high-impedance without its load, and gain/output swing at that node is lost.",
+    "impact_estimate": "Low if VOUT1 is unused; High if VOUT1 is required."
+  },
+  {
+    "component": "M2 (VOUT2 VCONT2 net28 VSS)",
+    "reason": "M2 is part of the VOUT2 switching/steering branch controlled by VCONT2; if VCONT2 is never used (e.g., tied to a fixed bias such that M2 is always off) or if you are simplifying to a single control path, removing M2 typically only removes one controlled conduction path rather than breaking the core input pair. Caveat: if the circuit relies on both VCONT1 and VCONT2 for proper differential steering/active load behavior, deleting M2 will change output symmetry and possibly biasing.",
+    "impact_estimate": "Low to Medium depending on whether VCONT2 functionality is required for the intended mode; potentially High for full symmetric/controlled operation."
+  }
+]

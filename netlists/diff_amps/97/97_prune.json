@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R0 (VOUT1 VDD) resistor",
+    "reason": "This is just a load/pull-up for the VOUT1 branch; if you only care about observing the other branch (VOUT2) or the tail behavior, you can omit it and VOUT1 will simply float (or be defined by whatever external load you connect). Caveat: removing it makes VOUT1 unusable as a voltage output unless another load/bias path is provided.",
+    "impact_estimate": "Low impact if VOUT1 is not used; otherwise high impact on VOUT1 output validity (node becomes floating)."
+  },
+  {
+    "component": "R1 (VOUT2 VDD) resistor",
+    "reason": "Same as R0 but for the VOUT2 branch; it can be removed if VOUT2 is not required or if an external load defines VOUT2. Caveat: without it, VOUT2 has no DC pull-up path and will not produce a meaningful output voltage by itself.",
+    "impact_estimate": "Low impact if VOUT2 is not used; otherwise high impact on VOUT2 output validity (node becomes floating)."
+  },
+  {
+    "component": "M2 (VOUT2 VIN2 IB1 VSS) nmos4",
+    "reason": "One input transistor can be removed if you are willing to forgo true differential operation and treat the circuit as a single-ended common-source stage using the remaining NMOS (M0). Caveat: doing so eliminates differential gain/CMRR and changes biasing/loading requirements on the remaining output node.",
+    "impact_estimate": "Moderate impact: core amplification still possible single-ended, but differential functionality is lost."
+  }
+]

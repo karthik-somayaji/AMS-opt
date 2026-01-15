@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R1 (VDD VOUT1) resistor",
+    "reason": "R1 is an explicit load from VDD to VOUT1, but M2 (PMOS) already provides an active pull-up/load for that output node. If you rely on the PMOS load only, removing R1 typically preserves the basic differential-amplifier operation, though output bias point and gain may shift.",
+    "impact_estimate": "Low to moderate (mainly affects DC operating point, output swing, and linearity on VOUT1)."
+  },
+  {
+    "component": "R0 (VDD VOUT2) resistor",
+    "reason": "R0 is the symmetric counterpart load on VOUT2, and M3 already acts as the active load/pull-up device. Deleting it usually leaves the differential pair functional, but will change the output common-mode level and possibly reduce resistive linearization on VOUT2.",
+    "impact_estimate": "Low to moderate (similar to R1; affects DC bias, gain, and swing on VOUT2)."
+  },
+  {
+    "component": "M2 (VOUT1 VB1 VDD VDD) pmos4",
+    "reason": "If you keep R1 as the load for VOUT1, M2 becomes redundant as a pull-up/active load on that node. Removing M2 while retaining R1 generally still gives a working (but more resistively-loaded and less active) output on VOUT1; ensure VB1 biasing is not used elsewhere and expect reduced gain if only the resistor load remains.",
+    "impact_estimate": "Moderate (circuit still works, but with reduced gain/drive and altered biasing on VOUT1)."
+  }
+]

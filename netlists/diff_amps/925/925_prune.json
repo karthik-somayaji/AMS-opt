@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M7 (net14 VOUT2 VSS VSS) nmos4",
+    "reason": "M7 is a shunt NMOS from the internal node net14 to VSS controlled by VOUT2; it behaves like output-dependent loading/clamping rather than being essential to the core differential pair and active-load operation. Removing it generally leaves the main differential transconductor (M3/M4 with tail M5) and PMOS loads (M0/M1) intact.",
+    "impact_estimate": "Low to moderate: small-signal gain/offset may shift and large-signal swing/limiting behavior may change; safe if M7 was only for protection/limiting or extra bias stabilization."
+  },
+  {
+    "component": "M6 (net14 VOUT1 VSS VSS) nmos4",
+    "reason": "M6 is symmetric to M7 and similarly provides output-dependent discharge/loading of net14; the differential amplifier core can still operate without this extra feedback/loading path. Deleting it keeps the differential symmetry better if you also delete M7.",
+    "impact_estimate": "Low to moderate: affects dynamic behavior and output swing limiting; recommended to remove together with M7 to avoid introducing asymmetry."
+  },
+  {
+    "component": "M2 (net21 VB1 VDD VDD) pmos4",
+    "reason": "M2 is a diode-connected PMOS (gate=drain at net21) used to generate/anchor a bias node (net21) from VB1; if VB1 is already provided by an external bias network and net21 does not need local diode-referencing, M2 can be omitted. The remaining PMOS loads M0/M1 still provide active loading of VOUT1/VOUT2 using VB1.",
+    "impact_estimate": "Low (if VB1 is stiff and net21 is otherwise properly biased); potentially high if net21 relies on M2 for correct DC biasing of M5/M8."
+  }
+]

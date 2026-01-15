@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R1 (VDD VOUT2) resistor",
+    "reason": "R1 is just one of the two load resistors; if you only care about a single-ended output (e.g., VOUT1), you can remove the VOUT2 branch and still have a functioning common-source gain stage on the remaining side. Caveat: you lose true differential operation and symmetry, and VOUT2 will no longer be a valid output node.",
+    "impact_estimate": "Low impact if single-ended use is acceptable; high impact if differential behavior is required."
+  },
+  {
+    "component": "M1 (VOUT2 VIN2 IB1 VSS) nmos4",
+    "reason": "M1 is the transistor for the second half of the differential pair; removing it still leaves M0 operating as a basic NMOS amplifier (with its load resistor) provided the bias node IB1 is driven appropriately. Caveat: input VIN2 and the differential-pair behavior (CMRR, differential gain) are lost, and IB1 bias/current distribution assumptions change.",
+    "impact_estimate": "Low impact for a single-ended amplifier; high impact for a differential amplifier."
+  },
+  {
+    "component": "R0 (VDD VOUT1) resistor",
+    "reason": "If you instead choose to keep the VOUT2 side, you can remove R0 as the redundant load on the other output; the circuit can still function as a single-ended amplifier using VOUT2 (with R1 and M1). Caveat: same as above—removing one load resistor eliminates that output’s DC path and it will not produce a meaningful output.",
+    "impact_estimate": "Low impact if only one output is needed; high impact if both outputs/differential output are needed."
+  }
+]

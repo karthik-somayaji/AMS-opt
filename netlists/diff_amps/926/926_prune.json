@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C1 (net23 VOUT1) capacitor",
+    "reason": "This looks like a parasitic/compensation or load capacitor between an internal node and the output; removing it usually does not change the DC operating point or basic differential function. It mainly affects AC stability/bandwidth and transient response.",
+    "impact_estimate": "Low for DC functionality; moderate risk for AC stability/phase margin depending on how the amplifier is used/loaded."
+  },
+  {
+    "component": "C0 (net12 VOUT2) capacitor",
+    "reason": "Similar to C1, this capacitor couples the other internal node to the other output and is typically not required for the core differential-pair operation. Deleting it primarily changes frequency response and transient behavior rather than the ability to amplify differentially.",
+    "impact_estimate": "Low for DC functionality; moderate impact on bandwidth/settling and potential stability changes."
+  },
+  {
+    "component": "M1 (net17 VCM1 VDD VDD) pmos4",
+    "reason": "This device appears to be part of a common-mode control/biasing path for the PMOS current source node (net17); if VCM1 is held at a suitable fixed bias externally (or net17 is otherwise properly biased), M1 can be omitted. The differential pair (M3/M4) can still function if net17 has a valid tail/source bias.",
+    "impact_estimate": "Low to moderate: minimal impact if net17 bias is provided elsewhere; high impact if M1 is the only element establishing the correct common-mode/tail bias."
+  }
+]
