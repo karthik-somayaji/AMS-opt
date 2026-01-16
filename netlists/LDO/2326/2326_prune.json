@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "R3 is a shunt load from the output to ground; in many differential/CMOS amplifier testbenches it mainly provides a DC load path and sets an output operating point for measurement. If the next stage (or a simulator operating point solution) already provides a valid DC path, removing it typically doesn’t change core amplification behavior much.",
+    "impact_estimate": "Low to moderate — output DC level and output swing under load may change; ensure VOUT1 still has a valid DC path and the operating point converges."
+  },
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "R2 only biases the auxiliary node net44 used by C0 (VOUT1–net44), so it is primarily part of a compensation/AC test network rather than the amplifier’s essential biasing. If you are not relying on that RC network for stability shaping or measurement filtering, R2 can be deleted with minimal impact on the amplifier’s basic DC function.",
+    "impact_estimate": "Low (DC), moderate (AC) — removing it changes any pole/zero introduced by the C0–R2 path; verify stability/AC response if compensation was intended."
+  },
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "C0 forms a capacitive path from the output to net44 and (together with R2) typically implements compensation, load emulation, or bandwidth limiting. For basic functionality (biasing and DC gain) it is usually non-essential and can be removed if you’re not targeting a specific frequency response or stability margin.",
+    "impact_estimate": "Low (DC), moderate to high (AC/transient) — bandwidth, phase margin, and transient settling may change; keep it if the design needs compensation or a realistic capacitive load."
+  }
+]

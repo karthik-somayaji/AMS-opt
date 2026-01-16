@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "net44 is only used by C0 (VOUT1 net44) and otherwise has no connection to the signal path; removing R2 (and leaving C0 connected to a floating node) effectively disables that auxiliary RC branch.",
+    "impact_estimate": "Low: mainly affects any intended compensation/filtering via C0; core differential gain/biasing should remain largely unchanged if the main load and bias network are elsewhere."
+  },
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "C0 forms a capacitive branch from VOUT1 to net44, which is only referenced to ground through R2; deleting C0 removes a likely compensation/noise-shaping element without altering the DC operating point.",
+    "impact_estimate": "Low-to-moderate: AC stability, bandwidth, or transient response may change (potentially less stable/more ringing), but the basic amplification function and DC bias typically remain intact."
+  },
+  {
+    "component": "MM15 (net1003 net1003 net9 VSS) nmos4",
+    "reason": "This device is diode-connected (gate=drain=net1003) and appears to be part of an internal bias/reference subnetwork around net1003/net9; if net1003 is already adequately biased/defined by other devices (e.g., MM13 or upstream bias sources), MM15 is often redundant as a helper clamp/startup element.",
+    "impact_estimate": "Low-to-moderate: may slightly change bias startup behavior or bias point robustness (especially across PVT), but the differential signal path can still function if net1003 remains properly driven."
+  }
+]

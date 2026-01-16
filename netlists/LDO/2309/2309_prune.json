@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "net44 only connects to C0 (VOUT1–net44) and R2 to VSS, forming an optional load/compensation branch. If the amplifier is evaluated without that extra RC shunt path, removing R2 typically doesn’t affect the core differential pair/current-mirror operation.",
+    "impact_estimate": "Low; mainly changes AC/loading at VOUT1 if C0 is kept. Caveat: if C0 remains, net44 becomes floating and C0 becomes effectively unused."
+  },
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "This capacitor appears to provide frequency compensation or an extra output pole/zero with R2. Removing it usually leaves the DC and basic small-signal gain behavior largely intact, especially in a simplified functional check of the differential amplifier.",
+    "impact_estimate": "Low-to-moderate; stability/transient response may change. Caveat: if R2 is kept, it becomes an unused shunt to ground on net44 with no effect on VOUT1."
+  },
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "R3 is an explicit output load to ground; many testbenches include this only to set an output loading condition or provide a DC path. Deleting it preserves the amplifier’s internal operation and DC biasing (assuming the output already has a DC path through other devices), but changes the loading on VOUT1.",
+    "impact_estimate": "Low-to-moderate; increases output impedance and can shift operating point slightly depending on leakage paths. Caveat: if VOUT1 otherwise floats in your simulation setup, you may need an alternative load/DC path."
+  }
+]

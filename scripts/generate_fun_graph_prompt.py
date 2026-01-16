@@ -27,11 +27,14 @@ def find_netlist_in_dir(d: str) -> Optional[str]:
 PROMPT_TEMPLATE = """
 Given a circuit netlist and the following performance metrics, do the following and output everything together as plain tuple lists, without any explanations:
 
+where circuit_type = LDO
+
 Performance metrics:
-- Gain
-- CMRR
-- UGF
-- Power
+- Quiscent Current
+- Line Regulation
+- Load Regulation
+- Regulation Error
+- Stability
 
 1. **Infer P-graph (performance–performance relations).**
    Output entries of the form:

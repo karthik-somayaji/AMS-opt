@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "This looks like an optional compensation/AC-shaping capacitor (it connects the output node to an internal node that is otherwise only resistively referenced). Removing it typically preserves DC operating point and basic differential amplification, but changes stability/bandwidth and transient response.",
+    "impact_estimate": "Low for DC functionality; Medium for AC stability/phase margin and transient settling (may increase peaking or risk oscillation depending on load and loop gain)."
+  },
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "net44 only appears in the RC network with C0; it does not connect to the core transistor signal path. If you remove the C0 compensation path (or if net44 is otherwise unused), R2 can be deleted with minimal impact; keep in mind net44 may then be a floating node if C0 remains.",
+    "impact_estimate": "Very Low if C0 is removed as well; Medium if C0 remains (floating node / altered AC behavior)."
+  },
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "This is a shunt load/bleeder on the output; the amplifier output stage already provides a DC path and biasing through the transistor network. Removing R3 usually leaves the amplifier functional but changes output loading, output swing, and possibly the DC output level if it was used to define a default load condition.",
+    "impact_estimate": "Low-to-Medium: improves gain/lightens load, but may alter output bias point and make the output more sensitive to leakage/load conditions."
+  }
+]

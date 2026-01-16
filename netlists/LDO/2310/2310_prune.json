@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "This looks like a load/bleeder to ground on the output node. In many differential amplifier cores the output can be left unloaded (or loaded externally), so removing this resistor typically won’t break biasing of the internal gain devices.",
+    "impact_estimate": "Low–Medium: DC operating point usually unchanged, but output common-mode, output swing, and small-signal gain/bandwidth may shift depending on whether R3 was providing the intended load."
+  },
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "Together with C0, R2 likely forms an output compensation/RC shaping network on an auxiliary node (net44). If stability compensation isn’t critical for your use-case (e.g., you’re only checking basic DC behavior), this branch can be removed with minimal impact on core differential operation.",
+    "impact_estimate": "Low for DC functionality; Medium for AC/transient: removing it can alter frequency response, phase margin, or transient settling if it was providing compensation."
+  },
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "This capacitor is part of the same RC network as R2 and is typically used for compensation (Miller/lead-lag) or filtering rather than enabling the amplifier to function at DC. Deleting it generally preserves the amplifier’s biasing and basic gain but changes dynamics.",
+    "impact_estimate": "Low for DC; Medium–High for stability: may increase peaking/oscillation risk or change bandwidth if the original design relied on C0 for compensation."
+  }
+]

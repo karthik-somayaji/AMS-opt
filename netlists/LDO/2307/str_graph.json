@@ -1,0 +1,1394 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "dev:MM4",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:MM4:D",
+      "type": "terminal",
+      "device": "MM4",
+      "role": "D"
+    },
+    {
+      "id": "term:MM4:G",
+      "type": "terminal",
+      "device": "MM4",
+      "role": "G"
+    },
+    {
+      "id": "term:MM4:S",
+      "type": "terminal",
+      "device": "MM4",
+      "role": "S"
+    },
+    {
+      "id": "net:net28",
+      "type": "net"
+    },
+    {
+      "id": "net:net38",
+      "type": "net"
+    },
+    {
+      "id": "net:net12",
+      "type": "net"
+    },
+    {
+      "id": "dev:MM3",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:MM3:D",
+      "type": "terminal",
+      "device": "MM3",
+      "role": "D"
+    },
+    {
+      "id": "term:MM3:G",
+      "type": "terminal",
+      "device": "MM3",
+      "role": "G"
+    },
+    {
+      "id": "term:MM3:S",
+      "type": "terminal",
+      "device": "MM3",
+      "role": "S"
+    },
+    {
+      "id": "net:net29",
+      "type": "net"
+    },
+    {
+      "id": "net:VREF1",
+      "type": "net"
+    },
+    {
+      "id": "dev:MM0",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:MM0:D",
+      "type": "terminal",
+      "device": "MM0",
+      "role": "D"
+    },
+    {
+      "id": "term:MM0:G",
+      "type": "terminal",
+      "device": "MM0",
+      "role": "G"
+    },
+    {
+      "id": "term:MM0:S",
+      "type": "terminal",
+      "device": "MM0",
+      "role": "S"
+    },
+    {
+      "id": "net:VB1",
+      "type": "net"
+    },
+    {
+      "id": "net:VDD",
+      "type": "net"
+    },
+    {
+      "id": "dev:MM6",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:MM6:D",
+      "type": "terminal",
+      "device": "MM6",
+      "role": "D"
+    },
+    {
+      "id": "term:MM6:G",
+      "type": "terminal",
+      "device": "MM6",
+      "role": "G"
+    },
+    {
+      "id": "term:MM6:S",
+      "type": "terminal",
+      "device": "MM6",
+      "role": "S"
+    },
+    {
+      "id": "net:net16",
+      "type": "net"
+    },
+    {
+      "id": "net:VB2",
+      "type": "net"
+    },
+    {
+      "id": "net:net25",
+      "type": "net"
+    },
+    {
+      "id": "dev:MM5",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:MM5:D",
+      "type": "terminal",
+      "device": "MM5",
+      "role": "D"
+    },
+    {
+      "id": "term:MM5:G",
+      "type": "terminal",
+      "device": "MM5",
+      "role": "G"
+    },
+    {
+      "id": "term:MM5:S",
+      "type": "terminal",
+      "device": "MM5",
+      "role": "S"
+    },
+    {
+      "id": "net:net14",
+      "type": "net"
+    },
+    {
+      "id": "net:net24",
+      "type": "net"
+    },
+    {
+      "id": "dev:MM2",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:MM2:D",
+      "type": "terminal",
+      "device": "MM2",
+      "role": "D"
+    },
+    {
+      "id": "term:MM2:G",
+      "type": "terminal",
+      "device": "MM2",
+      "role": "G"
+    },
+    {
+      "id": "term:MM2:S",
+      "type": "terminal",
+      "device": "MM2",
+      "role": "S"
+    },
+    {
+      "id": "dev:MM1",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:MM1:D",
+      "type": "terminal",
+      "device": "MM1",
+      "role": "D"
+    },
+    {
+      "id": "term:MM1:G",
+      "type": "terminal",
+      "device": "MM1",
+      "role": "G"
+    },
+    {
+      "id": "term:MM1:S",
+      "type": "terminal",
+      "device": "MM1",
+      "role": "S"
+    },
+    {
+      "id": "dev:MM10",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:MM10:D",
+      "type": "terminal",
+      "device": "MM10",
+      "role": "D"
+    },
+    {
+      "id": "term:MM10:G",
+      "type": "terminal",
+      "device": "MM10",
+      "role": "G"
+    },
+    {
+      "id": "term:MM10:S",
+      "type": "terminal",
+      "device": "MM10",
+      "role": "S"
+    },
+    {
+      "id": "net:net1001",
+      "type": "net"
+    },
+    {
+      "id": "net:VSS",
+      "type": "net"
+    },
+    {
+      "id": "dev:MM9",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:MM9:D",
+      "type": "terminal",
+      "device": "MM9",
+      "role": "D"
+    },
+    {
+      "id": "term:MM9:G",
+      "type": "terminal",
+      "device": "MM9",
+      "role": "G"
+    },
+    {
+      "id": "term:MM9:S",
+      "type": "terminal",
+      "device": "MM9",
+      "role": "S"
+    },
+    {
+      "id": "dev:MM8",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:MM8:D",
+      "type": "terminal",
+      "device": "MM8",
+      "role": "D"
+    },
+    {
+      "id": "term:MM8:G",
+      "type": "terminal",
+      "device": "MM8",
+      "role": "G"
+    },
+    {
+      "id": "term:MM8:S",
+      "type": "terminal",
+      "device": "MM8",
+      "role": "S"
+    },
+    {
+      "id": "net:net1003",
+      "type": "net"
+    },
+    {
+      "id": "dev:MM7",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:MM7:D",
+      "type": "terminal",
+      "device": "MM7",
+      "role": "D"
+    },
+    {
+      "id": "term:MM7:G",
+      "type": "terminal",
+      "device": "MM7",
+      "role": "G"
+    },
+    {
+      "id": "term:MM7:S",
+      "type": "terminal",
+      "device": "MM7",
+      "role": "S"
+    },
+    {
+      "id": "dev:MM15",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:MM15:D",
+      "type": "terminal",
+      "device": "MM15",
+      "role": "D"
+    },
+    {
+      "id": "term:MM15:G",
+      "type": "terminal",
+      "device": "MM15",
+      "role": "G"
+    },
+    {
+      "id": "term:MM15:S",
+      "type": "terminal",
+      "device": "MM15",
+      "role": "S"
+    },
+    {
+      "id": "dev:MM13",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:MM13:D",
+      "type": "terminal",
+      "device": "MM13",
+      "role": "D"
+    },
+    {
+      "id": "term:MM13:G",
+      "type": "terminal",
+      "device": "MM13",
+      "role": "G"
+    },
+    {
+      "id": "term:MM13:S",
+      "type": "terminal",
+      "device": "MM13",
+      "role": "S"
+    },
+    {
+      "id": "dev:MM14",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:MM14:D",
+      "type": "terminal",
+      "device": "MM14",
+      "role": "D"
+    },
+    {
+      "id": "term:MM14:G",
+      "type": "terminal",
+      "device": "MM14",
+      "role": "G"
+    },
+    {
+      "id": "term:MM14:S",
+      "type": "terminal",
+      "device": "MM14",
+      "role": "S"
+    },
+    {
+      "id": "net:net1006",
+      "type": "net"
+    },
+    {
+      "id": "net:VB3",
+      "type": "net"
+    },
+    {
+      "id": "dev:R3",
+      "type": "device",
+      "device_type": "resistor"
+    },
+    {
+      "id": "net:VOUT1",
+      "type": "net"
+    },
+    {
+      "id": "dev:R2",
+      "type": "device",
+      "device_type": "resistor"
+    },
+    {
+      "id": "net:net44",
+      "type": "net"
+    },
+    {
+      "id": "dev:R1",
+      "type": "device",
+      "device_type": "resistor"
+    },
+    {
+      "id": "dev:R0",
+      "type": "device",
+      "device_type": "resistor"
+    },
+    {
+      "id": "dev:C0",
+      "type": "device",
+      "device_type": "capacitor"
+    },
+    {
+      "id": "dev:M7",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M7:D",
+      "type": "terminal",
+      "device": "M7",
+      "role": "D"
+    },
+    {
+      "id": "term:M7:G",
+      "type": "terminal",
+      "device": "M7",
+      "role": "G"
+    },
+    {
+      "id": "term:M7:S",
+      "type": "terminal",
+      "device": "M7",
+      "role": "S"
+    },
+    {
+      "id": "net:net30",
+      "type": "net"
+    },
+    {
+      "id": "dev:M6",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M6:D",
+      "type": "terminal",
+      "device": "M6",
+      "role": "D"
+    },
+    {
+      "id": "term:M6:G",
+      "type": "terminal",
+      "device": "M6",
+      "role": "G"
+    },
+    {
+      "id": "term:M6:S",
+      "type": "terminal",
+      "device": "M6",
+      "role": "S"
+    },
+    {
+      "id": "net:IB1",
+      "type": "net"
+    },
+    {
+      "id": "dev:M5",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M5:D",
+      "type": "terminal",
+      "device": "M5",
+      "role": "D"
+    },
+    {
+      "id": "term:M5:G",
+      "type": "terminal",
+      "device": "M5",
+      "role": "G"
+    },
+    {
+      "id": "term:M5:S",
+      "type": "terminal",
+      "device": "M5",
+      "role": "S"
+    },
+    {
+      "id": "net:net17",
+      "type": "net"
+    },
+    {
+      "id": "dev:M3",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M3:D",
+      "type": "terminal",
+      "device": "M3",
+      "role": "D"
+    },
+    {
+      "id": "term:M3:G",
+      "type": "terminal",
+      "device": "M3",
+      "role": "G"
+    },
+    {
+      "id": "term:M3:S",
+      "type": "terminal",
+      "device": "M3",
+      "role": "S"
+    },
+    {
+      "id": "dev:M0",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M0:D",
+      "type": "terminal",
+      "device": "M0",
+      "role": "D"
+    },
+    {
+      "id": "term:M0:G",
+      "type": "terminal",
+      "device": "M0",
+      "role": "G"
+    },
+    {
+      "id": "term:M0:S",
+      "type": "terminal",
+      "device": "M0",
+      "role": "S"
+    },
+    {
+      "id": "net:VIN1",
+      "type": "net"
+    },
+    {
+      "id": "dev:M9",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M9:D",
+      "type": "terminal",
+      "device": "M9",
+      "role": "D"
+    },
+    {
+      "id": "term:M9:G",
+      "type": "terminal",
+      "device": "M9",
+      "role": "G"
+    },
+    {
+      "id": "term:M9:S",
+      "type": "terminal",
+      "device": "M9",
+      "role": "S"
+    },
+    {
+      "id": "dev:M8",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M8:D",
+      "type": "terminal",
+      "device": "M8",
+      "role": "D"
+    },
+    {
+      "id": "term:M8:G",
+      "type": "terminal",
+      "device": "M8",
+      "role": "G"
+    },
+    {
+      "id": "term:M8:S",
+      "type": "terminal",
+      "device": "M8",
+      "role": "S"
+    },
+    {
+      "id": "dev:M4",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M4:D",
+      "type": "terminal",
+      "device": "M4",
+      "role": "D"
+    },
+    {
+      "id": "term:M4:G",
+      "type": "terminal",
+      "device": "M4",
+      "role": "G"
+    },
+    {
+      "id": "term:M4:S",
+      "type": "terminal",
+      "device": "M4",
+      "role": "S"
+    },
+    {
+      "id": "dev:M2",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M2:D",
+      "type": "terminal",
+      "device": "M2",
+      "role": "D"
+    },
+    {
+      "id": "term:M2:G",
+      "type": "terminal",
+      "device": "M2",
+      "role": "G"
+    },
+    {
+      "id": "term:M2:S",
+      "type": "terminal",
+      "device": "M2",
+      "role": "S"
+    },
+    {
+      "id": "dev:M1",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M1:D",
+      "type": "terminal",
+      "device": "M1",
+      "role": "D"
+    },
+    {
+      "id": "term:M1:G",
+      "type": "terminal",
+      "device": "M1",
+      "role": "G"
+    },
+    {
+      "id": "term:M1:S",
+      "type": "terminal",
+      "device": "M1",
+      "role": "S"
+    },
+    {
+      "id": "net:VB4",
+      "type": "net"
+    }
+  ],
+  "links": [
+    {
+      "source": "dev:MM4",
+      "target": "term:MM4:D"
+    },
+    {
+      "source": "dev:MM4",
+      "target": "term:MM4:G"
+    },
+    {
+      "source": "dev:MM4",
+      "target": "term:MM4:S"
+    },
+    {
+      "source": "term:MM4:D",
+      "target": "net:net28"
+    },
+    {
+      "source": "term:MM4:G",
+      "target": "net:net38"
+    },
+    {
+      "source": "term:MM4:S",
+      "target": "net:net12"
+    },
+    {
+      "source": "dev:MM3",
+      "target": "term:MM3:D"
+    },
+    {
+      "source": "dev:MM3",
+      "target": "term:MM3:G"
+    },
+    {
+      "source": "dev:MM3",
+      "target": "term:MM3:S"
+    },
+    {
+      "source": "term:MM3:D",
+      "target": "net:net29"
+    },
+    {
+      "source": "term:MM3:G",
+      "target": "net:VREF1"
+    },
+    {
+      "source": "term:MM3:S",
+      "target": "net:net12"
+    },
+    {
+      "source": "dev:MM0",
+      "target": "term:MM0:D"
+    },
+    {
+      "source": "dev:MM0",
+      "target": "term:MM0:G"
+    },
+    {
+      "source": "dev:MM0",
+      "target": "term:MM0:S"
+    },
+    {
+      "source": "term:MM0:D",
+      "target": "net:net12"
+    },
+    {
+      "source": "term:MM0:G",
+      "target": "net:VB1"
+    },
+    {
+      "source": "term:MM0:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:MM6",
+      "target": "term:MM6:D"
+    },
+    {
+      "source": "dev:MM6",
+      "target": "term:MM6:G"
+    },
+    {
+      "source": "dev:MM6",
+      "target": "term:MM6:S"
+    },
+    {
+      "source": "term:MM6:D",
+      "target": "net:net16"
+    },
+    {
+      "source": "term:MM6:G",
+      "target": "net:VB2"
+    },
+    {
+      "source": "term:MM6:S",
+      "target": "net:net25"
+    },
+    {
+      "source": "dev:MM5",
+      "target": "term:MM5:D"
+    },
+    {
+      "source": "dev:MM5",
+      "target": "term:MM5:G"
+    },
+    {
+      "source": "dev:MM5",
+      "target": "term:MM5:S"
+    },
+    {
+      "source": "term:MM5:D",
+      "target": "net:net14"
+    },
+    {
+      "source": "term:MM5:G",
+      "target": "net:VB2"
+    },
+    {
+      "source": "term:MM5:S",
+      "target": "net:net24"
+    },
+    {
+      "source": "dev:MM2",
+      "target": "term:MM2:D"
+    },
+    {
+      "source": "dev:MM2",
+      "target": "term:MM2:G"
+    },
+    {
+      "source": "dev:MM2",
+      "target": "term:MM2:S"
+    },
+    {
+      "source": "term:MM2:D",
+      "target": "net:net25"
+    },
+    {
+      "source": "term:MM2:G",
+      "target": "net:net16"
+    },
+    {
+      "source": "term:MM2:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:MM1",
+      "target": "term:MM1:D"
+    },
+    {
+      "source": "dev:MM1",
+      "target": "term:MM1:G"
+    },
+    {
+      "source": "dev:MM1",
+      "target": "term:MM1:S"
+    },
+    {
+      "source": "term:MM1:D",
+      "target": "net:net24"
+    },
+    {
+      "source": "term:MM1:G",
+      "target": "net:net16"
+    },
+    {
+      "source": "term:MM1:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:MM10",
+      "target": "term:MM10:D"
+    },
+    {
+      "source": "dev:MM10",
+      "target": "term:MM10:G"
+    },
+    {
+      "source": "dev:MM10",
+      "target": "term:MM10:S"
+    },
+    {
+      "source": "term:MM10:D",
+      "target": "net:net29"
+    },
+    {
+      "source": "term:MM10:G",
+      "target": "net:net1001"
+    },
+    {
+      "source": "term:MM10:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:MM9",
+      "target": "term:MM9:D"
+    },
+    {
+      "source": "dev:MM9",
+      "target": "term:MM9:G"
+    },
+    {
+      "source": "dev:MM9",
+      "target": "term:MM9:S"
+    },
+    {
+      "source": "term:MM9:D",
+      "target": "net:net28"
+    },
+    {
+      "source": "term:MM9:G",
+      "target": "net:net1001"
+    },
+    {
+      "source": "term:MM9:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:MM8",
+      "target": "term:MM8:D"
+    },
+    {
+      "source": "dev:MM8",
+      "target": "term:MM8:G"
+    },
+    {
+      "source": "dev:MM8",
+      "target": "term:MM8:S"
+    },
+    {
+      "source": "term:MM8:D",
+      "target": "net:net16"
+    },
+    {
+      "source": "term:MM8:G",
+      "target": "net:net1003"
+    },
+    {
+      "source": "term:MM8:S",
+      "target": "net:net29"
+    },
+    {
+      "source": "dev:MM7",
+      "target": "term:MM7:D"
+    },
+    {
+      "source": "dev:MM7",
+      "target": "term:MM7:G"
+    },
+    {
+      "source": "dev:MM7",
+      "target": "term:MM7:S"
+    },
+    {
+      "source": "term:MM7:D",
+      "target": "net:net14"
+    },
+    {
+      "source": "term:MM7:G",
+      "target": "net:net1003"
+    },
+    {
+      "source": "term:MM7:S",
+      "target": "net:net28"
+    },
+    {
+      "source": "dev:MM15",
+      "target": "term:MM15:D"
+    },
+    {
+      "source": "dev:MM15",
+      "target": "term:MM15:G"
+    },
+    {
+      "source": "dev:MM15",
+      "target": "term:MM15:S"
+    },
+    {
+      "source": "term:MM15:D",
+      "target": "net:net1003"
+    },
+    {
+      "source": "term:MM15:G",
+      "target": "net:net1003"
+    },
+    {
+      "source": "term:MM15:S",
+      "target": "net:net1001"
+    },
+    {
+      "source": "dev:MM13",
+      "target": "term:MM13:D"
+    },
+    {
+      "source": "dev:MM13",
+      "target": "term:MM13:G"
+    },
+    {
+      "source": "dev:MM13",
+      "target": "term:MM13:S"
+    },
+    {
+      "source": "term:MM13:D",
+      "target": "net:net1001"
+    },
+    {
+      "source": "term:MM13:G",
+      "target": "net:net1001"
+    },
+    {
+      "source": "term:MM13:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:MM14",
+      "target": "term:MM14:D"
+    },
+    {
+      "source": "dev:MM14",
+      "target": "term:MM14:G"
+    },
+    {
+      "source": "dev:MM14",
+      "target": "term:MM14:S"
+    },
+    {
+      "source": "term:MM14:D",
+      "target": "net:net1003"
+    },
+    {
+      "source": "term:MM14:G",
+      "target": "net:net1006"
+    },
+    {
+      "source": "term:MM14:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:MM2",
+      "target": "term:MM2:D"
+    },
+    {
+      "source": "dev:MM2",
+      "target": "term:MM2:G"
+    },
+    {
+      "source": "dev:MM2",
+      "target": "term:MM2:S"
+    },
+    {
+      "source": "term:MM2:D",
+      "target": "net:net1006"
+    },
+    {
+      "source": "term:MM2:G",
+      "target": "net:VB3"
+    },
+    {
+      "source": "term:MM2:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:MM0",
+      "target": "term:MM0:D"
+    },
+    {
+      "source": "dev:MM0",
+      "target": "term:MM0:G"
+    },
+    {
+      "source": "dev:MM0",
+      "target": "term:MM0:S"
+    },
+    {
+      "source": "term:MM0:D",
+      "target": "net:VB3"
+    },
+    {
+      "source": "term:MM0:G",
+      "target": "net:VB3"
+    },
+    {
+      "source": "term:MM0:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:MM3",
+      "target": "term:MM3:D"
+    },
+    {
+      "source": "dev:MM3",
+      "target": "term:MM3:G"
+    },
+    {
+      "source": "dev:MM3",
+      "target": "term:MM3:S"
+    },
+    {
+      "source": "term:MM3:D",
+      "target": "net:net1006"
+    },
+    {
+      "source": "term:MM3:G",
+      "target": "net:net1006"
+    },
+    {
+      "source": "term:MM3:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:MM1",
+      "target": "term:MM1:D"
+    },
+    {
+      "source": "dev:MM1",
+      "target": "term:MM1:G"
+    },
+    {
+      "source": "dev:MM1",
+      "target": "term:MM1:S"
+    },
+    {
+      "source": "term:MM1:D",
+      "target": "net:VB3"
+    },
+    {
+      "source": "term:MM1:G",
+      "target": "net:net1006"
+    },
+    {
+      "source": "term:MM1:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:R3",
+      "target": "net:VOUT1"
+    },
+    {
+      "source": "dev:R3",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:R2",
+      "target": "net:net44"
+    },
+    {
+      "source": "dev:R2",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:R1",
+      "target": "net:net38"
+    },
+    {
+      "source": "dev:R1",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:R0",
+      "target": "net:VOUT1"
+    },
+    {
+      "source": "dev:R0",
+      "target": "net:net38"
+    },
+    {
+      "source": "dev:C0",
+      "target": "net:VOUT1"
+    },
+    {
+      "source": "dev:C0",
+      "target": "net:net44"
+    },
+    {
+      "source": "dev:M7",
+      "target": "term:M7:D"
+    },
+    {
+      "source": "dev:M7",
+      "target": "term:M7:G"
+    },
+    {
+      "source": "dev:M7",
+      "target": "term:M7:S"
+    },
+    {
+      "source": "term:M7:D",
+      "target": "net:net30"
+    },
+    {
+      "source": "term:M7:G",
+      "target": "net:net16"
+    },
+    {
+      "source": "term:M7:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:M6",
+      "target": "term:M6:D"
+    },
+    {
+      "source": "dev:M6",
+      "target": "term:M6:G"
+    },
+    {
+      "source": "dev:M6",
+      "target": "term:M6:S"
+    },
+    {
+      "source": "term:M6:D",
+      "target": "net:net24"
+    },
+    {
+      "source": "term:M6:G",
+      "target": "net:net14"
+    },
+    {
+      "source": "term:M6:S",
+      "target": "net:IB1"
+    },
+    {
+      "source": "dev:M5",
+      "target": "term:M5:D"
+    },
+    {
+      "source": "dev:M5",
+      "target": "term:M5:G"
+    },
+    {
+      "source": "dev:M5",
+      "target": "term:M5:S"
+    },
+    {
+      "source": "term:M5:D",
+      "target": "net:VDD"
+    },
+    {
+      "source": "term:M5:G",
+      "target": "net:net17"
+    },
+    {
+      "source": "term:M5:S",
+      "target": "net:net30"
+    },
+    {
+      "source": "dev:M3",
+      "target": "term:M3:D"
+    },
+    {
+      "source": "dev:M3",
+      "target": "term:M3:G"
+    },
+    {
+      "source": "dev:M3",
+      "target": "term:M3:S"
+    },
+    {
+      "source": "term:M3:D",
+      "target": "net:net16"
+    },
+    {
+      "source": "term:M3:G",
+      "target": "net:net16"
+    },
+    {
+      "source": "term:M3:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:M0",
+      "target": "term:M0:D"
+    },
+    {
+      "source": "dev:M0",
+      "target": "term:M0:G"
+    },
+    {
+      "source": "dev:M0",
+      "target": "term:M0:S"
+    },
+    {
+      "source": "term:M0:D",
+      "target": "net:VIN1"
+    },
+    {
+      "source": "term:M0:G",
+      "target": "net:net30"
+    },
+    {
+      "source": "term:M0:S",
+      "target": "net:VOUT1"
+    },
+    {
+      "source": "dev:M9",
+      "target": "term:M9:D"
+    },
+    {
+      "source": "dev:M9",
+      "target": "term:M9:G"
+    },
+    {
+      "source": "dev:M9",
+      "target": "term:M9:S"
+    },
+    {
+      "source": "term:M9:D",
+      "target": "net:VSS"
+    },
+    {
+      "source": "term:M9:G",
+      "target": "net:IB1"
+    },
+    {
+      "source": "term:M9:S",
+      "target": "net:net30"
+    },
+    {
+      "source": "dev:M8",
+      "target": "term:M8:D"
+    },
+    {
+      "source": "dev:M8",
+      "target": "term:M8:G"
+    },
+    {
+      "source": "dev:M8",
+      "target": "term:M8:S"
+    },
+    {
+      "source": "term:M8:D",
+      "target": "net:net30"
+    },
+    {
+      "source": "term:M8:G",
+      "target": "net:net24"
+    },
+    {
+      "source": "term:M8:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:M4",
+      "target": "term:M4:D"
+    },
+    {
+      "source": "dev:M4",
+      "target": "term:M4:G"
+    },
+    {
+      "source": "dev:M4",
+      "target": "term:M4:S"
+    },
+    {
+      "source": "term:M4:D",
+      "target": "net:net24"
+    },
+    {
+      "source": "term:M4:G",
+      "target": "net:net24"
+    },
+    {
+      "source": "term:M4:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:M2",
+      "target": "term:M2:D"
+    },
+    {
+      "source": "dev:M2",
+      "target": "term:M2:G"
+    },
+    {
+      "source": "dev:M2",
+      "target": "term:M2:S"
+    },
+    {
+      "source": "term:M2:D",
+      "target": "net:net16"
+    },
+    {
+      "source": "term:M2:G",
+      "target": "net:net14"
+    },
+    {
+      "source": "term:M2:S",
+      "target": "net:net17"
+    },
+    {
+      "source": "dev:M1",
+      "target": "term:M1:D"
+    },
+    {
+      "source": "dev:M1",
+      "target": "term:M1:G"
+    },
+    {
+      "source": "dev:M1",
+      "target": "term:M1:S"
+    },
+    {
+      "source": "term:M1:D",
+      "target": "net:net17"
+    },
+    {
+      "source": "term:M1:G",
+      "target": "net:VB4"
+    },
+    {
+      "source": "term:M1:S",
+      "target": "net:VDD"
+    }
+  ]
+}

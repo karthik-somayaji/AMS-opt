@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "This looks like a compensation/AC-shaping capacitor between the output node and an auxiliary node (net44) that is otherwise only tied to ground through R2. Removing it typically leaves the DC transfer function intact and mainly changes frequency response/stability.",
+    "impact_estimate": "Low for DC/bias and basic amplification; medium risk for AC response (bandwidth/peaking) and stability depending on the intended compensation."
+  },
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "This is a simple shunt load/bleeder from the output to ground; many differential amplifier cores will still bias and amplify without an explicit output bleed if the next stage or simulation setup provides a load path. Removing it mainly changes output loading and may increase output swing.",
+    "impact_estimate": "Low to medium; output DC level/swing and output resistance will change, and the output may float in some testbenches if no other load/DC path exists."
+  },
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "net44 is only used by the C0-R2 branch, which is typically a compensation/snubber network rather than part of the core signal path. If C0 is removed (or if compensation is not needed for your use case), R2 becomes unnecessary and can be deleted with minimal impact.",
+    "impact_estimate": "Very low if C0 is also removed; otherwise medium because deleting R2 alone can change the effective compensation (net44 may float)."
+  }
+]

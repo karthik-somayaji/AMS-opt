@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "This looks like an optional compensation / filtering capacitor between the output node and an internal RC node (net44). If removed, the core differential/active-load functionality remains; you mainly lose extra stability/noise filtering provided by that pole/zero shaping.",
+    "impact_estimate": "Low–Medium: DC gain/bias largely unchanged; transient response and phase margin may worsen depending on load and the R-network around net44."
+  },
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "R2 likely serves only to reference net44 to ground as part of an output RC network (together with C0 and possibly R0/R1/R3). If C0 is removed, net44 no longer influences the signal path meaningfully, so R2 can usually be removed as well.",
+    "impact_estimate": "Low (if C0 removed first): Minimal effect on amplifier operation; caveat—if any other element uses net44 for biasing, keep R2."
+  },
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "R3 appears to be an explicit output load (a shunt from VOUT1 to ground) used for testbench/loading rather than for setting the amplifier’s internal bias. Removing it generally preserves amplifier functionality, but changes the loading and therefore output swing, gain, and operating point under load.",
+    "impact_estimate": "Low–Medium: Core operation remains; output DC level and small-signal gain can shift due to lighter loading (depends on whether another load is present externally)."
+  }
+]

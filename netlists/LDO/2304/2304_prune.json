@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "R2 only provides a DC reference/leak path for the intermediate node net44 in the RC branch connected to VOUT1 via C0; it is not part of the signal path that sets the differential pair’s biasing or gain. If net44 is otherwise unused, removing R2 typically does not change midband behavior.",
+    "impact_estimate": "Low impact on AC/midband gain; may leave net44 floating (affecting startup, DC operating point of the RC branch, or transient settling if C0 is kept)."
+  },
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "C0 forms a compensation/filtering (frequency-shaping) network with the resistors tied to VOUT1/net44 and ground; it is not required for basic differential amplification and DC biasing. Deleting it generally preserves the amplifier’s core function but removes that pole/zero shaping.",
+    "impact_estimate": "Low-to-moderate impact: midband/DC operation largely unchanged, but stability, bandwidth, and transient response may change (risk of peaking/oscillation depending on loading and internal poles)."
+  },
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "R3 is effectively an output load/bleeder to ground; it is not essential to the internal operation of the differential amplifier core. If the output is otherwise loaded by the next stage or measurement instrument, R3 can often be removed without altering biasing inside the amplifier.",
+    "impact_estimate": "Low impact if an external load exists; otherwise output DC level may float more and small-signal gain may increase slightly (since loading is reduced)."
+  }
+]

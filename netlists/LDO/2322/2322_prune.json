@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "R2 only provides a DC reference path for node net44, which is otherwise connected only to C0. If C0 is used as a compensation/AC element, net44 can be left floating without changing the core differential amplifier biasing or gain paths.",
+    "impact_estimate": "Low (main impact is on DC operating point/leakage of net44 and any transient/AC behavior involving C0; safe if net44 is not used elsewhere and you don’t need a defined DC level there)."
+  },
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "R3 is a shunt load/bleeder from VOUT1 to VSS; removing it usually does not break amplification functionality because the output node still has active-device loading and bias paths. It mainly affects output DC level, output resistance, and prevents the output from floating in certain operating conditions.",
+    "impact_estimate": "Low-to-medium (gain and bias point may shift; removal is typically OK if downstream circuitry provides a load/DC path)."
+  },
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "C0 looks like an added compensation/feedforward capacitor between the output and an otherwise non-core node (net44). Deleting it typically preserves the basic differential amplification but changes frequency response, stability margins, and transient behavior.",
+    "impact_estimate": "Medium (little effect on DC operation; potentially significant effect on stability/bandwidth depending on whether C0 is the dominant compensation element)."
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "This looks like a compensation/AC-shaping capacitor; the core DC differential amplification path does not depend on it. Removing it typically preserves basic functionality but changes stability, bandwidth, and transient response.",
+    "impact_estimate": "Low for DC/operating-point; Medium for AC/transient (possible peaking/oscillation depending on loading and feedback)."
+  },
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "R2 appears to provide a DC reference/leak path for the C0 auxiliary node (net44). If C0 is removed, net44 becomes unused, so R2 can also be removed with essentially no effect on the amplifier core.",
+    "impact_estimate": "Negligible if C0 is also removed; otherwise Low-to-Medium (could leave net44 floating and affect AC behavior)."
+  },
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "R3 is a shunt load on the output; it is not required for the differential pair and active-load mechanism to operate. Deleting it mainly reduces output loading, increasing gain/output swing, but may make the output more sensitive to leakage or downstream floating loads.",
+    "impact_estimate": "Low for core operation; Low-to-Medium for output biasing/loading (depends on whether another load/feedback provides a DC path at VOUT1)."
+  }
+]

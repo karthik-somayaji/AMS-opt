@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "C0 forms a shunt/compensation (or load) capacitor with the resistor network around VOUT1; deleting it typically only changes bandwidth/phase margin rather than the DC bias point or basic differential gain behavior. If the circuit relies on this capacitor for stability (e.g., to prevent oscillation with certain loads), removing it can cause ringing/instability.",
+    "impact_estimate": "Low on DC operating point; medium on AC response/stability (potentially high if it was required for compensation)."
+  },
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "R3 is a bleed/load to ground at the output; if there is already a defined DC path via R0/R1 (and/or subsequent stage input bias paths), removing R3 usually has minimal effect on core amplifier operation. Caveat: if R3 is the only DC load providing an output reference, deleting it could leave VOUT1 floating in some simulations or change output common-mode level.",
+    "impact_estimate": "Low if other DC paths exist; medium if it is the only output DC return."
+  },
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "R2 only sets the DC reference for node net44, which is otherwise mainly used by the C0 branch; if C0 is removed (or if net44 is not used elsewhere), R2 becomes functionally irrelevant. Caveat: if C0 is kept, removing R2 can leave net44 floating and may cause convergence issues or undefined initial conditions.",
+    "impact_estimate": "Very low if C0 is removed or net44 unused; low-to-medium if C0 remains (possible floating node/convergence issues)."
+  }
+]

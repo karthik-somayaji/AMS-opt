@@ -1,0 +1,548 @@
+{
+  "nodes": [
+    {
+      "id": "Quiscent Current",
+      "type": "performance"
+    },
+    {
+      "id": "Line Regulation",
+      "type": "performance"
+    },
+    {
+      "id": "Load Regulation",
+      "type": "performance"
+    },
+    {
+      "id": "Regulation Error",
+      "type": "performance"
+    },
+    {
+      "id": "Stability",
+      "type": "performance"
+    },
+    {
+      "id": "Pass device M0 (VIN1-VOUT1)",
+      "type": "substructure"
+    },
+    {
+      "id": "Error amplifier core (M5,M7,M2,M1)",
+      "type": "substructure"
+    },
+    {
+      "id": "Bias current source / tail (M6,M9,IB1)",
+      "type": "substructure"
+    },
+    {
+      "id": "Reference / bias generator (MM0-MM10,VB1)",
+      "type": "substructure"
+    },
+    {
+      "id": "Feedback divider (R0,R1)",
+      "type": "substructure"
+    },
+    {
+      "id": "Output load / sense resistor (R3)",
+      "type": "substructure"
+    },
+    {
+      "id": "Output compensation network (C0,R2)",
+      "type": "substructure"
+    },
+    {
+      "id": "Compensation drive / buffer (M8,M4)",
+      "type": "substructure"
+    }
+  ],
+  "links": [
+    {
+      "source": "Quiscent Current",
+      "target": "Stability",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Quiscent Current",
+      "target": "Line Regulation",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Quiscent Current",
+      "target": "Load Regulation",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Line Regulation",
+      "target": "Load Regulation",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "Line Regulation",
+      "target": "Regulation Error",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "Load Regulation",
+      "target": "Regulation Error",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "Stability",
+      "target": "Load Regulation",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "Stability",
+      "target": "Line Regulation",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "Pass device M0 (VIN1-VOUT1)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Pass device M0 (VIN1-VOUT1)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Pass device M0 (VIN1-VOUT1)",
+      "target": "Regulation Error",
+      "relation": "influences"
+    },
+    {
+      "source": "Pass device M0 (VIN1-VOUT1)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier core (M5,M7,M2,M1)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier core (M5,M7,M2,M1)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier core (M5,M7,M2,M1)",
+      "target": "Regulation Error",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier core (M5,M7,M2,M1)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier core (M5,M7,M2,M1)",
+      "target": "Quiscent Current",
+      "relation": "influences"
+    },
+    {
+      "source": "Bias current source / tail (M6,M9,IB1)",
+      "target": "Quiscent Current",
+      "relation": "influences"
+    },
+    {
+      "source": "Bias current source / tail (M6,M9,IB1)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Bias current source / tail (M6,M9,IB1)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Bias current source / tail (M6,M9,IB1)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Reference / bias generator (MM0-MM10,VB1)",
+      "target": "Regulation Error",
+      "relation": "influences"
+    },
+    {
+      "source": "Reference / bias generator (MM0-MM10,VB1)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Reference / bias generator (MM0-MM10,VB1)",
+      "target": "Quiscent Current",
+      "relation": "influences"
+    },
+    {
+      "source": "Feedback divider (R0,R1)",
+      "target": "Regulation Error",
+      "relation": "influences"
+    },
+    {
+      "source": "Feedback divider (R0,R1)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Feedback divider (R0,R1)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Output compensation network (C0,R2)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Output compensation network (C0,R2)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Output compensation network (C0,R2)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Compensation drive / buffer (M8,M4)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Compensation drive / buffer (M8,M4)",
+      "target": "Quiscent Current",
+      "relation": "influences"
+    },
+    {
+      "source": "Output load / sense resistor (R3)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "W_M0",
+      "target": "Pass device M0 (VIN1-VOUT1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M0",
+      "target": "Pass device M0 (VIN1-VOUT1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M5",
+      "target": "Error amplifier core (M5,M7,M2,M1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M5",
+      "target": "Error amplifier core (M5,M7,M2,M1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M7",
+      "target": "Error amplifier core (M5,M7,M2,M1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M7",
+      "target": "Error amplifier core (M5,M7,M2,M1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M2",
+      "target": "Error amplifier core (M5,M7,M2,M1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M2",
+      "target": "Error amplifier core (M5,M7,M2,M1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M1",
+      "target": "Error amplifier core (M5,M7,M2,M1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M1",
+      "target": "Error amplifier core (M5,M7,M2,M1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VB2",
+      "target": "Error amplifier core (M5,M7,M2,M1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IB1",
+      "target": "Bias current source / tail (M6,M9,IB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M6",
+      "target": "Bias current source / tail (M6,M9,IB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M6",
+      "target": "Bias current source / tail (M6,M9,IB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M9",
+      "target": "Bias current source / tail (M6,M9,IB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M9",
+      "target": "Bias current source / tail (M6,M9,IB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VB1",
+      "target": "Reference / bias generator (MM0-MM10,VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM0",
+      "target": "Reference / bias generator (MM0-MM10,VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM0",
+      "target": "Reference / bias generator (MM0-MM10,VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM1",
+      "target": "Reference / bias generator (MM0-MM10,VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM1",
+      "target": "Reference / bias generator (MM0-MM10,VB0)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM2",
+      "target": "Reference / bias generator (MM0-MM10,VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM2",
+      "target": "Reference / bias generator (MM0-MM10,VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM3",
+      "target": "Reference / bias generator (MM0-MM10,VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM3",
+      "target": "Reference / bias generator (MM0-MM10,VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM4",
+      "target": "Reference / bias generator (MM0-MM10,VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM4",
+      "target": "Reference / bias generator (MM0-MM10,VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM5",
+      "target": "Reference / bias generator (MM0-MM10,VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM5",
+      "target": "Reference / bias generator (MM0-MM10,VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM6",
+      "target": "Reference / bias generator (MM0-MM10,VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM6",
+      "target": "Reference / bias generator (MM0-MM10,VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM7",
+      "target": "Reference / bias generator (MM0-MM10,VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM7",
+      "target": "Reference / bias generator (MM0-MM10,VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM8",
+      "target": "Reference / bias generator (MM0-MM10,VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM8",
+      "target": "Reference / bias generator (MM0-MM10,VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM10",
+      "target": "Reference / bias generator (MM0-MM10,VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM10",
+      "target": "Reference / bias generator (MM0-MM10,VB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R0",
+      "target": "Feedback divider (R0,R1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R1",
+      "target": "Feedback divider (R0,R1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "C0",
+      "target": "Output compensation network (C0,R2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R2",
+      "target": "Output compensation network (C0,R2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M8",
+      "target": "Compensation drive / buffer (M8,M4)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M8",
+      "target": "Compensation drive / buffer (M8,M4)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M4",
+      "target": "Compensation drive / buffer (M8,M4)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M4",
+      "target": "Compensation drive / buffer (M8,M4)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R3",
+      "target": "Output load / sense resistor (R3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IB1",
+      "target": "Quiscent Current",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Stability",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Line Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Load Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "Load Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "Line Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "Stability",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "Stability",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "C0",
+      "target": "Stability",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "C0",
+      "target": "Line Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "C0",
+      "target": "Load Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R2",
+      "target": "Stability",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R0",
+      "target": "Regulation Error",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R1",
+      "target": "Regulation Error",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M5",
+      "target": "Line Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M5",
+      "target": "Load Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M5",
+      "target": "Quiscent Current",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M8",
+      "target": "Stability",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M8",
+      "target": "Quiscent Current",
+      "relation": "directly-proportional"
+    }
+  ]
+}

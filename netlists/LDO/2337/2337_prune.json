@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "This looks like an output compensation/AC-shaping capacitor (likely creating a dominant pole or providing load/feedback shaping). If you only care about basic DC differential amplification (biasing and gain), removing it typically won’t prevent the amplifier from operating.",
+    "impact_estimate": "Low for DC operation; medium-to-high risk for stability, ringing, or frequency response (depends on what net44 is and whether C0 is part of compensation)."
+  },
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "A resistor from the output to ground is commonly used as a light load/bleeder to define the output when otherwise floating. Many amplifier cores will still function without an explicit output load, especially in simulation, as long as there is some DC path elsewhere.",
+    "impact_estimate": "Low if another DC load/path exists at VOUT1; medium if VOUT1 otherwise becomes weakly defined or floating (could affect operating point convergence)."
+  },
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "This resistor likely provides a DC reference/bleed for the auxiliary node net44 used by the C0 network (often an RC to ground for compensation or filtering). If C0 is removed (or if net44 is otherwise not critical), R2 becomes non-essential for the amplifier’s core function.",
+    "impact_estimate": "Low if net44 is only used by the C0/R2 network; medium if net44 biases some other stage not shown (then removing it could shift bias or leave a node floating)."
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "R2 only provides a DC reference/leak path for the auxiliary node net44, which is otherwise connected mainly through C0 to VOUT1. If you are not relying on net44 as a defined DC node (or are fine with it floating in DC), removing R2 typically won’t change the core differential amplification behavior.",
+    "impact_estimate": "Low (mostly affects net44 DC biasing and some startup/convergence; AC/dynamic behavior via C0 may remain similar)"
+  },
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "C0 is a compensation/AC-shaping capacitor from the output to an auxiliary node (net44) rather than an essential part of the signal path. Deleting it usually preserves basic amplifier operation but changes transient response, stability/phase margin, and output settling behavior.",
+    "impact_estimate": "Medium-Low (core gain still present, but frequency response and stability can change noticeably depending on loading and biasing)"
+  },
+  {
+    "component": "R0 (VOUT1 net38) resistor",
+    "reason": "R0 links VOUT1 to net38, which is also tied to VSS through R1; together they form an output-to-ground resistive loading/feedback-like path that is often non-essential for a minimal functional differential stage. Removing R0 typically leaves the main transistor core intact, but the output’s DC operating point and load conditions may shift.",
+    "impact_estimate": "Medium (output bias and loading change; may alter DC output level and small-signal gain, but the amplifier core can still function)"
+  }
+]

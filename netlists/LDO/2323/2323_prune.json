@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "net44 only appears in the R2–C0 branch, so it is not part of the signal path or biasing of the differential core. Deleting R2 effectively removes/changes an auxiliary RC load on VOUT1 without breaking DC operation.",
+    "impact_estimate": "Low (mostly affects AC/stability/transient shaping; DC gain/operating point largely unchanged as long as C0/R2 were not intentional compensation)."
+  },
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "C0 connects VOUT1 to an otherwise unused node (net44) that is only tied to VSS through R2, forming a non-essential RC network. Removing C0 will minimally impact basic amplification but will alter frequency response/phase margin if it was meant as compensation.",
+    "impact_estimate": "Low-to-medium (no effect on DC functionality; can increase peaking/instability risk if that RC was for compensation)."
+  },
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "R3 is a shunt load from the output to VSS; many amplifier testbenches include such a load for simulation convenience rather than core functionality. Removing it typically increases output impedance and may slightly shift the operating point only if the stage relies on that load for bias/leakage.",
+    "impact_estimate": "Low (mainly changes output loading and possibly output common-mode; usually does not prevent the amplifier from functioning)."
+  }
+]
