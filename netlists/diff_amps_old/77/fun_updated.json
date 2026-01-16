@@ -1,0 +1,725 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "Differential pair M0-M1",
+      "type": "substructure"
+    },
+    {
+      "id": "Active load M2-M3",
+      "type": "substructure"
+    },
+    {
+      "id": "Load resistors R0-R1",
+      "type": "substructure"
+    },
+    {
+      "id": "Tail bias at IB1",
+      "type": "substructure"
+    },
+    {
+      "id": "W_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "R0",
+      "type": "parameter"
+    },
+    {
+      "id": "R1",
+      "type": "parameter"
+    },
+    {
+      "id": "IB1",
+      "type": "parameter"
+    },
+    {
+      "id": "VB1",
+      "type": "parameter"
+    },
+    {
+      "id": "Gain-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Gain-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Gain-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Power-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Power-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Power-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "W_M0-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M0-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M2-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M2-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M2-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M2-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R0-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R0-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "IB1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "IB1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VB1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VB1-inversely-proportional",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain-directly-proportional",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain-trade-off",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR-trade-off",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Power-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain-ambiguous",
+      "target": "Power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR-ambiguous",
+      "target": "Power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Differential pair M0-M1",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "Differential pair M0-M1",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "Differential pair M0-M1",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "Differential pair M0-M1",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "Active load M2-M3",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "Active load M2-M3",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "Load resistors R0-R1",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "Load resistors R0-R1",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "Load resistors R0-R1",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "Tail bias at IB1",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "Tail bias at IB1",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "Tail bias at IB1",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M0",
+      "target": "Differential pair M0-M1",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M0",
+      "target": "Differential pair M0-M1",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1",
+      "target": "Differential pair M0-M1",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1",
+      "target": "Differential pair M0-M1",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M2",
+      "target": "Active load M2-M3",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M2",
+      "target": "Active load M2-M3",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "Active load M2-M3",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "Active load M2-M3",
+      "relation": "connects"
+    },
+    {
+      "source": "R0",
+      "target": "Load resistors R0-R1",
+      "relation": "connects"
+    },
+    {
+      "source": "R1",
+      "target": "Load resistors R0-R1",
+      "relation": "connects"
+    },
+    {
+      "source": "IB1",
+      "target": "Tail bias at IB1",
+      "relation": "connects"
+    },
+    {
+      "source": "VB1",
+      "target": "Active load M2-M3",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M0-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M0-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M0-directly-proportional",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M0-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M0-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M0-directly-proportional",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1-directly-proportional",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1-directly-proportional",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M2-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M2-directly-proportional",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M2-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M2-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M2-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3-directly-proportional",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-inversely-proportional",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-directly-proportional",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R1-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R1-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R1-inversely-proportional",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R1-directly-proportional",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "IB1-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "IB1-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "IB1-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M0",
+      "target": "W_M0-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M0",
+      "target": "W_M0-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M0",
+      "target": "L_M0-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M0",
+      "target": "L_M0-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1",
+      "target": "W_M1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1",
+      "target": "W_M1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1",
+      "target": "L_M1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1",
+      "target": "L_M1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M2",
+      "target": "W_M2-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M2",
+      "target": "W_M2-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M2",
+      "target": "L_M2-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M2",
+      "target": "L_M2-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "W_M3-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "W_M3-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "L_M3-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "L_M3-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R0",
+      "target": "R0-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R0",
+      "target": "R0-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R1",
+      "target": "R1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R1",
+      "target": "R1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "IB1",
+      "target": "IB1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "IB1",
+      "target": "IB1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB1",
+      "target": "VB1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB1",
+      "target": "VB1-inversely-proportional",
+      "relation": "connects"
+    }
+  ]
+}
