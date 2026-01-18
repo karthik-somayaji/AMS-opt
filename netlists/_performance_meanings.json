@@ -6,6 +6,22 @@
     "Power",
     "Delay",
     "Offset",
-    "Hysteresis"
+    "Hysteresis",
+    "bandwidth",
+    "dc gain",
+    "input capacitance",
+    "input offset",
+    "input-referred noise",
+    "inputreferrednoise",
+    "kickback noise",
+    "kickbacknoise",
+    "metastability",
+    "output swing",
+    "outputswing",
+    "propagation delay",
+    "psrr",
+    "regenerationstrength",
+    "sensitivity",
+    "slew rate"
   ]
 }

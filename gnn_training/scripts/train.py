@@ -238,25 +238,51 @@ def main(config_path: str = None, **kwargs):
     num_epochs = config['training']['epochs']
     log_interval = config['training'].get('log_interval', 10)
     val_interval = config['training'].get('val_interval', 5)
+
+    ema_beta = float(config['training'].get('ema_beta', 0.9))
+    ema_train_loss = None
+    ema_train_nt_xent = None
+    ema_train_consistency = None
     
     for epoch in range(num_epochs):
         # Train
         train_loss, train_nt_xent, train_consistency = trainer.train_epoch(train_sampler, num_batches=100)
+
+        # EMA smoothing for nicer plots
+        if ema_train_loss is None:
+            ema_train_loss = train_loss
+            ema_train_nt_xent = train_nt_xent
+            ema_train_consistency = train_consistency
+        else:
+            ema_train_loss = ema_beta * ema_train_loss + (1.0 - ema_beta) * train_loss
+            ema_train_nt_xent = ema_beta * ema_train_nt_xent + (1.0 - ema_beta) * train_nt_xent
+            ema_train_consistency = ema_beta * ema_train_consistency + (1.0 - ema_beta) * train_consistency
         
         if (epoch + 1) % log_interval == 0:
             if consistency_weight > 0:
                 logger.info(f"Epoch {epoch+1}/{num_epochs} - Loss: {train_loss:.4f} (NT-Xent: {train_nt_xent:.4f}, Consistency: {train_consistency:.4f})")
             else:
                 logger.info(f"Epoch {epoch+1}/{num_epochs} - Train Loss: {train_loss:.4f}")
+
+            # Raw epoch metrics
             tb_writer.add_scalar('loss/train_epoch', train_loss, epoch)
             tb_writer.add_scalar('loss/train_nt_xent_epoch', train_nt_xent, epoch)
-            if consistency_weight > 0:
-                tb_writer.add_scalar('loss/train_consistency_epoch', train_consistency, epoch)
+            tb_writer.add_scalar('loss/train_consistency_epoch', train_consistency, epoch)
+
+            # Smoothed metrics (EMA)
+            tb_writer.add_scalar('loss_ema/train_epoch', ema_train_loss, epoch)
+            tb_writer.add_scalar('loss_ema/train_nt_xent_epoch', ema_train_nt_xent, epoch)
+            tb_writer.add_scalar('loss_ema/train_consistency_epoch', ema_train_consistency, epoch)
+
+            # LR
+            tb_writer.add_scalar('lr', optimizer.param_groups[0]['lr'], epoch)
         
         # Validate
         if val_sampler is not None and (epoch + 1) % val_interval == 0:
             val_metrics = validator.validate(model, loss_fn, val_sampler, num_batches=50)
             val_loss = val_metrics['loss']
+
+            tb_writer.add_scalar('loss/val_epoch', val_loss, epoch)
             
             logger.info(f"Epoch {epoch+1}/{num_epochs} - Val Loss: {val_loss:.4f}")
             tb_writer.add_scalar('loss/val_epoch', val_loss, epoch)

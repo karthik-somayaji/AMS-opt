@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
-"""
-Extract embeddings from trained GNN model and visualize with UMAP.
+"""scripts/visualize_embeddings_umap.py
+
+Extract embeddings from a trained GNN checkpoint and visualize with UMAP.
+
+This script is aligned with the training configs under `gnn_training/config/`.
+By default it uses `full_training_diff_amps_comparators_all.yaml` and the
+checkpoint in `./checkpoints_full_training/`.
 """
 import sys
 from pathlib import Path
@@ -11,9 +16,10 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import torch
 import numpy as np
 import json
-from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple, Optional
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
+import argparse
 
 # Try to import umap; install if not available
 try:
@@ -28,13 +34,73 @@ from gnn_training.models import ContrastiveGINModel
 from gnn_training.data import CircuitDataLoader
 
 
+def _lazy_import_yaml():
+    try:
+        import yaml  # type: ignore
+        return yaml
+    except ImportError:
+        print("Installing pyyaml...")
+        import subprocess
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "pyyaml", "-q"])
+        import yaml  # type: ignore
+        return yaml
+
+
+def load_training_config(config_path: str) -> Dict:
+    yaml = _lazy_import_yaml()
+    with open(config_path, 'r') as f:
+        return yaml.safe_load(f)
+
+
+def flatten_circuits(circuits_by_family: Dict) -> Tuple[List[str], List[str]]:
+    circuit_ids: List[str] = []
+    families: List[str] = []
+    for family, ids in circuits_by_family.items():
+        for cid in ids:
+            circuit_ids.append(str(cid))
+            families.append(str(family))
+    return circuit_ids, families
+
+
+def try_load_performance_value(comb_graph_path: str, metric_key: str) -> Optional[float]:
+    try:
+        with open(comb_graph_path, 'r') as f:
+            cg = json.load(f)
+
+        # Common schema first
+        perf = cg.get('performance')
+        if isinstance(perf, dict):
+            val = perf.get(metric_key)
+            if isinstance(val, (int, float)):
+                return float(val)
+            if isinstance(val, dict):
+                v2 = val.get('value')
+                if isinstance(v2, (int, float)):
+                    return float(v2)
+
+        # Fallback: some graphs store performances as nodes; scan for numeric fields.
+        for n in cg.get('nodes', []):
+            if not isinstance(n, dict):
+                continue
+            name = str(n.get('name', ''))
+            ntype = str(n.get('type', ''))
+            if metric_key.lower() in name.lower() or metric_key.lower() in ntype.lower():
+                for k in ('value', 'val', 'target', 'y'):
+                    v = n.get(k)
+                    if isinstance(v, (int, float)):
+                        return float(v)
+        return None
+    except Exception:
+        return None
+
+
 def load_checkpoint(checkpoint_path: str, device: torch.device) -> Tuple[ContrastiveGINModel, Dict]:
     """Load trained model from checkpoint."""
     checkpoint = torch.load(checkpoint_path, map_location=device)
     
-    # Reconstruct model (assuming standard config)
+    # Reconstruct model (standard config; dims can be overridden by CLI/config)
     model = ContrastiveGINModel(
-        input_dim=26,
+        input_dim=79,
         hidden_dims=[64, 64, 32],
         embedding_dim=128,
         projection_dim=128,
@@ -128,29 +194,27 @@ def plot_embeddings_by_family(umap_emb: np.ndarray, metadata: List[Dict], output
 
 
 def plot_embeddings_by_performance(umap_emb: np.ndarray, metadata: List[Dict], 
-                                   data_dir: str, output_path: str):
-    """Plot UMAP embeddings colored by performance (Gain)."""
+                                   data_dir: str, output_path: str,
+                                   metric_key: str = 'Gain'):
+    """Plot UMAP embeddings colored by a performance metric."""
     fig, ax = plt.subplots(figsize=(12, 8))
     
-    gains = []
+    values: List[float] = []
     for m in metadata:
-        try:
-            comb_graph_path = f"{data_dir}/{m['family']}/{m['circuit_id']}/comb_graph.json"
-            with open(comb_graph_path) as f:
-                comb_graph = json.load(f)
-                # Find Gain performance value
-                gain_val = None
-                for node_id in comb_graph.get('nodes', []):
-                    if 'Gain' in str(node_id):
-                        # Extract gain value if it has one
-                        gain_val = 0.5  # Default
-                        break
-                gains.append(gain_val if gain_val is not None else 0.5)
-        except:
-            gains.append(0.5)
-    
-    gains = np.array(gains)
-    scatter = ax.scatter(umap_emb[:, 0], umap_emb[:, 1], c=gains, cmap='viridis', 
+        comb_graph_path = f"{data_dir}/{m['family']}/{m['circuit_id']}/comb_graph.json"
+        v = try_load_performance_value(comb_graph_path, metric_key)
+        values.append(float(v) if v is not None else float('nan'))
+
+    values_arr = np.array(values, dtype=float)
+    # Handle missing values
+    if np.all(np.isnan(values_arr)):
+        values_arr = np.zeros_like(values_arr)
+    else:
+        nan_mask = np.isnan(values_arr)
+        if np.any(nan_mask):
+            values_arr[nan_mask] = np.nanmedian(values_arr)
+
+    scatter = ax.scatter(umap_emb[:, 0], umap_emb[:, 1], c=values_arr, cmap='viridis', 
                         s=150, alpha=0.7, edgecolors='black', linewidth=1)
     
     # Add circuit ID labels
@@ -160,10 +224,10 @@ def plot_embeddings_by_performance(umap_emb: np.ndarray, metadata: List[Dict],
     
     ax.set_xlabel('UMAP 1', fontsize=12)
     ax.set_ylabel('UMAP 2', fontsize=12)
-    ax.set_title('GNN Embeddings - UMAP Projection (Performance Similarity)', fontsize=14, fontweight='bold')
+    ax.set_title(f'GNN Embeddings - UMAP Projection ({metric_key} coloring)', fontsize=14, fontweight='bold')
     
     cbar = plt.colorbar(scatter, ax=ax)
-    cbar.set_label('Gain Value', fontsize=11)
+    cbar.set_label(metric_key, fontsize=11)
     ax.grid(True, alpha=0.3)
     
     plt.tight_layout()
@@ -188,29 +252,69 @@ def save_embeddings_json(embeddings: np.ndarray, metadata: List[Dict], output_pa
 
 
 def main():
-    # Configuration
-    device = torch.device('cpu')
-    data_dir = 'netlists'
-    checkpoint_path = 'checkpoints_full_training/checkpoint_epoch_020.pt'
-    output_dir = Path('umap_results_full')
+    parser = argparse.ArgumentParser(description='Visualize circuit embeddings with UMAP.')
+    parser.add_argument('--config', default='gnn_training/config/full_training_diff_amps_comparators_all.yaml',
+                        help='Training YAML used to pick circuits and model dims.')
+    parser.add_argument('--checkpoint', default=None,
+                        help='Checkpoint path. If omitted, uses training.checkpoint_dir + last epoch.')
+    parser.add_argument('--data-dir', default='netlists',
+                        help='Netlists root (contains family folders).')
+    parser.add_argument('--out-dir', default='umap_results_full',
+                        help='Output directory for plots/json.')
+    parser.add_argument('--metric', default='Gain',
+                        help='Performance metric key for coloring (e.g., Gain, UGB, PM).')
+    parser.add_argument('--n-neighbors', type=int, default=8)
+    parser.add_argument('--min-dist', type=float, default=0.1)
+    parser.add_argument('--device', default='cpu', choices=['cpu', 'cuda'])
+    args = parser.parse_args()
+
+    cfg = load_training_config(args.config)
+    model_cfg = cfg.get('model', {})
+    train_cfg = cfg.get('training', {})
+
+    device = torch.device(args.device)
+    data_dir = args.data_dir
+    output_dir = Path(args.out_dir)
     output_dir.mkdir(exist_ok=True)
+
+    circuits_cfg = cfg.get('data', {}).get('circuits', {})
+    circuit_ids, families = flatten_circuits(circuits_cfg)
     
-    # Circuit list
-    circuits_config = {
-        'diff_amps': ['75', '77', '84', '86', '94'],
-        'comparators': ['1045', '1046', '1051', '1065', '1071', '1073']
-    }
-    
-    # Flatten to lists
-    circuit_ids = []
-    families = []
-    for family, ids in circuits_config.items():
-        for cid in ids:
-            circuit_ids.append(cid)
-            families.append(family)
-    
+    checkpoint_path = args.checkpoint
+    if checkpoint_path is None:
+        ckpt_dir = str(train_cfg.get('checkpoint_dir', './checkpoints_full_training'))
+        epochs = int(train_cfg.get('epochs', 20))
+        checkpoint_path = f"{ckpt_dir}/checkpoint_epoch_{epochs:03d}.pt"
+
     print(f"Loading model from {checkpoint_path}...")
     model, checkpoint_info = load_checkpoint(checkpoint_path, device)
+
+    # Override model dims if config differs from defaults
+    input_dim = int(model_cfg.get('input_dim', 79))
+    hidden_dims = list(model_cfg.get('hidden_dims', [64, 64, 32]))
+    embedding_dim = int(model_cfg.get('embedding_dim', 128))
+    projection_dim = int(model_cfg.get('projection_dim', 128))
+    dropout = float(model_cfg.get('dropout', 0.1))
+    use_batch_norm = bool(model_cfg.get('use_batch_norm', True))
+
+    # Rebuild model with config dims if needed and reload weights
+    try:
+        if getattr(model, 'input_dim', input_dim) != input_dim or hidden_dims != [64, 64, 32] or embedding_dim != 128 or projection_dim != 128:
+            model2 = ContrastiveGINModel(
+                input_dim=input_dim,
+                hidden_dims=hidden_dims,
+                embedding_dim=embedding_dim,
+                projection_dim=projection_dim,
+                dropout=dropout,
+                use_batch_norm=use_batch_norm,
+            )
+            model2.load_state_dict(checkpoint_info['model_state'])
+            model = model2.to(device)
+            model.eval()
+    except Exception:
+        # If the checkpoint/model don't match, keep the already-loaded model.
+        pass
+
     print(f"✓ Model loaded (epoch {checkpoint_info['epoch']})")
     
     print(f"\nExtracting embeddings for {len(circuit_ids)} circuits...")
@@ -221,12 +325,17 @@ def main():
     embeddings_norm = embeddings / (np.linalg.norm(embeddings, axis=1, keepdims=True) + 1e-8)
     
     print(f"\nComputing UMAP projection...")
-    umap_embeddings = compute_umap(embeddings_norm, n_neighbors=5, min_dist=0.1)
+    umap_embeddings = compute_umap(embeddings_norm, n_neighbors=args.n_neighbors, min_dist=args.min_dist)
     
     print(f"\nGenerating visualizations...")
     plot_embeddings_by_family(umap_embeddings, metadata, str(output_dir / 'umap_by_family.png'))
-    plot_embeddings_by_performance(umap_embeddings, metadata, data_dir, 
-                                    str(output_dir / 'umap_by_performance.png'))
+    plot_embeddings_by_performance(
+        umap_embeddings,
+        metadata,
+        data_dir,
+        str(output_dir / 'umap_by_performance.png'),
+        metric_key=args.metric,
+    )
     
     print(f"\nSaving embeddings data...")
     save_embeddings_json(umap_embeddings, metadata, str(output_dir / 'umap_embeddings.json'))

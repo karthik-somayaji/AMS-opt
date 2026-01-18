@@ -59,7 +59,8 @@ class Trainer:
         total_loss = 0.0
         total_nt_xent = 0.0
         total_consistency = 0.0
-        num_processed = 0
+
+        num_pairs_processed = 0
         num_batches_processed = 0
         
         for batch_idx, batch in enumerate(batch_loader):
@@ -71,92 +72,92 @@ class Trainer:
             # Extract graphs from batch
             anchors = batch['anchors']
             positives = batch.get('positives', [])
-            hard_negatives = batch.get('hard_negatives', [])
-            labels = batch.get('labels', [])
             similarity_matrix = batch.get('similarity_matrix', None)
             anchor_circuit_ids = batch.get('anchor_circuit_ids', [])
-            
-            # Collect all embeddings for consistency loss (batch-wide)
-            # IMPORTANT: keep embeddings attached to the graph so consistency loss can backprop.
-            batch_embeddings_list = []
-            batch_losses_nt_xent = []
-            
-            # Process NT-Xent over available anchor-positive pairs
-            for i, (anchor_graph, pos_graph) in enumerate(zip(anchors, positives)):
-                self.optimizer.zero_grad()
 
-                h_anchor = torch.tensor(anchor_graph['features'], dtype=torch.float32, device=self.device)
-                adj_anchor = torch.tensor(anchor_graph['adjacency'], dtype=torch.float32, device=self.device)
-                z_anchor = self.model.encode(h_anchor, adj_anchor)  # [embedding_dim]
+            batch_nt_xent_loss = None
+            batch_consistency_loss = None
 
-                h_pos = torch.tensor(pos_graph['features'], dtype=torch.float32, device=self.device)
-                adj_pos = torch.tensor(pos_graph['adjacency'], dtype=torch.float32, device=self.device)
-                z_pos = self.model.encode(h_pos, adj_pos)  # [embedding_dim]
+            # 1) NT-Xent: compute over the batch of positive pairs.
+            # This requires batch_size > 1 to provide in-batch negatives.
+            num_pos_pairs = min(len(anchors), len(positives))
+            if num_pos_pairs > 0:
+                z_anchor_list = []
+                z_pos_list = []
+                for anchor_graph, pos_graph in zip(anchors[:num_pos_pairs], positives[:num_pos_pairs]):
+                    h_anchor = torch.tensor(anchor_graph['features'], dtype=torch.float32, device=self.device)
+                    adj_anchor = torch.tensor(anchor_graph['adjacency'], dtype=torch.float32, device=self.device)
+                    z_anchor_list.append(self.model.encode(h_anchor, adj_anchor))
 
-                # Batch dimension for loss computation
-                z_anchor_b = z_anchor.unsqueeze(0)  # [1, embedding_dim]
-                z_pos_b = z_pos.unsqueeze(0)  # [1, embedding_dim]
+                    h_pos = torch.tensor(pos_graph['features'], dtype=torch.float32, device=self.device)
+                    adj_pos = torch.tensor(pos_graph['adjacency'], dtype=torch.float32, device=self.device)
+                    z_pos_list.append(self.model.encode(h_pos, adj_pos))
 
-                # Handle hard negatives (if aligned)
-                hard_negs_tensor = None
-                if i < len(hard_negatives) and hard_negatives[i] is not None:
-                    hard_neg_graph = hard_negatives[i]
-                    h_neg = torch.tensor(hard_neg_graph['features'], dtype=torch.float32, device=self.device)
-                    adj_neg = torch.tensor(hard_neg_graph['adjacency'], dtype=torch.float32, device=self.device)
-                    hard_negs_tensor = self.model.encode(h_neg, adj_neg).unsqueeze(0)  # [1, embedding_dim]
+                z_anchor_b = torch.stack(z_anchor_list, dim=0)  # [B, D]
+                z_pos_b = torch.stack(z_pos_list, dim=0)  # [B, D]
 
-                nt_xent_loss = self.loss_fn(z_anchor_b, z_pos_b, hard_negs_i=hard_negs_tensor)
-                batch_losses_nt_xent.append(nt_xent_loss.item())
-
-                (self.nt_xent_weight * nt_xent_loss).backward()
+                self.optimizer.zero_grad(set_to_none=True)
+                batch_nt_xent_loss = self.loss_fn(z_anchor_b, z_pos_b)
+                (self.nt_xent_weight * batch_nt_xent_loss).backward()
                 self.optimizer.step()
 
-                total_nt_xent += nt_xent_loss.item()
-                num_processed += 1
+                total_nt_xent += float(batch_nt_xent_loss.item())
+                num_pairs_processed += int(num_pos_pairs)
                 self.global_step += 1
 
                 if self.summary_writer is not None:
-                    self.summary_writer.add_scalar('loss/train_nt_xent_step', nt_xent_loss.item(), self.global_step)
+                    self.summary_writer.add_scalar(
+                        'loss/train_nt_xent_step',
+                        float(batch_nt_xent_loss.item()),
+                        self.global_step,
+                    )
 
-            # Build embeddings for consistency loss (separate pass, so we don't reuse tensors across optimizer steps)
-            batch_embeddings_list = []
-            for i, anchor_graph in enumerate(anchors):
-                h_anchor = torch.tensor(anchor_graph['features'], dtype=torch.float32, device=self.device)
-                adj_anchor = torch.tensor(anchor_graph['adjacency'], dtype=torch.float32, device=self.device)
-                z_anchor = self.model.encode(h_anchor, adj_anchor)  # [embedding_dim]
-                if i < len(anchor_circuit_ids):
-                    batch_embeddings_list.append({'circuit_id': anchor_circuit_ids[i], 'embedding': z_anchor})
-            
-            # Compute consistency loss on full batch if enabled
-            consistency_loss = torch.tensor(0.0, device=self.device)
-            if self.consistency_loss_fn is not None and self.consistency_weight > 0 and similarity_matrix is not None:
-                if len(batch_embeddings_list) == len(anchor_circuit_ids) and len(anchor_circuit_ids) > 1:
-                    batch_emb = torch.stack([emb['embedding'] for emb in batch_embeddings_list])  # [N, embedding_dim] (all anchors)
+            # 2) Consistency: compute once per batch (over anchor embeddings) if enabled.
+            if (
+                self.consistency_loss_fn is not None
+                and self.consistency_weight > 0
+                and similarity_matrix is not None
+                and len(anchors) > 1
+            ):
+                batch_anchor_emb_list = []
+                for i, anchor_graph in enumerate(anchors):
+                    h_anchor = torch.tensor(anchor_graph['features'], dtype=torch.float32, device=self.device)
+                    adj_anchor = torch.tensor(anchor_graph['adjacency'], dtype=torch.float32, device=self.device)
+                    z_anchor = self.model.encode(h_anchor, adj_anchor)
+                    if i < len(anchor_circuit_ids):
+                        batch_anchor_emb_list.append(z_anchor)
+
+                if batch_anchor_emb_list:
+                    batch_emb = torch.stack(batch_anchor_emb_list, dim=0)
                     sim_matrix = torch.tensor(similarity_matrix, dtype=torch.float32, device=self.device)
-
                     if batch_emb.shape[0] == sim_matrix.shape[0]:
-                        consistency_loss = self.consistency_loss_fn(batch_emb, sim_matrix)
-                        total_consistency += consistency_loss.item()
+                        self.optimizer.zero_grad(set_to_none=True)
+                        batch_consistency_loss = self.consistency_loss_fn(batch_emb, sim_matrix)
+                        (self.consistency_weight * batch_consistency_loss).backward()
+                        self.optimizer.step()
+
+                        total_consistency += float(batch_consistency_loss.item())
 
                         if self.summary_writer is not None:
                             self.summary_writer.add_scalar(
                                 'loss/train_consistency_step',
-                                consistency_loss.item(),
+                                float(batch_consistency_loss.item()),
                                 self.global_step,
                             )
 
-                        # Backprop consistency once per batch (across all anchors)
-                        self.optimizer.zero_grad()
-                        (self.consistency_weight * consistency_loss).backward()
-                        self.optimizer.step()
-
-            # Total loss (for logging)
-            loss = self.nt_xent_weight * (total_nt_xent / max(num_processed, 1)) + self.consistency_weight * consistency_loss.item()
-            total_loss += loss
+            # 3) Total loss bookkeeping (for epoch-level reporting)
+            batch_total = 0.0
+            if batch_nt_xent_loss is not None:
+                batch_total += self.nt_xent_weight * float(batch_nt_xent_loss.item())
+            if batch_consistency_loss is not None:
+                batch_total += self.consistency_weight * float(batch_consistency_loss.item())
+            total_loss += batch_total
         
-        # Average NT-Xent over processed samples; average consistency over batches.
-        avg_loss = total_loss / max(num_processed, 1)
-        avg_nt_xent = total_nt_xent / max(num_processed, 1)
+        # Epoch summary:
+        # - avg_nt_xent is averaged over the number of processed positive pairs.
+        # - avg_loss is averaged over the number of processed batches (matches bookkeeping used above).
+        avg_loss = total_loss / max(num_batches_processed, 1)
+        avg_nt_xent = total_nt_xent / max(num_batches_processed, 1)
         avg_consistency = total_consistency / max(num_batches_processed, 1)
         
         return avg_loss, avg_nt_xent, avg_consistency

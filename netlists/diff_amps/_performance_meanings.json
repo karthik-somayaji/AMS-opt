@@ -1,0 +1,22 @@
+{
+  "performance_meanings": [
+    "Gain",
+    "CMRR",
+    "UGF",
+    "Power"
+  ],
+  "mapping": {
+    "Gain": [
+      "Gain"
+    ],
+    "CMRR": [
+      "CMRR"
+    ],
+    "UGF": [
+      "UGF"
+    ],
+    "Power": [
+      "Power"
+    ]
+  }
+}
