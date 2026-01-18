@@ -1,17 +1,75 @@
 data:
-  batch_size: 8
+  batch_size: 32
   cache_graphs: false
   circuits:
     comparators:
-    - 1051
-    - 1065
+    - 632
+    - 633
+    - 634
+    - 635
+    - 738
+    - 740
+    - 741
+    - 742
+    - 746
+    - 747
+    - 748
+    - 749
     - 1045
     - 1046
+    - 1047
+    - 1048
+    - 1049
+    - 1050
+    - 1051
+    - 1053
+    - 1054
+    - 1055
+    - 1056
+    - 1057
+    - 1058
+    - 1059
+    - 1060
+    - 1062
+    - 1063
+    - 1065
     - 1071
+    - 1073
     diff_amps:
-    - 86
+    - 69
+    - 71
+    - 75
+    - 77
+    - 80
+    - 82
     - 84
+    - 86
+    - 88
+    - 90
+    - 92
     - 94
+    - 96
+    - 97
+    - 614
+    - 615
+    - 616
+    - 617
+    - 618
+    - 619
+    - 620
+    - 621
+    - 921
+    - 922
+    - 923
+    - 924
+    - 925
+    - 926
+    - 927
+    - 928
+    - 929
+    - 930
+    - 931
+    - 932
   data_dir: /home/karthik/sim_clean/AMS-opt/netlists
   family_balance: equal
   pos_neg_ratio: 1.0
@@ -20,8 +78,8 @@ data:
     comparators:
     - 1073
     diff_amps:
-    - 75
-    - 77
+    - 94
+    - 97
 early_stopping:
   min_delta: 0.0001
   patience: 10
@@ -36,7 +94,7 @@ loss:
     max_dist: 1.0
     temperature: 1.0
     type: margin
-    weight: 0.0
+    weight: 0.1
   hard_neg_weight: 1.0
   nt_xent_weight: 0.9
   temperature: 0.07
@@ -48,7 +106,7 @@ model:
   - 64
   - 64
   - 32
-  input_dim: 26
+  input_dim: 79
   projection_dim: 128
   use_batch_norm: true
 optimizer:

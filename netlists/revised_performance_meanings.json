@@ -1,0 +1,21 @@
+{
+  "performance_meanings": [
+    "Gain",
+    "CMRR",
+    "UGF",
+    "Power",
+    "Delay",
+    "Offset",
+    "Hysteresis",
+    "PSRR",
+    "bandwidth",
+    "input capacitance",
+    "input-referred noise",
+    "kickback noise",
+    "metastability",
+    "output swing",
+    "regenerationstrength",
+    "sensitivity",
+    "slew rate"
+  ]
+}

@@ -64,6 +64,10 @@ a) Collect sub-structures :
 python3 scripts/collect_substructures.py --family comparators --out netlists/comparators/_substructures_ordered.json
 ```
 
+```
+python3 scripts/generate_global_meanings.py
+```
+
 b) Get features
 ```bash
 python scripts/comb_graph_to_gnn.py \
@@ -86,6 +90,32 @@ for d in netlists/diff_amps/*/; do
   python scripts/combine_graphs.py --str_graph "$d/str_graph.json" --fun_graph "$d/fun_updated.json" --out "$d/comb_graph.json"
   python scripts/comb_graph_to_gnn.py --in "$d/comb_graph.json"
 done
+
+#### Batch: Build GNN Features for `diff_amps` + `comparators`
+
+This runs `comb_graph_to_gnn.py` for every circuit that has a `comb_graph.json` and writes outputs in-place (into each circuit directory).
+
+```bash
+cd /home/karthik/sim_clean/AMS-opt
+
+for fam in diff_amps comparators; do
+  echo "=== Family: $fam ==="
+  for d in netlists/$fam/*/; do
+    id="$(basename "$d")"
+    cg="$d/comb_graph.json"
+    alt="$d/${id}_comb_graph.json"
+    if [ -f "$cg" ]; then
+      echo "Processing $cg"
+      python3 scripts/comb_graph_to_gnn.py --in "$cg"
+    elif [ -f "$alt" ]; then
+      echo "Processing $alt"
+      python3 scripts/comb_graph_to_gnn.py --in "$alt"
+    else
+      echo "Skipping (missing comb_graph.json / ${id}_comb_graph.json): $d"
+    fi
+  done
+done
+```
 ```
 
 ---
@@ -98,3 +128,8 @@ python3 -m gnn_training.scripts.train --config gnn_training/config/full_training
 cd /home/karthik/sim_clean/AMS-opt && python3 scripts/visualize_embeddings_umap.py 2>&1
 
 #####################
+python3 -m gnn_training.scripts.train --config gnn_training/config/full_training_diff_amps_comparators_all.yaml
+
+
+python3 scripts/visualize_embeddings_umap.py --n-neighbors 12 --min-dist 0.05
+python3 scripts/visualize_embeddings_umap.py --metric UGB

@@ -55,11 +55,9 @@ class ConsistencyLoss(nn.Module):
         sq_dists = torch.cdist(embeddings, embeddings, p=2) ** 2  # [N, N]
         dists = torch.sqrt(sq_dists + 1e-8)  # [N, N], add eps for numerical stability
         
-        # Target distance: similarity ↔ distance (higher sim = lower target dist)
-        # target_dist[i,j] = (1 - sim[i,j]) * max_dist (inverse relationship)
-        # Alternative: target_dist = sim[i,j] * max_dist (direct relationship - closer if similar)
-        # We use the direct relationship: similar circuits should be closer
-        target_dists = similarity_matrix * self.max_dist  # [N, N]
+        # Target distance: higher similarity => smaller target distance.
+        # If sim=1, target distance is 0; if sim=0, target distance is max_dist.
+        target_dists = (1.0 - similarity_matrix) * self.max_dist  # [N, N]
         
         # Compute margin violation: max(0, margin + actual_dist - target_dist)
         violations = torch.relu(self.margin + dists - target_dists)  # [N, N]

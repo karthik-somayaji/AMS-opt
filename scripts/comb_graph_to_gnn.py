@@ -29,12 +29,12 @@ except Exception:
 
 NODE_TYPES = ["performance", "sub-structure", "parameter", "net", "device", "terminal"]
 
-# Sub-category slots (4)
-# performance -> [original, ambiguous, trade-off, directly-proportional]
-# parameter -> [original, directly-proportional, inversely-proportional, unused]
-# device -> [pmos4, nmos4, unused, unused]
-# terminal -> [D, G, S, unused]
-SUBCAT_SLOTS = 4
+# Sub-category slots (6)
+# performance -> [original, ambiguous, trade-off, directly-proportional, unused, unused]
+# parameter -> [original, directly-proportional, inversely-proportional, unused, unused, unused]
+# device -> [pmos4, nmos4, pnp, npn, resistor, capacitor]
+# terminal -> [D, G, S, unused, unused, unused]
+SUBCAT_SLOTS = 6
 
 
 def load_json(path: str) -> Dict[str, Any]:
@@ -198,6 +198,14 @@ def build_feature_matrix(nodes: List[Dict[str, Any]], perf_meanings: List[str], 
                 features[i][base + 0] = 1.0
             elif "nmos" in dtyp:
                 features[i][base + 1] = 1.0
+            elif "pnp" in dtyp:
+                features[i][base + 2] = 1.0
+            elif "npn" in dtyp:
+                features[i][base + 3] = 1.0
+            elif "res" in dtyp or "resistor" in dtyp:
+                features[i][base + 4] = 1.0
+            elif "cap" in dtyp or "capacitor" in dtyp:
+                features[i][base + 5] = 1.0
         elif ntype == "terminal":
             # terminal id like 'term:M1:D'
             parts = nid.split(":")
@@ -218,7 +226,7 @@ def build_feature_matrix(nodes: List[Dict[str, Any]], perf_meanings: List[str], 
             idx = perf_map.get(base_metric)
             if idx is not None and idx < perf_dim_max:
                 features[i][mbase + idx] = 1.0
-        elif ntype == "sub-structure":
+        elif ntype in ("sub-structure", "substructure"):
             # normalize raw id to canonical and map to ordered list; place into sub block after perf_dim_max
             canon = normalize_substructure_name(nid)
             idx = sub_map.get(canon)

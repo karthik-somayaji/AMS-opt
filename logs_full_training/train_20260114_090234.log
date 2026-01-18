@@ -1,0 +1,231 @@
+2026-01-14 09:02:34,904 - __main__ - INFO - Starting training with config: gnn_training/config/full_training_diff_amps_comparators_all.yaml
+2026-01-14 09:02:34,904 - __main__ - INFO - Config: {
+  "data": {
+    "batch_size": 8,
+    "cache_graphs": false,
+    "data_dir": "/home/karthik/sim_clean/AMS-opt/netlists",
+    "family_balance": "equal",
+    "pos_neg_ratio": 1.0,
+    "shuffle": true,
+    "circuits": {
+      "diff_amps": [
+        69,
+        71,
+        75,
+        77,
+        80,
+        82,
+        84,
+        86,
+        88,
+        90,
+        92,
+        94,
+        96,
+        97,
+        614,
+        615,
+        616,
+        617,
+        618,
+        619,
+        620,
+        621,
+        921,
+        922,
+        923,
+        924,
+        925,
+        926,
+        927,
+        928,
+        929,
+        930,
+        931,
+        932
+      ],
+      "comparators": [
+        632,
+        633,
+        634,
+        635,
+        738,
+        740,
+        741,
+        742,
+        746,
+        747,
+        748,
+        749,
+        1045,
+        1046,
+        1047,
+        1048,
+        1049,
+        1050,
+        1051,
+        1053,
+        1054,
+        1055,
+        1056,
+        1057,
+        1058,
+        1059,
+        1060,
+        1062,
+        1063,
+        1065,
+        1071,
+        1073
+      ]
+    },
+    "test_circuits": {
+      "diff_amps": [
+        94,
+        97
+      ],
+      "comparators": [
+        1073
+      ]
+    }
+  },
+  "early_stopping": {
+    "min_delta": 0.0001,
+    "patience": 10
+  },
+  "logging": {
+    "log_level": "INFO",
+    "tensorboard_dir": "./logs_full_training",
+    "verbose": true
+  },
+  "loss": {
+    "hard_neg_weight": 1.0,
+    "temperature": 0.07,
+    "type": "nt_xent",
+    "nt_xent_weight": 0.9,
+    "consistency": {
+      "enabled": true,
+      "type": "margin",
+      "weight": 0.1,
+      "margin": 0.7,
+      "max_dist": 1.0,
+      "temperature": 1.0
+    }
+  },
+  "model": {
+    "dropout": 0.1,
+    "embedding_dim": 128,
+    "hidden_dims": [
+      64,
+      64,
+      32
+    ],
+    "input_dim": 79,
+    "projection_dim": 128,
+    "use_batch_norm": true
+  },
+  "optimizer": {
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "lr": 0.001,
+    "type": "adam",
+    "weight_decay": 1e-05
+  },
+  "scheduler": {
+    "type": "cosine"
+  },
+  "training": {
+    "checkpoint_dir": "./checkpoints_full_training",
+    "device": "cpu",
+    "epochs": 20,
+    "log_interval": 2,
+    "seed": 42,
+    "val_interval": 2
+  }
+}
+2026-01-14 09:02:34,904 - __main__ - INFO - Using device: cpu
+2026-01-14 09:02:34,908 - __main__ - INFO - Model architecture:
+ContrastiveGINModel(
+  (encoder): GINEncoder(
+    (gin_layers): ModuleList(
+      (0): GINConv(
+        (mlp): Sequential(
+          (0): Linear(in_features=79, out_features=64, bias=True)
+          (1): ReLU()
+          (2): Linear(in_features=64, out_features=64, bias=True)
+        )
+      )
+      (1): GINConv(
+        (mlp): Sequential(
+          (0): Linear(in_features=64, out_features=64, bias=True)
+          (1): ReLU()
+          (2): Linear(in_features=64, out_features=64, bias=True)
+        )
+      )
+      (2): GINConv(
+        (mlp): Sequential(
+          (0): Linear(in_features=64, out_features=32, bias=True)
+          (1): ReLU()
+          (2): Linear(in_features=32, out_features=32, bias=True)
+        )
+      )
+    )
+    (batch_norms): ModuleList(
+      (0-1): 2 x BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (dropout): Dropout(p=0.1, inplace=False)
+    (readout_mlp): Sequential(
+      (0): Linear(in_features=32, out_features=128, bias=True)
+      (1): ReLU()
+      (2): Linear(in_features=128, out_features=128, bias=True)
+    )
+  )
+  (projection_head): ProjectionHead(
+    (mlp): Sequential(
+      (0): Linear(in_features=128, out_features=128, bias=True)
+      (1): ReLU()
+      (2): Linear(in_features=128, out_features=128, bias=True)
+    )
+  )
+)
+2026-01-14 09:02:34,908 - __main__ - INFO - Loss function: nt_xent
+2026-01-14 09:02:34,908 - __main__ - INFO - NT-Xent weight: 0.9
+2026-01-14 09:02:34,908 - __main__ - INFO - Consistency loss enabled: type=margin, weight=0.1
+2026-01-14 09:02:35,462 - __main__ - INFO - Optimizer: adam
+2026-01-14 09:02:35,467 - __main__ - INFO - Train circuits: {'diff_amps': [69, 71, 75, 77, 80, 82, 84, 86, 88, 90, 92, 96, 614, 615, 616, 617, 618, 619, 620, 621, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932], 'comparators': [632, 633, 634, 635, 738, 740, 741, 742, 746, 747, 748, 749, 1045, 1046, 1047, 1048, 1049, 1050, 1051, 1053, 1054, 1055, 1056, 1057, 1058, 1059, 1060, 1062, 1063, 1065, 1071]}
+2026-01-14 09:02:35,467 - __main__ - INFO - Test circuits: {'diff_amps': [94, 97], 'comparators': [1073]}
+2026-01-14 09:02:36,562 - __main__ - INFO - Starting training...
+2026-01-14 09:02:41,308 - __main__ - INFO - Epoch 2/20 - Loss: 0.4656 (NT-Xent: 0.4592, Consistency: 0.5231)
+2026-01-14 09:02:41,731 - __main__ - INFO - Epoch 2/20 - Val Loss: 0.1606
+2026-01-14 09:02:41,731 - __main__ - INFO - Current LR: 0.000976
+2026-01-14 09:02:46,447 - __main__ - INFO - Epoch 4/20 - Loss: 0.1899 (NT-Xent: 0.1426, Consistency: 0.6157)
+2026-01-14 09:02:46,910 - __main__ - INFO - Epoch 4/20 - Val Loss: 0.1996
+2026-01-14 09:02:46,910 - __main__ - INFO - Current LR: 0.000905
+2026-01-14 09:02:51,723 - __main__ - INFO - Epoch 6/20 - Loss: 0.2405 (NT-Xent: 0.2055, Consistency: 0.5550)
+2026-01-14 09:02:52,146 - __main__ - INFO - Epoch 6/20 - Val Loss: 0.1748
+2026-01-14 09:02:52,146 - __main__ - INFO - Current LR: 0.000794
+2026-01-14 09:02:56,965 - __main__ - INFO - Epoch 8/20 - Loss: 0.2806 (NT-Xent: 0.2459, Consistency: 0.5928)
+2026-01-14 09:02:57,366 - __main__ - INFO - Epoch 8/20 - Val Loss: 0.1767
+2026-01-14 09:02:57,366 - __main__ - INFO - Current LR: 0.000655
+2026-01-14 09:03:02,335 - __main__ - INFO - Epoch 10/20 - Loss: 0.3506 (NT-Xent: 0.3233, Consistency: 0.5964)
+2026-01-14 09:03:02,794 - __main__ - INFO - Epoch 10/20 - Val Loss: 0.2299
+2026-01-14 09:03:02,804 - __main__ - INFO - Current LR: 0.000500
+2026-01-14 09:03:07,726 - __main__ - INFO - Epoch 12/20 - Loss: 0.1474 (NT-Xent: 0.0986, Consistency: 0.5872)
+2026-01-14 09:03:08,121 - __main__ - INFO - Epoch 12/20 - Val Loss: 0.2008
+2026-01-14 09:03:08,121 - __main__ - INFO - Current LR: 0.000345
+2026-01-14 09:03:13,077 - __main__ - INFO - Epoch 14/20 - Loss: 0.1772 (NT-Xent: 0.1252, Consistency: 0.6452)
+2026-01-14 09:03:13,486 - __main__ - INFO - Epoch 14/20 - Val Loss: 0.1969
+2026-01-14 09:03:13,486 - __main__ - INFO - Current LR: 0.000206
+2026-01-14 09:03:18,445 - __main__ - INFO - Epoch 16/20 - Loss: 0.1404 (NT-Xent: 0.0805, Consistency: 0.6794)
+2026-01-14 09:03:18,866 - __main__ - INFO - Epoch 16/20 - Val Loss: 0.1203
+2026-01-14 09:03:18,866 - __main__ - INFO - Current LR: 0.000095
+2026-01-14 09:03:23,719 - __main__ - INFO - Epoch 18/20 - Loss: 0.1315 (NT-Xent: 0.0705, Consistency: 0.6806)
+2026-01-14 09:03:24,147 - __main__ - INFO - Epoch 18/20 - Val Loss: 0.1771
+2026-01-14 09:03:24,147 - __main__ - INFO - Current LR: 0.000024
+2026-01-14 09:03:29,011 - __main__ - INFO - Epoch 20/20 - Loss: 0.1118 (NT-Xent: 0.0583, Consistency: 0.5928)
+2026-01-14 09:03:29,435 - __main__ - INFO - Epoch 20/20 - Val Loss: 0.1104
+2026-01-14 09:03:29,444 - __main__ - INFO - Current LR: 0.000000
+2026-01-14 09:03:29,444 - __main__ - INFO - Training complete!
