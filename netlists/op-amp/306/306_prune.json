@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R0 (IB2 VCM1) resistor",
+    "reason": "R0 is part of the bias/common-mode linkage between IB2 and IB1 through VCM1; removing it typically leaves the main output branches (NMOS sinks M4/M5 with PMOS loads M6/M7) still functional. Caveat: IB2/IB1 coupling (and any intended common-mode stabilization) is reduced, so output common-mode and matching may drift.",
+    "impact_estimate": "Low (core amplification path remains; common-mode/bias tracking degrades)"
+  },
+  {
+    "component": "R1 (VCM1 IB1) resistor",
+    "reason": "R1 completes the IB2–VCM1–IB1 resistive network; deleting it usually doesn’t break signal conduction from the VB1/VB2-controlled devices to VOUT1/VOUT2. Caveat: if IB1 is expected to be generated/trimmed via VCM1, removing R1 can shift bias currents and reduce CMRR.",
+    "impact_estimate": "Low (mostly affects bias distribution/common-mode behavior)"
+  },
+  {
+    "component": "M8 (net027 VB3 VDD VDD) pmos4",
+    "reason": "M8 is a VB3-biased PMOS current source setting the bias node net027 for the pull-up device M6; if net027 (or the pull-up current) is provided by another bias source, M8 can be removed without breaking the basic output branch operation. Caveat: without an alternate bias, M6 current becomes undefined, reducing gain and shifting VOUT1 DC level.",
+    "impact_estimate": "Low-to-moderate (bias/gain changes unless net027 is biased elsewhere)"
+  }
+]

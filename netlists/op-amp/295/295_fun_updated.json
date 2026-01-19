@@ -1,0 +1,1190 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "M10-M11 input differential pair (NMOS)",
+      "type": "substructure"
+    },
+    {
+      "id": "M6-M7 PMOS active load (VB2 biased)",
+      "type": "substructure"
+    },
+    {
+      "id": "M8-M9 PMOS bias current sources (VB3)",
+      "type": "substructure"
+    },
+    {
+      "id": "M1-M3 NMOS bias sinks (VB4)",
+      "type": "substructure"
+    },
+    {
+      "id": "M4-M5 NMOS output devices / pull-down (VB1 biased)",
+      "type": "substructure"
+    },
+    {
+      "id": "R0-R3 resistive feedback / input network",
+      "type": "substructure"
+    },
+    {
+      "id": "C0-C1 input/load capacitors",
+      "type": "substructure"
+    },
+    {
+      "id": "IB1 (tail current)",
+      "type": "parameter"
+    },
+    {
+      "id": "VB1 (NMOS output bias)",
+      "type": "parameter"
+    },
+    {
+      "id": "VB2 (PMOS load bias)",
+      "type": "parameter"
+    },
+    {
+      "id": "VB3 (PMOS bias)",
+      "type": "parameter"
+    },
+    {
+      "id": "VB4 (NMOS bias)",
+      "type": "parameter"
+    },
+    {
+      "id": "R0",
+      "type": "parameter"
+    },
+    {
+      "id": "R1",
+      "type": "parameter"
+    },
+    {
+      "id": "R2",
+      "type": "parameter"
+    },
+    {
+      "id": "R3",
+      "type": "parameter"
+    },
+    {
+      "id": "C0",
+      "type": "parameter"
+    },
+    {
+      "id": "C1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M10",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M10",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M11",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M11",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M6",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M6",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M8",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M8",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M9",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M9",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "Gain-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Gain-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Gain-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Power-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Power-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Power-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "IB1 (tail current)-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "IB1 (tail current)-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VB1 (NMOS output bias)-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VB1 (NMOS output bias)-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VB2 (PMOS load bias)-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VB2 (PMOS load bias)-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VB3 (PMOS bias)-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VB3 (PMOS bias)-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VB4 (NMOS bias)-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VB4 (NMOS bias)-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R0-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R0-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R2-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R2-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R3-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R3-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "C0-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "C0-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "C1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "C1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M10-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M10-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M10-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M10-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M11-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M11-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M11-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M11-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M6-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M6-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M6-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M6-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M7-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M7-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M7-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M7-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M8-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M8-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M8-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M8-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M9-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M9-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M9-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M9-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M4-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M4-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M4-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M4-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5-inversely-proportional",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain-trade-off",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF-trade-off",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain-trade-off",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR-ambiguous",
+      "target": "Gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR-ambiguous",
+      "target": "UGF-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR-ambiguous",
+      "target": "Power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "M10-M11 input differential pair (NMOS)",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "M10-M11 input differential pair (NMOS)",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "M10-M11 input differential pair (NMOS)",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "M10-M11 input differential pair (NMOS)",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "M6-M7 PMOS active load (VB2 biased)",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "M6-M7 PMOS active load (VB2 biased)",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "M6-M7 PMOS active load (VB2 biased)",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "M8-M9 PMOS bias current sources (VB3)",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "M8-M9 PMOS bias current sources (VB3)",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "M1-M3 NMOS bias sinks (VB4)",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "M1-M3 NMOS bias sinks (VB4)",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "M1-M3 NMOS bias sinks (VB4)",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "M4-M5 NMOS output devices / pull-down (VB1 biased)",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "M4-M5 NMOS output devices / pull-down (VB1 biased)",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "M4-M5 NMOS output devices / pull-down (VB1 biased)",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-R3 resistive feedback / input network",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-R3 resistive feedback / input network",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-R3 resistive feedback / input network",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "C0-C1 input/load capacitors",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "C0-C1 input/load capacitors",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M10",
+      "target": "M10-M11 input differential pair (NMOS)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M10",
+      "target": "M10-M11 input differential pair (NMOS)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M11",
+      "target": "M10-M11 input differential pair (NMOS)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11",
+      "target": "M10-M11 input differential pair (NMOS)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M6",
+      "target": "M6-M7 PMOS active load (VB2 biased)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M6",
+      "target": "M6-M7 PMOS active load (VB2 biased)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M7",
+      "target": "M6-M7 PMOS active load (VB2 biased)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M7",
+      "target": "M6-M7 PMOS active load (VB2 biased)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M8",
+      "target": "M8-M9 PMOS bias current sources (VB3)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M8",
+      "target": "M8-M9 PMOS bias current sources (VB3)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M9",
+      "target": "M8-M9 PMOS bias current sources (VB3)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M9",
+      "target": "M8-M9 PMOS bias current sources (VB3)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1",
+      "target": "M1-M3 NMOS bias sinks (VB4)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1",
+      "target": "M1-M3 NMOS bias sinks (VB4)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "M1-M3 NMOS bias sinks (VB4)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "M1-M3 NMOS bias sinks (VB4)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M4",
+      "target": "M4-M5 NMOS output devices / pull-down (VB1 biased)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M4",
+      "target": "M4-M5 NMOS output devices / pull-down (VB1 biased)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5",
+      "target": "M4-M5 NMOS output devices / pull-down (VB1 biased)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M5",
+      "target": "M4-M5 NMOS output devices / pull-down (VB1 biased)",
+      "relation": "connects"
+    },
+    {
+      "source": "R0",
+      "target": "R0-R3 resistive feedback / input network",
+      "relation": "connects"
+    },
+    {
+      "source": "R1",
+      "target": "R0-R3 resistive feedback / input network",
+      "relation": "connects"
+    },
+    {
+      "source": "R2",
+      "target": "R0-R3 resistive feedback / input network",
+      "relation": "connects"
+    },
+    {
+      "source": "R3",
+      "target": "R0-R3 resistive feedback / input network",
+      "relation": "connects"
+    },
+    {
+      "source": "C0",
+      "target": "C0-C1 input/load capacitors",
+      "relation": "connects"
+    },
+    {
+      "source": "C1",
+      "target": "C0-C1 input/load capacitors",
+      "relation": "connects"
+    },
+    {
+      "source": "IB1 (tail current)-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "IB1 (tail current)-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "IB1 (tail current)",
+      "target": "Gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "IB1 (tail current)",
+      "target": "CMRR-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "VB1 (NMOS output bias)-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB2 (PMOS load bias)-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB3 (PMOS bias)-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB4 (NMOS bias)-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R1-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R2-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R3-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R1-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R2-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R3-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "C0-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "C1-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "IB1 (tail current)",
+      "target": "IB1 (tail current)-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "IB1 (tail current)",
+      "target": "IB1 (tail current)-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB1 (NMOS output bias)",
+      "target": "VB1 (NMOS output bias)-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB1 (NMOS output bias)",
+      "target": "VB1 (NMOS output bias)-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB2 (PMOS load bias)",
+      "target": "VB2 (PMOS load bias)-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB2 (PMOS load bias)",
+      "target": "VB2 (PMOS load bias)-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB3 (PMOS bias)",
+      "target": "VB3 (PMOS bias)-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB3 (PMOS bias)",
+      "target": "VB3 (PMOS bias)-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB4 (NMOS bias)",
+      "target": "VB4 (NMOS bias)-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB4 (NMOS bias)",
+      "target": "VB4 (NMOS bias)-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R0",
+      "target": "R0-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R0",
+      "target": "R0-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R1",
+      "target": "R1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R1",
+      "target": "R1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R2",
+      "target": "R2-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R2",
+      "target": "R2-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R3",
+      "target": "R3-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R3",
+      "target": "R3-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "C0",
+      "target": "C0-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "C0",
+      "target": "C0-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "C1",
+      "target": "C1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "C1",
+      "target": "C1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M10",
+      "target": "W_M10-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M10",
+      "target": "W_M10-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M10",
+      "target": "L_M10-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M10",
+      "target": "L_M10-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M11",
+      "target": "W_M11-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M11",
+      "target": "W_M11-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11",
+      "target": "L_M11-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11",
+      "target": "L_M11-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M6",
+      "target": "W_M6-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M6",
+      "target": "W_M6-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M6",
+      "target": "L_M6-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M6",
+      "target": "L_M6-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M7",
+      "target": "W_M7-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M7",
+      "target": "W_M7-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M7",
+      "target": "L_M7-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M7",
+      "target": "L_M7-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M8",
+      "target": "W_M8-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M8",
+      "target": "W_M8-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M8",
+      "target": "L_M8-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M8",
+      "target": "L_M8-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M9",
+      "target": "W_M9-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M9",
+      "target": "W_M9-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M9",
+      "target": "L_M9-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M9",
+      "target": "L_M9-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1",
+      "target": "W_M1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1",
+      "target": "W_M1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1",
+      "target": "L_M1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1",
+      "target": "L_M1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "W_M3-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "W_M3-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "L_M3-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "L_M3-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M4",
+      "target": "W_M4-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M4",
+      "target": "W_M4-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M4",
+      "target": "L_M4-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M4",
+      "target": "L_M4-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5",
+      "target": "W_M5-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M5",
+      "target": "W_M5-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M5",
+      "target": "L_M5-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M5",
+      "target": "L_M5-inversely-proportional",
+      "relation": "connects"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0 (VOUT1 VSS) capacitor",
+    "reason": "This is an output load/compensation capacitor that mainly affects bandwidth and transient stability; removing it typically preserves the DC operating point and basic amplification. Caveat: if it was used for frequency compensation, phase margin/noise peaking may worsen.",
+    "impact_estimate": "Low for DC functionality; moderate for AC/stability"
+  },
+  {
+    "component": "M4 (net030 VB1 net034 VSS) nmos4",
+    "reason": "M4 looks like a VB1-biased NMOS cascode/bias device feeding node net030 via net034; if net030 can be biased/defined through the remaining branch (e.g., via M6 and the net028 path), dropping this device can leave the main input-to-output path intact. Caveat: net030 bias/current and thus gain/output swing may shift significantly depending on how net034 is otherwise set.",
+    "impact_estimate": "Low-to-moderate (biasing and headroom may change)"
+  },
+  {
+    "component": "M3 (net033 net030 VSS VSS) nmos4",
+    "reason": "M3 is a diode-connected/degeneration-type NMOS from net033 to VSS controlled by net030; removing it mainly reduces local feedback/clamping on net033 rather than breaking the core VIN1→VOUT1 signal path through M11/M10/M7. Caveat: without M3, net033 may float or move, altering bias currents, linearity, and potentially increasing distortion.",
+    "impact_estimate": "Low-to-moderate (linearity/bias stability impact)"
+  }
+]

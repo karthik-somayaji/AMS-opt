@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M15 (IB1 IB1 net043 VSS) nmos4",
+    "reason": "M15 is a diode-connected NMOS used to set/condition the IB1 bias (via net043) and doesn’t sit in the direct VIN→VOUT signal path; if IB1 is provided as an ideal/external bias, M15 can be removed. Caveat: if IB1 is generated internally from this branch, removing M15 will leave IB1 undefined and the whole stage may not bias correctly.",
+    "impact_estimate": "Low if IB1 is externally defined; high if IB1 depends on this branch"
+  },
+  {
+    "component": "M16 (net043 VREF1 VSS VSS) nmos4",
+    "reason": "M16 mainly creates the reference/bias node net043 from VREF1, supporting the IB1-generation branch rather than the main amplification devices; with an external bias generator for net043/IB1, deleting M16 typically preserves the amplifier’s core operation. Caveat: if net043 is not driven elsewhere, IB1 biasing collapses.",
+    "impact_estimate": "Low if net043/IB1 are externally supplied; high otherwise"
+  },
+  {
+    "component": "M12 (net14 IB1 net033 VSS) nmos4",
+    "reason": "M12 ties the input tail node net14 to a bias-controlled node net033 (which is also influenced by the VOUT-controlled clamps M10/M11), acting like a biasing/clamping element rather than a required differential-pair device; removing it can leave the VIN1/VIN2 input devices (M7/M6) and PMOS loads (M8/M9 with M13/M14) still structurally intact if net14 is biased elsewhere. Caveat: if M12 is the only tail-current/bias mechanism for net14, the input pair may lose its operating current and stop functioning properly.",
+    "impact_estimate": "Low-to-high depending on whether net14 has an alternate bias/tail source"
+  }
+]

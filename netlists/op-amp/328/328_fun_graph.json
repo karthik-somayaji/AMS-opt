@@ -1,0 +1,108 @@
+{
+  "nodes": [
+    {"id": "Gain", "type": "performance"},
+    {"id": "CMRR", "type": "performance"},
+    {"id": "UGF", "type": "performance"},
+    {"id": "Power", "type": "performance"},
+
+    {"id": "M8-M9 PMOS input pair (VIN1/VIN2 -> net01/net028, tail IB1)", "type": "substructure"},
+    {"id": "M12-M13 NMOS bias/current-sink devices (net01/net028, to VSS)", "type": "substructure"},
+    {"id": "M10-M11 PMOS current-mirror / active load (net037, net038)", "type": "substructure"},
+    {"id": "M6-M7 PMOS current-mirror / active load (net040, net039)", "type": "substructure"},
+    {"id": "M1-M3 NMOS pull-down/output devices (net037/net039 driven by net028)", "type": "substructure"},
+    {"id": "M4-M5 NMOS pull-down/output devices (net038/net040 driven by net01)", "type": "substructure"},
+    {"id": "C2 shunt/load capacitor (net038 to VSS)", "type": "substructure"},
+    {"id": "C0 shunt/load capacitor (net039 to VSS)", "type": "substructure"},
+
+    {"id": "IB1", "type": "parameter"},
+    {"id": "C0", "type": "parameter"},
+    {"id": "C2", "type": "parameter"},
+
+    {"id": "W_M8", "type": "parameter"},
+    {"id": "L_M8", "type": "parameter"},
+    {"id": "W_M9", "type": "parameter"},
+    {"id": "L_M9", "type": "parameter"},
+    {"id": "W_M12", "type": "parameter"},
+    {"id": "L_M12", "type": "parameter"},
+    {"id": "W_M13", "type": "parameter"},
+    {"id": "L_M13", "type": "parameter"},
+
+    {"id": "W_M10", "type": "parameter"},
+    {"id": "L_M10", "type": "parameter"},
+    {"id": "W_M11", "type": "parameter"},
+    {"id": "L_M11", "type": "parameter"},
+    {"id": "W_M6", "type": "parameter"},
+    {"id": "L_M6", "type": "parameter"},
+    {"id": "W_M7", "type": "parameter"},
+    {"id": "L_M7", "type": "parameter"},
+
+    {"id": "W_M1", "type": "parameter"},
+    {"id": "L_M1", "type": "parameter"},
+    {"id": "W_M3", "type": "parameter"},
+    {"id": "L_M3", "type": "parameter"},
+    {"id": "W_M4", "type": "parameter"},
+    {"id": "L_M4", "type": "parameter"},
+    {"id": "W_M5", "type": "parameter"},
+    {"id": "L_M5", "type": "parameter"}
+  ],
+  "links": [
+    {"source": "Gain", "target": "UGF", "relation": "trade-off"},
+    {"source": "UGF", "target": "Power", "relation": "trade-off"},
+    {"source": "Gain", "target": "Power", "relation": "trade-off"},
+    {"source": "CMRR", "target": "Gain", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "UGF", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "Power", "relation": "ambiguous"},
+
+    {"source": "M8-M9 PMOS input pair (VIN1/VIN2 -> net01/net028, tail IB1)", "target": "Gain", "relation": "influences"},
+    {"source": "M8-M9 PMOS input pair (VIN1/VIN2 -> net01/net028, tail IB1)", "target": "UGF", "relation": "influences"},
+    {"source": "M8-M9 PMOS input pair (VIN1/VIN2 -> net01/net028, tail IB1)", "target": "CMRR", "relation": "influences"},
+    {"source": "M8-M9 PMOS input pair (VIN1/VIN2 -> net01/net028, tail IB1)", "target": "Power", "relation": "influences"},
+
+    {"source": "M10-M11 PMOS current-mirror / active load (net037, net038)", "target": "Gain", "relation": "influences"},
+    {"source": "M10-M11 PMOS current-mirror / active load (net037, net038)", "target": "UGF", "relation": "influences"},
+    {"source": "M6-M7 PMOS current-mirror / active load (net040, net039)", "target": "Gain", "relation": "influences"},
+    {"source": "M6-M7 PMOS current-mirror / active load (net040, net039)", "target": "UGF", "relation": "influences"},
+
+    {"source": "M1-M3 NMOS pull-down/output devices (net037/net039 driven by net028)", "target": "Gain", "relation": "influences"},
+    {"source": "M1-M3 NMOS pull-down/output devices (net037/net039 driven by net028)", "target": "UGF", "relation": "influences"},
+    {"source": "M4-M5 NMOS pull-down/output devices (net038/net040 driven by net01)", "target": "Gain", "relation": "influences"},
+    {"source": "M4-M5 NMOS pull-down/output devices (net038/net040 driven by net01)", "target": "UGF", "relation": "influences"},
+
+    {"source": "C2 shunt/load capacitor (net038 to VSS)", "target": "UGF", "relation": "influences"},
+    {"source": "C0 shunt/load capacitor (net039 to VSS)", "target": "UGF", "relation": "influences"},
+
+    {"source": "W_M8", "target": "M8-M9 PMOS input pair (VIN1/VIN2 -> net01/net028, tail IB1)", "relation": "belongs-to"},
+    {"source": "L_M8", "target": "M8-M9 PMOS input pair (VIN1/VIN2 -> net01/net028, tail IB1)", "relation": "belongs-to"},
+    {"source": "W_M9", "target": "M8-M9 PMOS input pair (VIN1/VIN2 -> net01/net028, tail IB1)", "relation": "belongs-to"},
+    {"source": "L_M9", "target": "M8-M9 PMOS input pair (VIN1/VIN2 -> net01/net028, tail IB1)", "relation": "belongs-to"},
+
+    {"source": "W_M12", "target": "M12-M13 NMOS bias/current-sink devices (net01/net028, to VSS)", "relation": "belongs-to"},
+    {"source": "L_M12", "target": "M12-M13 NMOS bias/current-sink devices (net01/net028, to VSS)", "relation": "belongs-to"},
+    {"source": "W_M13", "target": "M12-M13 NMOS bias/current-sink devices (net01/net028, to VSS)", "relation": "belongs-to"},
+    {"source": "L_M13", "target": "M12-M13 NMOS bias/current-sink devices (net01/net028, to VSS)", "relation": "belongs-to"},
+
+    {"source": "W_M10", "target": "M10-M11 PMOS current-mirror / active load (net037, net038)", "relation": "belongs-to"},
+    {"source": "L_M10", "target": "M10-M11 PMOS current-mirror / active load (net037, net038)", "relation": "belongs-to"},
+    {"source": "W_M11", "target": "M10-M11 PMOS current-mirror / active load (net037, net038)", "relation": "belongs-to"},
+    {"source": "L_M11", "target": "M10-M11 PMOS current-mirror / active load (net037, net038)", "relation": "belongs-to"},
+
+    {"source": "W_M6", "target": "M6-M7 PMOS current-mirror / active load (net040, net039)", "relation": "belongs-to"},
+    {"source": "L_M6", "target": "M6-M7 PMOS current-mirror / active load (net040, net039)", "relation": "belongs-to"},
+    {"source": "W_M7", "target": "M6-M7 PMOS current-mirror / active load (net040, net039)", "relation": "belongs-to"},
+    {"source": "L_M7", "target": "M6-M7 PMOS current-mirror / active load (net040, net039)", "relation": "belongs-to"},
+
+    {"source": "C0", "target": "C0 shunt/load capacitor (net039 to VSS)", "relation": "belongs-to"},
+    {"source": "C2", "target": "C2 shunt/load capacitor (net038 to VSS)", "relation": "belongs-to"},
+
+    {"source": "IB1", "target": "Power", "relation": "directly-proportional"},
+    {"source": "IB1", "target": "UGF", "relation": "directly-proportional"},
+
+    {"source": "C0", "target": "UGF", "relation": "inversely-proportional"},
+    {"source": "C2", "target": "UGF", "relation": "inversely-proportional"},
+
+    {"source": "W_M8", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "W_M8", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M8", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M8", "target": "UGF", "relation": "inversely-proportional"}
+  ]
+}

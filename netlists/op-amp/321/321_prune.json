@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0 (VOUT1 VSS) capacitor",
+    "reason": "C0 is a load/compensation capacitor that mainly shapes bandwidth/phase margin; removing it usually preserves DC amplification behavior. Caveat: stability and transient ringing can worsen, and UGF/noise may change if this was intentional compensation.",
+    "impact_estimate": "Low (AC/stability only)"
+  },
+  {
+    "component": "R1 (net015 VSS) resistor",
+    "reason": "R1 appears to provide a bleed/DC reference for the internal node net015; if net015 already has a defined DC path through M3 and R0, R1 can often be removed without breaking basic operation. Caveat: net015 may float at startup/leakage, increasing offset or slowing settling.",
+    "impact_estimate": "Low (DC robustness/startup)"
+  },
+  {
+    "component": "M10 (net013 net013 VDD VDD) pmos4",
+    "reason": "M10 is a diode-connected PMOS tied to net013 and likely serves as a bias/helper device for the PMOS load; in many cases the main load action is provided by M11 to VOUT1, so removing M10 can still leave a functioning single-ended stage. Caveat: operating point and gain can shift because M10 may be setting net013’s DC level/bias current; removing it may reduce bias stability.",
+    "impact_estimate": "Low-to-medium (bias point/gain shift)"
+  }
+]

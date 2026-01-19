@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R2 (VDD VOUT1) resistor",
+    "reason": "R2 is just a pull-up/load for the VOUT1 branch; removing it doesn’t inherently break the biasing/current-steering devices, but VOUT1 will no longer have a defined pull-up path and may float or sit near VSS depending on leakage. Caveat: if you still need a usable VOUT1, replace R2 with another load (current source/active load) or ensure the next stage provides the load.",
+    "impact_estimate": "Low if VOUT1 is not required as a defined output; moderate if VOUT1 must be a valid output"
+  },
+  {
+    "component": "R0 (VDD VOUT2) resistor",
+    "reason": "Same role as R2 but for VOUT2; deleting it keeps the core bias devices (M4/M2) intact but removes the defined pull-up/load at the output node. Caveat: you’ll need an alternative load to define VOUT2 level, gain, and swing.",
+    "impact_estimate": "Low if VOUT2 is not required as a defined output; moderate if VOUT2 must be a valid output"
+  },
+  {
+    "component": "M0 (IB1 VIN1 IB3 VDD) pmos4",
+    "reason": "M0 appears to be a PMOS bias/current-source device that sets the IB1 branch current (gated by VIN1); if you only need the other branch to function (or you can provide IB1 externally), M0 can be removed without destroying the remaining branch’s operation. Caveat: IB1 will be undefined without M0, so you must supply a replacement bias/current for IB1 if the VOUT1 branch is still needed.",
+    "impact_estimate": "Low-to-moderate (removes one branch’s bias source; other branch can still operate, but IB1 needs replacement if used)"
+  }
+]

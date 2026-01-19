@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M6 (VOUT2 VB4 VSS VSS) nmos4",
+    "reason": "M6 is a VB4-controlled NMOS connected from VOUT2 to VSS (a clamp/bleeder or output common-mode helper); removing it usually keeps the core differential gain path (VIN1/VIN2 devices + PMOS loads) intact. Caveat: output DC level, startup, or output discharge behavior may be worse without this bleed device.",
+    "impact_estimate": "Low (mostly affects output bias/settling, not the main amplification path)"
+  },
+  {
+    "component": "M1 (VOUT1 VB4 VSS VSS) nmos4",
+    "reason": "M1 plays the same role as M6 but on VOUT1; deleting it typically preserves amplification but reduces output clamping/bleeding symmetry and may leave outputs floating at DC in some bias corners. Caveat: if only one side is removed, output mismatch can increase; ideally remove both or neither.",
+    "impact_estimate": "Low (mainly impacts output common-mode control and symmetry)"
+  },
+  {
+    "component": "M15 (net033 VB3 VDD VDD) pmos4",
+    "reason": "M15 appears to be part of a PMOS bias/current-source stack feeding the VB2-controlled PMOS (M13); removing it can keep the NMOS input pair operational, but you lose the intended current-source/bias for the pull-up branch. Caveat: net033 will need an alternate bias/current source (or the whole PMOS load branch will weaken/turn off).",
+    "impact_estimate": "Low-to-moderate (biasing and gain degrade unless VB3/current-source is provided elsewhere)"
+  }
+]

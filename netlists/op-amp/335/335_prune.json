@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M9 (net018 net013 VSS VSS) nmos4",
+    "reason": "This device mainly provides an extra pull-down/loading path on the internal node net018; removing it usually keeps the core left/right amplification paths intact (M6/M7 driving the PMOS loads to VOUT1/VOUT2). Caveat: net018 may float more, so biasing of the VOUT2-side PMOS load can shift and dynamic behavior can change.",
+    "impact_estimate": "Low to moderate"
+  },
+  {
+    "component": "M11 (net018 net018 VDD VDD) pmos4",
+    "reason": "This is a diode-connected PMOS that behaves like a bias/helper for net018; if net018 can be biased by other circuitry or you accept net018 being less regulated, it can be removed while preserving basic gain through the remaining load devices. Caveat: VOUT2 DC operating point and gain may drift; matching/symmetry degrades.",
+    "impact_estimate": "Moderate"
+  },
+  {
+    "component": "M10 (VOUT2 net015 VSS VSS) nmos4",
+    "reason": "This is a VOUT2 pull-down controlled by net015; if the output load or testbench provides a discharge/return path (or you only care about VOUT1), deleting it often still leaves a functioning amplification path. Caveat: VOUT2 can become less defined (swing/CM level), and slew/settling can worsen.",
+    "impact_estimate": "Low if VOUT2 is unused or externally loaded; moderate otherwise"
+  }
+]

@@ -1,0 +1,68 @@
+{
+  "nodes": [
+    {"id": "Gain", "type": "performance"},
+    {"id": "CMRR", "type": "performance"},
+    {"id": "UGF", "type": "performance"},
+    {"id": "Power", "type": "performance"},
+
+    {"id": "M1 NMOS input/transconductor (VIN1 -> net03, source=VSS)", "type": "substructure"},
+    {"id": "M0 NMOS bias/current source for IB1 (IB1 gate/drain=net03, source=VSS)", "type": "substructure"},
+    {"id": "M2 NMOS output/current-sink device (VOUT1, gate=IB1, drain=VOUT1, source=net03)", "type": "substructure"},
+    {"id": "R0 resistive load (VOUT1 to VDD)", "type": "substructure"},
+
+    {"id": "IB1", "type": "parameter"},
+    {"id": "R0", "type": "parameter"},
+
+    {"id": "W_M1", "type": "parameter"},
+    {"id": "L_M1", "type": "parameter"},
+    {"id": "W_M0", "type": "parameter"},
+    {"id": "L_M0", "type": "parameter"},
+    {"id": "W_M2", "type": "parameter"},
+    {"id": "L_M2", "type": "parameter"}
+  ],
+  "links": [
+    {"source": "Gain", "target": "UGF", "relation": "trade-off"},
+    {"source": "UGF", "target": "Power", "relation": "trade-off"},
+    {"source": "Gain", "target": "Power", "relation": "trade-off"},
+    {"source": "CMRR", "target": "Gain", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "UGF", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "Power", "relation": "ambiguous"},
+
+    {"source": "M1 NMOS input/transconductor (VIN1 -> net03, source=VSS)", "target": "Gain", "relation": "influences"},
+    {"source": "M1 NMOS input/transconductor (VIN1 -> net03, source=VSS)", "target": "UGF", "relation": "influences"},
+    {"source": "M1 NMOS input/transconductor (VIN1 -> net03, source=VSS)", "target": "CMRR", "relation": "influences"},
+
+    {"source": "M0 NMOS bias/current source for IB1 (IB1 gate/drain=net03, source=VSS)", "target": "Power", "relation": "influences"},
+    {"source": "M0 NMOS bias/current source for IB1 (IB1 gate/drain=net03, source=VSS)", "target": "Gain", "relation": "influences"},
+    {"source": "M0 NMOS bias/current source for IB1 (IB1 gate/drain=net03, source=VSS)", "target": "UGF", "relation": "influences"},
+
+    {"source": "M2 NMOS output/current-sink device (VOUT1, gate=IB1, drain=VOUT1, source=net03)", "target": "Gain", "relation": "influences"},
+    {"source": "M2 NMOS output/current-sink device (VOUT1, gate=IB1, drain=VOUT1, source=net03)", "target": "Power", "relation": "influences"},
+    {"source": "M2 NMOS output/current-sink device (VOUT1, gate=IB1, drain=VOUT1, source=net03)", "target": "UGF", "relation": "influences"},
+
+    {"source": "R0 resistive load (VOUT1 to VDD)", "target": "Gain", "relation": "influences"},
+    {"source": "R0 resistive load (VOUT1 to VDD)", "target": "UGF", "relation": "influences"},
+    {"source": "R0 resistive load (VOUT1 to VDD)", "target": "Power", "relation": "influences"},
+
+    {"source": "W_M1", "target": "M1 NMOS input/transconductor (VIN1 -> net03, source=VSS)", "relation": "belongs-to"},
+    {"source": "L_M1", "target": "M1 NMOS input/transconductor (VIN1 -> net03, source=VSS)", "relation": "belongs-to"},
+    {"source": "W_M0", "target": "M0 NMOS bias/current source for IB1 (IB1 gate/drain=net03, source=VSS)", "relation": "belongs-to"},
+    {"source": "L_M0", "target": "M0 NMOS bias/current source for IB1 (IB1 gate/drain=net03, source=VSS)", "relation": "belongs-to"},
+    {"source": "W_M2", "target": "M2 NMOS output/current-sink device (VOUT1, gate=IB1, drain=VOUT1, source=net03)", "relation": "belongs-to"},
+    {"source": "L_M2", "target": "M2 NMOS output/current-sink device (VOUT1, gate=IB1, drain=VOUT1, source=net03)", "relation": "belongs-to"},
+    {"source": "R0", "target": "R0 resistive load (VOUT1 to VDD)", "relation": "belongs-to"},
+
+    {"source": "R0", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "R0", "target": "UGF", "relation": "inversely-proportional"},
+    {"source": "R0", "target": "Power", "relation": "inversely-proportional"},
+
+    {"source": "IB1", "target": "Power", "relation": "directly-proportional"},
+    {"source": "IB1", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "IB1", "target": "Gain", "relation": "ambiguous"},
+
+    {"source": "W_M1", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "W_M1", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M1", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M1", "target": "UGF", "relation": "inversely-proportional"}
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M8 (net4 net4 VSS VSS) nmos4",
+    "reason": "This is a diode-connected NMOS to VSS that mainly clamps/biases net4; if net4 is already biased by the PMOS/input network, you can remove it and still keep the signal path intact. Caveat: net4 may float or drift, so DC operating point and linearity can degrade.",
+    "impact_estimate": "Low if net4 has another DC bias path; moderate otherwise"
+  },
+  {
+    "component": "M2 (net3 net4 VSS VSS) nmos4",
+    "reason": "M2 behaves like an NMOS pull-down controlled by net4; if you only need a minimal functional path from the PMOS pair into M0/output and can tolerate reduced pull-down/transfer shaping, it can be omitted. Caveat: removing it changes net3’s discharge path and can reduce gain or cause net3 to rely on leakage for settling.",
+    "impact_estimate": "Low-to-moderate (function remains but bias/dynamics shift)"
+  },
+  {
+    "component": "M4 (VOUT1 VB1 VDD VDD) pmos4",
+    "reason": "M4 is a VB1-controlled PMOS load/pull-up at the output; if the next stage or testbench provides an output load/bias, VOUT1 can still be observed without this explicit pull-up device. Caveat: without M4, VOUT1 may lose a defined high-side bias, reducing swing and potentially leaving the output under-driven.",
+    "impact_estimate": "Low only with an external load/bias on VOUT1; moderate-to-high otherwise"
+  }
+]

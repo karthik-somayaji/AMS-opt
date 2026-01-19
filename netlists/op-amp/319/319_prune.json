@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M1 (net022 net013 VSS VSS) nmos4",
+    "reason": "M1 looks like a diode-connected/auxiliary NMOS tied to net013 (gate=drain) that mainly provides a DC pull-down or bias shaping for net022 rather than being in the main VIN1→VOUT1 signal path. Caveat: if net022 would otherwise float (e.g., during startup), removing M1 can make the bias node slower to settle or more sensitive to leakage.",
+    "impact_estimate": "Low (mostly affects bias robustness/startup)"
+  },
+  {
+    "component": "M3 (net023 net013 VSS VSS) nmos4",
+    "reason": "M3 is a symmetric counterpart to M1 for net023, acting primarily as a weak clamp/diode device that stabilizes the internal node relative to net013 instead of providing core differential transconductance. Caveat: removing only one of M1/M3 breaks symmetry; if you delete one, delete both to avoid output offset from mismatch in leakage paths.",
+    "impact_estimate": "Low (mostly affects symmetry and DC settling)"
+  },
+  {
+    "component": "M8 (net024 VB3 VDD VDD) pmos4",
+    "reason": "M8 appears to be part of a bias/current-source stack feeding the PMOS load side (net024 path); if VB3 is generated elsewhere and net024 already gets sufficient biasing through M6, M8 may be redundant for basic operation. Caveat: if M8 is the only device enforcing a proper bias/current at net024, removing it can shift common-mode and reduce gain/headroom; in that case keep M8/M9 as a pair.",
+    "impact_estimate": "Low-to-medium (depends on whether VB3 bias is externally provided and whether M8/M9 set the load current)"
+  }
+]

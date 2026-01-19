@@ -1,0 +1,378 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "M9 PMOS input device (common-source)",
+      "type": "substructure"
+    },
+    {
+      "id": "M7 PMOS active load / cascode (VB1 biased)",
+      "type": "substructure"
+    },
+    {
+      "id": "R1 resistive load to ground (VOUT1-VSS)",
+      "type": "substructure"
+    },
+    {
+      "id": "VB1 (PMOS bias)",
+      "type": "parameter"
+    },
+    {
+      "id": "R1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M9",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M9",
+      "type": "parameter"
+    },
+    {
+      "id": "dev:R1",
+      "type": "device",
+      "device_type": "resistor"
+    },
+    {
+      "id": "net:VOUT1",
+      "type": "net"
+    },
+    {
+      "id": "net:VSS",
+      "type": "net"
+    },
+    {
+      "id": "dev:M9",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M9:D",
+      "type": "terminal",
+      "device": "M9",
+      "role": "D"
+    },
+    {
+      "id": "term:M9:G",
+      "type": "terminal",
+      "device": "M9",
+      "role": "G"
+    },
+    {
+      "id": "term:M9:S",
+      "type": "terminal",
+      "device": "M9",
+      "role": "S"
+    },
+    {
+      "id": "net:net4",
+      "type": "net"
+    },
+    {
+      "id": "net:VIN1",
+      "type": "net"
+    },
+    {
+      "id": "net:VDD",
+      "type": "net"
+    },
+    {
+      "id": "dev:M7",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M7:D",
+      "type": "terminal",
+      "device": "M7",
+      "role": "D"
+    },
+    {
+      "id": "term:M7:G",
+      "type": "terminal",
+      "device": "M7",
+      "role": "G"
+    },
+    {
+      "id": "term:M7:S",
+      "type": "terminal",
+      "device": "M7",
+      "role": "S"
+    },
+    {
+      "id": "net:VB1",
+      "type": "net"
+    }
+  ],
+  "links": [
+    {
+      "source": "dev:R1",
+      "target": "net:VOUT1"
+    },
+    {
+      "source": "dev:R1",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:M9",
+      "target": "term:M9:D"
+    },
+    {
+      "source": "dev:M9",
+      "target": "term:M9:G"
+    },
+    {
+      "source": "dev:M9",
+      "target": "term:M9:S"
+    },
+    {
+      "source": "term:M9:D",
+      "target": "net:net4"
+    },
+    {
+      "source": "term:M9:G",
+      "target": "net:VIN1"
+    },
+    {
+      "source": "term:M9:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:M7",
+      "target": "term:M7:D"
+    },
+    {
+      "source": "dev:M7",
+      "target": "term:M7:G"
+    },
+    {
+      "source": "dev:M7",
+      "target": "term:M7:S"
+    },
+    {
+      "source": "term:M7:D",
+      "target": "net:VOUT1"
+    },
+    {
+      "source": "term:M7:G",
+      "target": "net:VB1"
+    },
+    {
+      "source": "term:M7:S",
+      "target": "net:net4"
+    },
+    {
+      "source": "Gain",
+      "target": "UGF",
+      "relation": "trade-off"
+    },
+    {
+      "source": "UGF",
+      "target": "Power",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Gain",
+      "target": "Power",
+      "relation": "trade-off"
+    },
+    {
+      "source": "CMRR",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "UGF",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "M9 PMOS input device (common-source)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M9 PMOS input device (common-source)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M9 PMOS input device (common-source)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M9 PMOS input device (common-source)",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M7 PMOS active load / cascode (VB1 biased)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M7 PMOS active load / cascode (VB1 biased)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M7 PMOS active load / cascode (VB1 biased)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M7 PMOS active load / cascode (VB1 biased)",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "R1 resistive load to ground (VOUT1-VSS)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "R1 resistive load to ground (VOUT1-VSS)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "R1 resistive load to ground (VOUT1-VSS)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "W_M9",
+      "target": "M9 PMOS input device (common-source)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M9",
+      "target": "M9 PMOS input device (common-source)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M7",
+      "target": "M7 PMOS active load / cascode (VB1 biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M7",
+      "target": "M7 PMOS active load / cascode (VB1 biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R1",
+      "target": "R1 resistive load to ground (VOUT1-VSS)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VB1 (PMOS bias)",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "VB1 (PMOS bias)",
+      "target": "UGF",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "VB1 (PMOS bias)",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R1",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R1",
+      "target": "Power",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M9",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M9",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M9",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M9",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M7",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M7",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "dev:M9",
+      "target": "W_M9"
+    },
+    {
+      "source": "dev:M9",
+      "target": "L_M9"
+    },
+    {
+      "source": "dev:M7",
+      "target": "W_M7"
+    },
+    {
+      "source": "dev:M7",
+      "target": "L_M7"
+    }
+  ]
+}

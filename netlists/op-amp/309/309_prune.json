@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M8 (net027 VB3 VDD VDD) pmos4",
+    "reason": "M8 mainly serves as a VB3-biased PMOS current source to generate/bias the net027 node for the PMOS load device M6; if net027 is biased elsewhere (or you accept different load bias), removing M8 keeps the core signal devices intact. Caveat: without an alternate bias, M6 current becomes undefined, shifting VOUT1 DC level and reducing gain/swing.",
+    "impact_estimate": "Low-to-moderate (bias/gain shifts unless net027 is externally biased)"
+  },
+  {
+    "component": "M9 (net028 VB3 VDD VDD) pmos4",
+    "reason": "M9 is the symmetric VB3-biased PMOS current source for net028 (feeding M7); deleting it typically doesn’t break the conduction path but removes the intended pull-up biasing for the VOUT2 branch. Caveat: VOUT2 operating point and output swing may degrade unless net028 is provided by another bias source.",
+    "impact_estimate": "Low-to-moderate (main path remains; output bias/swing degrades)"
+  },
+  {
+    "component": "M12 (net19 VB5 net09 VSS) nmos4",
+    "reason": "M12 biases the shared tail/control node net19 via VB5 and net09; if net19 is driven by an external tail current source (or you’re evaluating purely the differential pair/load behavior), removing M12 can leave the core VIN1/VIN2 input devices (M2/M0) and output branches still structurally intact. Caveat: without another bias for net19, the input pair may lose its tail current and stop operating properly.",
+    "impact_estimate": "Low-to-high depending on external biasing (low only if net19 is sourced elsewhere)"
+  }
+]

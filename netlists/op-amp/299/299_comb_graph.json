@@ -1,0 +1,1203 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "M0-M10 input differential pair (NMOS)",
+      "type": "substructure"
+    },
+    {
+      "id": "M12-M13 PMOS active load (VB2 biased)",
+      "type": "substructure"
+    },
+    {
+      "id": "M14-M15 PMOS bias current sources (VB3)",
+      "type": "substructure"
+    },
+    {
+      "id": "M1-M6 NMOS output current sinks (VB4 biased)",
+      "type": "substructure"
+    },
+    {
+      "id": "M2-M11 NMOS cascode/current-source devices (VB1 biased)",
+      "type": "substructure"
+    },
+    {
+      "id": "M3-M7 PMOS output devices (second-stage / pull-up)",
+      "type": "substructure"
+    },
+    {
+      "id": "IB1 (tail current)",
+      "type": "parameter"
+    },
+    {
+      "id": "VB1 (NMOS cascode/bias)",
+      "type": "parameter"
+    },
+    {
+      "id": "VB2 (PMOS load bias)",
+      "type": "parameter"
+    },
+    {
+      "id": "VB3 (PMOS bias)",
+      "type": "parameter"
+    },
+    {
+      "id": "VB4 (NMOS sink bias)",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M10",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M10",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M11",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M11",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M12",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M12",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M13",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M13",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M14",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M14",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M15",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M15",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M6",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M6",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "dev:M2",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M2:D",
+      "type": "terminal",
+      "device": "M2",
+      "role": "D"
+    },
+    {
+      "id": "term:M2:G",
+      "type": "terminal",
+      "device": "M2",
+      "role": "G"
+    },
+    {
+      "id": "term:M2:S",
+      "type": "terminal",
+      "device": "M2",
+      "role": "S"
+    },
+    {
+      "id": "net:net030",
+      "type": "net"
+    },
+    {
+      "id": "net:VB1",
+      "type": "net"
+    },
+    {
+      "id": "net:net032",
+      "type": "net"
+    },
+    {
+      "id": "dev:M11",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M11:D",
+      "type": "terminal",
+      "device": "M11",
+      "role": "D"
+    },
+    {
+      "id": "term:M11:G",
+      "type": "terminal",
+      "device": "M11",
+      "role": "G"
+    },
+    {
+      "id": "term:M11:S",
+      "type": "terminal",
+      "device": "M11",
+      "role": "S"
+    },
+    {
+      "id": "net:net028",
+      "type": "net"
+    },
+    {
+      "id": "net:net034",
+      "type": "net"
+    },
+    {
+      "id": "dev:M10",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M10:D",
+      "type": "terminal",
+      "device": "M10",
+      "role": "D"
+    },
+    {
+      "id": "term:M10:G",
+      "type": "terminal",
+      "device": "M10",
+      "role": "G"
+    },
+    {
+      "id": "term:M10:S",
+      "type": "terminal",
+      "device": "M10",
+      "role": "S"
+    },
+    {
+      "id": "net:VIN2",
+      "type": "net"
+    },
+    {
+      "id": "net:IB1",
+      "type": "net"
+    },
+    {
+      "id": "dev:M0",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M0:D",
+      "type": "terminal",
+      "device": "M0",
+      "role": "D"
+    },
+    {
+      "id": "term:M0:G",
+      "type": "terminal",
+      "device": "M0",
+      "role": "G"
+    },
+    {
+      "id": "term:M0:S",
+      "type": "terminal",
+      "device": "M0",
+      "role": "S"
+    },
+    {
+      "id": "net:VIN1",
+      "type": "net"
+    },
+    {
+      "id": "dev:M6",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M6:D",
+      "type": "terminal",
+      "device": "M6",
+      "role": "D"
+    },
+    {
+      "id": "term:M6:G",
+      "type": "terminal",
+      "device": "M6",
+      "role": "G"
+    },
+    {
+      "id": "term:M6:S",
+      "type": "terminal",
+      "device": "M6",
+      "role": "S"
+    },
+    {
+      "id": "net:VOUT2",
+      "type": "net"
+    },
+    {
+      "id": "net:VB4",
+      "type": "net"
+    },
+    {
+      "id": "net:VSS",
+      "type": "net"
+    },
+    {
+      "id": "dev:M1",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M1:D",
+      "type": "terminal",
+      "device": "M1",
+      "role": "D"
+    },
+    {
+      "id": "term:M1:G",
+      "type": "terminal",
+      "device": "M1",
+      "role": "G"
+    },
+    {
+      "id": "term:M1:S",
+      "type": "terminal",
+      "device": "M1",
+      "role": "S"
+    },
+    {
+      "id": "net:VOUT1",
+      "type": "net"
+    },
+    {
+      "id": "dev:M15",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M15:D",
+      "type": "terminal",
+      "device": "M15",
+      "role": "D"
+    },
+    {
+      "id": "term:M15:G",
+      "type": "terminal",
+      "device": "M15",
+      "role": "G"
+    },
+    {
+      "id": "term:M15:S",
+      "type": "terminal",
+      "device": "M15",
+      "role": "S"
+    },
+    {
+      "id": "net:net033",
+      "type": "net"
+    },
+    {
+      "id": "net:VB3",
+      "type": "net"
+    },
+    {
+      "id": "net:VDD",
+      "type": "net"
+    },
+    {
+      "id": "dev:M14",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M14:D",
+      "type": "terminal",
+      "device": "M14",
+      "role": "D"
+    },
+    {
+      "id": "term:M14:G",
+      "type": "terminal",
+      "device": "M14",
+      "role": "G"
+    },
+    {
+      "id": "term:M14:S",
+      "type": "terminal",
+      "device": "M14",
+      "role": "S"
+    },
+    {
+      "id": "net:net035",
+      "type": "net"
+    },
+    {
+      "id": "dev:M13",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M13:D",
+      "type": "terminal",
+      "device": "M13",
+      "role": "D"
+    },
+    {
+      "id": "term:M13:G",
+      "type": "terminal",
+      "device": "M13",
+      "role": "G"
+    },
+    {
+      "id": "term:M13:S",
+      "type": "terminal",
+      "device": "M13",
+      "role": "S"
+    },
+    {
+      "id": "net:VB2",
+      "type": "net"
+    },
+    {
+      "id": "dev:M12",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M12:D",
+      "type": "terminal",
+      "device": "M12",
+      "role": "D"
+    },
+    {
+      "id": "term:M12:G",
+      "type": "terminal",
+      "device": "M12",
+      "role": "G"
+    },
+    {
+      "id": "term:M12:S",
+      "type": "terminal",
+      "device": "M12",
+      "role": "S"
+    },
+    {
+      "id": "dev:M7",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M7:D",
+      "type": "terminal",
+      "device": "M7",
+      "role": "D"
+    },
+    {
+      "id": "term:M7:G",
+      "type": "terminal",
+      "device": "M7",
+      "role": "G"
+    },
+    {
+      "id": "term:M7:S",
+      "type": "terminal",
+      "device": "M7",
+      "role": "S"
+    },
+    {
+      "id": "dev:M3",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M3:D",
+      "type": "terminal",
+      "device": "M3",
+      "role": "D"
+    },
+    {
+      "id": "term:M3:G",
+      "type": "terminal",
+      "device": "M3",
+      "role": "G"
+    },
+    {
+      "id": "term:M3:S",
+      "type": "terminal",
+      "device": "M3",
+      "role": "S"
+    }
+  ],
+  "links": [
+    {
+      "source": "dev:M2",
+      "target": "term:M2:D"
+    },
+    {
+      "source": "dev:M2",
+      "target": "term:M2:G"
+    },
+    {
+      "source": "dev:M2",
+      "target": "term:M2:S"
+    },
+    {
+      "source": "term:M2:D",
+      "target": "net:net030"
+    },
+    {
+      "source": "term:M2:G",
+      "target": "net:VB1"
+    },
+    {
+      "source": "term:M2:S",
+      "target": "net:net032"
+    },
+    {
+      "source": "dev:M11",
+      "target": "term:M11:D"
+    },
+    {
+      "source": "dev:M11",
+      "target": "term:M11:G"
+    },
+    {
+      "source": "dev:M11",
+      "target": "term:M11:S"
+    },
+    {
+      "source": "term:M11:D",
+      "target": "net:net028"
+    },
+    {
+      "source": "term:M11:G",
+      "target": "net:VB1"
+    },
+    {
+      "source": "term:M11:S",
+      "target": "net:net034"
+    },
+    {
+      "source": "dev:M10",
+      "target": "term:M10:D"
+    },
+    {
+      "source": "dev:M10",
+      "target": "term:M10:G"
+    },
+    {
+      "source": "dev:M10",
+      "target": "term:M10:S"
+    },
+    {
+      "source": "term:M10:D",
+      "target": "net:net032"
+    },
+    {
+      "source": "term:M10:G",
+      "target": "net:VIN2"
+    },
+    {
+      "source": "term:M10:S",
+      "target": "net:IB1"
+    },
+    {
+      "source": "dev:M0",
+      "target": "term:M0:D"
+    },
+    {
+      "source": "dev:M0",
+      "target": "term:M0:G"
+    },
+    {
+      "source": "dev:M0",
+      "target": "term:M0:S"
+    },
+    {
+      "source": "term:M0:D",
+      "target": "net:net034"
+    },
+    {
+      "source": "term:M0:G",
+      "target": "net:VIN1"
+    },
+    {
+      "source": "term:M0:S",
+      "target": "net:IB1"
+    },
+    {
+      "source": "dev:M6",
+      "target": "term:M6:D"
+    },
+    {
+      "source": "dev:M6",
+      "target": "term:M6:G"
+    },
+    {
+      "source": "dev:M6",
+      "target": "term:M6:S"
+    },
+    {
+      "source": "term:M6:D",
+      "target": "net:VOUT2"
+    },
+    {
+      "source": "term:M6:G",
+      "target": "net:VB4"
+    },
+    {
+      "source": "term:M6:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:M1",
+      "target": "term:M1:D"
+    },
+    {
+      "source": "dev:M1",
+      "target": "term:M1:G"
+    },
+    {
+      "source": "dev:M1",
+      "target": "term:M1:S"
+    },
+    {
+      "source": "term:M1:D",
+      "target": "net:VOUT1"
+    },
+    {
+      "source": "term:M1:G",
+      "target": "net:VB4"
+    },
+    {
+      "source": "term:M1:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:M15",
+      "target": "term:M15:D"
+    },
+    {
+      "source": "dev:M15",
+      "target": "term:M15:G"
+    },
+    {
+      "source": "dev:M15",
+      "target": "term:M15:S"
+    },
+    {
+      "source": "term:M15:D",
+      "target": "net:net033"
+    },
+    {
+      "source": "term:M15:G",
+      "target": "net:VB3"
+    },
+    {
+      "source": "term:M15:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:M14",
+      "target": "term:M14:D"
+    },
+    {
+      "source": "dev:M14",
+      "target": "term:M14:G"
+    },
+    {
+      "source": "dev:M14",
+      "target": "term:M14:S"
+    },
+    {
+      "source": "term:M14:D",
+      "target": "net:net035"
+    },
+    {
+      "source": "term:M14:G",
+      "target": "net:VB3"
+    },
+    {
+      "source": "term:M14:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:M13",
+      "target": "term:M13:D"
+    },
+    {
+      "source": "dev:M13",
+      "target": "term:M13:G"
+    },
+    {
+      "source": "dev:M13",
+      "target": "term:M13:S"
+    },
+    {
+      "source": "term:M13:D",
+      "target": "net:net030"
+    },
+    {
+      "source": "term:M13:G",
+      "target": "net:VB2"
+    },
+    {
+      "source": "term:M13:S",
+      "target": "net:net033"
+    },
+    {
+      "source": "dev:M12",
+      "target": "term:M12:D"
+    },
+    {
+      "source": "dev:M12",
+      "target": "term:M12:G"
+    },
+    {
+      "source": "dev:M12",
+      "target": "term:M12:S"
+    },
+    {
+      "source": "term:M12:D",
+      "target": "net:net028"
+    },
+    {
+      "source": "term:M12:G",
+      "target": "net:VB2"
+    },
+    {
+      "source": "term:M12:S",
+      "target": "net:net035"
+    },
+    {
+      "source": "dev:M7",
+      "target": "term:M7:D"
+    },
+    {
+      "source": "dev:M7",
+      "target": "term:M7:G"
+    },
+    {
+      "source": "dev:M7",
+      "target": "term:M7:S"
+    },
+    {
+      "source": "term:M7:D",
+      "target": "net:VOUT2"
+    },
+    {
+      "source": "term:M7:G",
+      "target": "net:net030"
+    },
+    {
+      "source": "term:M7:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:M3",
+      "target": "term:M3:D"
+    },
+    {
+      "source": "dev:M3",
+      "target": "term:M3:G"
+    },
+    {
+      "source": "dev:M3",
+      "target": "term:M3:S"
+    },
+    {
+      "source": "term:M3:D",
+      "target": "net:VOUT1"
+    },
+    {
+      "source": "term:M3:G",
+      "target": "net:net028"
+    },
+    {
+      "source": "term:M3:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "Gain",
+      "target": "UGF",
+      "relation": "trade-off"
+    },
+    {
+      "source": "UGF",
+      "target": "Power",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Gain",
+      "target": "Power",
+      "relation": "trade-off"
+    },
+    {
+      "source": "CMRR",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "UGF",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "M0-M10 input differential pair (NMOS)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M10 input differential pair (NMOS)",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M10 input differential pair (NMOS)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M0-M10 input differential pair (NMOS)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M12-M13 PMOS active load (VB2 biased)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M12-M13 PMOS active load (VB2 biased)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M12-M13 PMOS active load (VB2 biased)",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M14-M15 PMOS bias current sources (VB3)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M14-M15 PMOS bias current sources (VB3)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M11 NMOS cascode/current-source devices (VB1 biased)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M11 NMOS cascode/current-source devices (VB1 biased)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M11 NMOS cascode/current-source devices (VB1 biased)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M1-M6 NMOS output current sinks (VB4 biased)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M1-M6 NMOS output current sinks (VB4 biased)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M1-M6 NMOS output current sinks (VB4 biased)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M3-M7 PMOS output devices (second-stage / pull-up)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M3-M7 PMOS output devices (second-stage / pull-up)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M3-M7 PMOS output devices (second-stage / pull-up)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "W_M0",
+      "target": "M0-M10 input differential pair (NMOS)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M0",
+      "target": "M0-M10 input differential pair (NMOS)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M10",
+      "target": "M0-M10 input differential pair (NMOS)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M10",
+      "target": "M0-M10 input differential pair (NMOS)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M12",
+      "target": "M12-M13 PMOS active load (VB2 biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M12",
+      "target": "M12-M13 PMOS active load (VB2 biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M13",
+      "target": "M12-M13 PMOS active load (VB2 biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M13",
+      "target": "M12-M13 PMOS active load (VB2 biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M14",
+      "target": "M14-M15 PMOS bias current sources (VB3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M14",
+      "target": "M14-M15 PMOS bias current sources (VB3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M15",
+      "target": "M14-M15 PMOS bias current sources (VB3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M15",
+      "target": "M14-M15 PMOS bias current sources (VB3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M2",
+      "target": "M2-M11 NMOS cascode/current-source devices (VB1 biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M2",
+      "target": "M2-M11 NMOS cascode/current-source devices (VB1 biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M11",
+      "target": "M2-M11 NMOS cascode/current-source devices (VB1 biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M11",
+      "target": "M2-M11 NMOS cascode/current-source devices (VB1 biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M1",
+      "target": "M1-M6 NMOS output current sinks (VB4 biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M1",
+      "target": "M1-M6 NMOS output current sinks (VB4 biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M6",
+      "target": "M1-M6 NMOS output current sinks (VB4 biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M6",
+      "target": "M1-M6 NMOS output current sinks (VB4 biased)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M3",
+      "target": "M3-M7 PMOS output devices (second-stage / pull-up)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M3",
+      "target": "M3-M7 PMOS output devices (second-stage / pull-up)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M7",
+      "target": "M3-M7 PMOS output devices (second-stage / pull-up)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M7",
+      "target": "M3-M7 PMOS output devices (second-stage / pull-up)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IB1 (tail current)",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1 (tail current)",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1 (tail current)",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "IB1 (tail current)",
+      "target": "CMRR",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "VB1 (NMOS cascode/bias)",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "VB2 (PMOS load bias)",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "VB3 (PMOS bias)",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "VB4 (NMOS sink bias)",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M12",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M12",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "dev:M2",
+      "target": "W_M2"
+    },
+    {
+      "source": "dev:M2",
+      "target": "L_M2"
+    },
+    {
+      "source": "dev:M11",
+      "target": "W_M11"
+    },
+    {
+      "source": "dev:M11",
+      "target": "L_M11"
+    },
+    {
+      "source": "dev:M10",
+      "target": "W_M10"
+    },
+    {
+      "source": "dev:M10",
+      "target": "L_M10"
+    },
+    {
+      "source": "dev:M0",
+      "target": "W_M0"
+    },
+    {
+      "source": "dev:M0",
+      "target": "L_M0"
+    },
+    {
+      "source": "dev:M6",
+      "target": "W_M6"
+    },
+    {
+      "source": "dev:M6",
+      "target": "L_M6"
+    },
+    {
+      "source": "dev:M1",
+      "target": "W_M1"
+    },
+    {
+      "source": "dev:M1",
+      "target": "L_M1"
+    },
+    {
+      "source": "dev:M15",
+      "target": "W_M15"
+    },
+    {
+      "source": "dev:M15",
+      "target": "L_M15"
+    },
+    {
+      "source": "dev:M14",
+      "target": "W_M14"
+    },
+    {
+      "source": "dev:M14",
+      "target": "L_M14"
+    },
+    {
+      "source": "dev:M13",
+      "target": "W_M13"
+    },
+    {
+      "source": "dev:M13",
+      "target": "L_M13"
+    },
+    {
+      "source": "dev:M12",
+      "target": "W_M12"
+    },
+    {
+      "source": "dev:M12",
+      "target": "L_M12"
+    },
+    {
+      "source": "dev:M7",
+      "target": "W_M7"
+    },
+    {
+      "source": "dev:M7",
+      "target": "L_M7"
+    },
+    {
+      "source": "dev:M3",
+      "target": "W_M3"
+    },
+    {
+      "source": "dev:M3",
+      "target": "L_M3"
+    }
+  ]
+}

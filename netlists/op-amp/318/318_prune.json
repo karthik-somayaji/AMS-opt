@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R0 (IB1 VOUT1) resistor",
+    "reason": "R0 is an extra bias/leak path between the bias node IB1 and the output node VOUT1; the NMOS sink (M4) and PMOS load network already set the operating point, so removing R0 usually doesn’t break basic differential action. Caveat: if IB1 is otherwise floating or VOUT1 needs this weak DC path for startup/common-mode stabilization, bias settling may degrade.",
+    "impact_estimate": "Low (mostly affects DC bias robustness/stability)"
+  },
+  {
+    "component": "R1 (VOUT2 IB1) resistor",
+    "reason": "R1 mirrors R0 for VOUT2 and mainly provides weak coupling/leakage between VOUT2 and IB1; the core gain path remains through the NMOS input stack (M10/M1) and PMOS loads (M7/M13/M15). Caveat: removing only one of R0/R1 creates asymmetry; if you remove one, typically remove both to keep outputs matched.",
+    "impact_estimate": "Low (mostly affects symmetry and DC bias robustness)"
+  },
+  {
+    "component": "M14 (net037 VB3 VDD VDD) pmos4",
+    "reason": "M14 is part of the PMOS biasing (VB3) for the load-side device feeding net034 via M12; if VB2/VB3 are generated elsewhere, this local bias PMOS can be redundant and deleting it may still leave the main signal path intact. Caveat: if M14 is required to generate/hold the correct bias at net037 (and thus the operating point of M12/M5), removing it can shift output common-mode and reduce gain/headroom.",
+    "impact_estimate": "Low-to-medium (depends on whether VB3 bias is externally provided)"
+  }
+]

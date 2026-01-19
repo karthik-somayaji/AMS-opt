@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R2 (net04 VOUT1) resistor",
+    "reason": "R2 is part of the resistive bridge tying VOUT1/VOUT2 to the common node net04; removing it preserves the core amplification path (M3/M5 with PMOS loads M7/M6) but weakens the output common-mode coupling. Caveat: net04 may become less well-defined and the two outputs can become less balanced unless the remaining network still biases net04 adequately.",
+    "impact_estimate": "Low-to-medium (mainly affects output common-mode/balance)"
+  },
+  {
+    "component": "R3 (VOUT2 net04) resistor",
+    "reason": "R3 plays the symmetric role to R2 for VOUT2; removing it keeps the active devices functioning while reducing the resistive averaging/coupling into net04. Caveat: removing only one of R2/R3 introduces asymmetry; if you remove one, typically remove the other or ensure net04 is defined elsewhere.",
+    "impact_estimate": "Low-to-medium (mainly affects output common-mode/balance)"
+  },
+  {
+    "component": "M1 (VOUT1 net04 VSS VSS) nmos4",
+    "reason": "M1 is a diode-connected NMOS clamp/pulldown on VOUT1 set by net04; if the output does not require an explicit sink/clamp path (e.g., load provides it), the PMOS load and input device can still produce an output voltage. Caveat: VOUT1 may float high or lose bias stability/settling and swing control, especially if net04 also becomes weakly defined when R2/R3 are removed.",
+    "impact_estimate": "Medium (affects output bias and swing stability on VOUT1)"
+  }
+]

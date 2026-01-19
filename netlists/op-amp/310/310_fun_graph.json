@@ -1,0 +1,140 @@
+{
+  "nodes": [
+    {"id": "Gain", "type": "performance"},
+    {"id": "CMRR", "type": "performance"},
+    {"id": "UGF", "type": "performance"},
+    {"id": "Power", "type": "performance"},
+
+    {"id": "M7-M6 NMOS input differential pair (VIN1/VIN2, tail net14)", "type": "substructure"},
+    {"id": "M12 NMOS tail current source / bias injection (IB1->net14, controlled by net033)", "type": "substructure"},
+    {"id": "M10-M11 NMOS diode-connected / local feedback loads (VOUT1/VOUT2 -> net033)", "type": "substructure"},
+    {"id": "M4-M5 NMOS output/pull-down devices (VB1 biased, VOUT1/VOUT2)", "type": "substructure"},
+    {"id": "M1-M3 NMOS bias sink devices (VB4 biased, net047/net045)", "type": "substructure"},
+    {"id": "M8-M9 PMOS active loads (VB2 biased, to VOUT1/VOUT2)", "type": "substructure"},
+    {"id": "M13-M14 PMOS bias current sources (VB3, feeding input nodes)", "type": "substructure"},
+    {"id": "M15-M16 NMOS bias/reference generator (IB1 diode + VREF1)", "type": "substructure"},
+
+    {"id": "VB1 (NMOS output bias)", "type": "parameter"},
+    {"id": "VB2 (PMOS load bias)", "type": "parameter"},
+    {"id": "VB3 (PMOS bias)", "type": "parameter"},
+    {"id": "VB4 (NMOS sink bias)", "type": "parameter"},
+    {"id": "IB1", "type": "parameter"},
+    {"id": "VREF1", "type": "parameter"},
+
+    {"id": "W_M7", "type": "parameter"},
+    {"id": "L_M7", "type": "parameter"},
+    {"id": "W_M6", "type": "parameter"},
+    {"id": "L_M6", "type": "parameter"},
+    {"id": "W_M12", "type": "parameter"},
+    {"id": "L_M12", "type": "parameter"},
+    {"id": "W_M10", "type": "parameter"},
+    {"id": "L_M10", "type": "parameter"},
+    {"id": "W_M11", "type": "parameter"},
+    {"id": "L_M11", "type": "parameter"},
+    {"id": "W_M4", "type": "parameter"},
+    {"id": "L_M4", "type": "parameter"},
+    {"id": "W_M5", "type": "parameter"},
+    {"id": "L_M5", "type": "parameter"},
+    {"id": "W_M1", "type": "parameter"},
+    {"id": "L_M1", "type": "parameter"},
+    {"id": "W_M3", "type": "parameter"},
+    {"id": "L_M3", "type": "parameter"},
+    {"id": "W_M8", "type": "parameter"},
+    {"id": "L_M8", "type": "parameter"},
+    {"id": "W_M9", "type": "parameter"},
+    {"id": "L_M9", "type": "parameter"},
+    {"id": "W_M13", "type": "parameter"},
+    {"id": "L_M13", "type": "parameter"},
+    {"id": "W_M14", "type": "parameter"},
+    {"id": "L_M14", "type": "parameter"},
+    {"id": "W_M15", "type": "parameter"},
+    {"id": "L_M15", "type": "parameter"},
+    {"id": "W_M16", "type": "parameter"},
+    {"id": "L_M16", "type": "parameter"}
+  ],
+  "links": [
+    {"source": "Gain", "target": "UGF", "relation": "trade-off"},
+    {"source": "UGF", "target": "Power", "relation": "trade-off"},
+    {"source": "Gain", "target": "Power", "relation": "trade-off"},
+    {"source": "CMRR", "target": "Gain", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "UGF", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "Power", "relation": "ambiguous"},
+
+    {"source": "M7-M6 NMOS input differential pair (VIN1/VIN2, tail net14)", "target": "Gain", "relation": "influences"},
+    {"source": "M7-M6 NMOS input differential pair (VIN1/VIN2, tail net14)", "target": "CMRR", "relation": "influences"},
+    {"source": "M7-M6 NMOS input differential pair (VIN1/VIN2, tail net14)", "target": "UGF", "relation": "influences"},
+    {"source": "M7-M6 NMOS input differential pair (VIN1/VIN2, tail net14)", "target": "Power", "relation": "influences"},
+
+    {"source": "M12 NMOS tail current source / bias injection (IB1->net14, controlled by net033)", "target": "Power", "relation": "influences"},
+    {"source": "M12 NMOS tail current source / bias injection (IB1->net14, controlled by net033)", "target": "UGF", "relation": "influences"},
+    {"source": "M12 NMOS tail current source / bias injection (IB1->net14, controlled by net033)", "target": "Gain", "relation": "influences"},
+
+    {"source": "M10-M11 NMOS diode-connected / local feedback loads (VOUT1/VOUT2 -> net033)", "target": "Gain", "relation": "influences"},
+    {"source": "M10-M11 NMOS diode-connected / local feedback loads (VOUT1/VOUT2 -> net033)", "target": "UGF", "relation": "influences"},
+    {"source": "M10-M11 NMOS diode-connected / local feedback loads (VOUT1/VOUT2 -> net033)", "target": "CMRR", "relation": "influences"},
+
+    {"source": "M4-M5 NMOS output/pull-down devices (VB1 biased, VOUT1/VOUT2)", "target": "Gain", "relation": "influences"},
+    {"source": "M4-M5 NMOS output/pull-down devices (VB1 biased, VOUT1/VOUT2)", "target": "UGF", "relation": "influences"},
+    {"source": "M4-M5 NMOS output/pull-down devices (VB1 biased, VOUT1/VOUT2)", "target": "Power", "relation": "influences"},
+
+    {"source": "M1-M3 NMOS bias sink devices (VB4 biased, net047/net045)", "target": "Power", "relation": "influences"},
+    {"source": "M1-M3 NMOS bias sink devices (VB4 biased, net047/net045)", "target": "UGF", "relation": "influences"},
+
+    {"source": "M8-M9 PMOS active loads (VB2 biased, to VOUT1/VOUT2)", "target": "Gain", "relation": "influences"},
+    {"source": "M8-M9 PMOS active loads (VB2 biased, to VOUT1/VOUT2)", "target": "UGF", "relation": "influences"},
+    {"source": "M8-M9 PMOS active loads (VB2 biased, to VOUT1/VOUT2)", "target": "CMRR", "relation": "influences"},
+
+    {"source": "M13-M14 PMOS bias current sources (VB3, feeding input nodes)", "target": "Power", "relation": "influences"},
+    {"source": "M13-M14 PMOS bias current sources (VB3, feeding input nodes)", "target": "Gain", "relation": "influences"},
+
+    {"source": "M15-M16 NMOS bias/reference generator (IB1 diode + VREF1)", "target": "Power", "relation": "influences"},
+    {"source": "M15-M16 NMOS bias/reference generator (IB1 diode + VREF1)", "target": "UGF", "relation": "influences"},
+
+    {"source": "W_M7", "target": "M7-M6 NMOS input differential pair (VIN1/VIN2, tail net14)", "relation": "belongs-to"},
+    {"source": "L_M7", "target": "M7-M6 NMOS input differential pair (VIN1/VIN2, tail net14)", "relation": "belongs-to"},
+    {"source": "W_M6", "target": "M7-M6 NMOS input differential pair (VIN1/VIN2, tail net14)", "relation": "belongs-to"},
+    {"source": "L_M6", "target": "M7-M6 NMOS input differential pair (VIN1/VIN2, tail net14)", "relation": "belongs-to"},
+
+    {"source": "W_M12", "target": "M12 NMOS tail current source / bias injection (IB1->net14, controlled by net033)", "relation": "belongs-to"},
+    {"source": "L_M12", "target": "M12 NMOS tail current source / bias injection (IB1->net14, controlled by net033)", "relation": "belongs-to"},
+
+    {"source": "W_M10", "target": "M10-M11 NMOS diode-connected / local feedback loads (VOUT1/VOUT2 -> net033)", "relation": "belongs-to"},
+    {"source": "L_M10", "target": "M10-M11 NMOS diode-connected / local feedback loads (VOUT1/VOUT2 -> net033)", "relation": "belongs-to"},
+    {"source": "W_M11", "target": "M10-M11 NMOS diode-connected / local feedback loads (VOUT1/VOUT2 -> net033)", "relation": "belongs-to"},
+    {"source": "L_M11", "target": "M10-M11 NMOS diode-connected / local feedback loads (VOUT1/VOUT2 -> net033)", "relation": "belongs-to"},
+
+    {"source": "W_M4", "target": "M4-M5 NMOS output/pull-down devices (VB1 biased, VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "L_M4", "target": "M4-M5 NMOS output/pull-down devices (VB1 biased, VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "W_M5", "target": "M4-M5 NMOS output/pull-down devices (VB1 biased, VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "L_M5", "target": "M4-M5 NMOS output/pull-down devices (VB1 biased, VOUT1/VOUT2)", "relation": "belongs-to"},
+
+    {"source": "W_M8", "target": "M8-M9 PMOS active loads (VB2 biased, to VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "L_M8", "target": "M8-M9 PMOS active loads (VB2 biased, to VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "W_M9", "target": "M8-M9 PMOS active loads (VB2 biased, to VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "L_M9", "target": "M8-M9 PMOS active loads (VB2 biased, to VOUT1/VOUT2)", "relation": "belongs-to"},
+
+    {"source": "W_M13", "target": "M13-M14 PMOS bias current sources (VB3, feeding input nodes)", "relation": "belongs-to"},
+    {"source": "L_M13", "target": "M13-M14 PMOS bias current sources (VB3, feeding input nodes)", "relation": "belongs-to"},
+    {"source": "W_M14", "target": "M13-M14 PMOS bias current sources (VB3, feeding input nodes)", "relation": "belongs-to"},
+    {"source": "L_M14", "target": "M13-M14 PMOS bias current sources (VB3, feeding input nodes)", "relation": "belongs-to"},
+
+    {"source": "W_M15", "target": "M15-M16 NMOS bias/reference generator (IB1 diode + VREF1)", "relation": "belongs-to"},
+    {"source": "L_M15", "target": "M15-M16 NMOS bias/reference generator (IB1 diode + VREF1)", "relation": "belongs-to"},
+    {"source": "W_M16", "target": "M15-M16 NMOS bias/reference generator (IB1 diode + VREF1)", "relation": "belongs-to"},
+    {"source": "L_M16", "target": "M15-M16 NMOS bias/reference generator (IB1 diode + VREF1)", "relation": "belongs-to"},
+
+    {"source": "IB1", "target": "Power", "relation": "directly-proportional"},
+    {"source": "IB1", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "IB1", "target": "Gain", "relation": "ambiguous"},
+    {"source": "VREF1", "target": "Power", "relation": "ambiguous"},
+    {"source": "VREF1", "target": "UGF", "relation": "ambiguous"},
+
+    {"source": "W_M7", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "W_M7", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M7", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M7", "target": "UGF", "relation": "inversely-proportional"},
+
+    {"source": "L_M8", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M8", "target": "UGF", "relation": "inversely-proportional"}
+  ]
+}

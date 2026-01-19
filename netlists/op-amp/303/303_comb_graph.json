@@ -1,0 +1,603 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "M1 NMOS input device (common-source)",
+      "type": "substructure"
+    },
+    {
+      "id": "M3 PMOS bias/current source into IB1",
+      "type": "substructure"
+    },
+    {
+      "id": "M0 NMOS bias/current control (VB1 -> IB2/IB1)",
+      "type": "substructure"
+    },
+    {
+      "id": "M4 NMOS pull-down / output device",
+      "type": "substructure"
+    },
+    {
+      "id": "R0 resistive load (VDD-VOUT1)",
+      "type": "substructure"
+    },
+    {
+      "id": "VB1 (bias voltage)",
+      "type": "parameter"
+    },
+    {
+      "id": "IB1",
+      "type": "parameter"
+    },
+    {
+      "id": "IB2",
+      "type": "parameter"
+    },
+    {
+      "id": "R0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "dev:M0",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M0:D",
+      "type": "terminal",
+      "device": "M0",
+      "role": "D"
+    },
+    {
+      "id": "term:M0:G",
+      "type": "terminal",
+      "device": "M0",
+      "role": "G"
+    },
+    {
+      "id": "term:M0:S",
+      "type": "terminal",
+      "device": "M0",
+      "role": "S"
+    },
+    {
+      "id": "net:IB2",
+      "type": "net"
+    },
+    {
+      "id": "net:VB1",
+      "type": "net"
+    },
+    {
+      "id": "net:IB1",
+      "type": "net"
+    },
+    {
+      "id": "dev:M1",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M1:D",
+      "type": "terminal",
+      "device": "M1",
+      "role": "D"
+    },
+    {
+      "id": "term:M1:G",
+      "type": "terminal",
+      "device": "M1",
+      "role": "G"
+    },
+    {
+      "id": "term:M1:S",
+      "type": "terminal",
+      "device": "M1",
+      "role": "S"
+    },
+    {
+      "id": "net:net012",
+      "type": "net"
+    },
+    {
+      "id": "net:VIN1",
+      "type": "net"
+    },
+    {
+      "id": "net:VSS",
+      "type": "net"
+    },
+    {
+      "id": "dev:M4",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M4:D",
+      "type": "terminal",
+      "device": "M4",
+      "role": "D"
+    },
+    {
+      "id": "term:M4:G",
+      "type": "terminal",
+      "device": "M4",
+      "role": "G"
+    },
+    {
+      "id": "term:M4:S",
+      "type": "terminal",
+      "device": "M4",
+      "role": "S"
+    },
+    {
+      "id": "net:VOUT1",
+      "type": "net"
+    },
+    {
+      "id": "dev:R0",
+      "type": "device",
+      "device_type": "resistor"
+    },
+    {
+      "id": "net:VDD",
+      "type": "net"
+    },
+    {
+      "id": "dev:M3",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M3:D",
+      "type": "terminal",
+      "device": "M3",
+      "role": "D"
+    },
+    {
+      "id": "term:M3:G",
+      "type": "terminal",
+      "device": "M3",
+      "role": "G"
+    },
+    {
+      "id": "term:M3:S",
+      "type": "terminal",
+      "device": "M3",
+      "role": "S"
+    }
+  ],
+  "links": [
+    {
+      "source": "dev:M0",
+      "target": "term:M0:D"
+    },
+    {
+      "source": "dev:M0",
+      "target": "term:M0:G"
+    },
+    {
+      "source": "dev:M0",
+      "target": "term:M0:S"
+    },
+    {
+      "source": "term:M0:D",
+      "target": "net:IB2"
+    },
+    {
+      "source": "term:M0:G",
+      "target": "net:VB1"
+    },
+    {
+      "source": "term:M0:S",
+      "target": "net:IB1"
+    },
+    {
+      "source": "dev:M1",
+      "target": "term:M1:D"
+    },
+    {
+      "source": "dev:M1",
+      "target": "term:M1:G"
+    },
+    {
+      "source": "dev:M1",
+      "target": "term:M1:S"
+    },
+    {
+      "source": "term:M1:D",
+      "target": "net:net012"
+    },
+    {
+      "source": "term:M1:G",
+      "target": "net:VIN1"
+    },
+    {
+      "source": "term:M1:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:M4",
+      "target": "term:M4:D"
+    },
+    {
+      "source": "dev:M4",
+      "target": "term:M4:G"
+    },
+    {
+      "source": "dev:M4",
+      "target": "term:M4:S"
+    },
+    {
+      "source": "term:M4:D",
+      "target": "net:VOUT1"
+    },
+    {
+      "source": "term:M4:G",
+      "target": "net:IB2"
+    },
+    {
+      "source": "term:M4:S",
+      "target": "net:net012"
+    },
+    {
+      "source": "dev:R0",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:R0",
+      "target": "net:VOUT1"
+    },
+    {
+      "source": "dev:M3",
+      "target": "term:M3:D"
+    },
+    {
+      "source": "dev:M3",
+      "target": "term:M3:G"
+    },
+    {
+      "source": "dev:M3",
+      "target": "term:M3:S"
+    },
+    {
+      "source": "term:M3:D",
+      "target": "net:IB1"
+    },
+    {
+      "source": "term:M3:G",
+      "target": "net:net012"
+    },
+    {
+      "source": "term:M3:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "Gain",
+      "target": "UGF",
+      "relation": "trade-off"
+    },
+    {
+      "source": "UGF",
+      "target": "Power",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Gain",
+      "target": "Power",
+      "relation": "trade-off"
+    },
+    {
+      "source": "CMRR",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "UGF",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "M1 NMOS input device (common-source)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M1 NMOS input device (common-source)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M1 NMOS input device (common-source)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M1 NMOS input device (common-source)",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M3 PMOS bias/current source into IB1",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M3 PMOS bias/current source into IB1",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M3 PMOS bias/current source into IB1",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M0 NMOS bias/current control (VB1 -> IB2/IB1)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M0 NMOS bias/current control (VB1 -> IB2/IB1)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M0 NMOS bias/current control (VB1 -> IB2/IB1)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M4 NMOS pull-down / output device",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M4 NMOS pull-down / output device",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M4 NMOS pull-down / output device",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "R0 resistive load (VDD-VOUT1)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "R0 resistive load (VDD-VOUT1)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "R0 resistive load (VDD-VOUT1)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "W_M1",
+      "target": "M1 NMOS input device (common-source)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M1",
+      "target": "M1 NMOS input device (common-source)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M3",
+      "target": "M3 PMOS bias/current source into IB1",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M3",
+      "target": "M3 PMOS bias/current source into IB1",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M0",
+      "target": "M0 NMOS bias/current control (VB1 -> IB2/IB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M0",
+      "target": "M0 NMOS bias/current control (VB1 -> IB2/IB1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M4",
+      "target": "M4 NMOS pull-down / output device",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M4",
+      "target": "M4 NMOS pull-down / output device",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R0",
+      "target": "R0 resistive load (VDD-VOUT1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VB1 (bias voltage)",
+      "target": "IB2",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB2",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB2",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB2",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "IB1",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "R0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R0",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R0",
+      "target": "Power",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M1",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M1",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "dev:M0",
+      "target": "W_M0"
+    },
+    {
+      "source": "dev:M0",
+      "target": "L_M0"
+    },
+    {
+      "source": "dev:M1",
+      "target": "W_M1"
+    },
+    {
+      "source": "dev:M1",
+      "target": "L_M1"
+    },
+    {
+      "source": "dev:M4",
+      "target": "W_M4"
+    },
+    {
+      "source": "dev:M4",
+      "target": "L_M4"
+    },
+    {
+      "source": "dev:M3",
+      "target": "W_M3"
+    },
+    {
+      "source": "dev:M3",
+      "target": "L_M3"
+    }
+  ]
+}

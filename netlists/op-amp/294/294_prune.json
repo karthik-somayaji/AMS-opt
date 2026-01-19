@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M9 (net021 VB3 VDD VDD) pmos4",
+    "reason": "M9 looks like a PMOS bias/current-source device feeding the VOUT2-side PMOS load path (through net021); removing it usually preserves the NMOS input/active devices but weakens or removes the intended bias for the pull-up network. Caveat: you must provide an alternate bias/current source for net021 (or directly for M7’s source node) or VOUT2’s pull-up branch may not conduct correctly.",
+    "impact_estimate": "Low-to-moderate (mainly affects DC biasing and output swing; core input devices can remain)"
+  },
+  {
+    "component": "M8 (net023 VB3 VDD VDD) pmos4",
+    "reason": "Same role as M9 but for the VOUT1-side PMOS load path (net023); deleting it often keeps the signal path topology intact but removes the dedicated bias/current for that pull-up branch. Caveat: net023 will need a replacement bias/current source to keep M6/VOUT1 properly biased.",
+    "impact_estimate": "Low-to-moderate (bias robustness and gain/swing degrade unless replaced)"
+  },
+  {
+    "component": "M3 (net018 VB4 VSS VSS) nmos4",
+    "reason": "M3 appears to be an NMOS bias/cascode device tied to VB4 that mainly sets headroom/output resistance for the net018/VOUT2 branch; removing it can leave the branch still functional via the PMOS input device (M2) and the output devices, but with reduced gain and poorer output impedance. Caveat: node net018’s voltage and VOUT2 common-mode may shift, so expect degraded gain/swing and potentially different bias points.",
+    "impact_estimate": "Low-to-moderate (primarily reduces gain/output impedance; basic operation can persist)"
+  }
+]

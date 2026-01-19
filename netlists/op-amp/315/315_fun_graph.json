@@ -1,0 +1,84 @@
+{
+  "nodes": [
+    {"id": "Gain", "type": "performance"},
+    {"id": "CMRR", "type": "performance"},
+    {"id": "UGF", "type": "performance"},
+    {"id": "Power", "type": "performance"},
+
+    {"id": "M1-M3 NMOS input transconductors (VIN1/VIN2 -> VOUT1/VOUT2)", "type": "substructure"},
+    {"id": "M0-M2 NMOS local feedback / diode-connected devices (VOUT1->net24, VOUT2->net25)", "type": "substructure"},
+    {"id": "M10-M11 PMOS active loads / current sources (IB1-gated to VOUT1/VOUT2)", "type": "substructure"},
+    {"id": "M4 PMOS diode-connected bias generator (IB1 reference)", "type": "substructure"},
+
+    {"id": "IB1", "type": "parameter"},
+    {"id": "W_M1", "type": "parameter"},
+    {"id": "L_M1", "type": "parameter"},
+    {"id": "W_M3", "type": "parameter"},
+    {"id": "L_M3", "type": "parameter"},
+    {"id": "W_M0", "type": "parameter"},
+    {"id": "L_M0", "type": "parameter"},
+    {"id": "W_M2", "type": "parameter"},
+    {"id": "L_M2", "type": "parameter"},
+    {"id": "W_M10", "type": "parameter"},
+    {"id": "L_M10", "type": "parameter"},
+    {"id": "W_M11", "type": "parameter"},
+    {"id": "L_M11", "type": "parameter"},
+    {"id": "W_M4", "type": "parameter"},
+    {"id": "L_M4", "type": "parameter"}
+  ],
+  "links": [
+    {"source": "Gain", "target": "UGF", "relation": "trade-off"},
+    {"source": "UGF", "target": "Power", "relation": "trade-off"},
+    {"source": "Gain", "target": "Power", "relation": "trade-off"},
+    {"source": "CMRR", "target": "Gain", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "UGF", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "Power", "relation": "ambiguous"},
+
+    {"source": "M1-M3 NMOS input transconductors (VIN1/VIN2 -> VOUT1/VOUT2)", "target": "Gain", "relation": "influences"},
+    {"source": "M1-M3 NMOS input transconductors (VIN1/VIN2 -> VOUT1/VOUT2)", "target": "UGF", "relation": "influences"},
+    {"source": "M1-M3 NMOS input transconductors (VIN1/VIN2 -> VOUT1/VOUT2)", "target": "CMRR", "relation": "influences"},
+    {"source": "M1-M3 NMOS input transconductors (VIN1/VIN2 -> VOUT1/VOUT2)", "target": "Power", "relation": "influences"},
+
+    {"source": "M0-M2 NMOS local feedback / diode-connected devices (VOUT1->net24, VOUT2->net25)", "target": "Gain", "relation": "influences"},
+    {"source": "M0-M2 NMOS local feedback / diode-connected devices (VOUT1->net24, VOUT2->net25)", "target": "UGF", "relation": "influences"},
+    {"source": "M0-M2 NMOS local feedback / diode-connected devices (VOUT1->net24, VOUT2->net25)", "target": "CMRR", "relation": "influences"},
+
+    {"source": "M10-M11 PMOS active loads / current sources (IB1-gated to VOUT1/VOUT2)", "target": "Gain", "relation": "influences"},
+    {"source": "M10-M11 PMOS active loads / current sources (IB1-gated to VOUT1/VOUT2)", "target": "UGF", "relation": "influences"},
+    {"source": "M10-M11 PMOS active loads / current sources (IB1-gated to VOUT1/VOUT2)", "target": "Power", "relation": "influences"},
+    {"source": "M10-M11 PMOS active loads / current sources (IB1-gated to VOUT1/VOUT2)", "target": "CMRR", "relation": "influences"},
+
+    {"source": "M4 PMOS diode-connected bias generator (IB1 reference)", "target": "Power", "relation": "influences"},
+    {"source": "M4 PMOS diode-connected bias generator (IB1 reference)", "target": "Gain", "relation": "influences"},
+
+    {"source": "W_M1", "target": "M1-M3 NMOS input transconductors (VIN1/VIN2 -> VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "L_M1", "target": "M1-M3 NMOS input transconductors (VIN1/VIN2 -> VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "W_M3", "target": "M1-M3 NMOS input transconductors (VIN1/VIN2 -> VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "L_M3", "target": "M1-M3 NMOS input transconductors (VIN1/VIN2 -> VOUT1/VOUT2)", "relation": "belongs-to"},
+
+    {"source": "W_M0", "target": "M0-M2 NMOS local feedback / diode-connected devices (VOUT1->net24, VOUT2->net25)", "relation": "belongs-to"},
+    {"source": "L_M0", "target": "M0-M2 NMOS local feedback / diode-connected devices (VOUT1->net24, VOUT2->net25)", "relation": "belongs-to"},
+    {"source": "W_M2", "target": "M0-M2 NMOS local feedback / diode-connected devices (VOUT1->net24, VOUT2->net25)", "relation": "belongs-to"},
+    {"source": "L_M2", "target": "M0-M2 NMOS local feedback / diode-connected devices (VOUT1->net24, VOUT2->net25)", "relation": "belongs-to"},
+
+    {"source": "W_M10", "target": "M10-M11 PMOS active loads / current sources (IB1-gated to VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "L_M10", "target": "M10-M11 PMOS active loads / current sources (IB1-gated to VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "W_M11", "target": "M10-M11 PMOS active loads / current sources (IB1-gated to VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "L_M11", "target": "M10-M11 PMOS active loads / current sources (IB1-gated to VOUT1/VOUT2)", "relation": "belongs-to"},
+
+    {"source": "W_M4", "target": "M4 PMOS diode-connected bias generator (IB1 reference)", "relation": "belongs-to"},
+    {"source": "L_M4", "target": "M4 PMOS diode-connected bias generator (IB1 reference)", "relation": "belongs-to"},
+
+    {"source": "IB1", "target": "Power", "relation": "directly-proportional"},
+    {"source": "IB1", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "IB1", "target": "Gain", "relation": "ambiguous"},
+
+    {"source": "W_M1", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "W_M1", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M1", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M1", "target": "UGF", "relation": "inversely-proportional"},
+
+    {"source": "L_M10", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M10", "target": "UGF", "relation": "inversely-proportional"}
+  ]
+}

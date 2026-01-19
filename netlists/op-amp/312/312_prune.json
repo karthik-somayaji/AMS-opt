@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M8 (IB1 IB1 VSS VSS) nmos4",
+    "reason": "M8 is a diode-connected NMOS that likely just provides a local bias reference/sink for IB1; if IB1 is already driven by an ideal/external bias source, removing M8 usually won’t change the signal-path behavior. Caveat: if IB1 is generated/stabilized on-chip using M8, deleting it can leave IB1 floating and break multiple branches.",
+    "impact_estimate": "Low if IB1 is externally defined; high if IB1 depends on M8"
+  },
+  {
+    "component": "M16 (net066 VREF1 VSS VSS) nmos4",
+    "reason": "M16 mainly creates the reference node net066 from VREF1 for the bias chain feeding net043 via M15, rather than directly participating in the VIN→VOUT differential signal path. Caveat: if net066 only exists because of M16, removing it can upset the bias for M19/M20 (and therefore the biasing of net047 and the PMOS mirror).",
+    "impact_estimate": "Low if net066/net043 are biased elsewhere; medium-to-high if this is the only reference generator"
+  },
+  {
+    "component": "M15 (net043 IB1 net066 VSS) nmos4",
+    "reason": "M15 appears to be part of a bias-conditioning branch that sets net043 (which then biases the auxiliary differential pair M19/M20); if net043 is supplied externally or that auxiliary bias loop isn’t required for basic differential amplification, M15 can be removed. Caveat: if M19/M20 are essential to establish the tail/current reference for net047 (and thus bias M17/M14/M18), removing M15 can shift operating points significantly.",
+    "impact_estimate": "Low if net043 is externally set or the auxiliary loop is non-essential; high if it is required to bias the main mirror/tail"
+  }
+]
