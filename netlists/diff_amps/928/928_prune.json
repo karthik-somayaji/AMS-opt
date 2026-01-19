@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M1 (net17 VB1 VDD VDD) pmos4",
+    "reason": "M1 is part of the upper PMOS bias/current-source structure feeding the PMOS load devices; in many simplified differential-pair setups you can remove this extra PMOS “cascode/current-source” element and still have a working (though less ideal) active load using M2/M3 alone if VB2 provides the needed biasing. Caveat: removing M1 changes the DC operating point and reduces output resistance (gain), and may require adjusting VB2/VB1 or accepting more distortion/headroom sensitivity.",
+    "impact_estimate": "Low-to-moderate (mainly reduces gain and bias stability; basic differential amplification can remain)."
+  },
+  {
+    "component": "M0 (net18 VB1 VDD VDD) pmos4",
+    "reason": "M0 is the symmetric counterpart to M1 on the other side; deleting it similarly simplifies the PMOS bias/load network while keeping the differential core (M6/M7 input pair and M4/M5 loads) intact. Caveat: as with M1, expect reduced gain/CMRR and altered output common-mode unless bias voltages are re-tuned.",
+    "impact_estimate": "Low-to-moderate (primarily affects gain/CM behavior; circuit can still function)."
+  },
+  {
+    "component": "M8 (net14 VCM1 VSS VSS) nmos4",
+    "reason": "M8 appears to provide a controllable tail current (or common-mode control) for the NMOS differential pair via VCM1; if you instead tie net14 to a fixed bias/current source (or otherwise define the tail current externally), M8 can be removed without changing the fundamental differential operation. Caveat: you must replace its function (set tail bias/current somehow) or the input pair (M6/M7) will not be correctly biased.",
+    "impact_estimate": "Low if replaced by an equivalent tail bias; high if removed without providing an alternative bias for net14."
+  }
+]

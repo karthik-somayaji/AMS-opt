@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R1 (VDD VOUT2) resistor",
+    "reason": "R1 is just the load/pull-up for the VOUT2 branch; if you are only interested in the VOUT1 side (single-ended output), you can remove this resistor and still have a functioning (single-ended) amplifier stage on VOUT1. Caveat: VOUT2 will become undefined/floating and any intended differential operation is lost.",
+    "impact_estimate": "Low impact if using only VOUT1; high impact if true differential output is required."
+  },
+  {
+    "component": "M1 (VOUT2 VIN2 VSS VSS) nmos4",
+    "reason": "This transistor forms the second half of the differential pair; if you only need a single common-source inverter-like gain stage using VIN1→VOUT1, you can delete the VIN2/VOUT2 device. Caveat: the circuit no longer rejects common-mode signals and is no longer a differential amplifier.",
+    "impact_estimate": "Low impact for single-ended use; high impact for differential functionality."
+  },
+  {
+    "component": "Duplicate naming of M1 (one of the two 'M1' instances)",
+    "reason": "As written, both MOSFETs are labeled 'M1', which is typically illegal/ambiguous in SPICE; deleting (or renaming/removing) one of the duplicate-labeled entries avoids netlist errors without changing the intended behavior if the remaining device already represents the topology you want to simulate. Caveat: if you delete one, you’re also removing one half of the differential pair unless you instead rename it (recommended).",
+    "impact_estimate": "Low impact if the goal is to get a runnable netlist or a single-ended stage; otherwise moderate-to-high if you intended a full differential pair."
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R1 (net36 VOUT2) resistor",
+    "reason": "R1 is part of a pair of cross-coupled/bridging resistors (R0, R1) tying the PMOS load gate node (net36) to the outputs. In many differential pairs, the core amplification still works without this extra resistive coupling; removing R1 reduces nonlinearity/positive-feedback effects but preserves basic operation if net36 is otherwise biased/defined.",
+    "impact_estimate": "Low–medium: gain/CM behavior may shift; ensure net36 still has a DC path (e.g., via remaining R0 and M6/M5 gates) and symmetry will be slightly degraded."
+  },
+  {
+    "component": "R0 (VOUT1 net36) resistor",
+    "reason": "Like R1, R0 provides resistive coupling between VOUT1 and the common PMOS gate node net36; it is not strictly required for the differential pair to function as a basic amplifier if the PMOS load gate node is otherwise properly biased/defined. Removing it simplifies the load/feedback network at the cost of any intended stabilization/linearization from the resistors.",
+    "impact_estimate": "Low–medium: reduced/changed feedback and possibly different output swing or offset; if both R0 and R1 are removed, verify net36 is driven by a valid bias (otherwise M5/M6 gates may float)."
+  },
+  {
+    "component": "M7 (VSS VCM1 IB1 VDD) pmos4",
+    "reason": "M7 does not connect to the signal path nodes (VOUT1, VOUT2, VIN1, VIN2, net32, net36) and appears to be an auxiliary bias/common-mode-related device. If VCM1/IB1 generation is handled elsewhere or not used in your simulation, deleting M7 typically won’t change the differential amplifier’s core transfer behavior.",
+    "impact_estimate": "Low (if VCM1/IB1 biasing is external): no direct effect on gain; caveat: if M7 was intended to generate or load IB1/VCM1, removing it may change those bias voltages/currents."
+  }
+]

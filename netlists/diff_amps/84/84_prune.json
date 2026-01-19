@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R0 (VDD net014) resistor",
+    "reason": "R0 is the load/pull-up for only the VOUT1-side PMOS branch (M3). If you only need a single-ended output (e.g., use VOUT2 only), this resistor (and effectively that half-branch) can be removed with minimal impact on the remaining half-circuit’s ability to amplify differentially into VOUT2.",
+    "impact_estimate": "Low if single-ended operation is acceptable; high if true differential (VOUT1/VOUT2) symmetry and gain matching are required."
+  },
+  {
+    "component": "R1 (VDD net013) resistor",
+    "reason": "R1 is the corresponding load/pull-up for the VOUT2-side PMOS branch (M4). As with R0, if you only need VOUT1 as a single-ended output, you can remove R1 and rely on the remaining branch to function.",
+    "impact_estimate": "Low if single-ended operation is acceptable; high if you require differential outputs or balanced biasing of both output nodes."
+  },
+  {
+    "component": "M3 (VOUT1 VB2 net014 net014) pmos4",
+    "reason": "M3 is part of the active load for the VOUT1 branch; if you delete the VOUT1 branch (e.g., to simplify to a single-ended amplifier), M3 becomes unnecessary. Caveat: if M3 is removed, R0 should also be removed or the node net014 must be otherwise defined, since it would become a dangling bias/load node.",
+    "impact_estimate": "Low in a single-ended (VOUT2-only) configuration; high if differential gain, output swing symmetry, or common-mode behavior must be preserved."
+  }
+]

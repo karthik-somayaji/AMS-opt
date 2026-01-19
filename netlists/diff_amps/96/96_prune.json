@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M4 (VOUT2 net017 VDD VDD) pmos4",
+    "reason": "M4 is the PMOS load for the VOUT2 branch; removing it still leaves a functional (though unbalanced) amplifier where only the VOUT1 side has an active load (via M3). This can be acceptable if you only care about single-ended output or a simplified half-circuit.",
+    "impact_estimate": "Moderate: VOUT2 will lose its pull-up/active load, so differential symmetry, gain on VOUT2, and output common-mode behavior degrade; VOUT1 can still operate."
+  },
+  {
+    "component": "M3 (VOUT1 net017 VDD VDD) pmos4",
+    "reason": "M3 is the PMOS load for the VOUT1 branch; deleting it mirrors the effect of deleting M4, leaving a simplified circuit that can still function using only the VOUT2 side (with M4). This is often fine for a quick sanity-check of the differential pair core or if only one output is used.",
+    "impact_estimate": "Moderate: VOUT1 will lose its pull-up/active load; differential operation and balance are compromised, but the remaining branch can still provide an output."
+  },
+  {
+    "component": "M0 (VOUT1 VIN1 net017 VSS) nmos4",
+    "reason": "M0 is one half of the input differential pair; removing it converts the circuit into a single-input/common-source stage using M2 with the same tail device (M1). This preserves basic amplification behavior, but it no longer performs true differential-to-differential conversion.",
+    "impact_estimate": "Moderate: loses differential functionality/CMRR and symmetry, but still acts as a usable single-ended amplifier if VIN2 is the remaining input and the corresponding load device remains."
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R0 (net5 VSS)",
+    "reason": "This resistor only ties the tail node (net5) to VSS; if net5 is already intended to be at VSS (or you replace it with an ideal connection), the amplifier’s basic differential-pair behavior remains. Caveat: if R0 is providing tail-bias (setting tail current), deleting it will leave the emitters floating unless net5 is otherwise biased/connected.",
+    "impact_estimate": "Low if net5 is otherwise fixed to VSS (e.g., direct short or current source); high if R0 is the only tail bias/return path."
+  },
+  {
+    "component": "Q0 (IOUT1 VIN1 net5 0)",
+    "reason": "Removing one transistor converts the differential pair into a single-ended common-emitter stage; the circuit can still amplify VIN2 (through Q1) but loses differential operation. Caveat: any intended differential output (IOUT1 vs IOUT2) and input common-mode behavior will no longer be valid.",
+    "impact_estimate": "Moderate: basic amplification possible, but differential functionality is lost."
+  },
+  {
+    "component": "Q1 (IOUT2 VIN2 net5 0)",
+    "reason": "Similarly, deleting Q1 leaves a single-transistor stage using Q0; you keep a functional amplifier path for VIN1 but not a differential pair. Caveat: you must choose which side you want to keep; removing either Q0 or Q1 breaks differential symmetry and eliminates one output node.",
+    "impact_estimate": "Moderate: basic amplification possible, but differential functionality is lost."
+  }
+]

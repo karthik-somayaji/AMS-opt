@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R4 (net03 net04) resistor",
+    "reason": "This is a coupling/balancing resistor between the two emitter nodes; for a basic differential pair it is not required for operation and many designs omit it. Removing it mainly changes symmetry/crosstalk and common-mode behavior rather than preventing amplification.",
+    "impact_estimate": "Low to moderate (depends on whether R4 was intentionally set to improve balance/linearity; gain and CMRR may shift)."
+  },
+  {
+    "component": "R0 (net03 VSS) resistor",
+    "reason": "If you keep the other emitter resistor (R3), the circuit can still function as a (less symmetric) amplifier since Q0 still has a DC return path through the other side only via any coupling (or not at all if R4 is removed). In many simplified/single-ended uses, one side’s emitter degeneration can be omitted to reduce parts.",
+    "impact_estimate": "Moderate (bias currents and gain become unbalanced; if R4 is also removed, Q0 emitter loses its return path and this becomes high/severe impact)."
+  },
+  {
+    "component": "R3 (net04 VSS) resistor",
+    "reason": "Symmetric to R0: if you keep R0, you can omit R3 and the pair can still operate in a simplified/unbalanced form. This is often acceptable when only one output/input is of interest or when you tolerate offset and reduced matching.",
+    "impact_estimate": "Moderate (same caveat: do not delete both R0 and R3; doing so removes emitter biasing and the stage will not bias correctly)."
+  }
+]
