@@ -1,0 +1,639 @@
+{
+  "nodes": [
+    {
+      "id": "Quiescent Current",
+      "type": "performance"
+    },
+    {
+      "id": "Line Regulation",
+      "type": "performance"
+    },
+    {
+      "id": "Load Regulation",
+      "type": "performance"
+    },
+    {
+      "id": "Regulation Error",
+      "type": "performance"
+    },
+    {
+      "id": "Stability",
+      "type": "performance"
+    },
+    {
+      "id": "PMOS pass device (M0)",
+      "type": "substructure"
+    },
+    {
+      "id": "Error amplifier core (M5-M7,M8,M2,M3)",
+      "type": "substructure"
+    },
+    {
+      "id": "Bias current source / reference (IB1,M6,M9)",
+      "type": "substructure"
+    },
+    {
+      "id": "Feedback divider (R0-R1)",
+      "type": "substructure"
+    },
+    {
+      "id": "Load / bleed (R3)",
+      "type": "substructure"
+    },
+    {
+      "id": "Output compensation network (C0-R2)",
+      "type": "substructure"
+    },
+    {
+      "id": "Internal bias generation (RR0,MM0,MM1,MM2,MM3,MM14)",
+      "type": "substructure"
+    },
+    {
+      "id": "Auxiliary gain/level-shift (MM4-MM15,MM7-MM10,MM13)",
+      "type": "substructure"
+    },
+    {
+      "id": "W_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "IB1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M8",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M8",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "R0",
+      "type": "parameter"
+    },
+    {
+      "id": "R1",
+      "type": "parameter"
+    },
+    {
+      "id": "R3",
+      "type": "parameter"
+    },
+    {
+      "id": "C0",
+      "type": "parameter"
+    },
+    {
+      "id": "R2",
+      "type": "parameter"
+    },
+    {
+      "id": "RR0",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Quiescent Current",
+      "target": "Stability",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Quiescent Current",
+      "target": "Line Regulation",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Quiescent Current",
+      "target": "Load Regulation",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Quiescent Current",
+      "target": "Regulation Error",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Stability",
+      "target": "Line Regulation",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "Stability",
+      "target": "Load Regulation",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "Stability",
+      "target": "Regulation Error",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "Line Regulation",
+      "target": "Regulation Error",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "Load Regulation",
+      "target": "Regulation Error",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "Line Regulation",
+      "target": "Load Regulation",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "PMOS pass device (M0)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "PMOS pass device (M0)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "PMOS pass device (M0)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "PMOS pass device (M0)",
+      "target": "Regulation Error",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier core (M5-M7,M8,M2,M3)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier core (M5-M7,M8,M2,M3)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier core (M5-M7,M8,M2,M3)",
+      "target": "Regulation Error",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier core (M5-M7,M8,M2,M3)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier core (M5-M7,M8,M2,M3)",
+      "target": "Quiescent Current",
+      "relation": "influences"
+    },
+    {
+      "source": "Bias current source / reference (IB1,M6,M9)",
+      "target": "Quiescent Current",
+      "relation": "influences"
+    },
+    {
+      "source": "Bias current source / reference (IB1,M6,M9)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Bias current source / reference (IB1,M6,M9)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Bias current source / reference (IB1,M6,M9)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Bias current source / reference (IB1,M6,M9)",
+      "target": "Regulation Error",
+      "relation": "influences"
+    },
+    {
+      "source": "Feedback divider (R0-R1)",
+      "target": "Regulation Error",
+      "relation": "influences"
+    },
+    {
+      "source": "Feedback divider (R0-R1)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Feedback divider (R0-R1)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Feedback divider (R0-R1)",
+      "target": "Quiescent Current",
+      "relation": "influences"
+    },
+    {
+      "source": "Feedback divider (R0-R1)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Load / bleed (R3)",
+      "target": "Quiescent Current",
+      "relation": "influences"
+    },
+    {
+      "source": "Load / bleed (R3)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Load / bleed (R3)",
+      "target": "Regulation Error",
+      "relation": "influences"
+    },
+    {
+      "source": "Load / bleed (R3)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Output compensation network (C0-R2)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Output compensation network (C0-R2)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Output compensation network (C0-R2)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Internal bias generation (RR0,MM0,MM1,MM2,MM3,MM14)",
+      "target": "Quiescent Current",
+      "relation": "influences"
+    },
+    {
+      "source": "Internal bias generation (RR0,MM0,MM1,MM2,MM3,MM14)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Internal bias generation (RR0,MM0,MM1,MM2,MM3,MM14)",
+      "target": "Regulation Error",
+      "relation": "influences"
+    },
+    {
+      "source": "Auxiliary gain/level-shift (MM4-MM15,MM7-MM10,MM13)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Auxiliary gain/level-shift (MM4-MM15,MM7-MM10,MM13)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Auxiliary gain/level-shift (MM4-MM15,MM7-MM10,MM13)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Auxiliary gain/level-shift (MM4-MM15,MM7-MM10,MM13)",
+      "target": "Quiescent Current",
+      "relation": "influences"
+    },
+    {
+      "source": "W_M0",
+      "target": "PMOS pass device (M0)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M0",
+      "target": "PMOS pass device (M0)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M0",
+      "target": "Load Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "Line Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "Regulation Error",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "Stability",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "Load Regulation",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "Line Regulation",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "Regulation Error",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "Stability",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Bias current source / reference (IB1,M6,M9)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IB1",
+      "target": "Quiescent Current",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Line Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Load Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Regulation Error",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Stability",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "W_M5",
+      "target": "Error amplifier core (M5-M7,M8,M2,M3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M5",
+      "target": "Error amplifier core (M5-M7,M8,M2,M3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M7",
+      "target": "Error amplifier core (M5-M7,M8,M2,M3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M7",
+      "target": "Error amplifier core (M5-M7,M8,M2,M3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M8",
+      "target": "Error amplifier core (M5-M7,M8,M2,M3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M8",
+      "target": "Error amplifier core (M5-M7,M8,M2,M3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M2",
+      "target": "Error amplifier core (M5-M7,M8,M2,M3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M2",
+      "target": "Error amplifier core (M5-M7,M8,M2,M3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M3",
+      "target": "Error amplifier core (M5-M7,M8,M2,M3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M3",
+      "target": "Error amplifier core (M5-M7,M8,M2,M3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M5",
+      "target": "Line Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M5",
+      "target": "Load Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M5",
+      "target": "Regulation Error",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M5",
+      "target": "Stability",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "W_M5",
+      "target": "Quiescent Current",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M5",
+      "target": "Line Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M5",
+      "target": "Load Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M5",
+      "target": "Regulation Error",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M5",
+      "target": "Stability",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "L_M5",
+      "target": "Quiescent Current",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R0",
+      "target": "Feedback divider (R0-R1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R1",
+      "target": "Feedback divider (R0-R1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R0",
+      "target": "Quiescent Current",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R1",
+      "target": "Quiescent Current",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R0",
+      "target": "Regulation Error",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "R1",
+      "target": "Regulation Error",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "R0",
+      "target": "Stability",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "R1",
+      "target": "Stability",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "R3",
+      "target": "Load / bleed (R3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R3",
+      "target": "Quiescent Current",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R3",
+      "target": "Load Regulation",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "R3",
+      "target": "Stability",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "C0",
+      "target": "Output compensation network (C0-R2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R2",
+      "target": "Output compensation network (C0-R2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "C0",
+      "target": "Stability",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "C0",
+      "target": "Load Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "C0",
+      "target": "Line Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R2",
+      "target": "Stability",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "RR0",
+      "target": "Internal bias generation (RR0,MM0,MM1,MM2,MM3,MM14)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "RR0",
+      "target": "Quiescent Current",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "RR0",
+      "target": "Line Regulation",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "RR0",
+      "target": "Regulation Error",
+      "relation": "ambiguous"
+    }
+  ]
+}

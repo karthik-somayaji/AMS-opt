@@ -1,0 +1,557 @@
+{
+  "nodes": [
+    {
+      "id": "Quiscent Current",
+      "type": "performance"
+    },
+    {
+      "id": "Line Regulation",
+      "type": "performance"
+    },
+    {
+      "id": "Load Regulation",
+      "type": "performance"
+    },
+    {
+      "id": "Regulation Error",
+      "type": "performance"
+    },
+    {
+      "id": "Stability",
+      "type": "performance"
+    },
+    {
+      "id": "Pass transistor (M0)",
+      "type": "substructure"
+    },
+    {
+      "id": "Error amplifier input pair / transconductor (M5,M7,M8,M3)",
+      "type": "substructure"
+    },
+    {
+      "id": "Bias current source / bias network (IB1,M6,M9,M1,MM0,VB1,VB2,VB3,VB4)",
+      "type": "substructure"
+    },
+    {
+      "id": "Reference generator (MM3,MM4,VREF1)",
+      "type": "substructure"
+    },
+    {
+      "id": "Feedback divider (R0,R1)",
+      "type": "substructure"
+    },
+    {
+      "id": "Output load and sensing (R3)",
+      "type": "substructure"
+    },
+    {
+      "id": "Compensation / output capacitor network (C0,R2)",
+      "type": "substructure"
+    },
+    {
+      "id": "Additional bias/aux mirrors and startup (MM1,MM2,MM5,MM6,MM7,MM8,MM9,MM10,MM13,MM14,MM15,RR1)",
+      "type": "substructure"
+    },
+    {
+      "id": "W_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M8",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M8",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "IB1",
+      "type": "parameter"
+    },
+    {
+      "id": "VB1",
+      "type": "parameter"
+    },
+    {
+      "id": "VB2",
+      "type": "parameter"
+    },
+    {
+      "id": "VB3",
+      "type": "parameter"
+    },
+    {
+      "id": "VB4",
+      "type": "parameter"
+    },
+    {
+      "id": "VREF1",
+      "type": "parameter"
+    },
+    {
+      "id": "R0",
+      "type": "parameter"
+    },
+    {
+      "id": "R1",
+      "type": "parameter"
+    },
+    {
+      "id": "R2",
+      "type": "parameter"
+    },
+    {
+      "id": "R3",
+      "type": "parameter"
+    },
+    {
+      "id": "C0",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Quiscent Current",
+      "target": "Line Regulation",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Quiscent Current",
+      "target": "Load Regulation",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Quiscent Current",
+      "target": "Regulation Error",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Quiscent Current",
+      "target": "Stability",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Line Regulation",
+      "target": "Regulation Error",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "Load Regulation",
+      "target": "Regulation Error",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "Stability",
+      "target": "Load Regulation",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "Stability",
+      "target": "Line Regulation",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "Pass transistor (M0)",
+      "target": "Quiscent Current",
+      "relation": "influences"
+    },
+    {
+      "source": "Pass transistor (M0)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Pass transistor (M0)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Pass transistor (M0)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier input pair / transconductor (M5,M7,M8,M3)",
+      "target": "Quiscent Current",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier input pair / transconductor (M5,M7,M8,M3)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier input pair / transconductor (M5,M7,M8,M3)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier input pair / transconductor (M5,M7,M8,M3)",
+      "target": "Regulation Error",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier input pair / transconductor (M5,M7,M8,M3)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Bias current source / bias network (IB1,M6,M9,M1,MM0,VB1,VB2,VB3,VB4)",
+      "target": "Quiscent Current",
+      "relation": "influences"
+    },
+    {
+      "source": "Bias current source / bias network (IB1,M6,M9,M1,MM0,VB1,VB2,VB3,VB4)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Bias current source / bias network (IB1,M6,M9,M1,MM0,VB1,VB2,VB3,VB4)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Bias current source / bias network (IB1,M6,M9,M1,MM0,VB1,VB2,VB3,VB4)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Reference generator (MM3,MM4,VREF1)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Reference generator (MM3,MM4,VREF1)",
+      "target": "Regulation Error",
+      "relation": "influences"
+    },
+    {
+      "source": "Feedback divider (R0,R1)",
+      "target": "Regulation Error",
+      "relation": "influences"
+    },
+    {
+      "source": "Feedback divider (R0,R1)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Feedback divider (R0,R1)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Compensation / output capacitor network (C0,R2)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Compensation / output capacitor network (C0,R2)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Output load and sensing (R3)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Output load and sensing (R3)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Additional bias/aux mirrors and startup (MM1,MM2,MM5,MM6,MM7,MM8,MM9,MM10,MM13,MM14,MM15,RR1)",
+      "target": "Quiscent Current",
+      "relation": "influences"
+    },
+    {
+      "source": "Additional bias/aux mirrors and startup (MM1,MM2,MM5,MM6,MM7,MM8,MM9,MM10,MM13,MM14,MM15,RR1)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "W_M0",
+      "target": "Pass transistor (M0)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M0",
+      "target": "Pass transistor (M0)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M0",
+      "target": "Load Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "Line Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "Stability",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "L_M0",
+      "target": "Line Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "Load Regulation",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M5",
+      "target": "Error amplifier input pair / transconductor (M5,M7,M8,M3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M5",
+      "target": "Error amplifier input pair / transconductor (M5,M7,M8,M3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M7",
+      "target": "Error amplifier input pair / transconductor (M5,M7,M8,M3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M7",
+      "target": "Error amplifier input pair / transconductor (M5,M7,M8,M3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M8",
+      "target": "Error amplifier input pair / transconductor (M5,M7,M8,M3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M8",
+      "target": "Error amplifier input pair / transconductor (M5,M7,M8,M3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M3",
+      "target": "Error amplifier input pair / transconductor (M5,M7,M8,M3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M3",
+      "target": "Error amplifier input pair / transconductor (M5,M7,M8,M3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M5",
+      "target": "Line Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M5",
+      "target": "Load Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M5",
+      "target": "Regulation Error",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M5",
+      "target": "Line Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M5",
+      "target": "Stability",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "W_M7",
+      "target": "Line Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M7",
+      "target": "Load Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M7",
+      "target": "Regulation Error",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M8",
+      "target": "Line Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M8",
+      "target": "Load Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M8",
+      "target": "Regulation Error",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M3",
+      "target": "Stability",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "L_M3",
+      "target": "Stability",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "IB1",
+      "target": "Bias current source / bias network (IB1,M6,M9,M1,MM0,VB1,VB2,VB3,VB4)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VB1",
+      "target": "Bias current source / bias network (IB1,M6,M9,M1,MM0,VB1,VB2,VB3,VB4)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VB2",
+      "target": "Bias current source / bias network (IB1,M6,M9,M1,MM0,VB1,VB2,VB3,VB4)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VB3",
+      "target": "Bias current source / bias network (IB1,M6,M9,M1,MM0,VB1,VB2,VB3,VB4)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VB4",
+      "target": "Bias current source / bias network (IB1,M6,M9,M1,MM0,VB1,VB2,VB3,VB4)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IB1",
+      "target": "Quiscent Current",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Line Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Load Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Stability",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "VREF1",
+      "target": "Reference generator (MM3,MM4,VREF1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VREF1",
+      "target": "Regulation Error",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R0",
+      "target": "Feedback divider (R0,R1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R1",
+      "target": "Feedback divider (R0,R1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R0",
+      "target": "Regulation Error",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "R1",
+      "target": "Regulation Error",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "C0",
+      "target": "Compensation / output capacitor network (C0,R2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R2",
+      "target": "Compensation / output capacitor network (C0,R2)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "C0",
+      "target": "Stability",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "C0",
+      "target": "Load Regulation",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "R2",
+      "target": "Stability",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "R3",
+      "target": "Output load and sensing (R3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R3",
+      "target": "Load Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "R3",
+      "target": "Stability",
+      "relation": "ambiguous"
+    }
+  ]
+}

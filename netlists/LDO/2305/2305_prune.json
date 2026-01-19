@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "This looks like a compensation/AC-shaping capacitor from the output node to an internal bias/sense node (net44). If you only care about basic DC gain/operating-point behavior, removing it typically doesn’t prevent the differential amplifier from functioning.",
+    "impact_estimate": "Low for DC/OP; moderate-to-high risk for stability, transient response, and frequency response (possible ringing/oscillation depending on loading and loop gain)."
+  },
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "R2 appears to provide a DC reference/bleed path for net44, which is otherwise only connected to C0. If C0 is removed (or if net44 is not used elsewhere), R2 becomes functionally irrelevant and can be deleted without affecting the core amplifier signal path.",
+    "impact_estimate": "Negligible if net44 is unused (especially if C0 is removed); if C0 remains, removing R2 may leave net44 floating and can cause convergence issues or undefined AC behavior."
+  },
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "R3 is a shunt load/bleeder from the output to ground; many amplifier testbenches include this only to define a load or DC path. If the next stage or measurement setup already provides a load/bias path, removing R3 generally won’t change the amplifier’s fundamental operation.",
+    "impact_estimate": "Low in many contexts; output DC level/swing and small-signal gain may shift if R3 was the dominant load, and a completely unloaded output may affect stability in some cases."
+  }
+]

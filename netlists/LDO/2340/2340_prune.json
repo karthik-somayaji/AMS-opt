@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "This looks like an output/load or compensation capacitor tied to an auxiliary node (net44) that is otherwise only referenced by R2. Removing it typically doesn’t break DC biasing or small-signal gain; it mainly changes transient response and stability/phase margin.",
+    "impact_estimate": "Low for DC functionality; moderate risk for AC stability/peaking depending on whether C0 is providing necessary compensation with R2/R3."
+  },
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "Net44 only appears in the RC branch (R2 and C0). If you remove this resistor, that branch no longer defines a time constant to ground and net44 becomes floating (unless C0 is also removed), which usually only affects frequency compensation/loading rather than core amplification.",
+    "impact_estimate": "Low if C0 is also removed; otherwise moderate because leaving C0 makes net44 a floating capacitor node that can cause convergence/noise issues."
+  },
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "A resistor from VOUT1 to ground is often just a load or a DC bleed path for the output. In many differential amplifier cores, the output bias is already established by the active devices, so removing the explicit load won’t prevent amplification, but it will change output operating point under no-load conditions and output swing/loading.",
+    "impact_estimate": "Low-to-moderate: gain may increase (lighter load) and DC output level may shift; keep if you need a defined output load or a guaranteed DC path for simulation."
+  }
+]

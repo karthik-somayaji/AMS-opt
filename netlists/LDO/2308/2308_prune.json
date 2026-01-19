@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "This looks like a compensation/load capacitor between the output node and an internal node (net44). If you are not checking transient stability/AC phase margin, removing it typically does not prevent DC biasing or basic differential operation.",
+    "impact_estimate": "Low for DC functionality; potentially high for AC stability/transient response (may oscillate or show ringing depending on what net44 represents)."
+  },
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "R2 appears to provide a DC reference/leak path for the internal node net44 (which is also tied to C0). If net44 is otherwise only used for compensation, the amplifier can still function without this explicit bleed resistor, especially in idealized simulations.",
+    "impact_estimate": "Low to moderate; may leave net44 floating (can hurt convergence or cause undefined operating point if net44 has no other DC path)."
+  },
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "R3 is likely just an output load to ground used for testing/setting a load condition. Removing it usually does not change the internal biasing or core differential action, provided something else still defines the output load (or you are only interested in open-circuit gain).",
+    "impact_estimate": "Low for core operation; moderate for measured gain/swing/output current because output loading changes (may also affect convergence if VOUT1 becomes effectively unloaded)."
+  }
+]

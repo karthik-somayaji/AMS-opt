@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "R3 is a simple shunt load on the output node; in many differential amplifier testbenches it’s only there to provide a DC load/bleeder path and doesn’t define the core biasing or gain mechanism. Removing it usually leaves the amplifier functional as long as another DC path/load exists at VOUT1 (e.g., via R0 or the next stage input).",
+    "impact_estimate": "Low: mainly changes output loading and DC operating point slightly; risk of a more “floating” output if no other DC path remains."
+  },
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "R2 appears to be part of an output RC network with C0 (VOUT1–net44); it typically serves as a bleed/bias to define net44 at DC. If you delete the whole compensation/measurement RC branch (C0 and R2), the core amplifier still operates; if you delete only R2, net44 may float at DC (which is usually acceptable if C0 is also removed).",
+    "impact_estimate": "Low (if C0 is also removed) / Medium (if C0 remains): affects compensation/stability shaping rather than basic amplification."
+  },
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "C0 is a compensation or load capacitor forming a frequency-shaping network with R2; it is not required for the amplifier’s DC functionality or basic differential operation. Removing it mainly changes AC response/phase margin and transient behavior, but the circuit will still bias and amplify.",
+    "impact_estimate": "Low-to-Medium: minimal effect on DC gain/operating point; can materially change stability, bandwidth, and ringing depending on what the next stage/load is."
+  }
+]

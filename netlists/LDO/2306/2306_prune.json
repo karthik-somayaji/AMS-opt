@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "This capacitor only forms an AC compensation/low-pass network with R2 and the R0/R1/R3 load path; for basic DC functionality and differential operation it is not required. If removed, small-signal bandwidth and transient stability/noise shaping may change, especially if the following stage expects frequency compensation.",
+    "impact_estimate": "Low (DC bias and core amplification largely unchanged); Medium for AC/transient behavior."
+  },
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "R2 primarily provides a discharge/bleed path and sets the time constant for the C0-related node (net44); if C0 is removed, net44 becomes irrelevant and R2 can be deleted with essentially no effect. Caveat: if C0 is kept, removing R2 may leave net44 floating and alter AC behavior or cause convergence issues in simulation.",
+    "impact_estimate": "Very low if C0 is also removed; Low-to-medium if C0 remains."
+  },
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "R3 is a shunt load/bleeder at the output; many differential amplifier cores will still bias and amplify without an explicit resistive load to ground because the output is typically loaded by the next stage or by transistor loads. Caveat: removing it increases output impedance and may shift the DC output level if this resistor was intended to define a specific output common-mode or provide a minimum load.",
+    "impact_estimate": "Low for core operation; Medium for output DC level/loading depending on external load."
+  }
+]
