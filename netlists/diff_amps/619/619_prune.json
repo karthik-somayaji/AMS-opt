@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R0 (VOUT1 VSS) resistor",
+    "reason": "This resistor is a load/bleeder from the output to VSS; if the output is only observed with a high-impedance load (e.g., a simulator probe or CMOS gate), removing it won’t change the core differential pair action. Caveat: without it, VOUT1 may float in some operating conditions and DC operating point/convergence or output biasing may change.",
+    "impact_estimate": "Low to moderate (mostly affects DC bias/output loading; can affect operating point stability depending on the rest of the testbench)"
+  },
+  {
+    "component": "M3 (net10 net10 VDD VDD) pmos4",
+    "reason": "With gate=drain at net10, M3 is a diode-connected PMOS acting as a clamp/pull-up for node net10; in many differential-pair topologies this is not essential for basic functionality if net10 is already biased/loaded elsewhere (e.g., through M2/M4 action and the input/common-mode conditions). Caveat: removing it can change the DC level and impedance at net10 and may reduce bias stability or worsen linearity/swing.",
+    "impact_estimate": "Moderate (bias point and small-signal gain may shift, but the circuit can still behave as a differential stage under typical conditions)"
+  },
+  {
+    "component": "M2 (net12 net10 VDD VDD) pmos4",
+    "reason": "M2 provides a PMOS path from VDD to net12 controlled by net10 (part of an active-load/current-mirror-like structure); deleting it often still leaves a workable, though degraded, amplifier because M4 can still provide a load to the output node VOUT1 via net12. Caveat: removing M2 typically reduces gain and disrupts the intended differential-to-single-ended conversion and biasing of net12.",
+    "impact_estimate": "Moderate to high (functionality remains in a limited sense, but gain/biasing and differential behavior are significantly degraded)"
+  }
+]

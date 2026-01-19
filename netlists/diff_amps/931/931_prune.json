@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M19 (net8 net8 net26 VDD) pmos4",
+    "reason": "This device is diode-connected (gate=drain at net8) and appears to serve only as part of a bias/reference generation feeding net26 through M18. If net26 is otherwise properly biased (e.g., from an external bias or by reworking the mirror), removing M19 won’t change the core differential pair action.",
+    "impact_estimate": "Low to medium: core differential operation remains, but on-chip bias generation may break and net26 may float unless another bias path is provided."
+  },
+  {
+    "component": "M24 (net49 net49 VSS VSS) nmos4",
+    "reason": "M24 is a diode-connected NMOS to ground on net49, likely used as a local bias clamp/reference for the PMOS bias chain (via M17). If you are not relying on that internal bias loop (or you provide net49 bias externally), the main signal path (VIN1/VIN2 to VOUT1/VOUT2) can still function.",
+    "impact_estimate": "Low to medium: removes an internal bias reference; gain/operating point may shift and startup may be less reliable unless biasing is handled elsewhere."
+  },
+  {
+    "component": "R0 (net8 VSS) resistor",
+    "reason": "R0 is a single resistor from the diode-connected PMOS node net8 to VSS, typically used as a weak bleed/startup or to set/trim bias current. Deleting it usually leaves the amplifier’s differential signal path intact, though it may affect startup behavior and bias stability depending on how net8/net26 are generated.",
+    "impact_estimate": "Low: minimal effect on small-signal function if biasing still settles; possible caveat is poorer startup/defined bias and greater sensitivity to leakage."
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R1 (VOUT1 net14) resistor",
+    "reason": "R1 is part of a symmetric resistive coupling between the two outputs via net14. If you remove R1 (and leave the rest), the core differential pair and PMOS loads still operate; you mainly lose some resistive cross-coupling/biasing effect on VOUT1.",
+    "impact_estimate": "Low to moderate: circuit still amplifies differentially, but output balance/linearity and common-mode behavior may shift; best removed together with R0 for symmetry."
+  },
+  {
+    "component": "R0 (net14 VOUT2) resistor",
+    "reason": "R0 provides the complementary half of the same cross-coupling network as R1. Removing it reduces or eliminates that extra resistive interaction without breaking the essential MOS differential amplifier operation.",
+    "impact_estimate": "Low to moderate: similar caveats as R1; removing only one of R0/R1 can introduce asymmetry and output offset."
+  },
+  {
+    "component": "M2 (VOUT1 net14 VDD VDD) pmos4",
+    "reason": "M2 is one of two PMOS active loads; the amplifier can still function in a reduced form with a single-ended output if one side load is removed (the remaining side can still provide an output node). This effectively turns the stage from fully differential to single-ended/partially differential.",
+    "impact_estimate": "Moderate: differential operation and gain balance degrade, but you can still obtain amplification on the remaining loaded output; requires accepting single-ended behavior and possibly adjusting bias/loading."
+  }
+]

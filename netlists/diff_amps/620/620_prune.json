@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R0 (net01 VSS) resistor",
+    "reason": "This resistor only biases/degenerates the common-emitter (tail) node (net01). If net01 is already appropriately defined by other circuitry or ideal sources, removing R0 won’t change the logical differential action, though it will alter bias current and operating point.",
+    "impact_estimate": "Low-to-moderate: differential behavior remains, but DC bias/tail current and small-signal gain/linearity may shift; may risk saturation/cutoff depending on supply/biasing."
+  },
+  {
+    "component": "Q3 (IOUT2 net02 net01 0) npn",
+    "reason": "This device is one half of the output current-mirror/load for the VIN2 side (it mirrors/loads via net02). If you only need a single-ended output (e.g., keep IOUT1 only), Q3 can be removed with minimal impact to the remaining half-circuit.",
+    "impact_estimate": "Low (if single-ended output is acceptable): IOUT2 functionality is lost and output symmetry is broken; keep Q2 if you still need IOUT1."
+  },
+  {
+    "component": "Q2 (IOUT1 net05 net01 0) npn",
+    "reason": "This is the complementary half of the output current-mirror/load for the VIN1 side (via net05). If you only need the other single-ended output (keep IOUT2 only), Q2 can be deleted without affecting the basic differential pair action on the remaining side.",
+    "impact_estimate": "Low (if single-ended output is acceptable): IOUT1 functionality is lost and symmetry is broken; keep Q3 if you still need IOUT2."
+  }
+]

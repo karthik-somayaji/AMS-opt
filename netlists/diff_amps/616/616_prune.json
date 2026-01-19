@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R2 (VDD VOUT2) resistor",
+    "reason": "This is the collector load for the second output; if you only need a single-ended output taken from VOUT1, you can omit the VOUT2 branch without affecting the basic differential-pair operation on the remaining side. Caveat: removing it makes VOUT2 undefined (it may float or saturate Q1 depending on other connections), and the stage is no longer symmetric/balanced.",
+    "impact_estimate": "Low if VOUT2 is unused; High if true differential outputs or symmetry/CMRR are required."
+  },
+  {
+    "component": "Q1 (VOUT2 VIN2 net1 0) npn",
+    "reason": "If VIN2/VOUT2 are not used (i.e., you are effectively using the circuit as a single-transistor common-emitter stage with an emitter resistor R3), Q1 can be removed with minimal impact on the remaining output path. Caveat: the circuit ceases to be a differential amplifier; input biasing and gain/noise behavior will change because the tail current no longer splits between two devices.",
+    "impact_estimate": "Low if the second input/output are unused; High if differential gain/CMRR is needed."
+  },
+  {
+    "component": "R1 (VDD VOUT1) resistor",
+    "reason": "If the output node VOUT1 is not used (e.g., you only observe VOUT2), the corresponding collector load resistor can be removed to simplify the unused half. Caveat: VOUT1 then becomes undefined (floating/saturation), and you lose the ability to use that output or maintain symmetry.",
+    "impact_estimate": "Low if VOUT1 is unused; High if you need both outputs or balanced operation."
+  }
+]

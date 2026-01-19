@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M18 (net9 net9 VSS VSS) nmos4",
+    "reason": "This is a diode-connected NMOS used as a local bias/reference device for the node net9; in many cases the circuit will still operate (produce differential gain) if net9 is otherwise biased or allowed to float to a DC point via leakage. Removing it mainly affects bias stability/replicability rather than the core differential pair action.",
+    "impact_estimate": "Low-to-moderate: functionality often remains, but DC operating point and bias currents may shift significantly unless another bias path for net9 exists."
+  },
+  {
+    "component": "M17 (net37 net37 VSS VSS) nmos4",
+    "reason": "This diode-connected NMOS similarly provides a bias clamp for net37; the differential amplifier’s signal path (VIN1/VIN2 through M12/M13 to outputs via M10/M11 and PMOS loads) can still work without it if net37 is not critical to setting tail/current-mirror bias. It is more about bias generation/CM control robustness than small-signal operation.",
+    "impact_estimate": "Low-to-moderate: amplifier may still amplify differentially, but common-mode point and bias currents can drift; depends on how net37 is used elsewhere (e.g., via M16)."
+  },
+  {
+    "component": "M14 (net24 net24 net22 VSS) nmos4",
+    "reason": "This diode-connected NMOS sets/clamps the gate voltage net24 for the NMOS devices M10/M11; removing it usually doesn’t break the topology, but it eliminates a defined self-bias for net24. If net24 is driven or biased by another source (or if the design tolerates net24 floating to a DC point), the circuit can still function as a differential stage.",
+    "impact_estimate": "Moderate: gain may remain, but output common-mode, linear range, and biasing of M10/M11 can become unpredictable unless net24 is provided an alternate bias."
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M1",
+    "reason": "If you only need a single-ended output, the second input/output leg can be removed and the circuit can be treated as a simple common-source stage using M0. Caveat: you lose true differential operation (gain, CMRR, and symmetry), and any load or biasing that expected IOUT2 must be adjusted/removed.",
+    "impact_estimate": "Low impact if single-ended operation is acceptable; high impact for genuine differential functionality."
+  },
+  {
+    "component": "M0",
+    "reason": "Similarly, if you choose IOUT2 as the only output, M0 can be deleted and you keep only the M1 leg. Caveat: same as above—removing one transistor eliminates differential behavior and requires rethinking anything connected to IOUT1.",
+    "impact_estimate": "Low impact if single-ended operation is acceptable; high impact for genuine differential functionality."
+  },
+  {
+    "component": "VIN2 (as an explicit differential input leg)",
+    "reason": "With only one transistor leg kept (e.g., keep M0 and delete M1), the second input node VIN2 is no longer used and can be removed from the design/testbench without affecting the remaining stage. Caveat: this assumes VIN2 is not tied into other circuitry (e.g., common-mode feedback or bias generation) outside the shown netlist.",
+    "impact_estimate": "Minimal impact once the corresponding transistor leg is removed; otherwise not deletable because it is required to drive M1."
+  }
+]

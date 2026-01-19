@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R4 (net1 VSS)",
+    "reason": "R4 only ties the common emitter node (net1) to VSS; without it the emitters of Q0/Q1 float, so the stage loses proper bias and stops acting like a differential pair. Removing it is only viable if you replace it with another tail element (e.g., a current source) or otherwise provide a defined bias path to VSS.",
+    "impact_estimate": "High unless replaced (circuit likely nonfunctional / undefined operating point)."
+  },
+  {
+    "component": "R3 (net7 net1)",
+    "reason": "R3 provides emitter degeneration (local negative feedback) for Q1; removing it typically increases gain and reduces linearity/CMRR but the differential pair still operates (assuming net7 remains connected to net1 or the emitter is otherwise biased). Caveat: if net7 is left disconnected when R3 is removed, Q1’s emitter will float and that side will not bias correctly.",
+    "impact_estimate": "Moderate (still functions, but gain/linearity changes; must avoid leaving net7 floating)."
+  },
+  {
+    "component": "R0 (net8 net1)",
+    "reason": "R0 is the symmetric emitter degeneration resistor for Q0; deleting it has similar effects as removing R3 (higher gain, worse linearity/CMRR) but the amplifier can still function as a differential stage if Q0’s emitter remains properly referenced to the tail node. Caveat: ensure net8 doesn’t become a floating node after removal.",
+    "impact_estimate": "Moderate (still functions, but performance degrades; must avoid leaving net8 floating)."
+  }
+]

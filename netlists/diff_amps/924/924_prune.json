@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M9 (net17 net17 VSS VSS) nmos4",
+    "reason": "This is a diode-connected NMOS from net17 to VSS, likely used only to bias/clamp net17. If net17 is already driven by a bias source elsewhere (e.g., an ideal bias or a stable replica bias), removing M9 usually won’t change the core differential-pair signal path.",
+    "impact_estimate": "Low–Medium (could affect startup, bias stability, or common-mode behavior if net17 is otherwise floating or only weakly defined)."
+  },
+  {
+    "component": "M7 (net17 VCM1 IB2 VDD) pmos4",
+    "reason": "This PMOS appears to be part of a bias/common-mode related branch (gate at VCM1, source at VDD, drain at net17). If the design can tolerate reduced common-mode/bias conditioning at net17, M7 can be removed with minimal effect on basic differential amplification, assuming net17 biasing remains adequate via other elements.",
+    "impact_estimate": "Medium (may reduce common-mode control range or alter bias current distribution; depends on how VCM1 and net17 are used)."
+  },
+  {
+    "component": "M6 (net17 VCM1 IB1 VDD) pmos4",
+    "reason": "Similar to M7, this device is another VCM1-controlled PMOS feeding net17, likely providing additional bias current or headroom to the net17 node. If one of the parallel/related bias paths is sufficient (or net17 is biased externally), deleting M6 typically leaves the main diff-pair (M2/M3) and PMOS loads (M0/M1) functional.",
+    "impact_estimate": "Medium (can change operating point, available bias current, and common-mode regulation; safe only if net17 remains well-defined)."
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R2 (net07 VOUT1) resistor",
+    "reason": "This looks like a feedback/degeneration or bias-assist resistor from the tail/source node (net07) to one output (VOUT1). In a basic differential pair it is not required for core differential operation; removing it typically just changes operating point, gain, and/or common-mode behavior rather than breaking functionality.",
+    "impact_estimate": "Low-to-moderate: circuit should still function as a differential pair, but bias, linearity, and output common-mode may shift; ensure the tail current source (M1) still biases M0/M2 in saturation."
+  },
+  {
+    "component": "R0 (VOUT1 VDD) resistor",
+    "reason": "One of the two load resistors; if you only care about a single-ended output taken from VOUT2 (or if you’re willing to sacrifice symmetry), you can delete the VOUT1 load and treat that side as unused. The remaining side (with R1) can still provide amplification at VOUT2.",
+    "impact_estimate": "Moderate: differential operation and output balance are degraded and VOUT1 becomes undefined/high-impedance; acceptable only if VOUT1 is not used and you don’t need matched outputs."
+  },
+  {
+    "component": "R1 (VOUT2 VDD) resistor",
+    "reason": "Symmetric counterpart to R0; similarly, if you only need the single-ended output VOUT1, you can remove the VOUT2 load resistor and still have an amplifying path on the VOUT1 side. This reduces component count while preserving a usable amplifier output.",
+    "impact_estimate": "Moderate: loses the VOUT2 output and breaks differential symmetry; acceptable only if VOUT2 is not used and you can tolerate altered common-mode/differential behavior."
+  }
+]

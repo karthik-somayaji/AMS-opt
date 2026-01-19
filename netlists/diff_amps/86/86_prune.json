@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R1 (VOUT2 net010) resistor",
+    "reason": "This resistor is most likely a large-value “bleeder”/DC tie between the output and the PMOS-gate bias node (net010). In many ideal/hand-analysis cases, net010 is already defined by other means (e.g., a bias source not shown here), so removing R1 won’t change the basic differential-pair operation; caveat: if net010 would otherwise be left floating in the full testbench, R1 may be needed for DC convergence/biasing.",
+    "impact_estimate": "Low (unless net010 is otherwise floating; then impact can be high)."
+  },
+  {
+    "component": "R0 (net010 VOUT1) resistor",
+    "reason": "Same role as R1, providing a weak DC coupling between the other output and net010; if net010 is driven/defined elsewhere, this resistor mainly affects DC leakage/operating-point stabilization rather than core amplification behavior. Caveat: removing both R0 and R1 can leave net010 without a DC path if no other bias element exists.",
+    "impact_estimate": "Low (unless net010 loses its only DC reference; then impact can be high)."
+  },
+  {
+    "component": "One of the two resistors (either R0 or R1) — delete only one",
+    "reason": "If the intent is simply to keep net010 from floating or to provide a minimal DC path, one resistor is usually sufficient; the second largely duplicates that function and mainly adds symmetric loading/bleed. Caveat: keeping only one can introduce slight asymmetry in DC conditions and output loading, but the amplifier will still operate as a differential pair with active loads.",
+    "impact_estimate": "Very low to low (possible small imbalance/offset)."
+  }
+]

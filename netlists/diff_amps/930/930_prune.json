@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C1 (net22 VOUT1) capacitor",
+    "reason": "This capacitor is not part of the core DC signal path; it most likely provides frequency compensation, filtering, or load modeling between a bias-related node (net22 via R1) and the output. Removing it typically leaves the amplifier’s basic DC functionality intact but may change stability/noise/AC response.",
+    "impact_estimate": "Low for DC operation; medium for AC stability/bandwidth depending on what net22 represents and the intended compensation."
+  },
+  {
+    "component": "C0 (net23 VOUT2) capacitor",
+    "reason": "Like C1, this appears to be an auxiliary capacitor tied between an internal/bias node (net23 via R0) and the output to shape frequency response or emulate parasitics. Deleting it usually won’t break the amplifier’s ability to amplify at low frequency/DC, but can alter transient response and phase margin.",
+    "impact_estimate": "Low for DC operation; medium for transient/AC behavior (possible peaking or oscillation if it was doing compensation)."
+  },
+  {
+    "component": "R1 (net22 IB2) resistor",
+    "reason": "R1 forms a link between IB2 and an otherwise isolated node net22; if net22 is only used by C1 (and no other circuitry), then net22 becomes unused once C1 is removed, making R1 redundant. Caveat: if net22 is meant to be a bias filter node or a placeholder for external connection in a larger schematic, removing R1 could change bias filtering or test hooks.",
+    "impact_estimate": "Very low if C1 is also removed and net22 has no other connections; potentially medium if net22 is intended for bias decoupling/filtering in a broader context."
+  }
+]
