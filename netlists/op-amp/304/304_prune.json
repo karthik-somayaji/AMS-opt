@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M4 (net06 net06 VSS VSS) nmos4",
+    "reason": "M4 is a diode-connected NMOS that looks like part of a bias/reference stack for net06; if net06 is biased elsewhere (or you accept a different bias point), removing M4 often still leaves the main differential signal path (VIN1/VIN2 → net038/net040 → VOUT1/VOUT2) intact. Caveat: net06 may float or shift, which can disturb current levels and reduce gain or linear range.",
+    "impact_estimate": "Low-to-moderate (mostly bias-point/current changes)"
+  },
+  {
+    "component": "M5 (net06 net06 VDD VDD) pmos4",
+    "reason": "M5 is a diode-connected PMOS tied to VDD, also acting like a bias element for net06; if the rest of the circuit provides a stable net06 operating point, M5 can be dropped without breaking connectivity from inputs to outputs. Caveat: removing it can make net06 less defined, potentially degrading symmetry/CMRR and shifting output common-mode.",
+    "impact_estimate": "Low-to-moderate (bias stability and output common-mode may degrade)"
+  },
+  {
+    "component": "M6 (net04 net06 VSS VSS) nmos4",
+    "reason": "M6 appears to be a bias/current-sink device setting the tail node net04 using the net06 reference; if net04 is driven by an external tail current source (or another bias network), you can remove M6 and preserve the differential pair operation through M3/M10 and the output devices. Caveat: if net04 depends on M6 for bias, removing it collapses tail current and the stage stops functioning.",
+    "impact_estimate": "Low (only if net04/tail bias is provided elsewhere); High otherwise"
+  }
+]

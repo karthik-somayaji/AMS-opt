@@ -1,0 +1,649 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "M1 NMOS input / transconductor (VIN1 -> net013, tail IB1)",
+      "type": "substructure"
+    },
+    {
+      "id": "M10-M11 PMOS active load / current-mirror load (net013, VOUT1)",
+      "type": "substructure"
+    },
+    {
+      "id": "M3 NMOS second-stage / output pull-down (net015 -> VOUT1, tail IB1)",
+      "type": "substructure"
+    },
+    {
+      "id": "R0-R1 resistive feedback / output network (VOUT1 <-> net015 -> VSS)",
+      "type": "substructure"
+    },
+    {
+      "id": "C0 compensation / load capacitor (VOUT1 to VSS)",
+      "type": "substructure"
+    },
+    {
+      "id": "IB1",
+      "type": "parameter"
+    },
+    {
+      "id": "R0",
+      "type": "parameter"
+    },
+    {
+      "id": "R1",
+      "type": "parameter"
+    },
+    {
+      "id": "C0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M10",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M10",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M11",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M11",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "Gain-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Gain-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Gain-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Power-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Power-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Power-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "IB1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "IB1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R0-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R0-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "C0-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "C0-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M10-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M10-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M10-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M10-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M11-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M11-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M11-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M11-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3-inversely-proportional",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain-trade-off",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF-trade-off",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain-trade-off",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR-ambiguous",
+      "target": "Gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR-ambiguous",
+      "target": "UGF-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR-ambiguous",
+      "target": "Power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "M1 NMOS input / transconductor (VIN1 -> net013, tail IB1)",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "M1 NMOS input / transconductor (VIN1 -> net013, tail IB1)",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "M1 NMOS input / transconductor (VIN1 -> net013, tail IB1)",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "M1 NMOS input / transconductor (VIN1 -> net013, tail IB1)",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "M10-M11 PMOS active load / current-mirror load (net013, VOUT1)",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "M10-M11 PMOS active load / current-mirror load (net013, VOUT1)",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "M10-M11 PMOS active load / current-mirror load (net013, VOUT1)",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "M3 NMOS second-stage / output pull-down (net015 -> VOUT1, tail IB1)",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "M3 NMOS second-stage / output pull-down (net015 -> VOUT1, tail IB1)",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "M3 NMOS second-stage / output pull-down (net015 -> VOUT1, tail IB1)",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-R1 resistive feedback / output network (VOUT1 <-> net015 -> VSS)",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-R1 resistive feedback / output network (VOUT1 <-> net015 -> VSS)",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-R1 resistive feedback / output network (VOUT1 <-> net015 -> VSS)",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "C0 compensation / load capacitor (VOUT1 to VSS)",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "C0 compensation / load capacitor (VOUT1 to VSS)",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1",
+      "target": "M1 NMOS input / transconductor (VIN1 -> net013, tail IB1)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1",
+      "target": "M1 NMOS input / transconductor (VIN1 -> net013, tail IB1)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M10",
+      "target": "M10-M11 PMOS active load / current-mirror load (net013, VOUT1)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M10",
+      "target": "M10-M11 PMOS active load / current-mirror load (net013, VOUT1)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M11",
+      "target": "M10-M11 PMOS active load / current-mirror load (net013, VOUT1)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11",
+      "target": "M10-M11 PMOS active load / current-mirror load (net013, VOUT1)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "M3 NMOS second-stage / output pull-down (net015 -> VOUT1, tail IB1)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "M3 NMOS second-stage / output pull-down (net015 -> VOUT1, tail IB1)",
+      "relation": "connects"
+    },
+    {
+      "source": "R0",
+      "target": "R0-R1 resistive feedback / output network (VOUT1 <-> net015 -> VSS)",
+      "relation": "connects"
+    },
+    {
+      "source": "R1",
+      "target": "R0-R1 resistive feedback / output network (VOUT1 <-> net015 -> VSS)",
+      "relation": "connects"
+    },
+    {
+      "source": "C0",
+      "target": "C0 compensation / load capacitor (VOUT1 to VSS)",
+      "relation": "connects"
+    },
+    {
+      "source": "IB1-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "IB1-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "IB1",
+      "target": "Gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R1-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R0-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R1-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "C0-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "C0",
+      "target": "Gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "IB1",
+      "target": "IB1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "IB1",
+      "target": "IB1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R0",
+      "target": "R0-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R0",
+      "target": "R0-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R1",
+      "target": "R1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R1",
+      "target": "R1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "C0",
+      "target": "C0-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "C0",
+      "target": "C0-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1",
+      "target": "W_M1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M1",
+      "target": "W_M1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1",
+      "target": "L_M1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M1",
+      "target": "L_M1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M10",
+      "target": "W_M10-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M10",
+      "target": "W_M10-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M10",
+      "target": "L_M10-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M10",
+      "target": "L_M10-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M11",
+      "target": "W_M11-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M11",
+      "target": "W_M11-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11",
+      "target": "L_M11-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M11",
+      "target": "L_M11-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "W_M3-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M3",
+      "target": "W_M3-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "L_M3-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M3",
+      "target": "L_M3-inversely-proportional",
+      "relation": "connects"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M8 (net030 net030 VDD VDD) pmos4",
+    "reason": "M8 is a diode-connected PMOS that mainly biases the VOUT1-side PMOS load (M3); if you already provide an external bias or accept a less-controlled operating point, the stage can still pass differential signals. Caveat: removing it can leave M3’s gate/node net030 without a defined DC bias, risking saturation/turn-off and large gain/offset changes.",
+    "impact_estimate": "Low if an external bias replaces it; moderate-to-high otherwise"
+  },
+  {
+    "component": "M9 (net032 net032 VDD VDD) pmos4",
+    "reason": "M9 is the symmetric diode-connected PMOS bias for the VOUT2-side PMOS load (M7); it’s often redundant if net032 is biased elsewhere or if you tolerate degraded bias stability. Caveat: without M9, net032 may float, which can destabilize M7’s operating point and degrade gain/linearity.",
+    "impact_estimate": "Low if net032 has another DC bias path; moderate-to-high otherwise"
+  },
+  {
+    "component": "M6 (VOUT2 VB1 VSS VSS) nmos4",
+    "reason": "M6 looks like a VB1-controlled NMOS pull-down/clamp at VOUT2; removing it typically preserves the core differential-to-current conversion (M5/M4) and PMOS loads (M3/M7) while reducing output loading. Caveat: output common-mode/swing control at VOUT2 may worsen and the two outputs can become less symmetric if M1 remains.",
+    "impact_estimate": "Low-to-moderate (function remains; swing/CMRR may degrade)"
+  }
+]

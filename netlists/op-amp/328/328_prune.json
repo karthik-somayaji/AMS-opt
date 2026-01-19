@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C2 (net038 VSS) capacitor",
+    "reason": "This capacitor mainly affects AC behavior (pole/zero placement, noise filtering, transient shaping) at the internal node net038, and is not required for the DC conduction paths to exist. Caveat: removing it can increase peaking/ringing and worsen stability/noise on that node.",
+    "impact_estimate": "Low for DC functionality; moderate for AC/stability"
+  },
+  {
+    "component": "C0 (net039 VSS) capacitor",
+    "reason": "Like C2, this is an AC shunt on an internal node (net039) and is typically non-essential for basic biasing/function. Caveat: bandwidth, settling, and susceptibility to oscillation/noise can change.",
+    "impact_estimate": "Low for DC functionality; moderate for AC/stability"
+  },
+  {
+    "component": "M13 (net028 VB1 VSS VSS) nmos4",
+    "reason": "M13 looks like a VB1-controlled NMOS providing an auxiliary pull-down/biasing path on net028; the core signal path can still proceed through the VIN2 PMOS (M9) and the downstream NMOS/PMOS network. Caveat: removing it changes the DC operating point of net028 and can degrade balance, gain, and linearity even if the circuit still basically works.",
+    "impact_estimate": "Low-to-moderate (function remains; bias/gain/matching may shift)"
+  }
+]

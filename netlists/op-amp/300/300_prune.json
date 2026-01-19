@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M1 (net02 net02 VSS VSS) nmos4",
+    "reason": "M1 is diode-connected to VSS and mainly provides a local bias/reference at net02 (or a weak clamp); removing it typically preserves the main gain path set by the VIN1/VIN2 NMOS devices and PMOS loads. Caveat: net02 may become less well-defined at DC unless it is otherwise biased through M4/M7, which can shift operating point.",
+    "impact_estimate": "Low-to-moderate (bias stability at net02 may worsen; core amplification can remain)"
+  },
+  {
+    "component": "M4 (VOUT1 net02 VSS VSS) nmos4",
+    "reason": "M4 looks like an NMOS pull-down/clamp for VOUT1 controlled by net02; deleting it usually leaves the output still driven by the PMOS load (M6) and the input NMOS branch currents. Caveat: without this pull-down helper, output common-mode/discharge and negative swing may degrade, and VOUT1 could sit higher.",
+    "impact_estimate": "Low (mostly affects output swing/settling, not the differential input action)"
+  },
+  {
+    "component": "M7 (net02 net030 VDD VDD) pmos4",
+    "reason": "M7 provides a PMOS connection from VDD into the internal node net02 driven by net030 (VIN1 side), likely for biasing/cascoding; removing it often keeps the basic VIN1/VIN2 current steering and the VOUT1 pull-up (M6) functional. Caveat: net02 biasing changes significantly, so gain/output impedance may drop and the operating point may shift.",
+    "impact_estimate": "Low-to-moderate (core function remains but gain and bias point can change)"
+  }
+]

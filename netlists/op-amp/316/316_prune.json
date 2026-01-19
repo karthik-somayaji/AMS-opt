@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M0 (VOUT1 VB2 VSS VSS) nmos4",
+    "reason": "M0 is a diode-connected NMOS clamp/pulldown on VOUT1 set by VB2; if the output does not need an explicit sink/clamp path (e.g., load provides it), removing it keeps the core diff-to-single-ended behavior via M1+M2. Caveat: VOUT1 may lose DC bias stabilization and swing/settling control, especially if the PMOS load sources current without a matching sink.",
+    "impact_estimate": "Low-to-medium (mainly affects output bias/swing on VOUT1)"
+  },
+  {
+    "component": "M4 (VOUT2 VB2 VSS VSS) nmos4",
+    "reason": "M4 is the symmetric diode-connected NMOS clamp/pulldown for VOUT2; the differential pair and PMOS loads can still generate outputs without it if an external load or other circuitry provides the sink path. Caveat: removing it can shift the output common-mode and reduce output swing robustness on VOUT2, and asymmetry appears if only one side is removed.",
+    "impact_estimate": "Low-to-medium (mainly affects output bias/swing on VOUT2)"
+  },
+  {
+    "component": "M8 (net019 VB1 VDD VDD) pmos4",
+    "reason": "M8 is a diode-connected PMOS that mainly biases/stabilizes the gate node net019 (which also controls the PMOS load M2); if net019 is adequately biased by the input device M1 and you don’t rely on this diode-load behavior, it can be omitted. Caveat: net019 may float or become very sensitive to leakage/mismatch, and the bias point/gain can change significantly; do not remove if M8 is the only defined pull-up/bias for net019.",
+    "impact_estimate": "Medium (can be low if net019 is strongly driven, otherwise high risk of losing bias)"
+  }
+]

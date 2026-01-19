@@ -1,0 +1,114 @@
+{
+  "nodes": [
+    {"id": "Gain", "type": "performance"},
+    {"id": "CMRR", "type": "performance"},
+    {"id": "UGF", "type": "performance"},
+    {"id": "Power", "type": "performance"},
+
+    {"id": "M3-M5 NMOS input differential pair (VIN1/VIN2, tail IB1)", "type": "substructure"},
+    {"id": "M7-M6 PMOS active loads / output devices (to VOUT1/VOUT2, gated by net030/net032)", "type": "substructure"},
+    {"id": "M8-M9 PMOS bias devices (net08 -> net030/net032)", "type": "substructure"},
+    {"id": "M1-M4 NMOS output pull-down devices (gated by net04)", "type": "substructure"},
+    {"id": "R2-R3 resistive feedback / output coupling (VOUT1/VOUT2 via net04)", "type": "substructure"},
+    {"id": "R0-R1 input resistive network / degeneration (VIN1/VIN2 path via net08)", "type": "substructure"},
+
+    {"id": "IB1", "type": "parameter"},
+    {"id": "R0", "type": "parameter"},
+    {"id": "R1", "type": "parameter"},
+    {"id": "R2", "type": "parameter"},
+    {"id": "R3", "type": "parameter"},
+
+    {"id": "W_M3", "type": "parameter"},
+    {"id": "L_M3", "type": "parameter"},
+    {"id": "W_M5", "type": "parameter"},
+    {"id": "L_M5", "type": "parameter"},
+    {"id": "W_M6", "type": "parameter"},
+    {"id": "L_M6", "type": "parameter"},
+    {"id": "W_M7", "type": "parameter"},
+    {"id": "L_M7", "type": "parameter"},
+    {"id": "W_M8", "type": "parameter"},
+    {"id": "L_M8", "type": "parameter"},
+    {"id": "W_M9", "type": "parameter"},
+    {"id": "L_M9", "type": "parameter"},
+    {"id": "W_M1", "type": "parameter"},
+    {"id": "L_M1", "type": "parameter"},
+    {"id": "W_M4", "type": "parameter"},
+    {"id": "L_M4", "type": "parameter"}
+  ],
+  "links": [
+    {"source": "Gain", "target": "UGF", "relation": "trade-off"},
+    {"source": "UGF", "target": "Power", "relation": "trade-off"},
+    {"source": "Gain", "target": "Power", "relation": "trade-off"},
+    {"source": "CMRR", "target": "Gain", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "UGF", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "Power", "relation": "ambiguous"},
+
+    {"source": "M3-M5 NMOS input differential pair (VIN1/VIN2, tail IB1)", "target": "Gain", "relation": "influences"},
+    {"source": "M3-M5 NMOS input differential pair (VIN1/VIN2, tail IB1)", "target": "UGF", "relation": "influences"},
+    {"source": "M3-M5 NMOS input differential pair (VIN1/VIN2, tail IB1)", "target": "CMRR", "relation": "influences"},
+    {"source": "M3-M5 NMOS input differential pair (VIN1/VIN2, tail IB1)", "target": "Power", "relation": "influences"},
+
+    {"source": "M7-M6 PMOS active loads / output devices (to VOUT1/VOUT2, gated by net030/net032)", "target": "Gain", "relation": "influences"},
+    {"source": "M7-M6 PMOS active loads / output devices (to VOUT1/VOUT2, gated by net030/net032)", "target": "UGF", "relation": "influences"},
+    {"source": "M7-M6 PMOS active loads / output devices (to VOUT1/VOUT2, gated by net030/net032)", "target": "Power", "relation": "influences"},
+    {"source": "M7-M6 PMOS active loads / output devices (to VOUT1/VOUT2, gated by net030/net032)", "target": "CMRR", "relation": "influences"},
+
+    {"source": "M8-M9 PMOS bias devices (net08 -> net030/net032)", "target": "Power", "relation": "influences"},
+    {"source": "M8-M9 PMOS bias devices (net08 -> net030/net032)", "target": "Gain", "relation": "influences"},
+    {"source": "M8-M9 PMOS bias devices (net08 -> net030/net032)", "target": "UGF", "relation": "influences"},
+
+    {"source": "M1-M4 NMOS output pull-down devices (gated by net04)", "target": "Power", "relation": "influences"},
+    {"source": "M1-M4 NMOS output pull-down devices (gated by net04)", "target": "UGF", "relation": "influences"},
+    {"source": "M1-M4 NMOS output pull-down devices (gated by net04)", "target": "Gain", "relation": "influences"},
+
+    {"source": "R2-R3 resistive feedback / output coupling (VOUT1/VOUT2 via net04)", "target": "Gain", "relation": "influences"},
+    {"source": "R2-R3 resistive feedback / output coupling (VOUT1/VOUT2 via net04)", "target": "CMRR", "relation": "influences"},
+    {"source": "R2-R3 resistive feedback / output coupling (VOUT1/VOUT2 via net04)", "target": "UGF", "relation": "influences"},
+
+    {"source": "R0-R1 input resistive network / degeneration (VIN1/VIN2 path via net08)", "target": "Gain", "relation": "influences"},
+    {"source": "R0-R1 input resistive network / degeneration (VIN1/VIN2 path via net08)", "target": "CMRR", "relation": "influences"},
+    {"source": "R0-R1 input resistive network / degeneration (VIN1/VIN2 path via net08)", "target": "UGF", "relation": "influences"},
+
+    {"source": "W_M3", "target": "M3-M5 NMOS input differential pair (VIN1/VIN2, tail IB1)", "relation": "belongs-to"},
+    {"source": "L_M3", "target": "M3-M5 NMOS input differential pair (VIN1/VIN2, tail IB1)", "relation": "belongs-to"},
+    {"source": "W_M5", "target": "M3-M5 NMOS input differential pair (VIN1/VIN2, tail IB1)", "relation": "belongs-to"},
+    {"source": "L_M5", "target": "M3-M5 NMOS input differential pair (VIN1/VIN2, tail IB1)", "relation": "belongs-to"},
+
+    {"source": "W_M6", "target": "M7-M6 PMOS active loads / output devices (to VOUT1/VOUT2, gated by net030/net032)", "relation": "belongs-to"},
+    {"source": "L_M6", "target": "M7-M6 PMOS active loads / output devices (to VOUT1/VOUT2, gated by net030/net032)", "relation": "belongs-to"},
+    {"source": "W_M7", "target": "M7-M6 PMOS active loads / output devices (to VOUT1/VOUT2, gated by net030/net032)", "relation": "belongs-to"},
+    {"source": "L_M7", "target": "M7-M6 PMOS active loads / output devices (to VOUT1/VOUT2, gated by net030/net032)", "relation": "belongs-to"},
+
+    {"source": "W_M8", "target": "M8-M9 PMOS bias devices (net08 -> net030/net032)", "relation": "belongs-to"},
+    {"source": "L_M8", "target": "M8-M9 PMOS bias devices (net08 -> net030/net032)", "relation": "belongs-to"},
+    {"source": "W_M9", "target": "M8-M9 PMOS bias devices (net08 -> net030/net032)", "relation": "belongs-to"},
+    {"source": "L_M9", "target": "M8-M9 PMOS bias devices (net08 -> net030/net032)", "relation": "belongs-to"},
+
+    {"source": "W_M1", "target": "M1-M4 NMOS output pull-down devices (gated by net04)", "relation": "belongs-to"},
+    {"source": "L_M1", "target": "M1-M4 NMOS output pull-down devices (gated by net04)", "relation": "belongs-to"},
+    {"source": "W_M4", "target": "M1-M4 NMOS output pull-down devices (gated by net04)", "relation": "belongs-to"},
+    {"source": "L_M4", "target": "M1-M4 NMOS output pull-down devices (gated by net04)", "relation": "belongs-to"},
+
+    {"source": "R0", "target": "R0-R1 input resistive network / degeneration (VIN1/VIN2 path via net08)", "relation": "belongs-to"},
+    {"source": "R1", "target": "R0-R1 input resistive network / degeneration (VIN1/VIN2 path via net08)", "relation": "belongs-to"},
+    {"source": "R2", "target": "R2-R3 resistive feedback / output coupling (VOUT1/VOUT2 via net04)", "relation": "belongs-to"},
+    {"source": "R3", "target": "R2-R3 resistive feedback / output coupling (VOUT1/VOUT2 via net04)", "relation": "belongs-to"},
+
+    {"source": "IB1", "target": "Power", "relation": "directly-proportional"},
+    {"source": "IB1", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "IB1", "target": "Gain", "relation": "ambiguous"},
+
+    {"source": "R2", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "R3", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "R2", "target": "UGF", "relation": "inversely-proportional"},
+    {"source": "R3", "target": "UGF", "relation": "inversely-proportional"},
+
+    {"source": "W_M3", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "W_M3", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M3", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M3", "target": "UGF", "relation": "inversely-proportional"},
+
+    {"source": "L_M7", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M7", "target": "UGF", "relation": "inversely-proportional"}
+  ]
+}

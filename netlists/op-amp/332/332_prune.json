@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R0 (VOUT1 VDD) resistor",
+    "reason": "This is a simple pull-up/load to VDD; removing it typically doesn’t destroy the core transistor behavior if VOUT1 is loaded/bias-provided elsewhere (e.g., by a next stage or testbench). Caveat: without R0, VOUT1 may have no DC path to VDD and the output common-mode/swing can collapse or float.",
+    "impact_estimate": "Low if another load/bias exists; moderate otherwise"
+  },
+  {
+    "component": "M0 (IB1 net03 VSS VSS) nmos4",
+    "reason": "M0 looks like a bias/current-sink device controlled by IB1; if IB1 is already an ideal current source in the testbench (or you can directly sink current at net03), this transistor can be omitted without changing the high-level function. Caveat: you must replace its bias/sink role or the stage’s operating point and gain will shift significantly.",
+    "impact_estimate": "Low only with an external bias/current sink replacement; high otherwise"
+  },
+  {
+    "component": "M2 (VOUT1 IB1 net03 VSS) nmos4",
+    "reason": "M2 is an IB1-controlled NMOS that mainly provides output pulling/loading; if the output is sensed lightly and you don’t need that extra transconductance/load path, the circuit can still function as a minimal NMOS stage around net03. Caveat: removing M2 changes output drive and can leave VOUT1 dependent almost entirely on R0 (or external load), reducing gain and bandwidth.",
+    "impact_estimate": "Low-to-moderate (function remains but drive/gain changes)"
+  }
+]

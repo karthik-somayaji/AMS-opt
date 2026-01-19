@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M8 (net027 VB3 VDD VDD) pmos4",
+    "reason": "M8 is a VB3-biased PMOS that primarily generates/biases node net027 for the PMOS load device M6; if net027 is biased by another current source (or you accept a different load bias), removing M8 usually doesn’t break the main differential signal path to VOUT1. Caveat: without alternate biasing, M6’s current becomes undefined, shifting VOUT1 DC level and reducing gain.",
+    "impact_estimate": "Low-to-moderate (bias/gain shifts unless net027 is provided elsewhere)"
+  },
+  {
+    "component": "M9 (net028 VB3 VDD VDD) pmos4",
+    "reason": "M9 similarly biases node net028 for the PMOS load M7; deleting it preserves connectivity but removes the intended current-source biasing on the VOUT2 pull-up branch. Caveat: VOUT2 operating point and output swing may degrade unless net028 is externally biased.",
+    "impact_estimate": "Low-to-moderate (main path remains; output bias/swing degrades)"
+  },
+  {
+    "component": "M0 (net015 VOUT1 VSS VSS) nmos4",
+    "reason": "M0 is a VOUT1-controlled NMOS to ground (a local clamp/feedback device) that mainly affects output DC point/linearity; removing it often still leaves a functioning differential stage formed by M1/M3 (bias devices) and M4/M5 (output NMOS) with PMOS loads. Caveat: if M0 is essential for stabilizing or setting the correct VOUT1 bias, deleting it can increase distortion or cause VOUT1 to drift/saturate under some conditions.",
+    "impact_estimate": "Low-to-moderate (stability/linearity/DC point may worsen)"
+  }
+]

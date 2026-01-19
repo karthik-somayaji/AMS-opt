@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M0 (net01 VB5 VSS VSS) nmos4",
+    "reason": "M0 looks like an auxiliary VB5-controlled pull-down/bias device on the shared source node net01; the differential pair (M11/M10) can still operate if net01 is biased by an external current source/ideal tail elsewhere. Caveat: if M0 is the only tail-bias element, removing it will leave the pair without proper tail current and the stage may not bias correctly.",
+    "impact_estimate": "Low if net01 has another tail bias; high if M0 is the only tail device"
+  },
+  {
+    "component": "M1 (net034 VB4 VSS VSS) nmos4",
+    "reason": "This VB4 NMOS appears to be a helper clamp/bias sink for the VOUT1-side cascode/bias node net034; removing it typically preserves the main signal path (M4 with load devices above) but changes that node’s bias. Caveat: output swing, gain, and linearity can degrade due to shifted operating point at net034.",
+    "impact_estimate": "Low-to-moderate (function remains; bias/swing/gain may shift)"
+  },
+  {
+    "component": "M3 (net035 VB4 VSS VSS) nmos4",
+    "reason": "Symmetric to M1 on the VOUT2 side: it likely provides additional biasing/clamping for net035 rather than being strictly required for conduction from output to the rest of the stack. Caveat: removing it can unbalance the two halves and worsen CMRR and matching-related performance.",
+    "impact_estimate": "Low-to-moderate (function remains; balance/CMRR may worsen)"
+  }
+]

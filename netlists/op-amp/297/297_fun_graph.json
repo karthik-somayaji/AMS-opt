@@ -1,0 +1,97 @@
+{
+  "nodes": [
+    {"id": "Gain", "type": "performance"},
+    {"id": "CMRR", "type": "performance"},
+    {"id": "UGF", "type": "performance"},
+    {"id": "Power", "type": "performance"},
+
+    {"id": "M1-M3 input differential pair (NMOS)", "type": "substructure"},
+    {"id": "M6-M7 PMOS active load / cascode (VB2 biased, net019->VOUT1)", "type": "substructure"},
+    {"id": "M8-M9 PMOS current mirror / bias network (net014/net021)", "type": "substructure"},
+    {"id": "M4-M5 NMOS cascode/bias sink network (VB1 biased)", "type": "substructure"},
+
+    {"id": "VB1 (NMOS bias)", "type": "parameter"},
+    {"id": "VB2 (PMOS bias)", "type": "parameter"},
+    {"id": "IB1 (tail current)", "type": "parameter"},
+
+    {"id": "W_M1", "type": "parameter"},
+    {"id": "L_M1", "type": "parameter"},
+    {"id": "W_M3", "type": "parameter"},
+    {"id": "L_M3", "type": "parameter"},
+    {"id": "W_M4", "type": "parameter"},
+    {"id": "L_M4", "type": "parameter"},
+    {"id": "W_M5", "type": "parameter"},
+    {"id": "L_M5", "type": "parameter"},
+    {"id": "W_M6", "type": "parameter"},
+    {"id": "L_M6", "type": "parameter"},
+    {"id": "W_M7", "type": "parameter"},
+    {"id": "L_M7", "type": "parameter"},
+    {"id": "W_M8", "type": "parameter"},
+    {"id": "L_M8", "type": "parameter"},
+    {"id": "W_M9", "type": "parameter"},
+    {"id": "L_M9", "type": "parameter"}
+  ],
+  "links": [
+    {"source": "Gain", "target": "UGF", "relation": "trade-off"},
+    {"source": "UGF", "target": "Power", "relation": "trade-off"},
+    {"source": "Gain", "target": "Power", "relation": "trade-off"},
+    {"source": "CMRR", "target": "Gain", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "UGF", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "Power", "relation": "ambiguous"},
+
+    {"source": "M1-M3 input differential pair (NMOS)", "target": "Gain", "relation": "influences"},
+    {"source": "M1-M3 input differential pair (NMOS)", "target": "CMRR", "relation": "influences"},
+    {"source": "M1-M3 input differential pair (NMOS)", "target": "UGF", "relation": "influences"},
+    {"source": "M1-M3 input differential pair (NMOS)", "target": "Power", "relation": "influences"},
+
+    {"source": "M6-M7 PMOS active load / cascode (VB2 biased, net019->VOUT1)", "target": "Gain", "relation": "influences"},
+    {"source": "M6-M7 PMOS active load / cascode (VB2 biased, net019->VOUT1)", "target": "UGF", "relation": "influences"},
+    {"source": "M6-M7 PMOS active load / cascode (VB2 biased, net019->VOUT1)", "target": "CMRR", "relation": "influences"},
+    {"source": "M6-M7 PMOS active load / cascode (VB2 biased, net019->VOUT1)", "target": "Power", "relation": "influences"},
+
+    {"source": "M8-M9 PMOS current mirror / bias network (net014/net021)", "target": "Power", "relation": "influences"},
+    {"source": "M8-M9 PMOS current mirror / bias network (net014/net021)", "target": "Gain", "relation": "influences"},
+
+    {"source": "M4-M5 NMOS cascode/bias sink network (VB1 biased)", "target": "Gain", "relation": "influences"},
+    {"source": "M4-M5 NMOS cascode/bias sink network (VB1 biased)", "target": "UGF", "relation": "influences"},
+    {"source": "M4-M5 NMOS cascode/bias sink network (VB1 biased)", "target": "Power", "relation": "influences"},
+
+    {"source": "W_M1", "target": "M1-M3 input differential pair (NMOS)", "relation": "belongs-to"},
+    {"source": "L_M1", "target": "M1-M3 input differential pair (NMOS)", "relation": "belongs-to"},
+    {"source": "W_M3", "target": "M1-M3 input differential pair (NMOS)", "relation": "belongs-to"},
+    {"source": "L_M3", "target": "M1-M3 input differential pair (NMOS)", "relation": "belongs-to"},
+
+    {"source": "W_M6", "target": "M6-M7 PMOS active load / cascode (VB2 biased, net019->VOUT1)", "relation": "belongs-to"},
+    {"source": "L_M6", "target": "M6-M7 PMOS active load / cascode (VB2 biased, net019->VOUT1)", "relation": "belongs-to"},
+    {"source": "W_M7", "target": "M6-M7 PMOS active load / cascode (VB2 biased, net019->VOUT1)", "relation": "belongs-to"},
+    {"source": "L_M7", "target": "M6-M7 PMOS active load / cascode (VB2 biased, net019->VOUT1)", "relation": "belongs-to"},
+
+    {"source": "W_M8", "target": "M8-M9 PMOS current mirror / bias network (net014/net021)", "relation": "belongs-to"},
+    {"source": "L_M8", "target": "M8-M9 PMOS current mirror / bias network (net014/net021)", "relation": "belongs-to"},
+    {"source": "W_M9", "target": "M8-M9 PMOS current mirror / bias network (net014/net021)", "relation": "belongs-to"},
+    {"source": "L_M9", "target": "M8-M9 PMOS current mirror / bias network (net014/net021)", "relation": "belongs-to"},
+
+    {"source": "W_M4", "target": "M4-M5 NMOS cascode/bias sink network (VB1 biased)", "relation": "belongs-to"},
+    {"source": "L_M4", "target": "M4-M5 NMOS cascode/bias sink network (VB1 biased)", "relation": "belongs-to"},
+    {"source": "W_M5", "target": "M4-M5 NMOS cascode/bias sink network (VB1 biased)", "relation": "belongs-to"},
+    {"source": "L_M5", "target": "M4-M5 NMOS cascode/bias sink network (VB1 biased)", "relation": "belongs-to"},
+
+    {"source": "IB1 (tail current)", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "IB1 (tail current)", "target": "Power", "relation": "directly-proportional"},
+    {"source": "IB1 (tail current)", "target": "Gain", "relation": "ambiguous"},
+    {"source": "IB1 (tail current)", "target": "CMRR", "relation": "ambiguous"},
+
+    {"source": "VB1 (NMOS bias)", "target": "Power", "relation": "directly-proportional"},
+    {"source": "VB2 (PMOS bias)", "target": "Power", "relation": "directly-proportional"},
+    {"source": "VB1 (NMOS bias)", "target": "Gain", "relation": "ambiguous"},
+    {"source": "VB2 (PMOS bias)", "target": "Gain", "relation": "ambiguous"},
+
+    {"source": "W_M1", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "W_M1", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "L_M1", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M1", "target": "UGF", "relation": "inversely-proportional"},
+
+    {"source": "L_M6", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M6", "target": "UGF", "relation": "inversely-proportional"}
+  ]
+}

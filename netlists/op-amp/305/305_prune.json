@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R5 (VCM1 VOUT2) resistor",
+    "reason": "R5 is part of the output common-mode sensing network (with R6) to form VCM1; removing it typically doesn’t break the core amplification devices and the outputs can still swing. Caveat: common-mode feedback/sensing is weakened or lost, so output common-mode may drift and symmetry/CMRR can degrade.",
+    "impact_estimate": "Low (core gain path remains; common-mode control degrades)"
+  },
+  {
+    "component": "R6 (VOUT1 VCM1) resistor",
+    "reason": "R6 is the complementary resistor forming the VCM1 averaging node; deleting it keeps the transistor-level signal path intact while disabling/weakening VCM1 generation. Caveat: if any other block uses VCM1 for bias/feedback, that block will no longer behave as intended.",
+    "impact_estimate": "Low (mostly impacts common-mode sensing/feedback)"
+  },
+  {
+    "component": "M8 (net033 VB3 VDD VDD) pmos4",
+    "reason": "M8 is a VB3-biased PMOS current source that biases the pull-up device M6; if net033 (or the pull-up current) is provided by an external bias/current source, M8 can be removed without breaking the basic VOUT1 branch operation. Caveat: without an alternative bias, M6 may not have the intended current, reducing gain and shifting the output DC point.",
+    "impact_estimate": "Low-to-moderate (bias/gain changes unless replaced by another bias source)"
+  }
+]

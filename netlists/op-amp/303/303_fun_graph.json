@@ -1,0 +1,90 @@
+{
+  "nodes": [
+    {"id": "Gain", "type": "performance"},
+    {"id": "CMRR", "type": "performance"},
+    {"id": "UGF", "type": "performance"},
+    {"id": "Power", "type": "performance"},
+
+    {"id": "M1 NMOS input device (common-source)", "type": "substructure"},
+    {"id": "M3 PMOS bias/current source into IB1", "type": "substructure"},
+    {"id": "M0 NMOS bias/current control (VB1 -> IB2/IB1)", "type": "substructure"},
+    {"id": "M4 NMOS pull-down / output device", "type": "substructure"},
+    {"id": "R0 resistive load (VDD-VOUT1)", "type": "substructure"},
+
+    {"id": "VB1 (bias voltage)", "type": "parameter"},
+    {"id": "IB1", "type": "parameter"},
+    {"id": "IB2", "type": "parameter"},
+    {"id": "R0", "type": "parameter"},
+
+    {"id": "W_M0", "type": "parameter"},
+    {"id": "L_M0", "type": "parameter"},
+    {"id": "W_M1", "type": "parameter"},
+    {"id": "L_M1", "type": "parameter"},
+    {"id": "W_M3", "type": "parameter"},
+    {"id": "L_M3", "type": "parameter"},
+    {"id": "W_M4", "type": "parameter"},
+    {"id": "L_M4", "type": "parameter"}
+  ],
+  "links": [
+    {"source": "Gain", "target": "UGF", "relation": "trade-off"},
+    {"source": "UGF", "target": "Power", "relation": "trade-off"},
+    {"source": "Gain", "target": "Power", "relation": "trade-off"},
+    {"source": "CMRR", "target": "Gain", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "UGF", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "Power", "relation": "ambiguous"},
+
+    {"source": "M1 NMOS input device (common-source)", "target": "Gain", "relation": "influences"},
+    {"source": "M1 NMOS input device (common-source)", "target": "UGF", "relation": "influences"},
+    {"source": "M1 NMOS input device (common-source)", "target": "Power", "relation": "influences"},
+    {"source": "M1 NMOS input device (common-source)", "target": "CMRR", "relation": "influences"},
+
+    {"source": "M3 PMOS bias/current source into IB1", "target": "Power", "relation": "influences"},
+    {"source": "M3 PMOS bias/current source into IB1", "target": "Gain", "relation": "influences"},
+    {"source": "M3 PMOS bias/current source into IB1", "target": "UGF", "relation": "influences"},
+
+    {"source": "M0 NMOS bias/current control (VB1 -> IB2/IB1)", "target": "Power", "relation": "influences"},
+    {"source": "M0 NMOS bias/current control (VB1 -> IB2/IB1)", "target": "UGF", "relation": "influences"},
+    {"source": "M0 NMOS bias/current control (VB1 -> IB2/IB1)", "target": "Gain", "relation": "influences"},
+
+    {"source": "M4 NMOS pull-down / output device", "target": "Gain", "relation": "influences"},
+    {"source": "M4 NMOS pull-down / output device", "target": "UGF", "relation": "influences"},
+    {"source": "M4 NMOS pull-down / output device", "target": "Power", "relation": "influences"},
+
+    {"source": "R0 resistive load (VDD-VOUT1)", "target": "Gain", "relation": "influences"},
+    {"source": "R0 resistive load (VDD-VOUT1)", "target": "UGF", "relation": "influences"},
+    {"source": "R0 resistive load (VDD-VOUT1)", "target": "Power", "relation": "influences"},
+
+    {"source": "W_M1", "target": "M1 NMOS input device (common-source)", "relation": "belongs-to"},
+    {"source": "L_M1", "target": "M1 NMOS input device (common-source)", "relation": "belongs-to"},
+    {"source": "W_M3", "target": "M3 PMOS bias/current source into IB1", "relation": "belongs-to"},
+    {"source": "L_M3", "target": "M3 PMOS bias/current source into IB1", "relation": "belongs-to"},
+    {"source": "W_M0", "target": "M0 NMOS bias/current control (VB1 -> IB2/IB1)", "relation": "belongs-to"},
+    {"source": "L_M0", "target": "M0 NMOS bias/current control (VB1 -> IB2/IB1)", "relation": "belongs-to"},
+    {"source": "W_M4", "target": "M4 NMOS pull-down / output device", "relation": "belongs-to"},
+    {"source": "L_M4", "target": "M4 NMOS pull-down / output device", "relation": "belongs-to"},
+    {"source": "R0", "target": "R0 resistive load (VDD-VOUT1)", "relation": "belongs-to"},
+
+    {"source": "VB1 (bias voltage)", "target": "IB2", "relation": "directly-proportional"},
+    {"source": "IB2", "target": "Power", "relation": "directly-proportional"},
+    {"source": "IB2", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "IB2", "target": "Gain", "relation": "ambiguous"},
+
+    {"source": "IB1", "target": "Power", "relation": "directly-proportional"},
+    {"source": "IB1", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "IB1", "target": "Gain", "relation": "ambiguous"},
+
+    {"source": "R0", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "R0", "target": "UGF", "relation": "inversely-proportional"},
+    {"source": "R0", "target": "Power", "relation": "inversely-proportional"},
+
+    {"source": "W_M1", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "W_M1", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M1", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M1", "target": "UGF", "relation": "inversely-proportional"},
+
+    {"source": "W_M0", "target": "Power", "relation": "directly-proportional"},
+    {"source": "W_M0", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "L_M0", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M0", "target": "UGF", "relation": "inversely-proportional"}
+  ]
+}

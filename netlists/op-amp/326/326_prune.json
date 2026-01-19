@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0 (net026 VSS) capacitor",
+    "reason": "This capacitor mainly affects AC behavior (noise filtering/pole placement) on net026 and is not required for the core DC conduction paths. Caveat: removing it can increase high-frequency noise or reduce stability/settling depending on how net026 is used as an internal node.",
+    "impact_estimate": "Low for DC functionality; moderate for AC/noise"
+  },
+  {
+    "component": "C2 (net024 VSS) capacitor",
+    "reason": "Like C0, this is primarily an AC load/compensation element on net024 and can usually be removed without breaking basic transistor biasing. Caveat: bandwidth/phase margin and transient response may change noticeably.",
+    "impact_estimate": "Low for DC functionality; moderate for AC/stability"
+  },
+  {
+    "component": "M0 (net026 VIN2 VSS VSS) nmos4",
+    "reason": "M0 is redundant with M2 in the sense that both are VIN2-controlled NMOS pull-down devices; removing one still leaves VIN2 controlling a pull-down path through the other branch. Caveat: you lose one parallel path/internal node, so the effective input transconductance/loading and any intended symmetry between internal nodes will change.",
+    "impact_estimate": "Low-to-moderate (function remains; matching/gain may change)"
+  }
+]

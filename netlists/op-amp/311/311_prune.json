@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M2 (IB1 IB1 VSS VSS) nmos4",
+    "reason": "M2 is a diode-connected NMOS that looks like a local bias reference/sinker for IB1 rather than a required signal-path device; if IB1 is provided from an ideal/external bias source, you can remove M2 with minimal impact. Caveat: if IB1 is generated/stabilized internally using M2, removing it can leave IB1 floating and break biasing throughout the stage.",
+    "impact_estimate": "Low if IB1 is externally defined; high if IB1 depends on this device"
+  },
+  {
+    "component": "M16 (net048 VREF1 VSS VSS) nmos4",
+    "reason": "M16 primarily forms the reference node net048 from VREF1, supporting the bias chain that feeds net07 via M15, not the core VIN→VOUT amplification path; with an external bias for net07/IB1, it can be deleted. Caveat: if net048 is only produced here, removing M16 disrupts the net07 bias chain and can shift operating points.",
+    "impact_estimate": "Low if net048/net07 are biased elsewhere; medium-to-high if this is the only reference generator"
+  },
+  {
+    "component": "M15 (net07 IB1 net048 VSS) nmos4",
+    "reason": "M15 couples IB1 and net048 to generate/condition the bias node net07 (which then biases PMOS devices M13/M14/M0); if net07 is supplied externally (or M13/M14/M0 are not used as an internal mirror), M15 can be removed without changing the main differential input pair structure (M7/M6 with loads M8/M9). Caveat: if net07 is required to bias the PMOS mirror that provides active loads or bias currents, removing M15 can collapse that bias and severely alter gain/operating region.",
+    "impact_estimate": "Low if net07 is externally set; high if net07 is essential for internal current-mirror biasing"
+  }
+]

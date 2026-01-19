@@ -1,0 +1,578 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "M1-M3 input differential pair (NMOS)",
+      "type": "substructure"
+    },
+    {
+      "id": "M8-M9 PMOS active load / current sources",
+      "type": "substructure"
+    },
+    {
+      "id": "C0-C1 load/compensation capacitors",
+      "type": "substructure"
+    },
+    {
+      "id": "IB1 (tail current)",
+      "type": "parameter"
+    },
+    {
+      "id": "VB1 (PMOS bias)",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M8",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M8",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M9",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M9",
+      "type": "parameter"
+    },
+    {
+      "id": "C0",
+      "type": "parameter"
+    },
+    {
+      "id": "C1",
+      "type": "parameter"
+    },
+    {
+      "id": "dev:M3",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M3:D",
+      "type": "terminal",
+      "device": "M3",
+      "role": "D"
+    },
+    {
+      "id": "term:M3:G",
+      "type": "terminal",
+      "device": "M3",
+      "role": "G"
+    },
+    {
+      "id": "term:M3:S",
+      "type": "terminal",
+      "device": "M3",
+      "role": "S"
+    },
+    {
+      "id": "net:VOUT2",
+      "type": "net"
+    },
+    {
+      "id": "net:VIN2",
+      "type": "net"
+    },
+    {
+      "id": "net:IB1",
+      "type": "net"
+    },
+    {
+      "id": "dev:M1",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M1:D",
+      "type": "terminal",
+      "device": "M1",
+      "role": "D"
+    },
+    {
+      "id": "term:M1:G",
+      "type": "terminal",
+      "device": "M1",
+      "role": "G"
+    },
+    {
+      "id": "term:M1:S",
+      "type": "terminal",
+      "device": "M1",
+      "role": "S"
+    },
+    {
+      "id": "net:VOUT1",
+      "type": "net"
+    },
+    {
+      "id": "net:VIN1",
+      "type": "net"
+    },
+    {
+      "id": "dev:C1",
+      "type": "device",
+      "device_type": "capacitor"
+    },
+    {
+      "id": "net:VSS",
+      "type": "net"
+    },
+    {
+      "id": "dev:C0",
+      "type": "device",
+      "device_type": "capacitor"
+    },
+    {
+      "id": "dev:M9",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M9:D",
+      "type": "terminal",
+      "device": "M9",
+      "role": "D"
+    },
+    {
+      "id": "term:M9:G",
+      "type": "terminal",
+      "device": "M9",
+      "role": "G"
+    },
+    {
+      "id": "term:M9:S",
+      "type": "terminal",
+      "device": "M9",
+      "role": "S"
+    },
+    {
+      "id": "net:VB1",
+      "type": "net"
+    },
+    {
+      "id": "net:VDD",
+      "type": "net"
+    },
+    {
+      "id": "dev:M8",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M8:D",
+      "type": "terminal",
+      "device": "M8",
+      "role": "D"
+    },
+    {
+      "id": "term:M8:G",
+      "type": "terminal",
+      "device": "M8",
+      "role": "G"
+    },
+    {
+      "id": "term:M8:S",
+      "type": "terminal",
+      "device": "M8",
+      "role": "S"
+    }
+  ],
+  "links": [
+    {
+      "source": "dev:M3",
+      "target": "term:M3:D"
+    },
+    {
+      "source": "dev:M3",
+      "target": "term:M3:G"
+    },
+    {
+      "source": "dev:M3",
+      "target": "term:M3:S"
+    },
+    {
+      "source": "term:M3:D",
+      "target": "net:VOUT2"
+    },
+    {
+      "source": "term:M3:G",
+      "target": "net:VIN2"
+    },
+    {
+      "source": "term:M3:S",
+      "target": "net:IB1"
+    },
+    {
+      "source": "dev:M1",
+      "target": "term:M1:D"
+    },
+    {
+      "source": "dev:M1",
+      "target": "term:M1:G"
+    },
+    {
+      "source": "dev:M1",
+      "target": "term:M1:S"
+    },
+    {
+      "source": "term:M1:D",
+      "target": "net:VOUT1"
+    },
+    {
+      "source": "term:M1:G",
+      "target": "net:VIN1"
+    },
+    {
+      "source": "term:M1:S",
+      "target": "net:IB1"
+    },
+    {
+      "source": "dev:C1",
+      "target": "net:VOUT1"
+    },
+    {
+      "source": "dev:C1",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:C0",
+      "target": "net:VOUT2"
+    },
+    {
+      "source": "dev:C0",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:M9",
+      "target": "term:M9:D"
+    },
+    {
+      "source": "dev:M9",
+      "target": "term:M9:G"
+    },
+    {
+      "source": "dev:M9",
+      "target": "term:M9:S"
+    },
+    {
+      "source": "term:M9:D",
+      "target": "net:VOUT2"
+    },
+    {
+      "source": "term:M9:G",
+      "target": "net:VB1"
+    },
+    {
+      "source": "term:M9:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:M8",
+      "target": "term:M8:D"
+    },
+    {
+      "source": "dev:M8",
+      "target": "term:M8:G"
+    },
+    {
+      "source": "dev:M8",
+      "target": "term:M8:S"
+    },
+    {
+      "source": "term:M8:D",
+      "target": "net:VOUT1"
+    },
+    {
+      "source": "term:M8:G",
+      "target": "net:VB1"
+    },
+    {
+      "source": "term:M8:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "Gain",
+      "target": "UGF",
+      "relation": "trade-off"
+    },
+    {
+      "source": "UGF",
+      "target": "Power",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Gain",
+      "target": "Power",
+      "relation": "trade-off"
+    },
+    {
+      "source": "CMRR",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "UGF",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "M1-M3 input differential pair (NMOS)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M1-M3 input differential pair (NMOS)",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M1-M3 input differential pair (NMOS)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M1-M3 input differential pair (NMOS)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M8-M9 PMOS active load / current sources",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M8-M9 PMOS active load / current sources",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M8-M9 PMOS active load / current sources",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "C0-C1 load/compensation capacitors",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "C0-C1 load/compensation capacitors",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "W_M1",
+      "target": "M1-M3 input differential pair (NMOS)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M1",
+      "target": "M1-M3 input differential pair (NMOS)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M3",
+      "target": "M1-M3 input differential pair (NMOS)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M3",
+      "target": "M1-M3 input differential pair (NMOS)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M8",
+      "target": "M8-M9 PMOS active load / current sources",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M8",
+      "target": "M8-M9 PMOS active load / current sources",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M9",
+      "target": "M8-M9 PMOS active load / current sources",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M9",
+      "target": "M8-M9 PMOS active load / current sources",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "C0",
+      "target": "C0-C1 load/compensation capacitors",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "C1",
+      "target": "C0-C1 load/compensation capacitors",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VB1 (PMOS bias)",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "VB1 (PMOS bias)",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "VB1 (PMOS bias)",
+      "target": "UGF",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "IB1 (tail current)",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1 (tail current)",
+      "target": "Power",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1 (tail current)",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "IB1 (tail current)",
+      "target": "CMRR",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "W_M1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M1",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M1",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M8",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M8",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M8",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "C0",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "C1",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "C0",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "C1",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "dev:M3",
+      "target": "W_M3"
+    },
+    {
+      "source": "dev:M3",
+      "target": "L_M3"
+    },
+    {
+      "source": "dev:M1",
+      "target": "W_M1"
+    },
+    {
+      "source": "dev:M1",
+      "target": "L_M1"
+    },
+    {
+      "source": "dev:M9",
+      "target": "W_M9"
+    },
+    {
+      "source": "dev:M9",
+      "target": "L_M9"
+    },
+    {
+      "source": "dev:M8",
+      "target": "W_M8"
+    },
+    {
+      "source": "dev:M8",
+      "target": "L_M8"
+    }
+  ]
+}

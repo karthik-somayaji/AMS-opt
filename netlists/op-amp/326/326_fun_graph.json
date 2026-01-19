@@ -1,0 +1,96 @@
+{
+  "nodes": [
+    {"id": "Gain", "type": "performance"},
+    {"id": "CMRR", "type": "performance"},
+    {"id": "UGF", "type": "performance"},
+    {"id": "Power", "type": "performance"},
+
+    {"id": "M1-M3 NMOS input pair (VIN1 -> net027/net024, source=VSS)", "type": "substructure"},
+    {"id": "M2-M0 NMOS input pair (VIN2 -> net03/net026, source=VSS)", "type": "substructure"},
+    {"id": "M4-M5 PMOS current-mirror / active load (net027, net026)", "type": "substructure"},
+    {"id": "M10-M11 PMOS current-mirror / active load (net03, net024)", "type": "substructure"},
+    {"id": "C0 shunt/load capacitor (net026 to VSS)", "type": "substructure"},
+    {"id": "C2 shunt/load capacitor (net024 to VSS)", "type": "substructure"},
+
+    {"id": "C0", "type": "parameter"},
+    {"id": "C2", "type": "parameter"},
+
+    {"id": "W_M1", "type": "parameter"},
+    {"id": "L_M1", "type": "parameter"},
+    {"id": "W_M3", "type": "parameter"},
+    {"id": "L_M3", "type": "parameter"},
+    {"id": "W_M2", "type": "parameter"},
+    {"id": "L_M2", "type": "parameter"},
+    {"id": "W_M0", "type": "parameter"},
+    {"id": "L_M0", "type": "parameter"},
+
+    {"id": "W_M4", "type": "parameter"},
+    {"id": "L_M4", "type": "parameter"},
+    {"id": "W_M5", "type": "parameter"},
+    {"id": "L_M5", "type": "parameter"},
+    {"id": "W_M10", "type": "parameter"},
+    {"id": "L_M10", "type": "parameter"},
+    {"id": "W_M11", "type": "parameter"},
+    {"id": "L_M11", "type": "parameter"}
+  ],
+  "links": [
+    {"source": "Gain", "target": "UGF", "relation": "trade-off"},
+    {"source": "UGF", "target": "Power", "relation": "trade-off"},
+    {"source": "Gain", "target": "Power", "relation": "trade-off"},
+    {"source": "CMRR", "target": "Gain", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "UGF", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "Power", "relation": "ambiguous"},
+
+    {"source": "M1-M3 NMOS input pair (VIN1 -> net027/net024, source=VSS)", "target": "Gain", "relation": "influences"},
+    {"source": "M1-M3 NMOS input pair (VIN1 -> net027/net024, source=VSS)", "target": "UGF", "relation": "influences"},
+    {"source": "M1-M3 NMOS input pair (VIN1 -> net027/net024, source=VSS)", "target": "CMRR", "relation": "influences"},
+
+    {"source": "M2-M0 NMOS input pair (VIN2 -> net03/net026, source=VSS)", "target": "Gain", "relation": "influences"},
+    {"source": "M2-M0 NMOS input pair (VIN2 -> net03/net026, source=VSS)", "target": "UGF", "relation": "influences"},
+    {"source": "M2-M0 NMOS input pair (VIN2 -> net03/net026, source=VSS)", "target": "CMRR", "relation": "influences"},
+
+    {"source": "M4-M5 PMOS current-mirror / active load (net027, net026)", "target": "Gain", "relation": "influences"},
+    {"source": "M4-M5 PMOS current-mirror / active load (net027, net026)", "target": "UGF", "relation": "influences"},
+    {"source": "M4-M5 PMOS current-mirror / active load (net027, net026)", "target": "Power", "relation": "influences"},
+
+    {"source": "M10-M11 PMOS current-mirror / active load (net03, net024)", "target": "Gain", "relation": "influences"},
+    {"source": "M10-M11 PMOS current-mirror / active load (net03, net024)", "target": "UGF", "relation": "influences"},
+    {"source": "M10-M11 PMOS current-mirror / active load (net03, net024)", "target": "Power", "relation": "influences"},
+
+    {"source": "C0 shunt/load capacitor (net026 to VSS)", "target": "UGF", "relation": "influences"},
+    {"source": "C0 shunt/load capacitor (net026 to VSS)", "target": "Gain", "relation": "influences"},
+    {"source": "C2 shunt/load capacitor (net024 to VSS)", "target": "UGF", "relation": "influences"},
+    {"source": "C2 shunt/load capacitor (net024 to VSS)", "target": "Gain", "relation": "influences"},
+
+    {"source": "W_M1", "target": "M1-M3 NMOS input pair (VIN1 -> net027/net024, source=VSS)", "relation": "belongs-to"},
+    {"source": "L_M1", "target": "M1-M3 NMOS input pair (VIN1 -> net027/net024, source=VSS)", "relation": "belongs-to"},
+    {"source": "W_M3", "target": "M1-M3 NMOS input pair (VIN1 -> net027/net024, source=VSS)", "relation": "belongs-to"},
+    {"source": "L_M3", "target": "M1-M3 NMOS input pair (VIN1 -> net027/net024, source=VSS)", "relation": "belongs-to"},
+
+    {"source": "W_M2", "target": "M2-M0 NMOS input pair (VIN2 -> net03/net026, source=VSS)", "relation": "belongs-to"},
+    {"source": "L_M2", "target": "M2-M0 NMOS input pair (VIN2 -> net03/net026, source=VSS)", "relation": "belongs-to"},
+    {"source": "W_M0", "target": "M2-M0 NMOS input pair (VIN2 -> net03/net026, source=VSS)", "relation": "belongs-to"},
+    {"source": "L_M0", "target": "M2-M0 NMOS input pair (VIN2 -> net03/net026, source=VSS)", "relation": "belongs-to"},
+
+    {"source": "W_M4", "target": "M4-M5 PMOS current-mirror / active load (net027, net026)", "relation": "belongs-to"},
+    {"source": "L_M4", "target": "M4-M5 PMOS current-mirror / active load (net027, net026)", "relation": "belongs-to"},
+    {"source": "W_M5", "target": "M4-M5 PMOS current-mirror / active load (net027, net026)", "relation": "belongs-to"},
+    {"source": "L_M5", "target": "M4-M5 PMOS current-mirror / active load (net027, net026)", "relation": "belongs-to"},
+
+    {"source": "W_M10", "target": "M10-M11 PMOS current-mirror / active load (net03, net024)", "relation": "belongs-to"},
+    {"source": "L_M10", "target": "M10-M11 PMOS current-mirror / active load (net03, net024)", "relation": "belongs-to"},
+    {"source": "W_M11", "target": "M10-M11 PMOS current-mirror / active load (net03, net024)", "relation": "belongs-to"},
+    {"source": "L_M11", "target": "M10-M11 PMOS current-mirror / active load (net03, net024)", "relation": "belongs-to"},
+
+    {"source": "C0", "target": "C0 shunt/load capacitor (net026 to VSS)", "relation": "belongs-to"},
+    {"source": "C2", "target": "C2 shunt/load capacitor (net024 to VSS)", "relation": "belongs-to"},
+
+    {"source": "C0", "target": "UGF", "relation": "inversely-proportional"},
+    {"source": "C2", "target": "UGF", "relation": "inversely-proportional"},
+
+    {"source": "W_M1", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "W_M1", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M1", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M1", "target": "UGF", "relation": "inversely-proportional"}
+  ]
+}

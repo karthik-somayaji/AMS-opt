@@ -1,0 +1,116 @@
+{
+  "nodes": [
+    {"id": "Gain", "type": "performance"},
+    {"id": "CMRR", "type": "performance"},
+    {"id": "UGF", "type": "performance"},
+    {"id": "Power", "type": "performance"},
+
+    {"id": "M6-M7 PMOS differential input pair (VIN1/VIN2 -> net046/net048, tail=IB1)", "type": "substructure"},
+    {"id": "M3-M4 PMOS output/input transconductor pair (VIN1/VIN2 -> VOUT2/VOUT1, tail=IB2)", "type": "substructure"},
+    {"id": "M0-M5 PMOS pull-up / bias loads (VB1, VOUT1/VOUT2)", "type": "substructure"},
+    {"id": "M1-M2 NMOS sink/gain path (VB1 bias, net048/VOUT1 side)", "type": "substructure"},
+    {"id": "M8-M10 NMOS sink/gain path (VB1 bias, net046/VOUT2 side)", "type": "substructure"},
+
+    {"id": "VB1", "type": "parameter"},
+    {"id": "IB1", "type": "parameter"},
+    {"id": "IB2", "type": "parameter"},
+
+    {"id": "W_M6", "type": "parameter"},
+    {"id": "L_M6", "type": "parameter"},
+    {"id": "W_M7", "type": "parameter"},
+    {"id": "L_M7", "type": "parameter"},
+
+    {"id": "W_M3", "type": "parameter"},
+    {"id": "L_M3", "type": "parameter"},
+    {"id": "W_M4", "type": "parameter"},
+    {"id": "L_M4", "type": "parameter"},
+
+    {"id": "W_M0", "type": "parameter"},
+    {"id": "L_M0", "type": "parameter"},
+    {"id": "W_M5", "type": "parameter"},
+    {"id": "L_M5", "type": "parameter"},
+
+    {"id": "W_M1", "type": "parameter"},
+    {"id": "L_M1", "type": "parameter"},
+    {"id": "W_M2", "type": "parameter"},
+    {"id": "L_M2", "type": "parameter"},
+    {"id": "W_M8", "type": "parameter"},
+    {"id": "L_M8", "type": "parameter"},
+    {"id": "W_M10", "type": "parameter"},
+    {"id": "L_M10", "type": "parameter"}
+  ],
+  "links": [
+    {"source": "Gain", "target": "UGF", "relation": "trade-off"},
+    {"source": "UGF", "target": "Power", "relation": "trade-off"},
+    {"source": "Gain", "target": "Power", "relation": "trade-off"},
+    {"source": "CMRR", "target": "Gain", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "UGF", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "Power", "relation": "ambiguous"},
+
+    {"source": "M6-M7 PMOS differential input pair (VIN1/VIN2 -> net046/net048, tail=IB1)", "target": "Gain", "relation": "influences"},
+    {"source": "M6-M7 PMOS differential input pair (VIN1/VIN2 -> net046/net048, tail=IB1)", "target": "UGF", "relation": "influences"},
+    {"source": "M6-M7 PMOS differential input pair (VIN1/VIN2 -> net046/net048, tail=IB1)", "target": "CMRR", "relation": "influences"},
+    {"source": "M6-M7 PMOS differential input pair (VIN1/VIN2 -> net046/net048, tail=IB1)", "target": "Power", "relation": "influences"},
+
+    {"source": "M3-M4 PMOS output/input transconductor pair (VIN1/VIN2 -> VOUT2/VOUT1, tail=IB2)", "target": "Gain", "relation": "influences"},
+    {"source": "M3-M4 PMOS output/input transconductor pair (VIN1/VIN2 -> VOUT2/VOUT1, tail=IB2)", "target": "UGF", "relation": "influences"},
+    {"source": "M3-M4 PMOS output/input transconductor pair (VIN1/VIN2 -> VOUT2/VOUT1, tail=IB2)", "target": "CMRR", "relation": "influences"},
+    {"source": "M3-M4 PMOS output/input transconductor pair (VIN1/VIN2 -> VOUT2/VOUT1, tail=IB2)", "target": "Power", "relation": "influences"},
+
+    {"source": "M0-M5 PMOS pull-up / bias loads (VB1, VOUT1/VOUT2)", "target": "Gain", "relation": "influences"},
+    {"source": "M0-M5 PMOS pull-up / bias loads (VB1, VOUT1/VOUT2)", "target": "UGF", "relation": "influences"},
+    {"source": "M0-M5 PMOS pull-up / bias loads (VB1, VOUT1/VOUT2)", "target": "Power", "relation": "influences"},
+
+    {"source": "M1-M2 NMOS sink/gain path (VB1 bias, net048/VOUT1 side)", "target": "Gain", "relation": "influences"},
+    {"source": "M1-M2 NMOS sink/gain path (VB1 bias, net048/VOUT1 side)", "target": "UGF", "relation": "influences"},
+    {"source": "M1-M2 NMOS sink/gain path (VB1 bias, net048/VOUT1 side)", "target": "Power", "relation": "influences"},
+    {"source": "M1-M2 NMOS sink/gain path (VB1 bias, net048/VOUT1 side)", "target": "CMRR", "relation": "ambiguous"},
+
+    {"source": "M8-M10 NMOS sink/gain path (VB1 bias, net046/VOUT2 side)", "target": "Gain", "relation": "influences"},
+    {"source": "M8-M10 NMOS sink/gain path (VB1 bias, net046/VOUT2 side)", "target": "UGF", "relation": "influences"},
+    {"source": "M8-M10 NMOS sink/gain path (VB1 bias, net046/VOUT2 side)", "target": "Power", "relation": "influences"},
+    {"source": "M8-M10 NMOS sink/gain path (VB1 bias, net046/VOUT2 side)", "target": "CMRR", "relation": "ambiguous"},
+
+    {"source": "W_M6", "target": "M6-M7 PMOS differential input pair (VIN1/VIN2 -> net046/net048, tail=IB1)", "relation": "belongs-to"},
+    {"source": "L_M6", "target": "M6-M7 PMOS differential input pair (VIN1/VIN2 -> net046/net048, tail=IB1)", "relation": "belongs-to"},
+    {"source": "W_M7", "target": "M6-M7 PMOS differential input pair (VIN1/VIN2 -> net046/net048, tail=IB1)", "relation": "belongs-to"},
+    {"source": "L_M7", "target": "M6-M7 PMOS differential input pair (VIN1/VIN2 -> net046/net048, tail=IB1)", "relation": "belongs-to"},
+
+    {"source": "W_M3", "target": "M3-M4 PMOS output/input transconductor pair (VIN1/VIN2 -> VOUT2/VOUT1, tail=IB2)", "relation": "belongs-to"},
+    {"source": "L_M3", "target": "M3-M4 PMOS output/input transconductor pair (VIN1/VIN2 -> VOUT2/VOUT1, tail=IB2)", "relation": "belongs-to"},
+    {"source": "W_M4", "target": "M3-M4 PMOS output/input transconductor pair (VIN1/VIN2 -> VOUT2/VOUT1, tail=IB2)", "relation": "belongs-to"},
+    {"source": "L_M4", "target": "M3-M4 PMOS output/input transconductor pair (VIN1/VIN2 -> VOUT2/VOUT1, tail=IB2)", "relation": "belongs-to"},
+
+    {"source": "W_M0", "target": "M0-M5 PMOS pull-up / bias loads (VB1, VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "L_M0", "target": "M0-M5 PMOS pull-up / bias loads (VB1, VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "W_M5", "target": "M0-M5 PMOS pull-up / bias loads (VB1, VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "L_M5", "target": "M0-M5 PMOS pull-up / bias loads (VB1, VOUT1/VOUT2)", "relation": "belongs-to"},
+
+    {"source": "W_M1", "target": "M1-M2 NMOS sink/gain path (VB1 bias, net048/VOUT1 side)", "relation": "belongs-to"},
+    {"source": "L_M1", "target": "M1-M2 NMOS sink/gain path (VB1 bias, net048/VOUT1 side)", "relation": "belongs-to"},
+    {"source": "W_M2", "target": "M1-M2 NMOS sink/gain path (VB1 bias, net048/VOUT1 side)", "relation": "belongs-to"},
+    {"source": "L_M2", "target": "M1-M2 NMOS sink/gain path (VB1 bias, net048/VOUT1 side)", "relation": "belongs-to"},
+
+    {"source": "W_M8", "target": "M8-M10 NMOS sink/gain path (VB1 bias, net046/VOUT2 side)", "relation": "belongs-to"},
+    {"source": "L_M8", "target": "M8-M10 NMOS sink/gain path (VB1 bias, net046/VOUT2 side)", "relation": "belongs-to"},
+    {"source": "W_M10", "target": "M8-M10 NMOS sink/gain path (VB1 bias, net046/VOUT2 side)", "relation": "belongs-to"},
+    {"source": "L_M10", "target": "M8-M10 NMOS sink/gain path (VB1 bias, net046/VOUT2 side)", "relation": "belongs-to"},
+
+    {"source": "IB1", "target": "Power", "relation": "directly-proportional"},
+    {"source": "IB1", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "IB1", "target": "Gain", "relation": "ambiguous"},
+
+    {"source": "IB2", "target": "Power", "relation": "directly-proportional"},
+    {"source": "IB2", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "IB2", "target": "Gain", "relation": "ambiguous"},
+
+    {"source": "VB1", "target": "Power", "relation": "directly-proportional"},
+    {"source": "VB1", "target": "UGF", "relation": "ambiguous"},
+    {"source": "VB1", "target": "Gain", "relation": "ambiguous"},
+
+    {"source": "W_M6", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "W_M6", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M6", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M6", "target": "UGF", "relation": "inversely-proportional"}
+  ]
+}

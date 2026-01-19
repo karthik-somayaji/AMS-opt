@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M1 (VOUT2 VB2 VSS VSS) nmos4",
+    "reason": "This is a VB2-controlled NMOS pull-down/clamp on VOUT2; if you can tolerate VOUT2 being less well-defined (or you only care about one output), removing it usually doesn’t break the core signal path through the PMOS device. Caveat: VOUT2 may float high, distort swing, and worsen settling/linearity without a defined discharge path.",
+    "impact_estimate": "Low if VOUT2 is unused or externally loaded; moderate otherwise"
+  },
+  {
+    "component": "M8 (VOUT1 VB2 VSS VSS) nmos4",
+    "reason": "Same role as M1 but for VOUT1: it mainly provides a controlled sink/discharge; if the load or measurement setup provides a return path, you can omit it and still observe amplification behavior. Caveat: output common-mode can drift and small-signal behavior can change due to altered DC operating point.",
+    "impact_estimate": "Low with external bias/load on VOUT1; moderate otherwise"
+  },
+  {
+    "component": "M7 (VOUT2 VB1 VDD VIN2) pmos4",
+    "reason": "If you only need a single-ended output (e.g., VOUT1), the second PMOS branch can be removed while preserving a functional path on the remaining side. Caveat: you lose differential symmetry and CMRR; VOUT2 becomes undefined unless otherwise biased.",
+    "impact_estimate": "Low for single-ended use; high if true differential operation is required"
+  }
+]

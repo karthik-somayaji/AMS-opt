@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M7 (net14 VB3 VDD VDD) pmos4",
+    "reason": "M7 is part of the PMOS bias/current-source side feeding the VOUT2 load branch; if VB3 is just providing a bias to set an (approx.) constant current, removing M7 typically only removes that bias-generated current source and the rest of the signal path can still be exercised (though with degraded biasing). Caveat: you may need to replace it with an ideal current source or a fixed bias to keep the output branch from floating or collapsing.",
+    "impact_estimate": "Low-to-moderate (mainly affects DC operating point and output swing/headroom; small-signal topology still similar if bias is provided elsewhere)"
+  },
+  {
+    "component": "M6 (net15 VB3 VDD VDD) pmos4",
+    "reason": "Same role as M7 but for the VOUT1 load branch; deleting it usually does not break the differential pair action itself, but it weakens/changes the load biasing. Caveat: if M6/M7 together form the only bias path for the PMOS loads, you’ll likely need an alternative bias/current source to maintain reasonable gain and keep both outputs biased in-range.",
+    "impact_estimate": "Low-to-moderate (bias/gain/swing degrade; core differential behavior can remain with substitute biasing)"
+  },
+  {
+    "component": "M2 (VOUT2 VB1 net13 VSS) nmos4",
+    "reason": "M2 looks like an NMOS cascode/gain-boost or output device stacked on the VIN2-side node (net13) controlled by VB1; removing it often still leaves a functional differential front-end (via M3/M0) but reduces output impedance and gain on that side. Caveat: VOUT2 may no longer be a high-gain node and the output common-mode and swing can shift significantly.",
+    "impact_estimate": "Low-to-moderate (primarily reduces gain and output resistance on VOUT2 branch; differential sensing still works)"
+  }
+]

@@ -1,0 +1,102 @@
+{
+  "nodes": [
+    {"id": "Gain", "type": "performance"},
+    {"id": "CMRR", "type": "performance"},
+    {"id": "UGF", "type": "performance"},
+    {"id": "Power", "type": "performance"},
+
+    {"id": "M4-M5 NMOS output/pull-down devices (VB1 biased, VOUT1/VOUT2)", "type": "substructure"},
+    {"id": "M1-M3 NMOS bias current sinks (VB4 biased)", "type": "substructure"},
+    {"id": "M6-M7 PMOS active loads (VB2 biased, VOUT1/VOUT2)", "type": "substructure"},
+    {"id": "M8-M9 PMOS bias current sources (VB3)", "type": "substructure"},
+    {"id": "R5-R6 resistive common-mode feedback (VCM1 <-> VOUT1/VOUT2)", "type": "substructure"},
+
+    {"id": "VB1 (NMOS output bias)", "type": "parameter"},
+    {"id": "VB2 (PMOS load bias)", "type": "parameter"},
+    {"id": "VB3 (PMOS bias)", "type": "parameter"},
+    {"id": "VB4 (NMOS sink bias)", "type": "parameter"},
+    {"id": "R5", "type": "parameter"},
+    {"id": "R6", "type": "parameter"},
+
+    {"id": "W_M1", "type": "parameter"},
+    {"id": "L_M1", "type": "parameter"},
+    {"id": "W_M3", "type": "parameter"},
+    {"id": "L_M3", "type": "parameter"},
+    {"id": "W_M4", "type": "parameter"},
+    {"id": "L_M4", "type": "parameter"},
+    {"id": "W_M5", "type": "parameter"},
+    {"id": "L_M5", "type": "parameter"},
+    {"id": "W_M6", "type": "parameter"},
+    {"id": "L_M6", "type": "parameter"},
+    {"id": "W_M7", "type": "parameter"},
+    {"id": "L_M7", "type": "parameter"},
+    {"id": "W_M8", "type": "parameter"},
+    {"id": "L_M8", "type": "parameter"},
+    {"id": "W_M9", "type": "parameter"},
+    {"id": "L_M9", "type": "parameter"}
+  ],
+  "links": [
+    {"source": "Gain", "target": "UGF", "relation": "trade-off"},
+    {"source": "UGF", "target": "Power", "relation": "trade-off"},
+    {"source": "Gain", "target": "Power", "relation": "trade-off"},
+    {"source": "CMRR", "target": "Gain", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "UGF", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "Power", "relation": "ambiguous"},
+
+    {"source": "M4-M5 NMOS output/pull-down devices (VB1 biased, VOUT1/VOUT2)", "target": "Gain", "relation": "influences"},
+    {"source": "M4-M5 NMOS output/pull-down devices (VB1 biased, VOUT1/VOUT2)", "target": "UGF", "relation": "influences"},
+    {"source": "M4-M5 NMOS output/pull-down devices (VB1 biased, VOUT1/VOUT2)", "target": "Power", "relation": "influences"},
+    {"source": "M4-M5 NMOS output/pull-down devices (VB1 biased, VOUT1/VOUT2)", "target": "CMRR", "relation": "influences"},
+
+    {"source": "M1-M3 NMOS bias current sinks (VB4 biased)", "target": "Power", "relation": "influences"},
+    {"source": "M1-M3 NMOS bias current sinks (VB4 biased)", "target": "Gain", "relation": "influences"},
+    {"source": "M1-M3 NMOS bias current sinks (VB4 biased)", "target": "UGF", "relation": "influences"},
+
+    {"source": "M6-M7 PMOS active loads (VB2 biased, VOUT1/VOUT2)", "target": "Gain", "relation": "influences"},
+    {"source": "M6-M7 PMOS active loads (VB2 biased, VOUT1/VOUT2)", "target": "UGF", "relation": "influences"},
+    {"source": "M6-M7 PMOS active loads (VB2 biased, VOUT1/VOUT2)", "target": "CMRR", "relation": "influences"},
+
+    {"source": "M8-M9 PMOS bias current sources (VB3)", "target": "Power", "relation": "influences"},
+    {"source": "M8-M9 PMOS bias current sources (VB3)", "target": "Gain", "relation": "influences"},
+
+    {"source": "R5-R6 resistive common-mode feedback (VCM1 <-> VOUT1/VOUT2)", "target": "CMRR", "relation": "influences"},
+    {"source": "R5-R6 resistive common-mode feedback (VCM1 <-> VOUT1/VOUT2)", "target": "Gain", "relation": "influences"},
+    {"source": "R5-R6 resistive common-mode feedback (VCM1 <-> VOUT1/VOUT2)", "target": "UGF", "relation": "influences"},
+
+    {"source": "W_M4", "target": "M4-M5 NMOS output/pull-down devices (VB1 biased, VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "L_M4", "target": "M4-M5 NMOS output/pull-down devices (VB1 biased, VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "W_M5", "target": "M4-M5 NMOS output/pull-down devices (VB1 biased, VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "L_M5", "target": "M4-M5 NMOS output/pull-down devices (VB1 biased, VOUT1/VOUT2)", "relation": "belongs-to"},
+
+    {"source": "W_M1", "target": "M1-M3 NMOS bias current sinks (VB4 biased)", "relation": "belongs-to"},
+    {"source": "L_M1", "target": "M1-M3 NMOS bias current sinks (VB4 biased)", "relation": "belongs-to"},
+    {"source": "W_M3", "target": "M1-M3 NMOS bias current sinks (VB4 biased)", "relation": "belongs-to"},
+    {"source": "L_M3", "target": "M1-M3 NMOS bias current sinks (VB4 biased)", "relation": "belongs-to"},
+
+    {"source": "W_M6", "target": "M6-M7 PMOS active loads (VB2 biased, VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "L_M6", "target": "M6-M7 PMOS active loads (VB2 biased, VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "W_M7", "target": "M6-M7 PMOS active loads (VB2 biased, VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "L_M7", "target": "M6-M7 PMOS active loads (VB2 biased, VOUT1/VOUT2)", "relation": "belongs-to"},
+
+    {"source": "W_M8", "target": "M8-M9 PMOS bias current sources (VB3)", "relation": "belongs-to"},
+    {"source": "L_M8", "target": "M8-M9 PMOS bias current sources (VB3)", "relation": "belongs-to"},
+    {"source": "W_M9", "target": "M8-M9 PMOS bias current sources (VB3)", "relation": "belongs-to"},
+    {"source": "L_M9", "target": "M8-M9 PMOS bias current sources (VB3)", "relation": "belongs-to"},
+
+    {"source": "R5", "target": "R5-R6 resistive common-mode feedback (VCM1 <-> VOUT1/VOUT2)", "relation": "belongs-to"},
+    {"source": "R6", "target": "R5-R6 resistive common-mode feedback (VCM1 <-> VOUT1/VOUT2)", "relation": "belongs-to"},
+
+    {"source": "VB1 (NMOS output bias)", "target": "Power", "relation": "directly-proportional"},
+    {"source": "VB2 (PMOS load bias)", "target": "Power", "relation": "directly-proportional"},
+    {"source": "VB3 (PMOS bias)", "target": "Power", "relation": "directly-proportional"},
+    {"source": "VB4 (NMOS sink bias)", "target": "Power", "relation": "directly-proportional"},
+
+    {"source": "R5", "target": "CMRR", "relation": "directly-proportional"},
+    {"source": "R6", "target": "CMRR", "relation": "directly-proportional"},
+    {"source": "R5", "target": "UGF", "relation": "inversely-proportional"},
+    {"source": "R6", "target": "UGF", "relation": "inversely-proportional"},
+
+    {"source": "L_M6", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M6", "target": "UGF", "relation": "inversely-proportional"}
+  ]
+}

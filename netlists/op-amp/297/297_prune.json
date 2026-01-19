@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M9 (net021 net019 VDD VDD) pmos4",
+    "reason": "M9 is part of the PMOS bias/current-mirror structure that feeds the VOUT1-side load through net021; removing it typically leaves the NMOS input devices intact but eliminates the mirror-generated bias current. Caveat: net021 will need an alternative bias or current source, otherwise the PMOS load branch may not conduct correctly.",
+    "impact_estimate": "Low-to-moderate (mainly affects DC biasing and output swing; core signal path can remain)"
+  },
+  {
+    "component": "M8 (net014 net019 VDD VDD) pmos4",
+    "reason": "M8 is diode-connected and primarily establishes the bias voltage at net019 for the PMOS mirror (M6/M9); deleting it preserves the overall topology but removes the self-bias reference. Caveat: without an external bias on net019, the PMOS devices may be poorly biased or turn off.",
+    "impact_estimate": "Low-to-moderate (functional blocks remain, but bias stability is reduced unless replaced)"
+  },
+  {
+    "component": "M4 (net019 VB1 net022 VSS) nmos4",
+    "reason": "M4 appears to be a VB1-controlled cascode/bias NMOS in the VIN1 branch; removing it still leaves the core NMOS input transistor (M1) and PMOS load path operational, but reduces output resistance and gain. Caveat: node net019 and the PMOS biasing may shift, so expect degraded gain and different output common-mode.",
+    "impact_estimate": "Low-to-moderate (primarily reduces gain and output impedance; differential input action remains)"
+  }
+]
