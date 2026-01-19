@@ -1,0 +1,221 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "dev:M1",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M1:D",
+      "type": "terminal",
+      "device": "M1",
+      "role": "D"
+    },
+    {
+      "id": "term:M1:G",
+      "type": "terminal",
+      "device": "M1",
+      "role": "G"
+    },
+    {
+      "id": "term:M1:S",
+      "type": "terminal",
+      "device": "M1",
+      "role": "S"
+    },
+    {
+      "id": "net:VOUT2",
+      "type": "net"
+    },
+    {
+      "id": "net:VB2",
+      "type": "net"
+    },
+    {
+      "id": "net:VSS",
+      "type": "net"
+    },
+    {
+      "id": "dev:M8",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M8:D",
+      "type": "terminal",
+      "device": "M8",
+      "role": "D"
+    },
+    {
+      "id": "term:M8:G",
+      "type": "terminal",
+      "device": "M8",
+      "role": "G"
+    },
+    {
+      "id": "term:M8:S",
+      "type": "terminal",
+      "device": "M8",
+      "role": "S"
+    },
+    {
+      "id": "net:VOUT1",
+      "type": "net"
+    },
+    {
+      "id": "dev:M7",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M7:D",
+      "type": "terminal",
+      "device": "M7",
+      "role": "D"
+    },
+    {
+      "id": "term:M7:G",
+      "type": "terminal",
+      "device": "M7",
+      "role": "G"
+    },
+    {
+      "id": "term:M7:S",
+      "type": "terminal",
+      "device": "M7",
+      "role": "S"
+    },
+    {
+      "id": "net:VB1",
+      "type": "net"
+    },
+    {
+      "id": "net:VDD",
+      "type": "net"
+    },
+    {
+      "id": "dev:M6",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M6:D",
+      "type": "terminal",
+      "device": "M6",
+      "role": "D"
+    },
+    {
+      "id": "term:M6:G",
+      "type": "terminal",
+      "device": "M6",
+      "role": "G"
+    },
+    {
+      "id": "term:M6:S",
+      "type": "terminal",
+      "device": "M6",
+      "role": "S"
+    }
+  ],
+  "links": [
+    {
+      "source": "dev:M1",
+      "target": "term:M1:D"
+    },
+    {
+      "source": "dev:M1",
+      "target": "term:M1:G"
+    },
+    {
+      "source": "dev:M1",
+      "target": "term:M1:S"
+    },
+    {
+      "source": "term:M1:D",
+      "target": "net:VOUT2"
+    },
+    {
+      "source": "term:M1:G",
+      "target": "net:VB2"
+    },
+    {
+      "source": "term:M1:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:M8",
+      "target": "term:M8:D"
+    },
+    {
+      "source": "dev:M8",
+      "target": "term:M8:G"
+    },
+    {
+      "source": "dev:M8",
+      "target": "term:M8:S"
+    },
+    {
+      "source": "term:M8:D",
+      "target": "net:VOUT1"
+    },
+    {
+      "source": "term:M8:G",
+      "target": "net:VB2"
+    },
+    {
+      "source": "term:M8:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:M7",
+      "target": "term:M7:D"
+    },
+    {
+      "source": "dev:M7",
+      "target": "term:M7:G"
+    },
+    {
+      "source": "dev:M7",
+      "target": "term:M7:S"
+    },
+    {
+      "source": "term:M7:D",
+      "target": "net:VOUT2"
+    },
+    {
+      "source": "term:M7:G",
+      "target": "net:VB1"
+    },
+    {
+      "source": "term:M7:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:M6",
+      "target": "term:M6:D"
+    },
+    {
+      "source": "dev:M6",
+      "target": "term:M6:G"
+    },
+    {
+      "source": "dev:M6",
+      "target": "term:M6:S"
+    },
+    {
+      "source": "term:M6:D",
+      "target": "net:VOUT1"
+    },
+    {
+      "source": "term:M6:G",
+      "target": "net:VB1"
+    },
+    {
+      "source": "term:M6:S",
+      "target": "net:VDD"
+    }
+  ]
+}

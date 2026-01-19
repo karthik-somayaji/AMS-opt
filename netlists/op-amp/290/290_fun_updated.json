@@ -1,0 +1,444 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "M9 PMOS input device (common-source)",
+      "type": "substructure"
+    },
+    {
+      "id": "M7 PMOS active load / cascode (VB1 biased)",
+      "type": "substructure"
+    },
+    {
+      "id": "R1 resistive load to ground (VOUT1-VSS)",
+      "type": "substructure"
+    },
+    {
+      "id": "VB1 (PMOS bias)",
+      "type": "parameter"
+    },
+    {
+      "id": "R1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M9",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M9",
+      "type": "parameter"
+    },
+    {
+      "id": "Gain-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Gain-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Gain-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Power-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Power-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Power-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "VB1 (PMOS bias)-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VB1 (PMOS bias)-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M7-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M7-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M7-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M7-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M9-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M9-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M9-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M9-inversely-proportional",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain-trade-off",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF-trade-off",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain-trade-off",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR-ambiguous",
+      "target": "Gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR-ambiguous",
+      "target": "UGF-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR-ambiguous",
+      "target": "Power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "M9 PMOS input device (common-source)",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "M9 PMOS input device (common-source)",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "M9 PMOS input device (common-source)",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "M9 PMOS input device (common-source)",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "M7 PMOS active load / cascode (VB1 biased)",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "M7 PMOS active load / cascode (VB1 biased)",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "M7 PMOS active load / cascode (VB1 biased)",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "M7 PMOS active load / cascode (VB1 biased)",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "R1 resistive load to ground (VOUT1-VSS)",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "R1 resistive load to ground (VOUT1-VSS)",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "R1 resistive load to ground (VOUT1-VSS)",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M9",
+      "target": "M9 PMOS input device (common-source)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M9",
+      "target": "M9 PMOS input device (common-source)",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M7",
+      "target": "M7 PMOS active load / cascode (VB1 biased)",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M7",
+      "target": "M7 PMOS active load / cascode (VB1 biased)",
+      "relation": "connects"
+    },
+    {
+      "source": "R1",
+      "target": "R1 resistive load to ground (VOUT1-VSS)",
+      "relation": "connects"
+    },
+    {
+      "source": "VB1 (PMOS bias)",
+      "target": "Gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "VB1 (PMOS bias)",
+      "target": "UGF-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "VB1 (PMOS bias)-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R1-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R1-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "R1-inversely-proportional",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M9-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M9-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M9-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M9-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M7-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M7-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB1 (PMOS bias)",
+      "target": "VB1 (PMOS bias)-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB1 (PMOS bias)",
+      "target": "VB1 (PMOS bias)-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R1",
+      "target": "R1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R1",
+      "target": "R1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M7",
+      "target": "W_M7-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M7",
+      "target": "W_M7-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M7",
+      "target": "L_M7-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M7",
+      "target": "L_M7-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M9",
+      "target": "W_M9-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_M9",
+      "target": "W_M9-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M9",
+      "target": "L_M9-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_M9",
+      "target": "L_M9-inversely-proportional",
+      "relation": "connects"
+    }
+  ]
+}

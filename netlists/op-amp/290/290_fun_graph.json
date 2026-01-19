@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {"id": "Gain", "type": "performance"},
+    {"id": "CMRR", "type": "performance"},
+    {"id": "UGF", "type": "performance"},
+    {"id": "Power", "type": "performance"},
+
+    {"id": "M9 PMOS input device (common-source)", "type": "substructure"},
+    {"id": "M7 PMOS active load / cascode (VB1 biased)", "type": "substructure"},
+    {"id": "R1 resistive load to ground (VOUT1-VSS)", "type": "substructure"},
+
+    {"id": "VB1 (PMOS bias)", "type": "parameter"},
+    {"id": "R1", "type": "parameter"},
+    {"id": "W_M7", "type": "parameter"},
+    {"id": "L_M7", "type": "parameter"},
+    {"id": "W_M9", "type": "parameter"},
+    {"id": "L_M9", "type": "parameter"}
+  ],
+  "links": [
+    {"source": "Gain", "target": "UGF", "relation": "trade-off"},
+    {"source": "UGF", "target": "Power", "relation": "trade-off"},
+    {"source": "Gain", "target": "Power", "relation": "trade-off"},
+    {"source": "CMRR", "target": "Gain", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "UGF", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "Power", "relation": "ambiguous"},
+
+    {"source": "M9 PMOS input device (common-source)", "target": "Gain", "relation": "influences"},
+    {"source": "M9 PMOS input device (common-source)", "target": "UGF", "relation": "influences"},
+    {"source": "M9 PMOS input device (common-source)", "target": "Power", "relation": "influences"},
+    {"source": "M9 PMOS input device (common-source)", "target": "CMRR", "relation": "influences"},
+
+    {"source": "M7 PMOS active load / cascode (VB1 biased)", "target": "Gain", "relation": "influences"},
+    {"source": "M7 PMOS active load / cascode (VB1 biased)", "target": "UGF", "relation": "influences"},
+    {"source": "M7 PMOS active load / cascode (VB1 biased)", "target": "Power", "relation": "influences"},
+    {"source": "M7 PMOS active load / cascode (VB1 biased)", "target": "CMRR", "relation": "influences"},
+
+    {"source": "R1 resistive load to ground (VOUT1-VSS)", "target": "Gain", "relation": "influences"},
+    {"source": "R1 resistive load to ground (VOUT1-VSS)", "target": "UGF", "relation": "influences"},
+    {"source": "R1 resistive load to ground (VOUT1-VSS)", "target": "Power", "relation": "influences"},
+
+    {"source": "W_M9", "target": "M9 PMOS input device (common-source)", "relation": "belongs-to"},
+    {"source": "L_M9", "target": "M9 PMOS input device (common-source)", "relation": "belongs-to"},
+    {"source": "W_M7", "target": "M7 PMOS active load / cascode (VB1 biased)", "relation": "belongs-to"},
+    {"source": "L_M7", "target": "M7 PMOS active load / cascode (VB1 biased)", "relation": "belongs-to"},
+    {"source": "R1", "target": "R1 resistive load to ground (VOUT1-VSS)", "relation": "belongs-to"},
+
+    {"source": "VB1 (PMOS bias)", "target": "Gain", "relation": "ambiguous"},
+    {"source": "VB1 (PMOS bias)", "target": "UGF", "relation": "ambiguous"},
+    {"source": "VB1 (PMOS bias)", "target": "Power", "relation": "directly-proportional"},
+
+    {"source": "R1", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "R1", "target": "UGF", "relation": "inversely-proportional"},
+    {"source": "R1", "target": "Power", "relation": "inversely-proportional"},
+
+    {"source": "W_M9", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "W_M9", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M9", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M9", "target": "UGF", "relation": "inversely-proportional"},
+
+    {"source": "L_M7", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M7", "target": "UGF", "relation": "inversely-proportional"}
+  ]
+}

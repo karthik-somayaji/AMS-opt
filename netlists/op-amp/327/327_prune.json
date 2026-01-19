@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0 (VOUT1 VSS) capacitor",
+    "reason": "This is an output load/compensation capacitor that mainly shapes AC response (bandwidth/phase margin) and is not required for the core DC signal path to exist. Caveat: removing it can increase ringing/noise and change stability/settling.",
+    "impact_estimate": "Low for DC functionality; moderate for AC/stability"
+  },
+  {
+    "component": "C2 (VOUT2 VSS) capacitor",
+    "reason": "Same role as C0 on the other output: primarily AC filtering/compensation rather than essential biasing. Caveat: bandwidth and transient response of VOUT2 may change significantly.",
+    "impact_estimate": "Low for DC functionality; moderate for AC/stability"
+  },
+  {
+    "component": "M5 (net032 VIN2 IB2 VSS) nmos4",
+    "reason": "M5 is a VIN2-controlled NMOS tied to a separate bias (IB2) creating an auxiliary branch at net032; the main VIN2-to-output action can still occur through M4 and the PMOS load network. Caveat: removing it alters internal node net032 behavior (gain, symmetry, and bias currents), so performance/matching may degrade even if basic operation remains.",
+    "impact_estimate": "Low-to-moderate (function remains; gain/offset/matching may change)"
+  }
+]

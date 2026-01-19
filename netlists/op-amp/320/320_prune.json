@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M1 (net042 net040 VSS VSS) nmos4",
+    "reason": "M1 is a diode-connected/clamp NMOS tied to the internal node net042 via net040, likely used to bias/bleed or stabilize that node rather than form the core differential transconductor. Caveat: if net042 would otherwise float (startup/leakage), removing it can make the node less well-defined and increase offset/settling time.",
+    "impact_estimate": "Low (bias robustness/settling)"
+  },
+  {
+    "component": "M3 (net041 net040 VSS VSS) nmos4",
+    "reason": "M3 is the symmetric counterpart to M1 for net041, serving mainly as a weak clamp/diode path to ground via net040 rather than providing primary gain. Caveat: delete M1 and M3 together to preserve symmetry; removing only one can introduce systematic imbalance and output offset.",
+    "impact_estimate": "Low (symmetry and DC stabilization)"
+  },
+  {
+    "component": "M14 (net038 VB3 VDD VDD) pmos4",
+    "reason": "M14 looks like a PMOS bias/current-source device feeding the net038 branch; for basic differential operation you can often keep the active-load path through M6/M7 and remove the extra VB3 bias device if it’s only strengthening biasing. Caveat: if VB3 devices (M13/M14) are what actually set branch currents/headroom, removing M14 can significantly shift operating point; if you remove it, consider removing M13 as well and ensure VB2 path can still bias both branches.",
+    "impact_estimate": "Low-to-medium (depends on whether VB3 sets the branch current)"
+  }
+]

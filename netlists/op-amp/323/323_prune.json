@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0 (VOUT1 VSS) capacitor",
+    "reason": "C0 is a load/compensation capacitor on VOUT1 that mainly affects bandwidth and transient response; removing it usually preserves DC operation and basic differential amplification. Caveat: phase margin and high-frequency stability may degrade if this capacitor was intentional compensation.",
+    "impact_estimate": "Low for DC functionality; moderate for AC/stability behavior"
+  },
+  {
+    "component": "C1 (VOUT2 VSS) capacitor",
+    "reason": "C1 plays the same role as C0 on the VOUT2 branch and can be removed without breaking the core signal path. Caveat: removing only one of C0/C1 introduces asymmetry; if possible, remove both or ensure symmetry is otherwise maintained.",
+    "impact_estimate": "Low for DC functionality; moderate for AC/stability and symmetry"
+  },
+  {
+    "component": "M6 (net017 VB3 VDD VDD) pmos4",
+    "reason": "M6 is a VB3-biased PMOS that primarily sets the bias/current for the PMOS load M9; if net017 or the pull-up current is provided by an external bias source, M6 can be removed while preserving the main amplification path. Caveat: without an alternative bias, the VOUT1 pull-up current becomes undefined, shifting gain and output common-mode.",
+    "impact_estimate": "Low-to-moderate (bias and gain shift unless net017 is biased elsewhere)"
+  }
+]

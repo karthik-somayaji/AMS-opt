@@ -1,0 +1,88 @@
+{
+  "nodes": [
+    {"id": "Gain", "type": "performance"},
+    {"id": "CMRR", "type": "performance"},
+    {"id": "UGF", "type": "performance"},
+    {"id": "Power", "type": "performance"},
+
+    {"id": "M0-M2 PMOS input differential pair (pull-up transconductor)", "type": "substructure"},
+    {"id": "M4-M5 NMOS current sinks (VB1 biased loads)", "type": "substructure"},
+    {"id": "R0-R2 resistive loads (VDD to outputs)", "type": "substructure"},
+
+    {"id": "VB1 (NMOS bias)", "type": "parameter"},
+    {"id": "IB1", "type": "parameter"},
+    {"id": "IB2", "type": "parameter"},
+    {"id": "IB3 (tail/common node)", "type": "parameter"},
+    {"id": "R0", "type": "parameter"},
+    {"id": "R2", "type": "parameter"},
+
+    {"id": "W_M0", "type": "parameter"},
+    {"id": "L_M0", "type": "parameter"},
+    {"id": "W_M2", "type": "parameter"},
+    {"id": "L_M2", "type": "parameter"},
+    {"id": "W_M4", "type": "parameter"},
+    {"id": "L_M4", "type": "parameter"},
+    {"id": "W_M5", "type": "parameter"},
+    {"id": "L_M5", "type": "parameter"}
+  ],
+  "links": [
+    {"source": "Gain", "target": "UGF", "relation": "trade-off"},
+    {"source": "UGF", "target": "Power", "relation": "trade-off"},
+    {"source": "Gain", "target": "Power", "relation": "trade-off"},
+    {"source": "CMRR", "target": "Gain", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "UGF", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "Power", "relation": "ambiguous"},
+
+    {"source": "M0-M2 PMOS input differential pair (pull-up transconductor)", "target": "Gain", "relation": "influences"},
+    {"source": "M0-M2 PMOS input differential pair (pull-up transconductor)", "target": "CMRR", "relation": "influences"},
+    {"source": "M0-M2 PMOS input differential pair (pull-up transconductor)", "target": "UGF", "relation": "influences"},
+    {"source": "M0-M2 PMOS input differential pair (pull-up transconductor)", "target": "Power", "relation": "influences"},
+
+    {"source": "M4-M5 NMOS current sinks (VB1 biased loads)", "target": "Gain", "relation": "influences"},
+    {"source": "M4-M5 NMOS current sinks (VB1 biased loads)", "target": "UGF", "relation": "influences"},
+    {"source": "M4-M5 NMOS current sinks (VB1 biased loads)", "target": "Power", "relation": "influences"},
+    {"source": "M4-M5 NMOS current sinks (VB1 biased loads)", "target": "CMRR", "relation": "influences"},
+
+    {"source": "R0-R2 resistive loads (VDD to outputs)", "target": "Gain", "relation": "influences"},
+    {"source": "R0-R2 resistive loads (VDD to outputs)", "target": "UGF", "relation": "influences"},
+    {"source": "R0-R2 resistive loads (VDD to outputs)", "target": "Power", "relation": "influences"},
+
+    {"source": "W_M0", "target": "M0-M2 PMOS input differential pair (pull-up transconductor)", "relation": "belongs-to"},
+    {"source": "L_M0", "target": "M0-M2 PMOS input differential pair (pull-up transconductor)", "relation": "belongs-to"},
+    {"source": "W_M2", "target": "M0-M2 PMOS input differential pair (pull-up transconductor)", "relation": "belongs-to"},
+    {"source": "L_M2", "target": "M0-M2 PMOS input differential pair (pull-up transconductor)", "relation": "belongs-to"},
+
+    {"source": "W_M4", "target": "M4-M5 NMOS current sinks (VB1 biased loads)", "relation": "belongs-to"},
+    {"source": "L_M4", "target": "M4-M5 NMOS current sinks (VB1 biased loads)", "relation": "belongs-to"},
+    {"source": "W_M5", "target": "M4-M5 NMOS current sinks (VB1 biased loads)", "relation": "belongs-to"},
+    {"source": "L_M5", "target": "M4-M5 NMOS current sinks (VB1 biased loads)", "relation": "belongs-to"},
+
+    {"source": "R0", "target": "R0-R2 resistive loads (VDD to outputs)", "relation": "belongs-to"},
+    {"source": "R2", "target": "R0-R2 resistive loads (VDD to outputs)", "relation": "belongs-to"},
+
+    {"source": "VB1 (NMOS bias)", "target": "Power", "relation": "directly-proportional"},
+    {"source": "VB1 (NMOS bias)", "target": "Gain", "relation": "ambiguous"},
+    {"source": "VB1 (NMOS bias)", "target": "UGF", "relation": "ambiguous"},
+
+    {"source": "IB1", "target": "Power", "relation": "directly-proportional"},
+    {"source": "IB2", "target": "Power", "relation": "directly-proportional"},
+    {"source": "IB3 (tail/common node)", "target": "Power", "relation": "directly-proportional"},
+
+    {"source": "R0", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "R2", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "R0", "target": "UGF", "relation": "inversely-proportional"},
+    {"source": "R2", "target": "UGF", "relation": "inversely-proportional"},
+    {"source": "R0", "target": "Power", "relation": "inversely-proportional"},
+    {"source": "R2", "target": "Power", "relation": "inversely-proportional"},
+
+    {"source": "W_M0", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "W_M0", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M0", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M0", "target": "UGF", "relation": "inversely-proportional"},
+
+    {"source": "W_M4", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "W_M4", "target": "Power", "relation": "directly-proportional"},
+    {"source": "L_M4", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_M4", "target": "UGF", "relation": "inversely-proportional"}
+  ]
+}

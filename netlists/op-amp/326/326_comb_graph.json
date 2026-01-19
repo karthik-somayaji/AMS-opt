@@ -1,0 +1,849 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "M1-M3 NMOS input pair (VIN1 -> net027/net024, source=VSS)",
+      "type": "substructure"
+    },
+    {
+      "id": "M2-M0 NMOS input pair (VIN2 -> net03/net026, source=VSS)",
+      "type": "substructure"
+    },
+    {
+      "id": "M4-M5 PMOS current-mirror / active load (net027, net026)",
+      "type": "substructure"
+    },
+    {
+      "id": "M10-M11 PMOS current-mirror / active load (net03, net024)",
+      "type": "substructure"
+    },
+    {
+      "id": "C0 shunt/load capacitor (net026 to VSS)",
+      "type": "substructure"
+    },
+    {
+      "id": "C2 shunt/load capacitor (net024 to VSS)",
+      "type": "substructure"
+    },
+    {
+      "id": "C0",
+      "type": "parameter"
+    },
+    {
+      "id": "C2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M3",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M4",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M10",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M10",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M11",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M11",
+      "type": "parameter"
+    },
+    {
+      "id": "dev:M2",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M2:D",
+      "type": "terminal",
+      "device": "M2",
+      "role": "D"
+    },
+    {
+      "id": "term:M2:G",
+      "type": "terminal",
+      "device": "M2",
+      "role": "G"
+    },
+    {
+      "id": "term:M2:S",
+      "type": "terminal",
+      "device": "M2",
+      "role": "S"
+    },
+    {
+      "id": "net:net03",
+      "type": "net"
+    },
+    {
+      "id": "net:VIN2",
+      "type": "net"
+    },
+    {
+      "id": "net:VSS",
+      "type": "net"
+    },
+    {
+      "id": "dev:M0",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M0:D",
+      "type": "terminal",
+      "device": "M0",
+      "role": "D"
+    },
+    {
+      "id": "term:M0:G",
+      "type": "terminal",
+      "device": "M0",
+      "role": "G"
+    },
+    {
+      "id": "term:M0:S",
+      "type": "terminal",
+      "device": "M0",
+      "role": "S"
+    },
+    {
+      "id": "net:net026",
+      "type": "net"
+    },
+    {
+      "id": "dev:M1",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M1:D",
+      "type": "terminal",
+      "device": "M1",
+      "role": "D"
+    },
+    {
+      "id": "term:M1:G",
+      "type": "terminal",
+      "device": "M1",
+      "role": "G"
+    },
+    {
+      "id": "term:M1:S",
+      "type": "terminal",
+      "device": "M1",
+      "role": "S"
+    },
+    {
+      "id": "net:net027",
+      "type": "net"
+    },
+    {
+      "id": "net:VIN1",
+      "type": "net"
+    },
+    {
+      "id": "dev:M3",
+      "type": "device",
+      "device_type": "nmos4"
+    },
+    {
+      "id": "term:M3:D",
+      "type": "terminal",
+      "device": "M3",
+      "role": "D"
+    },
+    {
+      "id": "term:M3:G",
+      "type": "terminal",
+      "device": "M3",
+      "role": "G"
+    },
+    {
+      "id": "term:M3:S",
+      "type": "terminal",
+      "device": "M3",
+      "role": "S"
+    },
+    {
+      "id": "net:net024",
+      "type": "net"
+    },
+    {
+      "id": "dev:M5",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M5:D",
+      "type": "terminal",
+      "device": "M5",
+      "role": "D"
+    },
+    {
+      "id": "term:M5:G",
+      "type": "terminal",
+      "device": "M5",
+      "role": "G"
+    },
+    {
+      "id": "term:M5:S",
+      "type": "terminal",
+      "device": "M5",
+      "role": "S"
+    },
+    {
+      "id": "net:VDD",
+      "type": "net"
+    },
+    {
+      "id": "dev:M4",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M4:D",
+      "type": "terminal",
+      "device": "M4",
+      "role": "D"
+    },
+    {
+      "id": "term:M4:G",
+      "type": "terminal",
+      "device": "M4",
+      "role": "G"
+    },
+    {
+      "id": "term:M4:S",
+      "type": "terminal",
+      "device": "M4",
+      "role": "S"
+    },
+    {
+      "id": "dev:M11",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M11:D",
+      "type": "terminal",
+      "device": "M11",
+      "role": "D"
+    },
+    {
+      "id": "term:M11:G",
+      "type": "terminal",
+      "device": "M11",
+      "role": "G"
+    },
+    {
+      "id": "term:M11:S",
+      "type": "terminal",
+      "device": "M11",
+      "role": "S"
+    },
+    {
+      "id": "dev:M10",
+      "type": "device",
+      "device_type": "pmos4"
+    },
+    {
+      "id": "term:M10:D",
+      "type": "terminal",
+      "device": "M10",
+      "role": "D"
+    },
+    {
+      "id": "term:M10:G",
+      "type": "terminal",
+      "device": "M10",
+      "role": "G"
+    },
+    {
+      "id": "term:M10:S",
+      "type": "terminal",
+      "device": "M10",
+      "role": "S"
+    },
+    {
+      "id": "dev:C0",
+      "type": "device",
+      "device_type": "capacitor"
+    },
+    {
+      "id": "dev:C2",
+      "type": "device",
+      "device_type": "capacitor"
+    }
+  ],
+  "links": [
+    {
+      "source": "dev:M2",
+      "target": "term:M2:D"
+    },
+    {
+      "source": "dev:M2",
+      "target": "term:M2:G"
+    },
+    {
+      "source": "dev:M2",
+      "target": "term:M2:S"
+    },
+    {
+      "source": "term:M2:D",
+      "target": "net:net03"
+    },
+    {
+      "source": "term:M2:G",
+      "target": "net:VIN2"
+    },
+    {
+      "source": "term:M2:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:M0",
+      "target": "term:M0:D"
+    },
+    {
+      "source": "dev:M0",
+      "target": "term:M0:G"
+    },
+    {
+      "source": "dev:M0",
+      "target": "term:M0:S"
+    },
+    {
+      "source": "term:M0:D",
+      "target": "net:net026"
+    },
+    {
+      "source": "term:M0:G",
+      "target": "net:VIN2"
+    },
+    {
+      "source": "term:M0:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:M1",
+      "target": "term:M1:D"
+    },
+    {
+      "source": "dev:M1",
+      "target": "term:M1:G"
+    },
+    {
+      "source": "dev:M1",
+      "target": "term:M1:S"
+    },
+    {
+      "source": "term:M1:D",
+      "target": "net:net027"
+    },
+    {
+      "source": "term:M1:G",
+      "target": "net:VIN1"
+    },
+    {
+      "source": "term:M1:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:M3",
+      "target": "term:M3:D"
+    },
+    {
+      "source": "dev:M3",
+      "target": "term:M3:G"
+    },
+    {
+      "source": "dev:M3",
+      "target": "term:M3:S"
+    },
+    {
+      "source": "term:M3:D",
+      "target": "net:net024"
+    },
+    {
+      "source": "term:M3:G",
+      "target": "net:VIN1"
+    },
+    {
+      "source": "term:M3:S",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:M5",
+      "target": "term:M5:D"
+    },
+    {
+      "source": "dev:M5",
+      "target": "term:M5:G"
+    },
+    {
+      "source": "dev:M5",
+      "target": "term:M5:S"
+    },
+    {
+      "source": "term:M5:D",
+      "target": "net:net026"
+    },
+    {
+      "source": "term:M5:G",
+      "target": "net:net027"
+    },
+    {
+      "source": "term:M5:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:M4",
+      "target": "term:M4:D"
+    },
+    {
+      "source": "dev:M4",
+      "target": "term:M4:G"
+    },
+    {
+      "source": "dev:M4",
+      "target": "term:M4:S"
+    },
+    {
+      "source": "term:M4:D",
+      "target": "net:net027"
+    },
+    {
+      "source": "term:M4:G",
+      "target": "net:net027"
+    },
+    {
+      "source": "term:M4:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:M11",
+      "target": "term:M11:D"
+    },
+    {
+      "source": "dev:M11",
+      "target": "term:M11:G"
+    },
+    {
+      "source": "dev:M11",
+      "target": "term:M11:S"
+    },
+    {
+      "source": "term:M11:D",
+      "target": "net:net024"
+    },
+    {
+      "source": "term:M11:G",
+      "target": "net:net03"
+    },
+    {
+      "source": "term:M11:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:M10",
+      "target": "term:M10:D"
+    },
+    {
+      "source": "dev:M10",
+      "target": "term:M10:G"
+    },
+    {
+      "source": "dev:M10",
+      "target": "term:M10:S"
+    },
+    {
+      "source": "term:M10:D",
+      "target": "net:net03"
+    },
+    {
+      "source": "term:M10:G",
+      "target": "net:net03"
+    },
+    {
+      "source": "term:M10:S",
+      "target": "net:VDD"
+    },
+    {
+      "source": "dev:C0",
+      "target": "net:net026"
+    },
+    {
+      "source": "dev:C0",
+      "target": "net:VSS"
+    },
+    {
+      "source": "dev:C2",
+      "target": "net:net024"
+    },
+    {
+      "source": "dev:C2",
+      "target": "net:VSS"
+    },
+    {
+      "source": "Gain",
+      "target": "UGF",
+      "relation": "trade-off"
+    },
+    {
+      "source": "UGF",
+      "target": "Power",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Gain",
+      "target": "Power",
+      "relation": "trade-off"
+    },
+    {
+      "source": "CMRR",
+      "target": "Gain",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "UGF",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "CMRR",
+      "target": "Power",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "M1-M3 NMOS input pair (VIN1 -> net027/net024, source=VSS)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M1-M3 NMOS input pair (VIN1 -> net027/net024, source=VSS)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M1-M3 NMOS input pair (VIN1 -> net027/net024, source=VSS)",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M0 NMOS input pair (VIN2 -> net03/net026, source=VSS)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M0 NMOS input pair (VIN2 -> net03/net026, source=VSS)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M2-M0 NMOS input pair (VIN2 -> net03/net026, source=VSS)",
+      "target": "CMRR",
+      "relation": "influences"
+    },
+    {
+      "source": "M4-M5 PMOS current-mirror / active load (net027, net026)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M4-M5 PMOS current-mirror / active load (net027, net026)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M4-M5 PMOS current-mirror / active load (net027, net026)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "M10-M11 PMOS current-mirror / active load (net03, net024)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "M10-M11 PMOS current-mirror / active load (net03, net024)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "M10-M11 PMOS current-mirror / active load (net03, net024)",
+      "target": "Power",
+      "relation": "influences"
+    },
+    {
+      "source": "C0 shunt/load capacitor (net026 to VSS)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "C0 shunt/load capacitor (net026 to VSS)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "C2 shunt/load capacitor (net024 to VSS)",
+      "target": "UGF",
+      "relation": "influences"
+    },
+    {
+      "source": "C2 shunt/load capacitor (net024 to VSS)",
+      "target": "Gain",
+      "relation": "influences"
+    },
+    {
+      "source": "W_M1",
+      "target": "M1-M3 NMOS input pair (VIN1 -> net027/net024, source=VSS)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M1",
+      "target": "M1-M3 NMOS input pair (VIN1 -> net027/net024, source=VSS)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M3",
+      "target": "M1-M3 NMOS input pair (VIN1 -> net027/net024, source=VSS)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M3",
+      "target": "M1-M3 NMOS input pair (VIN1 -> net027/net024, source=VSS)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M2",
+      "target": "M2-M0 NMOS input pair (VIN2 -> net03/net026, source=VSS)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M2",
+      "target": "M2-M0 NMOS input pair (VIN2 -> net03/net026, source=VSS)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M0",
+      "target": "M2-M0 NMOS input pair (VIN2 -> net03/net026, source=VSS)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M0",
+      "target": "M2-M0 NMOS input pair (VIN2 -> net03/net026, source=VSS)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M4",
+      "target": "M4-M5 PMOS current-mirror / active load (net027, net026)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M4",
+      "target": "M4-M5 PMOS current-mirror / active load (net027, net026)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M5",
+      "target": "M4-M5 PMOS current-mirror / active load (net027, net026)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M5",
+      "target": "M4-M5 PMOS current-mirror / active load (net027, net026)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M10",
+      "target": "M10-M11 PMOS current-mirror / active load (net03, net024)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M10",
+      "target": "M10-M11 PMOS current-mirror / active load (net03, net024)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M11",
+      "target": "M10-M11 PMOS current-mirror / active load (net03, net024)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M11",
+      "target": "M10-M11 PMOS current-mirror / active load (net03, net024)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "C0",
+      "target": "C0 shunt/load capacitor (net026 to VSS)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "C2",
+      "target": "C2 shunt/load capacitor (net024 to VSS)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "C0",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "C2",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M1",
+      "target": "UGF",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M1",
+      "target": "Gain",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M1",
+      "target": "UGF",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "dev:M2",
+      "target": "W_M2"
+    },
+    {
+      "source": "dev:M2",
+      "target": "L_M2"
+    },
+    {
+      "source": "dev:M0",
+      "target": "W_M0"
+    },
+    {
+      "source": "dev:M0",
+      "target": "L_M0"
+    },
+    {
+      "source": "dev:M1",
+      "target": "W_M1"
+    },
+    {
+      "source": "dev:M1",
+      "target": "L_M1"
+    },
+    {
+      "source": "dev:M3",
+      "target": "W_M3"
+    },
+    {
+      "source": "dev:M3",
+      "target": "L_M3"
+    },
+    {
+      "source": "dev:M5",
+      "target": "W_M5"
+    },
+    {
+      "source": "dev:M5",
+      "target": "L_M5"
+    },
+    {
+      "source": "dev:M4",
+      "target": "W_M4"
+    },
+    {
+      "source": "dev:M4",
+      "target": "L_M4"
+    },
+    {
+      "source": "dev:M11",
+      "target": "W_M11"
+    },
+    {
+      "source": "dev:M11",
+      "target": "L_M11"
+    },
+    {
+      "source": "dev:M10",
+      "target": "W_M10"
+    },
+    {
+      "source": "dev:M10",
+      "target": "L_M10"
+    }
+  ]
+}

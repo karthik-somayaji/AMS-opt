@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R0 (net5 VOUT1) resistor",
+    "reason": "R0 and R1 form a resistive link/coupling between VOUT1 and VOUT2 through net5; removing one of them typically just reduces that cross-coupling rather than destroying the core NMOS transconductor behavior. Caveat: if the R0–R1 network is intentionally providing common-mode feedback or output balancing, deleting it will degrade symmetry/CMRR and may shift output common-mode.",
+    "impact_estimate": "Low-to-medium (mainly affects output coupling/CM behavior)"
+  },
+  {
+    "component": "R1 (VOUT2 net5) resistor",
+    "reason": "Similarly, R1 is part of the same output-to-net5 coupling network; removing it breaks the resistive averaging node net5 while the two NMOS devices can still function as separate gain paths. Caveat: if net5 is required to set the PMOS gates to a stable bias (via averaging VOUT1/VOUT2), removing R1 can make net5 depend only on the remaining connection and change biasing.",
+    "impact_estimate": "Low-to-medium (affects net5 definition and output balance)"
+  },
+  {
+    "component": "M10 (VOUT1 net5 VDD VDD) pmos4",
+    "reason": "M10 is a PMOS load/pull-up for the VOUT1 branch; if you keep M11 and/or you have an external load/bias on VOUT1, the circuit can still operate conceptually as a differential pair with degraded gain/swing on that side. Caveat: without M10, VOUT1 may lose its active load, reducing gain substantially and potentially leaving VOUT1 unable to pull up, so this is only “safe” if another load exists.",
+    "impact_estimate": "Medium (keeps basic operation but degrades gain/swing on VOUT1)"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C2 (VOUT1 net017) capacitor",
+    "reason": "C2 is an AC/compensation (Miller-like) capacitor between the output and internal node net017; removing it usually keeps the DC amplification path intact. Caveat: it may reduce stability/phase margin and increase ringing or peaking in transient/AC response.",
+    "impact_estimate": "Low (mainly affects AC/stability)"
+  },
+  {
+    "component": "C1 (net017 VSS) capacitor",
+    "reason": "C1 is a shunt capacitor at net017 that mainly filters/high-frequency shapes that node; deleting it typically preserves the basic DC operating point and gain behavior. Caveat: net017 becomes noisier/faster, which can change bandwidth and potentially worsen stability depending on C2’s role.",
+    "impact_estimate": "Low (AC/noise shaping)"
+  },
+  {
+    "component": "M10 (net015 net015 VDD VDD) pmos4",
+    "reason": "M10 is a diode-connected PMOS likely used as a bias/helper load for node net015; the core amplification to VOUT1 can still be provided by M11 with M1/M3. Caveat: removing M10 can shift the bias point at net015 and change gain/output swing because it may be setting current/voltage for the PMOS load network.",
+    "impact_estimate": "Low-to-medium (bias point and gain may shift)"
+  }
+]

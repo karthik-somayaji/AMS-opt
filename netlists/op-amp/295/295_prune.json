@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C1 (net013 VDD) capacitor",
+    "reason": "C1 is likely a compensation/filter capacitor on an internal input-conditioning node; removing it usually preserves the DC/small-signal signal path but reduces filtering/stability/noise suppression. Caveat: transient response and high-frequency behavior may worsen (more peaking/ringing, more sensitivity to VIN2 noise).",
+    "impact_estimate": "Low for DC/low-frequency functionality; moderate for stability/noise at higher frequency"
+  },
+  {
+    "component": "C0 (net014 VDD) capacitor",
+    "reason": "C0 mirrors C1 for the other input-conditioning node; deleting it generally keeps core operation but removes the intended AC filtering/compensation on net014. Caveat: common-mode rejection and HF stability may degrade if only one side retains its capacitor (mismatch).",
+    "impact_estimate": "Low for DC/low-frequency functionality; moderate for HF behavior and symmetry"
+  },
+  {
+    "component": "R1 (VIN2 net013) resistor",
+    "reason": "R1 appears to be part of an input RC/conditioning network (paired with C1); removing it often leaves the main differential core (M10/M11 driving the VB1/VB2 stages) intact, but changes the input impedance and the pole/zero placement. Caveat: net013 may float unless driven elsewhere, so either remove C1 too (or tie net013 to a defined node) to avoid an undefined internal node.",
+    "impact_estimate": "Low-to-moderate (core amplifier still works, but input filtering/impedance and stability can change)"
+  }
+]

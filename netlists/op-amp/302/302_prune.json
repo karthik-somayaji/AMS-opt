@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R0 (VDD VOUT1) resistor",
+    "reason": "R0 is a passive pull-up load to VDD; if the design already relies mainly on the active devices (M4/M0) to set the operating point, removing R0 often still leaves an amplifying path. Caveat: output bias and small-signal gain can change a lot (output may float or saturate) unless there is another load/feedback path.",
+    "impact_estimate": "Low-to-moderate (function can remain, but output DC level and gain may shift)"
+  },
+  {
+    "component": "M0 (IB1 net013 VDD VDD) pmos4",
+    "reason": "M0 looks like a PMOS current-source/bias device generating IB1 from net013; if IB1 is provided externally (ideal current source or bias network), M0 can be removed without breaking the amplifier’s signal path. Caveat: if IB1 depends on this device, deleting it will collapse the bias and the circuit won’t operate.",
+    "impact_estimate": "Low (only if IB1 is supplied elsewhere); High otherwise"
+  },
+  {
+    "component": "M4 (VOUT1 IB1 net013 VSS) nmos4",
+    "reason": "M4 is a second NMOS stage device controlled by IB1; in many minimal topologies you can remove this extra gain/level-shift element and still have a basic transistor-level inverter-like gain from VIN1 through M1 with an output load. Caveat: removing M4 reduces gain/output swing and may eliminate the intended transconductance stage if VOUT1 is meant to be taken specifically at M4’s drain.",
+    "impact_estimate": "Moderate (keeps a weak functional path but noticeably reduces gain/robustness)"
+  }
+]

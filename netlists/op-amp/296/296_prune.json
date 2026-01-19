@@ -1,0 +1,17 @@
+[
+  {
+    "component": "M6 (net04 net04 net019 VDD) pmos4",
+    "reason": "M6 looks like a diode-connected/feedback PMOS that mainly sets the DC bias at net04 and improves output resistance; removing it can still leave a signal path through M7 to VOUT1 but with a less well-defined bias on net04. Caveat: if net04 is left floating, you may need to tie it to a fixed bias (or keep M6) to avoid unpredictable operating points.",
+    "impact_estimate": "Low-to-moderate (bias robustness and gain degrade; core can still conduct if net04 is otherwise defined)"
+  },
+  {
+    "component": "M9 (net017 net019 VDD VDD) pmos4",
+    "reason": "M9 appears to be part of a PMOS current-mirror/bias chain feeding net017; removing it often preserves the NMOS input devices but reduces or eliminates the intended pull-up bias for the PMOS load (M7). Caveat: without M9, net017 may not source current correctly unless you provide an alternate bias/current source for net017/net019.",
+    "impact_estimate": "Low-to-moderate (mainly affects PMOS load biasing and output swing)"
+  },
+  {
+    "component": "M5 (VOUT1 VB1 net016 VSS) nmos4",
+    "reason": "M5 is an NMOS output-side device controlled by VB1; if your goal is to keep the differential input transconductor (M3/M1) and PMOS load path operational, you can drop this extra VB1-controlled device and still have a functioning (but different) amplifier core. Caveat: removing M5 changes the output stage behavior (gain/output impedance/common-mode range), so VOUT1 characteristics will shift noticeably even if the circuit still 'works'.",
+    "impact_estimate": "Moderate (functionality remains but output-stage performance and biasing change)"
+  }
+]
