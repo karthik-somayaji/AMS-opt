@@ -15,13 +15,19 @@
     "inputreferrednoise",
     "kickback noise",
     "kickbacknoise",
+    "line regulation",
+    "load regulation",
     "metastability",
     "output swing",
     "outputswing",
     "propagation delay",
     "psrr",
+    "quiescent current",
+    "quiscent current",
     "regenerationstrength",
+    "regulation error",
     "sensitivity",
-    "slew rate"
+    "slew rate",
+    "stability"
   ]
 }
