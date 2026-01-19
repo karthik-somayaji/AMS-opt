@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "net44 is only connected to C0 and R2, so removing R2 leaves net44 as a floating node that is otherwise unused by the amplifier core. In most sims/uses this node is just part of an optional output/load/compensation network rather than the differential amplifier itself.",
+    "impact_estimate": "Low (removes a bleed/load path for the C0 node; if you keep C0, consider also removing C0 or adding a different DC reference for net44 to avoid a floating node in SPICE)."
+  },
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "C0 connects the output to an auxiliary node (net44) that is not used anywhere else in the signal path, so it mainly provides optional frequency compensation or a test/load effect. Deleting it typically won’t break DC operation or basic amplification behavior.",
+    "impact_estimate": "Low-to-Moderate (AC stability/transient response may change if this capacitor was intended as compensation; if R2 is also removed, net44 disappears entirely)."
+  },
+  {
+    "component": "R1 (net38 VSS) resistor",
+    "reason": "R1 is part of an output-side resistor network (R0 from VOUT1 to net38 and R1 from net38 to VSS) that looks like an optional load/feedback/sense divider rather than a required bias for the transistor core. Removing R1 usually doesn’t prevent the amplifier core devices from biasing, though it does alter any intended output loading/division.",
+    "impact_estimate": "Moderate (changes the effective output loading and any divider/feedback behavior involving net38; if you remove R1, net38 may float unless R0 or other connections are adjusted)."
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "R2 only provides a DC reference/leak path for node net44, which is otherwise only connected through C0 to VOUT1. In many sims/implementations you can remove it if net44 is unused or you don’t care about net44’s absolute DC level.",
+    "impact_estimate": "Low; main amplifier behavior largely unchanged, but net44 may float (can cause convergence issues or undefined DC at net44 depending on simulator)."
+  },
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "C0 appears to be a compensation/filter or load capacitor between the output and an auxiliary node (net44) rather than a core biasing element. Removing it typically preserves DC gain/operating point and basic differential action, at the cost of altered transient/AC stability or bandwidth.",
+    "impact_estimate": "Low-to-moderate; DC operation mostly unaffected, but frequency response/phase margin and noise filtering can change."
+  },
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "R3 is an explicit output load/bleeder; deleting it removes a non-essential load so the stage still amplifies but into a lighter load. If another load exists downstream (or you only care about open-circuit gain), it can be omitted.",
+    "impact_estimate": "Low; increases output impedance and may shift output bias slightly under some conditions, but core differential amplification remains."
+  }
+]

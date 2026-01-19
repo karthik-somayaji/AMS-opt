@@ -1,0 +1,817 @@
+{
+  "nodes": [
+    {
+      "id": "Quiescent Current",
+      "type": "performance"
+    },
+    {
+      "id": "Line Regulation",
+      "type": "performance"
+    },
+    {
+      "id": "Load Regulation",
+      "type": "performance"
+    },
+    {
+      "id": "Regulation Error",
+      "type": "performance"
+    },
+    {
+      "id": "Stability",
+      "type": "performance"
+    },
+    {
+      "id": "Pass device (M0)",
+      "type": "substructure"
+    },
+    {
+      "id": "Error amplifier core (net16/net14 stage)",
+      "type": "substructure"
+    },
+    {
+      "id": "Error amplifier bias network (IB1/VB1/VB2/VB3/VB5 devices)",
+      "type": "substructure"
+    },
+    {
+      "id": "Reference input branch (VREF1 sensing path)",
+      "type": "substructure"
+    },
+    {
+      "id": "Feedback divider (R0-R1)",
+      "type": "substructure"
+    },
+    {
+      "id": "Output network (C0, R3, load node)",
+      "type": "substructure"
+    },
+    {
+      "id": "Compensation/ESR zero network (C0 with R3)",
+      "type": "substructure"
+    },
+    {
+      "id": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "type": "substructure"
+    },
+    {
+      "id": "Bias current sink/source core (MM13-MM15, MM14, RR0)",
+      "type": "substructure"
+    },
+    {
+      "id": "R0",
+      "type": "parameter"
+    },
+    {
+      "id": "R1",
+      "type": "parameter"
+    },
+    {
+      "id": "C0",
+      "type": "parameter"
+    },
+    {
+      "id": "R3",
+      "type": "parameter"
+    },
+    {
+      "id": "IB1",
+      "type": "parameter"
+    },
+    {
+      "id": "VB1",
+      "type": "parameter"
+    },
+    {
+      "id": "VB2",
+      "type": "parameter"
+    },
+    {
+      "id": "VB3",
+      "type": "parameter"
+    },
+    {
+      "id": "VB4",
+      "type": "parameter"
+    },
+    {
+      "id": "VB5",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M7",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M5",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M8",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M8",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_M6",
+      "type": "parameter"
+    },
+    {
+      "id": "L_M6",
+      "type": "parameter"
+    },
+    {
+      "id": "W_MM0",
+      "type": "parameter"
+    },
+    {
+      "id": "L_MM0",
+      "type": "parameter"
+    },
+    {
+      "id": "W_MM1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_MM1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_MM2",
+      "type": "parameter"
+    },
+    {
+      "id": "L_MM2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_MM3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_MM3",
+      "type": "parameter"
+    },
+    {
+      "id": "W_MM4",
+      "type": "parameter"
+    },
+    {
+      "id": "L_MM4",
+      "type": "parameter"
+    },
+    {
+      "id": "W_MM5",
+      "type": "parameter"
+    },
+    {
+      "id": "L_MM5",
+      "type": "parameter"
+    },
+    {
+      "id": "W_MM6",
+      "type": "parameter"
+    },
+    {
+      "id": "L_MM6",
+      "type": "parameter"
+    },
+    {
+      "id": "W_MM7",
+      "type": "parameter"
+    },
+    {
+      "id": "L_MM7",
+      "type": "parameter"
+    },
+    {
+      "id": "W_MM8",
+      "type": "parameter"
+    },
+    {
+      "id": "L_MM8",
+      "type": "parameter"
+    },
+    {
+      "id": "W_MM9",
+      "type": "parameter"
+    },
+    {
+      "id": "L_MM9",
+      "type": "parameter"
+    },
+    {
+      "id": "W_MM10",
+      "type": "parameter"
+    },
+    {
+      "id": "L_MM10",
+      "type": "parameter"
+    },
+    {
+      "id": "RR0",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Quiescent Current",
+      "target": "Line Regulation",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Quiescent Current",
+      "target": "Load Regulation",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Quiescent Current",
+      "target": "Regulation Error",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Quiescent Current",
+      "target": "Stability",
+      "relation": "trade-off"
+    },
+    {
+      "source": "Line Regulation",
+      "target": "Load Regulation",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "Line Regulation",
+      "target": "Regulation Error",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "Load Regulation",
+      "target": "Regulation Error",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "Line Regulation",
+      "target": "Stability",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "Load Regulation",
+      "target": "Stability",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "Regulation Error",
+      "target": "Stability",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "Pass device (M0)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Pass device (M0)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Pass device (M0)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Pass device (M0)",
+      "target": "Regulation Error",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier core (net16/net14 stage)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier core (net16/net14 stage)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier core (net16/net14 stage)",
+      "target": "Regulation Error",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier core (net16/net14 stage)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier core (net16/net14 stage)",
+      "target": "Quiescent Current",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier bias network (IB1/VB1/VB2/VB3/VB5 devices)",
+      "target": "Quiescent Current",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier bias network (IB1/VB1/VB2/VB3/VB5 devices)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier bias network (IB1/VB1/VB2/VB3/VB5 devices)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier bias network (IB1/VB1/VB2/VB3/VB5 devices)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Error amplifier bias network (IB1/VB1/VB2/VB3/VB5 devices)",
+      "target": "Regulation Error",
+      "relation": "influences"
+    },
+    {
+      "source": "Reference input branch (VREF1 sensing path)",
+      "target": "Regulation Error",
+      "relation": "influences"
+    },
+    {
+      "source": "Reference input branch (VREF1 sensing path)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Feedback divider (R0-R1)",
+      "target": "Regulation Error",
+      "relation": "influences"
+    },
+    {
+      "source": "Feedback divider (R0-R1)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Feedback divider (R0-R1)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Output network (C0, R3, load node)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Output network (C0, R3, load node)",
+      "target": "Load Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Compensation/ESR zero network (C0 with R3)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "target": "Line Regulation",
+      "relation": "influences"
+    },
+    {
+      "source": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "target": "Regulation Error",
+      "relation": "influences"
+    },
+    {
+      "source": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "target": "Quiescent Current",
+      "relation": "influences"
+    },
+    {
+      "source": "Bias current sink/source core (MM13-MM15, MM14, RR0)",
+      "target": "Quiescent Current",
+      "relation": "influences"
+    },
+    {
+      "source": "Bias current sink/source core (MM13-MM15, MM14, RR0)",
+      "target": "Stability",
+      "relation": "influences"
+    },
+    {
+      "source": "R0",
+      "target": "Feedback divider (R0-R1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R1",
+      "target": "Feedback divider (R0-R1)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "C0",
+      "target": "Output network (C0, R3, load node)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R3",
+      "target": "Output network (C0, R3, load node)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "C0",
+      "target": "Compensation/ESR zero network (C0 with R3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "R3",
+      "target": "Compensation/ESR zero network (C0 with R3)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IB1",
+      "target": "Error amplifier bias network (IB1/VB1/VB2/VB3/VB5 devices)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VB1",
+      "target": "Error amplifier bias network (IB1/VB1/VB2/VB3/VB5 devices)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VB2",
+      "target": "Error amplifier bias network (IB1/VB1/VB2/VB3/VB5 devices)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VB3",
+      "target": "Error amplifier bias network (IB1/VB1/VB2/VB3/VB5 devices)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VB5",
+      "target": "Error amplifier bias network (IB1/VB1/VB2/VB3/VB5 devices)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "VB4",
+      "target": "Bias current sink/source core (MM13-MM15, MM14, RR0)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "RR0",
+      "target": "Bias current sink/source core (MM13-MM15, MM14, RR0)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M0",
+      "target": "Pass device (M0)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M0",
+      "target": "Pass device (M0)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M7",
+      "target": "Error amplifier core (net16/net14 stage)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M7",
+      "target": "Error amplifier core (net16/net14 stage)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M5",
+      "target": "Error amplifier core (net16/net14 stage)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M5",
+      "target": "Error amplifier core (net16/net14 stage)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M8",
+      "target": "Error amplifier core (net16/net14 stage)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M8",
+      "target": "Error amplifier core (net16/net14 stage)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M2",
+      "target": "Error amplifier core (net16/net14 stage)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M2",
+      "target": "Error amplifier core (net16/net14 stage)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_M6",
+      "target": "Error amplifier core (net16/net14 stage)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_M6",
+      "target": "Error amplifier core (net16/net14 stage)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM0",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM0",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM1",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM1",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM2",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM2",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM3",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM3",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM4",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM4",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM5",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM5",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM6",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM6",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM7",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM7",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM8",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM8",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM9",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM9",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "W_MM10",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "L_MM10",
+      "target": "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "relation": "belongs-to"
+    },
+    {
+      "source": "IB1",
+      "target": "Quiescent Current",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Line Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Load Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Regulation Error",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "IB1",
+      "target": "Stability",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "W_M0",
+      "target": "Load Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "Line Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M0",
+      "target": "Stability",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "L_M0",
+      "target": "Stability",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M0",
+      "target": "Load Regulation",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "C0",
+      "target": "Stability",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "C0",
+      "target": "Load Regulation",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "R3",
+      "target": "Stability",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "R3",
+      "target": "Load Regulation",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "R0",
+      "target": "Regulation Error",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "R1",
+      "target": "Regulation Error",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "R0",
+      "target": "Line Regulation",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "R1",
+      "target": "Line Regulation",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "RR0",
+      "target": "Quiescent Current",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "RR0",
+      "target": "Stability",
+      "relation": "ambiguous"
+    },
+    {
+      "source": "W_M5",
+      "target": "Quiescent Current",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M5",
+      "target": "Regulation Error",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M5",
+      "target": "Line Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M5",
+      "target": "Regulation Error",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M5",
+      "target": "Line Regulation",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M7",
+      "target": "Quiescent Current",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "W_M7",
+      "target": "Regulation Error",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "W_M7",
+      "target": "Line Regulation",
+      "relation": "inversely-proportional"
+    },
+    {
+      "source": "L_M7",
+      "target": "Regulation Error",
+      "relation": "directly-proportional"
+    },
+    {
+      "source": "L_M7",
+      "target": "Line Regulation",
+      "relation": "directly-proportional"
+    }
+  ]
+}

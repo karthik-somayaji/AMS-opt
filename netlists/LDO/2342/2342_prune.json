@@ -1,0 +1,17 @@
+[
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "R2 only provides a DC reference/leak path for the auxiliary node net44, which is otherwise only connected to VOUT1 through C0. If you don’t care about net44’s DC operating point (e.g., it’s just an internal compensation/test node), removing R2 typically won’t alter the main differential amplifier biasing or signal path.",
+    "impact_estimate": "Low: usually no change to core gain/bias; caveat—net44 will float at DC and C0 becomes a purely AC coupling element, which can affect startup/operating-point convergence in some simulators."
+  },
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "C0 appears to be a compensation or bandwidth-shaping capacitor between the output (VOUT1) and an auxiliary node (net44). Removing it generally preserves the amplifier’s basic DC functionality and topology, but reduces/changes frequency compensation.",
+    "impact_estimate": "Low-to-Moderate: DC operation remains; caveat—AC stability/phase margin and transient response may degrade (possible ringing/oscillation depending on loading and loop gain)."
+  },
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "R3 is a shunt load/bleeder at the output; it is not required for the amplifier core to bias or amplify, and is often included to provide a defined load or help with DC operating point. If an external load exists (or the output can be left high-impedance), R3 can be removed with minimal impact on core behavior.",
+    "impact_estimate": "Low: core operation typically unchanged; caveat—output DC level may become more sensitive to leakage/capacitive loading, and operating-point convergence may be slightly less robust without a resistive path."
+  }
+]

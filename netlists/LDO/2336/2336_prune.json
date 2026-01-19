@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "This capacitor is most likely a compensation / load capacitor (often used with an RC to shape bandwidth or improve stability). Removing it usually leaves the DC and basic small-signal amplification behavior intact, but changes frequency response and phase margin.",
+    "impact_estimate": "Low impact on DC operation; medium impact on AC stability/bandwidth (possible ringing/oscillation depending on loading and loop gain)."
+  },
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "R2 appears to provide a DC reference/bleed path for the node net44 used only in the C0 branch; if C0 is removed, net44 becomes largely irrelevant to the amplifier core. With C0 present, R2 mainly sets the RC time constant and gives net44 a defined DC potential.",
+    "impact_estimate": "Very low impact if C0 is also deleted; otherwise low-to-medium impact (alters compensation pole/zero and may leave net44 floating at DC)."
+  },
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "R3 acts as an explicit load/bleeder on the output; many amplifier cores will still function without a dedicated shunt load. Removing it primarily changes output loading, DC operating point under very light loads, and measured gain/output swing under the assumed testbench.",
+    "impact_estimate": "Low impact on core functionality; medium impact on output biasing/loading assumptions (VOUT1 may float more and gain may increase slightly in simulation)."
+  }
+]

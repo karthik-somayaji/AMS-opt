@@ -1,0 +1,17 @@
+[
+  {
+    "component": "C0 (VOUT1 net44) capacitor",
+    "reason": "This capacitor is part of an output RC network (with R2/R3/R0/R1) typically used for frequency compensation, filtering, or test loading; the core differential amplifier action is still present without it. Removing it mainly affects AC stability/peaking and transient response rather than DC gain/biasing.",
+    "impact_estimate": "Low for DC/functional behavior; Medium for AC stability/bandwidth/transient response (possible ringing/peaking depending on load and feedback)."
+  },
+  {
+    "component": "R2 (net44 VSS) resistor",
+    "reason": "R2 provides a DC reference/bleed for node net44, which is only connected to VOUT1 through C0; if C0 is removed (or net44 is otherwise unused), net44 becomes irrelevant and R2 can be deleted without affecting the amplifier’s main signal path. Caveat: if you keep C0, removing R2 may leave net44 floating (bad for convergence and well-defined operating point).",
+    "impact_estimate": "Negligible if C0 is also removed or net44 is unused; otherwise Low–Medium due to floating-node/convergence issues."
+  },
+  {
+    "component": "R3 (VOUT1 VSS) resistor",
+    "reason": "R3 looks like an output load/bleeder to ground to define VOUT1’s DC level or emulate a measurement load; the amplifier can still operate without a dedicated load resistor if the next stage or testbench provides loading. Caveat: removing it increases output impedance/loading uncertainty and can change measured gain/operating point if no other DC path exists at VOUT1.",
+    "impact_estimate": "Low if VOUT1 is otherwise loaded/defined; Medium if VOUT1 would otherwise be floating in DC or if a specific load was required for biasing/measurement."
+  }
+]
