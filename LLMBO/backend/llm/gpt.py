@@ -16,12 +16,11 @@ from .utils import RateLimiter
 
 # Never hardcode API keys in source. Use environment variables.
 openai.api_key = os.environ.get("OPENAI_API_KEY")
-    def __init__(self,
+def __init__(self,
                  model="3.5",
                  seed=114514,
                  max_token=500,
-    # Expects OPENAI_API_KEY to be set in the environment.
-    openai.api_key = os.environ.get("OPENAI_API_KEY")
+    api_key = os.environ.get("OPENAI_API_KEY"),
                  n_gen=5,
                  debug_mode=False
                  ):
@@ -34,6 +33,7 @@ openai.api_key = os.environ.get("OPENAI_API_KEY")
         self.seed = seed
         self.max_token = max_token
         self.temperature = temperature
+        self.api_key = api_key
 
         if rate_limiter is None:
             self.rate_limiter = RateLimiter(max_tokens=60000, time_frame=60)
@@ -43,7 +43,7 @@ openai.api_key = os.environ.get("OPENAI_API_KEY")
 
         self.debug_mode = debug_mode
 
-    def request(self, prompt):
+def request(self, prompt):
         message = []
         message.append({"role": "system", "content": "You are an AI assistant that helps people find information."})
         message.append({"role": "user", "content": prompt})
