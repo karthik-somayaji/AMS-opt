@@ -1,0 +1,117 @@
+This is the two-stage differenial amplifier circuit that was optimized earlier. Its description is mentioned below.
+**Circuit Netlist** gives an HSPICE netlist of a two-stage differential amplifier.
+**Circuit Netlist**
+.GLOBAL vdd!
+
+.TEMP 25
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    MEASOUT=1
++    PARHIER=LOCAL
++    PSF=2
++	 OPFILE=1
+
+cload out 0 1e-11
+v_sup vdd! 0 DC=2
+vcm vcm 0 DC=1 AC=vacc
+vin vac 0 DC=0 AC=vacd
+e1 vip vcm vac 0 0.5
+e2 vin vcm 0 vac 0.5
+ib vdd! vb 5e-6
+
+xp1 node1 node1 vdd! vdd! pfet l=l1 w=w1
+xp2 out1 node1 vdd! vdd!  pfet l=l2 w=w2
+xn1 node1 vip node2 0     nfet l=l3 w=w3
+xn2 out1 vin node2 0      nfet l=l4 w=w4
+xnb vb vb 0 0             nfet l=l5 w=w5
+xnc node2 vb 0 0          nfet l=l6 w=w6
+xpo out out1 vdd! vdd!    pfet l=l7 w=w7
+xno out vb 0 0            nfet l=l8 w=w8
+cc out outm 'c1'
+rz outm out1 'r1'
+
+Below is a knowledge graph representation in natural language, of the relations between sub-circuit structures and circuit metrics of the two stage differential amplifier.
+
+CREATE
+(DifferentialPair:Component <name: "Differential Pair">),
+(CurrentMirrorTransistors:Component <name: "Current Mirror Transistors">),
+(ActiveLoadTransistors:Component <name: "Active Load Transistors">),
+(BiasTransistor:Component <name: "Bias Transistor">),
+(ResistorCapacitor:Component <name: "Resistor and Capacitor">),
+
+(W_L_Ratio:Parameter <name: "Width-to-Length Ratio">),
+(Transconductance:Parameter <name: "Transconductance">),
+(Mismatches:Parameter <name: "Mismatches">),
+(CommonModeRejectionRatio:Parameter <name: "Common Mode Rejection Ratio">),
+(Stability:Parameter <name: "Stability">),
+(OutputSwing:Parameter <name: "Output Swing">),
+(Gain:Parameter <name: "Gain">),
+(GainBandwidthProduct:Parameter <name: "Gain Bandwidth Product">),
+(PhaseMargin:Parameter <name: "Phase Margin">),
+(DCBiasing:Parameter <name: "DC Biasing">),
+(OutputImpedance:Parameter <name: "Output Impedance">),
+(FrequencyResponse:Parameter <name: "Frequency Response">),
+
+(DifferentialPair)-[:REQUIRES]->(W_L_Ratio),
+(DifferentialPair)-[:REQUIRES]->(Transconductance),
+(DifferentialPair)-[:REQUIRES]->(Mismatches),
+
+(CurrentMirrorTransistors)-[:REQUIRES]->(W_L_Ratio),
+(CurrentMirrorTransistors)-[:REQUIRES]->(CommonModeRejectionRatio),
+(CurrentMirrorTransistors)-[:REQUIRES]->(Stability),
+
+(ActiveLoadTransistors)-[:REQUIRES]->(W_L_Ratio),
+(ActiveLoadTransistors)-[:REQUIRES]->(Gain),
+(ActiveLoadTransistors)-[:REQUIRES]->(GainBandwidthProduct),
+(ActiveLoadTransistors)-[:REQUIRES]->(PhaseMargin),
+
+(BiasTransistor)-[:REQUIRES]->(DCBiasing),
+(BiasTransistor)-[:REQUIRES]->(W_L_Ratio),
+
+(ResistorCapacitor)-[:REQUIRES]->(OutputImpedance),
+(ResistorCapacitor)-[:REQUIRES]->(FrequencyResponse)
+
+Here are some circuit sub-structures.
+1. Differential Pair: (xn1 and xn2)
+2. Current Mirror Transistors: (xnb and xnc)
+3. Active Load Transistors: (xp1, xp2, xpo, xno)
+4. Bias Transistors: (xnb)
+
+
+cypher
+CREATE (DifferentialPair:Component <name: "Differential Pair">)
+CREATE (CurrentMirror:Component <name: "Current Mirror">)
+CREATE (BiasCircuit:Component <name: "Bias Circuit">)
+CREATE (ActiveLoad:Component <name: "Active Load">)
+CREATE (CouplingCapacitor:Component <name: "Coupling Capacitor">)
+CREATE (Resistance:Component <name: "Resistance">)
+
+CREATE (Transconductance:Output <name: "Transconductance">)
+CREATE (OutputConductance:Output <name: "Output Conductance">)
+
+CREATE (Gain:PerformanceMetric <name: "Gain">)
+CREATE (GBW:PerformanceMetric <name: "Gain Bandwidth Product">)
+CREATE (CMRR:PerformanceMetric <name: "Common-Mode Rejection Ratio">)
+CREATE (PM:PerformanceMetric <name: "Phase Margin">);
+
+      
+CREATE (DifferentialPair)-[:HAS_OUTPUT]->(Transconductance),
+       (DifferentialPair)-[:HAS_OUTPUT]->(OutputConductance),
+       (DifferentialPair)-[:OPTIMIZES]->(Gain),
+       (DifferentialPair)-[:OPTIMIZES]->(CMRR),
+       (DifferentialPair)-[:OPTIMIZES]->(PM),
+       
+CREATE (CurrentMirror)-[:HAS_OUTPUT]->(Transconductance),
+       (CurrentMirror)-[:OPTIMIZES]->(CMRR),
+       
+CREATE (BiasCircuit)-[:OPTIMIZES]->(PM),
+       
+CREATE (ActiveLoad)-[:HAS_OUTPUT]->(OutputConductance),
+       (ActiveLoad)-[:OPTIMIZES]->(Gain),
+       (ActiveLoad)-[:OPTIMIZES]->(GBW),
+       
+CREATE (CouplingCapacitor)-[:AFFECTS]->(Gain),
+
+CREATE (Resistance)-[:AFFECTS]->(Gain),
+       (Resistance)-[:AFFECTS]->(GBW);

@@ -1,0 +1,250 @@
+P-Graph:
+(Performance metrics: quiescent current (iq1), stability, output voltage difference)
+(Performance metrics: quiescent current (iq1), stability, output voltage difference)
+(quiescent current (iq1), trade-off, stability)
+(quiescent current (iq1), trade-off, stability)
+(stability, trade-off, output voltage difference)
+(Performance metrics: Quiescent Current, Stability, Output Voltage Difference) :
+(Quiescent Current, trade-off, Stability) :
+
+P-S-Graph:
+(differential pair, influences, quiescent current (iq1))
+(differential pair, influences, stability)
+(differential pair, influences, output voltage difference)
+(load stage, influences, quiescent current (iq1))
+(load stage, influences, output voltage difference)
+(biasing network, influences, quiescent current (iq1))
+(biasing network, influences, stability)
+(feedback network, influences, output voltage difference)
+(feedback network, influences, stability)
+(M1, influences, Quiescent Current) :
+(M2, influences, Quiescent Current) :
+(M3, influences, Stability) :
+(M4, influences, Stability) :
+(M5, influences, Stability) :
+(M6, influences, Stability) :
+(M7, influences, Stability) :
+(M8, influences, Stability) :
+(M9, influences, Stability) :
+(M10, influences, Stability) :
+(M11, influences, Stability) :
+(M12, influences, Output Voltage Difference) :
+(M13, influences, Output Voltage Difference) :
+(M14, influences, Quiescent Current) :
+(M15, influences, Quiescent Current) :
+(M16, influences, Quiescent Current) :
+(M17, influences, Quiescent Current) :
+(M18, influences, Quiescent Current) :
+(M19, influences, Quiescent Current) :
+(M20, influences, Quiescent Current) :
+(Sub-structures: Differential Pair, Load Stage, Biasing Network)
+(Differential Pair, influences, quiescent current (iq1))
+(Differential Pair, influences, stability)
+(Differential Pair, influences, output voltage difference)
+(Load Stage, influences, quiescent current (iq1))
+(Load Stage, influences, stability)
+(Load Stage, influences, output voltage difference)
+(Biasing Network, influences, quiescent current (iq1))
+(Biasing Network, influences, stability)
+(Biasing Network, influences, output voltage difference)
+
+P-S-X-Graph:
+(l1, belongs_to, differential pair)
+(w1, belongs_to, differential pair)
+(l2, belongs_to, differential pair)
+(w2, belongs_to, differential pair)
+(l3, belongs_to, load stage)
+(w3, belongs_to, load stage)
+(l4, belongs_to, load stage)
+(l4, increasing_design_paramteter_decreases_performance_metric, output voltage difference)
+(w4, belongs_to, load stage)
+(w4, increasing_design_paramteter_increases_performance_metric, output voltage difference)
+(w4, increasing_design_paramteter_increases_performance_metric, output voltage difference)
+(l5, belongs_to, biasing network)
+(l5, increasing_design_paramteter_decreases_performance_metric, stability)
+(w5, belongs_to, biasing network)
+(l6, belongs_to, feedback network)
+(l6, increasing_design_paramteter_decreases_performance_metric, output voltage difference)
+(l6, increasing_design_paramteter_decreases_performance_metric, stability)
+(w6, belongs_to, feedback network)
+(w6, increasing_design_paramteter_increases_performance_metric, stability)
+(l7, belongs_to, differential pair)
+(w7, belongs_to, differential pair)
+(w7, increasing_design_paramteter_increases_performance_metric, stability)
+(l8, belongs_to, differential pair)
+(l8, increasing_design_paramteter_decreases_performance_metric, stability)
+(w8, belongs_to, differential pair)
+(l9, belongs_to, differential pair)
+(l9, increasing_design_paramteter_decreases_performance_metric, stability)
+(w9, belongs_to, differential pair)
+(w9, increasing_design_paramteter_increases_performance_metric, stability)
+(l10, belongs_to, differential pair)
+(w10, belongs_to, differential pair)
+(w10, increasing_design_paramteter_increases_performance_metric, stability)
+(l11, belongs_to, load stage)
+(w11, belongs_to, load stage)
+(w11, increasing_design_paramteter_increases_performance_metric, output voltage difference)
+(l12, belongs_to, load stage)
+(l12, increasing_design_paramteter_decreases_performance_metric, output voltage difference)
+(w12, belongs_to, load stage)
+(l13, belongs_to, biasing network)
+(w13, belongs_to, biasing network)
+(w13, increasing_design_paramteter_increases_performance_metric, stability)
+(l14, belongs_to, feedback network)
+(l14, increasing_design_paramteter_decreases_performance_metric, stability)
+(w14, belongs_to, feedback network)
+(w14, increasing_design_paramteter_increases_performance_metric, output voltage difference)
+(l15, belongs_to, differential pair)
+(l15, increasing_design_paramteter_decreases_performance_metric, stability)
+(w15, belongs_to, differential pair)
+(w15, increasing_design_paramteter_increases_performance_metric, stability)
+(l16, belongs_to, differential pair)
+(w16, belongs_to, differential pair)
+(w16, increasing_design_paramteter_increases_performance_metric, stability)
+(l17, belongs_to, load stage)
+(w17, belongs_to, load stage)
+(w17, increasing_design_paramteter_increases_performance_metric, output voltage difference)
+(l18, belongs_to, load stage)
+(l18, increasing_design_paramteter_decreases_performance_metric, output voltage difference)
+(w18, belongs_to, load stage)
+(l19, belongs_to, biasing network)
+(w19, belongs_to, biasing network)
+(w19, increasing_design_paramteter_increases_performance_metric, stability)
+(l20, belongs_to, feedback network)
+(l20, increasing_design_paramteter_decreases_performance_metric, stability)
+(w20, belongs_to, feedback network)
+(w20, increasing_design_paramteter_increases_performance_metric, output voltage difference)
+(l1, belongs_to, M3) :
+(l2, belongs_to, M4) :
+(l3, belongs_to, M5) :
+(l4, belongs_to, M6) :
+(l5, belongs_to, M7) :
+(l6, belongs_to, M8) :
+(l7, belongs_to, M9) :
+(l8, belongs_to, M10) :
+(l9, belongs_to, M11) :
+(l10, belongs_to, M12) :
+(l11, belongs_to, M13) :
+(l12, belongs_to, M14) :
+(l13, belongs_to, M15) :
+(l14, belongs_to, M16) :
+(l15, belongs_to, M17) :
+(l16, belongs_to, M18) :
+(l17, belongs_to, M19) :
+(l18, belongs_to, M20) :
+(l19, belongs_to, M12) :
+(l20, belongs_to, M13) :
+(w1, belongs_to, M3) :
+(w2, belongs_to, M4) :
+(w3, belongs_to, M5) :
+(w4, belongs_to, M6) :
+(w5, belongs_to, M7) :
+(w6, belongs_to, M8) :
+(w7, belongs_to, M9) :
+(w8, belongs_to, M10) :
+(w9, belongs_to, M11) :
+(w10, belongs_to, M12) :
+(w11, belongs_to, M13) :
+(w12, belongs_to, M14) :
+(w13, belongs_to, M15) :
+(w14, belongs_to, M16) :
+(w15, belongs_to, M17) :
+(w16, belongs_to, M18) :
+(w17, belongs_to, M19) :
+(w18, belongs_to, M20) :
+(w19, belongs_to, M12) :
+(w20, belongs_to, M13) :
+(l3, increasing_design_paramteter_increases_performance_metric, Stability) :
+(w3, increasing_design_paramteter_increases_performance_metric, Stability) :
+(l4, increasing_design_paramteter_increases_performance_metric, Stability) :
+(w4, increasing_design_paramteter_increases_performance_metric, Stability) :
+(l5, increasing_design_paramteter_increases_performance_metric, Stability) :
+(w5, increasing_design_paramteter_increases_performance_metric, Stability) :
+(l6, increasing_design_paramteter_increases_performance_metric, Stability) :
+(w6, increasing_design_paramteter_increases_performance_metric, Stability) :
+(l7, increasing_design_paramteter_increases_performance_metric, Stability) :
+(w7, increasing_design_paramteter_increases_performance_metric, Stability) :
+(l8, increasing_design_paramteter_increases_performance_metric, Stability) :
+(w8, increasing_design_paramteter_increases_performance_metric, Stability) :
+(l9, increasing_design_paramteter_increases_performance_metric, Stability) :
+(w9, increasing_design_paramteter_increases_performance_metric, Stability) :
+(l10, increasing_design_paramteter_increases_performance_metric, Stability) :
+(w10, increasing_design_paramteter_increases_performance_metric, Stability) :
+(l11, increasing_design_paramteter_increases_performance_metric, Stability) :
+(w11, increasing_design_paramteter_increases_performance_metric, Stability) :
+(l1, belongs_to, Differential Pair)
+(w1, belongs_to, Differential Pair)
+(l2, belongs_to, Differential Pair)
+(w2, belongs_to, Differential Pair)
+(l3, belongs_to, Differential Pair)
+(w3, belongs_to, Differential Pair)
+(l4, belongs_to, Differential Pair)
+(w4, belongs_to, Differential Pair)
+(l5, belongs_to, Load Stage)
+(w5, belongs_to, Load Stage)
+(l6, belongs_to, Load Stage)
+(w6, belongs_to, Load Stage)
+(l7, belongs_to, Load Stage)
+(w7, belongs_to, Load Stage)
+(l8, belongs_to, Biasing Network)
+(w8, belongs_to, Biasing Network)
+(l9, belongs_to, Biasing Network)
+(w9, belongs_to, Biasing Network)
+(l10, belongs_to, Biasing Network)
+(w10, belongs_to, Biasing Network)
+(l11, belongs_to, Biasing Network)
+(w11, belongs_to, Biasing Network)
+(l12, belongs_to, Biasing Network)
+(w12, belongs_to, Biasing Network)
+(l13, belongs_to, Biasing Network)
+(w13, belongs_to, Biasing Network)
+(l14, belongs_to, Biasing Network)
+(w14, belongs_to, Biasing Network)
+(l15, belongs_to, Biasing Network)
+(w15, belongs_to, Biasing Network)
+(l16, belongs_to, Biasing Network)
+(w16, belongs_to, Biasing Network)
+(l17, belongs_to, Biasing Network)
+(w17, belongs_to, Biasing Network)
+(l18, belongs_to, Biasing Network)
+(w18, belongs_to, Biasing Network)
+(l19, belongs_to, Biasing Network)
+(w19, belongs_to, Biasing Network)
+(l20, belongs_to, Biasing Network)
+(w20, belongs_to, Biasing Network)
+(l1, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(w1, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(w1, increasing_design_paramteter_increases_performance_metric, output voltage difference)
+(l2, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(w2, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(w2, increasing_design_paramteter_increases_performance_metric, output voltage difference)
+(l3, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(l3, increasing_design_paramteter_decreases_performance_metric, stability)
+(w3, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(w3, increasing_design_paramteter_increases_performance_metric, output voltage difference)
+(l4, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(l4, increasing_design_paramteter_decreases_performance_metric, stability)
+(w4, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(l5, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(w5, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(w5, increasing_design_paramteter_increases_performance_metric, output voltage difference)
+(l6, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(w6, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(w6, increasing_design_paramteter_increases_performance_metric, output voltage difference)
+(l7, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(l7, increasing_design_paramteter_decreases_performance_metric, stability)
+(w7, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(l8, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(w8, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(l9, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(w9, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(l10, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(w10, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(l11, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(l11, increasing_design_paramteter_decreases_performance_metric, stability)
+(w11, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(w11, increasing_design_paramteter_decreases_performance_metric, stability)
+(l12, increasing_design_paramteter_increases_performance_metric, quiescent current (iq1))
+(l12, increasing_design_paramteter_decreases_performance_metric, stability)
+(w12, increasing_design_paramteter_increases_performance_metric,
+

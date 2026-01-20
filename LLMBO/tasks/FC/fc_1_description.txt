@@ -1,0 +1,54 @@
+You are an analog circuit design expert. **Circuit Netlist** gives an HSPICE netlist of a folded cascode amplifier.
+You need to optimize the size of these parameters: [l1, w1, l2, w2, l3, w3, l4, w4, l5, w5, l6, w6, l7, w7, l8, w8, l9, w9, l10, w10, l11, w11, l12, w12, l13, w13, l14, w14, l15, w15, r1, r2] to achieve the desired performance on the following metrics:
+gain: >60 dB, Common-Mode Rejection Ratio (cmrr): >80 dB, Gain Bandwidth Product (gbw): >1 MHz, Phase Margin (pm): >=45 degree.
+**Examples** gives demonstration of existing parameter settings and the simulated metrics from HSPICE.
+Based on the netlist and demonstrations, explain how you can adjust the sizing of parameters to achieve the desired specifications.
+Then propose a different set of parameters in the format of params in **Examples**.
+You must not add any comments beyond the recommendation.
+
+** Circuit Netlist
+.GLOBAL vdd!
+
+.TEMP 25
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    MEASOUT=1
++    PARHIER=LOCAL
++    PSF=2
++	 OPFILE=1
+
+cload out 0 1e-11
+v_sup vdd! 0 DC=2
+vcm vcm 0 DC=1 AC=vacc
+vin vac 0 DC=0 AC=vacd
+e1 vip vcm vac 0 0.5
+e2 vin vcm 0 vac 0.5
+ib vdd! 4 5e-6
+
+* Bias transistors
+x15 4 4 0 0 nfet        l=l15     w=w15
+x12 9 4 0 0 nfet        l=l12     w=w12
+x13 7 9 14 vdd! pfet    l=l13     w=w13
+x14 14 7 vdd! vdd! pfet l=l14     w=w14
+R1 7 9 r1
+
+* Folded Cascode transistors
+x1 5 vip 3 0 nfet       l=l1     w=w1
+x2 6 vin 3 0 nfet       l=l2     w=w2
+x3 3 4 0 0 nfet         l=l3     w=w3
+x4 5 7 vdd! vdd! pfet   l=l4     w=w4
+x5 6 7 vdd! vdd! pfet   l=l5     w=w5
+x6 8 9 5 vdd! pfet      l=l6     w=w6
+x7 out 9 6 vdd! pfet    l=l7     w=w7
+R2 8 11 r2
+x8 11 8 12 0 nfet       l=l8     w=w8
+x9 out 8 13 0 nfet      l=l9     w=w9
+x10 12 11 0 0 nfet      l=l10     w=w10
+x11 13 11 0 0 nfet      l=l11     w=w11
+
+
+Transistors x15 and x3 form the current mirror
+Transistors x4 and x5 form an active load
+Transistors x1 and x2 form the input pair
+Transistors x6 and x7 are cascode transistors

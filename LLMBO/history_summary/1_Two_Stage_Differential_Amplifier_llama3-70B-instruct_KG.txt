@@ -1,0 +1,54 @@
+P-Graph:
+(Performance metrics: Gain, CMRR, GBW, PM) : 
+(Gain, trade-off, CMRR) : 
+(Gain, trade-off, GBW) : 
+(Gain, direct relationship, PM) : 
+(CMRR, trade-off, GBW) : 
+(CMRR, mild influence, PM) : 
+(GBW, mild influence, PM) :
+
+P-S-Graph:
+(Sub-structures: Differential Pair, Current Mirror, Load Stage) : 
+(Differential Pair, influences, Gain) : 
+(Differential Pair, influences, CMRR) : 
+(Current Mirror, influences, GBW) : 
+(Load Stage, influences, PM) : 
+
+P-S-X-Graph:
+(Design Parameters: l1, w1, l2, w2, l3, w3, l4, w4, l5, w5, l6, w6, l7, w7, l8, w8, r1, c1) : 
+(l1, belongs_to, Differential Pair) : 
+(w1, belongs_to, Differential Pair) : 
+(l2, belongs_to, Differential Pair) : 
+(w2, belongs_to, Differential Pair) : 
+(l3, belongs_to, Current Mirror) : 
+(w3, belongs_to, Current Mirror) : 
+(l4, belongs_to, Current Mirror) : 
+(w4, belongs_to, Current Mirror) : 
+(l5, belongs_to, Load Stage) : 
+(w5, belongs_to, Load Stage) : 
+(l6, belongs_to, Load Stage) : 
+(w6, belongs_to, Load Stage) : 
+(l7, belongs_to, Load Stage) : 
+(w7, belongs_to, Load Stage) : 
+(l8, belongs_to, Load Stage) : 
+(w8, belongs_to, Load Stage) : 
+(r1, belongs_to, Load Stage) : 
+(c1, belongs_to, Load Stage) : 
+(l1, increasing_design_paramteter_increases_performance_metric, Gain) : 
+(w1, increasing_design_paramteter_decreases_performance_metric, GBW) : 
+(l2, increasing_design_paramteter_increases_performance_metric, CMRR) : 
+(w2, increasing_design_paramteter_decreases_performance_metric, PM) : 
+(l3, increasing_design_paramteter_increases_performance_metric, GBW) : 
+(w3, increasing_design_paramteter_decreases_performance_metric, Gain) : 
+(l4, increasing_design_paramteter_increases_performance_metric, CMRR) : 
+(w4, increasing_design_paramteter_decreases_performance_metric, PM) : 
+(l5, increasing_design_paramteter_increases_performance_metric, PM) : 
+(w5, increasing_design_paramteter_decreases_performance_metric, GBW) : 
+(l6, increasing_design_paramteter_increases_performance_metric, Gain) : 
+(w6, increasing_design_paramteter_decreases_performance_metric, CMRR) : 
+(l7, increasing_design_paramteter_increases_performance_metric, GBW) : 
+(w7, increasing_design_paramteter_decreases_performance_metric, PM) : 
+(l8, increasing_design_paramteter_increases_performance_metric, CMRR) : 
+(w8, increasing_design_paramteter_decreases_performance_metric, Gain) : 
+(r1, increasing_design_paramteter_increases_performance_metric, GBW) : 
+(c1, increasing_design_paramteter_decreases_performance_metric, PM) :

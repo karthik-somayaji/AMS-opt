@@ -1,0 +1,96 @@
+ ****** PrimeSim HSPICE -- T-2022.06-SP1-1 linux64 (Sep 29 2022 7820202) ******
+  Copyright (c) 1986 - 2025 by Synopsys, Inc. All Rights Reserved.
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp                
+  Command line options: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+  Start time: Mon Apr 14 10:30:48 2025
+ lic:  
+ lic: FLEXlm: SDK_12.11.3 
+ lic: USER:   karthik              HOSTNAME: leibniz 
+ lic: HOSTID: 6f8013b9             PID:      1973452 
+ lic: Using FLEXlm license file: 
+ lic: 1781@license.ece.ucsb.edu 
+ lic: Checkout 1 hspice 
+ lic: License/Maintenance for hspice will expire on 18-apr-2026/2023.12 
+ lic: 8(in_use)/50(total) FLOATING license(s) on SERVER 1781@license.ece.ucsb.edu 
+ lic:   
+  **warning** (/home/karthik/IBM_PDK/HSPICE/skew.file:229) Parameter name is not defined in .param. Please enter parameter variable with their respective value/expression.
+  **warning** (/home/karthik/sim_clean/LLMBO/comp_ati_new/../tech/nfet_perfect.inc:345) Model nfet device geometries will not be checked against the limits set by lmin, lmax, wmin and wmax. To enable this check, add a period(.) to the model name(i.e. enable model selector).
+ scientific notation:
+ a=10**-18  f=10**-15  p=10**-12  n=10**-9  u=10**-6
+ m=10**-3   k=10**3    x=10**6    g=10**9 
+  **error** (/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp:29) Undefined parameter or function definition "l5" for xnb.l. Please enter a defined name.
+  **error** (/home/karthik/sim_clean/LLMBO/comp_ati_new/../tech/nfet_perfect.inc:114) Too few arguments in function call
+  **error** (/home/karthik/sim_clean/LLMBO/comp_ati_new/../tech/nfet_perfect.inc:114) Too few arguments in function call
+  **error** (/home/karthik/sim_clean/LLMBO/comp_ati_new/../tech/nfet_perfect.inc:114) Too few arguments in function call
+  **error** (/home/karthik/sim_clean/LLMBO/comp_ati_new/../tech/nfet_perfect.inc:114) Too few arguments in function call
+  **error** (/home/karthik/sim_clean/LLMBO/comp_ati_new/../tech/nfet_perfect.inc:114) Too few arguments in function call
+  **error** (/home/karthik/sim_clean/LLMBO/comp_ati_new/../tech/nfet_perfect.inc:114) Too few arguments in function call
+  **error** (/home/karthik/sim_clean/LLMBO/comp_ati_new/../tech/nfet_perfect.inc:114) Too few arguments in function call
+  **error** (/home/karthik/sim_clean/LLMBO/comp_ati_new/../tech/nfet_perfect.inc:114) Too few arguments in function call
+  **error** (/home/karthik/sim_clean/LLMBO/comp_ati_new/../tech/nfet_perfect.inc:114) Too few arguments in function call
+  **error** (/home/karthik/sim_clean/LLMBO/comp_ati_new/../tech/nfet_perfect.inc:114) Too few arguments in function call
+  **warning** multiple output options specified, using post
+
+          ***** job aborted
+1****** PrimeSim HSPICE -- T-2022.06-SP1-1 linux64 (Sep 29 2022 7820202) ******
+ ******  
+ ** comparator
+
+ ****** job statistics summary tnom=  25.000 temp=  25.000 ******
+  
+ ******  Machine Information  ******
+ CPU:
+ model name	: Intel(R) Xeon(R) Gold 6326 CPU @ 2.90GHz
+ cpu MHz	: 3500.000
+ CPU(s)		: 32
+  
+ OS:
+ Linux version 4.18.0-513.24.1.el8_9.x86_64 (mockbuild@x86-64-01.build.eng.rdu2.redhat.com) (gcc version 8.5.0 20210514 (Red Hat 8.5.0-20) (GCC)) #1 SMP Thu Mar 14 14:20:09 EDT 2024
+
+ System loadavg : 0.35 0.15 0.10 2/2090 1973455
+
+
+  ******  PrimeSim HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :    32
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =       0 # elements   =       8
+  # resistors   =       0 # capacitors =       1 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       2
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       3
+  # curr_srcs   =       1 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       1 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0 # N elements =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1           0
+  readin             0.03
+  errchk             0.00
+  setup              0.00
+  output             0.00
+
+
+           peak memory used        520.42 megabytes
+           total cpu time            0.06 seconds
+           total elapsed time        0.15 seconds
+           job started at     10:30:48 04/14/2025
+           job ended   at     10:30:48 04/14/2025
+           job total runtime         0.15 seconds
+
+
+ lic: Release hspice token(s) 
+ lic: total license checkout elapse time:        0.08(s)

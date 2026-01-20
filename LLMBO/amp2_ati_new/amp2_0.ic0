@@ -1,0 +1,24 @@
+* "simulator" "HSPICE" 
+* "version" "O-2018.09-SP2-1 linux64"
+* "format" "HSP"
+* "rundate" "12:22:41 03/20/2025 "
+* "netlist" "/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp "
+* "runtitle" "* sim"
+* time =  0.000000000e+00 
+* temperature =  2.500000000e+01 
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000000000e-12 
+.nodeset
++ node1 = 4.524632044e-01 
++ node2 = 4.462127030e-01 
++ out = 3.145455140e-01 
++ out1 = 1.994845550e+00 
++ outm = 1.994845550e+00 
++ vac = 0.000000000e+00 
++ vb = 3.949248213e-01 
++ vcm = 1.000000000e+00 
++ vdd! = 2.000000000e+00 
++ vin = 1.000000000e+00 
++ vip = 1.000000000e+00 
+***   END: Saved Operating Point ***                     

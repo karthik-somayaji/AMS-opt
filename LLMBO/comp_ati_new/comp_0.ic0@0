@@ -1,0 +1,24 @@
+* "simulator" "PrimeSim HSPICE"
+* "version" "T-2022.06-SP1-1 linux64"
+* "format" "HSP"
+* "rundate" "20:07:43 04/10/2025 "
+* "netlist" "/home/karthik/sim_clean/LLMBO/comp_ati_new/comp_0.sp "
+* "runtitle" "** comparator"
+* time =  0.000000000e+00 
+* temperature =  2.500000000e+01 
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000000000e-12 
+.nodeset
++ 1 = 1.999983266e+00 
++ 2 = 1.097651623e+00 
++ 3 = 1.095411788e+00 
++ 4 = 2.443741474e-01 
++ out = 1.999255504e+00 
++ vac =-2.000000000e+00 
++ vb = 3.179921240e-01 
++ vcm = 1.000000000e+00 
++ vdd! = 2.000000000e+00 
++ vin = 2.000000000e+00 
++ vip = 0.000000000e+00 
+***   END: Saved Operating Point ***                     

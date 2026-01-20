@@ -1,0 +1,55 @@
+This is the two-stage differenial amplifier circuit that was optimized earlier. Its description is mentioned below.
+**Circuit Netlist** gives an HSPICE netlist of a two-stage differential amplifier.
+**Circuit Netlist**
+.GLOBAL vdd!
+
+.TEMP 25
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    MEASOUT=1
++    PARHIER=LOCAL
++    PSF=2
++	 OPFILE=1
+
+cload out 0 1e-11
+v_sup vdd! 0 DC=2
+vcm vcm 0 DC=1 AC=vacc
+vin vac 0 DC=0 AC=vacd
+e1 vip vcm vac 0 0.5
+e2 vin vcm 0 vac 0.5
+ib vdd! vb 5e-6
+
+xp1 node1 node1 vdd! vdd! pfet l=l1 w=w1
+xp2 out1 node1 vdd! vdd!  pfet l=l2 w=w2
+xn1 node1 vip node2 0     nfet l=l3 w=w3
+xn2 out1 vin node2 0      nfet l=l4 w=w4
+xnb vb vb 0 0             nfet l=l5 w=w5
+xnc node2 vb 0 0          nfet l=l6 w=w6
+xpo out out1 vdd! vdd!    pfet l=l7 w=w7
+xno out vb 0 0            nfet l=l8 w=w8
+cc out outm 'c1'
+rz outm out1 'r1'
+
+Below is a knowledge graph representation in Neo4j code, of the relations between sub-circuit structures and circuit metrics of the two stage differential amplifier.
+
+CREATE
+  (gain:Metric <name: 'Gain'>),
+  (cmrr:Metric <name: 'CMRR'>),
+  (gbw:Metric <name: 'GBW'>),
+  (phaseMargin:Metric <name: 'Phase Margin'>),
+  
+  (diffPair:SubCircuit <name: 'Differential Pair'>),
+  (activeLoad:SubCircuit <name: 'Active Load'>),
+  (biasTransistors:SubCircuit <name: 'Bias Transistors'>),
+  
+  (diffPair)-[:AFFECTS <description: 'Increasing w3 to 0.9 and decreasing l3 to 0.1 of xn1 can increase gain and CMRR'>]->(gain),
+  (diffPair)-[:AFFECTS <description: 'Increasing w3 to 0.9 and decreasing l3 to 0.1 of xn1 can increase gain and CMRR'>]->(cmrr),
+  
+  (activeLoad)-[:AFFECTS <description: 'Increasing w2 to 0.9 and decreasing l2 to 0.1 of xp2 can improve gain and gbw'>]->(gain),
+  (activeLoad)-[:AFFECTS <description: 'Increasing w2 to 0.9 and decreasing l2 to 0.1 of xp2 can improve gain and gbw'>]->(gbw),
+  
+  (biasTransistors)-[:AFFECTS <description: 'Increasing w5 and decreasing l5 of xnb can help achieve a higher phase margin'>]->(phaseMargin);
+
+Make use of the knowledge graph to decipher general relations between different sub-structures and performance metrics as PRIOR KNOWLEDGE to optimize the following circuit.
+

@@ -1,0 +1,63 @@
+This is the two stage differential amplifier circuit. Its description is mentioned below.
+**Circuit Netlist** gives an HSPICE netlist of the two stage differential amplifier.
+** Circuit Netlist
+.GLOBAL vdd!
+
+.TEMP 25
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    MEASOUT=1
++    PARHIER=LOCAL
++    PSF=2
++	 OPFILE=1
+
+cload out 0 1e-11
+v_sup vdd! 0 DC=2
+vcm vcm 0 DC=1 AC=vacc
+vin vac 0 DC=0 AC=vacd
+e1 vip vcm vac 0 0.5
+e2 vin vcm 0 vac 0.5
+ib vdd! vb 5e-6
+
+xp1 node1 node1 vdd! vdd! pfet l='80e-9+l1*920e-9' w='120e-9+w1*49880e-9'
+xp2 out1 node1 vdd! vdd!  pfet l='80e-9+l2*920e-9' w='120e-9+w2*49880e-9'
+xn1 node1 vip node2 0     nfet l='80e-9+l3*920e-9' w='120e-9+w3*49880e-9'
+xn2 out1 vin node2 0      nfet l='80e-9+l4*920e-9' w='120e-9+w4*49880e-9'
+xnb vb vb 0 0             nfet l='80e-9+l5*920e-9' w='120e-9+w5*49880e-9'
+xnc node2 vb 0 0          nfet l='80e-9+l6*920e-9' w='120e-9+w6*49880e-9'
+xpo out out1 vdd! vdd!    pfet l='80e-9+l7*920e-9' w='120e-9+w7*49880e-9'
+xno out vb 0 0            nfet l='80e-9+l8*920e-9' w='120e-9+w8*49880e-9'
+cc out outm 'pwr(10,c1*4-2)*1e-12'
+rz outm out1 'pwr(10,r1*4-2)*1e3'
+
+The parameters namely ["l1", "w1", "l2", "w2", "l3", "w3", "l4", "w4", "l5", "w5", "l6", "w6", "l7", "w7", "l8", "w8", "r1", "c1"] need to be tuned
+to achieve gain: >60 dB, Common-Mode Rejection Ratio (cmrr): >80 dB, Gain Bandwidth Product (gbw): >1 MHz, Phase Margin (pm): >=45 degree.
+
+**Examples** provides the best parameter values known until now to increase the gain, CMRR, gbw and pm.
+
+
+params: l1=0.15 w1=0.05 l2=0.05 w2=0.15 l3=0.15 w3=0.05 l4=0.05 w4=0.15 l5=0.15 w5=0.05 l6=0.05 w6=0.15 l7=0.15 w7=0.05 l8=0.05 w8=0.15 r1=0.05 c1=0.15 
+metrics: gain=28.528 cmrr=40.262 gbw=32557414.180 pm=55.255 
+targets: target=1.135
+aux_info: ['The following mosfets are not in saturation region:\n xn2: Subth\n xno: Subth\n ', 'The following mosfets are not in saturation region:\n xn1: Subth\n xn2: Subth\n xnb: Subth\n xnc: Subth\n xno: Subth\n ', 'The following mosfets are not in saturation region:\n xn2: Subth\n xno: Subth\n ']
+
+params: l1=0.1 w1=0.1 l2=0.1 w2=0.1 l3=0.1 w3=0.1 l4=0.1 w4=0.1 l5=0.1 w5=0.1 l6=0.1 w6=0.1 l7=0.1 w7=0.1 l8=0.1 w8=0.1 r1=0.1 c1=0.1 
+metrics: gain=52.281 cmrr=63.845 gbw=20472652.390 pm=34.038 
+targets: target=0.976
+aux_info: ['The following mosfets are not in saturation region:\n xn2: Subth\n xno: Subth\n ', 'The following mosfets are not in saturation region:\n xn1: Subth\n xn2: Subth\n xnb: Subth\n xnc: Subth\n xno: Subth\n ', 'The following mosfets are not in saturation region:\n xn2: Subth\n xno: Subth\n ']
+
+params: l1=0.85 w1=0.35 l2=0.35 w2=0.85 l3=0.85 w3=0.35 l4=0.35 w4=0.85 l5=0.85 w5=0.35 l6=0.35 w6=0.85 l7=0.85 w7=0.35 l8=0.35 w8=0.85 r1=0.95 c1=0.85 
+metrics: gain=20.088 cmrr=47.207 gbw=16817481.690 pm=55.586 
+targets: target=0.729
+aux_info: ['The following mosfets are not in saturation region:\n xn2: Subth\n xno: Subth\n ', 'The following mosfets are not in saturation region:\n xn1: Subth\n xn2: Subth\n xnb: Subth\n xnc: Subth\n xno: Subth\n ', 'The following mosfets are not in saturation region:\n xn2: Subth\n xno: Subth\n ']
+
+To each of the below questions - generate a two line answer in points:
+
+1. Finding structure in performance metrics : Considering we need to increase the performance metrics like gain, cmrr, gbw, pm, can you identify the pair of all metrics that show tradeoffs - for example tradeoff(gain, gbw) represents a tradeoff between gain and gain bandwidth product.
+
+2. Finding structure that connects circuit sub-structures to performance metrics : Considering the ** Circuit Netlist ** given above, what are the critical substructures for the two stage differential amplifier to optimize performance metrics like the gain, cmrr, gbw and phase margin? Furthermore, what are the critical parameters associated with these substructures and what performance metrics does it affect - for example create a tuple like (differential pair substructure , has critical parameters l1,w1,l2,w2 , which affects gain )
+
+3. Detailing how to optimize individual performance metrics : For each performance metric provide a one line description of how to tune the associated critical parameters of the associated sub-circuit structures by making use of the tuple structure of point 2. For example - For the gain, increasing the w1 and w2 values towards 1.0, while ensuring w1/l1 = w2/l2 ensures higher gain. 
+
+4. Detailing how to optimize parameters considering tradeoffs : Now, for each tradeoff(P1, P2) pair identified in point 1, enumerate in a single line as to how parameters need to be tuned to jointly optimize tradeoff(P1, P2) - for example for high value of P1, parameters (l1, l2) need to increased, while for high values of P2, parameters (w1, w2, w12) need to increased. 

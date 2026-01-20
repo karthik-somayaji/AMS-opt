@@ -1,0 +1,6 @@
+$DATA1 SOURCE='HSPICE' VERSION='O-2018.09-SP2-1 linux64' PARAM_COUNT=0
+.TITLE ''
+ gain             ugain_freq       phase_margin     temper          
+ alter#          
+ -5.982720492e+01    failed           failed         2.500000000e+01
+2               

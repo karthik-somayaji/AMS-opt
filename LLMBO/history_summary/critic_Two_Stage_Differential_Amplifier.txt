@@ -1,0 +1,56 @@
+You are an analog designer. Given the netlist and design rules of the two stage differential amplifier, use it as PRIOR KNOWLEDGE to optimize other circuits.
+**Circuit Netlist** gives an HSPICE netlist of the two-stage differential amplifier.
+**Circuit Netlist**
+.GLOBAL vdd!
+
+.TEMP 25
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    MEASOUT=1
++    PARHIER=LOCAL
++    PSF=2
++	 OPFILE=1
+
+cload out 0 1e-11
+v_sup vdd! 0 DC=2
+vcm vcm 0 DC=1 AC=vacc
+vin vac 0 DC=0 AC=vacd
+e1 vip vcm vac 0 0.5
+e2 vin vcm 0 vac 0.5
+ib vdd! vb 5e-6
+
+xp1 node1 node1 vdd! vdd! pfet l=l1 w=w1
+xp2 out1 node1 vdd! vdd!  pfet l=l2 w=w2
+xn1 node1 vip node2 0     nfet l=l3 w=w3
+xn2 out1 vin node2 0      nfet l=l4 w=w4
+xnb vb vb 0 0             nfet l=l5 w=w5
+xnc node2 vb 0 0          nfet l=l6 w=w6
+xpo out out1 vdd! vdd!    pfet l=l7 w=w7
+xno out vb 0 0            nfet l=l8 w=w8
+cc out outm 'c1'
+rz outm out1 'r1'
+
+Design Rules:
+
+1. **Tradeoffs in performance metrics:**
+   - **Tradeoff (gain, CMRR):** Increasing gain may reduce CMRR due to enhanced sensitivity to mismatch in the differential pair transistors.
+   - **Tradeoff (GBW, PM):** Increasing GBW may reduce phase margin due to the increased speed of the response, which can lead to stability issues if not properly compensated.
+
+2. **Critical substructures and parameters:**
+   - **Differential pair substructure:** Critical parameters l1, w1, l3, w3 (not l2, w2) affect gain, as these are the lengths and widths of the transistors directly connected to the input.
+   - **Current mirror substructure:** Critical parameters l5, w5, l6, w6 affect CMRR, as these are involved in mirroring the bias current, thus ensuring consistent operation of the differential pair.
+   - **Output stage substructure:** Critical parameters l7, w7, l8, w8 affect GBW, as these are the dimensions of the transistors in the output stage that amplify the signal to drive the load.
+   - **Load resistor substructure:** Critical parameter r1 affects phase margin, as it is part of the feedback network that influences the overall stability of the amplifier.
+
+3. **Optimizing individual performance metrics:**
+   - **For gain:** Increase w1 and w3 (not w2) while maintaining w1/l1 = w3/l3 to ensure symmetry in the differential pair, which is crucial for maximizing gain.
+   - **For CMRR:** Adjust l5, w5, l6, w6 to ensure precise current mirroring, which helps in minimizing common-mode signals.
+   - **For GBW:** Tune l7, w7, l8, w8 to optimize the output stage’s response to high-frequency signals.
+   - **For phase margin:** Adjust r1 to optimize the stability margin by fine-tuning the feedback factor.
+
+4. **Optimizing parameters considering tradeoffs:**
+   - **To optimize gain and CMRR tradeoff:** Balance parameters w1, w3 (not w2), w5, w6 to achieve desired levels of gain while maintaining good CMRR.
+   - **To optimize GBW and phase margin tradeoff:** Adjust parameters l7, w7, l8, w8, and r1
+
+Use the above information to find common sub-structures and optimize the parameters of the next circuit.

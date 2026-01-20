@@ -1,0 +1,9 @@
+Best metrics {'gain': 27.07254931, 'ugf': 330905.0291, 'offset': 0.006898245235, 'hyst_err': 0.9152317248}
+Best BO metrics {'gain': -48.56413851, 'ugf': 3632146.448, 'offset': -1.999135116, 'hyst_err': -2.581013899e-05}
+Best LLM metrics {'gain': 27.07254931, 'ugf': 330905.0291, 'offset': 0.006898245235, 'hyst_err': 0.9152317248}
+At iteration: 30, the best target value is: 0.501, llm best target: 0.501, bo best target: 0.500
+
+Best metrics {'gain': 48.49607563, 'ugf': 32839.74581, 'offset': -0.001215282218, 'hyst_err': 0.779747193}
+Best BO metrics {'gain': -49.53692732, 'ugf': 619001.832, 'offset': -1.89676004, 'hyst_err': 0.0009297301261}
+Best LLM metrics {'gain': 48.49607563, 'ugf': 32839.74581, 'offset': -0.001215282218, 'hyst_err': 0.779747193}
+At iteration: 30, the best target value is: 0.593, llm best target: 0.593, bo best target: 0.499

@@ -1,0 +1,16 @@
+.param l1=0.3
+.param w1=0.1
+.param l2=0.7
+.param w2=0.8
+.param l3=0.2
+.param w3=0.5
+.param l4=0.5
+.param w4=0.1
+.param l5=0.0
+.param w5=0.9
+.param l6=0.4
+.param w6=0.0
+.param l7=0.4
+.param w7=0.7
+.param l8=0.0
+.param w8=0.2

@@ -1,0 +1,6 @@
+$DATA1 SOURCE='HSPICE' VERSION='O-2018.09-SP2-1 linux64' PARAM_COUNT=0
+.TITLE '** comparator'
+ gain             bw               ugain_freq       temper          
+ alter#          
+  1.209696631e+01  7.067495965e+05  1.830061987e+06  2.500000000e+01
+1               

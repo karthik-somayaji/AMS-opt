@@ -1,0 +1,96 @@
+cypher
+
+CREATE (DifferentialPair:Component {name: "Differential Pair"})
+
+CREATE (CurrentMirror:Component {name: "Current Mirror"})
+
+CREATE (BiasCircuit:Component {name: "Bias Circuit"})
+
+CREATE (ActiveLoad:Component {name: "Active Load"})
+
+CREATE (CouplingCapacitor:Component {name: "Coupling Capacitor"})
+
+CREATE (Resistance:Component {name: "Resistance"})
+
+ 
+
+CREATE (Transconductance:Output {name: "Transconductance"})
+
+CREATE (OutputConductance:Output {name: "Output Conductance"})
+
+ 
+
+CREATE (Gain:PerformanceMetric {name: "Gain"})
+
+CREATE (GBW:PerformanceMetric {name: "Gain Bandwidth Product"})
+
+CREATE (CMRR:PerformanceMetric {name: "Common-Mode Rejection Ratio"})
+
+CREATE (PM:PerformanceMetric {name: "Phase Margin"});
+
+ 
+cypher 
+
+MATCH (DifferentialPair:Component {name: "Differential Pair"}),
+
+      (CurrentMirror:Component {name: "Current Mirror"}),
+
+      (BiasCircuit:Component {name: "Bias Circuit"}),
+
+      (ActiveLoad:Component {name: "Active Load"}),
+
+      (CouplingCapacitor:Component {name: "Coupling Capacitor"}),
+
+      (Resistance:Component {name: "Resistance"}),
+
+      (Transconductance:Output {name: "Transconductance"}),
+
+      (OutputConductance:Output {name: "Output Conductance"}),
+
+      (Gain:PerformanceMetric {name: "Gain"}),
+
+      (GBW:PerformanceMetric {name: "Gain Bandwidth Product"}),
+
+      (CMRR:PerformanceMetric {name: "Common-Mode Rejection Ratio"}),
+
+      (PM:PerformanceMetric {name: "Phase Margin"})
+
+     
+
+CREATE (DifferentialPair)-[:HAS_OUTPUT]->(Transconductance),
+
+       (DifferentialPair)-[:HAS_OUTPUT]->(OutputConductance),
+
+       (DifferentialPair)-[:OPTIMIZES]->(Gain),
+
+       (DifferentialPair)-[:OPTIMIZES]->(CMRR),
+
+       (DifferentialPair)-[:OPTIMIZES]->(PM),
+
+      
+
+CREATE (CurrentMirror)-[:HAS_OUTPUT]->(Transconductance),
+
+       (CurrentMirror)-[:OPTIMIZES]->(CMRR);
+
+      
+
+CREATE (BiasCircuit)-[:OPTIMIZES]->(PM);
+
+      
+
+CREATE (ActiveLoad)-[:HAS_OUTPUT]->(OutputConductance),
+
+       (ActiveLoad)-[:OPTIMIZES]->(Gain),
+
+       (ActiveLoad)-[:OPTIMIZES]->(GBW);
+
+      
+
+CREATE (CouplingCapacitor)-[:AFFECTS]->(Gain);
+
+      
+
+CREATE (Resistance)-[:AFFECTS]->(Gain),
+
+       (Resistance)-[:AFFECTS]->(GBW);

@@ -1,0 +1,24 @@
+* "simulator" "HSPICE" 
+* "version" "O-2018.09-SP2-1 linux64"
+* "format" "HSP"
+* "rundate" "18:05:44 08/25/2024 "
+* "netlist" "comp_ati_new/comp_0.sp "
+* "runtitle" "** comparator"
+* time =  0.000000000e+00 
+* temperature =  2.500000000e+01 
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000000000e-12 
+.nodeset
++ 1 = 1.705242499e+00 
++ 2 = 1.764300157e+00 
++ 3 = 6.287322277e-01 
++ 4 = 3.300205474e-01 
++ out = 1.528226724e-02 
++ vac = 0.000000000e+00 
++ vb = 3.208189358e-01 
++ vcm = 1.000000000e+00 
++ vdd! = 2.000000000e+00 
++ vin = 1.000000000e+00 
++ vip = 1.000000000e+00 
+***   END: Saved Operating Point ***                     

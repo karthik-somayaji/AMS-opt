@@ -1,0 +1,9 @@
+To each of the below questions - generate a two line answer in points:
+
+1. Finding structure in performance metrics : Considering we need to increase the performance metrics like gain, the UGF and decrease other performance metrics like the offset-voltage and hysteresis-error, can you identify the pair of all metrics that show tradeoffs - for example tradeoff(gain, UGF) represents a tradeoff between gain and UGF.
+
+2. Finding structure that connects circuit sub-structures to performance metrics : Considering the ** Circuit Netlist ** given above, what are the critical substructures for the hysteresis comparator to optimize performance metrics like the gain, UGF, hysteresis-error and offset-voltage? Furthermore, what are the critical parameters associated with these substructures and what performance metrics does it affect - for example create a tuple like (differential pair substructure , has critical parameters l1,w1,l2,w2 , which affects gain )
+
+3. Detailing how to optimize individual performance metrics : For each performance metric provide a one line description of how to tune the associated critical parameters of the associated sub-circuit structures by making use of the tuple structure of point 2. For example - For the gain, increasing the w1 and w2 values towards 1.0, while ensuring w1/l1 = w2/l2 ensures higher gain. 
+
+4. Detailing how to optimize parameters considering tradeoffs : Now, for each tradeoff(P1, P2) pair identified in point 1, enumerate in a single line as to how parameters need to be tuned to jointly optimize tradeoff(P1, P2) - for example for high value of P1, parameters (l1, l2) need to increased, while for high values of P2, parameters (w1, w2, w12) need to increased. 

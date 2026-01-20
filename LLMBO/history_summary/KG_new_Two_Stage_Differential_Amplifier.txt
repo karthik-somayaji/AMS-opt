@@ -1,0 +1,93 @@
+You are an analog designer. Given the netlist and design rules of the two stage differential amplifier, use it as PRIOR KNOWLEDGE to optimize other circuits.
+**Circuit Netlist** gives an HSPICE netlist of the two-stage differential amplifier.
+**Circuit Netlist**
+.GLOBAL vdd!
+
+.TEMP 25
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    MEASOUT=1
++    PARHIER=LOCAL
++    PSF=2
++	 OPFILE=1
+
+cload out 0 1e-11
+v_sup vdd! 0 DC=2
+vcm vcm 0 DC=1 AC=vacc
+vin vac 0 DC=0 AC=vacd
+e1 vip vcm vac 0 0.5
+e2 vin vcm 0 vac 0.5
+ib vdd! vb 5e-6
+
+xp1 node1 node1 vdd! vdd! pfet l=l1 w=w1
+xp2 out1 node1 vdd! vdd!  pfet l=l2 w=w2
+xn1 node1 vip node2 0     nfet l=l3 w=w3
+xn2 out1 vin node2 0      nfet l=l4 w=w4
+xnb vb vb 0 0             nfet l=l5 w=w5
+xnc node2 vb 0 0          nfet l=l6 w=w6
+xpo out out1 vdd! vdd!    pfet l=l7 w=w7
+xno out vb 0 0            nfet l=l8 w=w8
+cc out outm 'c1'
+rz outm out1 'r1'
+
+Design Rules:
+
+[
+  "nodes": [
+    ["id": "Gain", "type": "Performance Metric"],
+    ["id": "CMRR", "type": "Performance Metric"],
+    ["id": "GBW", "type": "Performance Metric"],
+    ["id": "PM", "type": "Performance Metric"],
+    ["id": "Differential Pair Substructure", "type": "Critical Substructure"],
+    ["id": "Current Mirror Substructure", "type": "Critical Substructure"],
+    ["id": "Output Stage Substructure", "type": "Critical Substructure"],
+    ["id": "Load Resistor Substructure", "type": "Critical Substructure"]
+  ],
+  "links": [
+    ["source": "Gain", "target": "Differential Pair Substructure", "relationship": "Affects"],
+    ["source": "CMRR", "target": "Current Mirror Substructure", "relationship": "Affects"],
+    ["source": "GBW", "target": "Output Stage Substructure", "relationship": "Affects"],
+    ["source": "PM", "target": "Load Resistor Substructure", "relationship": "Affects"],
+    ["source": "Gain", "target": "CMRR", "relationship": "Trade-off"],
+    ["source": "GBW", "target": "PM", "relationship": "Trade-off"]
+  ]
+]
+
+// Design parameter (DP) entries
+CREATE (l1:DP [name: 'l1'])
+CREATE (w1:DP [name: 'w1'])
+CREATE (l3:DP [name: 'l3'])
+CREATE (w3:DP [name: 'w3'])
+CREATE (l5:DP [name: 'l5'])
+CREATE (w5:DP [name: 'w5'])
+CREATE (l6:DP [name: 'l6'])
+CREATE (w6:DP [name: 'w6'])
+CREATE (l7:DP [name: 'l7'])
+CREATE (w7:DP [name: 'w7'])
+CREATE (l8:DP [name: 'l8'])
+CREATE (w8:DP [name: 'w8'])
+CREATE (r1:DP [name: 'r1'])
+
+CREATE
+  // Gain performance metric (PM) affected by DP
+  (l1:DP)-[:directly_affects]->(PM_gain:PM),
+  (w1:DP)-[:directly_affects]->(PM_gain),
+  (w3:DP)-[:directly_affects]->(PM_gain),
+
+  // CMRR performance metric (PM) affected by DP
+  (w1)-[:directly_affects]->(PM_CMRR:PM),
+  (w3)-[:directly_affects]->(PM_CMRR),
+  (l5:DP)-[:directly_affects]->(PM_CMRR),
+  (w5:DP)-[:directly_affects]->(PM_CMRR),
+  (l6:DP)-[:directly_affects]->(PM_CMRR),
+  (w6:DP)-[:directly_affects]->(PM_CMRR),
+
+  // GBW performance metric (PM) affected by DP
+  (l7:DP)-[:directly_affects]->(PM_GBW),
+  (w7:DP)-[:directly_affects]->(PM_GBW),
+  (l8:DP)-[:directly_affects]->(PM_GBW),
+  (w8:DP)-[:directly_affects]->(PM_GBW),
+
+  // Phase margin performance metric affected by DP
+  (r1:DP)-[:directly_affects]->(Phase_Margin:PM)

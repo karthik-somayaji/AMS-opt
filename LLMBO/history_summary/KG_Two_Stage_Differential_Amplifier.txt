@@ -1,0 +1,70 @@
+You are an analog designer. Given details and design rules of the two stage differential amplifier, use it as PRIOR KNOWLEDGE to optimize other circuits.
+**Circuit Netlist** gives an HSPICE netlist of the two-stage differential amplifier.
+**Circuit Netlist**
+.GLOBAL vdd!
+
+.TEMP 25
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    MEASOUT=1
++    PARHIER=LOCAL
++    PSF=2
++	 OPFILE=1
+
+cload out 0 1e-11
+v_sup vdd! 0 DC=2
+vcm vcm 0 DC=1 AC=vacc
+vin vac 0 DC=0 AC=vacd
+e1 vip vcm vac 0 0.5
+e2 vin vcm 0 vac 0.5
+ib vdd! vb 5e-6
+
+xp1 node1 node1 vdd! vdd! pfet l=l1 w=w1
+xp2 out1 node1 vdd! vdd!  pfet l=l2 w=w2
+xn1 node1 vip node2 0     nfet l=l3 w=w3
+xn2 out1 vin node2 0      nfet l=l4 w=w4
+xnb vb vb 0 0             nfet l=l5 w=w5
+xnc node2 vb 0 0          nfet l=l6 w=w6
+xpo out out1 vdd! vdd!    pfet l=l7 w=w7
+xno out vb 0 0            nfet l=l8 w=w8
+cc out outm 'c1'
+rz outm out1 'r1'
+
+Design Rules:
+**Knowledge Graph Representation:**
+
+(gain:PerformanceMetric <name: "Gain">),
+  (cmrr:PerformanceMetric <name: "CMRR">),
+  (gbw:PerformanceMetric <name: "GBW">),
+  (pm:PerformanceMetric <name: "Phase Margin">),
+
+  (gain)-[:TradeoffWith]->(cmrr),
+  (gbw)-[:TradeoffWith]->(pm),
+
+  (diffPair:Substructure <name: "Differential Pair">),
+  (currentMirror:Substructure <name: "Current Mirror">),
+  (outputStage:Substructure <name: "Output Stage">),
+  (loadResistor:Substructure <name: "Load Resistor">),
+
+  (diffPair)-[:Affects]->(gain),
+  (currentMirror)-[:Affects]->(cmrr),
+  (outputStage)-[:Affects]->(gbw),
+  (loadResistor)-[:Affects]->(pm),
+
+  (diffPair)-[:HasParameters]->(l1),
+  (diffPair)-[:HasParameters]->(w1),
+  (diffPair)-[:HasParameters]->(l3),
+  (diffPair)-[:HasParameters]->(w3),
+
+  (currentMirror)-[:HasParameters]->(l5),
+  (currentMirror)-[:HasParameters]->(w5),
+  (currentMirror)-[:HasParameters]->(l6),
+  (currentMirror)-[:HasParameters]->(w6),
+
+  (outputStage)-[:HasParameters]->(l7),
+  (outputStage)-[:HasParameters]->(w7),
+  (outputStage)-[:HasParameters]->(l8),
+  (outputStage)-[:HasParameters]->(w8),
+
+  (loadResistor)-[:HasParameters]->(r1);

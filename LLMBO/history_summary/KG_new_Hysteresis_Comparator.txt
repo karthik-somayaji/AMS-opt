@@ -1,0 +1,134 @@
+You are an analog designer. Given details and design rules of the hysteresis comparator, use it as PRIOR KNOWLEDGE to optimize other circuits.
+**Circuit Netlist** gives an HSPICE netlist of the hysteresis comparator.
+** Circuit Netlist **
+.GLOBAL vdd!
+
+.TEMP 25
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    MEASOUT=1
++    PARHIER=LOCAL
++    POST
++    PSF=2
++    NOMOD
++    MEASDGT=7
++    OPFILE=1
+
+cload out 0 1e-11
+v_sup vdd! 0 DC=2
+vcm vcm 0 DC=1 AC=vacc
+vin vac 0 DC=0 AC=vacd PWL(0,-2,10u,2,20u,-2)
+e1 vip vcm vac 0 0.5
+e2 vin vcm 0 vac 0.5
+ib vdd! vb 5e-6
+
+xnb vb vb 0 0       nfet l='80e-9+l11*920e-9' w='120e-9+w11*49880e-9'
+
+xn5 3 vb 0 0        nfet l='80e-9+l12*920e-9' w='120e-9+w12*49880e-9'
+xn1 1 vip 3 0       nfet l='80e-9+l1*920e-9' w='120e-9+w1*49880e-9'
+xn2 2 vin 3 0       nfet l='80e-9+l2*920e-9' w='120e-9+w2*49880e-9'
+xp3 1 1 vdd! vdd!   pfet l='80e-9+l3*920e-9' w='120e-9+w3*49880e-9'
+xp4 2 2 vdd! vdd!   pfet l='80e-9+l4*920e-9' w='120e-9+w4*49880e-9'
+xp6 2 1 vdd! vdd!   pfet l='80e-9+l5*920e-9' w='120e-9+w5*49880e-9'
+xp7 1 2 vdd! vdd!   pfet l='80e-9+l6*920e-9' w='120e-9+w6*49880e-9'
+
+xp8 out 2 vdd! vdd! pfet l='80e-9+l7*920e-9' w='120e-9+w7*49880e-9'
+xp9 4 1 vdd! vdd!   pfet l='80e-9+l8*920e-9' w='120e-9+w8*49880e-9'
+xn10 4 4 0 0        nfet l='80e-9+l9*920e-9' w='120e-9+w9*49880e-9'
+xn11 out 4 0 0      nfet l='80e-9+l10*920e-9' w='120e-9+w10*49880e-9'
+
+Design Rules:
+[
+  "nodes": [
+    [ "id": "Gain", "type": "Performance Metric" ],
+    [ "id": "UGF", "type": "Performance Metric" ],
+    [ "id": "Offset Voltage", "type": "Performance Metric" ],
+    [ "id": "Hysteresis Error", "type": "Performance Metric" ]
+  ],
+  "links": [
+    [ "source": "Gain", "target": "UGF", "type": "Trade-off" ],
+    [ "source": "Gain", "target": "Offset Voltage", "type": "Direct Relationship" ],
+    [ "source": "Offset Voltage", "target": "Hysteresis Error", "type": "Ambiguous Relationship" ]
+  ]
+]
+
+
+[
+  "nodes": [
+    ["id": "Gain", "type": "Performance Metric"],
+    ["id": "UGF", "type": "Performance Metric"],
+    ["id": "Offset-voltage", "type": "Performance Metric"],
+    ["id": "Hysteresis-error", "type": "Performance Metric"],
+    ["id": "Differential pair", "type": "Circuit Substructure"],
+    ["id": "Positive feedback", "type": "Circuit Substructure"],
+    ["id": "Cross-coupled pair", "type": "Circuit Substructure"],
+    ["id": "Output stage", "type": "Circuit Substructure"]
+  ],
+  "edges": [
+    ["source": "Gain", "target": "Differential pair", "relation": "Affects"],
+    ["source": "UGF", "target": "Positive feedback", "relation": "Affects"],
+    ["source": "Offset-voltage", "target": "Output stage", "relation": "Affects"],
+    ["source": "Hysteresis-error", "target": "Cross-coupled pair", "relation": "Affects"]
+  ]
+]
+
+- l1, l2, l3, l4, l5, l6, l7, l8 (Lengths of transistors)
+- w1, w2, w3, w4, w5, w6, w7, w8 (Widths of transistors)
+
+Relationships:
+- l1 belongs_to Differential Pair
+- l2 belongs_to Differential Pair
+- l3 belongs_to Positive Feedback
+- l4 belongs_to Positive Feedback
+- l5 belongs_to Cross-coupled Pair
+- l6 belongs_to Cross-coupled Pair
+- l7 belongs_to Output Stage
+- l8 belongs_to Output Stage
+
+- w1 belongs_to Differential Pair
+- w2 belongs_to Differential Pair
+- w3 belongs_to Positive Feedback
+- w4 belongs_to Positive Feedback
+- w5 belongs_to Cross-coupled Pair
+- w6 belongs_to Cross-coupled Pair
+- w7 belongs_to Output Stage
+- w8 belongs_to Output Stage
+
+CREATE
+  (l1:DP {name: "l1"}),
+  (w1:DP {name: "w1"}),
+  (l2:DP {name: "l2"}),
+  (w2:DP {name: "w2"}),
+  (l3:DP {name: "l3"}),
+  (w3:DP {name: "w3"}),
+  (l4:DP {name: "l4"}),
+  (w4:DP {name: "w4"}),
+  (l5:DP {name: "l5"}),
+  (w5:DP {name: "w5"}),
+  (l6:DP {name: "l6"}),
+  (w6:DP {name: "w6"}),
+  (l7:DP {name: "l7"}),
+  (w7:DP {name: "w7"}),
+  (l8:DP {name: "l8"}),
+  (w8:DP {name: "w8"}),
+  (gain:PM {name: "Gain"}),
+  (ugf:PM {name: "UGF"}),
+  (offset:PM {name: "Offset-voltage"}),
+  (hysteresis:PM {name: "Hysteresis-error"})
+
+CREATE
+  (l1)-[:DIRECTLY_AFFECTS]->(gain),
+  (w1)-[:DIRECTLY_AFFECTS]->(gain),
+  (w1)-[:INVERSELY_AFFECTS]->(ugf),
+  (l3)-[:DIRECTLY_AFFECTS]->(ugf),
+  (w3)-[:DIRECTLY_AFFECTS]->(ugf),
+  (l4)-[:DIRECTLY_AFFECTS]->(ugf),
+  (w4)-[:DIRECTLY_AFFECTS]->(ugf),
+  (l5)-[:DIRECTLY_AFFECTS]->(hysteresis),
+  (w5)-[:DIRECTLY_AFFECTS]->(hysteresis),
+  (l6)-[:DIRECTLY_AFFECTS]->(hysteresis),
+  (w6)-[:DIRECTLY_AFFECTS]->(hysteresis),
+  (l7)-[:DIRECTLY_AFFECTS]->(offset),
+  (w7)-[:DIRECTLY_AFFECTS]->(offset),
+  (l8)-[:DIRECTLY_AFFECTS]->(offset),

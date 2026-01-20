@@ -1,0 +1,111 @@
+P-Graph:
+(Performance metrics: Quiescent Current, Stability, Output Voltage Difference) :
+(Quiescent Current, trade-off, Stability) :
+(Quiescent Current, direct relationship, Output Voltage Difference) :
+(Stability, direct relationship, Output Voltage Difference) :
+
+P-S-Graph:
+(Sub-structures: M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M13, M14, M15, M16, M17, M18, M19, M20) :
+(M1, influences, Quiescent Current) :
+(M2, influences, Quiescent Current) :
+(M3, influences, Stability) :
+(M4, influences, Stability) :
+(M5, influences, Stability) :
+(M6, influences, Stability) :
+(M7, influences, Stability) :
+(M8, influences, Stability) :
+(M9, influences, Stability) :
+(M10, influences, Stability) :
+(M11, influences, Stability) :
+(M12, influences, Output Voltage Difference) :
+(M13, influences, Output Voltage Difference) :
+(M14, influences, Quiescent Current) :
+(M15, influences, Quiescent Current) :
+(M16, influences, Quiescent Current) :
+(M17, influences, Quiescent Current) :
+(M18, influences, Quiescent Current) :
+(M19, influences, Quiescent Current) :
+(M20, influences, Quiescent Current) :
+
+P-S-X-Graph:
+(Design Parameters: l1, w1, l2, w2, l3, w3, l4, w4, l5, w5, l6, w6, l7, w7, l8, w8, l9, w9, l10, w10, l11, w11, l12, w12, l13, w13, l14, w14, l15, w15, l16, w16, l17, w17, l18, w18, l19, w19, l20, w20) :
+(l1, belongs_to, M3) :
+(l2, belongs_to, M4) :
+(l3, belongs_to, M5) :
+(l4, belongs_to, M6) :
+(l5, belongs_to, M7) :
+(l6, belongs_to, M8) :
+(l7, belongs_to, M9) :
+(l8, belongs_to, M10) :
+(l9, belongs_to, M11) :
+(l10, belongs_to, M12) :
+(l11, belongs_to, M13) :
+(l12, belongs_to, M14) :
+(l13, belongs_to, M15) :
+(l14, belongs_to, M16) :
+(l15, belongs_to, M17) :
+(l16, belongs_to, M18) :
+(l17, belongs_to, M19) :
+(l18, belongs_to, M20) :
+(l19, belongs_to, M12) :
+(l20, belongs_to, M13) :
+(w1, belongs_to, M3) :
+(w2, belongs_to, M4) :
+(w3, belongs_to, M5) :
+(w4, belongs_to, M6) :
+(w5, belongs_to, M7) :
+(w6, belongs_to, M8) :
+(w7, belongs_to, M9) :
+(w8, belongs_to, M10) :
+(w9, belongs_to, M11) :
+(w10, belongs_to, M12) :
+(w11, belongs_to, M13) :
+(w12, belongs_to, M14) :
+(w13, belongs_to, M15) :
+(w14, belongs_to, M16) :
+(w15, belongs_to, M17) :
+(w16, belongs_to, M18) :
+(w17, belongs_to, M19) :
+(w18, belongs_to, M20) :
+(w19, belongs_to, M12) :
+(w20, belongs_to, M13) :
+(l1, increasing_design_paramteter_decreases_performance_metric, Quiescent Current) :
+(w1, increasing_design_paramteter_decreases_performance_metric, Quiescent Current) :
+(l2, increasing_design_paramteter_decreases_performance_metric, Quiescent Current) :
+(w2, increasing_design_paramteter_decreases_performance_metric, Quiescent Current) :
+(l3, increasing_design_paramteter_increases_performance_metric, Stability) :
+(w3, increasing_design_paramteter_increases_performance_metric, Stability) :
+(l4, increasing_design_paramteter_increases_performance_metric, Stability) :
+(w4, increasing_design_paramteter_increases_performance_metric, Stability) :
+(l5, increasing_design_paramteter_increases_performance_metric, Stability) :
+(w5, increasing_design_paramteter_increases_performance_metric, Stability) :
+(l6, increasing_design_paramteter_increases_performance_metric, Stability) :
+(w6, increasing_design_paramteter_increases_performance_metric, Stability) :
+(l7, increasing_design_paramteter_increases_performance_metric, Stability) :
+(w7, increasing_design_paramteter_increases_performance_metric, Stability) :
+(l8, increasing_design_paramteter_increases_performance_metric, Stability) :
+(w8, increasing_design_paramteter_increases_performance_metric, Stability) :
+(l9, increasing_design_paramteter_increases_performance_metric, Stability) :
+(w9, increasing_design_paramteter_increases_performance_metric, Stability) :
+(l10, increasing_design_paramteter_increases_performance_metric, Stability) :
+(w10, increasing_design_paramteter_increases_performance_metric, Stability) :
+(l11, increasing_design_paramteter_increases_performance_metric, Stability) :
+(w11, increasing_design_paramteter_increases_performance_metric, Stability) :
+(l12, increasing_design_paramteter_increases_performance_metric, Quiescent Current) :
+(w12, increasing_design_paramteter_increases_performance_metric, Quiescent Current) :
+(l13, increasing_design_paramteter_increases_performance_metric, Quiescent Current) :
+(w13, increasing_design_paramteter_increases_performance_metric, Quiescent Current) :
+(l14, increasing_design_paramteter_increases_performance_metric, Quiescent Current) :
+(w14, increasing_design_paramteter_increases_performance_metric, Quiescent Current) :
+(l15, increasing_design_paramteter_increases_performance_metric, Quiescent Current) :
+(w15, increasing_design_paramteter_increases_performance_metric, Quiescent Current) :
+(l16, increasing_design_paramteter_increases_performance_metric, Quiescent Current) :
+(w16, increasing_design_paramteter_increases_performance_metric, Quiescent Current) :
+(l17, increasing_design_paramteter_increases_performance_metric, Quiescent Current) :
+(w17, increasing_design_paramteter_increases_performance_metric, Quiescent Current) :
+(l18, increasing_design_paramteter_increases_performance_metric, Quiescent Current) :
+(w18, increasing_design_paramteter_increases_performance_metric, Quiescent Current) :
+(l19, increasing_design_paramteter_increases_performance_metric, Quiescent Current) :
+(w19, increasing_design_paramteter_increases_performance_metric, Quiescent Current) :
+(l20, increasing_design_paramteter_increases_performance_metric, Quiescent Current) :
+(w20, increasing_design_paramteter_increases_performance_metric, Quiescent Current) :

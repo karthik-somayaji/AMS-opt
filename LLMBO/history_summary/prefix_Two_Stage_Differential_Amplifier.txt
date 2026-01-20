@@ -1,0 +1,38 @@
+This is the two stage differential amplifier circuit. Its description is mentioned below.
+**Circuit Netlist** gives an HSPICE netlist of the two stage differential amplifier.
+** Circuit Netlist
+.GLOBAL vdd!
+
+.TEMP 25
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    MEASOUT=1
++    PARHIER=LOCAL
++    PSF=2
++	 OPFILE=1
+
+cload out 0 1e-11
+v_sup vdd! 0 DC=2
+vcm vcm 0 DC=1 AC=vacc
+vin vac 0 DC=0 AC=vacd
+e1 vip vcm vac 0 0.5
+e2 vin vcm 0 vac 0.5
+ib vdd! vb 5e-6
+
+xp1 node1 node1 vdd! vdd! pfet l='80e-9+l1*920e-9' w='120e-9+w1*49880e-9'
+xp2 out1 node1 vdd! vdd!  pfet l='80e-9+l2*920e-9' w='120e-9+w2*49880e-9'
+xn1 node1 vip node2 0     nfet l='80e-9+l3*920e-9' w='120e-9+w3*49880e-9'
+xn2 out1 vin node2 0      nfet l='80e-9+l4*920e-9' w='120e-9+w4*49880e-9'
+xnb vb vb 0 0             nfet l='80e-9+l5*920e-9' w='120e-9+w5*49880e-9'
+xnc node2 vb 0 0          nfet l='80e-9+l6*920e-9' w='120e-9+w6*49880e-9'
+xpo out out1 vdd! vdd!    pfet l='80e-9+l7*920e-9' w='120e-9+w7*49880e-9'
+xno out vb 0 0            nfet l='80e-9+l8*920e-9' w='120e-9+w8*49880e-9'
+cc out outm 'pwr(10,c1*4-2)*1e-12'
+rz outm out1 'pwr(10,r1*4-2)*1e3'
+
+The parameters namely ["l1", "w1", "l2", "w2", "l3", "w3", "l4", "w4", "l5", "w5", "l6", "w6", "l7", "w7", "l8", "w8", "r1", "c1"] need to be tuned
+to achieve gain: >60 dB, Common-Mode Rejection Ratio (cmrr): >80 dB, Gain Bandwidth Product (gbw): >1 MHz, Phase Margin (pm): >=45 degree.
+
+**Examples** provides the best parameter values known until now to increase the gain, CMRR, gbw and pm.
+

@@ -1,0 +1,112 @@
+ ****** PrimeSim HSPICE -- T-2022.06-SP1-1 linux64 (Sep 29 2022 7820202) ******
+  Copyright (c) 1986 - 2025 by Synopsys, Inc. All Rights Reserved.
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp                
+  Command line options: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+  Start time: Thu Apr 17 17:02:44 2025
+ lic:  
+ lic: FLEXlm: SDK_12.11.3 
+ lic: USER:   karthik              HOSTNAME: leibniz 
+ lic: HOSTID: 6f8013b9             PID:      2283486 
+ lic: Using FLEXlm license file: 
+ lic: 1781@license.ece.ucsb.edu 
+ lic: Checkout 1 hspice 
+ lic: License/Maintenance for hspice will expire on 18-apr-2026/2023.12 
+ lic: 8(in_use)/50(total) FLOATING license(s) on SERVER 1781@license.ece.ucsb.edu 
+ lic:   
+  **warning** (/home/karthik/IBM_PDK/HSPICE/skew.file:229) Parameter name is not defined in .param. Please enter parameter variable with their respective value/expression.
+  **warning** (/home/karthik/sim_clean/LLMBO/ldo_ati_new/../tech/nfet_perfect.inc:345) Model nfet device geometries will not be checked against the limits set by lmin, lmax, wmin and wmax. To enable this check, add a period(.) to the model name(i.e. enable model selector).
+  **warning** multiple output options specified, using psf
+1****** PrimeSim HSPICE -- T-2022.06-SP1-1 linux64 (Sep 29 2022 7820202) ******
+ ******  
+ ** copyright: suming lai
+
+ ****** circuit name directory
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 xt1.                            pfet               1.00 
+        2 xt2.                            nfet               1.00 
+        3 xt3.                            pfet               1.00 
+        4 xt4.                            pfet               1.00 
+        5 xt5.                            nfet               1.00 
+        6 xt6.                            nfet               1.00 
+        7 xt7.                            nfet               1.00 
+        8 xt8.                            nfet               1.00 
+        9 xt9.                            nfet               1.00 
+       10 xt10.                           nfet               1.00 
+       11 xt11.                           nfet               1.00 
+       12 xtp1.                           pfet               1.00 
+       13 xtpn.                           nfet               1.00 
+       14 xtb0.                           pfet               1.00 
+       15 xtb1.                           pfet               1.00 
+       16 xtb2.                           pfet               1.00 
+       17 xtb3.                           pfet               1.00 
+       18 xtbn0.                          nfet               1.00 
+       19 xtbn1.                          nfet               1.00 
+       20 xtbn2.                          pfet               1.00 
+  **info** (/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp:37) DC voltage reset to initial transient source value in source 0:iload. new dc=0.5000D-02
+ **error** L54: Effective channel width for S/D junctions <= 0 for 'xt1.main (/home/karthik/sim_clean/LLMBO/ldo_ati_new/../tech/pfet_perfect.inc:337)'
+
+          ***** job aborted
+ ******  
+ ** copyright: suming lai
+
+ ****** job statistics summary tnom=  25.000 temp=  25.000 ******
+  
+ ******  Machine Information  ******
+ CPU:
+ model name	: Intel(R) Xeon(R) Gold 6326 CPU @ 2.90GHz
+ cpu MHz	: 3500.000
+ CPU(s)		: 32
+  
+ OS:
+ Linux version 4.18.0-513.24.1.el8_9.x86_64 (mockbuild@x86-64-01.build.eng.rdu2.redhat.com) (gcc version 8.5.0 20210514 (Red Hat 8.5.0-20) (GCC)) #1 SMP Thu Mar 14 14:20:09 EDT 2024
+
+ System loadavg : 0.04 0.09 0.06 2/2193 2283494
+
+
+  ******  PrimeSim HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :    32
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =      15 # elements   =      31
+  # resistors   =       2 # capacitors =       4 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       0
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       3
+  # curr_srcs   =       2 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =      20 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0 # N elements =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1           0
+  transient          0.00       16001           0           0 rev=         0
+  readin             0.04
+  errchk             0.00
+  setup              0.00
+  output             0.00
+
+
+           peak memory used        522.95 megabytes
+           total cpu time            0.09 seconds
+           total elapsed time        0.18 seconds
+           job started at     17:02:44 04/17/2025
+           job ended   at     17:02:44 04/17/2025
+           job total runtime         0.18 seconds
+
+
+ lic: Release hspice token(s) 
+ lic: total license checkout elapse time:        0.08(s)

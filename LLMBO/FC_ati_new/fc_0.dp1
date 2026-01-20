@@ -1,0 +1,504 @@
+1****** HSPICE -- O-2018.09-SP2-1 linux64 (Apr  2 2019) ******                  
+ ******  
+ 
+
+ ****** operating point information tnom=  25.000 temp=  25.000 ******
+ ****** operating point status is all       simulation time is   0.000000000e+00
+     node    =voltage
+3= 4.246943795e-01
+4= 3.403776600e-01
+5= 1.463448911e+00
+6= 4.340603500e-01
+7= 1.637764770e+00
+8= 3.555800154e-01
+9= 1.121090447e+00
+11= 2.822476932e-01
+12= 4.885793795e-02
+13= 7.110388604e-04
+14= 1.645336608e+00
+out= 8.403194810e-04
+vac= 0.000000000e+00
+vcm= 1.000000000e+00
+vdd!= 2.000000000e+00
+vin= 1.000000000e+00
+vip= 1.000000000e+00
+
+ **** voltage sources
+
+subckt                      
+ element v_sup               
+  volts    2.000000000e+00
+  current -4.197761267e-05
+  power    8.395522533e-05
+
+subckt                      
+ element vcm                 
+  volts    1.000000000e+00
+  current -1.413381059e-07
+  power    1.413381059e-07
+
+subckt                      
+ element vin                 
+  volts    0.000000000e+00
+  current  0.000000000e+00
+  power    0.000000000e+00
+
+     total voltage source power dissipation=  8.409656344e-05 watts
+
+
+
+ **** current sources
+
+subckt                      
+ element ib                  
+  volts    1.659622340e+00
+  current  5.000000000e-06
+  power   -8.298111700e-06
+
+
+     total current source power dissipation=-8.298111700e-06 watts
+
+ **** resistors
+
+subckt                      
+ element r1                  
+  r value  6.400000000e+04
+  v drop   5.166743229e-01
+  current  8.073036295e-06
+  power    4.171130561e-06
+
+subckt                      
+ element r2                  
+  r value  3.700000000e+04
+  v drop   7.333232222e-02
+  current  1.981954654e-06
+  power    1.453413373e-07
+
+
+ **** voltage-controlled voltage sources
+
+
+subckt                      
+ element e1                  
+  volts    0.000000000e+00
+  current -1.878467419e-10
+
+
+
+subckt                      
+ element e2                  
+  volts    0.000000000e+00
+  current -1.411502591e-07
+
+
+
+
+
+ **** mosfets
+
+
+subckt  x15    
+ element x15.main                
+ model   x15.nfet                
+ region   Subth           
+  id       4.958779375e-06
+  ibs      0.000000000e+00
+  ibd     -3.503776269e-13
+  vgs      3.403776600e-01
+  vds      3.403776600e-01
+  vbs      0.000000000e+00
+  vth      3.861304378e-01
+  vdsat    4.162335714e-02
+  vod     -4.575277781e-02
+  beta     3.861892507e-02
+  gam eff  3.019860000e-01
+  gm       1.355378125e-04
+  gds      2.410231935e-06
+  gmb      2.546879813e-05
+  cdtot    1.048064856e-14
+  cgtot    1.885956110e-14
+  cstot    1.514078767e-14
+  cbtot    1.765506982e-14
+  cgs      1.087733527e-14
+  cgd      4.299879206e-15
+
+
+
+subckt  x12    
+ element x12.main                
+ model   x12.nfet                
+ region   Subth           
+  id       8.038718126e-06
+  ibs      0.000000000e+00
+  ibd     -1.131090447e-12
+  vgs      3.403776600e-01
+  vds      1.121090447e+00
+  vbs      0.000000000e+00
+  vth      3.545501326e-01
+  vdsat    4.647320475e-02
+  vod     -1.417247257e-02
+  beta     2.547845303e-02
+  gam eff  3.019860000e-01
+  gm       2.202464629e-04
+  gds      1.309125871e-06
+  gmb      3.931487566e-05
+  cdtot    1.665902344e-14
+  cgtot    8.411451279e-14
+  cstot    5.262662128e-14
+  cbtot    4.845534306e-14
+  cgs      5.818382094e-14
+  cgd      7.529014941e-15
+
+
+
+subckt  x13    
+ element x13.main                
+ model   x13.pfet                
+ region   Linear          
+  id      -8.101747513e-06
+  ibs      3.646633815e-13
+  ibd      3.722352222e-13
+  vgs     -5.242461610e-01
+  vds     -7.571838110e-03
+  vbs      3.546633916e-01
+  vth     -3.744603837e-01
+  vdsat   -1.407806270e-01
+  vod     -1.497857773e-01
+  beta     1.015927347e-02
+  gam eff  2.752788933e-01
+  gm       6.150519637e-05
+  gds      1.039666690e-03
+  gmb      9.357723086e-06
+  cdtot    6.970631261e-14
+  cgtot    9.543626430e-14
+  cstot    3.407478732e-14
+  cbtot    2.685172589e-14
+  cgs      4.796045665e-14
+  cgd      4.719642531e-14
+
+
+
+subckt  x14    
+ element x14.main                
+ model   x14.pfet                
+ region   Saturation      
+  id      -8.106122180e-06
+  ibs      0.000000000e+00
+  ibd      3.646633815e-13
+  vgs     -3.622352297e-01
+  vds     -3.546633916e-01
+  vbs      0.000000000e+00
+  vth     -2.996446722e-01
+  vdsat   -8.004061372e-02
+  vod     -6.259055759e-02
+  beta     3.143848367e-03
+  gam eff  2.956697553e-01
+  gm       1.562378702e-04
+  gds      3.799869326e-06
+  gmb      2.647075989e-05
+  cdtot    1.126752172e-14
+  cgtot    1.190090981e-13
+  cstot    7.052319381e-14
+  cbtot    3.482907921e-14
+  cgs      1.047913061e-13
+  cgd      5.466720747e-15
+
+
+
+subckt  x1    
+ element x1.main                
+ model   x1.nfet                
+ region   Saturation      
+  id       4.672040570e-06
+  ibs     -4.346943781e-13
+  ibd     -1.473448911e-12
+  vgs      5.753056205e-01
+  vds      1.038754531e+00
+  vbs     -4.246943795e-01
+  vth      4.045163363e-01
+  vdsat    1.431009414e-01
+  vod      1.707892842e-01
+  beta     4.345612528e-04
+  gam eff  3.019860000e-01
+  gm       5.016406820e-05
+  gds      5.631713183e-07
+  gmb      6.654798347e-06
+  cdtot    1.595966186e-16
+  cgtot    8.773547612e-16
+  cstot    5.821942805e-16
+  cbtot    3.050989483e-16
+  cgs      7.750886010e-16
+  cgd      7.456819294e-17
+
+
+
+subckt  x2    
+ element x2.main                
+ model   x2.nfet                
+ region   Linear          
+  id       2.230891112e-05
+  ibs     -4.346943781e-13
+  ibd     -4.440603490e-13
+  vgs      5.753056205e-01
+  vds      9.365970460e-03
+  vbs     -4.246943795e-01
+  vth      4.088139681e-01
+  vdsat    1.459064152e-01
+  vod      1.664916524e-01
+  beta     1.992131329e-02
+  gam eff  3.019860000e-01
+  gm       1.585280554e-04
+  gds      2.299652144e-03
+  gmb      2.392338735e-05
+  cdtot    3.239778895e-13
+  cgtot    5.556771579e-13
+  cstot    1.899888199e-13
+  cbtot    1.197785696e-13
+  cgs      2.730208262e-13
+  cgd      2.771206151e-13
+
+
+
+subckt  x3    
+ element x3.main                
+ model   x3.nfet                
+ region   Subth           
+  id       2.707112460e-05
+  ibs      0.000000000e+00
+  ibd     -4.346943781e-13
+  vgs      3.403776600e-01
+  vds      4.246943795e-01
+  vbs      0.000000000e+00
+  vth      3.449688799e-01
+  vdsat    4.876434695e-02
+  vod     -4.591219842e-03
+  beta     7.182953547e-02
+  gam eff  3.019860000e-01
+  gm       7.435735004e-04
+  gds      3.988398639e-06
+  gmb      1.309881612e-04
+  cdtot    1.148419106e-13
+  cgtot    9.813115091e-13
+  cstot    5.534478722e-13
+  cbtot    4.753689036e-13
+  cgs      7.118711827e-13
+  cgd      4.707921107e-14
+
+
+
+subckt  x4    
+ element x4.main                
+ model   x4.pfet                
+ region   Saturation      
+  id      -6.664815860e-06
+  ibs      0.000000000e+00
+  ibd      5.465510887e-13
+  vgs     -3.622352297e-01
+  vds     -5.365510887e-01
+  vbs      0.000000000e+00
+  vth     -2.907380006e-01
+  vdsat   -8.529376933e-02
+  vod     -7.149722916e-02
+  beta     2.113660333e-03
+  gam eff  3.009717986e-01
+  gm       1.213244338e-04
+  gds      1.898820122e-06
+  gmb      2.074299088e-05
+  cdtot    1.112824828e-14
+  cgtot    1.974427451e-13
+  cstot    1.158940737e-13
+  cbtot    5.288439821e-14
+  cgs      1.767960799e-13
+  cgd      5.426826477e-15
+
+
+
+subckt  x5    
+ element x5.main                
+ model   x5.pfet                
+ region   Saturation      
+  id      -2.219998627e-05
+  ibs      0.000000000e+00
+  ibd      1.575939650e-12
+  vgs     -3.622352297e-01
+  vds     -1.565939650e+00
+  vbs      0.000000000e+00
+  vth     -2.935835182e-01
+  vdsat   -8.426609413e-02
+  vod     -6.865171151e-02
+  beta     6.170382986e-03
+  gam eff  2.975043528e-01
+  gm       3.969005290e-04
+  gds      3.819678183e-06
+  gmb      6.757351504e-05
+  cdtot    1.820978708e-14
+  cgtot    3.039015315e-13
+  cstot    1.812149831e-13
+  cbtot    8.259069091e-14
+  cgs      2.715647828e-13
+  cgd      9.778667247e-15
+
+
+
+subckt  x6    
+ element x6.main                
+ model   x6.pfet                
+ region   Subth           
+  id      -1.988949424e-06
+  ibs      5.465510887e-13
+  ibd      1.654419985e-12
+  vgs     -3.423584639e-01
+  vds     -1.107868895e+00
+  vbs      5.365510887e-01
+  vth     -3.692450176e-01
+  vdsat   -4.763095493e-02
+  vod      2.688655375e-02
+  beta     5.905804724e-03
+  gam eff  2.989225221e-01
+  gm       5.312541645e-05
+  gds      4.403826763e-07
+  gmb      7.468328511e-06
+  cdtot    2.092788235e-14
+  cgtot    2.819179361e-13
+  cstot    1.596411490e-13
+  cbtot    8.501250427e-14
+  cgs      2.341603721e-13
+  cgd      1.169256864e-14
+
+
+
+subckt  x7    
+ element x7.main                
+ model   x7.pfet                
+ region   Cutoff          
+  id      -1.410862682e-20
+  ibs      1.575939650e-12
+  ibd      2.009159681e-12
+  vgs      6.870300974e-01
+  vds     -4.332200305e-01
+  vbs      1.565939650e+00
+  vth     -4.907452745e-01
+  vdsat   -4.300530099e-02
+  vod      1.177775371e+00
+  beta     8.060807098e-03
+  gam eff  2.932037476e-01
+  gm       1.899565291e-28
+  gds      8.116268484e-21
+  gmb      1.227082842e-21
+  cdtot    1.978405224e-14
+  cgtot    6.354054958e-14
+  cstot    2.131517744e-14
+  cbtot    5.689404978e-14
+  cgs      1.225237197e-14
+  cgd      1.162410784e-14
+
+
+
+subckt  x8    
+ element x8.main                
+ model   x8.nfet                
+ region   Subth           
+  id       1.971992940e-06
+  ibs     -5.722325109e-14
+  ibd     -2.922474074e-13
+  vgs      3.067220774e-01
+  vds      2.333897552e-01
+  vbs     -4.885793795e-02
+  vth      3.794726037e-01
+  vdsat    3.994363780e-02
+  vod     -7.275052626e-02
+  beta     3.573194195e-02
+  gam eff  3.019860000e-01
+  gm       5.517388887e-05
+  gds      8.945033285e-07
+  gmb      9.979546715e-06
+  cdtot    1.600451391e-14
+  cgtot    3.361903989e-14
+  cstot    2.422121004e-14
+  cbtot    3.169677709e-14
+  cgs      1.729873543e-14
+  cgd      6.502919526e-15
+
+
+
+subckt  x9    
+ element x9.main                
+ model   x9.nfet                
+ region   Linear          
+  id       3.370574881e-08
+  ibs     -9.711732682e-16
+  ibd     -1.147019099e-15
+  vgs      3.548689765e-01
+  vds      1.292806206e-04
+  vbs     -7.110388604e-04
+  vth      3.474864122e-01
+  vdsat    5.201443514e-02
+  vod      7.382564301e-03
+  beta     1.626785832e-02
+  gam eff  3.019860000e-01
+  gm       7.437765751e-07
+  gds      2.603615560e-04
+  gmb      1.342969621e-07
+  cdtot    1.591207703e-13
+  cgtot    2.264126833e-13
+  cstot    6.730763944e-14
+  cbtot    9.805469644e-14
+  cgs      7.118620917e-14
+  cgd      1.231458316e-13
+
+
+
+subckt  x10    
+ element x10.main                
+ model   x10.nfet                
+ region   Subth           
+  id       1.975188354e-06
+  ibs      0.000000000e+00
+  ibd     -5.722325109e-14
+  vgs      2.822476932e-01
+  vds      4.885793795e-02
+  vbs      0.000000000e+00
+  vth      3.542496851e-01
+  vdsat    3.975213364e-02
+  vod     -7.200199193e-02
+  beta     4.115797828e-02
+  gam eff  3.019860000e-01
+  gm       5.538394445e-05
+  gds      1.125879788e-05
+  gmb      1.012243823e-05
+  cdtot    4.808953485e-14
+  cgtot    1.479398542e-13
+  cstot    8.054920673e-14
+  cbtot    1.176442559e-13
+  cgs      7.281399832e-14
+  cgd      2.019247107e-14
+
+
+
+subckt  x11    
+ element x11.main                
+ model   x11.nfet                
+ region   Subth           
+  id       4.220719330e-08
+  ibs      0.000000000e+00
+  ibd     -9.711732682e-16
+  vgs      2.822476932e-01
+  vds      7.110388604e-04
+  vbs      0.000000000e+00
+  vth      3.492171913e-01
+  vdsat    4.004014420e-02
+  vod     -6.696949816e-02
+  beta     2.436030682e-02
+  gam eff  3.019860000e-01
+  gm       1.144048346e-06
+  gds      5.877066420e-05
+  gmb      2.117099922e-07
+  cdtot    1.154088592e-13
+  cgtot    1.709423132e-13
+  cstot    5.107809111e-14
+  cbtot    1.169095897e-13
+  cgs      3.347759694e-14
+  cgd      8.056008719e-14
+
+
+

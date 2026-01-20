@@ -1,0 +1,27 @@
+* "simulator" "PrimeSim HSPICE"
+* "version" "T-2022.06-SP1-1 linux64"
+* "format" "HSP"
+* "rundate" "17:02:44 04/17/2025 "
+* "netlist" "/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp "
+* "runtitle" "** copyright: suming lai"
+* time =  0.000e+00       
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ amp1outnx = 3.832e-01       
++ amp1outpx = 4.188e-05       
++ ampoutpx = 1.193e+00       
++ my_gnd = 0.000e+00       
++ my_vdd = 1.200e+00       
++ net0167 = 3.854e-01       
++ net0183 = 1.005e+00       
++ net0237 =-2.125e-01       
++ net0278 = 1.725e-05       
++ vbias1x = 5.520e-01       
++ vbias2x = 7.835e-01       
++ vfb2x =-5.146e-01       
++ vout =-8.586e-01       
++ vref2 = 6.100e-01       
+***   END: Saved Operating Point ***                     

@@ -1,0 +1,3 @@
+.lib '/home/karthik/IBM_PDK/HSPICE/skew.file' stats
+.inc '/home/karthik/IBM_PDK/HSPICE/fixed_corner'
+.inc '/home/karthik/IBM_PDK/HSPICE/hspice.param'

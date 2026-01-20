@@ -1,0 +1,48 @@
+You are an analog designer. Given details and design rules of one kind of amplifier, your role is to figure out design points for a different kind of amplifier.
+Firstly, you have the two-stage differenial amplifier circuit that was optimized earlier. You will use the knowledge gained using this circuit to optimize the folded cascode amplifier. 
+The the two-stage differenial amplifier's description and design rules are mentioned below.
+**Circuit Netlist** gives an HSPICE netlist of a two-stage differential amplifier.
+**Circuit Netlist**
+.GLOBAL vdd!
+
+.TEMP 25
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    MEASOUT=1
++    PARHIER=LOCAL
++    PSF=2
++	 OPFILE=1
+
+cload out 0 1e-11
+v_sup vdd! 0 DC=2
+vcm vcm 0 DC=1 AC=vacc
+vin vac 0 DC=0 AC=vacd
+e1 vip vcm vac 0 0.5
+e2 vin vcm 0 vac 0.5
+ib vdd! vb 5e-6
+
+xp1 node1 node1 vdd! vdd! pfet l=l1 w=w1
+xp2 out1 node1 vdd! vdd!  pfet l=l2 w=w2
+xn1 node1 vip node2 0     nfet l=l3 w=w3
+xn2 out1 vin node2 0      nfet l=l4 w=w4
+xnb vb vb 0 0             nfet l=l5 w=w5
+xnc node2 vb 0 0          nfet l=l6 w=w6
+xpo out out1 vdd! vdd!    pfet l=l7 w=w7
+xno out vb 0 0            nfet l=l8 w=w8
+cc out outm 'c1'
+rz outm out1 'r1'
+
+
+
+Design rules :-
+
+-Sub-circuit Differential Pair (composed of transistors xn1, xn2) affects metrics like gain and CMRR. Specifically, increasing the width (w3, w4) and decreasing the length (l3, l4) of transistors xn1 and xn2 and maintaining w3/l3 = w4/l4 can improve gain and CMRR. For example, increasing w3 to 0.9 and decreasing l3 to 0.1 of xn1 can increase gain and CMRR.
+
+-Sub-circuit Active Load Transistors (composed of transistors xp1, xp2) affects metrics like gain and gbw. Increasing the width (w1, w2) and decreasing the length (l1, l2) of transistors xp1 and xp2 can enhance gain and gbw. For instance, increasing w2 to 0.9 and decreasing l2 to 0.1 of xp2 can improve gain and gbw.
+
+-Sub-circuit Bias Transistors (composed of transistors xnb, xnc) affects metrics like phase margin. Adjusting the width (w5, w6) and length (l5, l6) of transistors xnb and xnc can impact the phase margin. For example, increasing w5 and decreasing l5 of xnb can help achieve a higher phase margin.
+
+-Overall, maintaining similar values for widths and lengths of transistors within each sub-circuit can lead to better performance in terms of various characteristics like stability, linearity, and bandwidth.
+
+Use these helpful design rules as PRIOR KNOWLEDGE about widths and lengths to match different sub-circuits in the folded cascode amplifier and use the already defined widths and lengths to achieve required metrics. 

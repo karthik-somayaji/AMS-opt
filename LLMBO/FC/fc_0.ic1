@@ -1,0 +1,30 @@
+* "simulator" "HSPICE" 
+* "version" "O-2018.09-SP2-1 linux64"
+* "format" "HSP"
+* "rundate" "17:51:43 06/21/2024 "
+* "netlist" "/home/karthik/sim_clean/LLMBO/FC/fc_0.sp "
+* "runtitle" "* sim"
+* time =  0.000000000e+00 
+* temperature =  2.500000000e+01 
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000000000e-12 
+.nodeset
++ 3 = 6.306763003e-01 
++ 4 = 3.097998401e-01 
++ 5 = 1.524703377e+00 
++ 6 = 1.984090563e+00 
++ 7 = 1.672468968e+00 
++ 8 = 3.989285548e-01 
++ 9 = 1.240194610e+00 
++ 11 = 2.736762749e-01 
++ 12 = 1.081455523e-01 
++ 13 = 1.200784584e-01 
++ 14 = 1.687753563e+00 
++ out = 1.983642552e+00 
++ vac = 0.000000000e+00 
++ vcm = 1.000000000e+00 
++ vdd! = 2.000000000e+00 
++ vin = 1.000000000e+00 
++ vip = 1.000000000e+00 
+***   END: Saved Operating Point ***                     

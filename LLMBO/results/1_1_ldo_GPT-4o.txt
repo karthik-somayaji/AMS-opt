@@ -1,0 +1,9 @@
+Best metrics {'q_curr': 0.03066419, 'stability': 1.09999999997612e-06, 'output_voltage_difference': 0.06845900000000005}
+Best BO metrics {'q_curr': 0.005011581, 'stability': 0.0, 'output_voltage_difference': 0.45792199999999994}
+Best LLM metrics {'q_curr': 0.005012005, 'stability': 0.0, 'output_voltage_difference': 0.46656679999999995}
+At iteration: 30, the best target value is: 0.166, llm best target: 0.047, bo best target: 0.055
+
+Best metrics {'q_curr': 0.01207655, 'stability': 0.0, 'output_voltage_difference': 0.021180999999999894}
+Best BO metrics {'q_curr': 0.02725333, 'stability': 0.0004757000000000233, 'output_voltage_difference': 0.09201599999999988}
+Best LLM metrics {'q_curr': 0.01207655, 'stability': 0.0, 'output_voltage_difference': 0.021180999999999894}
+At iteration: 20, the best target value is: 0.315, llm best target: 0.315, bo best target: 0.160

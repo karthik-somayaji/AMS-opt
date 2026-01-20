@@ -1,0 +1,6 @@
+$DATA1 SOURCE='PrimeSim HSPICE' VERSION='T-2022.06-SP1-1 linux64' PARAM_COUNT=0
+.TITLE '** comparator'
+ vtp              vtm              vhy              off             
+ temper           alter#          
+  4.445167871e-02 -2.645719078e-01  3.090235865e-01 -1.100601145e-01
+  2.500000000e+01 1               

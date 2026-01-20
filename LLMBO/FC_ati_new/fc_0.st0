@@ -1,0 +1,90 @@
+****** HSPICE -- O-2018.09-SP2-1 linux64 (Apr  2 2019) ******
+Input File: /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_0.sp
+lic:
+lic: FLEXlm: SDK_11.7.3
+lic: USER:   karthik              HOSTNAME: leibniz
+lic: HOSTID: "329b83439ba5"       PID:      924518
+lic: Using FLEXlm license file:
+lic: 1781@license.ece.ucsb.edu
+lic: Checkout 1 hspice
+lic: License/Maintenance for hspice will expire on 18-apr-2026/2023.12
+lic: 2(in_use)/50(total) FLOATING license(s) on SERVER 1781@license.ece.ucsb.edu
+lic:
+
+ init: begin read circuit files, cpu clock= 1.10E-01
+       option search = /ece/synopsys/hspice/O-2018.09-SP2-1/hspice/part
+                         s/ad
+       option artist =     2.00
+       option ingold =     2.00
+       option measout =     1.00
+       option parhier = local
+       option psf =     2.00
+       option opfile =     1.00
+       option list =     2.00
+       option node
+       option post =     2.00
+       option numdgt =     10.0
+       option measdgt =     10.0
+ init: end read circuit files, cpu clock= 1.30E-01 peak memory=     361 mb
+ init: begin check errors, cpu clock= 1.30E-01
+ init: end check errors, cpu clock= 2.10E-01 peak memory=     361 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 2.10E-01
+       establish matrix -- done, cpu clock= 2.10E-01 peak memory=     361 mb
+       re-order matrix -- done, cpu clock= 2.10E-01 peak memory=     361 mb
+ init: end setup matrix, cpu clock= 2.10E-01 peak memory=     361 mb
+ dcop: begin dcop, cpu clock= 2.10E-01
+ dcop: end dcop, cpu clock= 2.30E-01 peak memory=     361 mb tot_iter=     143
+ output: /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_0.ma0
+ sweep: ac ac0    begin, #sweeps= 901 cpu clock= 2.30E-01
+ ac: frequency=1.00e+00
+ ac: frequency=7.94e+00
+ ac: frequency=6.31e+01
+ ac: frequency=5.01e+02
+ ac: frequency=3.98e+03
+ ac: frequency=3.16e+04
+ ac: frequency=2.51e+05
+ ac: frequency=2.00e+06
+ ac: frequency=1.58e+07
+ ac: frequency=1.26e+08
+ ac: frequency=1.00e+09
+ sweep: ac ac0    end, cpu clock= 2.60E-01 peak memory=     361 mb
+>info:         ***** hspice job concluded
+ init: begin read circuit files, cpu clock= 3.00E-01
+       option search = /ece/synopsys/hspice/O-2018.09-SP2-1/hspice/part
+                         s/ad
+       option artist =     2.00
+       option ingold =     2.00
+       option measout =     1.00
+       option parhier = local
+       option psf =     2.00
+       option opfile =     1.00
+       option list =     2.00
+       option node
+       option post =     2.00
+       option numdgt =     10.0
+       option measdgt =     10.0
+ init: end read circuit files, cpu clock= 3.20E-01 peak memory=     361 mb
+ init: begin check errors, cpu clock= 3.20E-01
+ init: end check errors, cpu clock= 3.90E-01 peak memory=     361 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 3.90E-01
+       establish matrix -- done, cpu clock= 3.90E-01 peak memory=     361 mb
+       re-order matrix -- done, cpu clock= 3.90E-01 peak memory=     361 mb
+ init: end setup matrix, cpu clock= 3.90E-01 peak memory=     361 mb
+ dcop: begin dcop, cpu clock= 4.00E-01
+ dcop: end dcop, cpu clock= 4.20E-01 peak memory=     361 mb tot_iter=     143
+ output: /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_0.ma1
+ sweep: ac ac0    begin, #sweeps= 901 cpu clock= 4.20E-01
+ ac: frequency=1.00e+00
+ ac: frequency=7.94e+00
+ ac: frequency=6.31e+01
+ ac: frequency=5.01e+02
+ ac: frequency=3.98e+03
+ ac: frequency=3.16e+04
+ ac: frequency=2.51e+05
+ ac: frequency=2.00e+06
+ ac: frequency=1.58e+07
+ ac: frequency=1.26e+08
+ ac: frequency=1.00e+09
+ sweep: ac ac0    end, cpu clock= 4.40E-01 peak memory=     361 mb
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)

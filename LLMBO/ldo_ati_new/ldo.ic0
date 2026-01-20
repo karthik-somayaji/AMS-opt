@@ -1,0 +1,27 @@
+* "simulator" "HSPICE" 
+* "version" "O-2018.09-SP2-1 linux64"
+* "format" "HSP"
+* "rundate" "11:47:00 07/18/2024 "
+* "netlist" "ldo.sp "
+* "runtitle" "** copyright: suming lai"
+* time =  0.000e+00       
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ amp1outnx = 4.319e-01       
++ amp1outpx = 4.302e-01       
++ ampoutpx = 5.331e-01       
++ my_gnd = 0.000e+00       
++ my_vdd = 1.200e+00       
++ net0167 = 1.014e+00       
++ net0183 = 8.205e-01       
++ net0237 = 7.443e-01       
++ net0278 = 1.216e-01       
++ vbias1x = 4.524e-01       
++ vbias2x = 8.050e-01       
++ vfb2x = 6.099e-01       
++ vout = 9.999e-01       
++ vref2 = 6.100e-01       
+***   END: Saved Operating Point ***                     

@@ -1,0 +1,4 @@
+Best metrics {'power_output': 1.161e-05, 'stability': 0.01539999999999997, 'output_voltage_difference': 0.03939999999999999}
+Best BO metrics {'power_output': 1.654e-05, 'stability': 0.08409999999999995, 'output_voltage_difference': 0.02639999999999998}
+Best LLM metrics {'power_output': 1.161e-05, 'stability': 0.01539999999999997, 'output_voltage_difference': 0.03939999999999999}
+At iteration: 20, the best target value is: -0.009, llm best target: -0.009, bo best target: -0.021

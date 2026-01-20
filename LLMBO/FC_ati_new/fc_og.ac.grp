@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--Created by Custom WaveView ADV, revision Q-2020.03  (build Mon Mar 9 12:01:29 PDT 2020 in Linux64 leibniz), at 13:51:21 on Thu Apr 17 2025-->
+<file-format version="2.0" name="WaveViewGroupFile">
+ <object version="1" type="wvgrp" name="wfgrp">
+  <attribute type="giString" value="." name="directory"/>
+  <attribute type="giString" value="hspice" name="simulator"/>
+  <attribute type="giString" value="T-2022.06-SP1-1 64-BIT" name="simulatorVersion"/>
+  <attribute type="giString" value="Thu Apr 17 13:51:21 2025" name="timeStamp"/>
+  <collection name="fileGroup">
+   <attribute type="giString" value="corner" name="splitType"/>
+   <object version="1" type="splitFile" name="splitFile">
+    <attribute type="giString" value="fc_og.ac0" name="fileName"/>
+    <collection name="params">
+     <object version="1" type="saPair" name="params">
+      <attribute type="giString" value="ALTER" name="name"/>
+      <attribute type="giString" value="string" name="type"/>
+      <attribute type="giString" value="1" name="value"/>
+     </object>
+     <object version="1" type="saPair" name="params">
+      <attribute type="giString" value="TEMP" name="name"/>
+      <attribute type="giString" value="double" name="type"/>
+      <attribute type="giString" value="25" name="value"/>
+     </object>
+    </collection>
+   </object>
+   <object version="1" type="splitFile" name="splitFile">
+    <attribute type="giString" value="fc_og.ac1" name="fileName"/>
+    <collection name="params">
+     <object version="1" type="saPair" name="params">
+      <attribute type="giString" value="ALTER" name="name"/>
+      <attribute type="giString" value="string" name="type"/>
+      <attribute type="giString" value="2" name="value"/>
+     </object>
+     <object version="1" type="saPair" name="params">
+      <attribute type="giString" value="TEMP" name="name"/>
+      <attribute type="giString" value="double" name="type"/>
+      <attribute type="giString" value="25" name="value"/>
+     </object>
+    </collection>
+   </object>
+  </collection>
+ </object>
+</file-format>

@@ -1,0 +1,39 @@
+****** PrimeSim HSPICE -- T-2022.06-SP1-1 linux64 (Sep 29 2022 7820202) ******
+Input File: /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp
+lic:
+lic: FLEXlm: SDK_12.11.3
+lic: USER:   karthik              HOSTNAME: leibniz
+lic: HOSTID: 6f8013b9             PID:      2283486
+lic: Using FLEXlm license file:
+lic: 1781@license.ece.ucsb.edu
+lic: Checkout 1 hspice
+lic: License/Maintenance for hspice will expire on 18-apr-2026/2023.12
+lic: 8(in_use)/50(total) FLOATING license(s) on SERVER 1781@license.ece.ucsb.edu
+lic:
+
+ init: begin read circuit files, cpu clock= 1.00E-01
+       option search = /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/parts/ad
+       option search = /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/parts/behave
+       option search = /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/parts/bjt
+       option search = /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/parts/burr_brn
+       option search = /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/parts/comlinear
+       option search = /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/parts/dio
+       option search = /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/parts/fet
+       option search = /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/parts/lin_tech
+       option search = /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/parts/pci
+       option search = /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/parts/signet
+       option search = /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/parts/ti
+       option search = /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/parts/tline
+       option search = /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/parts/xilinx
+       option artist =     2.00
+       option ingold =     2.00
+       option measout =     1.00
+       option parhier = local
+       option post
+       option psf =     2.00
+       option nomod
+       option measdgt =     7.00
+ init: end read circuit files, cpu clock= 1.14E-01 peak memory=     521 mb
+ init: begin check errors, cpu clock= 1.14E-01
+>error          ***** hspice job aborted
+ lic: Release hspice token(s)

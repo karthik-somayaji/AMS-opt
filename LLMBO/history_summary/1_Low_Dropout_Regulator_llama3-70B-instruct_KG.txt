@@ -1,0 +1,32 @@
+P-Graph:
+(Performance metrics: quiescent current, stability, output voltage difference) 
+
+P-S-Graph:
+(Sub-structures: Differential Pair, Current Mirror, Load Stage) 
+(Differential Pair, influences, Gain) 
+(Current Mirror, influences, Stability) 
+(Load Stage, influences, Output Voltage Difference) 
+(quiescent current, trade-off, stability) 
+(quiescent current, direct relationship, output voltage difference) 
+(stability, mild influence, output voltage difference) 
+
+P-S-X-Graph:
+(Design Parameters: l1, w1, l2, w2, l3, w3, l4, w4, l5, w5, l6, w6, l7, w7, l8, w8, l9, w9, l10, w10, l11, w11, l12, w12, l13, w13, l14, w14, l15, w15, l16, w16, l17, w17, l18, w18, l19, w19, l20, w20) 
+(l1, belongs_to, Differential Pair) 
+(w1, belongs_to, Differential Pair) 
+(l2, belongs_to, Current Mirror) 
+(w2, belongs_to, Current Mirror) 
+(l3, belongs_to, Load Stage) 
+(w3, belongs_to, Load Stage) 
+... 
+(l20, belongs_to, Load Stage) 
+(w20, belongs_to, Load Stage) 
+(l1, increasing_design_paramteter_increases_performance_metric, Gain) 
+(w1, increasing_design_paramteter_decreases_performance_metric, Bandwidth) 
+(l2, increasing_design_paramteter_decreases_performance_metric, quiescent current) 
+(w2, increasing_design_paramteter_increases_performance_metric, stability) 
+(l3, increasing_design_paramteter_decreases_performance_metric, output voltage difference) 
+(w3, increasing_design_paramteter_increases_performance_metric, Gain) 
+... 
+(l20, increasing_design_paramteter_decreases_performance_metric, output voltage difference) 
+(w20, increasing_design_paramteter_increases_performance_metric, stability)

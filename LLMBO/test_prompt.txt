@@ -1,0 +1,43 @@
+You are an analog circuit design expert. **Circuit Netlist** gives an HSPICE netlist of a two-stage differential amplifier. You need to optimize the size of these parameters: [l1, w1, l2, w2, l3, w3, l4, w4, l5, w5, l6, w6, l7, w7, l8, w8, r1, c1] to achieve optimal target value. The target value is defined as the gain of the circuit. **Examples** gives demonstration of existing parameter settings and the simulated target values from HSPICE. Based on the netlist and demonstrations, summarize how you can adjust the sizing of parameters to achieve better target value. Conclude your response only with a recommended set of parameters in the format of params in **Examples**. You must not add any comments beyond the recommendation.
+
+**Circuit Netlist**
+.GLOBAL vdd!
+
+.TEMP 25
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    MEASOUT=1
++    PARHIER=LOCAL
++    PSF=2
++	 OPFILE=1
+
+cload out 0 1e-11
+v_sup vdd! 0 DC=2
+vcm vcm 0 DC=1 AC=vacc
+vin vac 0 DC=0 AC=vacd
+e1 vip vcm vac 0 0.5
+e2 vin vcm 0 vac 0.5
+ib vdd! vb 5e-6
+
+xp1 node1 node1 vdd! vdd! pfet l=l1 w=w1
+xp2 out1 node1 vdd! vdd!  pfet l=l2 w=w2
+xn1 node1 vip node2 0     nfet l=l3 w=w3
+xn2 out1 vin node2 0      nfet l=l4 w=w4
+xnb vb vb 0 0             nfet l=l5 w=w5
+xnc node2 vb 0 0          nfet l=l6 w=w6
+xpo out out1 vdd! vdd!    pfet l=l7 w=w7
+xno out vb 0 0            nfet l=l8 w=w8
+cc out outm 'c1'
+rz outm out1 'r1'
+
+**Examples**
+Example 1:
+params: .param w1=100u, l1=1u, w2=100u, l2=1u, w3=10u, l3=1u, w4=10u, l4=1u, w5=5u, l5=1u, w6=5u, l6=1u, w7=100u, l7=1u, w8=10u, l8=1u, r1=1k, c1=1p
+target value: 9.32
+
+You are an analog circuit design expert given the task of optimizing a two-stage differential amplifier. Below is the HSPICE netlist and examples of parameter settings with their simulated gain values. Based on this information, determine how the parameter sizes can be adjusted to achieve a higher gain. Conclude your response with a recommended set of parameters in the specified format and do not add any comments beyond the recommendation.
+
+You need to recommend good parameters to get high gain performance. Your recommended parameters should be the same format as in **Examples**.
+
+Then recommend the parameter setting with the same format of "params" in **Examples**. Your recommended parameters should start with ##parameters## as an indicator. Do not add additional comments after the recommended parameters.

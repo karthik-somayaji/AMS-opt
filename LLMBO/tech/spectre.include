@@ -1,0 +1,3 @@
+.INCLUDE '/fs/student/karthi/IBM_PDK/SPECTRE/design.scs'
+.INCLUDE '/fs/student/karthi/IBM_PDK/SPECTRE/fixed_corner.scs'
+.INCLUDE '/fs/student/karthi/IBM_PDK/SPECTRE/process.scs'

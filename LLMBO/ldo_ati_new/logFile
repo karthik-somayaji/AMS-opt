@@ -1,0 +1,24 @@
+header
+"PSFversion" "1.00"
+"simulator" "HSPICE"
+"version" "T-2022.06-SP1-1 linux64"
+"rundate" "17:02:44 04/17/2025 "
+"runtitle" "** copyright: suming lai                                          "
+"runtype" "logFile"
+TYPE
+"analysisInst" STRUCT(
+"analysisType" STRING *
+"dataFile" STRING *
+"format" STRING *
+"parent" STRING *
+"sweepVariable" ARRAY ( * ) STRING *
+"description" STRING * )
+VALUE
+"summary" "analysisInst" ( 
+"Summary Information"
+"ldo_0.su0"
+"PSF"
+""
+()
+"Summary Information"
+)

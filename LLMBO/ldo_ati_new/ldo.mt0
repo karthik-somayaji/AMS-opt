@@ -1,0 +1,6 @@
+$DATA1 SOURCE='HSPICE' VERSION='O-2018.09-SP2-1 linux64' PARAM_COUNT=0
+.TITLE '** copyright: suming lai'
+ iq0              iq1              uds              vout0           
+ vout1            voutr            temper           alter#          
+ -5.562877e-03    -1.053266e-01     9.915703e-01     9.998514e-01   
+  9.995554e-01     9.995558e-01     2.500000e+01    1               
