@@ -1,0 +1,5 @@
+test_circuit,expected_family,dist_to_LDO,dist_to_comparators,dist_to_diff_amps,dist_to_op-amp
+amp2,diff_amps,0.6748180389404297,0.9967469573020935,0.0,1.0
+FC,diff_amps,0.6603705883026123,1.0,0.0,0.8535553216934204
+comp,comparators,0.4759206473827362,0.9019573926925659,0.0,1.0
+ldo,LDO,0.19033953547477722,1.0,0.0,0.5830951929092407

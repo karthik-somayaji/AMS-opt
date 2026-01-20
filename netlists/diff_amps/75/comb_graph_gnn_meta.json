@@ -209,5 +209,6 @@
     "c1 load/shunt capacitor",
     "nmos cascode/load devices",
     "nmos input/transconductor"
-  ]
+  ],
+  "netlists_root": "/home/karthik/sim_clean/AMS-opt/netlists"
 }

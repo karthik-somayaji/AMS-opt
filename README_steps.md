@@ -106,6 +106,14 @@ python scripts/comb_graph_to_gnn.py \
   --in netlists/diff_amps/NEW_ID/comb_graph.json
 ```
 
+```
+python3 scripts/comb_graph_to_gnn_global.py \
+    --in LLMBO/$c/ \
+    --out-dir LLMBO/$c/ \
+    --netlists-root netlists \
+    --maxima-source training-meta
+```
+
 
 Or batch process using:
 ```
@@ -138,6 +146,23 @@ for fam in netlists/*/; do
 done
 ```
 
+OR
+
+```
+for fam in netlists/*/; do
+  famname="$(basename "$fam")"
+  [[ "$famname" == _* ]] && continue
+
+  for d in "$fam"*/; do
+    [[ -d "$d" ]] || continue
+    python3 scripts/comb_graph_to_gnn_global.py \
+      --in "$d" \
+      --out-dir "$d" \
+      --netlists-root netlists \
+      --maxima-source training-meta
+  done
+done
+```
 
 #####################
 
@@ -151,3 +176,12 @@ done
 ```
 python3 scripts/visualize_embeddings_umap.py   --config gnn_training/config/full_training_diff_amps_comparators_LDO_opamp_all.yaml   --device cpu
 ```
+
+
+```
+python3 scripts/analyze_four_test_circuits_embeddings.py \
+  --llmbo-circuits amp2:LLMBO/amp2_ati_new FC:LLMBO/FC_ati_new comp:LLMBO/comp_ati_new ldo:LLMBO/ldo_ati_new \
+  --out-dir umap_results_four
+```
+
+##########

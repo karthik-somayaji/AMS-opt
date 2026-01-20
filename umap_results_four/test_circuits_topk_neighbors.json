@@ -1,0 +1,195 @@
+{
+  "topk": 5,
+  "neighbors": [
+    {
+      "test_circuit": "amp2",
+      "expected_family": "diff_amps",
+      "rank": 1,
+      "neighbor_family": "diff_amps",
+      "neighbor_circuit_id": "924",
+      "distance": 0.18161699175834656
+    },
+    {
+      "test_circuit": "amp2",
+      "expected_family": "diff_amps",
+      "rank": 2,
+      "neighbor_family": "diff_amps",
+      "neighbor_circuit_id": "922",
+      "distance": 0.3013031482696533
+    },
+    {
+      "test_circuit": "amp2",
+      "expected_family": "diff_amps",
+      "rank": 3,
+      "neighbor_family": "diff_amps",
+      "neighbor_circuit_id": "80",
+      "distance": 0.37266096472740173
+    },
+    {
+      "test_circuit": "amp2",
+      "expected_family": "diff_amps",
+      "rank": 4,
+      "neighbor_family": "diff_amps",
+      "neighbor_circuit_id": "921",
+      "distance": 0.38427144289016724
+    },
+    {
+      "test_circuit": "amp2",
+      "expected_family": "diff_amps",
+      "rank": 5,
+      "neighbor_family": "diff_amps",
+      "neighbor_circuit_id": "96",
+      "distance": 0.48207852244377136
+    },
+    {
+      "test_circuit": "FC",
+      "expected_family": "diff_amps",
+      "rank": 1,
+      "neighbor_family": "diff_amps",
+      "neighbor_circuit_id": "924",
+      "distance": 0.3796481788158417
+    },
+    {
+      "test_circuit": "FC",
+      "expected_family": "diff_amps",
+      "rank": 2,
+      "neighbor_family": "diff_amps",
+      "neighbor_circuit_id": "931",
+      "distance": 0.40811464190483093
+    },
+    {
+      "test_circuit": "FC",
+      "expected_family": "diff_amps",
+      "rank": 3,
+      "neighbor_family": "diff_amps",
+      "neighbor_circuit_id": "922",
+      "distance": 0.4180866777896881
+    },
+    {
+      "test_circuit": "FC",
+      "expected_family": "diff_amps",
+      "rank": 4,
+      "neighbor_family": "diff_amps",
+      "neighbor_circuit_id": "925",
+      "distance": 0.4646831750869751
+    },
+    {
+      "test_circuit": "FC",
+      "expected_family": "diff_amps",
+      "rank": 5,
+      "neighbor_family": "diff_amps",
+      "neighbor_circuit_id": "932",
+      "distance": 0.4760024845600128
+    },
+    {
+      "test_circuit": "comp",
+      "expected_family": "comparators",
+      "rank": 1,
+      "neighbor_family": "diff_amps",
+      "neighbor_circuit_id": "82",
+      "distance": 0.4493519365787506
+    },
+    {
+      "test_circuit": "comp",
+      "expected_family": "comparators",
+      "rank": 2,
+      "neighbor_family": "diff_amps",
+      "neighbor_circuit_id": "80",
+      "distance": 0.5392886996269226
+    },
+    {
+      "test_circuit": "comp",
+      "expected_family": "comparators",
+      "rank": 3,
+      "neighbor_family": "LDO",
+      "neighbor_circuit_id": "2310",
+      "distance": 0.5414001941680908
+    },
+    {
+      "test_circuit": "comp",
+      "expected_family": "comparators",
+      "rank": 4,
+      "neighbor_family": "diff_amps",
+      "neighbor_circuit_id": "922",
+      "distance": 0.5527035593986511
+    },
+    {
+      "test_circuit": "comp",
+      "expected_family": "comparators",
+      "rank": 5,
+      "neighbor_family": "LDO",
+      "neighbor_circuit_id": "2301",
+      "distance": 0.5896233320236206
+    },
+    {
+      "test_circuit": "ldo",
+      "expected_family": "LDO",
+      "rank": 1,
+      "neighbor_family": "LDO",
+      "neighbor_circuit_id": "2318",
+      "distance": 0.5026829838752747
+    },
+    {
+      "test_circuit": "ldo",
+      "expected_family": "LDO",
+      "rank": 2,
+      "neighbor_family": "diff_amps",
+      "neighbor_circuit_id": "923",
+      "distance": 0.5163435339927673
+    },
+    {
+      "test_circuit": "ldo",
+      "expected_family": "LDO",
+      "rank": 3,
+      "neighbor_family": "op-amp",
+      "neighbor_circuit_id": "305",
+      "distance": 0.6088335514068604
+    },
+    {
+      "test_circuit": "ldo",
+      "expected_family": "LDO",
+      "rank": 4,
+      "neighbor_family": "LDO",
+      "neighbor_circuit_id": "2301",
+      "distance": 0.6103714108467102
+    },
+    {
+      "test_circuit": "ldo",
+      "expected_family": "LDO",
+      "rank": 5,
+      "neighbor_family": "diff_amps",
+      "neighbor_circuit_id": "921",
+      "distance": 0.620922327041626
+    }
+  ],
+  "summary": [
+    {
+      "test_circuit": "amp2",
+      "expected_family": "diff_amps",
+      "topk": 5,
+      "num_neighbors_not_in_expected_family": 0,
+      "num_neighbors_in_expected_family": 5
+    },
+    {
+      "test_circuit": "FC",
+      "expected_family": "diff_amps",
+      "topk": 5,
+      "num_neighbors_not_in_expected_family": 0,
+      "num_neighbors_in_expected_family": 5
+    },
+    {
+      "test_circuit": "comp",
+      "expected_family": "comparators",
+      "topk": 5,
+      "num_neighbors_not_in_expected_family": 5,
+      "num_neighbors_in_expected_family": 0
+    },
+    {
+      "test_circuit": "ldo",
+      "expected_family": "LDO",
+      "topk": 5,
+      "num_neighbors_not_in_expected_family": 3,
+      "num_neighbors_in_expected_family": 2
+    }
+  ]
+}
