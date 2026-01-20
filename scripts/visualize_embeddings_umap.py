@@ -94,24 +94,82 @@ def try_load_performance_value(comb_graph_path: str, metric_key: str) -> Optiona
         return None
 
 
-def load_checkpoint(checkpoint_path: str, device: torch.device) -> Tuple[ContrastiveGINModel, Dict]:
-    """Load trained model from checkpoint."""
+def _infer_dims_from_checkpoint_state(checkpoint: Dict) -> Dict[str, int]:
+    """Infer key model dims directly from checkpoint tensors when possible."""
+    state = checkpoint.get('model_state') or {}
+    if not isinstance(state, dict):
+        return {}
+
+    inferred: Dict[str, int] = {}
+
+    # First GIN MLP Linear weight is [hidden_dims[0], input_dim]
+    w = state.get('encoder.gin_layers.0.mlp.0.weight')
+    if isinstance(w, torch.Tensor) and w.ndim == 2:
+        inferred['hidden0'] = int(w.shape[0])
+        inferred['input_dim'] = int(w.shape[1])
+
+    # Projection head final Linear is [projection_dim, embedding_dim]
+    # This key should exist for the current ContrastiveGINModel.
+    pw = state.get('projection_head.2.weight')
+    if isinstance(pw, torch.Tensor) and pw.ndim == 2:
+        inferred['projection_dim'] = int(pw.shape[0])
+        inferred['embedding_dim'] = int(pw.shape[1])
+
+    return inferred
+
+
+def load_checkpoint(
+    checkpoint_path: str,
+    device: torch.device,
+    model_cfg: Optional[Dict] = None,
+) -> Tuple[ContrastiveGINModel, Dict]:
+    """Load trained model from checkpoint.
+
+    Prefers dimensions from the training YAML, and falls back to inferring
+    dimensions from the checkpoint state dict.
+    """
     checkpoint = torch.load(checkpoint_path, map_location=device)
-    
-    # Reconstruct model (standard config; dims can be overridden by CLI/config)
+    model_cfg = model_cfg or {}
+
+    inferred = _infer_dims_from_checkpoint_state(checkpoint)
+
+    input_dim = int(model_cfg.get('input_dim', inferred.get('input_dim', 79)))
+    hidden_dims = list(model_cfg.get('hidden_dims', [64, 64, 32]))
+    embedding_dim = int(model_cfg.get('embedding_dim', inferred.get('embedding_dim', 128)))
+    projection_dim = int(model_cfg.get('projection_dim', inferred.get('projection_dim', 128)))
+    dropout = float(model_cfg.get('dropout', 0.1))
+    use_batch_norm = bool(model_cfg.get('use_batch_norm', True))
+
     model = ContrastiveGINModel(
-        input_dim=79,
-        hidden_dims=[64, 64, 32],
-        embedding_dim=128,
-        projection_dim=128,
-        dropout=0.1,
-        use_batch_norm=True
+        input_dim=input_dim,
+        hidden_dims=hidden_dims,
+        embedding_dim=embedding_dim,
+        projection_dim=projection_dim,
+        dropout=dropout,
+        use_batch_norm=use_batch_norm,
     )
-    
-    model.load_state_dict(checkpoint['model_state'])
+
+    try:
+        model.load_state_dict(checkpoint['model_state'])
+    except RuntimeError:
+        inferred = _infer_dims_from_checkpoint_state(checkpoint)
+        inferred_input_dim = inferred.get('input_dim')
+        inferred_embedding_dim = inferred.get('embedding_dim')
+        inferred_projection_dim = inferred.get('projection_dim')
+        if inferred_input_dim is None:
+            raise
+        model = ContrastiveGINModel(
+            input_dim=int(inferred_input_dim),
+            hidden_dims=hidden_dims,
+            embedding_dim=int(inferred_embedding_dim or embedding_dim),
+            projection_dim=int(inferred_projection_dim or projection_dim),
+            dropout=dropout,
+            use_batch_norm=use_batch_norm,
+        )
+        model.load_state_dict(checkpoint['model_state'])
     model = model.to(device)
     model.eval()
-    
+
     return model, checkpoint
 
 
@@ -166,15 +224,32 @@ def plot_embeddings_by_family(umap_emb: np.ndarray, metadata: List[Dict], output
     """Plot UMAP embeddings colored by family."""
     families = [m['family'] for m in metadata]
     unique_families = sorted(set(families))
-    
-    colors = {'diff_amps': '#1f77b4', 'comparators': '#ff7f0e', 'ldo': '#2ca02c'}
+
+    # Stable, readable colors for common families; fall back to a palette for others.
+    base_colors = {
+        'diff_amps': '#1f77b4',
+        'comparators': '#ff7f0e',
+        'LDO': '#2ca02c',
+        'ldo': '#2ca02c',
+        'op-amp': '#d62728',
+        'opamp': '#d62728',
+    }
+    palette = list(plt.cm.tab10.colors) + list(plt.cm.tab20.colors)
+    family_to_color: Dict[str, str] = {}
+    palette_idx = 0
+    for fam in unique_families:
+        if fam in base_colors:
+            family_to_color[fam] = base_colors[fam]
+        else:
+            family_to_color[fam] = palette[palette_idx % len(palette)]
+            palette_idx += 1
     
     fig, ax = plt.subplots(figsize=(12, 8))
     
     for family in unique_families:
         mask = np.array([f == family for f in families])
         ax.scatter(umap_emb[mask, 0], umap_emb[mask, 1], 
-                  label=family, s=150, alpha=0.7, color=colors.get(family, '#1f77b4'))
+                  label=family, s=150, alpha=0.7, color=family_to_color[family])
     
     # Add circuit ID labels
     for i, m in enumerate(metadata):
@@ -287,33 +362,7 @@ def main():
         checkpoint_path = f"{ckpt_dir}/checkpoint_epoch_{epochs:03d}.pt"
 
     print(f"Loading model from {checkpoint_path}...")
-    model, checkpoint_info = load_checkpoint(checkpoint_path, device)
-
-    # Override model dims if config differs from defaults
-    input_dim = int(model_cfg.get('input_dim', 79))
-    hidden_dims = list(model_cfg.get('hidden_dims', [64, 64, 32]))
-    embedding_dim = int(model_cfg.get('embedding_dim', 128))
-    projection_dim = int(model_cfg.get('projection_dim', 128))
-    dropout = float(model_cfg.get('dropout', 0.1))
-    use_batch_norm = bool(model_cfg.get('use_batch_norm', True))
-
-    # Rebuild model with config dims if needed and reload weights
-    try:
-        if getattr(model, 'input_dim', input_dim) != input_dim or hidden_dims != [64, 64, 32] or embedding_dim != 128 or projection_dim != 128:
-            model2 = ContrastiveGINModel(
-                input_dim=input_dim,
-                hidden_dims=hidden_dims,
-                embedding_dim=embedding_dim,
-                projection_dim=projection_dim,
-                dropout=dropout,
-                use_batch_norm=use_batch_norm,
-            )
-            model2.load_state_dict(checkpoint_info['model_state'])
-            model = model2.to(device)
-            model.eval()
-    except Exception:
-        # If the checkpoint/model don't match, keep the already-loaded model.
-        pass
+    model, checkpoint_info = load_checkpoint(checkpoint_path, device, model_cfg=model_cfg)
 
     print(f"✓ Model loaded (epoch {checkpoint_info['epoch']})")
     

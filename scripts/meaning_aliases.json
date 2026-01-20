@@ -1,0 +1,278 @@
+{
+  "$schema": "./meaning_aliases.schema.json",
+  "performance": {
+    "canonical": {
+      "Gain": ["gain", "dc gain", "dcgain"],
+      "UGF": ["ugf", "unity gain frequency", "unity-gain frequency"],
+      "Delay": ["delay", "propagation delay", "prop delay"],
+      "Offset": ["offset", "input offset", "inputoffset"],
+      "InputReferredNoise": [
+        "input-referred noise",
+        "input referred noise",
+        "inputreferrednoise"
+      ],
+      "KickbackNoise": ["kickback noise", "kickbacknoise"],
+      "OutputSwing": ["output swing", "outputswing"],
+      "QuiescentCurrent": ["quiescent current", "quiscent current", "iq"],
+      "PSRR": ["psrr"],
+      "CMRR": ["cmrr"],
+      "LineRegulation": ["line regulation"],
+      "LoadRegulation": ["load regulation"],
+      "RegulationError": ["regulation error"],
+      "SlewRate": ["slew rate", "slewrate"],
+      "Bandwidth": ["bandwidth", "bw"],
+      "Power": ["power", "pwr"],
+      "Stability": ["stability"],
+      "Metastability": ["metastability"],
+      "Sensitivity": ["sensitivity"],
+      "Hysteresis": ["hysteresis"],
+      "InputCapacitance": ["input capacitance", "cin"]
+    },
+    "regex": {
+      "UGF": ["^f_?ugf$", "^ugf_?hz$"],
+      "Delay": ["^t_?(pd|delay)$"],
+      "Power": ["^p_?total$"],
+      "PSRR": ["^psrr(\\s|_|-)?(\\+|minus|\\-|pos|neg)?$"],
+      "CMRR": ["^cmrr(\\s|_|-)?(db)?$"],
+      "Gain": ["^(a0|av|gain)(\\s|_|-)?(db)?$"]
+    }
+  },
+  "substructure": {
+    "canonical": {
+      "differential pair": ["diff pair", "differential", "input pair"],
+      "current mirror": ["mirror", "current-mirror"],
+      "active load": ["active load current mirror", "pmos active loads", "pmos.*active load"],
+      "bias": ["bias network", "bias transistor", "tail bias", "tail bias at ib1"],
+      "latch": ["regeneration", "regenerative latch"],
+      "precharge pmos": ["preamp", "pre-amp", "precharge pmos pair"],
+      "clock tail network": ["clocked tail", "clocked tail network"],
+      "clocked nmos reset": ["reset nmos pair", "clocked nmos reset pair"],
+      "load resistors": ["load resistor", "interconnection resistors", "resistor"],
+      "resistive loads": ["resistive load network", "resistive loads to vdd"],
+      "supply rails": ["vdd vss supply rails"],
+      "reference": ["reference"],
+      "hysteresis": ["hysteresis"],
+      "emitter degeneration": ["emitter degeneration"],
+      "load capacitors": ["load capacitor", "load capacitors"],
+      "compensation/load capacitor": ["compensation/load capacitor"],
+
+      "feedback network": [
+        "feedback divider",
+        "output feedback divider",
+        "feedback network",
+        "resistive feedback / input network",
+        "resistive feedback / output network",
+        "resistive common mode feedback",
+        "resistive common mode/feedback network"
+      ],
+      "output load": [
+        "output load",
+        "output load/bleeder",
+        "output load / bleed",
+        "output load / bleeder",
+        "output load network",
+        "output/load network",
+        "load / bleed",
+        "load / bleeder resistors",
+        "output node/load",
+        "output node and load",
+        "output load and sensing",
+        "output load & sensing",
+        "output node/load"
+      ],
+      "compensation network": [
+        "compensation network",
+        "output compensation network",
+        "output compensation network c0",
+        "output compensation capacitor",
+        "output capacitor",
+        "output capacitor / compensation",
+        "output capacitor/esr network",
+        "output capacitor/esr network",
+        "compensation/esr zero network",
+        "compensation / esr zero network",
+        "compensation / output capacitor network",
+        "compensation / output capacitor path",
+        "compensation / feedforward",
+        "compensation drive / buffer",
+        "output load & compensation network",
+        "output load & output capacitor network",
+        "output network / load & compensation",
+        "output compensation c0 and bleeder",
+        "output compensation c0 with",
+        "output compensation c0"
+      ],
+      "output network": ["output network"],
+
+      "output stage": [
+        "output inverter / driver",
+        "logic output drivers",
+        "output stage pull up/pull down",
+        "output pull up/pull down",
+        "output stage driver/buffer",
+        "output stage driver/buffer",
+        "output inverter/driver",
+        "output stage pull up/pull down",
+        "output stage pull-up/pull-down"
+      ],
+
+      "pass device": [
+        "pass device",
+        "pass transistor",
+        "pmos pass device",
+        "nmos pass device",
+        "pass nmos",
+        "pass device / power stage"
+      ],
+      "gate driver": [
+        "pass device driver / buffer",
+        "gate driver / buffer to pass device",
+        "driver / gate control stage",
+        "gate driver / gain stage",
+        "gate driver node for pass device",
+        "gate driver / intermediate gain stage",
+        "gate driver / level shift",
+        "gate driver/comp node",
+        "gate drive/control node network",
+        "gate driver node for pass device",
+        "driver / gate control node for pass device",
+        "driver / intermediate gain stage",
+        "driver / gain stage",
+        "driver / predriver stage",
+        "driver / pre driver",
+        "driver gain devices",
+        "pass device driver / buffer"
+      ],
+
+      "error amplifier": [
+        "error amplifier",
+        "error amplifier core",
+        "error amplifier / gain stage",
+        "error amplifier gain stage",
+        "error amplifier input stage",
+        "error amplifier input/output stage",
+        "error amplifier output stage / gain node",
+        "error amplifier output / gate drive node",
+        "error amplifier / gate driver",
+        "error amplifier / control node net30"
+      ]
+    },
+    "regex": {
+      "tail current source": ["tail.*current"],
+      "current source": ["^current source$"],
+      "unknown": ["^$", "^unknown$"],
+
+      "nmos pull-down network": [
+        "nmos.*(pull\\s*down|pull-down|sink|current\\s*sink|current\\s*sinks)",
+        "output.*(pull\\s*down|discharge).*nmos",
+        "^output pull down( pair| devices| device)?$",
+        "^nmos output/pull down devices$",
+        "^nmos pull down/output devices$",
+        "^nmos pull down / output device$",
+        "^nmos output pull down devices$",
+        "^nmos output pull down device$",
+        "^nmos output discharge$",
+        "^nmos discharge pair$",
+        "^nmos output current sinks?$",
+        "^nmos sink/output devices$",
+        "^nmos output/current sink devices?$",
+        "^nmos output / sink network$"
+      ],
+      "pmos pull-up network": [
+        "pmos.*(pull\\s*up|pull-up|source)",
+        "^pmos pull up loads$",
+        "^pmos pull up output device$",
+        "^pmos load / pull up devices$",
+        "^pmos pull up / active loads$",
+        "^output pmos loads$",
+        "^pmos loads$",
+        "^pmos output pair$"
+      ],
+
+      "nmos input pair": [
+        "^(input\\s+)?nmos input pair$",
+        "^input nmos pair$",
+        "nmos.*(input|gm|transconductor).*(pair|quad)",
+        "^nmos input / transconductor$",
+        "^nmos input/transconductor$",
+        "^nmos input / transconductor pair$",
+        "^nmos input / transconductor pair$",
+        "^nmos input device / transconductor$",
+        "^nmos input transconductors?$",
+        "^ea input transconductor / diff pair$",
+        "^error amplifier nmos input devices$",
+        "^ea input pair$"
+      ],
+      "pmos input pair": [
+        "^pmos input pair$",
+        "^pmos input quad$",
+        "^pmos input device$",
+        "pmos.*input.*(pair|quad)",
+        "^pmos input / pull up devices$",
+        "^pmos output/input transconductor pair$"
+      ],
+
+      "output stage": [
+        "^output stage$",
+        "output stage.*(driver|buffer)",
+        "^output inverter / driver$",
+        "^logic output drivers$",
+        "^output stage pull up/pull down$",
+        "^output pull up/pull down$",
+        "^(output\\s+)?(driver|buffer|predriver).*$",
+        "^second gain stage / driver.*$"
+      ],
+
+      "output load": [
+        "^output load.*$",
+        "^output node.*$",
+        "^load / bleed.*$",
+        "^load / bleeder.*$",
+        "^load.*bleed.*$",
+        "^resistive output loads$",
+        "^output/load network$"
+      ],
+
+      "output network": [
+        "^output network.*$",
+        "^output/load network$",
+        "^output network / load & compensation$",
+        "^output/load network$"
+      ],
+
+      "diode-connected/clamp": [
+        "diode connected",
+        "clamp",
+        "^pmos diode connected loads$",
+        "^nmos diode connected / local feedback loads$",
+        "^nmos diode connected / local feedback devices$",
+        "^nmos local feedback / diode connected loads$",
+        "^nmos local feedback / diode connected devices$",
+        "^nmos diode connected / clamp devices$",
+        "^clamp/diode connected devices to vss$"
+      ],
+
+      "precharge/reset network": [
+        "precharge",
+        "keeper",
+        "clocked.*precharge",
+        "clock distribution / precharge devices",
+        "clocked reset",
+        "reset / discharge",
+        "^clocked precharge nmos$",
+        "^pmos precharge network$",
+        "^pmos precharge / pull up network$",
+        "^precharge/keeper pmos loads for outputs$",
+        "^precharge / reset pmos network for internal nodes$",
+        "^clocked pmos precharge / load$",
+        "^clocked pmos keeper / load nodes$",
+        "^clocked reset / discharge devices on outputs$",
+        "^clocked reset/evaluate nmos tail$",
+        "^clocked precharge/evaluate pmos network$"
+      ],
+
+      "pmos output devices": ["^pmos output device(s)?", "pmos.*output.*device"],
+      "nmos output devices": ["^nmos output devices", "nmos.*output.*device"]
+    }
+  }
+}

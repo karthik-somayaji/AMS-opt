@@ -148,6 +148,12 @@ git commit -m "Import <path/to/dir> from <some-branch>"
 git push
 ```
 
+### Note on GitHub authentication (HTTPS)
+
+- If `git push` prompts for **Username/Password**, the “password” is a **GitHub Personal Access Token (PAT)** (not your GitHub password).
+- After you enter it once, Git may save it via the configured credential helper, so future `git push` calls won’t prompt.
+- On this machine, the helper is configured as `store --file ~/.config/git/credentials`.
+
 ---
 
 ## Example 1: import `netlists/diff_amps/` from Lucas

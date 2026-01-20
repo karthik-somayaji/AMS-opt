@@ -1,0 +1,26 @@
+{
+  "mapping": {
+    "Gain": [],
+    "CMRR": [],
+    "UGF": [],
+    "Power": [],
+    "Delay": [],
+    "Offset": [],
+    "Hysteresis": [],
+    "Bandwidth": [],
+    "InputCapacitance": [],
+    "InputReferredNoise": [],
+    "KickbackNoise": [],
+    "LineRegulation": [],
+    "LoadRegulation": [],
+    "Metastability": [],
+    "OutputSwing": [],
+    "PSRR": [],
+    "QuiescentCurrent": [],
+    "RegulationError": [],
+    "Sensitivity": [],
+    "SlewRate": [],
+    "Stability": [],
+    "regenerationstrength": []
+  }
+}

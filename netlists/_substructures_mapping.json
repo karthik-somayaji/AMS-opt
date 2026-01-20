@@ -1,5 +1,579 @@
 {
   "mapping": {
+    "differential pair": [
+      "M8-M9 input differential pair",
+      "Input differential pair M10-M9",
+      "Input NMOS differential pair (M11,M12)",
+      "Input differential pair (M9,M10) with clocked tail (M11)",
+      "Clocked input differential pair (M4,M3) with tail switch (M7) and clocked node (net11)",
+      "VIN1-VIN2 input differential pair (Q14,Q15) with shared collector node net11",
+      "Input differential NMOS pair into tail node net41 (M10,M9) with clocked tail switch (M11)",
+      "M3-M4 input differential pair",
+      "M1-M2 input differential pair",
+      "Input differential pair 1 (M12-M13)",
+      "Input differential pair 2 (M15-M16)",
+      "BJT input differential pair (Q0-Q1-R4)",
+      "Q0-Q1 differential BJT pair",
+      "Q0-Q1 differential pair",
+      "Q0-Q1 NPN differential pair",
+      "M0-M1 NMOS differential pair",
+      "Q0-Q1 input differential pair",
+      "Q0-Q1 PNP differential pair",
+      "M0-M1 differential pair",
+      "M0-M1 differential pair (VIN1/VIN2)"
+    ],
+    "latch": [
+      "M12-M7 PMOS latch pair",
+      "M15-M14 NMOS latch pair",
+      "M16-M17-M18-M10-M11 regeneration network",
+      "Regenerative PMOS latch M2-M1",
+      "Regenerative NMOS latch M5-M4",
+      "NMOS regenerative latch (M5,M4)",
+      "PMOS cross-coupled latch / regeneration (M2,M3,M1,M4,M5)",
+      "NMOS clocked discharge / gating for latch (M9,M10,M14,M35,M34)",
+      "PMOS cross-coupled latch / regen (M3,M2,M1,M0)",
+      "NMOS latch network M13-M16-M14-M15",
+      "Cross-coupled latch core (M8,M9) with internal nodes (net17,net27)",
+      "Clocked NMOS discharge / reset devices for latch nodes (M2,M3)",
+      "Cross-coupled latch core (net59/net62) (M0-M3, M14-M15)",
+      "Regenerative latch / cross-coupled NMOS pair (M4,M5)",
+      "Regenerative latch NMOS cross-coupled pair (M7,M8) with latch tail (M9)",
+      "PMOS cross-coupled load / latch (M0,M1)",
+      "PMOS latch gating / level assist (M4,M5,M6)",
+      "Cross-coupled regeneration core (M0,M1)",
+      "Cross-coupled NMOS regeneration / discharge (M7,M8) between net14/net19 and VOUT1/VOUT2",
+      "Local cross-coupled regeneration (M5,M6) around net20/net23"
+    ],
+    "clocked load network": [
+      "M3-M4-M2-M5-M6 clocked load network"
+    ],
+    "bias": [
+      "M0-M1 bias network",
+      "NMOS tail / bias transistor (M18)",
+      "NMOS bias distribution / level shift (M14,M13,M3,M4,M1,M2)",
+      "Input NMOS pair with bias tails (M22,M23) + bias devices (M24,M25)",
+      "Additional input / bias injection branch (M18,M17,M19,M20) + C0",
+      "NMOS bias transistor M5",
+      "Clocked bias injection / gating network to VB1 nodes (M10-M13)",
+      "Bias decoupling capacitors on IB3/IB4 (C0,C1)",
+      "Bias network VB1/VB2 generating bias nodes (M47,M46,M45,M40,M39)",
+      "Bias/current sink network for net9/net14 via net32 and sinks (Q19,Q20,R2,R3,R4,R5)",
+      "Common-mode bias path (M12) and coupling into latch (M13)",
+      "Bias network (M6-M7-M8)",
+      "PMOS bias/load network (M4-M5-M6)",
+      "NMOS bias network (M9-M10-M11)",
+      "Resistive bias (R0)",
+      "NMOS tail / bias stack (M16-M17-M19-M18)",
+      "NMOS tracking / bias (M10-M11)",
+      "Input bias resistors (R0-R1)",
+      "BJT tracking / bias generators (Q4-Q7)",
+      "R3-R4 tail bias network"
+    ],
+    "output pull down pair": [
+      "Output pull-down pair M6-M3"
+    ],
+    "clocked pmos tail": [
+      "Clocked PMOS tail M0"
+    ],
+    "precharge/reset network": [
+      "Precharge PMOS pair M8-M7",
+      "PMOS precharge network (M13,M12,M8,M7)",
+      "PMOS latch cross-coupled loads (M1,M2) + precharge switch (M0)",
+      "Clocked precharge/evaluate PMOS network (M8,M7,M12,M11)",
+      "PMOS clocked precharge devices (M10,M11)",
+      "Clocked precharge / reset PMOS network for latch nodes (M4,M5,M6,M7)",
+      "PMOS feedback / keeper devices on latch nodes (M0,M1)",
+      "Output pull-down devices (IB3/IB4) and precharge / load on net56 (M20-M27, M24-M25)",
+      "Clocked precharge PMOS network (net23/net46/net18/net50) (M8-M9)",
+      "Clocked reset / discharge devices on outputs (M3,M6)",
+      "Clocked precharge PMOS on internal input nodes (M7,M8)",
+      "Clocked reset/evaluate NMOS tail (M2) and reset NMOS (M12)",
+      "Clocked PMOS keeper / load nodes (M7,M8,M11,M15) with VCLK2 devices (M9,M10)",
+      "Clocked PMOS precharge / load (M0-M6) on net14/net19",
+      "Clock distribution / precharge devices (M2,M12,M15,M24,M26,M28,M29)",
+      "Precharge/keeper PMOS loads for outputs (M12,M0)",
+      "Precharge / reset PMOS network for internal nodes (M5,M4,M3)",
+      "M0-M1 precharge PMOS pair",
+      "M0 precharge PMOS",
+      "PMOS latch & precharge network (M0-M6, M1-M4)"
+    ],
+    "clocked nmos reset": [
+      "Clocked NMOS reset M11",
+      "Reset NMOS pair M6-M7",
+      "M3-M4 clocked NMOS reset pair"
+    ],
+    "clock tail network": [
+      "Clocked tail / switch node (M11,M15,M14)",
+      "NMOS clocked tail / evaluation switch (M14)",
+      "M2-M9-M10 clock-tail network",
+      "Clocked tail network (M14-M17)"
+    ],
+    "input nmos pair": [
+      "Input NMOS pair (M10,M9)",
+      "Input NMOS pair (M13,M12) with bias branch (M15,M16)"
+    ],
+    "nmos pull-down network": [
+      "Output discharge / sensing NMOS (M6,M3)",
+      "NMOS cross-coupled latch pull-down (M7,M6,M5,M4)",
+      "NMOS current sink & node clamp (M8-M11-M12)",
+      "NMOS input / pull-down chain (M3-M6)",
+      "M10-M11 NMOS output pull-down current sources",
+      "M7-M8 NMOS bias/current sink for input pair",
+      "M4-M5 NMOS sink/output devices",
+      "M8-M9 NMOS bias/current sinks (net62/net61 to net17)",
+      "M3 NMOS bias/sink (tail device)",
+      "M3-M5 NMOS gain-boost / cascode / bias sink network",
+      "M3 NMOS current sink (bias device)",
+      "M4-M5 NMOS current sinks (VB1 biased loads)",
+      "M1-M3 NMOS bias sinks (VB4)",
+      "M4-M5 NMOS output devices / pull-down (VB1 biased)",
+      "M4-M5 NMOS cascode/bias sink network (VB1 biased)",
+      "M1-M6 NMOS output current sinks (VB4 biased)",
+      "M1-M4 NMOS output sink / bias pair (net02->VOUT1)",
+      "M4 NMOS pull-down / output device",
+      "M11-M1 NMOS output/pull-down devices (VB1 biased, VOUT1/VOUT2)",
+      "M4-M5 NMOS output/pull-down devices (VB1 biased, VOUT1/VOUT2)"
+    ],
+    "pmos pull-up network": [
+      "PMOS bias current sources (M8,M7,M0)",
+      "PMOS precharge / pull-up network (M7,M8,M11,M13,M14,M15) and VCLK1 control",
+      "PMOS bias / pull-up chain (M0-M2)",
+      "PMOS load / pull-up devices (M0-M3)",
+      "PMOS output pull-up / bias (M14-M15-M16-M17)",
+      "M4 PMOS output device (pull-up)",
+      "M2-M3 PMOS bias/current-source load",
+      "M5-M6 PMOS current-source loads (VB1-biased)",
+      "M0-M1 PMOS bias/current sources (pull-up loads)",
+      "M0-M1 PMOS pull-up loads (VB1-biased)",
+      "M6-M7 PMOS bias current mirror/source (IB1)",
+      "M5-M8 PMOS bias/output current sources (IB1/IB2)",
+      "M0-M1 PMOS active load/current sources",
+      "M2 PMOS bias/current source",
+      "M1 PMOS bias current source (VCM1)",
+      "M2-M0 PMOS active loads / current sources (bias VB1)",
+      "M6-M1 PMOS bias/current source (net70, VDD-referenced)",
+      "M0-M1 PMOS current source bias (VB1)",
+      "M2-M3 PMOS current source / load (VB2)",
+      "M3-M4 PMOS cascode/current-source devices"
+    ],
+    "nmos cross coupled / regenerative pair": [
+      "NMOS cross-coupled / regenerative pair (M9,M10)"
+    ],
+    "output load": [
+      "Output load resistors to net36 (R0,R1) + PMOS rail device (M15)",
+      "Output load / bleed (R3)",
+      "Output load network (R3)",
+      "Output load & sensing (R3)",
+      "Output load/bleeder (R3)",
+      "Output load resistor (R3)",
+      "Output load / sense resistor (R3)",
+      "Output load & output capacitor network (R3,C0,R2)",
+      "Load / bleed (R3)",
+      "Output load / bleeder (R3)",
+      "Output load/sense resistor R3 (VOUT1-VSS)",
+      "Output load and sensing (R3)",
+      "Output load network (R3, external load)",
+      "Output node and load (VOUT1)",
+      "Output load (R3)",
+      "Output node/load (VOUT1)",
+      "Load / bleeder resistors (R2-R3)",
+      "Output load & compensation network (R3,C0,R2)",
+      "Output load/bleeder R3",
+      "Output node VOUT1"
+    ],
+    "diode-connected/clamp": [
+      "NMOS diode-connected / clamp devices (M5,M6)",
+      "Latch precharge / clamp NMOS (M2,M3)",
+      "Clamp/diode-connected devices to VSS (Q21,Q22,Q23,Q24)",
+      "Clocked tail / isolation for net13 (M15,M16) with clocked node clamp (M10,M17) and storage capacitor C0"
+    ],
+    "reference": [
+      "Reference/bias generation branch (M30,M31,M32,M33,M26,M27,M28,M29)",
+      "Clock buffer / reference node and decap (net69) (M1,C0)",
+      "M9 NMOS diode-connected reference (net17)",
+      "Bias generator / reference buffer (MM13,MM15,MM14,RR1,MM2@net1006)",
+      "Bandgap/reference & bias generator (MM13-MM15, MM14, RR0-RR1, PMOS at net1006)",
+      "Bias/reference generator (MM13-MM15, MM14, RR0, MM0/MM1/MM2/MM3 @VB4/net1006)",
+      "Reference / bias generator (MM13-MM15-MM14, RR0, VB4)",
+      "Bias/reference generator (MM7,MM8,MM9,MM10,MM11,MM13,MM14,MM15)",
+      "Bias/reference generation (MM7-MM15, MM0-MM6 second block)",
+      "Reference input path (VREF1, MM3)",
+      "Bias/current reference network (MM14,RR1,MM13,MM15)",
+      "Bias/reference generator (RR0-RR1-MM14-MM2@net1006)",
+      "Reference input / VREF path (MM3)",
+      "Bias/reference generator (MM11-MM14, MM0-MM4, MM7-MM10, MM1-MM3, MM2)",
+      "Bias/reference nodes (VB1, VB2, VB3, VB4)",
+      "Internal bias/reference generator (MM14, MM13, MM15, MM0/MM2/MM4/MM5/MM1/MM3/MM6 around VB3/VB4/net1006)",
+      "Reference input VREF1 and sensing (MM3/MM4, net38)",
+      "Reference/bias network (MM0,MM1,MM2,MM3,MM14,MM15,MM13,RR0)",
+      "Reference generator (MM3,MM4,VREF1)",
+      "Reference input branch (VREF1 sensing path)"
+    ],
+    "output pull down / sensing stack": [
+      "Output pull-down / sensing stack (M15,M16,M13)"
+    ],
+    "resistive loads": [
+      "Resistive loads / bleed (R0,R1) with capacitive loading (C0,C1)",
+      "R0-R1 resistive loads",
+      "R1-R1 resistive loads (VDD to VOUT1/VOUT2)",
+      "R0-R1 resistive load",
+      "R0-R1 resistive load network",
+      "R0-R1 resistive load / sensing network",
+      "R2-R3 resistive loads (VDD to VOUT1/2)",
+      "R0-R1 resistive loads to VDD",
+      "R0 resistive load (VDD-VOUT1)",
+      "R1 resistive load to ground (VOUT1-VSS)",
+      "R0-R2 resistive loads (VDD to outputs)",
+      "R0 resistive load (VOUT1 to VDD)"
+    ],
+    "supply decoupling / feedthrough cap": [
+      "Supply decoupling / feedthrough cap (C2)"
+    ],
+    "output nmos devices to vout": [
+      "Output NMOS devices to VOUT (M8,M9)"
+    ],
+    "pmos input pair": [
+      "PMOS input differential pair M1-M2",
+      "PMOS input differential pair (M14-M15)",
+      "PMOS input pair (M0-M1)",
+      "M3-M4 PMOS input differential pair",
+      "M1-M2 PMOS input differential pair",
+      "M0-M3 PMOS input quad (VIN1-4)",
+      "M0-M2 PMOS input differential pair",
+      "M8-M9 PMOS input pair (VIN1/VIN2 -> net01/net028, tail IB1)",
+      "M6-M7 PMOS differential input pair (VIN1/VIN2 -> net4/net3, tail=net1)",
+      "M6-M7 PMOS differential input pair (VIN1/VIN2 -> net013/net015, tail=IB1)",
+      "M6-M7 PMOS differential input pair (VIN1/VIN2 -> net046/net048, tail=IB1)",
+      "M3-M4 PMOS output/input transconductor pair (VIN1/VIN2 -> VOUT2/VOUT1, tail=IB2)"
+    ],
+    "nmos cross coupled pair": [
+      "NMOS cross-coupled pair M3-M4"
+    ],
+    "inner pmos regenerative network": [
+      "Inner PMOS regenerative network M8-M9-M10"
+    ],
+    "pmos output pair": [
+      "PMOS output pair M11-M12"
+    ],
+    "input nmos sampling / evaluation pair": [
+      "Input NMOS sampling / evaluation pair (M10,M11) and clocked tail switch (M12)"
+    ],
+    "input sampling quad": [
+      "Input sampling quad (VIN1-VIN4) with clock gating (M16-M19)"
+    ],
+    "tail current source": [
+      "Tail / evaluation current sources IB1/IB2 (M6-M7, M14-M15)",
+      "IB1 bias node / tail-current bias",
+      "Q4-Q5 NPN current mirror / tail current sink",
+      "M4-M5 tail current sources (IB1, VCONT1/VCONT2)",
+      "M1 NMOS tail current source",
+      "M1 tail current source",
+      "M1 tail current source (bias VB1)",
+      "M4 NMOS tail current source",
+      "M4 NMOS tail current source (VB2-biased)",
+      "M4 NMOS tail current source (bias via net17)",
+      "M5 NMOS tail current source",
+      "M7-M8 NMOS tail current sources (bias VB2)",
+      "M12-M15 NMOS tail current sources (VB3-biased)",
+      "M8 NMOS tail current source (VCM1)",
+      "M9-M10 NMOS tail/common-mode current sinks",
+      "M11 NMOS tail current sink / bias (net17)",
+      "M14-M15-M16-M17-M18 tail current source and bias network",
+      "M1 tail current source (NMOS bias)",
+      "EA bias & tail current source (MM4,VB2,VB1)",
+      "Tail/bias current sink (MM4)"
+    ],
+    "output pmos loads": [
+      "Output PMOS loads (net56 to VOUT1/VOUT2) (M20-M22)"
+    ],
+    "active load": [
+      "PMOS active loads / level restore (M12,M0,M13,M14)",
+      "PMOS active load / mirror network (M1-M2-M4-M5)",
+      "M3-M4 PMOS active loads",
+      "M3-M4 PMOS active load",
+      "M3-M4 PMOS active load (cross-coupled)",
+      "M0-M1 PMOS active loads",
+      "M0-M1 PMOS active load (diode-connected bias)",
+      "M2-M0 PMOS active loads (VB1-biased)",
+      "M4-M5 NMOS active load / cascode (VB3)",
+      "M2-M3 PMOS active load devices",
+      "M3-M4 active load",
+      "EA active load / current sources (MM1, MM2, MM5, MM6)",
+      "Error amplifier PMOS active load / bias (MM6-MM5, VB3)",
+      "PMOS active load/cascode (MM5,MM6)",
+      "Error amplifier active load MM9-MM10 (NMOS mirror load)",
+      "Error amplifier gain/active load & bias (MM1-MM2, MM7-MM8, MM13-MM15)",
+      "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
+      "Error amplifier active load / mirrors (MM1-MM2-MM5-MM6)",
+      "M4-M5 PMOS active load",
+      "M7 PMOS active load / cascode (VB1 biased)"
+    ],
+    "nmos input pair": [
+      "NMOS input pair with tail bias (M10,M11) and input devices (M12,M13)",
+      "NMOS input pair (M4-M5)",
+      "NMOS input differential pair (M4-M5)",
+      "M0-M1 NMOS input pair (shared tail bias at IB1)",
+      "M2-M3 NMOS input differential pair",
+      "M2-M0 NMOS input differential pair (VIN1/VIN2, tail net19)",
+      "M7-M6 NMOS input differential pair (VIN1/VIN2, tail net14)",
+      "M7-M6 NMOS input differential pair (VIN1/VIN2, tail net11)",
+      "M7-M6 NMOS input differential pair (VIN1/VIN2, tail net28)",
+      "M19-M20 NMOS input-sense / gm-boost pair (VIN1/VIN2, net043->net047)",
+      "M1-M3 NMOS input differential pair / transconductor (VIN1/VIN2, tail IB1)",
+      "M1-M3 NMOS input differential pair (VIN1/VIN2, tail IB1)",
+      "M3-M5 NMOS input differential pair (VIN1/VIN2, tail IB1)",
+      "M3-M10 NMOS input differential pair (VIN1/VIN2, tail net06)",
+      "M8-M9 NMOS input differential pair (VIN1/VIN2, tail IB1)",
+      "M5-M3 NMOS input differential pair (VIN1/VIN2, tail IB1)",
+      "M1-M3 NMOS input pair (VIN1 -> net027/net024, source=VSS)",
+      "M2-M0 NMOS input pair (VIN2 -> net03/net026, source=VSS)",
+      "M3-M4 NMOS input / transconductor pair (VIN1/VIN2 -> VOUT2/VOUT1, tail IB1)",
+      "M10-M11 NMOS differential input pair (VIN2/VIN1 -> net031/net030, tail=net01)"
+    ],
+    "input sampling / gain stage nmos network": [
+      "Input sampling / gain stage NMOS network (M3,M4,M5,M6) with VIN3 supply/rail"
+    ],
+    "input nmos sampling pair": [
+      "Input NMOS sampling pair (M9,M10) with shared tail/reset (M11)"
+    ],
+    "output pull devices": [
+      "Output pull devices (M44,M43) and PMOS loads (M38,M37) to VOUT1/VOUT2"
+    ],
+    "vin3/vin4 steering injectors": [
+      "VIN3/VIN4 steering injectors (Q10,Q11,Q4,Q5) into net17/net22"
+    ],
+    "regenerative/cross coupled core around net17/net22/net19": [
+      "Regenerative/cross-coupled core around net17/net22/net19 (Q16,Q17,Q18)"
+    ],
+    "logic output drivers": [
+      "Logic output drivers (Q12,Q13) and pull-up emitter followers (Q0,Q1) with bias resistors (R0,R1)"
+    ],
+    "clocked internal dynamic node net57/net58 with coupling capacitor": [
+      "Clocked internal dynamic node net57/net58 with coupling capacitor (M15,M1,M2,C0)"
+    ],
+    "input sampling / comparison nmos pair into net25": [
+      "Input sampling / comparison NMOS pair into net25 (M9,M8) with clock switch (M11)"
+    ],
+    "load capacitors": [
+      "C0-C1 load capacitors",
+      "Coupling / load capacitors (C0-C1)",
+      "C1 compensation/load capacitor (net23-VOUT1)",
+      "C0 compensation/load capacitor (net12-VOUT2)",
+      "C0 compensation/load capacitor",
+      "C0-C1 input/load capacitors",
+      "C0 compensation / load capacitor (VOUT1 to VSS)",
+      "C0 shunt/load capacitor (net026 to VSS)",
+      "C2 shunt/load capacitor (net024 to VSS)",
+      "C2 shunt/load capacitor (net038 to VSS)",
+      "C0 shunt/load capacitor (net039 to VSS)"
+    ],
+    "nmos discharge pair": [
+      "M11-M12 NMOS discharge pair"
+    ],
+    "input stage": [
+      "Input stage (M4-M6)",
+      "Input stage (M7-M9)"
+    ],
+    "current mirror": [
+      "PMOS current-mirror load (M0-M1)",
+      "M2-M3 PMOS current-mirror active load",
+      "Q2-Q3 current-mirror active load",
+      "Q2-Q3 PNP current mirror active load",
+      "M6-M7 PMOS current mirror bias generator (IB1/IB2, VCM1)",
+      "M4-M5 PMOS current mirror / bias distribution",
+      "PMOS current mirror load (MM1,MM2)",
+      "NMOS active load / current mirror (MM9-MM10)",
+      "PMOS current mirror/bias network (MM1-MM2-MM5-MM6)",
+      "PMOS current mirror / bias distribution (MM1-MM2, MM5-MM6, MM8)",
+      "Current mirror / active load around net16/net24 (MM1/MM2/MM5/MM6, M2,M4,M6,M8)",
+      "Error amplifier active load/current mirror (MM1-MM2-MM5-MM6)",
+      "Current mirror / active load devices (M4,M8,M9,M6,M5,M7,M1,M2,M3)",
+      "Error amplifier active load & current mirror (MM1-MM2-MM5)",
+      "Current mirror / active load (MM1, MM2, M4, M8)",
+      "Current mirror / active load in EA (MM1/MM2 and M4/M8)",
+      "PMOS mirror / gain devices (MM1,MM2,MM5,MM6)",
+      "Current mirror / active load (M8-M9, M4-M6, M1-M2)",
+      "EA load/current mirror (M8,M4)",
+      "EA PMOS current-mirror load (MM1,MM2)"
+    ],
+    "pmos gain chain / level shift": [
+      "PMOS gain chain / level shift (M2-M3)"
+    ],
+    "output inverter / driver": [
+      "Output inverter / driver (M3-M9)",
+      "Output inverter / driver (M2-M6)"
+    ],
+    "precharge pmos": [
+      "PMOS preamp / regenerative stack (M0-M3)",
+      "BJT tracking / preamp devices (Q0-Q4)"
+    ],
+    "output pull up/pull down": [
+      "Output pull-up/pull-down (M6-M12)"
+    ],
+    "nmos input / transconductor": [
+      "NMOS input / transconductor (M9-M10-M13)",
+      "M1 NMOS input / transconductor (VIN1 -> net013, tail IB1)",
+      "M1 NMOS input / transconductor (VIN1 -> net015, tail IB1)",
+      "M11 NMOS input / transconductor (VIN1 -> net028, tail IB1)",
+      "M1 NMOS input / transconductor (VIN1 -> net014, source=VSS)"
+    ],
+    "output stage": [
+      "Output stage (M6-M7-M12)",
+      "Driver bias/current source (M6)",
+      "Driver / intermediate gain stage (M5-M7-M8-M4)",
+      "Output stage driver/buffer (M5,M7,M8,M9)",
+      "Second gain stage / driver MM7-MM8 (NMOS/PMOS)",
+      "Driver / gate control stage (M5,M7,M8,M9,M3)",
+      "Driver / intermediate gain stage (M2-M5-M7-M8-M9)",
+      "Driver / gate control node for pass device (net30, M7, M5, M8)",
+      "Driver / predriver stage (M5-M7-M8-M9-M6)",
+      "Driver / gain stage (M1-M2, M4-M8)",
+      "Driver / pre-driver (M1,M2,M3,M4,M5,M6,M7,M8,M9)",
+      "Driver gain devices (M2,M5,M8)",
+      "Driver bias current sources (M6,M9)"
+    ],
+    "resistive coupling": [
+      "Resistive coupling (R0)"
+    ],
+    "nmos discharge / gain stage": [
+      "NMOS discharge / gain stage (M2-M4)"
+    ],
+    "nmos control switch": [
+      "NMOS control switch (M5)"
+    ],
+    "rc load / compensation": [
+      "RC load / compensation (R0-C0)"
+    ],
+    "nmos input compare branch": [
+      "NMOS input compare branch 1 (M10-M11-M9)",
+      "NMOS input compare branch 2 (M16-M17-M12)"
+    ],
+    "nmos output devices": [
+      "NMOS self-biased output devices (M6-M7)",
+      "NMOS cross-coupled output devices (M8-M9)",
+      "M6-M7 NMOS output devices (gain/output stage)",
+      "M9-M5 NMOS common-source output devices",
+      "M9-M5 NMOS output transconductor/common-source devices",
+      "M7-M8 NMOS active load/output devices",
+      "M4-M5 NMOS common-gate/cascode output devices (to VOUT1/VOUT2)",
+      "M10-M11 NMOS cascode/common-gate output devices",
+      "M4-M1 NMOS cascode/output devices (VB1 -> VOUT1/VOUT2)"
+    ],
+    "nmos output discharge": [
+      "NMOS output discharge (M12-M13)"
+    ],
+    "resistive output loads": [
+      "Resistive output loads (R2-R3)",
+      "Resistive output loads (R5-R6)",
+      "Resistive output loads (R0-R1)"
+    ],
+    "bjt intermediate gain / steering": [
+      "BJT intermediate gain / steering (Q2-Q3-R2-R3)"
+    ],
+    "bjt output pull up stage": [
+      "BJT output pull-up stage (Q4-Q5)"
+    ],
+    "bjt input pair with emitter degeneration": [
+      "BJT input pair with emitter degeneration (Q1-Q5-R2)"
+    ],
+    "load resistors": [
+      "BJT input pair with emitter resistor (Q0-Q2-R5)",
+      "R0 tail emitter resistor",
+      "R1-R2 collector load resistors",
+      "R3 tail emitter resistor (tail bias)",
+      "R4 emitter coupling resistor",
+      "R0 output load resistor",
+      "R0 tail/emitter degeneration resistor",
+      "R0-R1 load resistors",
+      "R0 cross-coupling resistor between drains",
+      "R0-R1 resistive load / output resistors (net36 to outputs)",
+      "R0 bias resistor (net8 to VSS)",
+      "Feedback resistor divider (R0-R1)",
+      "Load resistor R3 (VOUT1-VSS)",
+      "ESR/zero resistor (R2)",
+      "Load resistor R3",
+      "Bias reference resistor (RRF)"
+    ],
+    "bjt cross coupled core": [
+      "BJT cross-coupled core (Q5-Q6-R1-R2-R0)"
+    ],
+    "bjt output stages / loads": [
+      "BJT output stages / loads (Q1-Q3-R3-R4)"
+    ],
+    "nmos input / control path": [
+      "NMOS input / control path (M0-M3)"
+    ],
+    "output stage pull up/pull down": [
+      "Output stage pull-up/pull-down (M1-M2-M5)"
+    ],
+    "emitter degeneration": [
+      "R0-Q0 emitter degeneration",
+      "R3-Q1 emitter degeneration"
+    ],
+    "emitter degeneration resistors": [
+      "R0-R3 emitter degeneration resistors"
+    ],
+    "supply rails": [
+      "VDD-VSS supply rails"
+    ],
+    "current source": [
+      "IB1 bias current source",
+      "M5-M6 NMOS cascode/current-source loads (bias VB2)",
+      "Bias current source IB1 branch (M6-M9)",
+      "Bias current source (M6)",
+      "Bias/current source network M1-M2-M3-M5-M6-M7-M8-M9",
+      "Bias current source (IB1 via M6,M9)",
+      "Bias current source / reference (IB1,M6,M9)",
+      "Bias current source (IB1, M6, M9)",
+      "Bias current source (IB1, M6)",
+      "Error amplifier load/current source (M4,M8,M5)",
+      "Bias current source / bias network (IB1,M6,M9,M1,MM0,VB1,VB2,VB3,VB4)",
+      "Bias current source IB1 (M6,M9)",
+      "Bias current source (IB1 via M6/M9)",
+      "Bias/current source network (MM13-MM15, MM14 and VB nodes)",
+      "Bias current source / tail (M6,M9,IB1)",
+      "Bias current source node IB1 (M6,M9)",
+      "Bias current source / bias network (IB1,VB1,M6,M9,M1)",
+      "Bias current source (IB1 with M6,M9)",
+      "Bias current source (IB1, M6,M8,M4,M9)",
+      "Bias current source / tail (IB1, M6, M9)"
+    ],
+    "pmos load devices": [
+      "M2-M3 PMOS load devices",
+      "M2-M3 PMOS load devices (VOUT1/VOUT2)"
+    ],
+    "resistive cross coupled load": [
+      "R0-R1 resistive cross-coupled load"
+    ],
+    "cross coupled gain cell": [
+      "M1-M2 cross-coupled gain cell",
+      "M3-M4 cross-coupled gain cell"
+    ],
+    "pmos diode connected loads": [
+      "M3-M4 PMOS diode-connected loads",
+      "M8-M9 PMOS diode-connected loads (net030/net032)"
+    ],
+    "nmos common mode sensing pair": [
+      "M9-M10 NMOS common-mode sensing pair"
+    ],
+    "compensation/cross coupling capacitors": [
+      "C0-C1 compensation/cross-coupling capacitors"
+    ],
+    "nmos output sensing/feedback to net70": [
+      "M10-M14 NMOS output sensing/feedback to net70"
+    ],
+    "nmos vcm1 biasing devices": [
+      "M11-M13 NMOS VCM1 biasing devices"
+    ],
+    "compensation/feedback capacitors": [
+      "C0-C1 compensation/feedback capacitors"
+    ],
+    "pmos output stage / cmfb sensing branch": [
+      "M6-M7-M8-M9 PMOS output stage / CMFB sensing branch"
+    ],
+    "interconnect / degeneration between net07 and vout1": [
+      "R2 interconnect / degeneration between net07 and VOUT1"
+    ],
     "pass device": [
       "Pass device M0 (VIN1-VOUT1)",
       "Pass device (M0)",
@@ -32,52 +606,8 @@
       "Error amplifier core (M2-M7)",
       "Error amplifier core (MM3, MM0, MM4, MM6, MM5, MM1, MM2, M7, M5, M2, M1, M3)"
     ],
-    "tail current source": [
-      "EA bias & tail current source (MM4,VB2,VB1)",
-      "Tail/bias current sink (MM4)",
-      "Error amplifier tail / bias current sink (MM13, MM15)",
-      "EA bias / tail current source (M6,M8,M4,M9,IB1)",
-      "Bias network / tail current source (M6,M9,IB1,VB2)",
-      "EA bias / tail current sink (MM4)",
-      "Tail / evaluation current sources IB1/IB2 (M6-M7, M14-M15)",
-      "IB1 bias node / tail-current bias",
-      "Q4-Q5 NPN current mirror / tail current sink",
-      "M4-M5 tail current sources (IB1, VCONT1/VCONT2)",
-      "M1 NMOS tail current source",
-      "M1 tail current source",
-      "M1 tail current source (bias VB1)",
-      "M4 NMOS tail current source",
-      "M4 NMOS tail current source (VB2-biased)",
-      "M4 NMOS tail current source (bias via net17)",
-      "M5 NMOS tail current source",
-      "M7-M8 NMOS tail current sources (bias VB2)",
-      "M12-M15 NMOS tail current sources (VB3-biased)",
-      "M8 NMOS tail current source (VCM1)"
-    ],
     "ea load / gain devices": [
       "EA load / gain devices (MM6,MM5,VB3)"
-    ],
-    "reference": [
-      "Bias generator / reference buffer (MM13,MM15,MM14,RR1,MM2@net1006)",
-      "Bandgap/reference & bias generator (MM13-MM15, MM14, RR0-RR1, PMOS at net1006)",
-      "Bias/reference generator (MM13-MM15, MM14, RR0, MM0/MM1/MM2/MM3 @VB4/net1006)",
-      "Reference / bias generator (MM13-MM15-MM14, RR0, VB4)",
-      "Bias/reference generator (MM7,MM8,MM9,MM10,MM11,MM13,MM14,MM15)",
-      "Bias/reference generation (MM7-MM15, MM0-MM6 second block)",
-      "Reference input path (VREF1, MM3)",
-      "Bias/current reference network (MM14,RR1,MM13,MM15)",
-      "Bias/reference generator (RR0-RR1-MM14-MM2@net1006)",
-      "Reference input / VREF path (MM3)",
-      "Bias/reference generator (MM11-MM14, MM0-MM4, MM7-MM10, MM1-MM3, MM2)",
-      "Bias/reference nodes (VB1, VB2, VB3, VB4)",
-      "Internal bias/reference generator (MM14, MM13, MM15, MM0/MM2/MM4/MM5/MM1/MM3/MM6 around VB3/VB4/net1006)",
-      "Reference input VREF1 and sensing (MM3/MM4, net38)",
-      "Reference/bias network (MM0,MM1,MM2,MM3,MM14,MM15,MM13,RR0)",
-      "Reference generator (MM3,MM4,VREF1)",
-      "Reference input branch (VREF1 sensing path)",
-      "Reference/bias network (MM9-MM10-MM3-MM4-MM0)",
-      "Reference and bias generator (MM* VB1/VB2/VB3/VB4/VREF1)",
-      "Bandgap/reference & bias generator block (net1006/VB4/VB5 devices)"
     ],
     "feedback divider": [
       "Feedback divider (R0,R1)",
@@ -88,115 +618,20 @@
       "Feedback divider R0-R1 (VOUT1-net38-VSS)",
       "Feedback divider R0-R1"
     ],
-    "output load / bleed": [
-      "Output load / bleed (R3)"
-    ],
     "compensation network": [
       "Compensation network (C0,R2)",
       "Compensation network (C0, R2)",
       "Compensation network (C0-R2)",
       "Compensation network (C0 from VOUT1 to net44, R2 from net44 to VSS)"
     ],
-    "bias": [
-      "Aux bias/current network (M1,M2,M3,M4,M5,M6,M7,M8,M9,IB1,VB4)",
-      "EA tail/bias device (MM4)",
-      "Aux bias / startup (M1, M2, M3, M4)",
-      "Bias current sink (MM4 @VB2)",
-      "PMOS bias/current sources (MM5, MM6 @VB3)",
-      "Gate driver / buffer & bias network (M1-M9)",
-      "Error amplifier bias/current sources (MM1-MM2, VB1)",
-      "Error amplifier tail / sink bias (MM4, VB2)",
-      "VB4 bias branch (MM0-MM2, net1006/net15)",
-      "Bias cell (MM11,MM8,MM9,MM7,MM0,MM2,MM10,MM4,MM3,MM1)",
-      "Bias network (M1,M2,M3,M4)",
-      "Bias generation & current references (MM13-MM14-MM15 + MM0/MM1/MM2/MM3/MM4/MM5/MM6 secondary block)",
-      "Error amplifier tail/bias MM0 (PMOS bias from VDD)",
-      "Bias generator / current references (MM13-MM15, MM14, MM0/MM1/MM2/MM3 block)",
-      "NMOS tail / bias device (MM13)",
-      "Bias network (MM14,MM0,MM1,MM2,MM3,RR0)",
-      "Bias/current mirrors & cascodes (MM1,MM2,MM5,MM6,MM7,MM8,MM9,MM10)",
-      "Auxiliary bias/gain devices (M1,M2,M3,M4,M6,M8,M9)",
-      "Error amplifier tail/bias (MM13-MM15)",
-      "Additional bias/control (M1-M2-M3-M4-M5-M6-M7-M8-M9)"
-    ],
     "ea input transconductor / diff pair": [
       "EA input transconductor / diff pair (MM0, MM3)"
-    ],
-    "active load": [
-      "EA active load / current sources (MM1, MM2, MM5, MM6)",
-      "Error amplifier PMOS active load / bias (MM6-MM5, VB3)",
-      "PMOS active load/cascode (MM5,MM6)",
-      "Error amplifier active load MM9-MM10 (NMOS mirror load)",
-      "Error amplifier gain/active load & bias (MM1-MM2, MM7-MM8, MM13-MM15)",
-      "Local gain/active load mirrors (MM1-MM2, MM3-MM4, MM5-MM6, MM7-MM8, MM9-MM10)",
-      "Error amplifier active load / mirrors (MM1-MM2-MM5-MM6)",
-      "PMOS active loads / level restore (M12,M0,M13,M14)",
-      "PMOS active load / mirror network (M1-M2-M4-M5)",
-      "M3-M4 PMOS active loads",
-      "M3-M4 PMOS active load",
-      "M3-M4 PMOS active load (cross-coupled)",
-      "M0-M1 PMOS active loads",
-      "M0-M1 PMOS active load (diode-connected bias)",
-      "M0-M1 PMOS active load/current sources",
-      "M2-M0 PMOS active loads / current sources (bias VB1)",
-      "M2-M0 PMOS active loads (VB1-biased)",
-      "M4-M5 NMOS active load / cascode (VB3)",
-      "M7-M8 NMOS active load/output devices",
-      "M0-M3 PMOS active load / current-source loads (to VOUT1/VOUT2)"
     ],
     "ea second stage / gain boost & biasing": [
       "EA second-stage / gain-boost & biasing (MM7-MM10)"
     ],
     "pass device driver / buffer": [
       "Pass device driver / buffer (M5, M7, M8, M9)"
-    ],
-    "current source": [
-      "Driver bias/current source (M6)",
-      "Bias current source IB1 branch (M6-M9)",
-      "Bias current source (M6)",
-      "Bias/current source network M1-M2-M3-M5-M6-M7-M8-M9",
-      "Bias current source (IB1 via M6,M9)",
-      "PMOS current source/load for diff pair (MM0)",
-      "Bias current source / reference (IB1,M6,M9)",
-      "Bias current source (IB1, M6, M9)",
-      "Bias current source (IB1, M6)",
-      "Error amplifier load/current source (M4,M8,M5)",
-      "Bias current source / bias network (IB1,M6,M9,M1,MM0,VB1,VB2,VB3,VB4)",
-      "Bias current source IB1 (M6,M9)",
-      "Bias current source (IB1 via M6/M9)",
-      "Bias/current source network (MM13-MM15, MM14 and VB nodes)",
-      "Bias current source / tail (M6,M9,IB1)",
-      "Bias current source node IB1 (M6,M9)",
-      "Bias current source / bias network (IB1,VB1,M6,M9,M1)",
-      "Bias current source (IB1 with M6,M9)",
-      "Bias current source (IB1, M6,M8,M4,M9)",
-      "Bias current source / tail (IB1, M6, M9)"
-    ],
-    "output load network": [
-      "Output load network (R3)",
-      "Output load network (R3, external load)"
-    ],
-    "differential pair": [
-      "Differential pair (MM0, MM3) with PMOS active load (MM1, MM2)",
-      "Error amplifier differential pair (MM8-MM7)",
-      "NMOS differential pair (MM0,MM3)",
-      "PMOS differential pair (MM3-MM4)",
-      "PMOS differential pair (MM3,MM4)",
-      "M8-M9 input differential pair",
-      "Input differential pair M10-M9",
-      "Input NMOS differential pair (M11,M12)",
-      "PMOS input differential pair M1-M2",
-      "Input differential pair (M9,M10) with clocked tail (M11)",
-      "Clocked input differential pair (M4,M3) with tail switch (M7) and clocked node (net11)",
-      "VIN1-VIN2 input differential pair (Q14,Q15) with shared collector node net11",
-      "Input differential NMOS pair into tail node net41 (M10,M9) with clocked tail switch (M11)",
-      "M3-M4 input differential pair",
-      "M1-M2 input differential pair",
-      "Input differential pair 1 (M12-M13)",
-      "Input differential pair 2 (M15-M16)",
-      "PMOS input differential pair (M14-M15)",
-      "NMOS input differential pair (M4-M5)",
-      "BJT input differential pair (Q0-Q1-R4)"
     ],
     "nmos gain stage / cascode devices": [
       "NMOS gain stage / cascode devices (MM7, MM8, MM9, MM10)"
@@ -206,70 +641,12 @@
       "Output feedback divider (R0,R1)",
       "Output feedback divider (R0-R1)"
     ],
-    "output load & sensing": [
-      "Output load & sensing (R3)"
-    ],
     "error amplifier nmos input devices": [
       "Error amplifier NMOS input devices (MM10-MM9)"
-    ],
-    "driver / intermediate gain stage": [
-      "Driver / intermediate gain stage (M5-M7-M8-M4)",
-      "Driver / intermediate gain stage (M2-M5-M7-M8-M9)"
     ],
     "error amplifier": [
       "Error amplifier (MM0,MM3,MM1,MM2,MM4,MM5,MM6)",
       "Error amplifier (core gain stage M5-M7 and mirrors M8-M9, M1-M2, M3)"
-    ],
-    "current mirror": [
-      "PMOS current mirror load (MM1,MM2)",
-      "NMOS active load / current mirror (MM9-MM10)",
-      "PMOS current mirror/bias network (MM1-MM2-MM5-MM6)",
-      "PMOS current mirror / bias distribution (MM1-MM2, MM5-MM6, MM8)",
-      "Current mirror / active load around net16/net24 (MM1/MM2/MM5/MM6, M2,M4,M6,M8)",
-      "Error amplifier active load/current mirror (MM1-MM2-MM5-MM6)",
-      "Current mirror / active load devices (M4,M8,M9,M6,M5,M7,M1,M2,M3)",
-      "Error amplifier active load & current mirror (MM1-MM2-MM5)",
-      "Current mirror / active load (MM1, MM2, M4, M8)",
-      "Current mirror / active load in EA (MM1/MM2 and M4/M8)",
-      "PMOS mirror / gain devices (MM1,MM2,MM5,MM6)",
-      "Current mirror / active load (M8-M9, M4-M6, M1-M2)",
-      "EA load/current mirror (M8,M4)",
-      "EA PMOS current-mirror load (MM1,MM2)",
-      "PMOS current-mirror load (M0-M1)",
-      "M2-M3 PMOS current-mirror active load",
-      "Q2-Q3 current-mirror active load",
-      "Q2-Q3 PNP current mirror active load",
-      "M6-M7 PMOS bias current mirror/source (IB1)",
-      "M6-M7 PMOS current mirror bias generator (IB1/IB2, VCM1)"
-    ],
-    "output stage driver/buffer": [
-      "Output stage driver/buffer (M5,M7,M8,M9)"
-    ],
-    "output load/bleeder": [
-      "Output load/bleeder (R3)",
-      "Output load/bleeder R3"
-    ],
-    "load resistors": [
-      "Feedback resistor divider (R0-R1)",
-      "Output load resistor (R3)",
-      "Load resistor R3 (VOUT1-VSS)",
-      "Output load / sense resistor (R3)",
-      "Output load/sense resistor R3 (VOUT1-VSS)",
-      "ESR/zero resistor (R2)",
-      "Load resistor R3",
-      "Bias reference resistor (RRF)",
-      "Output load resistors to net36 (R0,R1) + PMOS rail device (M15)",
-      "BJT input pair with emitter resistor (Q0-Q2-R5)",
-      "R0 tail emitter resistor",
-      "R1-R2 collector load resistors",
-      "R3 tail emitter resistor (tail bias)",
-      "R4 emitter coupling resistor",
-      "R0 output load resistor",
-      "R0 tail/emitter degeneration resistor",
-      "R0-R1 load resistors",
-      "R0 cross-coupling resistor between drains",
-      "R0-R1 resistive load / output resistors (net36 to outputs)",
-      "R0 bias resistor (net8 to VSS)"
     ],
     "gate driver / buffer to pass device": [
       "Gate driver / buffer to pass device (M2-M5-M6-M7-M8-M9-M3-M4)"
@@ -281,6 +658,7 @@
     "output network": [
       "Output network (R3, C0, load)",
       "Output network (C0, R3, load node)",
+      "Output network / load & compensation (R3,C0,R2)",
       "Output network (R3, C0)",
       "Output network (R3,C0)",
       "Output network (R3,C0,R2)"
@@ -294,23 +672,14 @@
     "error amplifier input pair mm3 mm4": [
       "Error amplifier input pair MM3-MM4 (PMOS diff pair)"
     ],
-    "second gain stage / driver mm7 mm8": [
-      "Second gain stage / driver MM7-MM8 (NMOS/PMOS)"
-    ],
     "output compensation c0 and bleeder": [
       "Output compensation C0 and bleeder R2 (VOUT1-net44-VSS)"
     ],
     "error amplifier gain stage": [
       "Error amplifier gain stage (MM7-MM8, net1003)"
     ],
-    "driver / gate control stage": [
-      "Driver / gate control stage (M5,M7,M8,M9,M3)"
-    ],
     "pass nmos": [
       "Pass NMOS (M0)"
-    ],
-    "output load & output capacitor network": [
-      "Output load & output capacitor network (R3,C0,R2)"
     ],
     "error amplifier input pair": [
       "Error amplifier input pair (MM3-MM4)",
@@ -325,9 +694,6 @@
     "pmos pass device": [
       "PMOS pass device (M0)"
     ],
-    "load / bleed": [
-      "Load / bleed (R3)"
-    ],
     "output compensation network": [
       "Output compensation network (C0-R2)",
       "Output compensation network (C0, R2)",
@@ -339,9 +705,6 @@
     "compensation / output capacitor network": [
       "Compensation / output capacitor network (C0, R2)",
       "Compensation / output capacitor network (C0,R2)"
-    ],
-    "output load / bleeder": [
-      "Output load / bleeder (R3)"
     ],
     "gate driver / gain stage": [
       "Gate driver / gain stage (M1-M2-M3-M4-M5-M6-M7-M8-M9)"
@@ -374,9 +737,6 @@
     "error amplifier input pair / transconductor": [
       "Error amplifier input pair / transconductor (M5,M7,M8,M3)"
     ],
-    "output load and sensing": [
-      "Output load and sensing (R3)"
-    ],
     "nmos pass device": [
       "NMOS pass device (M0)"
     ],
@@ -392,17 +752,11 @@
     "output capacitor / compensation": [
       "Output capacitor / compensation (C0 with R2)"
     ],
-    "output node and load": [
-      "Output node and load (VOUT1)"
-    ],
     "gate driver / intermediate gain stage": [
       "Gate driver / intermediate gain stage (M5, M7, M8, M3, M4, M6, M2, M1, M9)"
     ],
     "compensation drive / buffer": [
       "Compensation drive / buffer (M8,M4)"
-    ],
-    "output load": [
-      "Output load (R3)"
     ],
     "internal current mirrors / loads": [
       "Internal current mirrors / loads (MM0-MM7, MM1-MM2)"
@@ -411,20 +765,11 @@
       "Error amplifier / gain stage (M5,M7,M8,M9,M6,M4,M2,M1)",
       "Error amplifier / gain stage (M7,M5,M2,M1,M3)"
     ],
-    "output network / load & compensation": [
-      "Output network / load & compensation (R3,C0,R2)"
-    ],
     "output capacitor": [
       "Output capacitor (C0)"
     ],
-    "output node/load": [
-      "Output node/load (VOUT1)"
-    ],
     "error amplifier input stage": [
       "Error amplifier input stage (MM0-MM7-MM6-MM5-MM1-MM2)"
-    ],
-    "driver / gate control node for pass device": [
-      "Driver / gate control node for pass device (net30, M7, M5, M8)"
     ],
     "supply connected current mirrors / loads": [
       "Supply-connected current mirrors / loads (MM1-MM2-MM5-MM6)"
@@ -444,32 +789,17 @@
     "error amplifier output / gate drive node": [
       "Error amplifier output / gate-drive node (net30)"
     ],
-    "load / bleeder resistors": [
-      "Load / bleeder resistors (R2-R3)"
-    ],
     "output compensation capacitor": [
       "Output compensation capacitor (C0)"
     ],
     "error amplifier input/output stage": [
       "Error amplifier input/output stage (M7,M3,M2,M5)"
     ],
-    "output load & compensation network": [
-      "Output load & compensation network (R3,C0,R2)"
-    ],
     "pass device / power stage": [
       "Pass device / power stage (M0)"
     ],
-    "driver / predriver stage": [
-      "Driver / predriver stage (M5-M7-M8-M9-M6)"
-    ],
     "output compensation c0 with": [
       "Output compensation C0 with R2 (feedforward/ESR-like zero)"
-    ],
-    "driver / gain stage": [
-      "Driver / gain stage (M1-M2, M4-M8)"
-    ],
-    "output node vout1": [
-      "Output node VOUT1"
     ],
     "gate driver / level shift": [
       "Gate driver / level shift (M8,M4)"
@@ -483,351 +813,99 @@
     "ea output / gain stage": [
       "EA output / gain stage (MM5,MM6,MM7,MM8)"
     ],
-    "driver / pre driver": [
-      "Driver / pre-driver (M1,M2,M3,M4,M5,M6,M7,M8,M9)"
+    "c0 c1 load/compensation capacitors": [
+      "C0-C1 load/compensation capacitors",
+      "C0-C1 load/compensation capacitors (VOUT1/VOUT2 to VSS)"
     ],
-    "driver gain devices": [
-      "Driver gain devices (M2,M5,M8)"
+    "input nmos": [
+      "M1 input NMOS (single-ended transconductor)"
     ],
-    "latch": [
-      "M12-M7 PMOS latch pair",
-      "M15-M14 NMOS latch pair",
-      "M16-M17-M18-M10-M11 regeneration network",
-      "Regenerative PMOS latch M2-M1",
-      "Regenerative NMOS latch M5-M4",
-      "PMOS latch cross-coupled loads (M1,M2) + precharge switch (M0)",
-      "NMOS regenerative latch (M5,M4)",
-      "PMOS cross-coupled latch / regeneration (M2,M3,M1,M4,M5)",
-      "NMOS clocked discharge / gating for latch (M9,M10,M14,M35,M34)",
-      "PMOS cross-coupled latch / regen (M3,M2,M1,M0)",
-      "NMOS cross-coupled latch pull-down (M7,M6,M5,M4)",
-      "NMOS latch network M13-M16-M14-M15",
-      "Cross-coupled latch core (M8,M9) with internal nodes (net17,net27)",
-      "Clocked precharge / reset PMOS network for latch nodes (M4,M5,M6,M7)",
-      "PMOS feedback / keeper devices on latch nodes (M0,M1)",
-      "Clocked NMOS discharge / reset devices for latch nodes (M2,M3)",
-      "Cross-coupled latch core (net59/net62) (M0-M3, M14-M15)",
-      "Regenerative latch / cross-coupled NMOS pair (M4,M5)",
-      "Regenerative latch NMOS cross-coupled pair (M7,M8) with latch tail (M9)",
-      "PMOS cross-coupled load / latch (M0,M1)"
+    "input nmos transconductor": [
+      "M1 input NMOS transconductor"
     ],
-    "clocked load network": [
-      "M3-M4-M2-M5-M6 clocked load network"
+    "resistive feedback / input network": [
+      "R0-R3 resistive feedback / input network"
     ],
-    "output pull down pair": [
-      "Output pull-down pair M6-M3"
+    "nmos input device": [
+      "M1 NMOS input device (common-source)"
     ],
-    "clocked pmos tail": [
-      "Clocked PMOS tail M0"
+    "pmos loads": [
+      "M12-M13 PMOS loads (VB2 biased, VOUT1/VOUT2)"
     ],
-    "precharge pmos": [
-      "Precharge PMOS pair M8-M7",
-      "Clocked precharge PMOS network (net23/net46/net18/net50) (M8-M9)",
-      "Clocked precharge PMOS on internal input nodes (M7,M8)",
-      "M0-M1 precharge PMOS pair",
-      "M0 precharge PMOS",
-      "PMOS preamp / regenerative stack (M0-M3)",
-      "BJT tracking / preamp devices (Q0-Q4)"
+    "resistive common mode feedback": [
+      "R5-R6 resistive common-mode feedback (VCM1 <-> VOUT1/VOUT2)"
     ],
-    "clocked nmos reset": [
-      "Clocked NMOS reset M11",
-      "Reset NMOS pair M6-M7",
-      "M3-M4 clocked NMOS reset pair"
+    "nmos output current sources / class ab assist": [
+      "M2-M0 NMOS output current sources / class-AB assist (IB1/IB2 referenced)"
     ],
-    "pmos precharge network": [
-      "PMOS precharge network (M13,M12,M8,M7)"
+    "nmos input transconductor / current steering": [
+      "M0-M3 NMOS input transconductor / current steering (IIN1->net010, IB1/IB2)"
     ],
-    "clock tail network": [
-      "Clocked tail / switch node (M11,M15,M14)",
-      "NMOS clocked tail / evaluation switch (M14)",
-      "Clocked tail / isolation for net13 (M15,M16) with clocked node clamp (M10,M17) and storage capacitor C0",
-      "M2-M9-M10 clock-tail network",
-      "Clocked tail network (M14-M17)"
+    "nmos diode connected / local feedback devices": [
+      "M0-M2 NMOS diode-connected / local feedback devices (VOUT1->net015, VOUT2->net014)"
     ],
-    "input nmos pair": [
-      "Input NMOS pair (M10,M9)",
-      "Input NMOS pair (M13,M12) with bias branch (M15,M16)"
+    "nmos local feedback / diode connected loads": [
+      "M10-M11 NMOS local feedback / diode-connected loads (VOUT1/VOUT2 -> net09)"
     ],
-    "output discharge / sensing nmos": [
-      "Output discharge / sensing NMOS (M6,M3)"
+    "nmos diode connected / local feedback loads": [
+      "M10-M11 NMOS diode-connected / local feedback loads (VOUT1/VOUT2 -> net033)",
+      "M10-M11 NMOS diode-connected / local feedback loads (VOUT1/VOUT2 -> net039)",
+      "M10-M11 NMOS diode-connected / local feedback loads (VOUT1/VOUT2 -> net049)"
     ],
-    "nmos cross coupled / regenerative pair": [
-      "NMOS cross-coupled / regenerative pair (M9,M10)"
+    "resistive common mode/feedback network": [
+      "R0-R1 resistive common-mode/feedback network (VOUT1/VOUT2 via net5)"
     ],
-    "nmos diode connected / clamp devices": [
-      "NMOS diode-connected / clamp devices (M5,M6)"
+    "nmos input transconductors": [
+      "M1-M3 NMOS input transconductors (VIN1/VIN2 -> VOUT1/VOUT2)"
     ],
-    "clocked precharge/evaluate pmos network": [
-      "Clocked precharge/evaluate PMOS network (M8,M7,M12,M11)"
-    ],
-    "output pull down / sensing stack": [
-      "Output pull-down / sensing stack (M15,M16,M13)"
-    ],
-    "resistive loads": [
-      "Resistive loads / bleed (R0,R1) with capacitive loading (C0,C1)",
-      "R0-R1 resistive loads",
-      "R1-R1 resistive loads (VDD to VOUT1/VOUT2)",
-      "R0-R1 resistive load",
-      "R0-R1 resistive load network",
-      "R0-R1 resistive load / sensing network",
-      "R2-R3 resistive loads (VDD to VOUT1/2)",
-      "R0-R1 resistive loads to VDD"
-    ],
-    "supply decoupling / feedthrough cap": [
-      "Supply decoupling / feedthrough cap (C2)"
-    ],
-    "pmos clocked precharge devices": [
-      "PMOS clocked precharge devices (M10,M11)"
-    ],
-    "output nmos devices to vout": [
-      "Output NMOS devices to VOUT (M8,M9)"
-    ],
-    "nmos cross coupled pair": [
-      "NMOS cross-coupled pair M3-M4"
-    ],
-    "inner pmos regenerative network": [
-      "Inner PMOS regenerative network M8-M9-M10"
-    ],
-    "pmos output pair": [
-      "PMOS output pair M11-M12"
-    ],
-    "input nmos sampling / evaluation pair": [
-      "Input NMOS sampling / evaluation pair (M10,M11) and clocked tail switch (M12)"
-    ],
-    "input sampling quad": [
-      "Input sampling quad (VIN1-VIN4) with clock gating (M16-M19)"
-    ],
-    "output pull down devices": [
-      "Output pull-down devices (IB3/IB4) and precharge / load on net56 (M20-M27, M24-M25)"
-    ],
-    "output pmos loads": [
-      "Output PMOS loads (net56 to VOUT1/VOUT2) (M20-M22)"
-    ],
-    "clocked reset / discharge devices on outputs": [
-      "Clocked reset / discharge devices on outputs (M3,M6)"
-    ],
-    "clocked reset/evaluate nmos tail": [
-      "Clocked reset/evaluate NMOS tail (M2) and reset NMOS (M12)"
-    ],
-    "input sampling / gain stage nmos network": [
-      "Input sampling / gain stage NMOS network (M3,M4,M5,M6) with VIN3 supply/rail"
-    ],
-    "pmos precharge / pull up network": [
-      "PMOS precharge / pull-up network (M7,M8,M11,M13,M14,M15) and VCLK1 control"
-    ],
-    "clocked pmos keeper / load nodes": [
-      "Clocked PMOS keeper / load nodes (M7,M8,M11,M15) with VCLK2 devices (M9,M10)"
-    ],
-    "clocked pmos precharge / load": [
-      "Clocked PMOS precharge / load (M0-M6) on net14/net19"
-    ],
-    "input nmos sampling pair": [
-      "Input NMOS sampling pair (M9,M10) with shared tail/reset (M11)"
-    ],
-    "output pull devices": [
-      "Output pull devices (M44,M43) and PMOS loads (M38,M37) to VOUT1/VOUT2"
-    ],
-    "clock distribution / precharge devices": [
-      "Clock distribution / precharge devices (M2,M12,M15,M24,M26,M28,M29)"
-    ],
-    "vin3/vin4 steering injectors": [
-      "VIN3/VIN4 steering injectors (Q10,Q11,Q4,Q5) into net17/net22"
-    ],
-    "regenerative/cross coupled core around net17/net22/net19": [
-      "Regenerative/cross-coupled core around net17/net22/net19 (Q16,Q17,Q18)"
-    ],
-    "logic output drivers": [
-      "Logic output drivers (Q12,Q13) and pull-up emitter followers (Q0,Q1) with bias resistors (R0,R1)"
-    ],
-    "clamp/diode connected devices to vss": [
-      "Clamp/diode-connected devices to VSS (Q21,Q22,Q23,Q24)"
-    ],
-    "precharge/keeper pmos loads for outputs": [
-      "Precharge/keeper PMOS loads for outputs (M12,M0)"
-    ],
-    "clocked internal dynamic node net57/net58 with coupling capacitor": [
-      "Clocked internal dynamic node net57/net58 with coupling capacitor (M15,M1,M2,C0)"
-    ],
-    "input sampling / comparison nmos pair into net25": [
-      "Input sampling / comparison NMOS pair into net25 (M9,M8) with clock switch (M11)"
-    ],
-    "precharge / reset pmos network for internal nodes": [
-      "Precharge / reset PMOS network for internal nodes (M5,M4,M3)"
-    ],
-    "load capacitors": [
-      "C0-C1 load capacitors",
-      "Coupling / load capacitors (C0-C1)",
-      "C1 compensation/load capacitor (net23-VOUT1)",
-      "C0 compensation/load capacitor (net12-VOUT2)"
-    ],
-    "nmos discharge pair": [
-      "M11-M12 NMOS discharge pair"
-    ],
-    "clocked precharge nmos": [
-      "Clocked precharge NMOS (M10-M11)"
-    ],
-    "input stage": [
-      "Input stage (M4-M6)",
-      "Input stage (M7-M9)"
-    ],
-    "pmos gain chain / level shift": [
-      "PMOS gain chain / level shift (M2-M3)"
-    ],
-    "output inverter / driver": [
-      "Output inverter / driver (M3-M9)",
-      "Output inverter / driver (M2-M6)"
-    ],
-    "output pull up/pull down": [
-      "Output pull-up/pull-down (M6-M12)"
-    ],
-    "nmos input / transconductor": [
-      "NMOS input / transconductor (M9-M10-M13)"
-    ],
-    "nmos current sink & node clamp": [
-      "NMOS current sink & node clamp (M8-M11-M12)"
-    ],
-    "output stage": [
-      "Output stage (M6-M7-M12)"
-    ],
-    "resistive coupling": [
-      "Resistive coupling (R0)"
-    ],
-    "nmos input / pull down chain": [
-      "NMOS input / pull-down chain (M3-M6)"
-    ],
-    "pmos input pair": [
-      "PMOS input pair (M0-M1)"
-    ],
-    "nmos discharge / gain stage": [
-      "NMOS discharge / gain stage (M2-M4)"
-    ],
-    "nmos control switch": [
-      "NMOS control switch (M5)"
-    ],
-    "rc load / compensation": [
-      "RC load / compensation (R0-C0)"
-    ],
-    "nmos input compare branch": [
-      "NMOS input compare branch 1 (M10-M11-M9)",
-      "NMOS input compare branch 2 (M16-M17-M12)"
-    ],
-    "pmos load / pull up devices": [
-      "PMOS load / pull-up devices (M0-M3)"
-    ],
-    "nmos input pair": [
-      "NMOS input pair (M4-M5)",
-      "M0-M1 NMOS input pair (shared tail bias at IB1)"
-    ],
-    "nmos self biased output devices": [
-      "NMOS self-biased output devices (M6-M7)"
-    ],
-    "nmos cross coupled output devices": [
-      "NMOS cross-coupled output devices (M8-M9)"
-    ],
-    "pmos input loads / precharge": [
-      "PMOS input loads / precharge (M0-M1-M2-M3)"
-    ],
-    "nmos output discharge": [
-      "NMOS output discharge (M12-M13)"
-    ],
-    "resistive output loads": [
-      "Resistive output loads (R2-R3)",
-      "Resistive output loads (R5-R6)",
-      "Resistive output loads (R0-R1)"
-    ],
-    "bjt intermediate gain / steering": [
-      "BJT intermediate gain / steering (Q2-Q3-R2-R3)"
-    ],
-    "bjt output pull up stage": [
-      "BJT output pull-up stage (Q4-Q5)"
-    ],
-    "bjt input pair with emitter degeneration": [
-      "BJT input pair with emitter degeneration (Q1-Q5-R2)"
-    ],
-    "bjt cross coupled core": [
-      "BJT cross-coupled core (Q5-Q6-R1-R2-R0)"
-    ],
-    "bjt output stages / loads": [
-      "BJT output stages / loads (Q1-Q3-R3-R4)"
-    ],
-    "nmos input / control path": [
-      "NMOS input / control path (M0-M3)"
-    ],
-    "output stage pull up/pull down": [
-      "Output stage pull-up/pull-down (M1-M2-M5)"
-    ],
-    "emitter degeneration": [
-      "R0-Q0 emitter degeneration",
-      "R3-Q1 emitter degeneration"
-    ],
-    "emitter degeneration resistors": [
-      "R0-R3 emitter degeneration resistors"
-    ],
-    "supply rails": [
-      "VDD-VSS supply rails"
+    "nmos local feedback / diode connected devices": [
+      "M0-M2 NMOS local feedback / diode-connected devices (VOUT1->net24, VOUT2->net25)"
     ],
     "pmos output devices": [
-      "M4 PMOS output device (pull-up)"
+      "M7-M6 PMOS active loads / output devices (to VOUT1/VOUT2, gated by net030/net032)",
+      "M5-M7 PMOS active loads / output devices (VOUT1/VOUT2, gated by net034/net036)",
+      "M6-M7 PMOS active load/output devices (VOUT1/VOUT2, drive net030/net031, bias VB2)",
+      "M3-M7 PMOS output/load devices (VOUT1/VOUT2 driven by net030/net032)"
     ],
-    "pmos load devices": [
-      "M2-M3 PMOS load devices",
-      "M2-M3 PMOS load devices (VOUT1/VOUT2)"
+    "resistive feedback / output coupling": [
+      "R2-R3 resistive feedback / output coupling (VOUT1/VOUT2 via net04)"
     ],
-    "resistive cross coupled load": [
-      "R0-R1 resistive cross-coupled load"
+    "input resistive network / degeneration": [
+      "R0-R1 input resistive network / degeneration (VIN1/VIN2 path via net08)"
     ],
-    "cross coupled gain cell": [
-      "M1-M2 cross-coupled gain cell",
-      "M3-M4 cross-coupled gain cell"
+    "pmos cascodes": [
+      "M12-M13 PMOS cascodes (VB2 -> net034/net036 via net037/net039)"
     ],
-    "pmos diode connected loads": [
-      "M3-M4 PMOS diode-connected loads"
+    "resistive coupling between outputs and ib1 node": [
+      "R0-R1 resistive coupling between outputs and IB1 node"
     ],
-    "nmos output pull down current sources": [
-      "M10-M11 NMOS output pull-down current sources"
+    "nmos input device / transconductor": [
+      "M11 NMOS input device / transconductor (VIN1 -> net024, tail IB1)"
     ],
-    "pmos pull up loads": [
-      "M0-M1 PMOS pull-up loads (VB1-biased)"
+    "nmos second stage / gm device": [
+      "M10 NMOS second-stage / gm device (VOUT1-related, tail IB1)"
     ],
-    "nmos output devices": [
-      "M6-M7 NMOS output devices (gain/output stage)"
+    "resistive feedback / output network": [
+      "R0-R1 resistive feedback / output network (VOUT1 <-> net015 -> VSS)"
     ],
-    "nmos common mode sensing pair": [
-      "M9-M10 NMOS common-mode sensing pair"
+    "c2 series/compensation capacitor": [
+      "C2 series/compensation capacitor (VOUT1 to net017)"
     ],
-    "nmos common source output devices": [
-      "M9-M5 NMOS common-source output devices"
+    "c1 load/shunt capacitor": [
+      "C1 load/shunt capacitor (net017 to VSS)"
     ],
-    "nmos output transconductor/common source devices": [
-      "M9-M5 NMOS output transconductor/common-source devices"
+    "nmos cascode/load devices": [
+      "M4-M5 NMOS cascode/load devices (VB1 -> net034/net033 -> VOUT1)"
     ],
-    "compensation/cross coupling capacitors": [
-      "C0-C1 compensation/cross-coupling capacitors"
+    "c0 load/compensation capacitor": [
+      "C0 load/compensation capacitor (VOUT1 to VSS)"
     ],
-    "nmos output sensing/feedback to net70": [
-      "M10-M14 NMOS output sensing/feedback to net70"
+    "c2 load/compensation capacitor": [
+      "C2 load/compensation capacitor (VOUT1 to VSS)",
+      "C2 load/compensation capacitor (VOUT2 to VSS)"
     ],
-    "nmos vcm1 biasing devices": [
-      "M11-M13 NMOS VCM1 biasing devices"
-    ],
-    "pmos input quad": [
-      "M0-M3 PMOS input quad (VIN1-4)"
-    ],
-    "nmos sink/output devices": [
-      "M4-M5 NMOS sink/output devices"
-    ],
-    "compensation/feedback capacitors": [
-      "C0-C1 compensation/feedback capacitors"
-    ],
-    "nmos cascode/common gate output devices": [
-      "M4-M5 NMOS common-gate/cascode output devices (to VOUT1/VOUT2)",
-      "M10-M11 NMOS cascode/common-gate output devices"
-    ],
-    "pmos output stage / cmfb sensing branch": [
-      "M6-M7-M8-M9 PMOS output stage / CMFB sensing branch"
-    ],
-    "interconnect / degeneration between net07 and vout1": [
-      "R2 interconnect / degeneration between net07 and VOUT1"
+    "nmos input/transconductor": [
+      "M1 NMOS input/transconductor (VIN1 -> net03, source=VSS)"
     ]
   }
 }

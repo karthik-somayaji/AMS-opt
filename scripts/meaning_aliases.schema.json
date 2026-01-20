@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Meaning Aliases",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {"type": "string"},
+    "performance": {"$ref": "#/definitions/ruleSet"},
+    "substructure": {"$ref": "#/definitions/ruleSet"}
+  },
+  "required": ["performance", "substructure"],
+  "definitions": {
+    "ruleSet": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "canonical": {"$ref": "#/definitions/mapToPatterns"},
+        "regex": {"$ref": "#/definitions/mapToPatterns"}
+      },
+      "required": ["canonical", "regex"]
+    },
+    "mapToPatterns": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {"type": "string"}
+      }
+    }
+  }
+}

@@ -64,9 +64,41 @@ a) Collect sub-structures :
 python3 scripts/collect_substructures.py --family comparators --out netlists/comparators/_substructures_ordered.json
 ```
 
+
 ```
-python3 scripts/generate_global_meanings.py
+python3 scripts/generate_global_meanings.py --families comparators diff_amps LDO op-amp --rules scripts/meaning_aliases.json --report netlists/_meaning_curation_report.json
 ```
+
+**Recommended (robust) flow: alias rules + curation report**
+
+To avoid a blow-up of near-duplicate substructures/performance names, use the manual alias rules file `scripts/meaning_aliases.json`.
+
+1) Dry-run with a curation report (no outputs written):
+
+```bash
+python3 scripts/generate_global_meanings.py \
+  --families comparators diff_amps LDO op-amp \
+  --rules scripts/meaning_aliases.json \
+  --dry-run \
+  --report netlists/_meaning_curation_report.json
+```
+
+2) Edit `scripts/meaning_aliases.json` to club/merge names based on domain knowledge.
+
+3) Generate the final global lists:
+
+```bash
+python3 scripts/generate_global_meanings.py \
+  --families comparators diff_amps LDO op-amp \
+  --rules scripts/meaning_aliases.json \
+  --report netlists/_meaning_curation_report.json
+```
+
+This produces:
+- `netlists/_performance_meanings.json`
+- `netlists/_substructures_ordered.json`
+- `netlists/_substructures_mapping.json` (canonical -> raw examples)
+- `netlists/_meaning_curation_report.json` (raw->canonical + counts to help refine rules)
 
 b) Get features
 ```bash
@@ -74,62 +106,48 @@ python scripts/comb_graph_to_gnn.py \
   --in netlists/diff_amps/NEW_ID/comb_graph.json
 ```
 
-#### Batch Processing All Circuits
 
-**Important**: Before running batch processing, ensure you've run `collect_substructures.py` for your family:
+Or batch process using:
+```
+for fam in netlists/*/; do
+  famname="$(basename "$fam")"
+  # skip global json files/dirs like netlists/_performance_meanings.json
+  [[ "$famname" == _* ]] && continue
 
-```bash
-# Once per family: collect canonical substructures
-python scripts/collect_substructures.py --family diff_amps --out netlists/diff_amps/_substructures_ordered.json
+  echo "=== Family: $famname ==="
+  count=0
 
-# Then batch process all circuits
-for d in netlists/diff_amps/*/; do
-  echo "Processing $d"
-  python get_netlist_to_SG.py --netlist-path "$d"/*.cir --output-jsonl "$d/str_graph.json"
-  python scripts/transform_fun_graph.py --in "$d/fun_graph.json" --out "$d/fun_updated.json"
-  python scripts/combine_graphs.py --str_graph "$d/str_graph.json" --fun_graph "$d/fun_updated.json" --out "$d/comb_graph.json"
-  python scripts/comb_graph_to_gnn.py --in "$d/comb_graph.json"
-done
-
-#### Batch: Build GNN Features for `diff_amps` + `comparators`
-
-This runs `comb_graph_to_gnn.py` for every circuit that has a `comb_graph.json` and writes outputs in-place (into each circuit directory).
-
-```bash
-cd /home/karthik/sim_clean/AMS-opt
-
-for fam in diff_amps comparators; do
-  echo "=== Family: $fam ==="
-  for d in netlists/$fam/*/; do
+  for d in "$fam"*/; do
+    [[ -d "$d" ]] || continue
     id="$(basename "$d")"
     cg="$d/comb_graph.json"
     alt="$d/${id}_comb_graph.json"
-    if [ -f "$cg" ]; then
-      echo "Processing $cg"
+
+    if [[ -f "$cg" ]]; then
       python3 scripts/comb_graph_to_gnn.py --in "$cg"
-    elif [ -f "$alt" ]; then
-      echo "Processing $alt"
+      ((count+=1))
+    elif [[ -f "$alt" ]]; then
       python3 scripts/comb_graph_to_gnn.py --in "$alt"
+      ((count+=1))
     else
-      echo "Skipping (missing comb_graph.json / ${id}_comb_graph.json): $d"
+      echo "Skipping (no comb_graph): $d"
     fi
   done
+
+  echo "Processed $count circuits in $famname"
 done
 ```
+
+
+#####################
+
+
+## Final training & Visualization
+
+```python3 -m gnn_training.scripts.train \
+  --config gnn_training/config/full_training_diff_amps_comparators_LDO_opamp_all.yaml
 ```
 
----
-#####################
-
-cd /home/karthik/sim_clean/AMS-opt && python3 -m gnn_training.scripts.train --config gnn_training/config/full_training_config.yaml 2>&1 | tail -150
-
-python3 -m gnn_training.scripts.train --config gnn_training/config/full_training_config.yaml
-
-cd /home/karthik/sim_clean/AMS-opt && python3 scripts/visualize_embeddings_umap.py 2>&1
-
-#####################
-python3 -m gnn_training.scripts.train --config gnn_training/config/full_training_diff_amps_comparators_all.yaml
-
-
-python3 scripts/visualize_embeddings_umap.py --n-neighbors 12 --min-dist 0.05
-python3 scripts/visualize_embeddings_umap.py --metric UGB
+```
+python3 scripts/visualize_embeddings_umap.py   --config gnn_training/config/full_training_diff_amps_comparators_LDO_opamp_all.yaml   --device cpu
+```
