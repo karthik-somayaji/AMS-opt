@@ -1,29 +1,27 @@
 import os
-import random
-import math
 import time
-import openai
-import asyncio
-import numpy as np
-import pandas as pd
-from aiohttp import ClientSession
+from typing import List, Optional
 
+from openai import OpenAI
 
 from .utils import RateLimiter
 
 
-from .utils import RateLimiter
+class GPT:
+    def __init__(
+        self,
+        model: str = "3.5",
+        seed: int = 114514,
+        max_token: int = 500,
+        temperature: float = 0.7,
+        api_key: Optional[str] = None,
+        n_gen: int = 5,
+        debug_mode: bool = False,
+        rate_limiter: Optional[RateLimiter] = None,
+    ):
+        api_key = api_key or os.environ.get("OPENAI_API_KEY")
+        self._client = OpenAI(api_key=api_key)
 
-# Never hardcode API keys in source. Use environment variables.
-openai.api_key = os.environ.get("OPENAI_API_KEY")
-def __init__(self,
-                 model="3.5",
-                 seed=114514,
-                 max_token=500,
-    api_key = os.environ.get("OPENAI_API_KEY"),
-                 n_gen=5,
-                 debug_mode=False
-                 ):
         self.n_gen = n_gen
         if model == "4":
             self.model = "gpt-4-turbo"
@@ -35,18 +33,17 @@ def __init__(self,
         self.temperature = temperature
         self.api_key = api_key
 
-        if rate_limiter is None:
-            self.rate_limiter = RateLimiter(max_tokens=60000, time_frame=60)
-            #self.rate_limiter = RateLimiter(max_tokens=40000, time_frame=60)
-        else:
-            self.rate_limiter = rate_limiter
-
+        self.rate_limiter = rate_limiter or RateLimiter(max_tokens=60000, time_frame=60)
         self.debug_mode = debug_mode
 
-def request(self, prompt):
-        message = []
-        message.append({"role": "system", "content": "You are an AI assistant that helps people find information."})
-        message.append({"role": "user", "content": prompt})
+    def request(self, prompt: str) -> Optional[List[str]]:
+        message = [
+            {
+                "role": "system",
+                "content": "You are an AI assistant that helps people find information.",
+            },
+            {"role": "user", "content": prompt},
+        ]
 
         MAX_RETRIES = 3
 
@@ -55,16 +52,16 @@ def request(self, prompt):
             try:
                 start_time = time.time()
                 self.rate_limiter.add_request(request_text=prompt, current_time=start_time)
-                response_raw = openai.ChatCompletion.create(
-                    model=self.model,  # Use the model identifier for ChatGPT-3.5
+                response_raw = self._client.chat.completions.create(
+                    model=self.model,
                     messages=message,
-                    seed=self.seed,
                     max_tokens=self.max_token,
                     temperature=self.temperature,
-                    n=self.n_gen
+                    n=self.n_gen,
                 )
-                self.rate_limiter.add_request(request_token_count=response_raw['usage']['total_tokens'],
-                                              current_time=start_time)
+                total_tokens = getattr(getattr(response_raw, "usage", None), "total_tokens", None)
+                if total_tokens is not None:
+                    self.rate_limiter.add_request(request_token_count=total_tokens, current_time=start_time)
                 break
             except Exception as e:
                 print(f'[AF] RETRYING LLM REQUEST {retry + 1}/{MAX_RETRIES}...')
@@ -74,9 +71,9 @@ def request(self, prompt):
         if response_raw is None:
             return None
 
-        response = []
-        for i in range(self.n_gen):
-            response.append(response_raw['choices'][i]['message']['content'])
+        response: List[str] = []
+        for i in range(min(self.n_gen, len(response_raw.choices))):
+            response.append(response_raw.choices[i].message.content)
 
         if self.debug_mode:
             for r in response:

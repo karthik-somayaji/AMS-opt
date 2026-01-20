@@ -11,6 +11,7 @@ from backend.spice_ldo.interface import hspice_eval_f_ldo
 from backend.spice_dcdc.interface import hspice_eval_f_dcdc
 from core.zeroshot_agent import ZeroShotAgent # noqa: E402
 from backend.llm import gpt # noqa: E402
+import os
 
 
 class Task(object):
@@ -48,15 +49,15 @@ class Task(object):
             "c": self.task_setting["capacitance_range"]
         }
 
-        # Instantiate zeroshot warmup for further use;
-        self.zeroshot_agent = ZeroShotAgent(
-            task_name = self.name_task,
-            params_list=self.params_list,
-            task_context=self.task_context,
-            backend=gpt.GPT(
-                model="3.5", seed=114514, n_gen=1, max_token=1000
-            ),
-        )
+        # Instantiate zeroshot warmup for further use (requires OPENAI_API_KEY).
+        self.zeroshot_agent = None
+        if os.environ.get("OPENAI_API_KEY"):
+            self.zeroshot_agent = ZeroShotAgent(
+                task_name=self.name_task,
+                params_list=self.params_list,
+                task_context=self.task_context,
+                backend=gpt.GPT(model="3.5", seed=114514, n_gen=1, max_token=1000),
+            )
 
     def generate_params_init(self, n_init_data, init_method):
         if init_method == "zeroshot":

@@ -14,6 +14,16 @@ import utils
 import argparse
 
 
+def _resolve_llmbo_relative_path(path: str) -> str:
+    if os.path.isabs(path):
+        return path
+    if os.path.exists(path):
+        return path
+    llmbo_root = os.path.dirname(os.path.abspath(__file__))
+    candidate = os.path.join(llmbo_root, path)
+    return candidate
+
+
 
 class LLMBO(object):
     def __init__(self,
@@ -50,7 +60,13 @@ class LLMBO(object):
 
         self.gpt_version = gpt_version
         self.openai_api_seed = openai_api_seed
-        self.backend = gpt.GPT(model=gpt_version, seed=openai_api_seed, debug_mode=False)
+        if os.environ.get("OPENAI_API_KEY"):
+            self.backend = gpt.GPT(model=gpt_version, seed=openai_api_seed, debug_mode=False)
+        else:
+            self.backend = None
+            if init_method == "zeroshot":
+                print("[LLMBO] OPENAI_API_KEY not set; falling back init_method='random'.")
+                self.init_method = "random"
 
         self.data_dict_keys = ["params", "metrics", "targets", "aux_info", "params_numpy"]
         self.task = task.Task(path_task_setting, self.data_dict_keys)
@@ -64,7 +80,8 @@ class LLMBO(object):
         self.ranges = self.task.ranges
 
         self.n_init_data = n_init_data
-        self.init_method = init_method
+        if not hasattr(self, "init_method"):
+            self.init_method = init_method
         self.n_sample = n_sample
         self.sample_method = sample_method
         self.shuffle_sample = shuffle_sample
@@ -96,15 +113,17 @@ class LLMBO(object):
         self.data_collected, self.data_collected_llm, self.data_collected_bo = self.task.initialize(self.n_init_data, self.init_method, log_info=True)
 
 
-        self.llm_proposer = proposer.LLMProposer(
-            ckt_name_description=self.task.ckt_name_description,
-            params_list=self.params_list,
-            task_context=self.task.task_context,
-            backend=self.backend,
-            n_proposal=self.n_proposal_llm,
-            ranges=self.ranges,
-            example_keys=["params", "metrics", "targets", "aux_info"]
-        )
+        self.llm_proposer = None
+        if self.backend is not None and self.n_proposal_llm > 0:
+            self.llm_proposer = proposer.LLMProposer(
+                ckt_name_description=self.task.ckt_name_description,
+                params_list=self.params_list,
+                task_context=self.task.task_context,
+                backend=self.backend,
+                n_proposal=self.n_proposal_llm,
+                ranges=self.ranges,
+                example_keys=["params", "metrics", "targets", "aux_info"],
+            )
 
         self.sampler = sampler.Sampler(
             n_sample=self.n_sample,
@@ -131,7 +150,9 @@ class LLMBO(object):
             data_pro = self.sampler.sample(self.data_collected)
             #print(data_pro['targets'])
 
-            params_proposed_llm = self.llm_proposer.propose_params(data_pro, args)
+            params_proposed_llm = []
+            if self.llm_proposer is not None:
+                params_proposed_llm = self.llm_proposer.propose_params(data_pro, args)
 
             print('************* IN HISTORY *************')            
             #responses_for_history = self.llm_proposer.generate_prompt_history_summary(data_pro) 
@@ -139,7 +160,7 @@ class LLMBO(object):
 
             params_proposed_bo = self.bo_proposer.propose_params(self.data_collected)
 
-            if self.rank_based_on_bo:
+            if self.rank_based_on_bo and len(params_proposed_llm) > 0:
                 #print(params_proposed_llm)
                 params_proposed_llm_array = np.array([utils.params_dict_to_nparray(x) for x in params_proposed_llm ])
                 ranked_llm_acq_fn_values = self.bo_proposer.obtain_acq_function_values(params_proposed_llm_array)
@@ -251,9 +272,9 @@ if __name__ == "__main__":
 
     # LLMBO + GPBO;
     llmbo = LLMBO(
-        #"tasks/amp2/amp2.json",
+        _resolve_llmbo_relative_path("tasks/amp2/amp2.json"),
         #"tasks/FC/FC.json",
-        "tasks/comp/comp.json",
+        #"tasks/comp/comp.json",
         #"tasks/ldo/ldo.json",
         #"tasks/dcdc/dcdc.json",
         openai_api_seed=openai_api_seed,

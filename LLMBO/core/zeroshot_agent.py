@@ -1,4 +1,4 @@
-from langchain.prompts import PromptTemplate, FewShotPromptTemplate
+# from langchain.prompts import PromptTemplate, FewShotPromptTemplate
 import re
 import sys
 

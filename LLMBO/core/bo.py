@@ -1,13 +1,11 @@
-from botorch.models import FixedNoiseGP, ModelListGP, SingleTaskGP
+from botorch.models import ModelListGP, SingleTaskGP
 from gpytorch.mlls.sum_marginal_log_likelihood import SumMarginalLogLikelihood
 from gpytorch.mlls import ExactMarginalLogLikelihood
 import os, sys
 sys.path.append("../")
 import torch
-from botorch.models import SingleTaskGP
 from botorch.fit import fit_gpytorch_mll
 from botorch.utils import standardize
-from gpytorch.mlls import ExactMarginalLogLikelihood
 from botorch.acquisition import ExpectedImprovement, UpperConfidenceBound, qExpectedImprovement, AcquisitionFunction
 from botorch.optim import optimize_acqf
 from gpytorch.kernels import ScaleKernel, RBFKernel

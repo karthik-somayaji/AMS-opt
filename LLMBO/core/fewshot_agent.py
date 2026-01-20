@@ -1,4 +1,4 @@
-from langchain.prompts import PromptTemplate, FewShotPromptTemplate
+from langchain_core.prompts import PromptTemplate, FewShotPromptTemplate
 
 
 class FewShotAgent(object):
