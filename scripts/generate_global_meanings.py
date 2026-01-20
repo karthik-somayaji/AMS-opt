@@ -8,14 +8,66 @@ Writes:
 This scans all `netlists/<family>/*/comb_graph.json` files.
 """
 import json
-import os
 import re
+import argparse
 from collections import Counter, defaultdict
 from pathlib import Path
 
 NETLISTS = "netlists"
 
 PREFERRED_PERF = ["Gain", "CMRR", "UGF", "Power", "Delay", "Offset", "Hysteresis"]
+
+DEFAULT_FAMILIES = ["comparators", "diff_amps", "LDO", "op-amp"]
+DEFAULT_RULES_FILE = Path(__file__).with_name("meaning_aliases.json")
+
+
+def _norm_key(s: str) -> str:
+    return re.sub(r"\s+", " ", str(s).strip().lower())
+
+
+def load_rules(path: Path | None) -> dict:
+    if not path:
+        return {"performance": {"canonical": {}, "regex": {}}, "substructure": {"canonical": {}, "regex": {}}}
+    if not path.exists():
+        raise FileNotFoundError(f"Rules file not found: {path}")
+    data = json.loads(path.read_text())
+    for section in ("performance", "substructure"):
+        data.setdefault(section, {})
+        data[section].setdefault("canonical", {})
+        data[section].setdefault("regex", {})
+    return data
+
+
+def _compile_rules(rules: dict) -> dict:
+    compiled = {"performance": {"canonical": {}, "regex": []}, "substructure": {"canonical": {}, "regex": []}}
+    for section in ("performance", "substructure"):
+        # canonical exact-match map (case/space insensitive)
+        exact = {}
+        for canon, patterns in rules.get(section, {}).get("canonical", {}).items():
+            for p in patterns:
+                exact[_norm_key(p)] = canon
+        compiled[section]["canonical"] = exact
+
+        # regex rules, kept ordered (first match wins)
+        rx = []
+        for canon, patterns in rules.get(section, {}).get("regex", {}).items():
+            for p in patterns:
+                rx.append((re.compile(p, flags=re.IGNORECASE), canon))
+        compiled[section]["regex"] = rx
+    return compiled
+
+
+def apply_manual_rules(section: str, raw_name: str, compiled_rules: dict) -> str | None:
+    if not raw_name:
+        return None
+    key = _norm_key(raw_name)
+    canon_exact = compiled_rules.get(section, {}).get("canonical", {}).get(key)
+    if canon_exact:
+        return canon_exact
+    for patt, canon in compiled_rules.get(section, {}).get("regex", []):
+        if patt.search(raw_name) or patt.search(key):
+            return canon
+    return None
 
 
 def normalize_substructure_name(name: str) -> str:
@@ -153,19 +205,84 @@ def canonicalize_perf_name(name: str) -> str:
     return nl
 
 
+def normalize_perf_name(name: str) -> str:
+    if not name:
+        return name
+    s = str(name).strip()
+    s = re.sub(r"\s+", " ", s)
+    s = s.replace("_", " ").replace("/", " ")
+    s = s.strip()
+    return s
+
+
+def parse_args() -> argparse.Namespace:
+    p = argparse.ArgumentParser(description="Generate global meanings across selected netlist families")
+    p.add_argument(
+        "--netlists-root",
+        default=NETLISTS,
+        help="Netlists root directory (default: netlists)",
+    )
+    p.add_argument(
+        "--families",
+        nargs="+",
+        default=DEFAULT_FAMILIES,
+        help="Families to include (default: comparators diff_amps LDO op-amp)",
+    )
+    p.add_argument(
+        "--rules",
+        default=str(DEFAULT_RULES_FILE),
+        help=f"Alias rules JSON file (default: {DEFAULT_RULES_FILE.name})",
+    )
+    p.add_argument(
+        "--min-count",
+        type=int,
+        default=1,
+        help="Only keep canonical names seen at least this many times",
+    )
+    p.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Do not write JSON outputs; print summary only",
+    )
+    p.add_argument(
+        "--report",
+        default=None,
+        help="Optional path to write a curation report JSON (top raw->canonical mappings + counts)",
+    )
+    return p.parse_args()
+
+
 def main():
-    root = Path(NETLISTS)
+    args = parse_args()
+
+    root = Path(args.netlists_root)
     if not root.exists():
         raise FileNotFoundError("netlists directory not found")
+
+    rules_path = Path(args.rules) if args.rules else None
+    rules = load_rules(rules_path)
+    compiled_rules = _compile_rules(rules)
 
     sub_counter = Counter()
     perf_counter = Counter()
 
-    # For reversibility/debugging: keep a mapping from canonical substructure -> raw examples.
+    # For reversibility/debugging:
+    # - canonical -> raw examples
+    # - raw -> canonical (with counts)
     sub_raw_examples = defaultdict(list)
+    sub_raw_to_canon_count = defaultdict(Counter)
+    perf_raw_to_canon_count = defaultdict(Counter)
 
-    # Walk families and circuit dirs
-    for fam in sorted(p for p in root.iterdir() if p.is_dir()):
+    # Walk selected families and circuit dirs
+    families = []
+    for f in args.families:
+        fam_path = root / f
+        if fam_path.is_dir():
+            families.append(fam_path)
+    if not families:
+        raise FileNotFoundError(f"No valid families found under {root}: {args.families}")
+
+    for fam in sorted(families, key=lambda p: p.name.lower()):
         for circ in sorted(fam.iterdir()):
             if not circ.is_dir():
                 continue
@@ -191,14 +308,22 @@ def main():
                 if not nid:
                     continue
                 if ntype == "substructure":
-                    canon = normalize_substructure_name(nid)
+                    manual = apply_manual_rules("substructure", nid, compiled_rules)
+                    canon = manual or normalize_substructure_name(nid)
                     sub_counter[canon] += 1
                     if nid not in sub_raw_examples[canon] and len(sub_raw_examples[canon]) < 20:
                         sub_raw_examples[canon].append(nid)
+                    sub_raw_to_canon_count[nid][canon] += 1
                 elif ntype == "performance":
-                    base = extract_base_metric(nid)
-                    canon = canonicalize_perf_name(base)
+                    base = normalize_perf_name(extract_base_metric(nid))
+                    manual = apply_manual_rules("performance", base, compiled_rules)
+                    canon = manual or canonicalize_perf_name(base)
                     perf_counter[canon] += 1
+                    perf_raw_to_canon_count[nid][canon] += 1
+
+    # Apply frequency cutoff
+    sub_counter = Counter({k: v for k, v in sub_counter.items() if v >= args.min_count})
+    perf_counter = Counter({k: v for k, v in perf_counter.items() if v >= args.min_count})
 
     # Build ordered substructures by frequency
     ordered_subs = [name for name, _ in sub_counter.most_common()]
@@ -220,19 +345,51 @@ def main():
     # Write global files
     out_perf = root / "_performance_meanings.json"
     out_subs = root / "_substructures_ordered.json"
-
-    # Extra output: canonical -> raw examples mapping for substructures
     out_subs_map = root / "_substructures_mapping.json"
+    out_perf_map = root / "_performance_mapping.json"
 
-    out_perf.write_text(json.dumps({"performance_meanings": ordered_perf}, indent=2))
-    out_subs.write_text(json.dumps({"ordered_substructures": ordered_subs}, indent=2))
-    out_subs_map.write_text(json.dumps({"mapping": sub_raw_examples}, indent=2))
+    report = {
+        "families": [p.name for p in families],
+        "min_count": args.min_count,
+        "counts": {
+            "substructures": len(sub_counter),
+            "performance": len(perf_counter),
+        },
+        "top_substructures": sub_counter.most_common(40),
+        "top_performance": perf_counter.most_common(40),
+        "raw_to_canonical": {
+            "substructure": {raw: cnt.most_common(3) for raw, cnt in sub_raw_to_canon_count.items()},
+            "performance": {raw: cnt.most_common(3) for raw, cnt in perf_raw_to_canon_count.items()},
+        },
+    }
 
-    print(f"Wrote global performance meanings to: {out_perf}")
-    print(ordered_perf)
-    print(f"Wrote global substructure ordering to: {out_subs}")
-    print(ordered_subs[:30])
-    print(f"Wrote global substructure mapping to: {out_subs_map}")
+    if not args.dry_run:
+        out_perf.write_text(json.dumps({"performance_meanings": ordered_perf}, indent=2))
+        out_subs.write_text(json.dumps({"ordered_substructures": ordered_subs}, indent=2))
+        out_subs_map.write_text(json.dumps({"mapping": sub_raw_examples}, indent=2))
+        out_perf_map.write_text(
+            json.dumps(
+                {
+                    "mapping": {
+                        canon: [] for canon in ordered_perf
+                    }
+                },
+                indent=2,
+            )
+        )
+        print(f"Wrote global performance meanings to: {out_perf}")
+        print(f"Wrote global substructure ordering to: {out_subs}")
+        print(f"Wrote global substructure mapping to: {out_subs_map}")
+        print(f"Wrote global performance mapping to: {out_perf_map}")
+    else:
+        print("Dry run: not writing output JSON files")
+
+    if args.report:
+        Path(args.report).write_text(json.dumps(report, indent=2))
+        print(f"Wrote curation report to: {args.report}")
+
+    print("Top performance:", ordered_perf[:20])
+    print("Top substructures:", ordered_subs[:30])
 
 
 if __name__ == '__main__':

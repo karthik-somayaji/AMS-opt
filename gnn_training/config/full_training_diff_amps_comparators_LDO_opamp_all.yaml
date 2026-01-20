@@ -1,0 +1,282 @@
+# Full training on ALL available diff_amps + comparators + LDO + op-amp with precomputed GNN features.
+#
+# This config enumerates circuit IDs explicitly.
+# Validation split is defined by `test_circuits` (used as validation set in code).
+#
+# Train/test split policy:
+# - 80% train / 20% test PER FAMILY
+# - Deterministic selection using seed=42 (see `training.seed`)
+
+data:
+  batch_size: 32
+  cache_graphs: false
+  data_dir: /home/karthik/sim_clean/AMS-opt/netlists
+  family_balance: equal
+  pos_neg_ratio: 1.0
+  shuffle: true
+
+  # All circuits to consider (train+val); validation split is defined by `test_circuits` below.
+  circuits:
+    diff_amps:
+      - 69
+      - 71
+      - 75
+      - 77
+      - 80
+      - 82
+      - 84
+      - 86
+      - 88
+      - 90
+      - 92
+      - 94
+      - 96
+      - 97
+      - 614
+      - 615
+      - 616
+      - 617
+      - 618
+      - 619
+      - 620
+      - 621
+      - 921
+      - 922
+      - 923
+      - 924
+      - 925
+      - 926
+      - 927
+      - 928
+      - 929
+      - 930
+      - 931
+      - 932
+    comparators:
+      - 632
+      - 633
+      - 634
+      - 635
+      - 738
+      - 740
+      - 741
+      - 742
+      - 746
+      - 747
+      - 748
+      - 749
+      - 1045
+      - 1046
+      - 1047
+      - 1048
+      - 1049
+      - 1050
+      - 1051
+      - 1053
+      - 1054
+      - 1055
+      - 1056
+      - 1057
+      - 1058
+      - 1059
+      - 1060
+      - 1062
+      - 1063
+      - 1065
+      - 1071
+      - 1073
+    LDO:
+      - 2300
+      - 2301
+      - 2302
+      - 2303
+      - 2304
+      - 2305
+      - 2306
+      - 2307
+      - 2308
+      - 2309
+      - 2310
+      - 2311
+      - 2312
+      - 2313
+      - 2314
+      - 2315
+      - 2316
+      - 2317
+      - 2318
+      - 2319
+      - 2320
+      - 2321
+      - 2322
+      - 2323
+      - 2324
+      - 2325
+      - 2326
+      - 2327
+      - 2328
+      - 2329
+      - 2330
+      - 2331
+      - 2332
+      - 2333
+      - 2334
+      - 2335
+      - 2336
+      - 2337
+      - 2338
+      - 2339
+      - 2340
+      - 2341
+      - 2342
+      - 2343
+      - 2344
+      - 2345
+      - 2346
+      - 2347
+      - 2348
+      - 2349
+      - 2350
+    op-amp:
+      - 281
+      - 282
+      - 283
+      - 284
+      - 287
+      - 289
+      - 290
+      - 293
+      - 294
+      - 295
+      - 296
+      - 297
+      - 299
+      - 300
+      - 302
+      - 303
+      - 304
+      - 305
+      - 306
+      - 307
+      - 308
+      - 309
+      - 310
+      - 311
+      - 312
+      - 314
+      - 315
+      - 316
+      - 317
+      - 318
+      - 319
+      - 320
+      - 321
+      - 322
+      - 323
+      - 324
+      - 325
+      - 326
+      - 327
+      - 328
+      - 329
+      - 331
+      - 332
+      - 333
+      - 334
+      - 335
+      - 336
+
+  # Hold-out circuits for validation (20% per family, deterministic).
+  test_circuits:
+    diff_amps:
+      - 82
+      - 96
+      - 615
+      - 619
+      - 620
+      - 923
+      - 927
+    comparators:
+      - 632
+      - 742
+      - 1046
+      - 1054
+      - 1057
+      - 1060
+      - 1062
+    LDO:
+      - 2300
+      - 2305
+      - 2309
+      - 2311
+      - 2318
+      - 2319
+      - 2325
+      - 2327
+      - 2338
+      - 2345
+      - 2350
+    op-amp:
+      - 282
+      - 290
+      - 299
+      - 303
+      - 306
+      - 308
+      - 317
+      - 318
+      - 319
+      - 328
+
+early_stopping:
+  min_delta: 0.0001
+  patience: 10
+
+logging:
+  log_level: INFO
+  tensorboard_dir: ./logs_full_training
+  verbose: true
+
+loss:
+  hard_neg_weight: 1.0
+  temperature: 0.07
+  type: nt_xent
+  nt_xent_weight: 0.9
+  consistency:
+    enabled: true
+    type: margin
+    weight: 0.1 #0.1
+    margin: 0.2 #0.2 #0.7
+    max_dist: 1.0
+    temperature: 1.0
+
+model:
+  dropout: 0.1
+  embedding_dim: 128
+  hidden_dims:
+    - 64
+    - 64
+    - 32
+  # Must match `comb_graph_gnn_meta.json` -> feature_dim (after SUBCAT_SLOTS=6 and global meanings)
+  input_dim: 329
+  projection_dim: 128
+  use_batch_norm: true
+
+optimizer:
+  betas:
+    - 0.9
+    - 0.999
+  lr: 0.001
+  type: adam
+  weight_decay: 1.0e-05
+
+scheduler:
+  type: cosine
+
+training:
+  checkpoint_dir: ./checkpoints_full_training
+  device: cpu
+  epochs: 20
+  log_interval: 2
+  seed: 42
+  val_interval: 2
