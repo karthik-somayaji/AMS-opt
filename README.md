@@ -23,6 +23,15 @@ The pipeline consists of four main stages:
 
 ---
 
+## Secrets / API keys
+
+- Do not commit API keys. GitHub push protection will block the push.
+- Use environment variables instead (example in `.env.example`).
+
+```bash
+export OPENAI_API_KEY="..."
+```
+
 ## Stage 1: Netlist to Structural Graph
 
 ### Purpose
