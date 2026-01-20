@@ -1,6 +1,0 @@
-$DATA1 SOURCE='HSPICE' VERSION='O-2018.09-SP2-1 linux64' PARAM_COUNT=0
-.TITLE '** comparator'
- vtp              vtm              vhy              off             
- temper           alter#          
-  3.329799369e-01 -6.539448916e-01  9.869248285e-01 -1.604824774e-01
-  2.500000000e+01 1               

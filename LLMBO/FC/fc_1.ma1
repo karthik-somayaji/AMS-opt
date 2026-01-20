@@ -1,6 +1,0 @@
-$DATA1 SOURCE='HSPICE' VERSION='O-2018.09-SP2-1 linux64' PARAM_COUNT=0
-.TITLE '* sim'
- gain             ugain_freq       phase_margin     temper          
- alter#          
-  5.975376422e+01  2.104568950e+06 -1.029121387e+02  2.500000000e+01
-2               

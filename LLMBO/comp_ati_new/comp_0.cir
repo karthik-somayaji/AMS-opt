@@ -1,0 +1,14 @@
+xnb vb vb 0 0       
+
+xn5 3 vb 0 0        
+xn1 1 vip 3 0       
+xn2 2 vin 3 0       
+xp3 1 1 vdd! vdd!   
+xp4 2 2 vdd! vdd!   
+xp6 2 1 vdd! vdd!   
+xp7 1 2 vdd! vdd!   
+
+xp8 out 2 vdd! vdd! 
+xp9 4 1 vdd! vdd!   
+xn10 4 4 0 0        
+xn11 out 4 0 0

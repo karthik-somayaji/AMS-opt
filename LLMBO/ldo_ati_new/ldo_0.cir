@@ -1,0 +1,21 @@
+
+xt1 net0237 ampoutpx vout vout 
+xt2 net0237 amp1outnx my_gnd my_gnd 
+xt3 amp1outpx vref2 net0167 net0167 
+xt4 amp1outnx vfb2x net0167 net0167 
+xt5 amp1outpx vref2 net0278 my_gnd 
+xt6 amp1outnx vfb2x net0278 my_gnd 
+xt7 amp1outpx amp1outpx my_gnd my_gnd 
+xt8 amp1outnx amp1outnx my_gnd my_gnd 
+xt9 amp1outpx amp1outnx my_gnd my_gnd 
+xt10 amp1outnx amp1outpx my_gnd my_gnd 
+xt11 ampoutpx amp1outpx my_gnd my_gnd 
+xtp1 vout net0237 my_vdd my_vdd 
+xtpn vout net0237 my_gnd my_gnd 
+xtb0 vbias2x vbias2x my_vdd my_vdd 
+xtb1 net0183 vbias2x my_vdd my_vdd 
+xtb2 net0167 vbias2x my_vdd my_vdd 
+xtb3 ampoutpx vbias2x my_vdd my_vdd 
+xtbn0 net0278 vbias1x my_gnd my_gnd 
+xtbn1 vbias1x vbias1x my_gnd my_gnd 
+xtbn2 vbias1x vbias1x net0183 net0183 

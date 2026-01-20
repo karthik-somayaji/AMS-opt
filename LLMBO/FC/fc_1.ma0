@@ -1,4 +1,0 @@
-$DATA1 SOURCE='HSPICE' VERSION='O-2018.09-SP2-1 linux64' PARAM_COUNT=0
-.TITLE '* sim'
- gain             temper           alter#          
- -2.314171949e+01  2.500000000e+01 1               

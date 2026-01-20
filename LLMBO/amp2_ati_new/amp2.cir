@@ -1,0 +1,10 @@
+xp1 node1 node1 vdd! vdd! 
+xp2 out1 node1 vdd! vdd!  
+xn1 node1 vip node2 0     
+xn2 out1 vin node2 0      
+xnb vb vb 0 0             
+xnc node2 vb 0 0          
+xpo out out1 vdd! vdd!    
+xno out vb 0 0            
+cc out outm 
+rz outm out1
