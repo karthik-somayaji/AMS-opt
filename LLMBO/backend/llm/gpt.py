@@ -11,10 +11,10 @@ from aiohttp import ClientSession
 
 from .utils import RateLimiter
 
-#openai.api_key = '[REDACTED_KEY]'
-my_key = "[REDACTED_KEY]"
-my_key_confirmation = "[REDACTED_KEY]"
-openai.api_key = "[REDACTED_KEY]"
+
+my_key = ""
+my_key_confirmation = ""
+openai.api_key = ""
 
 class GPT(object):
     def __init__(self,
@@ -93,7 +93,7 @@ if __name__ == "__main__":
     import openai
 
     # Make sure to replace 'your-api-key-here' with your actual OpenAI API key if not using environment variables
-    openai.api_key = '[REDACTED_KEY]'
+    openai.api_key = ''
 
     # mseg = "You are an experienced analog circuit designer who is asked to optimize the sizing for a circuit. The circuit is a two stage amplifier with 8 transistors (M1 to M8). M1 and M2 are current mirror. M3 to M6 are the first stage of the amplifier. M7 and M8 are the second stage of the amplifier. You need to adjust the sizes all transistors to achieve optimal performance.\
     #         The adjustable parameters are width and length of all transistors: ['w1', 'l1'', 'w2', 'l2', ..., 'w8', 'l8']. Each parameter is normalized to be within range [0., 1.].\
