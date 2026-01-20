@@ -1,0 +1,60 @@
+
+Given a circuit netlist and a set of performance metrics, do the following and output everything together as plain tuple lists, without any explanations:
+
+1. **Infer P-graph (performance–performance relations).**
+   Output entries of the form:
+   `(Metric_A, Relationship, Metric_B)`
+   where `Relationship ∈ { 'trade-off', 'directly-proportional', 'ambiguous' }`.
+
+2. **Infer PS-graph (substructure–performance relations).**
+   First, identify meaningful circuit substructures (e.g., “M0-M1 differential pair”, “M2-M3 active load current mirror”, “R0-R1 load resistors”).
+   Then output entries of the form:
+   `(Substructure, 'influences', Metric)`
+   only if that substructure significantly affects the metric.
+
+3. **Infer PSX-graph (parameter–substructure–performance relations).**
+   Treat device sizes, bias currents, resistances, etc. as design parameters (e.g., `W_M0, L_M0, IB1, R0, R1, VB1`).
+   Output:
+
+   * `(Parameter, 'belongs-to', Substructure)` if the parameter structurally belongs to that substructure.
+   * `(Parameter, Relationship, Metric)` where `Relationship ∈ { 'directly-proportional', 'inversely-proportional' }`, indicating how increasing the parameter value affects the metric.
+
+**Important formatting constraints:**
+
+* Use exactly the tuple formats above.
+* Use only the allowed relationship labels.
+* Do **not** include any explanations, text, or headings—only the tuples.
+
+Given the above instructions, construct the above tuples as entries of a knowledge graph. Specifically, output a json format where all nodes (nodes in P, PS and PSX graphs) are listed under the field 'nodes'.
+For example:
+"nodes": [
+    {"id": "Active load",              "type": "substructure"},
+    {"id": "CMRR",                     "type": "performance"},
+    {"id": "Differential pair",        "type": "substructure"}, etc]
+    
+ All tuples in the graphs should be listed under a 'links' field as a list of dictionaries.
+ For example: "links": [
+    {"source": "Gain", "target": "CMRR", "relation": "ambiguous"}, etc]
+
+
+Netlist:
+```
+x15 (4 4 0 0 ) nmos        
+x12 (9 4 0 0 ) nmos        
+x13 (7 9 14 vdd! ) pmos    
+x14 (14 7 vdd! vdd! ) pmos 
+R1 (7 9) resistor 
+x1 (5 vip 3 0 ) nmos       
+x2 (6 vin 3 0 ) nmos       
+x3 (3 4 0 0 ) nmos         
+x4 (5 7 vdd! vdd! ) pmos   
+x5 (6 7 vdd! vdd! ) pmos   
+x6 (8 9 5 vdd! ) pmos      
+x7 (out 9 6 vdd! ) pmos    
+R2 (8 11) resistor 
+x8 (11 8 12 0 ) nmos       
+x9 (out 8 13 0 ) nmos      
+x10 (12 11 0 0 ) nmos      
+x11 (13 11 0 0 ) nmos
+```
+

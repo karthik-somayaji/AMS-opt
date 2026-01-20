@@ -1,0 +1,1431 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR",
+      "type": "performance"
+    },
+    {
+      "id": "UGF",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "differential pair",
+      "type": "substructure"
+    },
+    {
+      "id": "pmos pull-up network",
+      "type": "substructure"
+    },
+    {
+      "id": "tail current source",
+      "type": "substructure"
+    },
+    {
+      "id": "bias",
+      "type": "substructure"
+    },
+    {
+      "id": "output stage",
+      "type": "substructure"
+    },
+    {
+      "id": "compensation network",
+      "type": "substructure"
+    },
+    {
+      "id": "W_Mn1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mn1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mn2",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mn2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mp1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mp1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mp2",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mp2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mnc",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mnc",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mnb",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mnb",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mpo",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mpo",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mno",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mno",
+      "type": "parameter"
+    },
+    {
+      "id": "Vb",
+      "type": "parameter"
+    },
+    {
+      "id": "C_cc",
+      "type": "parameter"
+    },
+    {
+      "id": "R_rz",
+      "type": "parameter"
+    },
+    {
+      "id": "Gain-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Gain-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Gain-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "CMRR-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "UGF-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Power-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Power-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Power-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "W_Mn1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mn1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mn1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mn1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mn2-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mn2-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mn2-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mn2-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mp1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mp1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mp1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mp1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mp2-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mp2-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mp2-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mp2-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mnc-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mnc-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mnc-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mnc-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mnb-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mnb-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mnb-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mnb-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mpo-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mpo-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mpo-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mpo-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mno-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_Mno-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mno-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_Mno-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "Vb-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "Vb-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "C_cc-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "C_cc-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R_rz-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "R_rz-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "dev:Mp1",
+      "type": "device",
+      "device_type": "pmos"
+    },
+    {
+      "id": "term:Mp1:D",
+      "type": "terminal",
+      "device": "Mp1",
+      "role": "D"
+    },
+    {
+      "id": "term:Mp1:G",
+      "type": "terminal",
+      "device": "Mp1",
+      "role": "G"
+    },
+    {
+      "id": "term:Mp1:S",
+      "type": "terminal",
+      "device": "Mp1",
+      "role": "S"
+    },
+    {
+      "id": "net:node1",
+      "type": "net"
+    },
+    {
+      "id": "net:vdd!",
+      "type": "net"
+    },
+    {
+      "id": "dev:Mp2",
+      "type": "device",
+      "device_type": "pmos"
+    },
+    {
+      "id": "term:Mp2:D",
+      "type": "terminal",
+      "device": "Mp2",
+      "role": "D"
+    },
+    {
+      "id": "term:Mp2:G",
+      "type": "terminal",
+      "device": "Mp2",
+      "role": "G"
+    },
+    {
+      "id": "term:Mp2:S",
+      "type": "terminal",
+      "device": "Mp2",
+      "role": "S"
+    },
+    {
+      "id": "net:out1",
+      "type": "net"
+    },
+    {
+      "id": "dev:Mn1",
+      "type": "device",
+      "device_type": "nmos"
+    },
+    {
+      "id": "term:Mn1:D",
+      "type": "terminal",
+      "device": "Mn1",
+      "role": "D"
+    },
+    {
+      "id": "term:Mn1:G",
+      "type": "terminal",
+      "device": "Mn1",
+      "role": "G"
+    },
+    {
+      "id": "term:Mn1:S",
+      "type": "terminal",
+      "device": "Mn1",
+      "role": "S"
+    },
+    {
+      "id": "net:vip",
+      "type": "net"
+    },
+    {
+      "id": "net:node2",
+      "type": "net"
+    },
+    {
+      "id": "dev:Mn2",
+      "type": "device",
+      "device_type": "nmos"
+    },
+    {
+      "id": "term:Mn2:D",
+      "type": "terminal",
+      "device": "Mn2",
+      "role": "D"
+    },
+    {
+      "id": "term:Mn2:G",
+      "type": "terminal",
+      "device": "Mn2",
+      "role": "G"
+    },
+    {
+      "id": "term:Mn2:S",
+      "type": "terminal",
+      "device": "Mn2",
+      "role": "S"
+    },
+    {
+      "id": "net:vin",
+      "type": "net"
+    },
+    {
+      "id": "dev:Mnb",
+      "type": "device",
+      "device_type": "nmos"
+    },
+    {
+      "id": "term:Mnb:D",
+      "type": "terminal",
+      "device": "Mnb",
+      "role": "D"
+    },
+    {
+      "id": "term:Mnb:G",
+      "type": "terminal",
+      "device": "Mnb",
+      "role": "G"
+    },
+    {
+      "id": "term:Mnb:S",
+      "type": "terminal",
+      "device": "Mnb",
+      "role": "S"
+    },
+    {
+      "id": "net:vb",
+      "type": "net"
+    },
+    {
+      "id": "net:0",
+      "type": "net"
+    },
+    {
+      "id": "dev:Mnc",
+      "type": "device",
+      "device_type": "nmos"
+    },
+    {
+      "id": "term:Mnc:D",
+      "type": "terminal",
+      "device": "Mnc",
+      "role": "D"
+    },
+    {
+      "id": "term:Mnc:G",
+      "type": "terminal",
+      "device": "Mnc",
+      "role": "G"
+    },
+    {
+      "id": "term:Mnc:S",
+      "type": "terminal",
+      "device": "Mnc",
+      "role": "S"
+    },
+    {
+      "id": "dev:Mpo",
+      "type": "device",
+      "device_type": "nmos"
+    },
+    {
+      "id": "term:Mpo:D",
+      "type": "terminal",
+      "device": "Mpo",
+      "role": "D"
+    },
+    {
+      "id": "term:Mpo:G",
+      "type": "terminal",
+      "device": "Mpo",
+      "role": "G"
+    },
+    {
+      "id": "term:Mpo:S",
+      "type": "terminal",
+      "device": "Mpo",
+      "role": "S"
+    },
+    {
+      "id": "net:out",
+      "type": "net"
+    },
+    {
+      "id": "dev:Mno",
+      "type": "device",
+      "device_type": "nmos"
+    },
+    {
+      "id": "term:Mno:D",
+      "type": "terminal",
+      "device": "Mno",
+      "role": "D"
+    },
+    {
+      "id": "term:Mno:G",
+      "type": "terminal",
+      "device": "Mno",
+      "role": "G"
+    },
+    {
+      "id": "term:Mno:S",
+      "type": "terminal",
+      "device": "Mno",
+      "role": "S"
+    },
+    {
+      "id": "dev:cc",
+      "type": "device",
+      "device_type": "capacitor"
+    },
+    {
+      "id": "net:outm",
+      "type": "net"
+    },
+    {
+      "id": "dev:rz",
+      "type": "device",
+      "device_type": "resistor"
+    }
+  ],
+  "links": [
+    {
+      "source": "dev:Mp1",
+      "target": "term:Mp1:D"
+    },
+    {
+      "source": "dev:Mp1",
+      "target": "term:Mp1:G"
+    },
+    {
+      "source": "dev:Mp1",
+      "target": "term:Mp1:S"
+    },
+    {
+      "source": "term:Mp1:D",
+      "target": "net:node1"
+    },
+    {
+      "source": "term:Mp1:G",
+      "target": "net:node1"
+    },
+    {
+      "source": "term:Mp1:S",
+      "target": "net:vdd!"
+    },
+    {
+      "source": "dev:Mp2",
+      "target": "term:Mp2:D"
+    },
+    {
+      "source": "dev:Mp2",
+      "target": "term:Mp2:G"
+    },
+    {
+      "source": "dev:Mp2",
+      "target": "term:Mp2:S"
+    },
+    {
+      "source": "term:Mp2:D",
+      "target": "net:out1"
+    },
+    {
+      "source": "term:Mp2:G",
+      "target": "net:node1"
+    },
+    {
+      "source": "term:Mp2:S",
+      "target": "net:vdd!"
+    },
+    {
+      "source": "dev:Mn1",
+      "target": "term:Mn1:D"
+    },
+    {
+      "source": "dev:Mn1",
+      "target": "term:Mn1:G"
+    },
+    {
+      "source": "dev:Mn1",
+      "target": "term:Mn1:S"
+    },
+    {
+      "source": "term:Mn1:D",
+      "target": "net:node1"
+    },
+    {
+      "source": "term:Mn1:G",
+      "target": "net:vip"
+    },
+    {
+      "source": "term:Mn1:S",
+      "target": "net:node2"
+    },
+    {
+      "source": "dev:Mn2",
+      "target": "term:Mn2:D"
+    },
+    {
+      "source": "dev:Mn2",
+      "target": "term:Mn2:G"
+    },
+    {
+      "source": "dev:Mn2",
+      "target": "term:Mn2:S"
+    },
+    {
+      "source": "term:Mn2:D",
+      "target": "net:out1"
+    },
+    {
+      "source": "term:Mn2:G",
+      "target": "net:vin"
+    },
+    {
+      "source": "term:Mn2:S",
+      "target": "net:node2"
+    },
+    {
+      "source": "dev:Mnb",
+      "target": "term:Mnb:D"
+    },
+    {
+      "source": "dev:Mnb",
+      "target": "term:Mnb:G"
+    },
+    {
+      "source": "dev:Mnb",
+      "target": "term:Mnb:S"
+    },
+    {
+      "source": "term:Mnb:D",
+      "target": "net:vb"
+    },
+    {
+      "source": "term:Mnb:G",
+      "target": "net:vb"
+    },
+    {
+      "source": "term:Mnb:S",
+      "target": "net:0"
+    },
+    {
+      "source": "dev:Mnc",
+      "target": "term:Mnc:D"
+    },
+    {
+      "source": "dev:Mnc",
+      "target": "term:Mnc:G"
+    },
+    {
+      "source": "dev:Mnc",
+      "target": "term:Mnc:S"
+    },
+    {
+      "source": "term:Mnc:D",
+      "target": "net:node2"
+    },
+    {
+      "source": "term:Mnc:G",
+      "target": "net:vb"
+    },
+    {
+      "source": "term:Mnc:S",
+      "target": "net:0"
+    },
+    {
+      "source": "dev:Mpo",
+      "target": "term:Mpo:D"
+    },
+    {
+      "source": "dev:Mpo",
+      "target": "term:Mpo:G"
+    },
+    {
+      "source": "dev:Mpo",
+      "target": "term:Mpo:S"
+    },
+    {
+      "source": "term:Mpo:D",
+      "target": "net:out"
+    },
+    {
+      "source": "term:Mpo:G",
+      "target": "net:out1"
+    },
+    {
+      "source": "term:Mpo:S",
+      "target": "net:vdd!"
+    },
+    {
+      "source": "dev:Mno",
+      "target": "term:Mno:D"
+    },
+    {
+      "source": "dev:Mno",
+      "target": "term:Mno:G"
+    },
+    {
+      "source": "dev:Mno",
+      "target": "term:Mno:S"
+    },
+    {
+      "source": "term:Mno:D",
+      "target": "net:out"
+    },
+    {
+      "source": "term:Mno:G",
+      "target": "net:vb"
+    },
+    {
+      "source": "term:Mno:S",
+      "target": "net:0"
+    },
+    {
+      "source": "dev:cc",
+      "target": "net:out"
+    },
+    {
+      "source": "dev:cc",
+      "target": "net:outm"
+    },
+    {
+      "source": "dev:rz",
+      "target": "net:outm"
+    },
+    {
+      "source": "dev:rz",
+      "target": "net:out1"
+    },
+    {
+      "source": "Gain-trade-off",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Power-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain-directly-proportional",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Power-ambiguous",
+      "target": "Gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Power-ambiguous",
+      "target": "CMRR-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR-ambiguous",
+      "target": "UGF-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "differential pair",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "differential pair",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "differential pair",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "differential pair",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "pmos pull-up network",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "pmos pull-up network",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "pmos pull-up network",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "pmos pull-up network",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "tail current source",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "tail current source",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "tail current source",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "tail current source",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "bias",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "bias",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "bias",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "bias",
+      "target": "CMRR",
+      "relation": "connects"
+    },
+    {
+      "source": "output stage",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "output stage",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "output stage",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "compensation network",
+      "target": "UGF",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mn1",
+      "target": "differential pair",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mn1",
+      "target": "differential pair",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mn2",
+      "target": "differential pair",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mn2",
+      "target": "differential pair",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mp1",
+      "target": "pmos pull-up network",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mp1",
+      "target": "pmos pull-up network",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mp2",
+      "target": "pmos pull-up network",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mp2",
+      "target": "pmos pull-up network",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mnc",
+      "target": "tail current source",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mnc",
+      "target": "tail current source",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mnb",
+      "target": "bias",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mnb",
+      "target": "bias",
+      "relation": "connects"
+    },
+    {
+      "source": "Vb",
+      "target": "bias",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mpo",
+      "target": "output stage",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mpo",
+      "target": "output stage",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mno",
+      "target": "output stage",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mno",
+      "target": "output stage",
+      "relation": "connects"
+    },
+    {
+      "source": "C_cc",
+      "target": "compensation network",
+      "relation": "connects"
+    },
+    {
+      "source": "R_rz",
+      "target": "compensation network",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mn1-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mn2-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mn1-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mn2-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mn1-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mn2-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Vb-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Vb-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Vb-inversely-proportional",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mnc-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mnc-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mnc-inversely-proportional",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mp1-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mp2-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mp1-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mp2-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mp1-inversely-proportional",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mp2-inversely-proportional",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mpo-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mno-directly-proportional",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mpo-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mno-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mpo-inversely-proportional",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mno-inversely-proportional",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "C_cc-inversely-proportional",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "CMRR",
+      "target": "CMRR-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "UGF",
+      "target": "UGF-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mn1",
+      "target": "W_Mn1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mn1",
+      "target": "W_Mn1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mn1",
+      "target": "L_Mn1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mn1",
+      "target": "L_Mn1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mn2",
+      "target": "W_Mn2-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mn2",
+      "target": "W_Mn2-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mn2",
+      "target": "L_Mn2-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mn2",
+      "target": "L_Mn2-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mp1",
+      "target": "W_Mp1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mp1",
+      "target": "W_Mp1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mp1",
+      "target": "L_Mp1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mp1",
+      "target": "L_Mp1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mp2",
+      "target": "W_Mp2-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mp2",
+      "target": "W_Mp2-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mp2",
+      "target": "L_Mp2-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mp2",
+      "target": "L_Mp2-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mnc",
+      "target": "W_Mnc-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mnc",
+      "target": "W_Mnc-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mnc",
+      "target": "L_Mnc-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mnc",
+      "target": "L_Mnc-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mnb",
+      "target": "W_Mnb-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mnb",
+      "target": "W_Mnb-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mnb",
+      "target": "L_Mnb-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mnb",
+      "target": "L_Mnb-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mpo",
+      "target": "W_Mpo-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mpo",
+      "target": "W_Mpo-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mpo",
+      "target": "L_Mpo-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mpo",
+      "target": "L_Mpo-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mno",
+      "target": "W_Mno-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_Mno",
+      "target": "W_Mno-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mno",
+      "target": "L_Mno-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_Mno",
+      "target": "L_Mno-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Vb",
+      "target": "Vb-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Vb",
+      "target": "Vb-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "C_cc",
+      "target": "C_cc-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "C_cc",
+      "target": "C_cc-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R_rz",
+      "target": "R_rz-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "R_rz",
+      "target": "R_rz-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "dev:Mp1",
+      "target": "W_Mp1"
+    },
+    {
+      "source": "dev:Mp1",
+      "target": "L_Mp1"
+    },
+    {
+      "source": "dev:Mp2",
+      "target": "W_Mp2"
+    },
+    {
+      "source": "dev:Mp2",
+      "target": "L_Mp2"
+    },
+    {
+      "source": "dev:Mn1",
+      "target": "W_Mn1"
+    },
+    {
+      "source": "dev:Mn1",
+      "target": "L_Mn1"
+    },
+    {
+      "source": "dev:Mn2",
+      "target": "W_Mn2"
+    },
+    {
+      "source": "dev:Mn2",
+      "target": "L_Mn2"
+    },
+    {
+      "source": "dev:Mnb",
+      "target": "W_Mnb"
+    },
+    {
+      "source": "dev:Mnb",
+      "target": "L_Mnb"
+    },
+    {
+      "source": "dev:Mnc",
+      "target": "W_Mnc"
+    },
+    {
+      "source": "dev:Mnc",
+      "target": "L_Mnc"
+    },
+    {
+      "source": "dev:Mpo",
+      "target": "W_Mpo"
+    },
+    {
+      "source": "dev:Mpo",
+      "target": "L_Mpo"
+    },
+    {
+      "source": "dev:Mno",
+      "target": "W_Mno"
+    },
+    {
+      "source": "dev:Mno",
+      "target": "L_Mno"
+    }
+  ]
+}

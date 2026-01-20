@@ -1,17 +1,17 @@
-x15 4 4 0 0 nfet        
-x12 9 4 0 0 nfet        
-x13 7 9 14 vdd! pfet    
-x14 14 7 vdd! vdd! pfet 
-R1 7 9 
-x1 5 vip 3 0 nfet       
-x2 6 vin 3 0 nfet       
-x3 3 4 0 0 nfet         
-x4 5 7 vdd! vdd! pfet   
-x5 6 7 vdd! vdd! pfet   
-x6 8 9 5 vdd! pfet      
-x7 out 9 6 vdd! pfet    
-R2 8 11 
-x8 11 8 12 0 nfet       
-x9 out 8 13 0 nfet      
-x10 12 11 0 0 nfet      
-x11 13 11 0 0 nfet      
+x15 (4 4 0 0 ) nmos        
+x12 (9 4 0 0 ) nmos        
+x13 (7 9 14 vdd! ) pmos    
+x14 (14 7 vdd! vdd! ) pmos 
+R1 (7 9) resistor 
+x1 (5 vip 3 0 ) nmos       
+x2 (6 vin 3 0 ) nmos       
+x3 (3 4 0 0 ) nmos         
+x4 (5 7 vdd! vdd! ) pmos   
+x5 (6 7 vdd! vdd! ) pmos   
+x6 (8 9 5 vdd! ) pmos      
+x7 (out 9 6 vdd! ) pmos    
+R2 (8 11) resistor 
+x8 (11 8 12 0 ) nmos       
+x9 (out 8 13 0 ) nmos      
+x10 (12 11 0 0 ) nmos      
+x11 (13 11 0 0 ) nmos      

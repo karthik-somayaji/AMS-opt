@@ -1,0 +1,136 @@
+{
+"nodes": [
+{ "id": "Gain", "type": "performance" },
+{ "id": "CMRR", "type": "performance" },
+{ "id": "UGF", "type": "performance" },
+{ "id": "Power", "type": "performance" },
+
+
+{ "id": "differential pair", "type": "substructure" },
+{ "id": "pmos pull-up network", "type": "substructure" },
+{ "id": "tail current source", "type": "substructure" },
+{ "id": "bias", "type": "substructure" },
+{ "id": "output stage", "type": "substructure" },
+{ "id": "compensation network", "type": "substructure" },
+
+{ "id": "W_Mn1", "type": "parameter" },
+{ "id": "L_Mn1", "type": "parameter" },
+{ "id": "W_Mn2", "type": "parameter" },
+{ "id": "L_Mn2", "type": "parameter" },
+
+{ "id": "W_Mp1", "type": "parameter" },
+{ "id": "L_Mp1", "type": "parameter" },
+{ "id": "W_Mp2", "type": "parameter" },
+{ "id": "L_Mp2", "type": "parameter" },
+
+{ "id": "W_Mnc", "type": "parameter" },
+{ "id": "L_Mnc", "type": "parameter" },
+
+{ "id": "W_Mnb", "type": "parameter" },
+{ "id": "L_Mnb", "type": "parameter" },
+
+{ "id": "W_Mpo", "type": "parameter" },
+{ "id": "L_Mpo", "type": "parameter" },
+{ "id": "W_Mno", "type": "parameter" },
+{ "id": "L_Mno", "type": "parameter" },
+
+{ "id": "Vb", "type": "parameter" },
+{ "id": "C_cc", "type": "parameter" },
+{ "id": "R_rz", "type": "parameter" }
+
+
+],
+"links": [
+{ "source": "Gain", "target": "UGF", "relation": "trade-off" },
+{ "source": "Power", "target": "UGF", "relation": "directly-proportional" },
+{ "source": "Gain", "target": "CMRR", "relation": "directly-proportional" },
+{ "source": "Power", "target": "Gain", "relation": "ambiguous" },
+{ "source": "Power", "target": "CMRR", "relation": "ambiguous" },
+{ "source": "CMRR", "target": "UGF", "relation": "ambiguous" },
+
+
+{ "source": "differential pair", "target": "Gain", "relation": "influences" },
+{ "source": "differential pair", "target": "CMRR", "relation": "influences" },
+{ "source": "differential pair", "target": "UGF", "relation": "influences" },
+{ "source": "differential pair", "target": "Power", "relation": "influences" },
+
+{ "source": "pmos pull-up network", "target": "Gain", "relation": "influences" },
+{ "source": "pmos pull-up network", "target": "CMRR", "relation": "influences" },
+{ "source": "pmos pull-up network", "target": "UGF", "relation": "influences" },
+{ "source": "pmos pull-up network", "target": "Power", "relation": "influences" },
+
+{ "source": "tail current source", "target": "Gain", "relation": "influences" },
+{ "source": "tail current source", "target": "CMRR", "relation": "influences" },
+{ "source": "tail current source", "target": "UGF", "relation": "influences" },
+{ "source": "tail current source", "target": "Power", "relation": "influences" },
+
+{ "source": "bias", "target": "UGF", "relation": "influences" },
+{ "source": "bias", "target": "Power", "relation": "influences" },
+{ "source": "bias", "target": "Gain", "relation": "influences" },
+{ "source": "bias", "target": "CMRR", "relation": "influences" },
+
+{ "source": "output stage", "target": "UGF", "relation": "influences" },
+{ "source": "output stage", "target": "Gain", "relation": "influences" },
+{ "source": "output stage", "target": "Power", "relation": "influences" },
+
+{ "source": "compensation network", "target": "UGF", "relation": "influences" },
+
+{ "source": "W_Mn1", "target": "differential pair", "relation": "belongs-to" },
+{ "source": "L_Mn1", "target": "differential pair", "relation": "belongs-to" },
+{ "source": "W_Mn2", "target": "differential pair", "relation": "belongs-to" },
+{ "source": "L_Mn2", "target": "differential pair", "relation": "belongs-to" },
+
+{ "source": "W_Mp1", "target": "pmos pull-up network", "relation": "belongs-to" },
+{ "source": "L_Mp1", "target": "pmos pull-up network", "relation": "belongs-to" },
+{ "source": "W_Mp2", "target": "pmos pull-up network", "relation": "belongs-to" },
+{ "source": "L_Mp2", "target": "pmos pull-up network", "relation": "belongs-to" },
+
+{ "source": "W_Mnc", "target": "tail current source", "relation": "belongs-to" },
+{ "source": "L_Mnc", "target": "tail current source", "relation": "belongs-to" },
+
+{ "source": "W_Mnb", "target": "bias", "relation": "belongs-to" },
+{ "source": "L_Mnb", "target": "bias", "relation": "belongs-to" },
+{ "source": "Vb", "target": "bias", "relation": "belongs-to" },
+
+{ "source": "W_Mpo", "target": "output stage", "relation": "belongs-to" },
+{ "source": "L_Mpo", "target": "output stage", "relation": "belongs-to" },
+{ "source": "W_Mno", "target": "output stage", "relation": "belongs-to" },
+{ "source": "L_Mno", "target": "output stage", "relation": "belongs-to" },
+
+{ "source": "C_cc", "target": "compensation network", "relation": "belongs-to" },
+{ "source": "R_rz", "target": "compensation network", "relation": "belongs-to" },
+
+{ "source": "W_Mn1", "target": "UGF", "relation": "directly-proportional" },
+{ "source": "W_Mn2", "target": "UGF", "relation": "directly-proportional" },
+{ "source": "W_Mn1", "target": "Gain", "relation": "directly-proportional" },
+{ "source": "W_Mn2", "target": "Gain", "relation": "directly-proportional" },
+{ "source": "W_Mn1", "target": "Power", "relation": "directly-proportional" },
+{ "source": "W_Mn2", "target": "Power", "relation": "directly-proportional" },
+
+{ "source": "Vb", "target": "Power", "relation": "directly-proportional" },
+{ "source": "Vb", "target": "UGF", "relation": "directly-proportional" },
+{ "source": "Vb", "target": "Gain", "relation": "inversely-proportional" },
+
+{ "source": "W_Mnc", "target": "Power", "relation": "directly-proportional" },
+{ "source": "W_Mnc", "target": "UGF", "relation": "directly-proportional" },
+{ "source": "W_Mnc", "target": "Gain", "relation": "inversely-proportional" },
+
+{ "source": "W_Mp1", "target": "Power", "relation": "directly-proportional" },
+{ "source": "W_Mp2", "target": "Power", "relation": "directly-proportional" },
+{ "source": "W_Mp1", "target": "UGF", "relation": "directly-proportional" },
+{ "source": "W_Mp2", "target": "UGF", "relation": "directly-proportional" },
+{ "source": "W_Mp1", "target": "Gain", "relation": "inversely-proportional" },
+{ "source": "W_Mp2", "target": "Gain", "relation": "inversely-proportional" },
+
+{ "source": "W_Mpo", "target": "UGF", "relation": "directly-proportional" },
+{ "source": "W_Mno", "target": "UGF", "relation": "directly-proportional" },
+{ "source": "W_Mpo", "target": "Power", "relation": "directly-proportional" },
+{ "source": "W_Mno", "target": "Power", "relation": "directly-proportional" },
+{ "source": "W_Mpo", "target": "Gain", "relation": "inversely-proportional" },
+{ "source": "W_Mno", "target": "Gain", "relation": "inversely-proportional" },
+
+{ "source": "C_cc", "target": "UGF", "relation": "inversely-proportional" }
+
+
+]
+}

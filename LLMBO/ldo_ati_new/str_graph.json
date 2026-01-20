@@ -1,0 +1,1005 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "dev:xt1",
+      "type": "device",
+      "device_type": "pmos"
+    },
+    {
+      "id": "term:xt1:D",
+      "type": "terminal",
+      "device": "xt1",
+      "role": "D"
+    },
+    {
+      "id": "term:xt1:G",
+      "type": "terminal",
+      "device": "xt1",
+      "role": "G"
+    },
+    {
+      "id": "term:xt1:S",
+      "type": "terminal",
+      "device": "xt1",
+      "role": "S"
+    },
+    {
+      "id": "net:net0237",
+      "type": "net"
+    },
+    {
+      "id": "net:ampoutpx",
+      "type": "net"
+    },
+    {
+      "id": "net:vout",
+      "type": "net"
+    },
+    {
+      "id": "dev:xt2",
+      "type": "device",
+      "device_type": "nmos"
+    },
+    {
+      "id": "term:xt2:D",
+      "type": "terminal",
+      "device": "xt2",
+      "role": "D"
+    },
+    {
+      "id": "term:xt2:G",
+      "type": "terminal",
+      "device": "xt2",
+      "role": "G"
+    },
+    {
+      "id": "term:xt2:S",
+      "type": "terminal",
+      "device": "xt2",
+      "role": "S"
+    },
+    {
+      "id": "net:amp1outnx",
+      "type": "net"
+    },
+    {
+      "id": "net:my_gnd",
+      "type": "net"
+    },
+    {
+      "id": "dev:xt3",
+      "type": "device",
+      "device_type": "pmos"
+    },
+    {
+      "id": "term:xt3:D",
+      "type": "terminal",
+      "device": "xt3",
+      "role": "D"
+    },
+    {
+      "id": "term:xt3:G",
+      "type": "terminal",
+      "device": "xt3",
+      "role": "G"
+    },
+    {
+      "id": "term:xt3:S",
+      "type": "terminal",
+      "device": "xt3",
+      "role": "S"
+    },
+    {
+      "id": "net:amp1outpx",
+      "type": "net"
+    },
+    {
+      "id": "net:vref2",
+      "type": "net"
+    },
+    {
+      "id": "net:net0167",
+      "type": "net"
+    },
+    {
+      "id": "dev:xt4",
+      "type": "device",
+      "device_type": "pmos"
+    },
+    {
+      "id": "term:xt4:D",
+      "type": "terminal",
+      "device": "xt4",
+      "role": "D"
+    },
+    {
+      "id": "term:xt4:G",
+      "type": "terminal",
+      "device": "xt4",
+      "role": "G"
+    },
+    {
+      "id": "term:xt4:S",
+      "type": "terminal",
+      "device": "xt4",
+      "role": "S"
+    },
+    {
+      "id": "net:vfb2x",
+      "type": "net"
+    },
+    {
+      "id": "dev:xt5",
+      "type": "device",
+      "device_type": "nmos"
+    },
+    {
+      "id": "term:xt5:D",
+      "type": "terminal",
+      "device": "xt5",
+      "role": "D"
+    },
+    {
+      "id": "term:xt5:G",
+      "type": "terminal",
+      "device": "xt5",
+      "role": "G"
+    },
+    {
+      "id": "term:xt5:S",
+      "type": "terminal",
+      "device": "xt5",
+      "role": "S"
+    },
+    {
+      "id": "net:net0278",
+      "type": "net"
+    },
+    {
+      "id": "dev:xt6",
+      "type": "device",
+      "device_type": "nmos"
+    },
+    {
+      "id": "term:xt6:D",
+      "type": "terminal",
+      "device": "xt6",
+      "role": "D"
+    },
+    {
+      "id": "term:xt6:G",
+      "type": "terminal",
+      "device": "xt6",
+      "role": "G"
+    },
+    {
+      "id": "term:xt6:S",
+      "type": "terminal",
+      "device": "xt6",
+      "role": "S"
+    },
+    {
+      "id": "dev:xt7",
+      "type": "device",
+      "device_type": "nmos"
+    },
+    {
+      "id": "term:xt7:D",
+      "type": "terminal",
+      "device": "xt7",
+      "role": "D"
+    },
+    {
+      "id": "term:xt7:G",
+      "type": "terminal",
+      "device": "xt7",
+      "role": "G"
+    },
+    {
+      "id": "term:xt7:S",
+      "type": "terminal",
+      "device": "xt7",
+      "role": "S"
+    },
+    {
+      "id": "dev:xt8",
+      "type": "device",
+      "device_type": "nmos"
+    },
+    {
+      "id": "term:xt8:D",
+      "type": "terminal",
+      "device": "xt8",
+      "role": "D"
+    },
+    {
+      "id": "term:xt8:G",
+      "type": "terminal",
+      "device": "xt8",
+      "role": "G"
+    },
+    {
+      "id": "term:xt8:S",
+      "type": "terminal",
+      "device": "xt8",
+      "role": "S"
+    },
+    {
+      "id": "dev:xt9",
+      "type": "device",
+      "device_type": "nmos"
+    },
+    {
+      "id": "term:xt9:D",
+      "type": "terminal",
+      "device": "xt9",
+      "role": "D"
+    },
+    {
+      "id": "term:xt9:G",
+      "type": "terminal",
+      "device": "xt9",
+      "role": "G"
+    },
+    {
+      "id": "term:xt9:S",
+      "type": "terminal",
+      "device": "xt9",
+      "role": "S"
+    },
+    {
+      "id": "dev:xt10",
+      "type": "device",
+      "device_type": "nmos"
+    },
+    {
+      "id": "term:xt10:D",
+      "type": "terminal",
+      "device": "xt10",
+      "role": "D"
+    },
+    {
+      "id": "term:xt10:G",
+      "type": "terminal",
+      "device": "xt10",
+      "role": "G"
+    },
+    {
+      "id": "term:xt10:S",
+      "type": "terminal",
+      "device": "xt10",
+      "role": "S"
+    },
+    {
+      "id": "dev:xt11",
+      "type": "device",
+      "device_type": "nmos"
+    },
+    {
+      "id": "term:xt11:D",
+      "type": "terminal",
+      "device": "xt11",
+      "role": "D"
+    },
+    {
+      "id": "term:xt11:G",
+      "type": "terminal",
+      "device": "xt11",
+      "role": "G"
+    },
+    {
+      "id": "term:xt11:S",
+      "type": "terminal",
+      "device": "xt11",
+      "role": "S"
+    },
+    {
+      "id": "dev:xtp1",
+      "type": "device",
+      "device_type": "pmos"
+    },
+    {
+      "id": "term:xtp1:D",
+      "type": "terminal",
+      "device": "xtp1",
+      "role": "D"
+    },
+    {
+      "id": "term:xtp1:G",
+      "type": "terminal",
+      "device": "xtp1",
+      "role": "G"
+    },
+    {
+      "id": "term:xtp1:S",
+      "type": "terminal",
+      "device": "xtp1",
+      "role": "S"
+    },
+    {
+      "id": "net:my_vdd",
+      "type": "net"
+    },
+    {
+      "id": "dev:xtpn",
+      "type": "device",
+      "device_type": "nmos"
+    },
+    {
+      "id": "term:xtpn:D",
+      "type": "terminal",
+      "device": "xtpn",
+      "role": "D"
+    },
+    {
+      "id": "term:xtpn:G",
+      "type": "terminal",
+      "device": "xtpn",
+      "role": "G"
+    },
+    {
+      "id": "term:xtpn:S",
+      "type": "terminal",
+      "device": "xtpn",
+      "role": "S"
+    },
+    {
+      "id": "dev:xtb0",
+      "type": "device",
+      "device_type": "pmos"
+    },
+    {
+      "id": "term:xtb0:D",
+      "type": "terminal",
+      "device": "xtb0",
+      "role": "D"
+    },
+    {
+      "id": "term:xtb0:G",
+      "type": "terminal",
+      "device": "xtb0",
+      "role": "G"
+    },
+    {
+      "id": "term:xtb0:S",
+      "type": "terminal",
+      "device": "xtb0",
+      "role": "S"
+    },
+    {
+      "id": "net:vbias2x",
+      "type": "net"
+    },
+    {
+      "id": "dev:xtb1",
+      "type": "device",
+      "device_type": "pmos"
+    },
+    {
+      "id": "term:xtb1:D",
+      "type": "terminal",
+      "device": "xtb1",
+      "role": "D"
+    },
+    {
+      "id": "term:xtb1:G",
+      "type": "terminal",
+      "device": "xtb1",
+      "role": "G"
+    },
+    {
+      "id": "term:xtb1:S",
+      "type": "terminal",
+      "device": "xtb1",
+      "role": "S"
+    },
+    {
+      "id": "net:net0183",
+      "type": "net"
+    },
+    {
+      "id": "dev:xtb2",
+      "type": "device",
+      "device_type": "pmos"
+    },
+    {
+      "id": "term:xtb2:D",
+      "type": "terminal",
+      "device": "xtb2",
+      "role": "D"
+    },
+    {
+      "id": "term:xtb2:G",
+      "type": "terminal",
+      "device": "xtb2",
+      "role": "G"
+    },
+    {
+      "id": "term:xtb2:S",
+      "type": "terminal",
+      "device": "xtb2",
+      "role": "S"
+    },
+    {
+      "id": "dev:xtb3",
+      "type": "device",
+      "device_type": "pmos"
+    },
+    {
+      "id": "term:xtb3:D",
+      "type": "terminal",
+      "device": "xtb3",
+      "role": "D"
+    },
+    {
+      "id": "term:xtb3:G",
+      "type": "terminal",
+      "device": "xtb3",
+      "role": "G"
+    },
+    {
+      "id": "term:xtb3:S",
+      "type": "terminal",
+      "device": "xtb3",
+      "role": "S"
+    },
+    {
+      "id": "dev:xtbn0",
+      "type": "device",
+      "device_type": "nmos"
+    },
+    {
+      "id": "term:xtbn0:D",
+      "type": "terminal",
+      "device": "xtbn0",
+      "role": "D"
+    },
+    {
+      "id": "term:xtbn0:G",
+      "type": "terminal",
+      "device": "xtbn0",
+      "role": "G"
+    },
+    {
+      "id": "term:xtbn0:S",
+      "type": "terminal",
+      "device": "xtbn0",
+      "role": "S"
+    },
+    {
+      "id": "net:vbias1x",
+      "type": "net"
+    },
+    {
+      "id": "dev:xtbn1",
+      "type": "device",
+      "device_type": "nmos"
+    },
+    {
+      "id": "term:xtbn1:D",
+      "type": "terminal",
+      "device": "xtbn1",
+      "role": "D"
+    },
+    {
+      "id": "term:xtbn1:G",
+      "type": "terminal",
+      "device": "xtbn1",
+      "role": "G"
+    },
+    {
+      "id": "term:xtbn1:S",
+      "type": "terminal",
+      "device": "xtbn1",
+      "role": "S"
+    },
+    {
+      "id": "dev:xtbn2",
+      "type": "device",
+      "device_type": "pmos"
+    },
+    {
+      "id": "term:xtbn2:D",
+      "type": "terminal",
+      "device": "xtbn2",
+      "role": "D"
+    },
+    {
+      "id": "term:xtbn2:G",
+      "type": "terminal",
+      "device": "xtbn2",
+      "role": "G"
+    },
+    {
+      "id": "term:xtbn2:S",
+      "type": "terminal",
+      "device": "xtbn2",
+      "role": "S"
+    }
+  ],
+  "links": [
+    {
+      "source": "dev:xt1",
+      "target": "term:xt1:D"
+    },
+    {
+      "source": "dev:xt1",
+      "target": "term:xt1:G"
+    },
+    {
+      "source": "dev:xt1",
+      "target": "term:xt1:S"
+    },
+    {
+      "source": "term:xt1:D",
+      "target": "net:net0237"
+    },
+    {
+      "source": "term:xt1:G",
+      "target": "net:ampoutpx"
+    },
+    {
+      "source": "term:xt1:S",
+      "target": "net:vout"
+    },
+    {
+      "source": "dev:xt2",
+      "target": "term:xt2:D"
+    },
+    {
+      "source": "dev:xt2",
+      "target": "term:xt2:G"
+    },
+    {
+      "source": "dev:xt2",
+      "target": "term:xt2:S"
+    },
+    {
+      "source": "term:xt2:D",
+      "target": "net:net0237"
+    },
+    {
+      "source": "term:xt2:G",
+      "target": "net:amp1outnx"
+    },
+    {
+      "source": "term:xt2:S",
+      "target": "net:my_gnd"
+    },
+    {
+      "source": "dev:xt3",
+      "target": "term:xt3:D"
+    },
+    {
+      "source": "dev:xt3",
+      "target": "term:xt3:G"
+    },
+    {
+      "source": "dev:xt3",
+      "target": "term:xt3:S"
+    },
+    {
+      "source": "term:xt3:D",
+      "target": "net:amp1outpx"
+    },
+    {
+      "source": "term:xt3:G",
+      "target": "net:vref2"
+    },
+    {
+      "source": "term:xt3:S",
+      "target": "net:net0167"
+    },
+    {
+      "source": "dev:xt4",
+      "target": "term:xt4:D"
+    },
+    {
+      "source": "dev:xt4",
+      "target": "term:xt4:G"
+    },
+    {
+      "source": "dev:xt4",
+      "target": "term:xt4:S"
+    },
+    {
+      "source": "term:xt4:D",
+      "target": "net:amp1outnx"
+    },
+    {
+      "source": "term:xt4:G",
+      "target": "net:vfb2x"
+    },
+    {
+      "source": "term:xt4:S",
+      "target": "net:net0167"
+    },
+    {
+      "source": "dev:xt5",
+      "target": "term:xt5:D"
+    },
+    {
+      "source": "dev:xt5",
+      "target": "term:xt5:G"
+    },
+    {
+      "source": "dev:xt5",
+      "target": "term:xt5:S"
+    },
+    {
+      "source": "term:xt5:D",
+      "target": "net:amp1outpx"
+    },
+    {
+      "source": "term:xt5:G",
+      "target": "net:vref2"
+    },
+    {
+      "source": "term:xt5:S",
+      "target": "net:net0278"
+    },
+    {
+      "source": "dev:xt6",
+      "target": "term:xt6:D"
+    },
+    {
+      "source": "dev:xt6",
+      "target": "term:xt6:G"
+    },
+    {
+      "source": "dev:xt6",
+      "target": "term:xt6:S"
+    },
+    {
+      "source": "term:xt6:D",
+      "target": "net:amp1outnx"
+    },
+    {
+      "source": "term:xt6:G",
+      "target": "net:vfb2x"
+    },
+    {
+      "source": "term:xt6:S",
+      "target": "net:net0278"
+    },
+    {
+      "source": "dev:xt7",
+      "target": "term:xt7:D"
+    },
+    {
+      "source": "dev:xt7",
+      "target": "term:xt7:G"
+    },
+    {
+      "source": "dev:xt7",
+      "target": "term:xt7:S"
+    },
+    {
+      "source": "term:xt7:D",
+      "target": "net:amp1outpx"
+    },
+    {
+      "source": "term:xt7:G",
+      "target": "net:amp1outpx"
+    },
+    {
+      "source": "term:xt7:S",
+      "target": "net:my_gnd"
+    },
+    {
+      "source": "dev:xt8",
+      "target": "term:xt8:D"
+    },
+    {
+      "source": "dev:xt8",
+      "target": "term:xt8:G"
+    },
+    {
+      "source": "dev:xt8",
+      "target": "term:xt8:S"
+    },
+    {
+      "source": "term:xt8:D",
+      "target": "net:amp1outnx"
+    },
+    {
+      "source": "term:xt8:G",
+      "target": "net:amp1outnx"
+    },
+    {
+      "source": "term:xt8:S",
+      "target": "net:my_gnd"
+    },
+    {
+      "source": "dev:xt9",
+      "target": "term:xt9:D"
+    },
+    {
+      "source": "dev:xt9",
+      "target": "term:xt9:G"
+    },
+    {
+      "source": "dev:xt9",
+      "target": "term:xt9:S"
+    },
+    {
+      "source": "term:xt9:D",
+      "target": "net:amp1outpx"
+    },
+    {
+      "source": "term:xt9:G",
+      "target": "net:amp1outnx"
+    },
+    {
+      "source": "term:xt9:S",
+      "target": "net:my_gnd"
+    },
+    {
+      "source": "dev:xt10",
+      "target": "term:xt10:D"
+    },
+    {
+      "source": "dev:xt10",
+      "target": "term:xt10:G"
+    },
+    {
+      "source": "dev:xt10",
+      "target": "term:xt10:S"
+    },
+    {
+      "source": "term:xt10:D",
+      "target": "net:amp1outnx"
+    },
+    {
+      "source": "term:xt10:G",
+      "target": "net:amp1outpx"
+    },
+    {
+      "source": "term:xt10:S",
+      "target": "net:my_gnd"
+    },
+    {
+      "source": "dev:xt11",
+      "target": "term:xt11:D"
+    },
+    {
+      "source": "dev:xt11",
+      "target": "term:xt11:G"
+    },
+    {
+      "source": "dev:xt11",
+      "target": "term:xt11:S"
+    },
+    {
+      "source": "term:xt11:D",
+      "target": "net:ampoutpx"
+    },
+    {
+      "source": "term:xt11:G",
+      "target": "net:amp1outpx"
+    },
+    {
+      "source": "term:xt11:S",
+      "target": "net:my_gnd"
+    },
+    {
+      "source": "dev:xtp1",
+      "target": "term:xtp1:D"
+    },
+    {
+      "source": "dev:xtp1",
+      "target": "term:xtp1:G"
+    },
+    {
+      "source": "dev:xtp1",
+      "target": "term:xtp1:S"
+    },
+    {
+      "source": "term:xtp1:D",
+      "target": "net:vout"
+    },
+    {
+      "source": "term:xtp1:G",
+      "target": "net:net0237"
+    },
+    {
+      "source": "term:xtp1:S",
+      "target": "net:my_vdd"
+    },
+    {
+      "source": "dev:xtpn",
+      "target": "term:xtpn:D"
+    },
+    {
+      "source": "dev:xtpn",
+      "target": "term:xtpn:G"
+    },
+    {
+      "source": "dev:xtpn",
+      "target": "term:xtpn:S"
+    },
+    {
+      "source": "term:xtpn:D",
+      "target": "net:vout"
+    },
+    {
+      "source": "term:xtpn:G",
+      "target": "net:net0237"
+    },
+    {
+      "source": "term:xtpn:S",
+      "target": "net:my_gnd"
+    },
+    {
+      "source": "dev:xtb0",
+      "target": "term:xtb0:D"
+    },
+    {
+      "source": "dev:xtb0",
+      "target": "term:xtb0:G"
+    },
+    {
+      "source": "dev:xtb0",
+      "target": "term:xtb0:S"
+    },
+    {
+      "source": "term:xtb0:D",
+      "target": "net:vbias2x"
+    },
+    {
+      "source": "term:xtb0:G",
+      "target": "net:vbias2x"
+    },
+    {
+      "source": "term:xtb0:S",
+      "target": "net:my_vdd"
+    },
+    {
+      "source": "dev:xtb1",
+      "target": "term:xtb1:D"
+    },
+    {
+      "source": "dev:xtb1",
+      "target": "term:xtb1:G"
+    },
+    {
+      "source": "dev:xtb1",
+      "target": "term:xtb1:S"
+    },
+    {
+      "source": "term:xtb1:D",
+      "target": "net:net0183"
+    },
+    {
+      "source": "term:xtb1:G",
+      "target": "net:vbias2x"
+    },
+    {
+      "source": "term:xtb1:S",
+      "target": "net:my_vdd"
+    },
+    {
+      "source": "dev:xtb2",
+      "target": "term:xtb2:D"
+    },
+    {
+      "source": "dev:xtb2",
+      "target": "term:xtb2:G"
+    },
+    {
+      "source": "dev:xtb2",
+      "target": "term:xtb2:S"
+    },
+    {
+      "source": "term:xtb2:D",
+      "target": "net:net0167"
+    },
+    {
+      "source": "term:xtb2:G",
+      "target": "net:vbias2x"
+    },
+    {
+      "source": "term:xtb2:S",
+      "target": "net:my_vdd"
+    },
+    {
+      "source": "dev:xtb3",
+      "target": "term:xtb3:D"
+    },
+    {
+      "source": "dev:xtb3",
+      "target": "term:xtb3:G"
+    },
+    {
+      "source": "dev:xtb3",
+      "target": "term:xtb3:S"
+    },
+    {
+      "source": "term:xtb3:D",
+      "target": "net:ampoutpx"
+    },
+    {
+      "source": "term:xtb3:G",
+      "target": "net:vbias2x"
+    },
+    {
+      "source": "term:xtb3:S",
+      "target": "net:my_vdd"
+    },
+    {
+      "source": "dev:xtbn0",
+      "target": "term:xtbn0:D"
+    },
+    {
+      "source": "dev:xtbn0",
+      "target": "term:xtbn0:G"
+    },
+    {
+      "source": "dev:xtbn0",
+      "target": "term:xtbn0:S"
+    },
+    {
+      "source": "term:xtbn0:D",
+      "target": "net:net0278"
+    },
+    {
+      "source": "term:xtbn0:G",
+      "target": "net:vbias1x"
+    },
+    {
+      "source": "term:xtbn0:S",
+      "target": "net:my_gnd"
+    },
+    {
+      "source": "dev:xtbn1",
+      "target": "term:xtbn1:D"
+    },
+    {
+      "source": "dev:xtbn1",
+      "target": "term:xtbn1:G"
+    },
+    {
+      "source": "dev:xtbn1",
+      "target": "term:xtbn1:S"
+    },
+    {
+      "source": "term:xtbn1:D",
+      "target": "net:vbias1x"
+    },
+    {
+      "source": "term:xtbn1:G",
+      "target": "net:vbias1x"
+    },
+    {
+      "source": "term:xtbn1:S",
+      "target": "net:my_gnd"
+    },
+    {
+      "source": "dev:xtbn2",
+      "target": "term:xtbn2:D"
+    },
+    {
+      "source": "dev:xtbn2",
+      "target": "term:xtbn2:G"
+    },
+    {
+      "source": "dev:xtbn2",
+      "target": "term:xtbn2:S"
+    },
+    {
+      "source": "term:xtbn2:D",
+      "target": "net:vbias1x"
+    },
+    {
+      "source": "term:xtbn2:G",
+      "target": "net:vbias1x"
+    },
+    {
+      "source": "term:xtbn2:S",
+      "target": "net:net0183"
+    }
+  ]
+}

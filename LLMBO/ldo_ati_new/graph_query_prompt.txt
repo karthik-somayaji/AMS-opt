@@ -1,0 +1,63 @@
+
+Given a circuit netlist and a set of performance metrics, do the following and output everything together as plain tuple lists, without any explanations:
+
+1. **Infer P-graph (performance–performance relations).**
+   Output entries of the form:
+   `(Metric_A, Relationship, Metric_B)`
+   where `Relationship ∈ { 'trade-off', 'directly-proportional', 'ambiguous' }`.
+
+2. **Infer PS-graph (substructure–performance relations).**
+   First, identify meaningful circuit substructures (e.g., “M0-M1 differential pair”, “M2-M3 active load current mirror”, “R0-R1 load resistors”).
+   Then output entries of the form:
+   `(Substructure, 'influences', Metric)`
+   only if that substructure significantly affects the metric.
+
+3. **Infer PSX-graph (parameter–substructure–performance relations).**
+   Treat device sizes, bias currents, resistances, etc. as design parameters (e.g., `W_M0, L_M0, IB1, R0, R1, VB1`).
+   Output:
+
+   * `(Parameter, 'belongs-to', Substructure)` if the parameter structurally belongs to that substructure.
+   * `(Parameter, Relationship, Metric)` where `Relationship ∈ { 'directly-proportional', 'inversely-proportional' }`, indicating how increasing the parameter value affects the metric.
+
+**Important formatting constraints:**
+
+* Use exactly the tuple formats above.
+* Use only the allowed relationship labels.
+* Do **not** include any explanations, text, or headings—only the tuples.
+
+Given the above instructions, construct the above tuples as entries of a knowledge graph. Specifically, output a json format where all nodes (nodes in P, PS and PSX graphs) are listed under the field 'nodes'.
+For example:
+"nodes": [
+    {"id": "Active load",              "type": "substructure"},
+    {"id": "CMRR",                     "type": "performance"},
+    {"id": "Differential pair",        "type": "substructure"}, etc]
+    
+ All tuples in the graphs should be listed under a 'links' field as a list of dictionaries.
+ For example: "links": [
+    {"source": "Gain", "target": "CMRR", "relation": "ambiguous"}, etc]
+
+
+Netlist:
+```
+xt1 (net0237 ampoutpx vout vout) pmos
+xt2 (net0237 amp1outnx my_gnd my_gnd ) nmos
+xt3 (amp1outpx vref2 net0167 net0167 ) pmos
+xt4 (amp1outnx vfb2x net0167 net0167 ) pmos
+xt5 (amp1outpx vref2 net0278 my_gnd ) nmos
+xt6 (amp1outnx vfb2x net0278 my_gnd ) nmos
+xt7 (amp1outpx amp1outpx my_gnd my_gnd ) nmos
+xt8 (amp1outnx amp1outnx my_gnd my_gnd ) nmos
+xt9 (amp1outpx amp1outnx my_gnd my_gnd ) nmos
+xt10 (amp1outnx amp1outpx my_gnd my_gnd) nmos
+xt11 (ampoutpx amp1outpx my_gnd my_gnd) nmos
+xtp1 (vout net0237 my_vdd my_vdd ) pmos
+xtpn (vout net0237 my_gnd my_gnd ) nmos
+xtb0 (vbias2x vbias2x my_vdd my_vdd ) pmos
+xtb1 (net0183 vbias2x my_vdd my_vdd ) pmos
+xtb2 (net0167 vbias2x my_vdd my_vdd ) pmos
+xtb3 (ampoutpx vbias2x my_vdd my_vdd ) pmos
+xtbn0 (net0278 vbias1x my_gnd my_gnd ) nmos
+xtbn1 (vbias1x vbias1x my_gnd my_gnd ) nmos
+xtbn2 (vbias1x vbias1x net0183 net0183) pmos
+```
+

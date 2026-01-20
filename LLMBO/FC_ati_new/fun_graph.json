@@ -1,0 +1,143 @@
+{
+  "nodes": [
+    {"id": "Gain", "type": "performance"},
+    {"id": "CMRR", "type": "performance"},
+    {"id": "UGF", "type": "performance"},
+    {"id": "Power", "type": "performance"},
+
+    {"id": "differential pair", "type": "substructure"},
+    {"id": "tail current source", "type": "substructure"},
+    {"id": "current mirror", "type": "substructure"},
+    {"id": "active load", "type": "substructure"},
+    {"id": "output stage", "type": "substructure"},
+    {"id": "resistive coupling", "type": "substructure"},
+    {"id": "bias", "type": "substructure"},
+    {"id": "reference", "type": "substructure"},
+
+    {"id": "W_x1", "type": "parameter"},
+    {"id": "L_x1", "type": "parameter"},
+    {"id": "W_x2", "type": "parameter"},
+    {"id": "L_x2", "type": "parameter"},
+    {"id": "W_x3", "type": "parameter"},
+    {"id": "L_x3", "type": "parameter"},
+    {"id": "W_x4", "type": "parameter"},
+    {"id": "L_x4", "type": "parameter"},
+    {"id": "W_x5", "type": "parameter"},
+    {"id": "L_x5", "type": "parameter"},
+    {"id": "W_x6", "type": "parameter"},
+    {"id": "L_x6", "type": "parameter"},
+    {"id": "W_x7", "type": "parameter"},
+    {"id": "L_x7", "type": "parameter"},
+    {"id": "W_x9", "type": "parameter"},
+    {"id": "L_x9", "type": "parameter"},
+    {"id": "W_x13", "type": "parameter"},
+    {"id": "L_x13", "type": "parameter"},
+    {"id": "W_x14", "type": "parameter"},
+    {"id": "L_x14", "type": "parameter"},
+    {"id": "R1", "type": "parameter"},
+    {"id": "R2", "type": "parameter"},
+    {"id": "IB_tail", "type": "parameter"},
+    {"id": "IB_mirror", "type": "parameter"}
+  ],
+  "links": [
+    {"source": "Gain", "target": "UGF", "relation": "trade-off"},
+    {"source": "UGF", "target": "Power", "relation": "directly-proportional"},
+    {"source": "Gain", "target": "CMRR", "relation": "ambiguous"},
+    {"source": "CMRR", "target": "UGF", "relation": "ambiguous"},
+    {"source": "Gain", "target": "Power", "relation": "ambiguous"},
+
+    {"source": "differential pair", "target": "Gain", "relation": "influences"},
+    {"source": "differential pair", "target": "CMRR", "relation": "influences"},
+    {"source": "differential pair", "target": "UGF", "relation": "influences"},
+    {"source": "differential pair", "target": "Power", "relation": "influences"},
+
+    {"source": "tail current source", "target": "Gain", "relation": "influences"},
+    {"source": "tail current source", "target": "CMRR", "relation": "influences"},
+    {"source": "tail current source", "target": "UGF", "relation": "influences"},
+    {"source": "tail current source", "target": "Power", "relation": "influences"},
+
+    {"source": "current mirror", "target": "Gain", "relation": "influences"},
+    {"source": "current mirror", "target": "CMRR", "relation": "influences"},
+    {"source": "current mirror", "target": "Power", "relation": "influences"},
+
+    {"source": "active load", "target": "Gain", "relation": "influences"},
+    {"source": "active load", "target": "UGF", "relation": "influences"},
+    {"source": "active load", "target": "Power", "relation": "influences"},
+
+    {"source": "output stage", "target": "UGF", "relation": "influences"},
+    {"source": "output stage", "target": "Gain", "relation": "influences"},
+    {"source": "output stage", "target": "Power", "relation": "influences"},
+
+    {"source": "resistive coupling", "target": "Gain", "relation": "influences"},
+    {"source": "resistive coupling", "target": "UGF", "relation": "influences"},
+    {"source": "resistive coupling", "target": "CMRR", "relation": "influences"},
+
+    {"source": "bias", "target": "Power", "relation": "influences"},
+    {"source": "reference", "target": "Power", "relation": "influences"},
+
+    {"source": "W_x1", "target": "differential pair", "relation": "belongs-to"},
+    {"source": "L_x1", "target": "differential pair", "relation": "belongs-to"},
+    {"source": "W_x2", "target": "differential pair", "relation": "belongs-to"},
+    {"source": "L_x2", "target": "differential pair", "relation": "belongs-to"},
+
+    {"source": "W_x3", "target": "tail current source", "relation": "belongs-to"},
+    {"source": "L_x3", "target": "tail current source", "relation": "belongs-to"},
+    {"source": "IB_tail", "target": "tail current source", "relation": "belongs-to"},
+
+    {"source": "W_x13", "target": "current mirror", "relation": "belongs-to"},
+    {"source": "L_x13", "target": "current mirror", "relation": "belongs-to"},
+    {"source": "W_x14", "target": "current mirror", "relation": "belongs-to"},
+    {"source": "L_x14", "target": "current mirror", "relation": "belongs-to"},
+    {"source": "IB_mirror", "target": "current mirror", "relation": "belongs-to"},
+
+    {"source": "W_x4", "target": "active load", "relation": "belongs-to"},
+    {"source": "L_x4", "target": "active load", "relation": "belongs-to"},
+    {"source": "W_x5", "target": "active load", "relation": "belongs-to"},
+    {"source": "L_x5", "target": "active load", "relation": "belongs-to"},
+    {"source": "W_x6", "target": "active load", "relation": "belongs-to"},
+    {"source": "L_x6", "target": "active load", "relation": "belongs-to"},
+    {"source": "W_x7", "target": "active load", "relation": "belongs-to"},
+    {"source": "L_x7", "target": "active load", "relation": "belongs-to"},
+
+    {"source": "W_x7", "target": "output stage", "relation": "belongs-to"},
+    {"source": "L_x7", "target": "output stage", "relation": "belongs-to"},
+    {"source": "W_x9", "target": "output stage", "relation": "belongs-to"},
+    {"source": "L_x9", "target": "output stage", "relation": "belongs-to"},
+
+    {"source": "R1", "target": "resistive coupling", "relation": "belongs-to"},
+    {"source": "R2", "target": "resistive coupling", "relation": "belongs-to"},
+
+    {"source": "W_x1", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "W_x1", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "W_x1", "target": "CMRR", "relation": "directly-proportional"},
+    {"source": "W_x2", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "W_x2", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "W_x2", "target": "CMRR", "relation": "directly-proportional"},
+
+    {"source": "L_x1", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_x1", "target": "UGF", "relation": "inversely-proportional"},
+    {"source": "L_x1", "target": "CMRR", "relation": "directly-proportional"},
+    {"source": "L_x2", "target": "Gain", "relation": "directly-proportional"},
+    {"source": "L_x2", "target": "UGF", "relation": "inversely-proportional"},
+    {"source": "L_x2", "target": "CMRR", "relation": "directly-proportional"},
+
+    {"source": "IB_tail", "target": "Power", "relation": "directly-proportional"},
+    {"source": "IB_tail", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "IB_tail", "target": "Gain", "relation": "directly-proportional"},
+
+    {"source": "IB_mirror", "target": "Power", "relation": "directly-proportional"},
+    {"source": "IB_mirror", "target": "Gain", "relation": "directly-proportional"},
+
+    {"source": "R1", "target": "Gain", "relation": "inversely-proportional"},
+    {"source": "R1", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "R1", "target": "CMRR", "relation": "directly-proportional"},
+    {"source": "R2", "target": "Gain", "relation": "inversely-proportional"},
+    {"source": "R2", "target": "UGF", "relation": "directly-proportional"},
+
+    {"source": "W_x7", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "W_x7", "target": "Power", "relation": "directly-proportional"},
+    {"source": "W_x9", "target": "UGF", "relation": "directly-proportional"},
+    {"source": "W_x9", "target": "Power", "relation": "directly-proportional"}
+  ]
+}
+

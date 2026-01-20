@@ -1,4 +1,11 @@
-xt1 (net0237 ampoutpx vout vout) pmos
+Given the following SPICE netlist of a differential amplifier, identify 3 components that can be deleted without significantly compromising the functionality of the circuit.
+
+For each component you identify, provide a short explanation (1-2 sentences) describing why removing it would have minimal impact and any caveats or dependencies to be aware of.
+
+Return the answer as a JSON array of objects with keys: 'component', 'reason', 'impact_estimate'.
+
+Netlist (file: ldo_0.cir):
+ xt1 (net0237 ampoutpx vout vout) pmos
 xt2 (net0237 amp1outnx my_gnd my_gnd ) nmos
 xt3 (amp1outpx vref2 net0167 net0167 ) pmos
 xt4 (amp1outnx vfb2x net0167 net0167 ) pmos
@@ -18,3 +25,4 @@ xtb3 (ampoutpx vbias2x my_vdd my_vdd ) pmos
 xtbn0 (net0278 vbias1x my_gnd my_gnd ) nmos
 xtbn1 (vbias1x vbias1x my_gnd my_gnd ) nmos
 xtbn2 (vbias1x vbias1x net0183 net0183) pmos
+ 

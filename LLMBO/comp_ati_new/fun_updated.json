@@ -1,0 +1,1185 @@
+{
+  "nodes": [
+    {
+      "id": "Gain",
+      "type": "performance"
+    },
+    {
+      "id": "Bandwidth",
+      "type": "performance"
+    },
+    {
+      "id": "Propagation Delay",
+      "type": "performance"
+    },
+    {
+      "id": "Power",
+      "type": "performance"
+    },
+    {
+      "id": "Input offset",
+      "type": "performance"
+    },
+    {
+      "id": "hysteresis error",
+      "type": "performance"
+    },
+    {
+      "id": "input nmos pair",
+      "type": "substructure"
+    },
+    {
+      "id": "tail current source",
+      "type": "substructure"
+    },
+    {
+      "id": "bias",
+      "type": "substructure"
+    },
+    {
+      "id": "cross coupled gain cell",
+      "type": "substructure"
+    },
+    {
+      "id": "pmos pull-up network",
+      "type": "substructure"
+    },
+    {
+      "id": "output inverter / driver",
+      "type": "substructure"
+    },
+    {
+      "id": "output stage",
+      "type": "substructure"
+    },
+    {
+      "id": "W_xn1",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xn1",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xn2",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xn2",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xn5",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xn5",
+      "type": "parameter"
+    },
+    {
+      "id": "VB",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xnb",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xnb",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xp3",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xp3",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xp4",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xp4",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xp6",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xp6",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xp7",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xp7",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xp8",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xp8",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xn11",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xn11",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xp9",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xp9",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xn10",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xn10",
+      "type": "parameter"
+    },
+    {
+      "id": "Gain-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Gain-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Gain-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Bandwidth-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Bandwidth-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Bandwidth-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Propagation Delay-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Propagation Delay-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Propagation Delay-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Power-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Power-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Power-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "Input offset-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "Input offset-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "Input offset-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "hysteresis error-ambiguous",
+      "type": "performance"
+    },
+    {
+      "id": "hysteresis error-trade-off",
+      "type": "performance"
+    },
+    {
+      "id": "hysteresis error-directly-proportional",
+      "type": "performance"
+    },
+    {
+      "id": "W_xn1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xn1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xn1-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xn1-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xn2-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xn2-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xn2-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xn2-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xn5-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xn5-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xn5-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xn5-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VB-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "VB-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xnb-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xnb-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xnb-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xnb-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xp3-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xp3-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xp3-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xp3-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xp4-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xp4-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xp4-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xp4-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xp6-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xp6-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xp6-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xp6-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xp7-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xp7-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xp7-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xp7-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xp8-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xp8-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xp8-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xp8-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xn11-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xn11-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xn11-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xn11-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xp9-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xp9-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xp9-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xp9-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xn10-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "W_xn10-inversely-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xn10-directly-proportional",
+      "type": "parameter"
+    },
+    {
+      "id": "L_xn10-inversely-proportional",
+      "type": "parameter"
+    }
+  ],
+  "links": [
+    {
+      "source": "Gain-trade-off",
+      "target": "Bandwidth-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain-trade-off",
+      "target": "Propagation Delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Bandwidth-trade-off",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Propagation Delay-trade-off",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Input offset-ambiguous",
+      "target": "hysteresis error-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Propagation Delay-trade-off",
+      "target": "hysteresis error-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "input nmos pair",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "input nmos pair",
+      "target": "Bandwidth",
+      "relation": "connects"
+    },
+    {
+      "source": "input nmos pair",
+      "target": "Propagation Delay",
+      "relation": "connects"
+    },
+    {
+      "source": "input nmos pair",
+      "target": "Input offset",
+      "relation": "connects"
+    },
+    {
+      "source": "tail current source",
+      "target": "Bandwidth",
+      "relation": "connects"
+    },
+    {
+      "source": "tail current source",
+      "target": "Propagation Delay",
+      "relation": "connects"
+    },
+    {
+      "source": "tail current source",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "bias",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "bias",
+      "target": "Input offset",
+      "relation": "connects"
+    },
+    {
+      "source": "bias",
+      "target": "hysteresis error",
+      "relation": "connects"
+    },
+    {
+      "source": "cross coupled gain cell",
+      "target": "Propagation Delay",
+      "relation": "connects"
+    },
+    {
+      "source": "cross coupled gain cell",
+      "target": "hysteresis error",
+      "relation": "connects"
+    },
+    {
+      "source": "cross coupled gain cell",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "pmos pull-up network",
+      "target": "Gain",
+      "relation": "connects"
+    },
+    {
+      "source": "pmos pull-up network",
+      "target": "Bandwidth",
+      "relation": "connects"
+    },
+    {
+      "source": "output inverter / driver",
+      "target": "Propagation Delay",
+      "relation": "connects"
+    },
+    {
+      "source": "output inverter / driver",
+      "target": "Bandwidth",
+      "relation": "connects"
+    },
+    {
+      "source": "output inverter / driver",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "output stage",
+      "target": "Propagation Delay",
+      "relation": "connects"
+    },
+    {
+      "source": "output stage",
+      "target": "Power",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn1",
+      "target": "input nmos pair",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xn1",
+      "target": "input nmos pair",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn2",
+      "target": "input nmos pair",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xn2",
+      "target": "input nmos pair",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn5",
+      "target": "tail current source",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xn5",
+      "target": "tail current source",
+      "relation": "connects"
+    },
+    {
+      "source": "VB",
+      "target": "bias",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xnb",
+      "target": "bias",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xnb",
+      "target": "bias",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp3",
+      "target": "pmos pull-up network",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xp3",
+      "target": "pmos pull-up network",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp4",
+      "target": "pmos pull-up network",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xp4",
+      "target": "pmos pull-up network",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp6",
+      "target": "cross coupled gain cell",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xp6",
+      "target": "cross coupled gain cell",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp7",
+      "target": "cross coupled gain cell",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xp7",
+      "target": "cross coupled gain cell",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp8",
+      "target": "output inverter / driver",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xp8",
+      "target": "output inverter / driver",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn11",
+      "target": "output inverter / driver",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xn11",
+      "target": "output inverter / driver",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp9",
+      "target": "output inverter / driver",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xp9",
+      "target": "output inverter / driver",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn10",
+      "target": "output inverter / driver",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xn10",
+      "target": "output inverter / driver",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn1-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn2-directly-proportional",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn1-directly-proportional",
+      "target": "Bandwidth-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn2-directly-proportional",
+      "target": "Bandwidth-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn1-inversely-proportional",
+      "target": "Propagation Delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn2-inversely-proportional",
+      "target": "Propagation Delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn1-inversely-proportional",
+      "target": "Input offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn2-inversely-proportional",
+      "target": "Input offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xn1-inversely-proportional",
+      "target": "Bandwidth-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xn2-inversely-proportional",
+      "target": "Bandwidth-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xn1-directly-proportional",
+      "target": "Propagation Delay-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xn2-directly-proportional",
+      "target": "Propagation Delay-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn5-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn5-directly-proportional",
+      "target": "Bandwidth-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn5-inversely-proportional",
+      "target": "Propagation Delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "VB-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB-directly-proportional",
+      "target": "Bandwidth-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB-inversely-proportional",
+      "target": "Propagation Delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp3-inversely-proportional",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp4-inversely-proportional",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp3-directly-proportional",
+      "target": "Bandwidth-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp4-directly-proportional",
+      "target": "Bandwidth-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp6-inversely-proportional",
+      "target": "Propagation Delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp7-inversely-proportional",
+      "target": "Propagation Delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp6-directly-proportional",
+      "target": "hysteresis error-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp7-directly-proportional",
+      "target": "hysteresis error-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp8-inversely-proportional",
+      "target": "Propagation Delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn11-inversely-proportional",
+      "target": "Propagation Delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp8-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn11-directly-proportional",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp8-directly-proportional",
+      "target": "Bandwidth-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn11-directly-proportional",
+      "target": "Bandwidth-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Gain",
+      "target": "Gain-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Bandwidth",
+      "target": "Bandwidth-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Bandwidth",
+      "target": "Bandwidth-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Bandwidth",
+      "target": "Bandwidth-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Propagation Delay",
+      "target": "Propagation Delay-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Propagation Delay",
+      "target": "Propagation Delay-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Propagation Delay",
+      "target": "Propagation Delay-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Power",
+      "target": "Power-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "Input offset",
+      "target": "Input offset-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "Input offset",
+      "target": "Input offset-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "Input offset",
+      "target": "Input offset-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "hysteresis error",
+      "target": "hysteresis error-ambiguous",
+      "relation": "connects"
+    },
+    {
+      "source": "hysteresis error",
+      "target": "hysteresis error-trade-off",
+      "relation": "connects"
+    },
+    {
+      "source": "hysteresis error",
+      "target": "hysteresis error-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn1",
+      "target": "W_xn1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn1",
+      "target": "W_xn1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xn1",
+      "target": "L_xn1-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xn1",
+      "target": "L_xn1-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn2",
+      "target": "W_xn2-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn2",
+      "target": "W_xn2-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xn2",
+      "target": "L_xn2-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xn2",
+      "target": "L_xn2-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn5",
+      "target": "W_xn5-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn5",
+      "target": "W_xn5-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xn5",
+      "target": "L_xn5-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xn5",
+      "target": "L_xn5-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB",
+      "target": "VB-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "VB",
+      "target": "VB-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xnb",
+      "target": "W_xnb-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xnb",
+      "target": "W_xnb-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xnb",
+      "target": "L_xnb-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xnb",
+      "target": "L_xnb-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp3",
+      "target": "W_xp3-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp3",
+      "target": "W_xp3-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xp3",
+      "target": "L_xp3-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xp3",
+      "target": "L_xp3-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp4",
+      "target": "W_xp4-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp4",
+      "target": "W_xp4-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xp4",
+      "target": "L_xp4-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xp4",
+      "target": "L_xp4-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp6",
+      "target": "W_xp6-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp6",
+      "target": "W_xp6-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xp6",
+      "target": "L_xp6-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xp6",
+      "target": "L_xp6-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp7",
+      "target": "W_xp7-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp7",
+      "target": "W_xp7-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xp7",
+      "target": "L_xp7-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xp7",
+      "target": "L_xp7-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp8",
+      "target": "W_xp8-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp8",
+      "target": "W_xp8-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xp8",
+      "target": "L_xp8-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xp8",
+      "target": "L_xp8-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn11",
+      "target": "W_xn11-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn11",
+      "target": "W_xn11-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xn11",
+      "target": "L_xn11-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xn11",
+      "target": "L_xn11-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp9",
+      "target": "W_xp9-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xp9",
+      "target": "W_xp9-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xp9",
+      "target": "L_xp9-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xp9",
+      "target": "L_xp9-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn10",
+      "target": "W_xn10-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "W_xn10",
+      "target": "W_xn10-inversely-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xn10",
+      "target": "L_xn10-directly-proportional",
+      "relation": "connects"
+    },
+    {
+      "source": "L_xn10",
+      "target": "L_xn10-inversely-proportional",
+      "relation": "connects"
+    }
+  ]
+}

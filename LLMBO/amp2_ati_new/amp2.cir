@@ -1,10 +1,10 @@
-xp1 node1 node1 vdd! vdd! 
-xp2 out1 node1 vdd! vdd!  
-xn1 node1 vip node2 0     
-xn2 out1 vin node2 0      
-xnb vb vb 0 0             
-xnc node2 vb 0 0          
-xpo out out1 vdd! vdd!    
-xno out vb 0 0            
-cc out outm 
-rz outm out1
+Mp1 (node1 node1 vdd! vdd!) pmos
+Mp2 (out1 node1 vdd! vdd!) pmos
+Mn1 (node1 vip node2 0) nmos    
+Mn2 (out1 vin node2 0) nmos        
+Mnb (vb vb 0 0) nmos               
+Mnc (node2 vb 0 0) nmos            
+Mpo (out out1 vdd! vdd!) nmos     
+Mno (out vb 0 0) nmos            
+cc (out outm) capacitor  
+rz (outm out1) resistor  

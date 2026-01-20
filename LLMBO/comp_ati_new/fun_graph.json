@@ -1,0 +1,156 @@
+{
+  "nodes": [
+    { "id": "Gain", "type": "performance" },
+    { "id": "Bandwidth", "type": "performance" },
+    { "id": "Propagation Delay", "type": "performance" },
+    { "id": "Power", "type": "performance" },
+    { "id": "Input offset", "type": "performance" },
+    { "id": "hysteresis error", "type": "performance" },
+
+    { "id": "input nmos pair", "type": "substructure" },
+    { "id": "tail current source", "type": "substructure" },
+    { "id": "bias", "type": "substructure" },
+    { "id": "cross coupled gain cell", "type": "substructure" },
+    { "id": "pmos pull-up network", "type": "substructure" },
+    { "id": "output inverter / driver", "type": "substructure" },
+    { "id": "output stage", "type": "substructure" },
+
+    { "id": "W_xn1", "type": "parameter" },
+    { "id": "L_xn1", "type": "parameter" },
+    { "id": "W_xn2", "type": "parameter" },
+    { "id": "L_xn2", "type": "parameter" },
+
+    { "id": "W_xn5", "type": "parameter" },
+    { "id": "L_xn5", "type": "parameter" },
+    { "id": "VB", "type": "parameter" },
+
+    { "id": "W_xnb", "type": "parameter" },
+    { "id": "L_xnb", "type": "parameter" },
+
+    { "id": "W_xp3", "type": "parameter" },
+    { "id": "L_xp3", "type": "parameter" },
+    { "id": "W_xp4", "type": "parameter" },
+    { "id": "L_xp4", "type": "parameter" },
+
+    { "id": "W_xp6", "type": "parameter" },
+    { "id": "L_xp6", "type": "parameter" },
+    { "id": "W_xp7", "type": "parameter" },
+    { "id": "L_xp7", "type": "parameter" },
+
+    { "id": "W_xp8", "type": "parameter" },
+    { "id": "L_xp8", "type": "parameter" },
+    { "id": "W_xn11", "type": "parameter" },
+    { "id": "L_xn11", "type": "parameter" },
+
+    { "id": "W_xp9", "type": "parameter" },
+    { "id": "L_xp9", "type": "parameter" },
+    { "id": "W_xn10", "type": "parameter" },
+    { "id": "L_xn10", "type": "parameter" }
+  ],
+  "links": [
+    { "source": "Gain", "target": "Bandwidth", "relation": "trade-off" },
+    { "source": "Gain", "target": "Propagation Delay", "relation": "trade-off" },
+    { "source": "Bandwidth", "target": "Power", "relation": "trade-off" },
+    { "source": "Propagation Delay", "target": "Power", "relation": "trade-off" },
+    { "source": "Input offset", "target": "hysteresis error", "relation": "ambiguous" },
+    { "source": "Propagation Delay", "target": "hysteresis error", "relation": "trade-off" },
+
+    { "source": "input nmos pair", "target": "Gain", "relation": "influences" },
+    { "source": "input nmos pair", "target": "Bandwidth", "relation": "influences" },
+    { "source": "input nmos pair", "target": "Propagation Delay", "relation": "influences" },
+    { "source": "input nmos pair", "target": "Input offset", "relation": "influences" },
+
+    { "source": "tail current source", "target": "Bandwidth", "relation": "influences" },
+    { "source": "tail current source", "target": "Propagation Delay", "relation": "influences" },
+    { "source": "tail current source", "target": "Power", "relation": "influences" },
+
+    { "source": "bias", "target": "Power", "relation": "influences" },
+    { "source": "bias", "target": "Input offset", "relation": "influences" },
+    { "source": "bias", "target": "hysteresis error", "relation": "influences" },
+
+    { "source": "cross coupled gain cell", "target": "Propagation Delay", "relation": "influences" },
+    { "source": "cross coupled gain cell", "target": "hysteresis error", "relation": "influences" },
+    { "source": "cross coupled gain cell", "target": "Gain", "relation": "influences" },
+
+    { "source": "pmos pull-up network", "target": "Gain", "relation": "influences" },
+    { "source": "pmos pull-up network", "target": "Bandwidth", "relation": "influences" },
+
+    { "source": "output inverter / driver", "target": "Propagation Delay", "relation": "influences" },
+    { "source": "output inverter / driver", "target": "Bandwidth", "relation": "influences" },
+    { "source": "output inverter / driver", "target": "Power", "relation": "influences" },
+
+    { "source": "output stage", "target": "Propagation Delay", "relation": "influences" },
+    { "source": "output stage", "target": "Power", "relation": "influences" },
+
+    { "source": "W_xn1", "target": "input nmos pair", "relation": "belongs-to" },
+    { "source": "L_xn1", "target": "input nmos pair", "relation": "belongs-to" },
+    { "source": "W_xn2", "target": "input nmos pair", "relation": "belongs-to" },
+    { "source": "L_xn2", "target": "input nmos pair", "relation": "belongs-to" },
+
+    { "source": "W_xn5", "target": "tail current source", "relation": "belongs-to" },
+    { "source": "L_xn5", "target": "tail current source", "relation": "belongs-to" },
+
+    { "source": "VB", "target": "bias", "relation": "belongs-to" },
+    { "source": "W_xnb", "target": "bias", "relation": "belongs-to" },
+    { "source": "L_xnb", "target": "bias", "relation": "belongs-to" },
+
+    { "source": "W_xp3", "target": "pmos pull-up network", "relation": "belongs-to" },
+    { "source": "L_xp3", "target": "pmos pull-up network", "relation": "belongs-to" },
+    { "source": "W_xp4", "target": "pmos pull-up network", "relation": "belongs-to" },
+    { "source": "L_xp4", "target": "pmos pull-up network", "relation": "belongs-to" },
+
+    { "source": "W_xp6", "target": "cross coupled gain cell", "relation": "belongs-to" },
+    { "source": "L_xp6", "target": "cross coupled gain cell", "relation": "belongs-to" },
+    { "source": "W_xp7", "target": "cross coupled gain cell", "relation": "belongs-to" },
+    { "source": "L_xp7", "target": "cross coupled gain cell", "relation": "belongs-to" },
+
+    { "source": "W_xp8", "target": "output inverter / driver", "relation": "belongs-to" },
+    { "source": "L_xp8", "target": "output inverter / driver", "relation": "belongs-to" },
+    { "source": "W_xn11", "target": "output inverter / driver", "relation": "belongs-to" },
+    { "source": "L_xn11", "target": "output inverter / driver", "relation": "belongs-to" },
+
+    { "source": "W_xp9", "target": "output inverter / driver", "relation": "belongs-to" },
+    { "source": "L_xp9", "target": "output inverter / driver", "relation": "belongs-to" },
+    { "source": "W_xn10", "target": "output inverter / driver", "relation": "belongs-to" },
+    { "source": "L_xn10", "target": "output inverter / driver", "relation": "belongs-to" },
+
+    { "source": "W_xn1", "target": "Gain", "relation": "directly-proportional" },
+    { "source": "W_xn2", "target": "Gain", "relation": "directly-proportional" },
+    { "source": "W_xn1", "target": "Bandwidth", "relation": "directly-proportional" },
+    { "source": "W_xn2", "target": "Bandwidth", "relation": "directly-proportional" },
+    { "source": "W_xn1", "target": "Propagation Delay", "relation": "inversely-proportional" },
+    { "source": "W_xn2", "target": "Propagation Delay", "relation": "inversely-proportional" },
+    { "source": "W_xn1", "target": "Input offset", "relation": "inversely-proportional" },
+    { "source": "W_xn2", "target": "Input offset", "relation": "inversely-proportional" },
+
+    { "source": "L_xn1", "target": "Bandwidth", "relation": "inversely-proportional" },
+    { "source": "L_xn2", "target": "Bandwidth", "relation": "inversely-proportional" },
+    { "source": "L_xn1", "target": "Propagation Delay", "relation": "directly-proportional" },
+    { "source": "L_xn2", "target": "Propagation Delay", "relation": "directly-proportional" },
+
+    { "source": "W_xn5", "target": "Power", "relation": "directly-proportional" },
+    { "source": "W_xn5", "target": "Bandwidth", "relation": "directly-proportional" },
+    { "source": "W_xn5", "target": "Propagation Delay", "relation": "inversely-proportional" },
+    { "source": "VB", "target": "Power", "relation": "directly-proportional" },
+    { "source": "VB", "target": "Bandwidth", "relation": "directly-proportional" },
+    { "source": "VB", "target": "Propagation Delay", "relation": "inversely-proportional" },
+
+    { "source": "W_xp3", "target": "Gain", "relation": "inversely-proportional" },
+    { "source": "W_xp4", "target": "Gain", "relation": "inversely-proportional" },
+    { "source": "W_xp3", "target": "Bandwidth", "relation": "directly-proportional" },
+    { "source": "W_xp4", "target": "Bandwidth", "relation": "directly-proportional" },
+
+    { "source": "W_xp6", "target": "Propagation Delay", "relation": "inversely-proportional" },
+    { "source": "W_xp7", "target": "Propagation Delay", "relation": "inversely-proportional" },
+    { "source": "W_xp6", "target": "hysteresis error", "relation": "directly-proportional" },
+    { "source": "W_xp7", "target": "hysteresis error", "relation": "directly-proportional" },
+
+    { "source": "W_xp8", "target": "Propagation Delay", "relation": "inversely-proportional" },
+    { "source": "W_xn11", "target": "Propagation Delay", "relation": "inversely-proportional" },
+    { "source": "W_xp8", "target": "Power", "relation": "directly-proportional" },
+    { "source": "W_xn11", "target": "Power", "relation": "directly-proportional" },
+    { "source": "W_xp8", "target": "Bandwidth", "relation": "directly-proportional" },
+    { "source": "W_xn11", "target": "Bandwidth", "relation": "directly-proportional" }
+  ]
+}
+
