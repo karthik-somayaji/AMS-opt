@@ -1,0 +1,9 @@
+repos:
+  # Fast, widely-used secret scanning
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        args: ["--baseline", ".secrets.baseline"]
+
+  # Optional: gitleaks is powerful but can be noisy; enable later if desired.

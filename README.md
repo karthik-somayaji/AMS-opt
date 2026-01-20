@@ -32,6 +32,22 @@ The pipeline consists of four main stages:
 export OPENAI_API_KEY="..."
 ```
 
+### Pre-commit secret scanning (recommended)
+
+This repo includes a pre-commit configuration to prevent accidentally committing secrets.
+
+```bash
+python3 -m pip install pre-commit detect-secrets
+pre-commit install
+pre-commit run --all-files
+```
+
+If you must bypass hooks temporarily (use sparingly):
+
+```bash
+git commit --no-verify
+```
+
 ## Stage 1: Netlist to Structural Graph
 
 ### Purpose
