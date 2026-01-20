@@ -132,10 +132,11 @@ params: w1=42u l1=0.65u w2=37u l2=0.55u w3=28u l3=0.45u w4=24u l4=0.35u w5=20u l
                 else:
                     # If any parameter is not found or its value is invalid, return False;
                     return False
-            def convert_value_to_float(found_values):
+                        import os
+                        import openai
                 # convert the values to float; eg. 1.0u to 1e-6, 1.0k to 1e3, etc.
                 dic_items = list(found_values.items())
-                for param, value in dic_items:
+                        openai.api_key = os.environ.get("OPENAI_API_KEY")
                     # Find the last character of the value;
                     unit = value[-1]
                     # If the last character is a unit, convert the value to a float;
@@ -163,6 +164,12 @@ params: w1=42u l1=0.65u w2=37u l2=0.55u w3=28u l3=0.45u w4=24u l4=0.35u w5=20u l
                         # If the last character is not a unit, convert the value to a float;
                         found_values[f"{param}_float"] = float(value)
             formatted_output = ".param " + " ".join(f"{param}={value}" for param, value in found_values.items())
+                        ARTIST=2
+                        INGOLD=2
+                        MEASOUT=1
+                        PARHIER=LOCAL
+                        PSF=2
+                    	 OPFILE=1
             convert_value_to_float(found_values)
             print(found_values)
             return formatted_output

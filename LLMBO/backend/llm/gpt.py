@@ -12,17 +12,16 @@ from aiohttp import ClientSession
 from .utils import RateLimiter
 
 
-my_key = ""
-my_key_confirmation = ""
-openai.api_key = ""
+from .utils import RateLimiter
 
-class GPT(object):
+# Never hardcode API keys in source. Use environment variables.
+openai.api_key = os.environ.get("OPENAI_API_KEY")
     def __init__(self,
                  model="3.5",
                  seed=114514,
                  max_token=500,
-                 temperature=0.5,
-                 rate_limiter=None,
+    # Expects OPENAI_API_KEY to be set in the environment.
+    openai.api_key = os.environ.get("OPENAI_API_KEY")
                  n_gen=5,
                  debug_mode=False
                  ):
