@@ -4,8 +4,8 @@ import time
 import subprocess
 sys.path.append("../")
 
-from backend.spice.objective import objective, read_results # noqa: E402
-from backend.spice.aux_info import read_work_region # noqa: E402
+from .objective_new import objective, read_results  # noqa: E402
+from backend.spice.aux_info import read_work_region  # noqa: E402
 
 
 def hspice_eval_f_FC(point_to_evaluate, args):

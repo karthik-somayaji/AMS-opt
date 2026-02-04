@@ -2,10 +2,13 @@ import os
 import sys
 import time
 import subprocess
-sys.path.append("../")
 
-from backend.spice.objective import objective, read_results # noqa: E402
-from backend.spice.aux_info import read_work_region # noqa: E402
+# This module is imported via `backend.spice.interface` after `LLMBO/core/task.py`
+# mutates `sys.path`. Use intra-package relative imports so it works both when
+# `LLMBO` is run as a script (not a package) and when imported as a package.
+from .objective_new import objective  # noqa: E402
+from .objective import read_results  # noqa: E402
+from .aux_info import read_work_region  # noqa: E402
 
 
 def hspice_eval_f(point_to_evaluate, args):

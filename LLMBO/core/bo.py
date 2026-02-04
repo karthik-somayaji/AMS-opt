@@ -126,7 +126,17 @@ class GPBO(object):
             train_obj = standardize(train_obj)
             self.initialize_model(data_collected=data_collected, state_dict=self.gp.state_dict())
             # fit model
-            fit_gpytorch_mll(self.mll)
+            try:
+                fit_gpytorch_mll(self.mll)
+            except Exception as e:
+                warnings.warn(
+                    f"[GPBO] GP fitting failed ({type(e).__name__}: {e}). Falling back to random proposals.",
+                    RuntimeWarning,
+                )
+                bounds = self.get_x_bounds().detach().cpu().numpy()
+                low, high = bounds[0], bounds[1]
+                candidates = np.random.uniform(low=low, high=high, size=(self.n_proposal, self.n_params))
+                return [nparray_to_params_dict(c, self.params_list) for c in candidates]
             # define acquisition function
             if self.n_params == 1:
                 EI = ExpectedImprovement(self.gp, train_obj.max())

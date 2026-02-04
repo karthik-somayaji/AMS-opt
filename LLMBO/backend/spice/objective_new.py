@@ -17,8 +17,6 @@ Option 1 we treat `pow_normed` as "higher is better" so the expected weight for
 `pow_weight` should be positive.
 """
 
-from __future__ import annotations
-
 from typing import Dict
 
 

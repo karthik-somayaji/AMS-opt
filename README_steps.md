@@ -185,3 +185,9 @@ python3 scripts/analyze_four_test_circuits_embeddings.py \
 ```
 
 ##########
+
+## Optimization
+
+cd /home/karthik/sim_clean/AMS-opt && /home/karthik/miniconda3/envs/analog-rep/bin/python LLMBO/llmbo.py --history 1 --related_mode topk --related_k 3 --target_id 77
+
+cd /home/karthik/sim_clean/AMS-opt && /home/karthik/miniconda3/envs/analog-rep/bin/python LLMBO/llmbo.py --history 1 --related_mode random_family --related_k 3 --target_id 77

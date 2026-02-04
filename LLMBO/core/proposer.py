@@ -1,6 +1,9 @@
 import numpy as np
 import re
 import sys
+import json
+import os
+import random
 
 sys.path.append("../")
 from core.fewshot_agent import FewShotAgent # noqa: E402
@@ -80,49 +83,145 @@ class LLMProposer(FewShotAgent):
         prefix = """ """
         # prefix = self.task_context
 
-        related_ckts = args.related_ckts
         model = args.model
+
+        # related circuits configuration (optional CLI args)
+        related_mode = getattr(args, "related_mode", "topk")
+        related_k = int(getattr(args, "related_k", 3))
+        embeddings_json = getattr(args, "embeddings_json", "umap_results_full/umap_embeddings.json")
+
+        # Map task circuit description/name -> netlists family
+        family_map = {
+            "amp2": "diff_amps",
+            "FC": "diff_amps",
+            "ldo": "LDO",
+            "comp": "comparators",
+        }
+
+        # IMPORTANT: `netlists/<family>/<id>` is used only to load related-circuit KG context
+        # (fun_graph.json) for prompting. Optimization/simulation targets come from each task's
+        # `ckt_dir` (e.g., `LLMBO/*_ati_new/`).
 
         # related_ckts = [ 'Two_Stage_Differential_Amplifier']
         # related_ckts = [  'Hysteresis_Comparator', 'Two_Stage_Differential_Amplifier']
         #related_ckts = [ 'Low_Dropout_Regulator']
         #related_ckts =  [ 'Hysteresis_Comparator',   'Low_Dropout_Regulator', 'Two_Stage_Differential_Amplifier']#, 'Low_Dropout_Regulator']#['Two_Stage_Differential_Amplifier', 'Hysteresis_Comparator']#['Two_Stage_Differential_Amplifier']##, 'Folded_Cascode_Amplifier', 'Hysteresis_Comparator']
 
-        # Read from NATURAL LANGUAGE txt file
-        multiline_history = """ """
-        # models = [
-        #     # "llama3-70B-instruct", 
-        # "DeepSeek-R1-Distill-Llama-70B",
-        # # "DeepSeek-R1-Distill-Qwen-32B",
-        # # "Mistral-Small-24B-Instruct-2501",
-        # # "Qwen2.5-32B-Instruct",
-        # # "GPT-4o"
-        # ]
-        for ckt in related_ckts:
-            ckt_KG_name = f'refined_{ckt}_{model}_KG.txt' if args.refined else f'1_{ckt}_{model}_KG.txt'
-            #ckt_KG_name = f'combined_{ckt}_KG.txt' if args.refined else f'1_{ckt}_{model}_KG.txt'
-        #with open(f'/home/karthik/sim_clean/LLMBO/history_summary/KG_{self.ckt_name_description}.txt', 'r') as file:
-        #with open(f'/home/karthik/sim_clean/LLMBO/history_summary/{self.ckt_name_description}.txt', 'r') as file:
-            # with open(f'/home/karthik/sim_clean/LLMBO/history_summary/critic_{ckt}.txt', 'r') as file:
-            with open(f'/home/karthik/sim_clean/LLMBO/history_summary/{ckt_KG_name}', 'r') as file:
-            #with open(f'/home/karthik/sim_clean/LLMBO/history_summary/KG_old_{ckt}.txt', 'r') as file:
-            #with open(f'/home/karthik/sim_clean/LLMBO/history_summary/KG_bad_{ckt}.txt', 'r') as file:
-            # Read the entire file content into a string
-            #pass
-                multiline_history += KG_prefix[ckt] + '\n' + file.read()
+        def _repo_root() -> str:
+            # `proposer.py` lives in `LLMBO/core/`
+            return os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
-        # Read from CYPHER txt file
-        with open('/home/karthik/sim_clean/LLMBO/history_summary/Two_Stage_Differential_Amplifier_cypher.txt', 'r') as file:
-            # Read the entire file content into a string
-            #multiline_history = file.read()
-            pass
+        def _load_embeddings(path: str):
+            path_abs = path if os.path.isabs(path) else os.path.join(_repo_root(), path)
+            with open(path_abs, "r") as f:
+                data = json.load(f)
+            embeds = np.array(data["embeddings"], dtype=float)
+            meta = data["metadata"]
+            return embeds, meta
 
-        # Comment if running first circuit or to independently optimize each circuit
-        if (self.num_calls > 1):
-            prefix += ""
-            if args.history:
-                # print(multiline_history)
-                prefix += multiline_history
+        def _pick_topk_similar(family: str, target_id: str, k: int):
+            embeds, meta = _load_embeddings(embeddings_json)
+            idxs = [i for i, m in enumerate(meta) if m.get("family") == family]
+            id_to_i = {meta[i]["circuit_id"]: i for i in idxs}
+            anchor_vec = None
+            if target_id in id_to_i:
+                anchor_vec = embeds[id_to_i[target_id]]
+            else:
+                # Allow LLMBO anchor embeddings computed from `LLMBO/<id>_ati_new/comb_graph_gnn.npz`.
+                # See `LLMBO/llmbo.py` which sets `args.target_anchor_embedding` for symbolic target ids.
+                maybe_anchor = getattr(args, "target_anchor_embedding", None)
+                if maybe_anchor is not None:
+                    anchor_vec = np.array(maybe_anchor, dtype=float)
+                    if anchor_vec.ndim != 1:
+                        anchor_vec = anchor_vec.reshape(-1)
+
+            if anchor_vec is None:
+                available = sorted({str(meta[i].get("circuit_id")) for i in idxs})
+                sample = ", ".join(available[:20])
+                print(
+                    "[LLMProposer] WARNING: --target_id not found in embeddings for this family and no "
+                    "target_anchor_embedding provided; falling back to random same-family KGs. "
+                    f"family={family} target_id={target_id}. Example valid ids: {sample}"
+                )
+                return _pick_random_same_family(family, target_id, k)
+
+            if int(anchor_vec.shape[0]) != int(embeds.shape[1]):
+                raise ValueError(
+                    "Anchor embedding dimension does not match reference embeddings. "
+                    f"Got anchor_dim={int(anchor_vec.shape[0])} but reference_dim={int(embeds.shape[1])}. "
+                    "Make sure --embeddings_json points to RAW GNN embeddings (not 2D UMAP)."
+                )
+
+            target_vec = anchor_vec
+            vecs = embeds[idxs]
+            den = (np.linalg.norm(vecs, axis=1) * (np.linalg.norm(target_vec) + 1e-8) + 1e-8)
+            sims = (vecs @ target_vec) / den
+            pairs = [(idxs[j], float(sims[j])) for j in range(len(idxs)) if meta[idxs[j]]["circuit_id"] != target_id]
+            pairs.sort(key=lambda x: x[1], reverse=True)
+            return [(meta[i]["circuit_id"], meta[i]["family"], s) for i, s in pairs[:k]]
+
+        def _pick_random_same_family(family: str, target_id: str, k: int):
+            family_dir = os.path.join(_repo_root(), "netlists", family)
+            ids = []
+            if os.path.isdir(family_dir):
+                for name in os.listdir(family_dir):
+                    if os.path.isdir(os.path.join(family_dir, name)):
+                        ids.append(name)
+            ids = [x for x in ids if x != str(target_id)]
+            if len(ids) == 0:
+                return []
+            random.shuffle(ids)
+            return [(cid, family, None) for cid in ids[:k]]
+
+        def _load_fun_graph_text(family: str, circuit_id: str) -> str:
+            path = os.path.join(_repo_root(), "netlists", family, str(circuit_id), "fun_graph.json")
+            with open(path, "r") as f:
+                # LangChain PromptTemplate uses `{...}` for variables; escape braces in raw JSON.
+                txt = f.read()
+                txt = txt.replace("{", "{{").replace("}", "}}")
+                return txt
+
+        def _infer_target_family_and_id():
+            target_family = family_map.get(self.ckt_name_description, None)
+            # If task name isn't one of the keys above, fall back to the JSON's ckt name.
+            if target_family is None:
+                # heuristic based on description
+                desc = (self.ckt_name_description or "").lower()
+                if "comparator" in desc:
+                    target_family = "comparators"
+                elif "dropout" in desc or "ldo" in desc:
+                    target_family = "LDO"
+                else:
+                    target_family = "diff_amps"
+
+            # circuit id must come from CLI (e.g., --target_id 77)
+            target_id = getattr(args, "target_id", None)
+            if target_id is None:
+                raise ValueError("Missing --target_id (required to select related circuits by similarity).")
+            return target_family, str(target_id)
+
+        multiline_history = ""
+        if args.history:
+            target_family, target_id = _infer_target_family_and_id()
+            if related_mode == "random_family":
+                related = _pick_random_same_family(target_family, target_id, related_k)
+            else:
+                related = _pick_topk_similar(target_family, target_id, related_k)
+
+            for rid, rfamily, score in related:
+                try:
+                    kg_json = _load_fun_graph_text(rfamily, rid)
+                    header = f"\n\n[RELATED_CIRCUIT family={rfamily} id={rid}"
+                    if score is not None:
+                        header += f" similarity={score:.4f}"
+                    header += "]\n"
+                    multiline_history += header + kg_json
+                except FileNotFoundError:
+                    continue
+
+        # Include related-circuit KG context if enabled
+        if args.history and multiline_history:
+            prefix += multiline_history
 
         prefix += self.task_context
 
