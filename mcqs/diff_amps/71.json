@@ -1,0 +1,12 @@
+{
+  "question": "Which performance metrics does the 'IB1 bias current source' substructure directly influence in this circuit?",
+  "options": {
+    "A": "Gain, UGF, and Power",
+    "B": "Gain, CMRR, UGF, and Power",
+    "C": "Only Power",
+    "D": "CMRR and Power"
+  },
+  "answer": "A",
+  "circuit_id": "71",
+  "netlist": "M1 (VOUT2 VIN2 IB1 VSS) nmos4\nM0 (VOUT1 VIN1 IB1 VSS) nmos4\nR1 (VDD VOUT2) resistor\nR0 (VDD VOUT1) resistor"
+}

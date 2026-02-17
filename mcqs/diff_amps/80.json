@@ -1,0 +1,12 @@
+{
+  "question": "Which substructure does NOT directly influence the Gain of this dual differential pair circuit?",
+  "options": {
+    "A": "M0-M1 differential pair (VIN1/VIN2)",
+    "B": "M2-M3 differential pair (VIN3/VIN4)",
+    "C": "M4-M5 tail current sources",
+    "D": "R1-R1 resistive loads"
+  },
+  "answer": "C",
+  "circuit_id": "80",
+  "netlist": "R1 (VDD VOUT2) resistor\nR1 (VDD VOUT1) resistor\nM5 (net8 VCONT1 IB1 VSS) nmos4\nM4 (net15 VCONT2 IB1 VSS) nmos4\nM3 (VOUT1 VIN4 net15 VSS) nmos4\nM2 (VOUT2 VIN3 net15 VSS) nmos4\nM1 (VOUT2 VIN2 net8 VSS) nmos4\nM0 (VOUT1 VIN1 net8 VSS) nmos4"
+}
