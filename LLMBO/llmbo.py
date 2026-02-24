@@ -534,8 +534,12 @@ if __name__ == "__main__":
     ]
 
     # LLMBO + GPBO;
+    # print(_resolve_llmbo_relative_path("tasks/ldo/ldo.json"))
+    # task_path = _resolve_llmbo_relative_path("tasks/ldo/ldo.json")
     # print(_resolve_llmbo_relative_path("tasks/comp/comp.json"))
     # task_path = _resolve_llmbo_relative_path("tasks/comp/comp.json")
+    # print(_resolve_llmbo_relative_path("tasks/comp/comp_test.json"))
+    # task_path = _resolve_llmbo_relative_path("tasks/comp/comp_test.json")
     # print(_resolve_llmbo_relative_path("tasks/FC/FC.json"))
     # task_path = _resolve_llmbo_relative_path("tasks/FC/FC.json")
     print(_resolve_llmbo_relative_path("tasks/amp2/amp2.json"))
@@ -558,11 +562,11 @@ if __name__ == "__main__":
         #n_init_data=5, # for amp
         n_init_data=3,
         #n_init_data=1,
-        n_proposal_llm=4, # for amp
+        n_proposal_llm=1, #,4, # for amp
         #n_proposal_llm=3,
         n_proposal_bo=1,
-        n_itr=30,
-        # n_itr=20,
+        # n_itr=30,
+        n_itr=20,
         rank_based_on_bo = False#True #True#True# True
     )
 

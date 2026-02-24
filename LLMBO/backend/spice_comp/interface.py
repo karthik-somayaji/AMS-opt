@@ -29,6 +29,8 @@ def hspice_eval_f_comp(point_to_evaluate, args):
     ckt_dir = args['ckt_dir']
     param_file = os.path.join(ckt_dir, 'param0.inc')
 
+    print(f"Evaluating point: {point_to_evaluate}, writing to {param_file}")
+
     # create file if it does not exist
     if not os.path.exists(param_file):
         open(param_file, 'w').close()

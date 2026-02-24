@@ -1,17 +1,17 @@
 ****** PrimeSim HSPICE -- T-2022.06-SP1-1 linux64 (Sep 29 2022 7820202) ******
-Input File: /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp
+Input File: comp.sp
 lic:
 lic: FLEXlm: SDK_12.11.3
 lic: USER:   karthik              HOSTNAME: leibniz
-lic: HOSTID: 6f8013b9             PID:      1973452
+lic: HOSTID: 6f8013b9             PID:      3452171
 lic: Using FLEXlm license file:
 lic: 1781@license.ece.ucsb.edu
 lic: Checkout 1 hspice
 lic: License/Maintenance for hspice will expire on 18-apr-2026/2023.12
-lic: 8(in_use)/50(total) FLOATING license(s) on SERVER 1781@license.ece.ucsb.edu
+lic: 1(in_use)/50(total) FLOATING license(s) on SERVER 1781@license.ece.ucsb.edu
 lic:
 
- init: begin read circuit files, cpu clock= 9.75E-02
+ init: begin read circuit files, cpu clock= 1.06E-01
        option search = /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/parts/ad
        option search = /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/parts/behave
        option search = /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/parts/bjt
@@ -39,7 +39,43 @@ lic:
        option post =     2.00
        option numdgt =     10.0
        option measdgt =     10.0
- init: end read circuit files, cpu clock= 1.11E-01 peak memory=     520 mb
- init: begin check errors, cpu clock= 1.11E-01
->error          ***** hspice job aborted
+ init: end read circuit files, cpu clock= 1.19E-01 peak memory=     520 mb
+ init: begin check errors, cpu clock= 1.19E-01
+ init: end check errors, cpu clock= 1.56E-01 peak memory=     520 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 1.56E-01
+       establish matrix -- done, cpu clock= 1.56E-01 peak memory=     520 mb
+       re-order matrix -- done, cpu clock= 1.56E-01 peak memory=     520 mb
+ init: end setup matrix, cpu clock= 1.56E-01 peak memory=     520 mb
+ dcop: begin dcop, cpu clock= 1.57E-01
+ dcop: end dcop, cpu clock= 1.58E-01 peak memory=     520 mb tot_iter=      16
+ output: comp.ma0
+ sweep: ac ac0    begin, #sweeps= 901 cpu clock= 1.58E-01
+ ac: frequency=1.00e+00
+ ac: frequency=7.94e+00
+ ac: frequency=6.31e+01
+ ac: frequency=5.01e+02
+ ac: frequency=3.98e+03
+ ac: frequency=3.16e+04
+ ac: frequency=2.51e+05
+ ac: frequency=2.00e+06
+ ac: frequency=1.58e+07
+ ac: frequency=1.26e+08
+ ac: frequency=1.00e+09
+ sweep: ac ac0    end, cpu clock= 1.76E-01 peak memory=     520 mb
+ dcop: begin dcop, cpu clock= 1.76E-01
+ dcop: end dcop, cpu clock= 1.77E-01 peak memory=     520 mb tot_iter=      30
+ output: comp.mt0
+ sweep: tran tran0    begin, stop_t=  2.00E-05 #sweeps=**** cpu clock= 1.77E-01
+ tran: time= 2.1842E-06 tot_iter=      20 conv_iter=      10 cpu clock= 1.78E-01
+ tran: time= 4.1842E-06 tot_iter=      24 conv_iter=      12 cpu clock= 1.78E-01
+ tran: time= 6.2932E-06 tot_iter=      54 conv_iter=      22 cpu clock= 1.79E-01
+ tran: time= 8.0648E-06 tot_iter=      58 conv_iter=      24 cpu clock= 1.79E-01
+ tran: time= 1.0000E-05 tot_iter=      75 conv_iter=      27 cpu clock= 1.79E-01
+ tran: time= 1.2832E-05 tot_iter=      92 conv_iter=      35 cpu clock= 1.80E-01
+ tran: time= 1.4832E-05 tot_iter=      96 conv_iter=      37 cpu clock= 1.80E-01
+ tran: time= 1.6127E-05 tot_iter=     139 conv_iter=      49 cpu clock= 1.81E-01
+ tran: time= 1.8718E-05 tot_iter=     145 conv_iter=      52 cpu clock= 1.81E-01
+ tran: time= 2.0000E-05 tot_iter=     149 conv_iter=      54 cpu clock= 1.81E-01
+ sweep: tran tran0    end, cpu clock= 1.81E-01 peak memory=     521 mb
+>info:         ***** hspice job concluded
  lic: Release hspice token(s)

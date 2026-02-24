@@ -1,5 +1,5 @@
 test_circuit,expected_family,topk,num_neighbors_in_expected_family,num_neighbors_not_in_expected_family
-amp2,diff_amps,5,3,2
-FC,diff_amps,5,4,1
-comp,comparators,5,0,5
-ldo,LDO,5,5,0
+amp2,diff_amps,3,2,1
+FC,diff_amps,3,2,1
+comp,comparators,3,0,3
+ldo,LDO,3,3,0

@@ -1,4 +1,5 @@
 ** Comparator
+.inc ./param0.inc
 .INCLUDE "../tech/hspice.include"
 .inc ../tech/nfet_perfect.inc
 .inc ../tech/pfet_perfect.inc

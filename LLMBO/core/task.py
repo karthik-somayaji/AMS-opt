@@ -147,6 +147,7 @@ class Task(object):
 
         # Convert params_query (named dictionary into param.inc format);
         #params_inc = ".param " + "".join(f"{param}={value} " for param, value in params_query.items())
+        print(f"Parameters to evaluate: {params_query}")
         params_inc = "".join(f".param {param}={value}\n" for param, value in params_query.items())
 
         # Simulation with HSPICE;

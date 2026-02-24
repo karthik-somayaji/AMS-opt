@@ -179,7 +179,7 @@ python3 scripts/visualize_embeddings_umap.py   --config gnn_training/config/full
 
 
 ```
-python3 scripts/analyze_four_test_circuits_embeddings.py \
+ /home/karthik/miniconda3/envs/analog-rep/bin/python scripts/analyze_four_test_circuits_embeddings.py \
   --llmbo-circuits amp2:LLMBO/amp2_ati_new FC:LLMBO/FC_ati_new comp:LLMBO/comp_ati_new ldo:LLMBO/ldo_ati_new \
   --out-dir umap_results_four
 ```
@@ -188,6 +188,6 @@ python3 scripts/analyze_four_test_circuits_embeddings.py \
 
 ## Optimization
 
-cd /home/karthik/sim_clean/AMS-opt && /home/karthik/miniconda3/envs/analog-rep/bin/python LLMBO/llmbo.py --history 1 --related_mode topk --related_k 3 --target_id 77
+cd /home/karthik/sim_clean/AMS-opt && /home/karthik/miniconda3/envs/analog-rep/bin/python LLMBO/llmbo.py --history 1 --related_mode topk --related_k 3 --target_id amp2
 
-cd /home/karthik/sim_clean/AMS-opt && /home/karthik/miniconda3/envs/analog-rep/bin/python LLMBO/llmbo.py --history 1 --related_mode random_family --related_k 3 --target_id 77
+cd /home/karthik/sim_clean/AMS-opt && /home/karthik/miniconda3/envs/analog-rep/bin/python LLMBO/llmbo.py --history 1 --related_mode random_family --related_k 3 --target_id amp2

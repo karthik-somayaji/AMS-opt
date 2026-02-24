@@ -11,8 +11,8 @@ def read_results(f_val, val_name, args, check_specs=False):
     try:
         f_val = float(f_val)
         if check_specs:
-            if val_name is 'pow':
-                if f_val > args[f'{pow}_spec']:
+            if val_name == 'pow':
+                if f_val > args['pow_spec']:
                     return args[f'{val_name}_failed']
             else:
                 if f_val < args[f'{val_name}_spec']:
@@ -29,39 +29,39 @@ def normalize_fvals(f_vals: dict, ckt: dict):
           ckt (dict), dictionary containing circuit information
     Returns: f_vals (dict), dictionary containing normalized objective function values
     '''
-    # get the objective function values
-    q_curr = f_vals['q_curr']
-    stability = f_vals['stability']
-    output_voltage_difference = f_vals['output_voltage_difference']
+    q_curr = float(f_vals['q_curr'])
+    stability = float(f_vals['stability'])
+    output_voltage_difference = float(f_vals['output_voltage_difference'])
 
-    # get the normalization values
-    q_curr_range = ckt['q_curr_norm']
-    stability_range = ckt['stability_norm']
-    output_voltage_difference_range  = ckt['output_voltage_difference_norm']
-    
-    # normalize the objective function values
-    f_vals['q_curr_normed'] = -1*(np.log(q_curr) - np.log(q_curr_range[0])) / (np.log(q_curr_range[1] )- np.log(q_curr_range[0]))
-    f_vals['stability_normed'] = 1 - np.abs((stability - stability_range[0]) / (stability_range[1] - stability_range[0]))
-    f_vals['output_voltage_difference_normed'] = -1*((np.abs(output_voltage_difference) - output_voltage_difference_range[0]) / (output_voltage_difference_range[1] - output_voltage_difference_range[0]))
-    
-    # if f_vals['q_curr_normed'] <= 0:
-    #     f_vals['q_curr_normed'] = 0.0
-    # else:
-    #     f_vals['q_curr_normed'] = -1*f_vals['q_curr_normed']
+    # For minimize-metrics, normalize as a clipped "meets spec" score:
+    # - score = 1.0 when value <= spec
+    # - score < 1.0 when value > spec
+    eps = 1e-15
+    q_curr_spec = float(ckt.get('q_curr_spec', 0.0))
+    ovd_spec = float(ckt.get('output_voltage_difference_spec', 0.0))
 
-    # if f_vals['output_voltage_difference_normed'] <= 0:
-    #     f_vals['output_voltage_difference_normed'] = 0.0
-    # else:
-    #     f_vals['output_voltage_difference_normed'] = -1*f_vals['output_voltage_difference_normed']
+    q_curr_den = max(q_curr, eps)
+    ovd_den = max(abs(output_voltage_difference), eps)
 
-    
+    if q_curr_spec > 0:
+        f_vals['q_curr_normed'] = min(q_curr_spec / q_curr_den, 1.0)
+    else:
+        f_vals['q_curr_normed'] = 0.0
 
-    # # clip the normalized values to [0, 1]
-    # f_vals['gbw_normed'] = max(0, min(1, f_vals['gbw_normed']))
-    # f_vals['gain_normed'] = max(0, min(1, f_vals['gain_normed']))
-    # f_vals['cmrr_normed'] = max(0, min(1, f_vals['cmrr_normed']))
-    # f_vals['pm_normed'] = max(0, min(1, f_vals['pm_normed']))
+    if ovd_spec > 0:
+        f_vals['output_voltage_difference_normed'] = min(ovd_spec / ovd_den, 1.0)
+    else:
+        f_vals['output_voltage_difference_normed'] = 0.0
 
+    # Keep stability as a bounded [0, 1] score using the configured range.
+    stability_range = ckt.get('stability_norm', [0.0, 1.0])
+    stability_lo = float(stability_range[0])
+    stability_hi = float(stability_range[1])
+    if stability_hi == stability_lo:
+        stability_score = 0.0
+    else:
+        stability_score = 1.0 - abs((stability - stability_lo) / (stability_hi - stability_lo))
+    f_vals['stability_normed'] = max(0.0, min(1.0, stability_score))
 
     return f_vals
 
@@ -74,14 +74,20 @@ def objective(f_vals: dict, ckt: dict):
     '''
     # normalize the objective function values
     f_vals = normalize_fvals(f_vals, ckt)
-    # merits
-    #merits = ['ugf', 'gain']
+
     merits = ckt['metrics_list']
-    fom = 0
-    for merit in merits:
-        if((merit == 'hyst_err') or (merit == 'offset')):
-            fom -= ckt[f'{merit}_weight'] * f_vals[f'{merit}_normed']
-        else:
-            fom += ckt[f'{merit}_weight'] * f_vals[f'{merit}_normed']
-    f_vals['fom'] = fom
+    weights = [float(ckt.get(f'{m}_weight', 0.0)) for m in merits]
+    weight_sum = sum(weights)
+    if weight_sum <= 0:
+        weight_sum = 1.0
+
+    fom = 0.0
+    for merit, weight in zip(merits, weights):
+        fom += (weight / weight_sum) * float(f_vals.get(f'{merit}_normed', 0.0))
+
+    # Requirement: if both minimize-metrics meet spec, overall FOM is clipped to 1.
+    if f_vals.get('q_curr_normed', 0.0) >= 1.0 and f_vals.get('output_voltage_difference_normed', 0.0) >= 1.0:
+        fom = 1.0
+
+    f_vals['fom'] = max(0.0, min(1.0, float(fom)))
     return f_vals

@@ -394,6 +394,7 @@ rz outm out1 'pwr(10,r1*4-2)*1e3'
         params_parsed = []
         # Response is None means api call has failed in request attempts (default to be 3);
         if responses is None:
+            print(f"Fewshot agent fails to get response from the LLM API after {self.max_request_attempt} attempts!")
             print(f"Api call fails!")
         else:
             for response in responses:

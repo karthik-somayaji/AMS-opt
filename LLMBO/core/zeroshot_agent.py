@@ -70,7 +70,8 @@ class ZeroShotAgent(object):
         elif ('comp' in self.task_name):
             print('IN  comp')
             # example
-            prompt += ".param l1=[] w1=[] l2=[] w2=[] l3=[] w3=[] l4=[] w4=[] l5=[] w5=[] l6=[] w6=[] l7=[] w7=[] l8=[] w8=[] l9=[] w9=[] l10=[] w10=[] l11=[] w11=[] l12=[] w12=[]  \n"
+            # prompt += ".param l1=[] w1=[] l2=[] w2=[] l3=[] w3=[] l4=[] w4=[] l5=[] w5=[] l6=[] w6=[] l7=[] w7=[] l8=[] w8=[] l9=[] w9=[] l10=[] w10=[] l11=[] w11=[] l12=[] w12=[]  \n"
+            prompt += ".param l1=[] w1=[] l3=[] w3=[] l5=[] w5=[] l6=[] w6=[] l8=[] w8=[] l10=[] w10=[] \n"
             # suffix
             prompt += "You need to replace [] with the actual values of the parameters, within a predefined design space:\n"
             prompt += f"Transistor width (w*): 0.09u to 148.5u \n"
@@ -131,6 +132,7 @@ class ZeroShotAgent(object):
         params_parsed = []
         # Response is None means api call has failed in request attempts (default to be 3);
         if responses is None:
+            print(f"Zeroshot agent fails to get response from the LLM API after {self.max_request_attempt} attempts!")
             print(f"Api call fails!")
         else:
             responses = responses[0].split("\n")

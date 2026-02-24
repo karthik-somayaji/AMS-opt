@@ -1,5 +1,5 @@
 {
-  "topk": 5,
+  "topk": 3,
   "neighbors": [
     {
       "test_circuit": "amp2",
@@ -26,22 +26,6 @@
       "distance": 0.8167815804481506
     },
     {
-      "test_circuit": "amp2",
-      "expected_family": "diff_amps",
-      "rank": 4,
-      "neighbor_family": "LDO",
-      "neighbor_circuit_id": "2332",
-      "distance": 0.831909716129303
-    },
-    {
-      "test_circuit": "amp2",
-      "expected_family": "diff_amps",
-      "rank": 5,
-      "neighbor_family": "diff_amps",
-      "neighbor_circuit_id": "97",
-      "distance": 0.8389657139778137
-    },
-    {
       "test_circuit": "FC",
       "expected_family": "diff_amps",
       "rank": 1,
@@ -64,22 +48,6 @@
       "neighbor_family": "LDO",
       "neighbor_circuit_id": "2345",
       "distance": 0.8345555663108826
-    },
-    {
-      "test_circuit": "FC",
-      "expected_family": "diff_amps",
-      "rank": 4,
-      "neighbor_family": "diff_amps",
-      "neighbor_circuit_id": "929",
-      "distance": 0.8487783074378967
-    },
-    {
-      "test_circuit": "FC",
-      "expected_family": "diff_amps",
-      "rank": 5,
-      "neighbor_family": "diff_amps",
-      "neighbor_circuit_id": "931",
-      "distance": 0.8770859241485596
     },
     {
       "test_circuit": "comp",
@@ -106,22 +74,6 @@
       "distance": 0.4674287736415863
     },
     {
-      "test_circuit": "comp",
-      "expected_family": "comparators",
-      "rank": 4,
-      "neighbor_family": "LDO",
-      "neighbor_circuit_id": "2309",
-      "distance": 0.505704402923584
-    },
-    {
-      "test_circuit": "comp",
-      "expected_family": "comparators",
-      "rank": 5,
-      "neighbor_family": "LDO",
-      "neighbor_circuit_id": "2301",
-      "distance": 0.5106360912322998
-    },
-    {
       "test_circuit": "ldo",
       "expected_family": "LDO",
       "rank": 1,
@@ -144,52 +96,36 @@
       "neighbor_family": "LDO",
       "neighbor_circuit_id": "2307",
       "distance": 0.2524052858352661
-    },
-    {
-      "test_circuit": "ldo",
-      "expected_family": "LDO",
-      "rank": 4,
-      "neighbor_family": "LDO",
-      "neighbor_circuit_id": "2306",
-      "distance": 0.2576327919960022
-    },
-    {
-      "test_circuit": "ldo",
-      "expected_family": "LDO",
-      "rank": 5,
-      "neighbor_family": "LDO",
-      "neighbor_circuit_id": "2316",
-      "distance": 0.30724143981933594
     }
   ],
   "summary": [
     {
       "test_circuit": "amp2",
       "expected_family": "diff_amps",
-      "topk": 5,
-      "num_neighbors_not_in_expected_family": 2,
-      "num_neighbors_in_expected_family": 3
+      "topk": 3,
+      "num_neighbors_not_in_expected_family": 1,
+      "num_neighbors_in_expected_family": 2
     },
     {
       "test_circuit": "FC",
       "expected_family": "diff_amps",
-      "topk": 5,
+      "topk": 3,
       "num_neighbors_not_in_expected_family": 1,
-      "num_neighbors_in_expected_family": 4
+      "num_neighbors_in_expected_family": 2
     },
     {
       "test_circuit": "comp",
       "expected_family": "comparators",
-      "topk": 5,
-      "num_neighbors_not_in_expected_family": 5,
+      "topk": 3,
+      "num_neighbors_not_in_expected_family": 3,
       "num_neighbors_in_expected_family": 0
     },
     {
       "test_circuit": "ldo",
       "expected_family": "LDO",
-      "topk": 5,
+      "topk": 3,
       "num_neighbors_not_in_expected_family": 0,
-      "num_neighbors_in_expected_family": 5
+      "num_neighbors_in_expected_family": 3
     }
   ]
 }

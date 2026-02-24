@@ -1,0 +1,24 @@
+* "simulator" "PrimeSim HSPICE"
+* "version" "T-2022.06-SP1-1 linux64"
+* "format" "HSP"
+* "rundate" "02:39:34 02/22/2026 "
+* "netlist" "comp.sp "
+* "runtitle" "** comparator"
+* time =  0.000000000e+00 
+* temperature =  2.500000000e+01 
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000000000e-12 
+.nodeset
++ 1 = 1.764242829e+00 
++ 2 = 1.764267215e+00 
++ 3 = 6.151979079e-01 
++ 4 = 2.734657620e-01 
++ out = 2.756881082e-01 
++ vac = 0.000000000e+00 
++ vb = 3.326706163e-01 
++ vcm = 1.000000000e+00 
++ vdd! = 2.000000000e+00 
++ vin = 1.000000000e+00 
++ vip = 1.000000000e+00 
+***   END: Saved Operating Point ***                     

@@ -17,9 +17,9 @@
     "ckt_dir": "/home/karthik/sim_clean/LLMBO/ldo_ati_new",
     "ckt_name_description": "Low_Dropout_Regulator",
     "ckt_name": "ldo_0",
-    "q_curr_weight": 0.25,
+    "q_curr_weight": 0.5,
     "stability_weight": 0.25,
-    "output_voltage_difference_weight": 0.75,
+    "output_voltage_difference_weight": 0.5,
     "q_curr_norm": [12e-3, 100e-3],
     "stability_norm": [0, 1],
     "output_voltage_difference_norm": [0.1, 1],
@@ -30,5 +30,7 @@
     "gain_spec": 40,
     "cmrr_spec": 60,
     "pm_spec": 60,
-    "pow_spec": 2e-5
+    "pow_spec": 2e-5,
+    "q_curr_spec": 12e-3,
+    "output_voltage_difference_spec": 0.1
   }
