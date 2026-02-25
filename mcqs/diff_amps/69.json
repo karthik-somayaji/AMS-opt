@@ -1,0 +1,12 @@
+{
+  "question": "In this resistor-loaded NMOS differential amplifier, a designer wants to increase the voltage gain while minimizing degradation to the unity-gain frequency (UGF). Which parameter adjustment best achieves this?",
+  "options": {
+    "A": "Increase the load resistances R0 and R1",
+    "B": "Increase the transistor widths W_M0 and W_M1",
+    "C": "Increase the transistor channel lengths L_M0 and L_M1",
+    "D": "Decrease the transistor widths W_M0 and W_M1"
+  },
+  "answer": "B",
+  "circuit_id": "69",
+  "netlist": "M1 (VOUT2 VIN2 VSS VSS) nmos4\nM1 (VOUT1 VIN1 VSS VSS) nmos4\nR1 (VDD VOUT2) resistor\nR0 (VDD VOUT1) resistor"
+}

@@ -1,0 +1,26 @@
+{
+  "mode": "eval_vllm",
+  "dry_run": true,
+  "mcq_root": "/home/karthik/sim_clean/AMS-opt/AMS-opt/mcqs",
+  "embeddings_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/gnn_embeddings.json",
+  "num_reference": 164,
+  "embedding_dim": 128,
+  "k": 2,
+  "kg_max_chars": 12000,
+  "limit": 1,
+  "num_seen": 1,
+  "num_eval": 1,
+  "skipped_missing_embedding": 0,
+  "kg_missing": 0,
+  "vllm": {
+    "base_url": "http://localhost:8000",
+    "model": "llama3-8b",
+    "temperature": 0.0,
+    "top_p": null,
+    "max_tokens": 8,
+    "timeout_s": 120.0
+  },
+  "timing_s": 0.03827857971191406,
+  "out_jsonl": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/eval_dryrun.jsonl",
+  "summary_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/summary_dryrun.json"
+}

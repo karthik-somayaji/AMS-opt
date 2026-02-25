@@ -1,0 +1,32 @@
+{
+  "mode": "eval_vllm_local",
+  "dry_run": true,
+  "mcq_root": "/home/karthik/sim_clean/AMS-opt/AMS-opt/mcqs",
+  "embeddings_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/gnn_embeddings.json",
+  "num_reference": 164,
+  "embedding_dim": 128,
+  "k": 3,
+  "kg_max_chars": 12000,
+  "limit": 1,
+  "num_seen": 1,
+  "num_eval": 1,
+  "skipped_missing_embedding": 0,
+  "kg_missing": 0,
+  "vllm_local": {
+    "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+    "tensor_parallel_size": 1,
+    "gpu_memory_utilization": 0.9,
+    "dtype": "auto",
+    "max_model_len": null,
+    "trust_remote_code": false,
+    "download_dir": null,
+    "apply_chat_template": false,
+    "temperature": 0.0,
+    "top_p": null,
+    "max_tokens": 8,
+    "batch_size": 8
+  },
+  "timing_s": 0.0008683204650878906,
+  "out_jsonl": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/eval_dryrun_local.jsonl",
+  "summary_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/summary_dryrun_local.json"
+}

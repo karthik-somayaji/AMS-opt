@@ -1,0 +1,53 @@
+{
+  "mode": "sanity",
+  "query": {
+    "family": "diff_amps",
+    "circuit_id": "69"
+  },
+  "embeddings_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/gnn_embeddings.json",
+  "num_reference": 164,
+  "embedding_dim": 128,
+  "k": 5,
+  "related": [
+    {
+      "family": "diff_amps",
+      "circuit_id": "97",
+      "similarity": 0.9902091026306152,
+      "kg_path": "/home/karthik/sim_clean/AMS-opt/AMS-opt/netlists/diff_amps/97/fun_graph.json",
+      "kg_loaded": true,
+      "kg_num_chars": 5219
+    },
+    {
+      "family": "diff_amps",
+      "circuit_id": "615",
+      "similarity": 0.9740145802497864,
+      "kg_path": "/home/karthik/sim_clean/AMS-opt/AMS-opt/netlists/diff_amps/615/fun_graph.json",
+      "kg_loaded": true,
+      "kg_num_chars": 3685
+    },
+    {
+      "family": "diff_amps",
+      "circuit_id": "75",
+      "similarity": 0.9169273376464844,
+      "kg_path": "/home/karthik/sim_clean/AMS-opt/AMS-opt/netlists/diff_amps/75/fun_graph.json",
+      "kg_loaded": true,
+      "kg_num_chars": 6569
+    },
+    {
+      "family": "diff_amps",
+      "circuit_id": "923",
+      "similarity": 0.8765859007835388,
+      "kg_path": "/home/karthik/sim_clean/AMS-opt/AMS-opt/netlists/diff_amps/923/fun_graph.json",
+      "kg_loaded": true,
+      "kg_num_chars": 7627
+    },
+    {
+      "family": "op-amp",
+      "circuit_id": "289",
+      "similarity": 0.8731746077537537,
+      "kg_path": "/home/karthik/sim_clean/AMS-opt/AMS-opt/netlists/op-amp/289/fun_graph.json",
+      "kg_loaded": false,
+      "kg_num_chars": 0
+    }
+  ]
+}
