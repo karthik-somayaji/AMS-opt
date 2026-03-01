@@ -5,6 +5,7 @@ import torch.nn.functional as F
 from typing import Optional, Tuple
 
 
+
 class NTXentLoss(nn.Module):
     """Normalized Temperature-scaled Cross Entropy (NT-Xent) Loss.
     
@@ -145,3 +146,46 @@ class WeightedNTXentLoss(nn.Module):
         loss = loss / batch_size
         
         return loss
+
+
+class PositiveOnlyContrastiveLoss(nn.Module):
+    """Positive-pair-only contrastive loss (Negative Cosine Similarity).
+    
+    Used in frameworks like SimSiam or BYOL where no negative pairs are formed.
+    Maximizes the cosine similarity between positive pairs z_i[k] and z_j[k].
+    """
+    
+    def __init__(self, reduction: str = 'mean'):
+        """
+        Args:
+            reduction: 'mean', 'sum', or 'none'
+        """
+        super().__init__()
+        self.reduction = reduction
+    
+    def forward(self, z_i: torch.Tensor, z_j: torch.Tensor) -> torch.Tensor:
+        """
+        Compute negative cosine similarity loss for a batch.
+        
+        Args:
+            z_i: anchor embeddings [batch_size, embedding_dim]
+            z_j: positive embeddings [batch_size, embedding_dim]
+        
+        Returns:
+            scalar loss
+        """
+        # F.cosine_similarity automatically handles L2 normalization and dot product.
+        # It computes the similarity between corresponding vectors in the batch.
+        # Shape of cos_sim: [batch_size]
+        cos_sim = F.cosine_similarity(z_i, z_j, dim=1)
+        
+        # We want to maximize similarity, which means minimizing the negative similarity.
+        # The lowest possible loss is -1 (when vectors are identical).
+        loss = -cos_sim
+        
+        if self.reduction == 'mean':
+            return loss.mean()
+        elif self.reduction == 'sum':
+            return loss.sum()
+        else:
+            return loss

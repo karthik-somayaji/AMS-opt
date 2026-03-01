@@ -77,6 +77,7 @@ class MultiCircuitBatchSampler:
             'anchor_circuit_ids': [],  # Track circuit IDs for consistency loss
             'families': [],
             'labels': [],
+            'structural_graphs': [],  # Store pure structural graphs (SG) without knowledge nodes
         }
         
         # Determine which families to sample from
@@ -88,10 +89,11 @@ class MultiCircuitBatchSampler:
             circuit_id = random.choice(self.family_circuits[family])
             
             pair_gen = self.pair_generators[circuit_id]
-            anchor_graph, pos_graph, pert_type = pair_gen.generate_positive_pair()
+            anchor_graph, pos_graph, pert_type, structural_graph = pair_gen.generate_positive_pair()
             
             batch['anchors'].append(anchor_graph)
             batch['positives'].append(pos_graph)
+            batch['structural_graphs'].append(structural_graph) # Pure structural graph (SG) without knowledge nodes
             batch['anchor_circuit_ids'].append(circuit_id)
             batch['families'].append(family)
             batch['labels'].append(1)
