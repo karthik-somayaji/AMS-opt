@@ -32,6 +32,7 @@ except ImportError:
 
 from gnn_training.models import ContrastiveGINModel
 from gnn_training.data import CircuitDataLoader
+from gnn_training.perturbations import RemoveKnowledgeNodes
 
 
 def _lazy_import_yaml():
@@ -177,7 +178,8 @@ def extract_embeddings(model: ContrastiveGINModel,
                        circuit_ids: List[str],
                        families: List[str],
                        data_dir: str,
-                       device: torch.device) -> Tuple[np.ndarray, List[Dict]]:
+                       device: torch.device, 
+                       remove_knowledge_graph: bool = False,) -> Tuple[np.ndarray, List[Dict]]:
     """Extract embeddings for all circuits."""
     embeddings = []
     metadata = []
@@ -187,7 +189,11 @@ def extract_embeddings(model: ContrastiveGINModel,
             try:
                 loader = CircuitDataLoader(circuit_id, f"{data_dir}/{family}")
                 graph = loader.get_graph()
-                
+
+                # Remove Knoowledge Graph (Using only SG in test-time)
+                if remove_knowledge_graph:
+                    graph = RemoveKnowledgeNodes(graph).apply()
+
                 # Convert to tensors
                 features = torch.tensor(graph['features'], dtype=torch.float32, device=device)
                 adjacency = torch.tensor(graph['adjacency'], dtype=torch.float32, device=device)
@@ -334,7 +340,7 @@ def main():
                         help='Checkpoint path. If omitted, uses training.checkpoint_dir + last epoch.')
     parser.add_argument('--data-dir', default='netlists',
                         help='Netlists root (contains family folders).')
-    parser.add_argument('--out-dir', default='umap_results_full',
+    parser.add_argument('--out-dir', default='umap_results_sg_vs_skg',
                         help='Output directory for plots/json.')
     parser.add_argument('--metric', default='Gain',
                         help='Performance metric key for coloring (e.g., Gain, UGB, PM).')
@@ -366,8 +372,13 @@ def main():
 
     print(f"✓ Model loaded (epoch {checkpoint_info['epoch']})")
     
+    # remove knowledge graph in test-time
+    remove_knowledge_graph = cfg.get('testing', {}).get('remove_knowledge_graph', False)
+    if remove_knowledge_graph:
+        print("Test-time setting: Removing knowledge graph from all circuits for embedding extraction.")
+
     print(f"\nExtracting embeddings for {len(circuit_ids)} circuits...")
-    embeddings, metadata = extract_embeddings(model, circuit_ids, families, data_dir, device)
+    embeddings, metadata = extract_embeddings(model, circuit_ids, families, data_dir, device, remove_knowledge_graph=remove_knowledge_graph)
     print(f"✓ Extracted {embeddings.shape[0]} embeddings of dim {embeddings.shape[1]}")
     
     print(f"\nNormalizing embeddings...")

@@ -35,7 +35,6 @@ Notes
 from __future__ import annotations
 
 import argparse
-import sys
 import json
 import os
 import sys
@@ -43,22 +42,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
-try:
-    import numpy as np
-except ModuleNotFoundError as e:
-    raise ModuleNotFoundError(
-        "Missing dependency 'numpy'. This script expects the `analog-rep` Python environment. "
-        "Try running with `/home/karthik/miniconda3/envs/analog-rep/bin/python` or `conda activate analog-rep`. "
-        f"Current interpreter: {sys.executable}"
-    ) from e
-try:
-    import torch
-except ModuleNotFoundError as e:
-    raise ModuleNotFoundError(
-        "Missing dependency 'torch'. This script expects the `analog-rep` Python environment. "
-        "Try running with `/home/karthik/miniconda3/envs/analog-rep/bin/python` or `conda activate analog-rep`. "
-        f"Current interpreter: {sys.executable}"
-    ) from e
+import numpy as np
+import torch
 
 # Add repo root for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
