@@ -506,7 +506,7 @@ if __name__ == "__main__":
                             'For the symbolic ids, the anchor embedding is computed from '
                             '`LLMBO/<id>_ati_new/comb_graph_gnn.npz` using `--gnn_checkpoint`.'
                         ))
-    parser.add_argument('--related_mode', type=str, default='topk', choices=['topk', 'random_family'],
+    parser.add_argument('--related_mode', type=str, default='topk', choices=['topk', 'bottomk', 'random_family'],
                         help='How to pick related circuits for KG context.')
     parser.add_argument('--related_k', type=int, default=3,
                         help='Number of related circuits whose fun_graph.json to include.')
@@ -534,16 +534,16 @@ if __name__ == "__main__":
     ]
 
     # LLMBO + GPBO;
-    # print(_resolve_llmbo_relative_path("tasks/ldo/ldo.json"))
-    # task_path = _resolve_llmbo_relative_path("tasks/ldo/ldo.json")
+    print(_resolve_llmbo_relative_path("tasks/ldo/ldo.json"))
+    task_path = _resolve_llmbo_relative_path("tasks/ldo/ldo.json")
     # print(_resolve_llmbo_relative_path("tasks/comp/comp.json"))
     # task_path = _resolve_llmbo_relative_path("tasks/comp/comp.json")
     # print(_resolve_llmbo_relative_path("tasks/comp/comp_test.json"))
     # task_path = _resolve_llmbo_relative_path("tasks/comp/comp_test.json")
     # print(_resolve_llmbo_relative_path("tasks/FC/FC.json"))
     # task_path = _resolve_llmbo_relative_path("tasks/FC/FC.json")
-    print(_resolve_llmbo_relative_path("tasks/amp2/amp2.json"))
-    task_path = _resolve_llmbo_relative_path("tasks/amp2/amp2.json")
+    # print(_resolve_llmbo_relative_path("tasks/amp2/amp2.json"))
+    # task_path = _resolve_llmbo_relative_path("tasks/amp2/amp2.json")
     try:
         import json as _json
         with open(task_path, "r") as _f:

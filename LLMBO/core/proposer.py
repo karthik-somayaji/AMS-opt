@@ -119,7 +119,7 @@ class LLMProposer(FewShotAgent):
             meta = data["metadata"]
             return embeds, meta
 
-        def _pick_topk_similar(family: str, target_id: str, k: int):
+        def _pick_k_similar(family: str, target_id: str, k: int, *, descending: bool = True):
             embeds, meta = _load_embeddings(embeddings_json)
             idxs = [i for i, m in enumerate(meta) if m.get("family") == family]
             id_to_i = {meta[i]["circuit_id"]: i for i in idxs}
@@ -157,7 +157,7 @@ class LLMProposer(FewShotAgent):
             den = (np.linalg.norm(vecs, axis=1) * (np.linalg.norm(target_vec) + 1e-8) + 1e-8)
             sims = (vecs @ target_vec) / den
             pairs = [(idxs[j], float(sims[j])) for j in range(len(idxs)) if meta[idxs[j]]["circuit_id"] != target_id]
-            pairs.sort(key=lambda x: x[1], reverse=True)
+            pairs.sort(key=lambda x: x[1], reverse=bool(descending))
             return [(meta[i]["circuit_id"], meta[i]["family"], s) for i, s in pairs[:k]]
 
         def _pick_random_same_family(family: str, target_id: str, k: int):
@@ -205,8 +205,10 @@ class LLMProposer(FewShotAgent):
             target_family, target_id = _infer_target_family_and_id()
             if related_mode == "random_family":
                 related = _pick_random_same_family(target_family, target_id, related_k)
+            elif related_mode == "bottomk":
+                related = _pick_k_similar(target_family, target_id, related_k, descending=False)
             else:
-                related = _pick_topk_similar(target_family, target_id, related_k)
+                related = _pick_k_similar(target_family, target_id, related_k, descending=True)
 
             for rid, rfamily, score in related:
                 try:
