@@ -16,7 +16,7 @@ class Trainer:
     def __init__(self, model: nn.Module, loss_fn: nn.Module, optimizer: optim.Optimizer,
                  device: torch.device, checkpoint_dir: Path, summary_writer: Optional[SummaryWriter] = None,
                  consistency_loss_fn: Optional[nn.Module] = None, consistency_weight: float = 0.0,
-                 nt_xent_weight: float = 1.0):
+                 nt_xent_weight: float = 1.0, sg_vs_skg=0, sg_vs_skg_loss=None):
         """
         Args:
             model: GNN model (ContrastiveGINModel)
@@ -43,6 +43,9 @@ class Trainer:
         self.global_step = 0
         self.best_loss = float('inf')
         self.patience_counter = 0
+
+        self.sg_vs_skg = sg_vs_skg  # Whether to treat SG vs SG+KG as positive pairs 
+        self.sg_vs_skg_loss = sg_vs_skg_loss
     
     def train_epoch(self, batch_loader, num_batches: Optional[int] = None) -> Tuple[float, float, float]:
         """
@@ -74,6 +77,7 @@ class Trainer:
             positives = batch.get('positives', [])
             similarity_matrix = batch.get('similarity_matrix', None)
             anchor_circuit_ids = batch.get('anchor_circuit_ids', [])
+            structural_graphs = batch.get('structural_graphs', []) # Pure structural graphs (SG) without knowledge nodes
 
             batch_nt_xent_loss = None
             batch_consistency_loss = None
@@ -96,9 +100,27 @@ class Trainer:
                 z_anchor_b = torch.stack(z_anchor_list, dim=0)  # [B, D]
                 z_pos_b = torch.stack(z_pos_list, dim=0)  # [B, D]
 
+                # 1.5) Structural graph (SG) & structural+knowledge graph (SG+KG) as positive pairs
+                # -----------------------------SG vs SG+KG Loss start------------------------------- #
+                if self.sg_vs_skg > 0 and len(structural_graphs) > 0:
+                    z_structural_list = []
+                    for structural_graph in structural_graphs:
+                        h_structural = torch.tensor(structural_graph['features'], dtype=torch.float32, device=self.device)
+                        adj_structural = torch.tensor(structural_graph['adjacency'], dtype=torch.float32, device=self.device)
+                        z_structural = self.model.encode(h_structural, adj_structural)
+                        z_structural_list.append(z_structural)
+
+                    z_structural_b = torch.stack(z_structural_list, dim=0)  # [B, D]
+
+                    sg_vs_skg_loss = self.sg_vs_skg_loss(z_anchor_b, z_structural_b)
+
+                    total_nt_xent += float(sg_vs_skg_loss.item())
+                    num_pairs_processed += int(len(structural_graphs))
+                # -------------------------------------End----------------------------------------- #
+
                 self.optimizer.zero_grad(set_to_none=True)
                 batch_nt_xent_loss = self.loss_fn(z_anchor_b, z_pos_b)
-                (self.nt_xent_weight * batch_nt_xent_loss).backward()
+                (self.nt_xent_weight * batch_nt_xent_loss + self.sg_vs_skg * sg_vs_skg_loss).backward()
                 self.optimizer.step()
 
                 total_nt_xent += float(batch_nt_xent_loss.item())
@@ -112,6 +134,7 @@ class Trainer:
                         self.global_step,
                     )
 
+            
             # 2) Consistency: compute once per batch (over anchor embeddings) if enabled.
             if (
                 self.consistency_loss_fn is not None

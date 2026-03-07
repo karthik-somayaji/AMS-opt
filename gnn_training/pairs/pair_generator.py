@@ -3,7 +3,7 @@ import random
 from typing import List, Tuple, Dict, Any
 from ..data.graph_loader import CircuitDataLoader
 from ..data.prune_parser import PruneParser
-from ..perturbations import KGPerturbation, StructuralPerturbation
+from ..perturbations import KGPerturbation, StructuralPerturbation, RemoveKnowledgeNodes
 
 
 class PairGenerator:
@@ -70,7 +70,10 @@ class PairGenerator:
         
         positive_graph = perturb.apply()
         
-        return anchor_graph, positive_graph, pert_type
+        # remove knowledge graph 
+        structural_graph = RemoveKnowledgeNodes(anchor_graph).apply()
+
+        return anchor_graph, positive_graph, pert_type, structural_graph
     
     def generate_positive_pairs(self, num_pairs: int) -> List[Tuple[Dict[str, Any], Dict[str, Any], str]]:
         """

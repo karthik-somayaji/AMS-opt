@@ -11,7 +11,7 @@ from torch.utils.tensorboard import SummaryWriter
 
 # Import from gnn_training modules
 from gnn_training.models import ContrastiveGINModel
-from gnn_training.losses import NTXentLoss, WeightedNTXentLoss, ConsistencyLoss, ConsistencyLossAlternative
+from gnn_training.losses import NTXentLoss, WeightedNTXentLoss, ConsistencyLoss, ConsistencyLossAlternative, PositiveOnlyContrastiveLoss
 from gnn_training.training import Trainer, Validator, EarlyStopping, LRScheduler
 from gnn_training.data import MultiCircuitDataLoader
 from gnn_training.pairs import MultiCircuitBatchSampler
@@ -106,6 +106,14 @@ def main(config_path: str = None, **kwargs):
     else:
         raise ValueError(f"Unknown loss type: {loss_config['type']}")
     
+    sg_vs_skg_loss = None
+    sg_vs_skg_weight = 0.0
+    if loss_config.get('sg_vs_skg', False):
+        sg_vs_skg_loss = PositiveOnlyContrastiveLoss()
+        sg_vs_skg_weight = loss_config.get('sg_vs_skg_weight', 0.0)
+        print("Using PositiveOnlyContrastiveLoss for SG vs SG+KG pairs with weight:", sg_vs_skg_weight)
+        logger.info("Treating SG vs SG+KG pairs as positive pairs with PositiveOnlyContrastiveLoss")
+
     logger.info(f"Loss function: {loss_config['type']}")
 
     # Optional weighting between NT-Xent and consistency terms
@@ -172,7 +180,7 @@ def main(config_path: str = None, **kwargs):
     tb_writer = SummaryWriter(config['logging']['tensorboard_dir'])
     trainer = Trainer(model, loss_fn, optimizer, device, checkpoint_dir, tb_writer,
                       consistency_loss_fn=consistency_loss_fn, consistency_weight=consistency_weight,
-                      nt_xent_weight=nt_xent_weight)
+                      nt_xent_weight=nt_xent_weight, sg_vs_skg=sg_vs_skg_weight, sg_vs_skg_loss=sg_vs_skg_loss)
     validator = Validator(device)
     
     # Early stopping
