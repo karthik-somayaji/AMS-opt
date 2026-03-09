@@ -1,9 +1,17 @@
 """Main training script for contrastive GNN."""
+import sys
+from pathlib import Path
+
+# Allow running this file directly: `python gnn_training/scripts/train.py ...`
+# by ensuring the repo root (parent of `gnn_training/`) is on sys.path.
+_REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
+
 import argparse
 import yaml
 import torch
 import torch.optim as optim
-from pathlib import Path
 import logging
 import json
 from datetime import datetime
@@ -316,6 +324,7 @@ def main(config_path: str = None, **kwargs):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Train contrastive GNN for circuit embeddings')
     parser.add_argument('--config', type=str, default=None, help='Path to config file')
+    parser.add_argument('--data.data_dir', type=str, help='Base netlists directory containing family subfolders')
     parser.add_argument('--data.circuit_ids', type=int, nargs='+', help='Circuit IDs to train on')
     parser.add_argument('--data.test_circuits', type=int, nargs='+', help='Circuit IDs for testing')
     parser.add_argument('--training.epochs', type=int, help='Number of epochs')

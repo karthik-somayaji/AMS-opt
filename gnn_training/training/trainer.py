@@ -81,6 +81,7 @@ class Trainer:
 
             batch_nt_xent_loss = None
             batch_consistency_loss = None
+            sg_vs_skg_loss = torch.tensor(0.0, device=self.device)
 
             # 1) NT-Xent: compute over the batch of positive pairs.
             # This requires batch_size > 1 to provide in-batch negatives.
@@ -99,6 +100,9 @@ class Trainer:
 
                 z_anchor_b = torch.stack(z_anchor_list, dim=0)  # [B, D]
                 z_pos_b = torch.stack(z_pos_list, dim=0)  # [B, D]
+
+                # Default to a no-op tensor so the backward expression is always valid.
+                sg_vs_skg_loss = torch.tensor(0.0, dtype=torch.float32, device=self.device)
 
                 # 1.5) Structural graph (SG) & structural+knowledge graph (SG+KG) as positive pairs
                 # -----------------------------SG vs SG+KG Loss start------------------------------- #

@@ -94,9 +94,43 @@ def _load_gnn_model(checkpoint_path: str, device: str = "cpu"):
 
 
 def _encode_comb_graph_npz(model, npz_path: str, device: str = "cpu") -> np.ndarray:
+    return _encode_comb_graph_npz_mode(model, npz_path=npz_path, device=device, embedding_mode="skg")
+
+
+def _encode_comb_graph_npz_mode(
+    model,
+    *,
+    npz_path: str,
+    device: str = "cpu",
+    embedding_mode: str = "skg",
+) -> np.ndarray:
+    """Encode a `comb_graph_gnn.npz` into the trained encoder embedding space.
+
+    embedding_mode:
+      - "skg": use the full graph (structural + knowledge nodes)
+      - "sg": strip knowledge nodes first (RemoveKnowledgeNodes) and encode the structural-only graph
+    """
+
+    embedding_mode = str(embedding_mode or "skg").lower()
+    if embedding_mode not in {"skg", "sg"}:
+        raise ValueError(f"Invalid embedding_mode: {embedding_mode}. Expected 'skg' or 'sg'.")
+
     data = np.load(npz_path, allow_pickle=True)
+    nodes = data.get("nodes", None)
     features = data["features"].astype(np.float32)
     adjacency = data["adjacency"].astype(np.float32)
+
+    if embedding_mode == "sg":
+        repo_root = _workspace_root()
+        if repo_root not in sys.path:
+            sys.path.insert(0, repo_root)
+        from gnn_training.perturbations import RemoveKnowledgeNodes  # local import
+
+        if nodes is None:
+            raise ValueError(f"SG mode requires 'nodes' in npz: {npz_path}")
+        sg_graph = RemoveKnowledgeNodes({"nodes": nodes, "features": features, "adjacency": adjacency}).apply()
+        features = sg_graph["features"]
+        adjacency = sg_graph["adjacency"]
 
     with torch.no_grad():
         feat_t = torch.tensor(features, dtype=torch.float32, device=torch.device(device))
@@ -112,6 +146,7 @@ def _ensure_reference_embeddings_json(
     reference_metadata_json: str,
     netlists_root: str,
     device: str = "cpu",
+    embedding_mode: str = "skg",
 ) -> None:
     """Create (if missing) a JSON of reference embeddings in *raw GNN embedding space*.
 
@@ -141,6 +176,10 @@ def _ensure_reference_embeddings_json(
         fam_dir = os.path.join(netlists_root, fam)
         loader = CircuitDataLoader(cid, fam_dir)
         graph = loader.get_graph()
+        if str(embedding_mode).lower() == "sg":
+            from gnn_training.perturbations import RemoveKnowledgeNodes  # local import
+
+            graph = RemoveKnowledgeNodes(graph).apply()
         with torch.no_grad():
             feat_t = torch.tensor(graph["features"], dtype=torch.float32, device=torch.device(device))
             adj_t = torch.tensor(graph["adjacency"], dtype=torch.float32, device=torch.device(device))
@@ -188,13 +227,14 @@ def _maybe_prepare_llmbo_anchor_embedding(args) -> None:
     device = getattr(args, "gnn_device", "cpu")
     checkpoint = getattr(args, "gnn_checkpoint", os.path.join(repo_root, "checkpoints_full_training", "best_model.pt"))
     model, cfg = _load_gnn_model(checkpoint_path=checkpoint, device=device)
+    embedding_mode = str(getattr(args, "gnn_embedding_mode", "skg") or "skg").lower()
 
     ckt_dir = os.path.join(repo_root, "LLMBO", alias_to_dir[target_id])
     npz_path = os.path.join(ckt_dir, "comb_graph_gnn.npz")
     if not os.path.exists(npz_path):
         raise FileNotFoundError(f"Missing anchor graph features: {npz_path}")
 
-    anchor_emb = _encode_comb_graph_npz(model, npz_path=npz_path, device=device)
+    anchor_emb = _encode_comb_graph_npz_mode(model, npz_path=npz_path, device=device, embedding_mode=embedding_mode)
     args.target_anchor_embedding = anchor_emb.tolist()
 
     # Ensure reference embeddings JSON exists (in the same raw embedding space)
@@ -206,9 +246,12 @@ def _maybe_prepare_llmbo_anchor_embedding(args) -> None:
         else os.path.join(repo_root, reference_metadata_json)
     )
 
+    # Default embeddings JSON depends on embedding_mode.
     embeddings_json = getattr(args, "embeddings_json", None)
-    if not embeddings_json:
-        embeddings_json = os.path.join(repo_root, "umap_results_full", "gnn_embeddings.json")
+    default_skg = os.path.join(repo_root, "umap_results_full", "gnn_embeddings.json")
+    default_sg = os.path.join(repo_root, "umap_results_full", "gnn_embeddings_sg.json")
+    if not embeddings_json or embeddings_json == "umap_results_full/gnn_embeddings.json":
+        embeddings_json = default_sg if embedding_mode == "sg" else default_skg
         args.embeddings_json = embeddings_json
     embeddings_json = embeddings_json if os.path.isabs(embeddings_json) else os.path.join(repo_root, embeddings_json)
     args.embeddings_json = embeddings_json
@@ -220,6 +263,7 @@ def _maybe_prepare_llmbo_anchor_embedding(args) -> None:
         reference_metadata_json=reference_metadata_json,
         netlists_root=netlists_root,
         device=device,
+        embedding_mode=embedding_mode,
     )
 
     print(
@@ -518,6 +562,16 @@ if __name__ == "__main__":
                         help='Checkpoint used to encode the LLMBO anchor and (if needed) generate raw reference embeddings.')
     parser.add_argument('--gnn_device', type=str, default='cpu', choices=['cpu', 'cuda'],
                         help='Device used for encoding graphs into embeddings.')
+    parser.add_argument(
+        '--gnn_embedding_mode',
+        type=str,
+        default='skg',
+        choices=['skg', 'sg'],
+        help=(
+            "Which graph to encode into embeddings: 'skg' uses full SG+KG, 'sg' strips knowledge nodes first. "
+            "If 'sg', set --embeddings_json to an SG embeddings file (or let it default to umap_results_full/gnn_embeddings_sg.json)."
+        ),
+    )
     # List argument (space-separated values)
     parser.add_argument('--related_ckts', nargs='+', help='List of items')
     args = parser.parse_args()
