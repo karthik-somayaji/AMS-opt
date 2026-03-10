@@ -11,3 +11,6 @@
   --export_llmbo_json
 
 python3 scripts/visualize_embeddings_umap.py   --config gnn_training/config/full_training_diff_amps_comparators_LDO_opamp_all.yaml   --device cpu
+
+# Training
+cd /home/karthik/sim_clean/AMS-opt && /home/karthik/miniconda3/envs/analog-rep/bin/python LLMBO/llmbo.py   --history 1 --related_mode bottomk --related_k 3 --target_id FC   --gnn_embedding_mode sg

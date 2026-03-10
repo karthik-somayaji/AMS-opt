@@ -1,4 +1,4 @@
-Best metrics {'q_curr': np.float64(0.00501689), 'stability': 0.0, 'output_voltage_difference': 0.22347479999999997}
-Best BO metrics {'q_curr': np.float64(0.00501689), 'stability': 0.0, 'output_voltage_difference': 0.22347479999999997}
-Best LLM metrics {'q_curr': np.float64(0.005021588), 'stability': 0.0, 'output_voltage_difference': 0.5499676}
-At iteration: 20, the best target value is: 0.779, llm best target: 0.673, bo best target: 0.779
+Best metrics {'q_curr': np.float64(0.03711968), 'stability': 0.0, 'output_voltage_difference': 0.073048}
+Best BO metrics {'q_curr': np.float64(0.005023336), 'stability': 0.0, 'output_voltage_difference': 0.42178949999999993}
+Best LLM metrics {'q_curr': np.float64(0.005023336), 'stability': 0.0, 'output_voltage_difference': 0.42178949999999993}
+At iteration: 10, the best target value is: 0.729, llm best target: 0.695, bo best target: 0.695

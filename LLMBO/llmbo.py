@@ -620,7 +620,7 @@ if __name__ == "__main__":
         #n_proposal_llm=3,
         n_proposal_bo=1,
         # n_itr=30,
-        n_itr=20,
+        n_itr=10, #20,
         rank_based_on_bo = False#True #True#True# True
     )
 

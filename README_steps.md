@@ -188,6 +188,11 @@ python3 scripts/visualize_embeddings_umap.py   --config gnn_training/config/full
 
 ## Optimization
 
-cd /home/karthik/sim_clean/AMS-opt && /home/karthik/miniconda3/envs/analog-rep/bin/python LLMBO/llmbo.py --history 1 --related_mode topk --related_k 3 --target_id amp2
+cd /home/karthik/sim_clean/AMS-opt && /home/karthik/miniconda3/envs/analog-rep/bin/python LLMBO/llmbo.py --history 1 --related_mode topk --related_k 3 --target_id amp2 --gnn_embedding_mode sg
 
-cd /home/karthik/sim_clean/AMS-opt && /home/karthik/miniconda3/envs/analog-rep/bin/python LLMBO/llmbo.py --history 1 --related_mode random_family --related_k 3 --target_id amp2
+cd /home/karthik/sim_clean/AMS-opt && /home/karthik/miniconda3/envs/analog-rep/bin/python LLMBO/llmbo.py --history 1 --related_mode random_family --related_k 3 --target_id amp2 --gnn_embedding_mode sg
+
+### Notes
+
+- `--gnn_embedding_mode sg` forces similarity search to use **structural-only** (SG) embeddings for both the target anchor and the circuit bank.
+- If you leave `--embeddings_json` at its default, LLMBO will automatically switch to `umap_results_full/gnn_embeddings_sg.json` when running in SG mode.
