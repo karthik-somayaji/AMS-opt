@@ -274,14 +274,11 @@ def _make_plots(
         if not idxs:
             return
         cos = np.array([distances[i]["cosine_dist"] for i in idxs], dtype=float)
-        l2n = np.array([distances[i]["l2_dist_norm"] for i in idxs], dtype=float)
         order = np.argsort(cos)
         cos_s = cos[order]
-        l2_s = l2n[order]
 
         plt.figure(figsize=(12, 4))
         plt.plot(cos_s, label="cosine_dist ((1 - cos) / 2)")
-        plt.plot(l2_s, label="l2_dist_norm (||zhat_sg - zhat_skg||)")
         plt.title(title)
         plt.xlabel("circuits (sorted by cosine_dist)")
         plt.ylabel("distance")
@@ -309,12 +306,9 @@ def _make_plots(
     if llmbo_idx:
         labels = [refs[i].family for i in llmbo_idx]
         cos = [distances[i]["cosine_dist"] for i in llmbo_idx]
-        l2n = [distances[i]["l2_dist_norm"] for i in llmbo_idx]
         x = np.arange(len(labels))
-        w = 0.35
         plt.figure(figsize=(8, 4))
-        plt.bar(x - w / 2, cos, width=w, label="cosine_dist")
-        plt.bar(x + w / 2, l2n, width=w, label="l2_dist_norm")
+        plt.bar(x, cos, width=0.6, label="cosine_dist")
         plt.xticks(x, labels)
         plt.title("LLMBO test circuits: SG vs SKG distance")
         plt.ylabel("distance")

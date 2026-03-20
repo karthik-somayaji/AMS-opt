@@ -1,0 +1,737 @@
+[
+  {
+    "question": "If L_x2 increases, what happens to UGF (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "no change",
+      "B": "ambiguous",
+      "C": "increases",
+      "D": "decreases"
+    },
+    "sentence": "Increasing L_x2 decreases UGF (trade-off).",
+    "id": "FC_00ceff91f1",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.06715666666666664,
+      "delta_flip": 0.08689033333333329,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If UGF increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "ambiguous",
+      "C": "increases",
+      "D": "decreases"
+    },
+    "sentence": "Increasing UGF increases Power.",
+    "id": "FC_01d86709c5",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.0647093333333334,
+      "delta_flip": 0.12097100000000005,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If IB_tail increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "decreases",
+      "C": "ambiguous",
+      "D": "increases"
+    },
+    "sentence": "Increasing IB_tail increases UGF.",
+    "id": "FC_0366448080",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.059427333333333276,
+      "delta_flip": 0.063284,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If R1 increases, what happens to CMRR?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "no change",
+      "C": "increases",
+      "D": "decreases"
+    },
+    "sentence": "Increasing R1 increases CMRR.",
+    "id": "FC_0b5585862b",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.0168503333333333,
+      "delta_flip": 0.022697000000000078,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_x5 associated with in the circuit KG?",
+    "golden_answer": "active load",
+    "options": {
+      "A": "active load",
+      "B": "bias",
+      "C": "differential pair",
+      "D": "current mirror"
+    },
+    "sentence": "W_x5 is associated with active load.",
+    "id": "FC_112ef64a87",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.06294099999999991,
+      "delta_flip": 0.08545733333333339,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_x2 increases, what happens to CMRR?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "increases",
+      "B": "ambiguous",
+      "C": "decreases",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_x2 increases CMRR.",
+    "id": "FC_19a255f1b8",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.03405333333333338,
+      "delta_flip": 0.02577000000000007,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If R1 increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "decreases",
+      "C": "increases",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing R1 increases UGF.",
+    "id": "FC_293c1a321d",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.003342666666666716,
+      "delta_flip": 0.028442333333333347,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is L_x6 associated with in the circuit KG?",
+    "golden_answer": "active load",
+    "options": {
+      "A": "bias",
+      "B": "active load",
+      "C": "differential pair",
+      "D": "current mirror"
+    },
+    "sentence": "L_x6 is associated with active load.",
+    "id": "FC_2982adb53e",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.08550733333333327,
+      "delta_flip": 0.019571333333333385,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_x2 associated with in the circuit KG?",
+    "golden_answer": "differential pair",
+    "options": {
+      "A": "bias",
+      "B": "current mirror",
+      "C": "active load",
+      "D": "differential pair"
+    },
+    "sentence": "W_x2 is associated with differential pair.",
+    "id": "FC_2a2127264b",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.009797999999999973,
+      "delta_flip": 0.07997366666666672,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If L_x1 increases, what happens to Gain?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "decreases",
+      "B": "no change",
+      "C": "ambiguous",
+      "D": "increases"
+    },
+    "sentence": "Increasing L_x1 increases Gain.",
+    "id": "FC_3bbf97d29d",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.09370800000000001,
+      "delta_flip": 0.022281666666666755,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Gain has a trade-off with which performance metric?",
+    "golden_answer": "UGF",
+    "options": {
+      "A": "UGF",
+      "B": "Power",
+      "C": "Gain",
+      "D": "CMRR"
+    },
+    "sentence": "Gain trades off with UGF.",
+    "id": "FC_3c80ae52ac",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.17565466666666663,
+      "delta_flip": 0.002063666666666575,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_x13 associated with in the circuit KG?",
+    "golden_answer": "current mirror",
+    "options": {
+      "A": "current mirror",
+      "B": "active load",
+      "C": "differential pair",
+      "D": "bias"
+    },
+    "sentence": "W_x13 is associated with current mirror.",
+    "id": "FC_41b64a43db",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.10492800000000002,
+      "delta_flip": 0.08588666666666667,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which performance metric is connected to the differential pair in the KG?",
+    "golden_answer": "Gain",
+    "options": {
+      "A": "CMRR",
+      "B": "UGF",
+      "C": "Power",
+      "D": "Gain"
+    },
+    "sentence": "differential pair connects to Gain.",
+    "id": "FC_41f43dff4f",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.06080600000000003,
+      "delta_flip": 0.004736666666666722,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is R2 associated with in the circuit KG?",
+    "golden_answer": "resistive coupling",
+    "options": {
+      "A": "resistive coupling",
+      "B": "active load",
+      "C": "current mirror",
+      "D": "bias"
+    },
+    "sentence": "R2 is associated with resistive coupling.",
+    "id": "FC_423412a883",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.08039399999999997,
+      "delta_flip": 0.20889733333333327,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_x9 increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "decreases",
+      "C": "no change",
+      "D": "increases"
+    },
+    "sentence": "Increasing W_x9 increases Power.",
+    "id": "FC_42d86ad321",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.05935166666666669,
+      "delta_flip": 0.022580000000000044,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is IB_mirror associated with in the circuit KG?",
+    "golden_answer": "current mirror",
+    "options": {
+      "A": "bias",
+      "B": "differential pair",
+      "C": "active load",
+      "D": "current mirror"
+    },
+    "sentence": "IB_mirror is associated with current mirror.",
+    "id": "FC_431c56a66b",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.005263000000000129,
+      "delta_flip": 0.10066333333333333,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which performance metric is connected to the tail current source in the KG?",
+    "golden_answer": "Gain",
+    "options": {
+      "A": "Gain",
+      "B": "Power",
+      "C": "UGF",
+      "D": "CMRR"
+    },
+    "sentence": "tail current source connects to Gain.",
+    "id": "FC_56518acd00",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.16625333333333348,
+      "delta_flip": 0.07639200000000013,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If IB_mirror increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "decreases",
+      "C": "no change",
+      "D": "increases"
+    },
+    "sentence": "Increasing IB_mirror increases Power.",
+    "id": "FC_5e1b4829eb",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.013731333333333318,
+      "delta_flip": 0.07033066666666665,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_x9 associated with in the circuit KG?",
+    "golden_answer": "output stage",
+    "options": {
+      "A": "output stage",
+      "B": "active load",
+      "C": "bias",
+      "D": "current mirror"
+    },
+    "sentence": "W_x9 is associated with output stage.",
+    "id": "FC_641d46e5f1",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.1492203333333334,
+      "delta_flip": 0.08506999999999998,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If R1 increases, what happens to Gain (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "increases",
+      "B": "no change",
+      "C": "ambiguous",
+      "D": "decreases"
+    },
+    "sentence": "Increasing R1 decreases Gain (trade-off).",
+    "id": "FC_69227abc18",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.00432733333333335,
+      "delta_flip": 0.15238933333333327,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is L_x14 associated with in the circuit KG?",
+    "golden_answer": "current mirror",
+    "options": {
+      "A": "active load",
+      "B": "differential pair",
+      "C": "current mirror",
+      "D": "bias"
+    },
+    "sentence": "L_x14 is associated with current mirror.",
+    "id": "FC_70807cc682",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.15591633333333332,
+      "delta_flip": 0.09456866666666663,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If IB_tail increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "increases",
+      "C": "no change",
+      "D": "decreases"
+    },
+    "sentence": "Increasing IB_tail increases Power.",
+    "id": "FC_737bb84753",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.09445500000000007,
+      "delta_flip": 0.06722566666666674,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_x1 increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "increases",
+      "C": "ambiguous",
+      "D": "decreases"
+    },
+    "sentence": "Increasing W_x1 increases UGF.",
+    "id": "FC_90260760e4",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.2132816666666666,
+      "delta_flip": 0.0709643333333333,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is IB_tail associated with in the circuit KG?",
+    "golden_answer": "tail current source",
+    "options": {
+      "A": "bias",
+      "B": "current mirror",
+      "C": "tail current source",
+      "D": "active load"
+    },
+    "sentence": "IB_tail is associated with tail current source.",
+    "id": "FC_96cb9c9a03",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.0014963333333333217,
+      "delta_flip": 0.04386799999999991,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which performance metric is connected to the active load in the KG?",
+    "golden_answer": "Gain",
+    "options": {
+      "A": "CMRR",
+      "B": "UGF",
+      "C": "Gain",
+      "D": "Power"
+    },
+    "sentence": "active load connects to Gain.",
+    "id": "FC_9d7d6b0f9c",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.08180500000000002,
+      "delta_flip": 0.10930099999999998,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_x2 increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "decreases",
+      "C": "ambiguous",
+      "D": "increases"
+    },
+    "sentence": "Increasing W_x2 increases UGF.",
+    "id": "FC_9f38c35bae",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.031710000000000016,
+      "delta_flip": 0.12542133333333327,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_x9 increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "decreases",
+      "B": "ambiguous",
+      "C": "increases",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_x9 increases UGF.",
+    "id": "FC_a421c11e92",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.0004890000000000727,
+      "delta_flip": 0.05006133333333329,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_x1 increases, what happens to Gain?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "increases",
+      "B": "decreases",
+      "C": "ambiguous",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_x1 increases Gain.",
+    "id": "FC_b6587058b6",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.06659300000000001,
+      "delta_flip": 0.04236733333333342,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_x7 increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "increases",
+      "C": "decreases",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_x7 increases Power.",
+    "id": "FC_b8c11bb8fd",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.00712999999999997,
+      "delta_flip": 0.11197000000000001,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is L_x13 associated with in the circuit KG?",
+    "golden_answer": "current mirror",
+    "options": {
+      "A": "current mirror",
+      "B": "differential pair",
+      "C": "bias",
+      "D": "active load"
+    },
+    "sentence": "L_x13 is associated with current mirror.",
+    "id": "FC_cc1bfd31c5",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.0032210000000000294,
+      "delta_flip": 0.05776100000000006,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "What is the relationship between CMRR and UGF in the KG?",
+    "golden_answer": "ambiguous",
+    "options": {
+      "A": "ambiguous",
+      "B": "trade-off",
+      "C": "directly proportional",
+      "D": "inversely proportional"
+    },
+    "sentence": "The relationship between CMRR and UGF is ambiguous.",
+    "id": "FC_e91ce57fda",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.18353699999999995,
+      "delta_flip": 0.11067300000000013,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_x1 increases, what happens to CMRR?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "decreases",
+      "B": "increases",
+      "C": "no change",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing W_x1 increases CMRR.",
+    "id": "FC_ee58b8e8d1",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.07697999999999994,
+      "delta_flip": 0.18811299999999997,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_x7 associated with in the circuit KG?",
+    "golden_answer": "active load",
+    "options": {
+      "A": "active load",
+      "B": "differential pair",
+      "C": "current mirror",
+      "D": "bias"
+    },
+    "sentence": "W_x7 is associated with active load.",
+    "id": "FC_f8d4fd5570",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.07997366666666672,
+      "delta_flip": 0.011620999999999992,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is L_x7 associated with in the circuit KG?",
+    "golden_answer": "active load",
+    "options": {
+      "A": "active load",
+      "B": "differential pair",
+      "C": "current mirror",
+      "D": "bias"
+    },
+    "sentence": "L_x7 is associated with active load.",
+    "id": "FC_fbbc6d0684",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.08133633333333334,
+      "delta_flip": 0.11769266666666667,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If IB_tail increases, what happens to Gain?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "decreases",
+      "C": "increases",
+      "D": "no change"
+    },
+    "sentence": "Increasing IB_tail increases Gain.",
+    "id": "FC_fe897b9339",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9765753333333334,
+      "baseline_median_fom": 0.9765753333333334,
+      "delta_remove": 0.14096999999999993,
+      "delta_flip": 0.0771803333333333,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  }
+]

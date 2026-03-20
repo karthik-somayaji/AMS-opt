@@ -1,0 +1,758 @@
+[
+  {
+    "question": "Gain has a trade-off with which performance metric?",
+    "golden_answer": "UGF",
+    "options": {
+      "A": "UGF",
+      "B": "Power",
+      "C": "Gain",
+      "D": "CMRR"
+    },
+    "sentence": "Gain trades off with UGF.",
+    "id": "FC_3c80ae52ac"
+  },
+  {
+    "question": "If UGF increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "ambiguous",
+      "C": "increases",
+      "D": "decreases"
+    },
+    "sentence": "Increasing UGF increases Power.",
+    "id": "FC_01d86709c5"
+  },
+  {
+    "question": "What is the relationship between Gain and CMRR in the KG?",
+    "golden_answer": "ambiguous",
+    "options": {
+      "A": "directly proportional",
+      "B": "ambiguous",
+      "C": "inversely proportional",
+      "D": "trade-off"
+    },
+    "sentence": "The relationship between Gain and CMRR is ambiguous.",
+    "id": "FC_ee8a2a5250"
+  },
+  {
+    "question": "What is the relationship between CMRR and UGF in the KG?",
+    "golden_answer": "ambiguous",
+    "options": {
+      "A": "ambiguous",
+      "B": "trade-off",
+      "C": "directly proportional",
+      "D": "inversely proportional"
+    },
+    "sentence": "The relationship between CMRR and UGF is ambiguous.",
+    "id": "FC_e91ce57fda"
+  },
+  {
+    "question": "What is the relationship between Gain and Power in the KG?",
+    "golden_answer": "ambiguous",
+    "options": {
+      "A": "inversely proportional",
+      "B": "trade-off",
+      "C": "ambiguous",
+      "D": "directly proportional"
+    },
+    "sentence": "The relationship between Gain and Power is ambiguous.",
+    "id": "FC_6975d7975f"
+  },
+  {
+    "question": "Which performance metric is connected to the differential pair in the KG?",
+    "golden_answer": "Gain",
+    "options": {
+      "A": "CMRR",
+      "B": "UGF",
+      "C": "Power",
+      "D": "Gain"
+    },
+    "sentence": "differential pair connects to Gain.",
+    "id": "FC_41f43dff4f"
+  },
+  {
+    "question": "Which performance metric is connected to the tail current source in the KG?",
+    "golden_answer": "Gain",
+    "options": {
+      "A": "Gain",
+      "B": "Power",
+      "C": "UGF",
+      "D": "CMRR"
+    },
+    "sentence": "tail current source connects to Gain.",
+    "id": "FC_56518acd00"
+  },
+  {
+    "question": "Which performance metric is connected to the current mirror in the KG?",
+    "golden_answer": "Gain",
+    "options": {
+      "A": "CMRR",
+      "B": "Power",
+      "C": "Gain",
+      "D": "UGF"
+    },
+    "sentence": "current mirror connects to Gain.",
+    "id": "FC_6117c6905e"
+  },
+  {
+    "question": "Which performance metric is connected to the active load in the KG?",
+    "golden_answer": "Gain",
+    "options": {
+      "A": "CMRR",
+      "B": "UGF",
+      "C": "Gain",
+      "D": "Power"
+    },
+    "sentence": "active load connects to Gain.",
+    "id": "FC_9d7d6b0f9c"
+  },
+  {
+    "question": "Which performance metric is connected to the output stage in the KG?",
+    "golden_answer": "UGF",
+    "options": {
+      "A": "UGF",
+      "B": "Gain",
+      "C": "Power",
+      "D": "CMRR"
+    },
+    "sentence": "output stage connects to UGF.",
+    "id": "FC_ebeb76c1f1"
+  },
+  {
+    "question": "Which performance metric is connected to the resistive coupling in the KG?",
+    "golden_answer": "Gain",
+    "options": {
+      "A": "UGF",
+      "B": "Gain",
+      "C": "Power",
+      "D": "CMRR"
+    },
+    "sentence": "resistive coupling connects to Gain.",
+    "id": "FC_b2b51637d1"
+  },
+  {
+    "question": "Which performance metric is connected to the bias in the KG?",
+    "golden_answer": "Power",
+    "options": {
+      "A": "Power",
+      "B": "Gain",
+      "C": "CMRR",
+      "D": "UGF"
+    },
+    "sentence": "bias connects to Power.",
+    "id": "FC_0e48aebb45"
+  },
+  {
+    "question": "Which performance metric is connected to the reference in the KG?",
+    "golden_answer": "Power",
+    "options": {
+      "A": "UGF",
+      "B": "Power",
+      "C": "CMRR",
+      "D": "Gain"
+    },
+    "sentence": "reference connects to Power.",
+    "id": "FC_2cc9602065"
+  },
+  {
+    "question": "Which substructure is W_x1 associated with in the circuit KG?",
+    "golden_answer": "differential pair",
+    "options": {
+      "A": "bias",
+      "B": "active load",
+      "C": "current mirror",
+      "D": "differential pair"
+    },
+    "sentence": "W_x1 is associated with differential pair.",
+    "id": "FC_0dcee727d0"
+  },
+  {
+    "question": "Which substructure is L_x1 associated with in the circuit KG?",
+    "golden_answer": "differential pair",
+    "options": {
+      "A": "current mirror",
+      "B": "active load",
+      "C": "bias",
+      "D": "differential pair"
+    },
+    "sentence": "L_x1 is associated with differential pair.",
+    "id": "FC_84ee22632f"
+  },
+  {
+    "question": "Which substructure is W_x2 associated with in the circuit KG?",
+    "golden_answer": "differential pair",
+    "options": {
+      "A": "bias",
+      "B": "current mirror",
+      "C": "active load",
+      "D": "differential pair"
+    },
+    "sentence": "W_x2 is associated with differential pair.",
+    "id": "FC_2a2127264b"
+  },
+  {
+    "question": "Which substructure is L_x2 associated with in the circuit KG?",
+    "golden_answer": "differential pair",
+    "options": {
+      "A": "bias",
+      "B": "differential pair",
+      "C": "active load",
+      "D": "current mirror"
+    },
+    "sentence": "L_x2 is associated with differential pair.",
+    "id": "FC_a33f96ac4c"
+  },
+  {
+    "question": "Which substructure is W_x3 associated with in the circuit KG?",
+    "golden_answer": "tail current source",
+    "options": {
+      "A": "current mirror",
+      "B": "bias",
+      "C": "active load",
+      "D": "tail current source"
+    },
+    "sentence": "W_x3 is associated with tail current source.",
+    "id": "FC_f62df65cb0"
+  },
+  {
+    "question": "Which substructure is L_x3 associated with in the circuit KG?",
+    "golden_answer": "tail current source",
+    "options": {
+      "A": "tail current source",
+      "B": "bias",
+      "C": "current mirror",
+      "D": "active load"
+    },
+    "sentence": "L_x3 is associated with tail current source.",
+    "id": "FC_1beeaab9cf"
+  },
+  {
+    "question": "Which substructure is IB_tail associated with in the circuit KG?",
+    "golden_answer": "tail current source",
+    "options": {
+      "A": "bias",
+      "B": "current mirror",
+      "C": "tail current source",
+      "D": "active load"
+    },
+    "sentence": "IB_tail is associated with tail current source.",
+    "id": "FC_96cb9c9a03"
+  },
+  {
+    "question": "Which substructure is W_x13 associated with in the circuit KG?",
+    "golden_answer": "current mirror",
+    "options": {
+      "A": "current mirror",
+      "B": "active load",
+      "C": "differential pair",
+      "D": "bias"
+    },
+    "sentence": "W_x13 is associated with current mirror.",
+    "id": "FC_41b64a43db"
+  },
+  {
+    "question": "Which substructure is L_x13 associated with in the circuit KG?",
+    "golden_answer": "current mirror",
+    "options": {
+      "A": "current mirror",
+      "B": "differential pair",
+      "C": "bias",
+      "D": "active load"
+    },
+    "sentence": "L_x13 is associated with current mirror.",
+    "id": "FC_cc1bfd31c5"
+  },
+  {
+    "question": "Which substructure is W_x14 associated with in the circuit KG?",
+    "golden_answer": "current mirror",
+    "options": {
+      "A": "bias",
+      "B": "differential pair",
+      "C": "active load",
+      "D": "current mirror"
+    },
+    "sentence": "W_x14 is associated with current mirror.",
+    "id": "FC_581c327b9a"
+  },
+  {
+    "question": "Which substructure is L_x14 associated with in the circuit KG?",
+    "golden_answer": "current mirror",
+    "options": {
+      "A": "active load",
+      "B": "differential pair",
+      "C": "current mirror",
+      "D": "bias"
+    },
+    "sentence": "L_x14 is associated with current mirror.",
+    "id": "FC_70807cc682"
+  },
+  {
+    "question": "Which substructure is IB_mirror associated with in the circuit KG?",
+    "golden_answer": "current mirror",
+    "options": {
+      "A": "bias",
+      "B": "differential pair",
+      "C": "active load",
+      "D": "current mirror"
+    },
+    "sentence": "IB_mirror is associated with current mirror.",
+    "id": "FC_431c56a66b"
+  },
+  {
+    "question": "Which substructure is W_x4 associated with in the circuit KG?",
+    "golden_answer": "active load",
+    "options": {
+      "A": "differential pair",
+      "B": "active load",
+      "C": "current mirror",
+      "D": "bias"
+    },
+    "sentence": "W_x4 is associated with active load.",
+    "id": "FC_05cdbd8685"
+  },
+  {
+    "question": "Which substructure is L_x4 associated with in the circuit KG?",
+    "golden_answer": "active load",
+    "options": {
+      "A": "bias",
+      "B": "active load",
+      "C": "current mirror",
+      "D": "differential pair"
+    },
+    "sentence": "L_x4 is associated with active load.",
+    "id": "FC_b7565d2326"
+  },
+  {
+    "question": "Which substructure is W_x5 associated with in the circuit KG?",
+    "golden_answer": "active load",
+    "options": {
+      "A": "active load",
+      "B": "bias",
+      "C": "differential pair",
+      "D": "current mirror"
+    },
+    "sentence": "W_x5 is associated with active load.",
+    "id": "FC_112ef64a87"
+  },
+  {
+    "question": "Which substructure is L_x5 associated with in the circuit KG?",
+    "golden_answer": "active load",
+    "options": {
+      "A": "current mirror",
+      "B": "differential pair",
+      "C": "bias",
+      "D": "active load"
+    },
+    "sentence": "L_x5 is associated with active load.",
+    "id": "FC_f4eac2ba0f"
+  },
+  {
+    "question": "Which substructure is W_x6 associated with in the circuit KG?",
+    "golden_answer": "active load",
+    "options": {
+      "A": "current mirror",
+      "B": "bias",
+      "C": "differential pair",
+      "D": "active load"
+    },
+    "sentence": "W_x6 is associated with active load.",
+    "id": "FC_e50941afbb"
+  },
+  {
+    "question": "Which substructure is L_x6 associated with in the circuit KG?",
+    "golden_answer": "active load",
+    "options": {
+      "A": "bias",
+      "B": "active load",
+      "C": "differential pair",
+      "D": "current mirror"
+    },
+    "sentence": "L_x6 is associated with active load.",
+    "id": "FC_2982adb53e"
+  },
+  {
+    "question": "Which substructure is W_x7 associated with in the circuit KG?",
+    "golden_answer": "active load",
+    "options": {
+      "A": "active load",
+      "B": "differential pair",
+      "C": "current mirror",
+      "D": "bias"
+    },
+    "sentence": "W_x7 is associated with active load.",
+    "id": "FC_f8d4fd5570"
+  },
+  {
+    "question": "Which substructure is L_x7 associated with in the circuit KG?",
+    "golden_answer": "active load",
+    "options": {
+      "A": "active load",
+      "B": "differential pair",
+      "C": "current mirror",
+      "D": "bias"
+    },
+    "sentence": "L_x7 is associated with active load.",
+    "id": "FC_fbbc6d0684"
+  },
+  {
+    "question": "Which substructure is W_x9 associated with in the circuit KG?",
+    "golden_answer": "output stage",
+    "options": {
+      "A": "output stage",
+      "B": "active load",
+      "C": "bias",
+      "D": "current mirror"
+    },
+    "sentence": "W_x9 is associated with output stage.",
+    "id": "FC_641d46e5f1"
+  },
+  {
+    "question": "Which substructure is L_x9 associated with in the circuit KG?",
+    "golden_answer": "output stage",
+    "options": {
+      "A": "current mirror",
+      "B": "bias",
+      "C": "active load",
+      "D": "output stage"
+    },
+    "sentence": "L_x9 is associated with output stage.",
+    "id": "FC_716a61b7b0"
+  },
+  {
+    "question": "Which substructure is R1 associated with in the circuit KG?",
+    "golden_answer": "resistive coupling",
+    "options": {
+      "A": "resistive coupling",
+      "B": "current mirror",
+      "C": "bias",
+      "D": "active load"
+    },
+    "sentence": "R1 is associated with resistive coupling.",
+    "id": "FC_b62a54900b"
+  },
+  {
+    "question": "Which substructure is R2 associated with in the circuit KG?",
+    "golden_answer": "resistive coupling",
+    "options": {
+      "A": "resistive coupling",
+      "B": "active load",
+      "C": "current mirror",
+      "D": "bias"
+    },
+    "sentence": "R2 is associated with resistive coupling.",
+    "id": "FC_423412a883"
+  },
+  {
+    "question": "If W_x1 increases, what happens to Gain?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "increases",
+      "B": "decreases",
+      "C": "ambiguous",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_x1 increases Gain.",
+    "id": "FC_b6587058b6"
+  },
+  {
+    "question": "If W_x1 increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "increases",
+      "C": "ambiguous",
+      "D": "decreases"
+    },
+    "sentence": "Increasing W_x1 increases UGF.",
+    "id": "FC_90260760e4"
+  },
+  {
+    "question": "If W_x1 increases, what happens to CMRR?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "decreases",
+      "B": "increases",
+      "C": "no change",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing W_x1 increases CMRR.",
+    "id": "FC_ee58b8e8d1"
+  },
+  {
+    "question": "If W_x2 increases, what happens to Gain?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "decreases",
+      "B": "no change",
+      "C": "ambiguous",
+      "D": "increases"
+    },
+    "sentence": "Increasing W_x2 increases Gain.",
+    "id": "FC_d054d45e12"
+  },
+  {
+    "question": "If W_x2 increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "decreases",
+      "C": "ambiguous",
+      "D": "increases"
+    },
+    "sentence": "Increasing W_x2 increases UGF.",
+    "id": "FC_9f38c35bae"
+  },
+  {
+    "question": "If W_x2 increases, what happens to CMRR?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "increases",
+      "B": "ambiguous",
+      "C": "decreases",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_x2 increases CMRR.",
+    "id": "FC_19a255f1b8"
+  },
+  {
+    "question": "If L_x1 increases, what happens to Gain?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "decreases",
+      "B": "no change",
+      "C": "ambiguous",
+      "D": "increases"
+    },
+    "sentence": "Increasing L_x1 increases Gain.",
+    "id": "FC_3bbf97d29d"
+  },
+  {
+    "question": "If L_x1 increases, what happens to UGF (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "no change",
+      "B": "decreases",
+      "C": "ambiguous",
+      "D": "increases"
+    },
+    "sentence": "Increasing L_x1 decreases UGF (trade-off).",
+    "id": "FC_eefdaba9b9"
+  },
+  {
+    "question": "If L_x1 increases, what happens to CMRR?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "decreases",
+      "C": "increases",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing L_x1 increases CMRR.",
+    "id": "FC_bb3d17215e"
+  },
+  {
+    "question": "If L_x2 increases, what happens to Gain?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "decreases",
+      "B": "ambiguous",
+      "C": "no change",
+      "D": "increases"
+    },
+    "sentence": "Increasing L_x2 increases Gain.",
+    "id": "FC_4d4ae3255e"
+  },
+  {
+    "question": "If L_x2 increases, what happens to UGF (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "no change",
+      "B": "ambiguous",
+      "C": "increases",
+      "D": "decreases"
+    },
+    "sentence": "Increasing L_x2 decreases UGF (trade-off).",
+    "id": "FC_00ceff91f1"
+  },
+  {
+    "question": "If L_x2 increases, what happens to CMRR?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "increases",
+      "C": "decreases",
+      "D": "no change"
+    },
+    "sentence": "Increasing L_x2 increases CMRR.",
+    "id": "FC_c7ae9a45fb"
+  },
+  {
+    "question": "If IB_tail increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "increases",
+      "C": "no change",
+      "D": "decreases"
+    },
+    "sentence": "Increasing IB_tail increases Power.",
+    "id": "FC_737bb84753"
+  },
+  {
+    "question": "If IB_tail increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "decreases",
+      "C": "ambiguous",
+      "D": "increases"
+    },
+    "sentence": "Increasing IB_tail increases UGF.",
+    "id": "FC_0366448080"
+  },
+  {
+    "question": "If IB_tail increases, what happens to Gain?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "decreases",
+      "C": "increases",
+      "D": "no change"
+    },
+    "sentence": "Increasing IB_tail increases Gain.",
+    "id": "FC_fe897b9339"
+  },
+  {
+    "question": "If IB_mirror increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "decreases",
+      "C": "no change",
+      "D": "increases"
+    },
+    "sentence": "Increasing IB_mirror increases Power.",
+    "id": "FC_5e1b4829eb"
+  },
+  {
+    "question": "If IB_mirror increases, what happens to Gain?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "no change",
+      "C": "increases",
+      "D": "decreases"
+    },
+    "sentence": "Increasing IB_mirror increases Gain.",
+    "id": "FC_8a0ef91f07"
+  },
+  {
+    "question": "If R1 increases, what happens to Gain (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "increases",
+      "B": "no change",
+      "C": "ambiguous",
+      "D": "decreases"
+    },
+    "sentence": "Increasing R1 decreases Gain (trade-off).",
+    "id": "FC_69227abc18"
+  },
+  {
+    "question": "If R1 increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "decreases",
+      "C": "increases",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing R1 increases UGF.",
+    "id": "FC_293c1a321d"
+  },
+  {
+    "question": "If R1 increases, what happens to CMRR?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "no change",
+      "C": "increases",
+      "D": "decreases"
+    },
+    "sentence": "Increasing R1 increases CMRR.",
+    "id": "FC_0b5585862b"
+  },
+  {
+    "question": "If R2 increases, what happens to Gain (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "increases",
+      "B": "ambiguous",
+      "C": "no change",
+      "D": "decreases"
+    },
+    "sentence": "Increasing R2 decreases Gain (trade-off).",
+    "id": "FC_d96df04d23"
+  },
+  {
+    "question": "If R2 increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "decreases",
+      "C": "increases",
+      "D": "no change"
+    },
+    "sentence": "Increasing R2 increases UGF.",
+    "id": "FC_69eea9afea"
+  },
+  {
+    "question": "If W_x7 increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "ambiguous",
+      "C": "increases",
+      "D": "decreases"
+    },
+    "sentence": "Increasing W_x7 increases UGF.",
+    "id": "FC_ddc162c56a"
+  },
+  {
+    "question": "If W_x7 increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "increases",
+      "C": "decreases",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_x7 increases Power.",
+    "id": "FC_b8c11bb8fd"
+  },
+  {
+    "question": "If W_x9 increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "decreases",
+      "B": "ambiguous",
+      "C": "increases",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_x9 increases UGF.",
+    "id": "FC_a421c11e92"
+  },
+  {
+    "question": "If W_x9 increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "decreases",
+      "C": "no change",
+      "D": "increases"
+    },
+    "sentence": "Increasing W_x9 increases Power.",
+    "id": "FC_42d86ad321"
+  }
+]

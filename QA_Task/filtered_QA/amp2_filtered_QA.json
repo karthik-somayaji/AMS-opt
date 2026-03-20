@@ -1,0 +1,1115 @@
+[
+  {
+    "question": "Which substructure is L_Mp2 associated with in the circuit KG?",
+    "golden_answer": "pmos pull-up network",
+    "options": {
+      "A": "differential pair",
+      "B": "bias",
+      "C": "compensation network",
+      "D": "pmos pull-up network"
+    },
+    "sentence": "L_Mp2 is associated with pmos pull-up network.",
+    "id": "amp2_002f367c7c",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.11482899999999996,
+      "delta_flip": 0.058746000000000076,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which performance metric is connected to the bias in the KG?",
+    "golden_answer": "UGF",
+    "options": {
+      "A": "UGF",
+      "B": "Gain",
+      "C": "CMRR",
+      "D": "Power"
+    },
+    "sentence": "bias connects to UGF.",
+    "id": "amp2_03f835a351",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.12427033333333337,
+      "delta_flip": 0.18277366666666672,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is L_Mn2 associated with in the circuit KG?",
+    "golden_answer": "differential pair",
+    "options": {
+      "A": "output stage",
+      "B": "differential pair",
+      "C": "bias",
+      "D": "compensation network"
+    },
+    "sentence": "L_Mn2 is associated with differential pair.",
+    "id": "amp2_05d69a6224",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.15668033333333342,
+      "delta_flip": 0.185203,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If Vb increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "increases",
+      "B": "ambiguous",
+      "C": "decreases",
+      "D": "no change"
+    },
+    "sentence": "Increasing Vb increases UGF.",
+    "id": "amp2_0732f33151",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.11323033333333343,
+      "delta_flip": 0.14273033333333351,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If Gain increases, what happens to CMRR?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "no change",
+      "C": "increases",
+      "D": "decreases"
+    },
+    "sentence": "Increasing Gain increases CMRR.",
+    "id": "amp2_0b4f0a4374",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.18902866666666673,
+      "delta_flip": 0.17086233333333345,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is R_rz associated with in the circuit KG?",
+    "golden_answer": "compensation network",
+    "options": {
+      "A": "compensation network",
+      "B": "differential pair",
+      "C": "output stage",
+      "D": "bias"
+    },
+    "sentence": "R_rz is associated with compensation network.",
+    "id": "amp2_1293fe1648",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.14850633333333352,
+      "delta_flip": 0.15459500000000004,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_Mp2 increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "ambiguous",
+      "C": "increases",
+      "D": "decreases"
+    },
+    "sentence": "Increasing W_Mp2 increases Power.",
+    "id": "amp2_1393d805ff",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.08368433333333336,
+      "delta_flip": 0.029688666666666808,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_Mpo increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "decreases",
+      "C": "no change",
+      "D": "increases"
+    },
+    "sentence": "Increasing W_Mpo increases UGF.",
+    "id": "amp2_14ac525288",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.06927899999999998,
+      "delta_flip": 0.12032433333333337,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "What is the relationship between CMRR and UGF in the KG?",
+    "golden_answer": "ambiguous",
+    "options": {
+      "A": "ambiguous",
+      "B": "trade-off",
+      "C": "directly proportional",
+      "D": "inversely proportional"
+    },
+    "sentence": "The relationship between CMRR and UGF is ambiguous.",
+    "id": "amp2_1ab838210f",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.03190000000000015,
+      "delta_flip": 0.15729833333333343,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is L_Mnb associated with in the circuit KG?",
+    "golden_answer": "bias",
+    "options": {
+      "A": "bias",
+      "B": "differential pair",
+      "C": "compensation network",
+      "D": "output stage"
+    },
+    "sentence": "L_Mnb is associated with bias.",
+    "id": "amp2_1ad33e3ac4",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.05591800000000002,
+      "delta_flip": 0.20815733333333342,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If Vb increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "increases",
+      "C": "no change",
+      "D": "decreases"
+    },
+    "sentence": "Increasing Vb increases Power.",
+    "id": "amp2_1b32f52714",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.17933500000000002,
+      "delta_flip": 0.07657400000000003,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which performance metric is connected to the output stage in the KG?",
+    "golden_answer": "UGF",
+    "options": {
+      "A": "UGF",
+      "B": "Gain",
+      "C": "Power",
+      "D": "CMRR"
+    },
+    "sentence": "output stage connects to UGF.",
+    "id": "amp2_1b7011b4ea",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.19138033333333337,
+      "delta_flip": 0.11323033333333343,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_Mn2 increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "ambiguous",
+      "C": "increases",
+      "D": "decreases"
+    },
+    "sentence": "Increasing W_Mn2 increases Power.",
+    "id": "amp2_30c8e67221",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.08813166666666661,
+      "delta_flip": 0.10573966666666668,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "What is the relationship between Power and CMRR in the KG?",
+    "golden_answer": "ambiguous",
+    "options": {
+      "A": "ambiguous",
+      "B": "inversely proportional",
+      "C": "trade-off",
+      "D": "directly proportional"
+    },
+    "sentence": "The relationship between Power and CMRR is ambiguous.",
+    "id": "amp2_33abd5940d",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.14936233333333337,
+      "delta_flip": 0.16470600000000013,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_Mnc associated with in the circuit KG?",
+    "golden_answer": "tail current source",
+    "options": {
+      "A": "tail current source",
+      "B": "bias",
+      "C": "compensation network",
+      "D": "differential pair"
+    },
+    "sentence": "W_Mnc is associated with tail current source.",
+    "id": "amp2_350210b06c",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.022362000000000104,
+      "delta_flip": 0.09332433333333345,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which performance metric is connected to the compensation network in the KG?",
+    "golden_answer": "UGF",
+    "options": {
+      "A": "Power",
+      "B": "Gain",
+      "C": "CMRR",
+      "D": "UGF"
+    },
+    "sentence": "compensation network connects to UGF.",
+    "id": "amp2_38d361d9b7",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.15306033333333335,
+      "delta_flip": 0.10893000000000008,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_Mpo increases, what happens to Gain (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "increases",
+      "B": "decreases",
+      "C": "no change",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing W_Mpo decreases Gain (trade-off).",
+    "id": "amp2_3a5ef24216",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.08184766666666665,
+      "delta_flip": 0.10241333333333336,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_Mp2 increases, what happens to Gain (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "decreases",
+      "B": "no change",
+      "C": "ambiguous",
+      "D": "increases"
+    },
+    "sentence": "Increasing W_Mp2 decreases Gain (trade-off).",
+    "id": "amp2_3cbf840d85",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.16470600000000013,
+      "delta_flip": 0.1231553333333334,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_Mp1 increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "decreases",
+      "B": "no change",
+      "C": "increases",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing W_Mp1 increases UGF.",
+    "id": "amp2_3e7ebd91b1",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.06927899999999998,
+      "delta_flip": 0.08289833333333341,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is L_Mn1 associated with in the circuit KG?",
+    "golden_answer": "differential pair",
+    "options": {
+      "A": "bias",
+      "B": "output stage",
+      "C": "differential pair",
+      "D": "compensation network"
+    },
+    "sentence": "L_Mn1 is associated with differential pair.",
+    "id": "amp2_45826810ac",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.036587333333333416,
+      "delta_flip": 0.1476226666666668,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_Mnc increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "increases",
+      "C": "decreases",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing W_Mnc increases UGF.",
+    "id": "amp2_499a15965d",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.0957150000000001,
+      "delta_flip": 0.04439666666666675,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_Mp2 associated with in the circuit KG?",
+    "golden_answer": "pmos pull-up network",
+    "options": {
+      "A": "compensation network",
+      "B": "differential pair",
+      "C": "pmos pull-up network",
+      "D": "bias"
+    },
+    "sentence": "W_Mp2 is associated with pmos pull-up network.",
+    "id": "amp2_4b2b2e6810",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.05258200000000002,
+      "delta_flip": 0.0290436666666668,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If Vb increases, what happens to Gain (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "ambiguous",
+      "B": "no change",
+      "C": "increases",
+      "D": "decreases"
+    },
+    "sentence": "Increasing Vb decreases Gain (trade-off).",
+    "id": "amp2_4c5a915c52",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.1509853333333333,
+      "delta_flip": 0.005889000000000144,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_Mno associated with in the circuit KG?",
+    "golden_answer": "output stage",
+    "options": {
+      "A": "differential pair",
+      "B": "output stage",
+      "C": "bias",
+      "D": "compensation network"
+    },
+    "sentence": "W_Mno is associated with output stage.",
+    "id": "amp2_4e6f032422",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.10040833333333332,
+      "delta_flip": 0.12557733333333332,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_Mn2 increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "no change",
+      "C": "increases",
+      "D": "decreases"
+    },
+    "sentence": "Increasing W_Mn2 increases UGF.",
+    "id": "amp2_5017062361",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.07551966666666676,
+      "delta_flip": 0.05368066666666671,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If Power increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "no change",
+      "C": "decreases",
+      "D": "increases"
+    },
+    "sentence": "Increasing Power increases UGF.",
+    "id": "amp2_5f4d3c66b1",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.09669433333333333,
+      "delta_flip": 0.06436533333333339,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_Mp1 increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "increases",
+      "B": "no change",
+      "C": "decreases",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing W_Mp1 increases Power.",
+    "id": "amp2_650c18c171",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.05672166666666678,
+      "delta_flip": 0.19045600000000007,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which performance metric is connected to the tail current source in the KG?",
+    "golden_answer": "Gain",
+    "options": {
+      "A": "Gain",
+      "B": "Power",
+      "C": "UGF",
+      "D": "CMRR"
+    },
+    "sentence": "tail current source connects to Gain.",
+    "id": "amp2_6bef7a97bc",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.16060400000000008,
+      "delta_flip": 0.11052766666666669,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is L_Mno associated with in the circuit KG?",
+    "golden_answer": "output stage",
+    "options": {
+      "A": "bias",
+      "B": "output stage",
+      "C": "compensation network",
+      "D": "differential pair"
+    },
+    "sentence": "L_Mno is associated with output stage.",
+    "id": "amp2_6f5cfdbd85",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.13591533333333328,
+      "delta_flip": 0.045467333333333304,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_Mnb associated with in the circuit KG?",
+    "golden_answer": "bias",
+    "options": {
+      "A": "differential pair",
+      "B": "compensation network",
+      "C": "output stage",
+      "D": "bias"
+    },
+    "sentence": "W_Mnb is associated with bias.",
+    "id": "amp2_77b18bdabb",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.1783286666666667,
+      "delta_flip": 0.06723633333333334,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_Mpo increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "decreases",
+      "B": "increases",
+      "C": "ambiguous",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_Mpo increases Power.",
+    "id": "amp2_808c3cba95",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.10125133333333336,
+      "delta_flip": 0.17003000000000013,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_Mn1 increases, what happens to Gain?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "increases",
+      "C": "ambiguous",
+      "D": "decreases"
+    },
+    "sentence": "Increasing W_Mn1 increases Gain.",
+    "id": "amp2_80ec243b0f",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.045639666666666745,
+      "delta_flip": 0.10151366666666661,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_Mn1 increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "decreases",
+      "B": "ambiguous",
+      "C": "no change",
+      "D": "increases"
+    },
+    "sentence": "Increasing W_Mn1 increases UGF.",
+    "id": "amp2_82545a0f14",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.07434633333333351,
+      "delta_flip": 0.08986133333333335,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is C_cc associated with in the circuit KG?",
+    "golden_answer": "compensation network",
+    "options": {
+      "A": "output stage",
+      "B": "compensation network",
+      "C": "differential pair",
+      "D": "bias"
+    },
+    "sentence": "C_cc is associated with compensation network.",
+    "id": "amp2_975b1e940a",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.07241900000000001,
+      "delta_flip": 0.1625553333333335,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_Mnc increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "decreases",
+      "B": "increases",
+      "C": "no change",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing W_Mnc increases Power.",
+    "id": "amp2_999661a7d5",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.09627533333333338,
+      "delta_flip": 0.19811933333333342,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Gain has a trade-off with which performance metric?",
+    "golden_answer": "UGF",
+    "options": {
+      "A": "UGF",
+      "B": "Power",
+      "C": "Gain",
+      "D": "CMRR"
+    },
+    "sentence": "Gain trades off with UGF.",
+    "id": "amp2_a44eb5e10f",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.13682700000000014,
+      "delta_flip": 0.06252600000000008,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which performance metric is connected to the differential pair in the KG?",
+    "golden_answer": "Gain",
+    "options": {
+      "A": "CMRR",
+      "B": "UGF",
+      "C": "Power",
+      "D": "Gain"
+    },
+    "sentence": "differential pair connects to Gain.",
+    "id": "amp2_b53d07c4aa",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.1830710000000001,
+      "delta_flip": 0.12785933333333344,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_Mp1 increases, what happens to Gain (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "decreases",
+      "B": "no change",
+      "C": "ambiguous",
+      "D": "increases"
+    },
+    "sentence": "Increasing W_Mp1 decreases Gain (trade-off).",
+    "id": "amp2_b92eee7f89",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.09220266666666666,
+      "delta_flip": 0.07106266666666672,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_Mno increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "decreases",
+      "C": "increases",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing W_Mno increases Power.",
+    "id": "amp2_c25c74348b",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.04286800000000002,
+      "delta_flip": 0.1476846666666667,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_Mp2 increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "increases",
+      "C": "decreases",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_Mp2 increases UGF.",
+    "id": "amp2_c85cddd526",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.020724333333333345,
+      "delta_flip": 0.023036000000000167,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which performance metric is connected to the pmos pull-up network in the KG?",
+    "golden_answer": "Gain",
+    "options": {
+      "A": "UGF",
+      "B": "Gain",
+      "C": "Power",
+      "D": "CMRR"
+    },
+    "sentence": "pmos pull-up network connects to Gain.",
+    "id": "amp2_cdd43d019c",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.23081433333333345,
+      "delta_flip": 0.13458133333333333,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_Mn2 associated with in the circuit KG?",
+    "golden_answer": "differential pair",
+    "options": {
+      "A": "compensation network",
+      "B": "output stage",
+      "C": "bias",
+      "D": "differential pair"
+    },
+    "sentence": "W_Mn2 is associated with differential pair.",
+    "id": "amp2_ce97f6eaa6",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.05258200000000002,
+      "delta_flip": 0.15273566666666671,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_Mnc increases, what happens to Gain (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "ambiguous",
+      "B": "no change",
+      "C": "decreases",
+      "D": "increases"
+    },
+    "sentence": "Increasing W_Mnc decreases Gain (trade-off).",
+    "id": "amp2_d23cb3fc69",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.176269,
+      "delta_flip": 0.010153333333333348,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is L_Mpo associated with in the circuit KG?",
+    "golden_answer": "output stage",
+    "options": {
+      "A": "differential pair",
+      "B": "output stage",
+      "C": "bias",
+      "D": "compensation network"
+    },
+    "sentence": "L_Mpo is associated with output stage.",
+    "id": "amp2_d403ba4bcf",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.006357333333333326,
+      "delta_flip": 0.1814463333333335,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_Mp1 associated with in the circuit KG?",
+    "golden_answer": "pmos pull-up network",
+    "options": {
+      "A": "differential pair",
+      "B": "pmos pull-up network",
+      "C": "bias",
+      "D": "compensation network"
+    },
+    "sentence": "W_Mp1 is associated with pmos pull-up network.",
+    "id": "amp2_d93e030ad7",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.17553600000000003,
+      "delta_flip": 0.09150833333333341,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is L_Mnc associated with in the circuit KG?",
+    "golden_answer": "tail current source",
+    "options": {
+      "A": "bias",
+      "B": "differential pair",
+      "C": "tail current source",
+      "D": "compensation network"
+    },
+    "sentence": "L_Mnc is associated with tail current source.",
+    "id": "amp2_d9e1b2e002",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.17392300000000016,
+      "delta_flip": 0.1353673333333334,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If C_cc increases, what happens to UGF (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "no change",
+      "B": "ambiguous",
+      "C": "decreases",
+      "D": "increases"
+    },
+    "sentence": "Increasing C_cc decreases UGF (trade-off).",
+    "id": "amp2_db4c4eebc5",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.09183033333333335,
+      "delta_flip": 0.1730936666666668,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_Mn1 increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "decreases",
+      "C": "no change",
+      "D": "increases"
+    },
+    "sentence": "Increasing W_Mn1 increases Power.",
+    "id": "amp2_e0be7bf566",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.17274533333333342,
+      "delta_flip": 0.08880766666666673,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_Mn2 increases, what happens to Gain?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "increases",
+      "C": "ambiguous",
+      "D": "decreases"
+    },
+    "sentence": "Increasing W_Mn2 increases Gain.",
+    "id": "amp2_e4f0dd4334",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.11320200000000014,
+      "delta_flip": 0.10783366666666672,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_Mno increases, what happens to UGF?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "increases",
+      "B": "decreases",
+      "C": "ambiguous",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_Mno increases UGF.",
+    "id": "amp2_efd7b7d8e5",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.07174133333333332,
+      "delta_flip": 0.1082643333333334,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is Vb associated with in the circuit KG?",
+    "golden_answer": "bias",
+    "options": {
+      "A": "compensation network",
+      "B": "bias",
+      "C": "output stage",
+      "D": "differential pair"
+    },
+    "sentence": "Vb is associated with bias.",
+    "id": "amp2_f6107a45b4",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.13753233333333348,
+      "delta_flip": 0.14053266666666675,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is L_Mp1 associated with in the circuit KG?",
+    "golden_answer": "pmos pull-up network",
+    "options": {
+      "A": "compensation network",
+      "B": "pmos pull-up network",
+      "C": "bias",
+      "D": "differential pair"
+    },
+    "sentence": "L_Mp1 is associated with pmos pull-up network.",
+    "id": "amp2_f96203df78",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.14461500000000005,
+      "delta_flip": 0.006644666666666743,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_Mn1 associated with in the circuit KG?",
+    "golden_answer": "differential pair",
+    "options": {
+      "A": "differential pair",
+      "B": "output stage",
+      "C": "bias",
+      "D": "compensation network"
+    },
+    "sentence": "W_Mn1 is associated with differential pair.",
+    "id": "amp2_fdeeb0eb6d",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.9390286666666667,
+      "baseline_median_fom": 0.9390286666666667,
+      "delta_remove": 0.13325066666666674,
+      "delta_flip": 0.08023933333333344,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  }
+]

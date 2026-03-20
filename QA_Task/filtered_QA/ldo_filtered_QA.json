@@ -1,0 +1,779 @@
+[
+  {
+    "question": "Which substructure is W_XT3 associated with in the circuit KG?",
+    "golden_answer": "error amplifier core",
+    "options": {
+      "A": "current mirror",
+      "B": "error amplifier core",
+      "C": "feedback divider",
+      "D": "bias"
+    },
+    "sentence": "W_XT3 is associated with error amplifier core.",
+    "id": "ldo_077a711c06",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_XTB3 associated with in the circuit KG?",
+    "golden_answer": "current mirror",
+    "options": {
+      "A": "feedback divider",
+      "B": "bias",
+      "C": "error amplifier core",
+      "D": "current mirror"
+    },
+    "sentence": "W_XTB3 is associated with current mirror.",
+    "id": "ldo_085cf16d6a",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Quiscent Current has a trade-off with which performance metric?",
+    "golden_answer": "Stability",
+    "options": {
+      "A": "Load Regulation",
+      "B": "Quiscent Current",
+      "C": "Line Regulation",
+      "D": "Stability"
+    },
+    "sentence": "Quiscent Current trades off with Stability.",
+    "id": "ldo_0a6652c159",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If Load Regulation increases, what happens to Regulation Error?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "ambiguous",
+      "C": "increases",
+      "D": "decreases"
+    },
+    "sentence": "Increasing Load Regulation increases Regulation Error.",
+    "id": "ldo_0d1c9b85ff",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_XT4 increases, what happens to Line Regulation (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "ambiguous",
+      "B": "increases",
+      "C": "no change",
+      "D": "decreases"
+    },
+    "sentence": "Increasing W_XT4 decreases Line Regulation (trade-off).",
+    "id": "ldo_0fe90c7c1f",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_XTP1 increases, what happens to Regulation Error (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "increases",
+      "B": "ambiguous",
+      "C": "no change",
+      "D": "decreases"
+    },
+    "sentence": "Increasing W_XTP1 decreases Regulation Error (trade-off).",
+    "id": "ldo_11837a7144",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Stability has a trade-off with which performance metric?",
+    "golden_answer": "Regulation Error",
+    "options": {
+      "A": "Load Regulation",
+      "B": "Regulation Error",
+      "C": "Quiscent Current",
+      "D": "Line Regulation"
+    },
+    "sentence": "Stability trades off with Regulation Error.",
+    "id": "ldo_118ced716d",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_XTPN associated with in the circuit KG?",
+    "golden_answer": "output stage",
+    "options": {
+      "A": "bias",
+      "B": "error amplifier core",
+      "C": "current mirror",
+      "D": "output stage"
+    },
+    "sentence": "W_XTPN is associated with output stage.",
+    "id": "ldo_15a62d8e2c",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which performance metric is connected to the current mirror in the KG?",
+    "golden_answer": "Quiscent Current",
+    "options": {
+      "A": "Line Regulation",
+      "B": "Load Regulation",
+      "C": "Quiscent Current",
+      "D": "Regulation Error"
+    },
+    "sentence": "current mirror connects to Quiscent Current.",
+    "id": "ldo_1a9774799a",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_XTBN1 associated with in the circuit KG?",
+    "golden_answer": "bias",
+    "options": {
+      "A": "bias",
+      "B": "error amplifier core",
+      "C": "current mirror",
+      "D": "feedback divider"
+    },
+    "sentence": "W_XTBN1 is associated with bias.",
+    "id": "ldo_1ff4511d84",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is L_XT5 associated with in the circuit KG?",
+    "golden_answer": "error amplifier core",
+    "options": {
+      "A": "bias",
+      "B": "feedback divider",
+      "C": "current mirror",
+      "D": "error amplifier core"
+    },
+    "sentence": "L_XT5 is associated with error amplifier core.",
+    "id": "ldo_26d2a1e7b0",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If Line Regulation increases, what happens to Load Regulation?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "increases",
+      "B": "ambiguous",
+      "C": "no change",
+      "D": "decreases"
+    },
+    "sentence": "Increasing Line Regulation increases Load Regulation.",
+    "id": "ldo_3e123f4995",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is L_XT9 associated with in the circuit KG?",
+    "golden_answer": "latch",
+    "options": {
+      "A": "bias",
+      "B": "latch",
+      "C": "error amplifier core",
+      "D": "current mirror"
+    },
+    "sentence": "L_XT9 is associated with latch.",
+    "id": "ldo_549306e257",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_XTBN2 associated with in the circuit KG?",
+    "golden_answer": "bias",
+    "options": {
+      "A": "bias",
+      "B": "feedback divider",
+      "C": "current mirror",
+      "D": "error amplifier core"
+    },
+    "sentence": "W_XTBN2 is associated with bias.",
+    "id": "ldo_5564a7e6b4",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which performance metric is connected to the pass device in the KG?",
+    "golden_answer": "Load Regulation",
+    "options": {
+      "A": "Regulation Error",
+      "B": "Quiscent Current",
+      "C": "Load Regulation",
+      "D": "Line Regulation"
+    },
+    "sentence": "pass device connects to Load Regulation.",
+    "id": "ldo_5cdb2a2727",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If L_XTP1 increases, what happens to Regulation Error?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "increases",
+      "C": "no change",
+      "D": "decreases"
+    },
+    "sentence": "Increasing L_XTP1 increases Regulation Error.",
+    "id": "ldo_6025251d98",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_XT3 increases, what happens to Line Regulation (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "ambiguous",
+      "B": "decreases",
+      "C": "increases",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_XT3 decreases Line Regulation (trade-off).",
+    "id": "ldo_60cfe381af",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_XTP1 increases, what happens to Load Regulation (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "decreases",
+      "B": "increases",
+      "C": "no change",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing W_XTP1 decreases Load Regulation (trade-off).",
+    "id": "ldo_6491828ee8",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_XTB2 associated with in the circuit KG?",
+    "golden_answer": "current mirror",
+    "options": {
+      "A": "error amplifier core",
+      "B": "feedback divider",
+      "C": "current mirror",
+      "D": "bias"
+    },
+    "sentence": "W_XTB2 is associated with current mirror.",
+    "id": "ldo_64beea810a",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_XT5 associated with in the circuit KG?",
+    "golden_answer": "error amplifier core",
+    "options": {
+      "A": "current mirror",
+      "B": "bias",
+      "C": "error amplifier core",
+      "D": "feedback divider"
+    },
+    "sentence": "W_XT5 is associated with error amplifier core.",
+    "id": "ldo_716daab2ea",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which performance metric is connected to the error amplifier core in the KG?",
+    "golden_answer": "Regulation Error",
+    "options": {
+      "A": "Regulation Error",
+      "B": "Quiscent Current",
+      "C": "Line Regulation",
+      "D": "Load Regulation"
+    },
+    "sentence": "error amplifier core connects to Regulation Error.",
+    "id": "ldo_8dcbd40d7e",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_XT6 increases, what happens to Regulation Error (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "no change",
+      "B": "ambiguous",
+      "C": "decreases",
+      "D": "increases"
+    },
+    "sentence": "Increasing W_XT6 decreases Regulation Error (trade-off).",
+    "id": "ldo_988417fd5f",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_XTB3 increases, what happens to Quiscent Current?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "decreases",
+      "B": "no change",
+      "C": "increases",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing W_XTB3 increases Quiscent Current.",
+    "id": "ldo_9b6308d82f",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_XTB1 associated with in the circuit KG?",
+    "golden_answer": "current mirror",
+    "options": {
+      "A": "feedback divider",
+      "B": "bias",
+      "C": "current mirror",
+      "D": "error amplifier core"
+    },
+    "sentence": "W_XTB1 is associated with current mirror.",
+    "id": "ldo_9e16c8f5e4",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_XTB2 increases, what happens to Quiscent Current?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "increases",
+      "C": "no change",
+      "D": "decreases"
+    },
+    "sentence": "Increasing W_XTB2 increases Quiscent Current.",
+    "id": "ldo_a297403c51",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is L_XTPN associated with in the circuit KG?",
+    "golden_answer": "output stage",
+    "options": {
+      "A": "output stage",
+      "B": "current mirror",
+      "C": "bias",
+      "D": "error amplifier core"
+    },
+    "sentence": "L_XTPN is associated with output stage.",
+    "id": "ldo_a8f6d0d57a",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_XT6 associated with in the circuit KG?",
+    "golden_answer": "error amplifier core",
+    "options": {
+      "A": "current mirror",
+      "B": "bias",
+      "C": "feedback divider",
+      "D": "error amplifier core"
+    },
+    "sentence": "W_XT6 is associated with error amplifier core.",
+    "id": "ldo_b97f9b1286",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_XTB1 increases, what happens to Quiscent Current?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "decreases",
+      "C": "ambiguous",
+      "D": "increases"
+    },
+    "sentence": "Increasing W_XTB1 increases Quiscent Current.",
+    "id": "ldo_bedee13221",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is L_XTB0 associated with in the circuit KG?",
+    "golden_answer": "bias",
+    "options": {
+      "A": "error amplifier core",
+      "B": "bias",
+      "C": "current mirror",
+      "D": "feedback divider"
+    },
+    "sentence": "L_XTB0 is associated with bias.",
+    "id": "ldo_c5f2ea805e",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is L_XTBN1 associated with in the circuit KG?",
+    "golden_answer": "bias",
+    "options": {
+      "A": "bias",
+      "B": "error amplifier core",
+      "C": "feedback divider",
+      "D": "current mirror"
+    },
+    "sentence": "L_XTBN1 is associated with bias.",
+    "id": "ldo_cc1c616cda",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which performance metric is connected to the bias in the KG?",
+    "golden_answer": "Quiscent Current",
+    "options": {
+      "A": "Quiscent Current",
+      "B": "Load Regulation",
+      "C": "Line Regulation",
+      "D": "Regulation Error"
+    },
+    "sentence": "bias connects to Quiscent Current.",
+    "id": "ldo_d19d36605b",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_XT6 increases, what happens to Line Regulation (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "decreases",
+      "B": "no change",
+      "C": "increases",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing W_XT6 decreases Line Regulation (trade-off).",
+    "id": "ldo_d3dc85e453",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is L_XTBN2 associated with in the circuit KG?",
+    "golden_answer": "bias",
+    "options": {
+      "A": "bias",
+      "B": "feedback divider",
+      "C": "current mirror",
+      "D": "error amplifier core"
+    },
+    "sentence": "L_XTBN2 is associated with bias.",
+    "id": "ldo_d47c0e018e",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If L_XTP1 increases, what happens to Load Regulation?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "increases",
+      "B": "ambiguous",
+      "C": "decreases",
+      "D": "no change"
+    },
+    "sentence": "Increasing L_XTP1 increases Load Regulation.",
+    "id": "ldo_d6c277aeb0",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "Which substructure is W_XT10 associated with in the circuit KG?",
+    "golden_answer": "latch",
+    "options": {
+      "A": "bias",
+      "B": "latch",
+      "C": "current mirror",
+      "D": "error amplifier core"
+    },
+    "sentence": "W_XT10 is associated with latch.",
+    "id": "ldo_e7a8f4a3be",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_XT3 increases, what happens to Regulation Error (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "no change",
+      "B": "decreases",
+      "C": "increases",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing W_XT3 decreases Regulation Error (trade-off).",
+    "id": "ldo_f7b54ef256",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  },
+  {
+    "question": "If W_XT5 increases, what happens to Regulation Error (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "increases",
+      "B": "ambiguous",
+      "C": "no change",
+      "D": "decreases"
+    },
+    "sentence": "Increasing W_XT5 decreases Regulation Error (trade-off).",
+    "id": "ldo_ff3f0a0a4e",
+    "verification": {
+      "aggregate": "mean",
+      "baseline_mean_fom": 0.7262049999999999,
+      "baseline_median_fom": 0.7262049999999999,
+      "delta_remove": 0.0,
+      "delta_flip": 0.0,
+      "n_itr": 5,
+      "repeats": 3
+    }
+  }
+]

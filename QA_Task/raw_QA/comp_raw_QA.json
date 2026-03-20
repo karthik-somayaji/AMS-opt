@@ -1,0 +1,818 @@
+[
+  {
+    "question": "Gain has a trade-off with which performance metric?",
+    "golden_answer": "Bandwidth",
+    "options": {
+      "A": "Bandwidth",
+      "B": "Power",
+      "C": "Input offset",
+      "D": "Gain"
+    },
+    "sentence": "Gain trades off with Bandwidth.",
+    "id": "comp_3e726c7369"
+  },
+  {
+    "question": "Bandwidth has a trade-off with which performance metric?",
+    "golden_answer": "Power",
+    "options": {
+      "A": "Bandwidth",
+      "B": "Input offset",
+      "C": "Gain",
+      "D": "Power"
+    },
+    "sentence": "Bandwidth trades off with Power.",
+    "id": "comp_2be27eec74"
+  },
+  {
+    "question": "Propagation Delay has a trade-off with which performance metric?",
+    "golden_answer": "Power",
+    "options": {
+      "A": "Power",
+      "B": "Bandwidth",
+      "C": "Input offset",
+      "D": "Gain"
+    },
+    "sentence": "Propagation Delay trades off with Power.",
+    "id": "comp_3435a1f6d9"
+  },
+  {
+    "question": "What is the relationship between Input offset and hysteresis error in the KG?",
+    "golden_answer": "ambiguous",
+    "options": {
+      "A": "ambiguous",
+      "B": "inversely proportional",
+      "C": "directly proportional",
+      "D": "trade-off"
+    },
+    "sentence": "The relationship between Input offset and hysteresis error is ambiguous.",
+    "id": "comp_ef5c50020a"
+  },
+  {
+    "question": "Which performance metric is connected to the input nmos pair in the KG?",
+    "golden_answer": "Gain",
+    "options": {
+      "A": "Input offset",
+      "B": "Gain",
+      "C": "Power",
+      "D": "Bandwidth"
+    },
+    "sentence": "input nmos pair connects to Gain.",
+    "id": "comp_01896f6872"
+  },
+  {
+    "question": "Which performance metric is connected to the tail current source in the KG?",
+    "golden_answer": "Bandwidth",
+    "options": {
+      "A": "Bandwidth",
+      "B": "Input offset",
+      "C": "Power",
+      "D": "Gain"
+    },
+    "sentence": "tail current source connects to Bandwidth.",
+    "id": "comp_9a2561e91b"
+  },
+  {
+    "question": "Which performance metric is connected to the bias in the KG?",
+    "golden_answer": "Power",
+    "options": {
+      "A": "Power",
+      "B": "Gain",
+      "C": "Bandwidth",
+      "D": "Input offset"
+    },
+    "sentence": "bias connects to Power.",
+    "id": "comp_eaf1c676a8"
+  },
+  {
+    "question": "Which performance metric is connected to the cross coupled gain cell in the KG?",
+    "golden_answer": "Propagation Delay",
+    "options": {
+      "A": "Propagation Delay",
+      "B": "Gain",
+      "C": "Input offset",
+      "D": "Bandwidth"
+    },
+    "sentence": "cross coupled gain cell connects to Propagation Delay.",
+    "id": "comp_7856997f1f"
+  },
+  {
+    "question": "Which performance metric is connected to the pmos pull-up network in the KG?",
+    "golden_answer": "Gain",
+    "options": {
+      "A": "Power",
+      "B": "Gain",
+      "C": "Input offset",
+      "D": "Bandwidth"
+    },
+    "sentence": "pmos pull-up network connects to Gain.",
+    "id": "comp_14e65c2584"
+  },
+  {
+    "question": "Which performance metric is connected to the output inverter / driver in the KG?",
+    "golden_answer": "Propagation Delay",
+    "options": {
+      "A": "Bandwidth",
+      "B": "Gain",
+      "C": "Propagation Delay",
+      "D": "Input offset"
+    },
+    "sentence": "output inverter / driver connects to Propagation Delay.",
+    "id": "comp_ae9534054a"
+  },
+  {
+    "question": "Which performance metric is connected to the output stage in the KG?",
+    "golden_answer": "Propagation Delay",
+    "options": {
+      "A": "Propagation Delay",
+      "B": "Gain",
+      "C": "Input offset",
+      "D": "Bandwidth"
+    },
+    "sentence": "output stage connects to Propagation Delay.",
+    "id": "comp_a8de72bcb8"
+  },
+  {
+    "question": "Which substructure is W_xn1 associated with in the circuit KG?",
+    "golden_answer": "input nmos pair",
+    "options": {
+      "A": "input nmos pair",
+      "B": "output inverter / driver",
+      "C": "bias",
+      "D": "cross coupled gain cell"
+    },
+    "sentence": "W_xn1 is associated with input nmos pair.",
+    "id": "comp_60a9b3a805"
+  },
+  {
+    "question": "Which substructure is L_xn1 associated with in the circuit KG?",
+    "golden_answer": "input nmos pair",
+    "options": {
+      "A": "output inverter / driver",
+      "B": "cross coupled gain cell",
+      "C": "input nmos pair",
+      "D": "bias"
+    },
+    "sentence": "L_xn1 is associated with input nmos pair.",
+    "id": "comp_a9ee4b9c59"
+  },
+  {
+    "question": "Which substructure is W_xn2 associated with in the circuit KG?",
+    "golden_answer": "input nmos pair",
+    "options": {
+      "A": "input nmos pair",
+      "B": "bias",
+      "C": "output inverter / driver",
+      "D": "cross coupled gain cell"
+    },
+    "sentence": "W_xn2 is associated with input nmos pair.",
+    "id": "comp_8e66c52bad"
+  },
+  {
+    "question": "Which substructure is L_xn2 associated with in the circuit KG?",
+    "golden_answer": "input nmos pair",
+    "options": {
+      "A": "bias",
+      "B": "cross coupled gain cell",
+      "C": "input nmos pair",
+      "D": "output inverter / driver"
+    },
+    "sentence": "L_xn2 is associated with input nmos pair.",
+    "id": "comp_dfa857788f"
+  },
+  {
+    "question": "Which substructure is W_xn5 associated with in the circuit KG?",
+    "golden_answer": "tail current source",
+    "options": {
+      "A": "bias",
+      "B": "input nmos pair",
+      "C": "cross coupled gain cell",
+      "D": "tail current source"
+    },
+    "sentence": "W_xn5 is associated with tail current source.",
+    "id": "comp_fe90d86de9"
+  },
+  {
+    "question": "Which substructure is L_xn5 associated with in the circuit KG?",
+    "golden_answer": "tail current source",
+    "options": {
+      "A": "input nmos pair",
+      "B": "tail current source",
+      "C": "cross coupled gain cell",
+      "D": "bias"
+    },
+    "sentence": "L_xn5 is associated with tail current source.",
+    "id": "comp_9c356e242c"
+  },
+  {
+    "question": "Which substructure is VB associated with in the circuit KG?",
+    "golden_answer": "bias",
+    "options": {
+      "A": "bias",
+      "B": "output inverter / driver",
+      "C": "input nmos pair",
+      "D": "cross coupled gain cell"
+    },
+    "sentence": "VB is associated with bias.",
+    "id": "comp_a5a79aed07"
+  },
+  {
+    "question": "Which substructure is W_xnb associated with in the circuit KG?",
+    "golden_answer": "bias",
+    "options": {
+      "A": "bias",
+      "B": "cross coupled gain cell",
+      "C": "input nmos pair",
+      "D": "output inverter / driver"
+    },
+    "sentence": "W_xnb is associated with bias.",
+    "id": "comp_b6ded9448b"
+  },
+  {
+    "question": "Which substructure is L_xnb associated with in the circuit KG?",
+    "golden_answer": "bias",
+    "options": {
+      "A": "output inverter / driver",
+      "B": "input nmos pair",
+      "C": "cross coupled gain cell",
+      "D": "bias"
+    },
+    "sentence": "L_xnb is associated with bias.",
+    "id": "comp_55865c2ea4"
+  },
+  {
+    "question": "Which substructure is W_xp3 associated with in the circuit KG?",
+    "golden_answer": "pmos pull-up network",
+    "options": {
+      "A": "cross coupled gain cell",
+      "B": "input nmos pair",
+      "C": "bias",
+      "D": "pmos pull-up network"
+    },
+    "sentence": "W_xp3 is associated with pmos pull-up network.",
+    "id": "comp_9b6ba4139b"
+  },
+  {
+    "question": "Which substructure is L_xp3 associated with in the circuit KG?",
+    "golden_answer": "pmos pull-up network",
+    "options": {
+      "A": "pmos pull-up network",
+      "B": "cross coupled gain cell",
+      "C": "input nmos pair",
+      "D": "bias"
+    },
+    "sentence": "L_xp3 is associated with pmos pull-up network.",
+    "id": "comp_e1236ae895"
+  },
+  {
+    "question": "Which substructure is W_xp4 associated with in the circuit KG?",
+    "golden_answer": "pmos pull-up network",
+    "options": {
+      "A": "input nmos pair",
+      "B": "bias",
+      "C": "pmos pull-up network",
+      "D": "cross coupled gain cell"
+    },
+    "sentence": "W_xp4 is associated with pmos pull-up network.",
+    "id": "comp_f6a1fb2477"
+  },
+  {
+    "question": "Which substructure is L_xp4 associated with in the circuit KG?",
+    "golden_answer": "pmos pull-up network",
+    "options": {
+      "A": "pmos pull-up network",
+      "B": "bias",
+      "C": "input nmos pair",
+      "D": "cross coupled gain cell"
+    },
+    "sentence": "L_xp4 is associated with pmos pull-up network.",
+    "id": "comp_a11df132ec"
+  },
+  {
+    "question": "Which substructure is W_xp6 associated with in the circuit KG?",
+    "golden_answer": "cross coupled gain cell",
+    "options": {
+      "A": "input nmos pair",
+      "B": "cross coupled gain cell",
+      "C": "output inverter / driver",
+      "D": "bias"
+    },
+    "sentence": "W_xp6 is associated with cross coupled gain cell.",
+    "id": "comp_edc7d7dd82"
+  },
+  {
+    "question": "Which substructure is L_xp6 associated with in the circuit KG?",
+    "golden_answer": "cross coupled gain cell",
+    "options": {
+      "A": "cross coupled gain cell",
+      "B": "input nmos pair",
+      "C": "output inverter / driver",
+      "D": "bias"
+    },
+    "sentence": "L_xp6 is associated with cross coupled gain cell.",
+    "id": "comp_9df39e9ec4"
+  },
+  {
+    "question": "Which substructure is W_xp7 associated with in the circuit KG?",
+    "golden_answer": "cross coupled gain cell",
+    "options": {
+      "A": "output inverter / driver",
+      "B": "input nmos pair",
+      "C": "cross coupled gain cell",
+      "D": "bias"
+    },
+    "sentence": "W_xp7 is associated with cross coupled gain cell.",
+    "id": "comp_b161b4fb0b"
+  },
+  {
+    "question": "Which substructure is L_xp7 associated with in the circuit KG?",
+    "golden_answer": "cross coupled gain cell",
+    "options": {
+      "A": "cross coupled gain cell",
+      "B": "output inverter / driver",
+      "C": "bias",
+      "D": "input nmos pair"
+    },
+    "sentence": "L_xp7 is associated with cross coupled gain cell.",
+    "id": "comp_23deba7260"
+  },
+  {
+    "question": "Which substructure is W_xp8 associated with in the circuit KG?",
+    "golden_answer": "output inverter / driver",
+    "options": {
+      "A": "output inverter / driver",
+      "B": "cross coupled gain cell",
+      "C": "bias",
+      "D": "input nmos pair"
+    },
+    "sentence": "W_xp8 is associated with output inverter / driver.",
+    "id": "comp_795a0dcf4e"
+  },
+  {
+    "question": "Which substructure is L_xp8 associated with in the circuit KG?",
+    "golden_answer": "output inverter / driver",
+    "options": {
+      "A": "bias",
+      "B": "input nmos pair",
+      "C": "cross coupled gain cell",
+      "D": "output inverter / driver"
+    },
+    "sentence": "L_xp8 is associated with output inverter / driver.",
+    "id": "comp_903b29f4fc"
+  },
+  {
+    "question": "Which substructure is W_xn11 associated with in the circuit KG?",
+    "golden_answer": "output inverter / driver",
+    "options": {
+      "A": "input nmos pair",
+      "B": "output inverter / driver",
+      "C": "cross coupled gain cell",
+      "D": "bias"
+    },
+    "sentence": "W_xn11 is associated with output inverter / driver.",
+    "id": "comp_4b1327659c"
+  },
+  {
+    "question": "Which substructure is L_xn11 associated with in the circuit KG?",
+    "golden_answer": "output inverter / driver",
+    "options": {
+      "A": "bias",
+      "B": "output inverter / driver",
+      "C": "input nmos pair",
+      "D": "cross coupled gain cell"
+    },
+    "sentence": "L_xn11 is associated with output inverter / driver.",
+    "id": "comp_0140a6e3a3"
+  },
+  {
+    "question": "Which substructure is W_xp9 associated with in the circuit KG?",
+    "golden_answer": "output inverter / driver",
+    "options": {
+      "A": "bias",
+      "B": "output inverter / driver",
+      "C": "cross coupled gain cell",
+      "D": "input nmos pair"
+    },
+    "sentence": "W_xp9 is associated with output inverter / driver.",
+    "id": "comp_d8f7eb06ad"
+  },
+  {
+    "question": "Which substructure is L_xp9 associated with in the circuit KG?",
+    "golden_answer": "output inverter / driver",
+    "options": {
+      "A": "bias",
+      "B": "cross coupled gain cell",
+      "C": "input nmos pair",
+      "D": "output inverter / driver"
+    },
+    "sentence": "L_xp9 is associated with output inverter / driver.",
+    "id": "comp_a1be23d5ec"
+  },
+  {
+    "question": "Which substructure is W_xn10 associated with in the circuit KG?",
+    "golden_answer": "output inverter / driver",
+    "options": {
+      "A": "input nmos pair",
+      "B": "cross coupled gain cell",
+      "C": "bias",
+      "D": "output inverter / driver"
+    },
+    "sentence": "W_xn10 is associated with output inverter / driver.",
+    "id": "comp_12fefcd70b"
+  },
+  {
+    "question": "Which substructure is L_xn10 associated with in the circuit KG?",
+    "golden_answer": "output inverter / driver",
+    "options": {
+      "A": "input nmos pair",
+      "B": "cross coupled gain cell",
+      "C": "bias",
+      "D": "output inverter / driver"
+    },
+    "sentence": "L_xn10 is associated with output inverter / driver.",
+    "id": "comp_a69b985862"
+  },
+  {
+    "question": "If W_xn1 increases, what happens to Gain?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "increases",
+      "C": "decreases",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_xn1 increases Gain.",
+    "id": "comp_36229671d9"
+  },
+  {
+    "question": "If W_xn2 increases, what happens to Gain?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "decreases",
+      "B": "increases",
+      "C": "ambiguous",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_xn2 increases Gain.",
+    "id": "comp_200d73bc2b"
+  },
+  {
+    "question": "If W_xn1 increases, what happens to Bandwidth?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "decreases",
+      "B": "ambiguous",
+      "C": "increases",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_xn1 increases Bandwidth.",
+    "id": "comp_93f62bcfa4"
+  },
+  {
+    "question": "If W_xn2 increases, what happens to Bandwidth?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "decreases",
+      "C": "no change",
+      "D": "increases"
+    },
+    "sentence": "Increasing W_xn2 increases Bandwidth.",
+    "id": "comp_8032a03e73"
+  },
+  {
+    "question": "If W_xn1 increases, what happens to Propagation Delay (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "no change",
+      "B": "increases",
+      "C": "decreases",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing W_xn1 decreases Propagation Delay (trade-off).",
+    "id": "comp_5b76f3b48c"
+  },
+  {
+    "question": "If W_xn2 increases, what happens to Propagation Delay (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "increases",
+      "B": "no change",
+      "C": "decreases",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing W_xn2 decreases Propagation Delay (trade-off).",
+    "id": "comp_328f519e2a"
+  },
+  {
+    "question": "If W_xn1 increases, what happens to Input offset (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "increases",
+      "B": "ambiguous",
+      "C": "decreases",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_xn1 decreases Input offset (trade-off).",
+    "id": "comp_47c1d66534"
+  },
+  {
+    "question": "If W_xn2 increases, what happens to Input offset (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "no change",
+      "B": "ambiguous",
+      "C": "increases",
+      "D": "decreases"
+    },
+    "sentence": "Increasing W_xn2 decreases Input offset (trade-off).",
+    "id": "comp_8207450c83"
+  },
+  {
+    "question": "If L_xn1 increases, what happens to Bandwidth (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "no change",
+      "B": "decreases",
+      "C": "ambiguous",
+      "D": "increases"
+    },
+    "sentence": "Increasing L_xn1 decreases Bandwidth (trade-off).",
+    "id": "comp_3e8a70617b"
+  },
+  {
+    "question": "If L_xn2 increases, what happens to Bandwidth (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "increases",
+      "B": "ambiguous",
+      "C": "decreases",
+      "D": "no change"
+    },
+    "sentence": "Increasing L_xn2 decreases Bandwidth (trade-off).",
+    "id": "comp_04d203b651"
+  },
+  {
+    "question": "If L_xn1 increases, what happens to Propagation Delay?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "increases",
+      "B": "decreases",
+      "C": "ambiguous",
+      "D": "no change"
+    },
+    "sentence": "Increasing L_xn1 increases Propagation Delay.",
+    "id": "comp_d7417bb620"
+  },
+  {
+    "question": "If L_xn2 increases, what happens to Propagation Delay?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "decreases",
+      "B": "ambiguous",
+      "C": "increases",
+      "D": "no change"
+    },
+    "sentence": "Increasing L_xn2 increases Propagation Delay.",
+    "id": "comp_ebf7537fd4"
+  },
+  {
+    "question": "If W_xn5 increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "decreases",
+      "C": "increases",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_xn5 increases Power.",
+    "id": "comp_bfd25cfaf8"
+  },
+  {
+    "question": "If W_xn5 increases, what happens to Bandwidth?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "no change",
+      "C": "decreases",
+      "D": "increases"
+    },
+    "sentence": "Increasing W_xn5 increases Bandwidth.",
+    "id": "comp_58bf07448c"
+  },
+  {
+    "question": "If W_xn5 increases, what happens to Propagation Delay (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "no change",
+      "B": "ambiguous",
+      "C": "decreases",
+      "D": "increases"
+    },
+    "sentence": "Increasing W_xn5 decreases Propagation Delay (trade-off).",
+    "id": "comp_cd928718ca"
+  },
+  {
+    "question": "If VB increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "increases",
+      "B": "ambiguous",
+      "C": "no change",
+      "D": "decreases"
+    },
+    "sentence": "Increasing VB increases Power.",
+    "id": "comp_d080d337d6"
+  },
+  {
+    "question": "If VB increases, what happens to Bandwidth?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "decreases",
+      "B": "increases",
+      "C": "ambiguous",
+      "D": "no change"
+    },
+    "sentence": "Increasing VB increases Bandwidth.",
+    "id": "comp_95cc58f83c"
+  },
+  {
+    "question": "If VB increases, what happens to Propagation Delay (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "increases",
+      "B": "no change",
+      "C": "ambiguous",
+      "D": "decreases"
+    },
+    "sentence": "Increasing VB decreases Propagation Delay (trade-off).",
+    "id": "comp_e9f1d7bca0"
+  },
+  {
+    "question": "If W_xp3 increases, what happens to Gain (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "increases",
+      "B": "no change",
+      "C": "ambiguous",
+      "D": "decreases"
+    },
+    "sentence": "Increasing W_xp3 decreases Gain (trade-off).",
+    "id": "comp_8e7bc4973d"
+  },
+  {
+    "question": "If W_xp4 increases, what happens to Gain (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "ambiguous",
+      "B": "increases",
+      "C": "decreases",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_xp4 decreases Gain (trade-off).",
+    "id": "comp_f0611d8f25"
+  },
+  {
+    "question": "If W_xp3 increases, what happens to Bandwidth?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "decreases",
+      "B": "no change",
+      "C": "ambiguous",
+      "D": "increases"
+    },
+    "sentence": "Increasing W_xp3 increases Bandwidth.",
+    "id": "comp_c09cc72c3d"
+  },
+  {
+    "question": "If W_xp4 increases, what happens to Bandwidth?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "ambiguous",
+      "C": "increases",
+      "D": "decreases"
+    },
+    "sentence": "Increasing W_xp4 increases Bandwidth.",
+    "id": "comp_115fd1f43f"
+  },
+  {
+    "question": "If W_xp6 increases, what happens to Propagation Delay (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "no change",
+      "B": "increases",
+      "C": "ambiguous",
+      "D": "decreases"
+    },
+    "sentence": "Increasing W_xp6 decreases Propagation Delay (trade-off).",
+    "id": "comp_823b25a743"
+  },
+  {
+    "question": "If W_xp7 increases, what happens to Propagation Delay (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "increases",
+      "B": "decreases",
+      "C": "ambiguous",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_xp7 decreases Propagation Delay (trade-off).",
+    "id": "comp_f42113aedb"
+  },
+  {
+    "question": "If W_xp6 increases, what happens to hysteresis error?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "no change",
+      "B": "increases",
+      "C": "decreases",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing W_xp6 increases hysteresis error.",
+    "id": "comp_153b91fcaa"
+  },
+  {
+    "question": "If W_xp7 increases, what happens to hysteresis error?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "decreases",
+      "B": "no change",
+      "C": "ambiguous",
+      "D": "increases"
+    },
+    "sentence": "Increasing W_xp7 increases hysteresis error.",
+    "id": "comp_bd7e365cdd"
+  },
+  {
+    "question": "If W_xp8 increases, what happens to Propagation Delay (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "decreases",
+      "B": "no change",
+      "C": "increases",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing W_xp8 decreases Propagation Delay (trade-off).",
+    "id": "comp_e6a953cdf9"
+  },
+  {
+    "question": "If W_xn11 increases, what happens to Propagation Delay (trade-off)?",
+    "golden_answer": "decreases",
+    "options": {
+      "A": "no change",
+      "B": "decreases",
+      "C": "increases",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing W_xn11 decreases Propagation Delay (trade-off).",
+    "id": "comp_b81e71755a"
+  },
+  {
+    "question": "If W_xp8 increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "increases",
+      "B": "ambiguous",
+      "C": "decreases",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_xp8 increases Power.",
+    "id": "comp_cc73ed5bca"
+  },
+  {
+    "question": "If W_xn11 increases, what happens to Power?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "decreases",
+      "B": "no change",
+      "C": "ambiguous",
+      "D": "increases"
+    },
+    "sentence": "Increasing W_xn11 increases Power.",
+    "id": "comp_8fe5d466ef"
+  },
+  {
+    "question": "If W_xp8 increases, what happens to Bandwidth?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "increases",
+      "B": "no change",
+      "C": "decreases",
+      "D": "ambiguous"
+    },
+    "sentence": "Increasing W_xp8 increases Bandwidth.",
+    "id": "comp_5059165449"
+  },
+  {
+    "question": "If W_xn11 increases, what happens to Bandwidth?",
+    "golden_answer": "increases",
+    "options": {
+      "A": "ambiguous",
+      "B": "decreases",
+      "C": "increases",
+      "D": "no change"
+    },
+    "sentence": "Increasing W_xn11 increases Bandwidth.",
+    "id": "comp_f56df31b2e"
+  }
+]

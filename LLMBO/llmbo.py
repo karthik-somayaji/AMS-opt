@@ -588,14 +588,14 @@ if __name__ == "__main__":
     ]
 
     # LLMBO + GPBO;
-    print(_resolve_llmbo_relative_path("tasks/ldo/ldo.json"))
-    task_path = _resolve_llmbo_relative_path("tasks/ldo/ldo.json")
+    # print(_resolve_llmbo_relative_path("tasks/ldo/ldo.json"))
+    # task_path = _resolve_llmbo_relative_path("tasks/ldo/ldo.json")
     # print(_resolve_llmbo_relative_path("tasks/comp/comp.json"))
     # task_path = _resolve_llmbo_relative_path("tasks/comp/comp.json")
     # print(_resolve_llmbo_relative_path("tasks/comp/comp_test.json"))
     # task_path = _resolve_llmbo_relative_path("tasks/comp/comp_test.json")
-    # print(_resolve_llmbo_relative_path("tasks/FC/FC.json"))
-    # task_path = _resolve_llmbo_relative_path("tasks/FC/FC.json")
+    print(_resolve_llmbo_relative_path("tasks/FC/FC.json"))
+    task_path = _resolve_llmbo_relative_path("tasks/FC/FC.json")
     # print(_resolve_llmbo_relative_path("tasks/amp2/amp2.json"))
     # task_path = _resolve_llmbo_relative_path("tasks/amp2/amp2.json")
     try:
