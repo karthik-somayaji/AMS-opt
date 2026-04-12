@@ -1,0 +1,91 @@
+{
+  "mode": "eval_filtered_qa_vllm_local",
+  "dry_run": true,
+  "filtered_qa_root": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/filtered_QA",
+  "circuits": [
+    "amp2",
+    "FC",
+    "comp",
+    "ldo"
+  ],
+  "embeddings_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/gnn_embeddings_sg.json",
+  "embedding_mode": "sg",
+  "num_reference": 164,
+  "embedding_dim": 128,
+  "k": 2,
+  "related_mode": "topk",
+  "kg_max_chars": 12000,
+  "limit_per_circuit": 0,
+  "num_files": 4,
+  "num_seen": 1,
+  "num_eval": 1,
+  "kg_missing": 2,
+  "vllm_local": {
+    "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+    "tensor_parallel_size": 1,
+    "gpu_memory_utilization": 0.9,
+    "dtype": "auto",
+    "max_model_len": null,
+    "trust_remote_code": false,
+    "download_dir": null,
+    "apply_chat_template": true,
+    "temperature": 0.0,
+    "top_p": null,
+    "max_tokens": 8,
+    "batch_size": 8,
+    "cuda_visible_devices": "6"
+  },
+  "timing_s": 4.76837158203125e-07,
+  "out_jsonl": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_dryrun_gpu6.jsonl",
+  "summary_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_dryrun_gpu6_summary.json",
+  "retrieved_circuits": {
+    "amp2": [
+      {
+        "family": "diff_amps",
+        "circuit_id": "620",
+        "similarity": 0.26783397793769836
+      },
+      {
+        "family": "diff_amps",
+        "circuit_id": "614",
+        "similarity": -0.009494629688560963
+      }
+    ],
+    "FC": [
+      {
+        "family": "diff_amps",
+        "circuit_id": "620",
+        "similarity": 0.25084277987480164
+      },
+      {
+        "family": "diff_amps",
+        "circuit_id": "930",
+        "similarity": 0.012880600057542324
+      }
+    ],
+    "comp": [
+      {
+        "family": "comparators",
+        "circuit_id": "1062",
+        "similarity": 0.014142274856567383
+      },
+      {
+        "family": "comparators",
+        "circuit_id": "1048",
+        "similarity": -0.09770362079143524
+      }
+    ],
+    "ldo": [
+      {
+        "family": "LDO",
+        "circuit_id": "2332",
+        "similarity": -0.07192373275756836
+      },
+      {
+        "family": "LDO",
+        "circuit_id": "2333",
+        "similarity": -0.07371245324611664
+      }
+    ]
+  }
+}

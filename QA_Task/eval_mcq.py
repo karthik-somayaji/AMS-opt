@@ -19,6 +19,13 @@ def _optional_import(name: str):
         return None
 
 
+def configure_vllm_worker_multiproc_method(requested_method: Optional[str] = None) -> str:
+    method = str(requested_method or os.environ.get("VLLM_WORKER_MULTIPROC_METHOD", "spawn")).strip().lower()
+    if method:
+        os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = method
+    return method
+
+
 @dataclass(frozen=True)
 class CircuitRef:
     circuit_id: str
@@ -243,8 +250,12 @@ def vllm_chat_completions(
             {"role": "user", "content": prompt},
         ],
         "temperature": float(temperature),
-        "max_tokens": int(max_tokens),
     }
+    normalized_model = str(model or "").strip().lower()
+    if normalized_model.startswith("gpt-5"):
+        payload["max_completion_tokens"] = int(max_tokens)
+    else:
+        payload["max_tokens"] = int(max_tokens)
     if extra:
         payload.update(extra)
 
@@ -259,8 +270,21 @@ def vllm_chat_completions(
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
     }
-    resp = requests.post(url, headers=headers, json=payload, timeout=timeout_s)
-    resp.raise_for_status()
+    request_timeout = (min(10.0, max(1.0, float(timeout_s))), max(1.0, float(timeout_s)))
+    try:
+        resp = requests.post(url, headers=headers, json=payload, timeout=request_timeout)
+    except Exception as exc:
+        raise RuntimeError(
+            f"Chat completions request failed before receiving a response for {url}: {exc}"
+        ) from exc
+    if not resp.ok:
+        response_text = ""
+        try:
+            response_text = resp.text.strip()
+        except Exception:
+            response_text = ""
+        detail = f": {response_text}" if response_text else ""
+        raise RuntimeError(f"Chat completions request failed with HTTP {resp.status_code} for {url}{detail}")
     data = resp.json()
     return data
 
@@ -273,6 +297,32 @@ def extract_text_from_chat_completion(resp: Dict[str, Any]) -> str:
 
 
 _TOKENIZER_CACHE: Dict[Tuple[str, bool, Optional[str]], Any] = {}
+
+
+def resolve_vllm_model_path(model_id_or_path: str) -> str:
+    candidate = Path(str(model_id_or_path)).expanduser()
+    if not candidate.exists():
+        return str(model_id_or_path)
+
+    if candidate.is_dir():
+        snapshots_dir = candidate / "snapshots"
+        refs_main = candidate / "refs" / "main"
+        if snapshots_dir.is_dir():
+            if refs_main.is_file():
+                revision = refs_main.read_text().strip()
+                preferred = snapshots_dir / revision
+                if preferred.is_dir():
+                    return str(preferred.resolve())
+
+            snapshot_dirs = sorted(
+                [path for path in snapshots_dir.iterdir() if path.is_dir()],
+                key=lambda path: path.stat().st_mtime,
+                reverse=True,
+            )
+            if snapshot_dirs:
+                return str(snapshot_dirs[0].resolve())
+
+    return str(candidate.resolve())
 
 
 def _get_chat_tokenizer(
@@ -452,6 +502,8 @@ def eval_with_vllm(args: argparse.Namespace) -> Dict[str, Any]:
     if not summary_path.is_absolute():
         summary_path = (out_dir / summary_path).resolve()
 
+    resolved_model = resolve_vllm_model_path(args.vllm_model)
+
     items: List[Tuple[str, Path]] = list(iter_mcq_files(mcq_root))
     if args.limit and int(args.limit) > 0:
         items = items[: int(args.limit)]
@@ -513,7 +565,7 @@ def eval_with_vllm(args: argparse.Namespace) -> Dict[str, Any]:
             # Call vLLM server
             resp_base = vllm_chat_completions(
                 base_url=args.vllm_base_url,
-                model=args.vllm_model,
+                model=resolved_model,
                 prompt=baseline_prompt,
                 api_key=args.vllm_api_key,
                 temperature=args.temperature,
@@ -525,7 +577,7 @@ def eval_with_vllm(args: argparse.Namespace) -> Dict[str, Any]:
 
             resp_aug = vllm_chat_completions(
                 base_url=args.vllm_base_url,
-                model=args.vllm_model,
+                model=resolved_model,
                 prompt=augmented_prompt,
                 api_key=args.vllm_api_key,
                 temperature=args.temperature,
@@ -599,6 +651,7 @@ def eval_with_vllm(args: argparse.Namespace) -> Dict[str, Any]:
         "vllm": {
             "base_url": args.vllm_base_url,
             "model": args.vllm_model,
+            "resolved_model": resolved_model,
             "temperature": float(args.temperature),
             "top_p": float(args.top_p) if args.top_p is not None else None,
             "max_tokens": int(args.max_tokens),
@@ -650,6 +703,8 @@ def eval_with_vllm_local(args: argparse.Namespace) -> Dict[str, Any]:
     summary_path = Path(args.summary_json)
     if not summary_path.is_absolute():
         summary_path = (out_dir / summary_path).resolve()
+
+    resolved_model = resolve_vllm_model_path(args.vllm_model)
 
     items: List[Tuple[str, Path]] = list(iter_mcq_files(mcq_root))
     if args.limit and int(args.limit) > 0:
@@ -723,14 +778,14 @@ def eval_with_vllm_local(args: argparse.Namespace) -> Dict[str, Any]:
             if args.apply_chat_template:
                 baseline_prompt = _maybe_apply_chat_template(
                     prompt=baseline_prompt,
-                    model_id_or_path=args.vllm_model,
+                    model_id_or_path=resolved_model,
                     trust_remote_code=bool(args.trust_remote_code),
                     download_dir=args.download_dir,
                     dry_run=bool(args.dry_run),
                 )
                 augmented_prompt = _maybe_apply_chat_template(
                     prompt=augmented_prompt,
-                    model_id_or_path=args.vllm_model,
+                    model_id_or_path=resolved_model,
                     trust_remote_code=bool(args.trust_remote_code),
                     download_dir=args.download_dir,
                     dry_run=bool(args.dry_run),
@@ -750,6 +805,7 @@ def eval_with_vllm_local(args: argparse.Namespace) -> Dict[str, Any]:
         # Generate outputs with vLLM
         outputs_text: List[str] = [""] * len(prompts)
         if not args.dry_run and prompts:
+            configure_vllm_worker_multiproc_method(getattr(args, "vllm_worker_multiproc_method", None))
             vllm = _optional_import("vllm")
             if vllm is None:
                 raise RuntimeError("Missing dependency 'vllm'. Install with: pip install vllm")
@@ -760,7 +816,7 @@ def eval_with_vllm_local(args: argparse.Namespace) -> Dict[str, Any]:
                 raise RuntimeError("vllm.LLM or vllm.SamplingParams not available")
 
             llm = LLM(
-                model=args.vllm_model,
+                model=resolved_model,
                 tensor_parallel_size=int(args.tensor_parallel_size),
                 gpu_memory_utilization=float(args.gpu_memory_utilization),
                 dtype=(args.dtype or "auto"),
@@ -859,6 +915,7 @@ def eval_with_vllm_local(args: argparse.Namespace) -> Dict[str, Any]:
         "kg_missing": int(kg_missing),
         "vllm_local": {
             "model": args.vllm_model,
+            "resolved_model": resolved_model,
             "tensor_parallel_size": int(args.tensor_parallel_size),
             "gpu_memory_utilization": float(args.gpu_memory_utilization),
             "dtype": args.dtype or "auto",
@@ -979,6 +1036,13 @@ def main() -> None:
     ap.add_argument("--download_dir", type=str, default=None, help="Optional HF download/cache directory")
     ap.add_argument("--batch_size", type=int, default=8, help="Batch size for local vLLM generation")
     ap.add_argument("--apply_chat_template", action="store_true", help="Wrap prompts using the model tokenizer chat template before generation")
+    ap.add_argument(
+        "--vllm_worker_multiproc_method",
+        type=str,
+        default="spawn",
+        choices=["spawn", "fork", "forkserver"],
+        help="vLLM worker multiprocessing method for local mode. 'spawn' avoids fork-after-Torch deadlocks.",
+    )
 
     args = ap.parse_args()
 

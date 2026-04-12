@@ -1,0 +1,119 @@
+{
+  "mode": "eval_filtered_qa_vllm_local",
+  "dry_run": false,
+  "filtered_qa_root": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/filtered_QA",
+  "circuits": [
+    "amp2"
+  ],
+  "embeddings_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/gnn_embeddings_sg.json",
+  "embedding_mode": "sg",
+  "num_reference": 164,
+  "embedding_dim": 128,
+  "k": 3,
+  "related_mode": "topk",
+  "kg_max_chars": 8000,
+  "netlist_max_chars": 12000,
+  "limit_per_circuit": 0,
+  "num_files": 1,
+  "num_seen": 53,
+  "num_eval": 53,
+  "kg_missing": 0,
+  "netlist_missing": 0,
+  "vllm_local": {
+    "model": "qwen2_7b",
+    "model_source": "/data/karthik/huggingface/hub/models--Qwen--Qwen2-7B-Instruct",
+    "resolved_model": "/data/karthik/huggingface/hub/models--Qwen--Qwen2-7B-Instruct/snapshots/f2826a00ceef68f0f2b946d945ecc0477ce4450c",
+    "profile": "qwen2-7b-instruct",
+    "is_reasoning_model": false,
+    "tensor_parallel_size": 4,
+    "gpu_memory_utilization": 0.9,
+    "dtype": "auto",
+    "max_model_len": 8192,
+    "trust_remote_code": false,
+    "download_dir": null,
+    "apply_chat_template": true,
+    "temperature": 0.0,
+    "top_p": null,
+    "max_tokens": 8,
+    "batch_size": 4,
+    "cuda_visible_devices": "0,1,2,3",
+    "enforce_eager": true
+  },
+  "timing_s": 93.29187176842242,
+  "stage_timings": {
+    "prepare_eval_rows_s": 3.039662718772888,
+    "chat_template_total_s": 1.8349426984786987,
+    "chat_template_calls": 106,
+    "first_chat_template_s": 1.830592098645866,
+    "per_circuit": {
+      "amp2": {
+        "load_items_s": 0.0005203858017921448,
+        "retrieval_s": 1.165479981340468,
+        "netlist_load_s": 0.00015476718544960022,
+        "kg_load_s": 0.00016789790242910385,
+        "prompt_build_s": 1.8358302535489202,
+        "total_s": 3.0024014320224524
+      }
+    },
+    "vllm_load_s": 50.24601114075631,
+    "generation_s": 40.005762309767306,
+    "eval_total_local_s": 93.29187176842242
+  },
+  "out_jsonl": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_eval_qwen2_7b.jsonl",
+  "summary_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_eval_qwen2_7b_summary.json",
+  "retrieved_circuits": {
+    "amp2": [
+      {
+        "family": "diff_amps",
+        "circuit_id": "620",
+        "similarity": 0.26783397793769836
+      },
+      {
+        "family": "diff_amps",
+        "circuit_id": "614",
+        "similarity": -0.009494629688560963
+      },
+      {
+        "family": "diff_amps",
+        "circuit_id": "930",
+        "similarity": -0.031088458374142647
+      }
+    ]
+  },
+  "baseline_correct": 32,
+  "retrieval_correct": 29,
+  "baseline_parse_fail": 0,
+  "retrieval_parse_fail": 0,
+  "baseline_accuracy": 0.6037735849056604,
+  "retrieval_accuracy": 0.5471698113207547,
+  "accuracy_gain": -0.05660377358490566,
+  "by_circuit": {
+    "amp2": {
+      "num_eval": 53,
+      "baseline_correct": 32,
+      "retrieval_correct": 29,
+      "baseline_parse_fail": 0,
+      "retrieval_parse_fail": 0,
+      "baseline_accuracy": 0.6037735849056604,
+      "retrieval_accuracy": 0.5471698113207547,
+      "accuracy_gain": -0.05660377358490566,
+      "retrieved_circuits": [
+        {
+          "family": "diff_amps",
+          "circuit_id": "620",
+          "similarity": 0.26783397793769836
+        },
+        {
+          "family": "diff_amps",
+          "circuit_id": "614",
+          "similarity": -0.009494629688560963
+        },
+        {
+          "family": "diff_amps",
+          "circuit_id": "930",
+          "similarity": -0.031088458374142647
+        }
+      ]
+    }
+  }
+}

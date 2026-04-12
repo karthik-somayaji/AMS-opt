@@ -1,0 +1,93 @@
+{
+  "mode": "eval_filtered_qa_vllm_local",
+  "dry_run": false,
+  "filtered_qa_root": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/filtered_QA",
+  "circuits": [
+    "ldo"
+  ],
+  "embeddings_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/gnn_embeddings_sg.json",
+  "embedding_mode": "sg",
+  "num_reference": 164,
+  "embedding_dim": 128,
+  "k": 1,
+  "related_mode": "topk",
+  "kg_max_chars": 12000,
+  "limit_per_circuit": 0,
+  "num_files": 1,
+  "num_seen": 37,
+  "num_eval": 37,
+  "kg_missing": 0,
+  "vllm_local": {
+    "model": "/data/karthik/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct",
+    "resolved_model": "/data/karthik/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/8afb486c1db24fe5011ec46dfbe5b5dccdb575c2",
+    "tensor_parallel_size": 1,
+    "gpu_memory_utilization": 0.7,
+    "dtype": "auto",
+    "max_model_len": 8192,
+    "trust_remote_code": false,
+    "download_dir": null,
+    "apply_chat_template": true,
+    "temperature": 0.0,
+    "top_p": null,
+    "max_tokens": 8,
+    "batch_size": 4,
+    "cuda_visible_devices": "6",
+    "enforce_eager": true
+  },
+  "timing_s": 28.32332747289911,
+  "stage_timings": {
+    "prepare_eval_rows_s": 2.7720371410250664,
+    "chat_template_total_s": 1.7019931362010539,
+    "chat_template_calls": 74,
+    "first_chat_template_s": 1.6992681021802127,
+    "per_circuit": {
+      "ldo": {
+        "load_items_s": 0.0002544489689171314,
+        "retrieval_s": 1.0314026079140604,
+        "kg_load_s": 0.0001380089670419693,
+        "prompt_build_s": 1.7022201553918421,
+        "total_s": 2.734046211000532
+      }
+    },
+    "vllm_load_s": 13.709699602797627,
+    "generation_s": 11.841278749983758,
+    "eval_total_local_s": 28.32332747289911
+  },
+  "out_jsonl": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_eval_llama3_8b_local.jsonl",
+  "summary_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_eval_llama3_8b_local_summary.json",
+  "retrieved_circuits": {
+    "ldo": [
+      {
+        "family": "LDO",
+        "circuit_id": "2332",
+        "similarity": -0.07192373275756836
+      }
+    ]
+  },
+  "baseline_correct": 18,
+  "retrieval_correct": 16,
+  "baseline_parse_fail": 0,
+  "retrieval_parse_fail": 0,
+  "baseline_accuracy": 0.4864864864864865,
+  "retrieval_accuracy": 0.43243243243243246,
+  "accuracy_gain": -0.05405405405405406,
+  "by_circuit": {
+    "ldo": {
+      "num_eval": 37,
+      "baseline_correct": 18,
+      "retrieval_correct": 16,
+      "baseline_parse_fail": 0,
+      "retrieval_parse_fail": 0,
+      "baseline_accuracy": 0.4864864864864865,
+      "retrieval_accuracy": 0.43243243243243246,
+      "accuracy_gain": -0.05405405405405406,
+      "retrieved_circuits": [
+        {
+          "family": "LDO",
+          "circuit_id": "2332",
+          "similarity": -0.07192373275756836
+        }
+      ]
+    }
+  }
+}

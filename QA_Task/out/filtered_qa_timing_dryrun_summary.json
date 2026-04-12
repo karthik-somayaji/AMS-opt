@@ -1,0 +1,70 @@
+{
+  "mode": "eval_filtered_qa_vllm_local",
+  "dry_run": true,
+  "filtered_qa_root": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/filtered_QA",
+  "circuits": [
+    "amp2"
+  ],
+  "embeddings_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/gnn_embeddings_sg.json",
+  "embedding_mode": "sg",
+  "num_reference": 164,
+  "embedding_dim": 128,
+  "k": 2,
+  "related_mode": "topk",
+  "kg_max_chars": 12000,
+  "limit_per_circuit": 1,
+  "num_files": 1,
+  "num_seen": 1,
+  "num_eval": 1,
+  "kg_missing": 0,
+  "vllm_local": {
+    "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+    "tensor_parallel_size": 1,
+    "gpu_memory_utilization": 0.9,
+    "dtype": "auto",
+    "max_model_len": null,
+    "trust_remote_code": false,
+    "download_dir": null,
+    "apply_chat_template": true,
+    "temperature": 0.0,
+    "top_p": null,
+    "max_tokens": 8,
+    "batch_size": 4,
+    "cuda_visible_devices": "6"
+  },
+  "timing_s": 1.1003340650349855,
+  "stage_timings": {
+    "prepare_eval_rows_s": 1.0999416862614453,
+    "chat_template_total_s": 6.079673767089844e-06,
+    "chat_template_calls": 2,
+    "first_chat_template_s": 6.079673767089844e-06,
+    "per_circuit": {
+      "amp2": {
+        "load_items_s": 0.0005222689360380173,
+        "retrieval_s": 1.0617659650743008,
+        "kg_load_s": 0.00016694003716111183,
+        "prompt_build_s": 7.047969847917557e-05,
+        "total_s": 1.062544183805585
+      }
+    },
+    "vllm_load_s": 0.0,
+    "generation_s": 0.0,
+    "eval_total_local_s": 1.1003340650349855
+  },
+  "out_jsonl": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_timing_dryrun.jsonl",
+  "summary_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_timing_dryrun_summary.json",
+  "retrieved_circuits": {
+    "amp2": [
+      {
+        "family": "diff_amps",
+        "circuit_id": "620",
+        "similarity": 0.26783397793769836
+      },
+      {
+        "family": "diff_amps",
+        "circuit_id": "614",
+        "similarity": -0.009494629688560963
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "mode": "eval_filtered_qa_vllm_local",
+  "dry_run": true,
+  "filtered_qa_root": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/filtered_QA",
+  "circuits": [
+    "amp2"
+  ],
+  "embeddings_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/gnn_embeddings_sg.json",
+  "embedding_mode": "sg",
+  "num_reference": 164,
+  "embedding_dim": 128,
+  "k": 2,
+  "related_mode": "topk",
+  "kg_max_chars": 12000,
+  "limit_per_circuit": 1,
+  "num_files": 1,
+  "num_seen": 1,
+  "num_eval": 1,
+  "kg_missing": 0,
+  "vllm_local": {
+    "model": "/data/karthik/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct",
+    "resolved_model": "/data/karthik/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/8afb486c1db24fe5011ec46dfbe5b5dccdb575c2",
+    "tensor_parallel_size": 1,
+    "gpu_memory_utilization": 0.9,
+    "dtype": "auto",
+    "max_model_len": null,
+    "trust_remote_code": false,
+    "download_dir": null,
+    "apply_chat_template": true,
+    "temperature": 0.0,
+    "top_p": null,
+    "max_tokens": 8,
+    "batch_size": 4,
+    "cuda_visible_devices": "6",
+    "enforce_eager": false
+  },
+  "timing_s": 1.1235627350397408,
+  "stage_timings": {
+    "prepare_eval_rows_s": 1.1233316650614142,
+    "chat_template_total_s": 2.9797665774822235e-06,
+    "chat_template_calls": 2,
+    "first_chat_template_s": 2.9797665774822235e-06,
+    "per_circuit": {
+      "amp2": {
+        "load_items_s": 0.0005299090407788754,
+        "retrieval_s": 1.085676892194897,
+        "kg_load_s": 0.00016426993533968925,
+        "prompt_build_s": 2.6180408895015717e-05,
+        "total_s": 1.086412891279906
+      }
+    },
+    "vllm_load_s": 0.0,
+    "generation_s": 0.0,
+    "eval_total_local_s": 1.1235627350397408
+  },
+  "out_jsonl": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_localpath_dryrun.jsonl",
+  "summary_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_localpath_dryrun_summary.json",
+  "retrieved_circuits": {
+    "amp2": [
+      {
+        "family": "diff_amps",
+        "circuit_id": "620",
+        "similarity": 0.26783397793769836
+      },
+      {
+        "family": "diff_amps",
+        "circuit_id": "614",
+        "similarity": -0.009494629688560963
+      }
+    ]
+  }
+}

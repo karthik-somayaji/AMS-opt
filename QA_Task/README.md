@@ -141,3 +141,51 @@ conda run -n analog-rep python QA_Task/eval_mcq.py \
 Outputs:
 - Per-question JSONL with predictions: `QA_Task/out/eval_results.jsonl`
 - Summary metrics: `QA_Task/out/summary.json`
+
+## Filtered QA evaluation (question-only vs SG retrieval)
+
+Use `eval_filtered_qa.py` to evaluate the cleaned QA pairs from `QA_Task/filtered_QA/*_filtered_QA.json` in two settings:
+- question-only
+- question + KGs from top-k SG-retrieved reference circuits
+
+The retrieval anchor follows the same `LLMBO/llmbo.py` idea for `amp2`, `FC`, `comp`, and `ldo`, using the corresponding `LLMBO/*_ati_new/comb_graph_gnn.npz` graph and `gnn_embeddings_sg.json` by default.
+
+### Dry-run
+
+```bash
+cd /home/karthik/sim_clean/AMS-opt/AMS-opt
+conda run -n analog-rep python QA_Task/eval_filtered_qa.py \
+	--eval_vllm_local \
+	--dry_run \
+	--circuits amp2 FC comp ldo \
+	--k 2 \
+	--gnn_embedding_mode sg \
+	--cuda_visible_devices 6 \
+	--vllm_model meta-llama/Meta-Llama-3-8B-Instruct \
+	--apply_chat_template \
+	--out_jsonl filtered_qa_dryrun.jsonl \
+	--summary_json filtered_qa_dryrun_summary.json
+```
+
+### Full local vLLM run on GPU 6
+
+```bash
+cd /home/karthik/sim_clean/AMS-opt/AMS-opt
+conda run -n analog-rep python QA_Task/eval_filtered_qa.py \
+	--eval_vllm_local \
+	--circuits amp2 FC comp ldo \
+	--k 2 \
+	--gnn_embedding_mode sg \
+	--cuda_visible_devices 6 \
+	--vllm_model meta-llama/Meta-Llama-3-8B-Instruct \
+	--apply_chat_template \
+	--temperature 0 \
+	--max_tokens 8 \
+	--out_jsonl filtered_qa_eval_llama3_8b.jsonl \
+	--summary_json filtered_qa_summary_llama3_8b.json
+```
+
+`filtered_qa_summary_llama3_8b.json` includes:
+- overall baseline vs retrieval accuracy
+- per-circuit metrics for `amp2`, `FC`, `comp`, and `ldo`
+- the retrieved top-k reference circuits used for each circuit

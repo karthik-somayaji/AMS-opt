@@ -1,0 +1,87 @@
+{
+  "mode": "eval_filtered_qa_vllm",
+  "dry_run": false,
+  "filtered_qa_root": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/filtered_QA",
+  "circuits": [
+    "amp2"
+  ],
+  "embeddings_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/gnn_embeddings_sg.json",
+  "embedding_mode": "sg",
+  "num_reference": 164,
+  "embedding_dim": 128,
+  "k": 1,
+  "related_mode": "topk",
+  "kg_max_chars": 2000,
+  "limit_per_circuit": 1,
+  "num_files": 1,
+  "num_seen": 1,
+  "num_eval": 1,
+  "kg_missing": 0,
+  "vllm": {
+    "base_url": "https://api.openai.com",
+    "model": "gpt-4o-mini",
+    "model_source": "gpt-4o-mini",
+    "resolved_model": "gpt-4o-mini",
+    "profile": null,
+    "is_reasoning_model": false,
+    "temperature": 0.0,
+    "top_p": null,
+    "max_tokens": 8,
+    "timeout_s": 30.0
+  },
+  "timing_s": 3.9251036043278873,
+  "stage_timings": {
+    "prepare_eval_rows_s": 1.075427862815559,
+    "chat_template_total_s": 0.0,
+    "chat_template_calls": 0,
+    "first_chat_template_s": null,
+    "per_circuit": {
+      "amp2": {
+        "load_items_s": 0.00069408118724823,
+        "retrieval_s": 1.0380399120040238,
+        "kg_load_s": 0.00010504107922315598,
+        "prompt_build_s": 2.2279098629951477e-05,
+        "total_s": 1.0388863161206245
+      }
+    },
+    "request_total_s": 2.8491935580968857,
+    "eval_total_server_s": 3.9251036043278873
+  },
+  "out_jsonl": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_eval_gpt4o_mini_debug.jsonl",
+  "summary_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_eval_gpt4o_mini_debug_summary.json",
+  "retrieved_circuits": {
+    "amp2": [
+      {
+        "family": "diff_amps",
+        "circuit_id": "620",
+        "similarity": 0.26783397793769836
+      }
+    ]
+  },
+  "baseline_correct": 0,
+  "retrieval_correct": 0,
+  "baseline_parse_fail": 0,
+  "retrieval_parse_fail": 0,
+  "baseline_accuracy": 0.0,
+  "retrieval_accuracy": 0.0,
+  "accuracy_gain": 0.0,
+  "by_circuit": {
+    "amp2": {
+      "num_eval": 1,
+      "baseline_correct": 0,
+      "retrieval_correct": 0,
+      "baseline_parse_fail": 0,
+      "retrieval_parse_fail": 0,
+      "baseline_accuracy": 0.0,
+      "retrieval_accuracy": 0.0,
+      "accuracy_gain": 0.0,
+      "retrieved_circuits": [
+        {
+          "family": "diff_amps",
+          "circuit_id": "620",
+          "similarity": 0.26783397793769836
+        }
+      ]
+    }
+  }
+}

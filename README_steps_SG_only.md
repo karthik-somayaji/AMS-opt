@@ -20,3 +20,101 @@ cd /home/karthik/sim_clean/AMS-opt
 /home/karthik/miniconda3/envs/analog-rep/bin/python filter_with_llmbo.py \
   --circuit FC --paragraph_k -1 --repeats 3 --n_itr 5 --n_proposal_llm 1 --n_proposal_bo 0 \
   --min_delta 0.0 --llm_temperature 0.0
+
+# QA Datset Accuracy Evaluation
+CUDA_VISIBLE_DEVICES=3 /home/karthik/.conda/envs/analog-rep/bin/python QA_Task/eval_filtered_qa.py   --eval_vllm_local --log_timings --enforce_eager   --circuits amp2 FC comp ldo --k 3 --gnn_embedding_mode sg   --cuda_visible_devices 3 --vllm_model /data/karthik/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct   --apply_chat_template --temperature 0 --max_tokens 8 --batch_size 4   --out_jsonl filtered_qa_eval_llama3_8b_local.jsonl   --summary_json filtered_qa_eval_llama3_8b_local_summary.json
+
+CUDA_VISIBLE_DEVICES=6 /home/karthik/.conda/envs/analog-rep/bin/python QA_Task/eval_filtered_qa.py   --eval_vllm_local --log_timings --enforce_eager   --circuits amp2 FC comp ldo --k 3 --gnn_embedding_mode sg   --cuda_visible_devices 6 --vllm_model /data/karthik/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct   --apply_chat_template --temperature 0 --max_tokens 8 --batch_size 4 --max_model_len 8192   --out_jsonl filtered_qa_eval_llama3_8b_local.jsonl   --summary_json filtered_qa_eval_llama3_8b_local_summary.json
+
+CUDA_VISIBLE_DEVICES=6 /home/karthik/.conda/envs/analog-rep/bin/python QA_Task/eval_filtered_qa.py   --eval_vllm_local --log_timings --enforce_eager   --circuits ldo --k 1 --gnn_embedding_mode sg   --cuda_visible_devices 6 --vllm_model /data/karthik/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct   --apply_chat_template --temperature 0 --max_tokens 8 --batch_size 4 --max_model_len 8192   --out_jsonl filtered_qa_eval_llama3_8b_local.jsonl   --summary_json filtered_qa_eval_llama3_8b_local_summary.json
+
+
+CUDA_VISIBLE_DEVICES=6 /home/karthik/.conda/envs/analog-rep/bin/python QA_Task/eval_filtered_qa.py \
+  --eval_vllm_local \
+  --log_timings \
+  --enforce_eager \
+  --circuits ldo \
+  --k 1 \
+  --gnn_embedding_mode sg \
+  --cuda_visible_devices 6 \
+  --vllm_model models--Qwen--Qwen2-7B-Instruct \
+  --apply_chat_template \
+  --temperature 0 \
+  --max_tokens 8 \
+  --batch_size 4 \
+  --out_jsonl filtered_qa_eval_qwen2_7b.jsonl \
+  --summary_json filtered_qa_eval_qwen2_7b_summary.json
+
+  #################
+  Models:
+
+llama3_8b
+llama3-70b
+qwen2_7b
+qwen2.5_32b
+deepseek_qwen14b
+deepseek_qwen32b
+deepseek--llama-70b
+phi4_reasoning
+
+CUDA_VISIBLE_DEVICES=6 /home/karthik/.conda/envs/analog-rep/bin/python QA_Task/eval_filtered_qa.py \
+  --eval_vllm_local \
+  --log_timings \
+  --enforce_eager \
+  --circuits amp2 FC comp \
+  --k 3 \
+  --gnn_embedding_mode sg \
+  --cuda_visible_devices 6 \
+  --vllm_model llama3_8b \
+  --apply_chat_template \
+  --temperature 0 \
+  --max_tokens 8 \
+  --batch_size 4
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 /home/karthik/.conda/envs/analog-rep/bin/python QA_Task/eval_filtered_qa.py \
+  --eval_vllm_local \
+  --log_timings \
+  --enforce_eager \
+  --circuits amp2 FC comp \
+  --k 3 \
+  --gnn_embedding_mode sg \
+  --cuda_visible_devices 0,1,2,3 \
+  --vllm_model llama3-70b \
+  --apply_chat_template \
+  --temperature 0 \
+  --max_tokens 8 \
+  --batch_size 4
+  --tensor_parallel_size 4
+
+CUDA_VISIBLE_DEVICES=4 /home/karthik/.conda/envs/analog-rep/bin/python QA_Task/eval_filtered_qa.py \
+  --eval_vllm_local \
+  --log_timings \
+  --enforce_eager \
+  --circuits amp2 FC comp \
+  --k 3 \
+  --gnn_embedding_mode sg \
+  --cuda_visible_devices 4 \
+  --vllm_model deepseek--llama-70b \
+  --apply_chat_template \
+  --temperature 0 \
+  --max_tokens 8 \
+  --batch_size 4
+
+
+models = [gpt-4o-mini, gpt-5.1]
+
+OPENAI_API_KEY="$OPENAI_API_KEY" /home/karthik/.conda/envs/analog-rep/bin/python QA_Task/eval_filtered_qa.py \
+  --eval_vllm \
+  --log_timings \
+  --circuits amp2 FC comp ldo \
+  --k 3 \
+  --gnn_embedding_mode sg \
+  --vllm_base_url https://api.openai.com \
+  --vllm_model gpt-4o-mini \
+  --temperature 0 \
+  --max_tokens 8 \
+  --out_jsonl filtered_qa_eval_gpt4o_mini.jsonl \
+  --summary_json filtered_qa_eval_gpt4o_mini_summary.json
+
+# QA Accuracy for 5.1 model
+OPENAI_API_KEY="$OPENAI_API_KEY" /home/karthik/.conda/envs/analog-rep/bin/python QA_Task/eval_filtered_qa.py   --eval_vllm   --log_timings   --circuits amp2  --k 1   --kg_max_chars 12000   --gnn_embedding_mode sg   --vllm_base_url https://api.openai.com   --vllm_model gpt-5.1  --timeout_s 60   --max_completion_tokens 8   --out_jsonl filtered_qa_eval_gpt4o_mini.jsonl   --summary_json filtered_qa_eval_gpt4o_mini_summary.json

@@ -1,0 +1,119 @@
+{
+  "mode": "eval_filtered_qa_vllm_local",
+  "dry_run": false,
+  "filtered_qa_root": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/filtered_QA",
+  "circuits": [
+    "amp2"
+  ],
+  "embeddings_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/gnn_embeddings_sg.json",
+  "embedding_mode": "sg",
+  "num_reference": 164,
+  "embedding_dim": 128,
+  "k": 3,
+  "related_mode": "topk",
+  "kg_max_chars": 8000,
+  "netlist_max_chars": 12000,
+  "limit_per_circuit": 0,
+  "num_files": 1,
+  "num_seen": 53,
+  "num_eval": 53,
+  "kg_missing": 0,
+  "netlist_missing": 0,
+  "vllm_local": {
+    "model": "llama3-70b",
+    "model_source": "/data/karthik/huggingface/hub/models--meta-llama--Meta-Llama-3-70B-Instruct",
+    "resolved_model": "/data/karthik/huggingface/hub/models--meta-llama--Meta-Llama-3-70B-Instruct/snapshots/28bd9fa9d94b23cb6ded08f92d5672b2aabe695f",
+    "profile": "llama3-70b-instruct",
+    "is_reasoning_model": false,
+    "tensor_parallel_size": 4,
+    "gpu_memory_utilization": 0.9,
+    "dtype": "auto",
+    "max_model_len": 8192,
+    "trust_remote_code": false,
+    "download_dir": null,
+    "apply_chat_template": true,
+    "temperature": 0.0,
+    "top_p": null,
+    "max_tokens": 8,
+    "batch_size": 4,
+    "cuda_visible_devices": "0,1,2,3",
+    "enforce_eager": true
+  },
+  "timing_s": 221.71879216562957,
+  "stage_timings": {
+    "prepare_eval_rows_s": 2.6899134861305356,
+    "chat_template_total_s": 1.6406080527231097,
+    "chat_template_calls": 106,
+    "first_chat_template_s": 1.63657808303833,
+    "per_circuit": {
+      "amp2": {
+        "load_items_s": 0.0005252053961157799,
+        "retrieval_s": 1.011299567297101,
+        "netlist_load_s": 0.00015288125723600388,
+        "kg_load_s": 0.0001660119742155075,
+        "prompt_build_s": 1.6413617813959718,
+        "total_s": 2.653689897619188
+      }
+    },
+    "vllm_load_s": 36.38403249066323,
+    "generation_s": 182.644550062716,
+    "eval_total_local_s": 221.71879216562957
+  },
+  "out_jsonl": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_eval_llama3_70b.jsonl",
+  "summary_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_eval_llama3_70b_summary.json",
+  "retrieved_circuits": {
+    "amp2": [
+      {
+        "family": "diff_amps",
+        "circuit_id": "620",
+        "similarity": 0.26783397793769836
+      },
+      {
+        "family": "diff_amps",
+        "circuit_id": "614",
+        "similarity": -0.009494629688560963
+      },
+      {
+        "family": "diff_amps",
+        "circuit_id": "930",
+        "similarity": -0.031088458374142647
+      }
+    ]
+  },
+  "baseline_correct": 35,
+  "retrieval_correct": 37,
+  "baseline_parse_fail": 0,
+  "retrieval_parse_fail": 0,
+  "baseline_accuracy": 0.660377358490566,
+  "retrieval_accuracy": 0.6981132075471698,
+  "accuracy_gain": 0.03773584905660377,
+  "by_circuit": {
+    "amp2": {
+      "num_eval": 53,
+      "baseline_correct": 35,
+      "retrieval_correct": 37,
+      "baseline_parse_fail": 0,
+      "retrieval_parse_fail": 0,
+      "baseline_accuracy": 0.660377358490566,
+      "retrieval_accuracy": 0.6981132075471698,
+      "accuracy_gain": 0.03773584905660377,
+      "retrieved_circuits": [
+        {
+          "family": "diff_amps",
+          "circuit_id": "620",
+          "similarity": 0.26783397793769836
+        },
+        {
+          "family": "diff_amps",
+          "circuit_id": "614",
+          "similarity": -0.009494629688560963
+        },
+        {
+          "family": "diff_amps",
+          "circuit_id": "930",
+          "similarity": -0.031088458374142647
+        }
+      ]
+    }
+  }
+}
