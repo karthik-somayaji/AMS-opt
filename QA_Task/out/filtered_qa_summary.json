@@ -1,0 +1,164 @@
+{
+  "mode": "eval_filtered_qa_vllm",
+  "dry_run": false,
+  "filtered_qa_root": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/filtered_QA",
+  "circuits": [
+    "amp2",
+    "comp"
+  ],
+  "embeddings_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/gnn_embeddings_sg_sg_vs_skg.json",
+  "embedding_mode": "sg",
+  "num_reference": 164,
+  "embedding_dim": 128,
+  "k": 3,
+  "related_mode": "topk",
+  "kg_max_chars": 12000,
+  "netlist_max_chars": 12000,
+  "limit_per_circuit": 0,
+  "num_files": 2,
+  "num_seen": 115,
+  "num_eval": 115,
+  "kg_missing": 2,
+  "netlist_missing": 0,
+  "vllm": {
+    "base_url": "https://api.openai.com",
+    "model": "gpt-5.1",
+    "model_source": "gpt-5.1",
+    "resolved_model": "gpt-5.1",
+    "profile": null,
+    "is_reasoning_model": false,
+    "temperature": 1.0,
+    "top_p": null,
+    "max_tokens": 8,
+    "max_completion_tokens": 64,
+    "timeout_s": 120.0
+  },
+  "timing_s": 193.22782502695918,
+  "stage_timings": {
+    "prepare_eval_rows_s": 1.1230439255014062,
+    "chat_template_total_s": 0.0,
+    "chat_template_calls": 0,
+    "first_chat_template_s": null,
+    "per_circuit": {
+      "amp2": {
+        "load_items_s": 0.0004167407751083374,
+        "retrieval_s": 1.0878623742610216,
+        "netlist_load_s": 0.00015288125723600388,
+        "kg_load_s": 0.00018354225903749466,
+        "prompt_build_s": 0.0009897872805595398,
+        "total_s": 1.0898575251922011
+      },
+      "comp": {
+        "load_items_s": 0.0006993189454078674,
+        "retrieval_s": 0.00307293888181448,
+        "netlist_load_s": 0.0001508556306362152,
+        "kg_load_s": 0.00014052074402570724,
+        "prompt_build_s": 0.000985809601843357,
+        "total_s": 0.005301778204739094
+      }
+    },
+    "request_total_s": 192.0781258130446,
+    "eval_total_server_s": 193.22782502695918
+  },
+  "out_jsonl": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_eval.jsonl",
+  "summary_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_summary.json",
+  "retrieved_circuits": {
+    "amp2": [
+      {
+        "family": "diff_amps",
+        "circuit_id": "930",
+        "similarity": 0.5463317632675171
+      },
+      {
+        "family": "diff_amps",
+        "circuit_id": "77",
+        "similarity": 0.5309858322143555
+      },
+      {
+        "family": "diff_amps",
+        "circuit_id": "75",
+        "similarity": 0.5260190367698669
+      }
+    ],
+    "comp": [
+      {
+        "family": "comparators",
+        "circuit_id": "1056",
+        "similarity": 0.49893149733543396
+      },
+      {
+        "family": "comparators",
+        "circuit_id": "1073",
+        "similarity": 0.49530619382858276
+      },
+      {
+        "family": "comparators",
+        "circuit_id": "1062",
+        "similarity": 0.4798147976398468
+      }
+    ]
+  },
+  "baseline_correct": 83,
+  "retrieval_correct": 88,
+  "baseline_parse_fail": 0,
+  "retrieval_parse_fail": 0,
+  "baseline_accuracy": 0.7217391304347827,
+  "retrieval_accuracy": 0.7652173913043478,
+  "accuracy_gain": 0.043478260869565216,
+  "by_circuit": {
+    "amp2": {
+      "num_eval": 53,
+      "baseline_correct": 41,
+      "retrieval_correct": 39,
+      "baseline_parse_fail": 0,
+      "retrieval_parse_fail": 0,
+      "baseline_accuracy": 0.7735849056603774,
+      "retrieval_accuracy": 0.7358490566037735,
+      "accuracy_gain": -0.03773584905660377,
+      "retrieved_circuits": [
+        {
+          "family": "diff_amps",
+          "circuit_id": "930",
+          "similarity": 0.5463317632675171
+        },
+        {
+          "family": "diff_amps",
+          "circuit_id": "77",
+          "similarity": 0.5309858322143555
+        },
+        {
+          "family": "diff_amps",
+          "circuit_id": "75",
+          "similarity": 0.5260190367698669
+        }
+      ]
+    },
+    "comp": {
+      "num_eval": 62,
+      "baseline_correct": 42,
+      "retrieval_correct": 49,
+      "baseline_parse_fail": 0,
+      "retrieval_parse_fail": 0,
+      "baseline_accuracy": 0.6774193548387096,
+      "retrieval_accuracy": 0.7903225806451613,
+      "accuracy_gain": 0.11290322580645161,
+      "retrieved_circuits": [
+        {
+          "family": "comparators",
+          "circuit_id": "1056",
+          "similarity": 0.49893149733543396
+        },
+        {
+          "family": "comparators",
+          "circuit_id": "1073",
+          "similarity": 0.49530619382858276
+        },
+        {
+          "family": "comparators",
+          "circuit_id": "1062",
+          "similarity": 0.4798147976398468
+        }
+      ]
+    }
+  }
+}

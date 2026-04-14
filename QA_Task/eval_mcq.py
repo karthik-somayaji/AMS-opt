@@ -229,6 +229,7 @@ def vllm_chat_completions(
     api_key: str = "EMPTY",
     temperature: float = 0.0,
     max_tokens: int = 8,
+    max_completion_tokens: Optional[int] = None,
     timeout_s: float = 120.0,
     extra: Optional[Dict[str, Any]] = None,
     dry_run: bool = False,
@@ -253,7 +254,9 @@ def vllm_chat_completions(
     }
     normalized_model = str(model or "").strip().lower()
     if normalized_model.startswith("gpt-5"):
-        payload["max_completion_tokens"] = int(max_tokens)
+        payload["max_completion_tokens"] = int(
+            max_completion_tokens if max_completion_tokens is not None else max_tokens
+        )
     else:
         payload["max_tokens"] = int(max_tokens)
     if extra:

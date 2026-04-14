@@ -15,11 +15,13 @@
   "k": 3,
   "related_mode": "topk",
   "kg_max_chars": 12000,
+  "netlist_max_chars": 12000,
   "limit_per_circuit": 0,
   "num_files": 4,
   "num_seen": 187,
   "num_eval": 187,
-  "kg_missing": 3,
+  "kg_missing": 2,
+  "netlist_missing": 0,
   "vllm": {
     "base_url": "https://api.openai.com",
     "model": "gpt-4o-mini",
@@ -29,47 +31,51 @@
     "is_reasoning_model": false,
     "temperature": 0.0,
     "top_p": null,
-    "max_tokens": 20,
-    "timeout_s": 60.0
+    "max_tokens": 8,
+    "timeout_s": 120.0
   },
-  "timing_s": 332.75591867091134,
+  "timing_s": 586.9543786952272,
   "stage_timings": {
-    "prepare_eval_rows_s": 1.1368538439273834,
+    "prepare_eval_rows_s": 1.1312709962949157,
     "chat_template_total_s": 0.0,
     "chat_template_calls": 0,
     "first_chat_template_s": null,
     "per_circuit": {
       "amp2": {
-        "load_items_s": 0.0005228309892117977,
-        "retrieval_s": 1.084951892029494,
-        "kg_load_s": 0.00019590463489294052,
-        "prompt_build_s": 0.0006695697084069252,
-        "total_s": 1.0864941929467022
+        "load_items_s": 0.0003893645480275154,
+        "retrieval_s": 1.0848438730463386,
+        "netlist_load_s": 0.00015567708760499954,
+        "kg_load_s": 0.00016845855861902237,
+        "prompt_build_s": 0.0011023050174117088,
+        "total_s": 1.086890084668994
       },
       "FC": {
-        "load_items_s": 0.00045606261119246483,
-        "retrieval_s": 0.003558825235813856,
-        "kg_load_s": 0.00017264718189835548,
-        "prompt_build_s": 0.0003693201579153538,
-        "total_s": 0.00464876601472497
+        "load_items_s": 0.0004040319472551346,
+        "retrieval_s": 0.003756558522582054,
+        "netlist_load_s": 0.00013339705765247345,
+        "kg_load_s": 0.0001551872119307518,
+        "prompt_build_s": 0.000826781615614891,
+        "total_s": 0.005444205366075039
       },
       "comp": {
-        "load_items_s": 0.000582404900342226,
-        "retrieval_s": 0.0029669213108718395,
-        "kg_load_s": 9.645102545619011e-05,
-        "prompt_build_s": 0.0003018663264811039,
-        "total_s": 0.004094854928553104
+        "load_items_s": 0.0007540769875049591,
+        "retrieval_s": 0.003033071756362915,
+        "netlist_load_s": 0.00015993695706129074,
+        "kg_load_s": 0.00014003273099660873,
+        "prompt_build_s": 0.0007219398394227028,
+        "total_s": 0.005028718151152134
       },
       "ldo": {
-        "load_items_s": 0.00031651975587010384,
-        "retrieval_s": 0.00339888921007514,
-        "kg_load_s": 0.0002077082172036171,
-        "prompt_build_s": 0.0006366763263940811,
-        "total_s": 0.004663501866161823
+        "load_items_s": 0.00040500983595848083,
+        "retrieval_s": 0.0038752881810069084,
+        "netlist_load_s": 0.00016608275473117828,
+        "kg_load_s": 0.00018493924289941788,
+        "prompt_build_s": 0.0008753938600420952,
+        "total_s": 0.005653729662299156
       }
     },
-    "request_total_s": 331.58436936559156,
-    "eval_total_server_s": 332.75591867091134
+    "request_total_s": 585.7955612000078,
+    "eval_total_server_s": 586.9543786952272
   },
   "out_jsonl": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_eval_gpt4o_mini.jsonl",
   "summary_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_eval_gpt4o_mini_summary.json",
@@ -77,185 +83,185 @@
     "amp2": [
       {
         "family": "diff_amps",
-        "circuit_id": "620",
-        "similarity": 0.26783397793769836
+        "circuit_id": "924",
+        "similarity": 0.9951793551445007
       },
       {
         "family": "diff_amps",
-        "circuit_id": "614",
-        "similarity": -0.009494629688560963
+        "circuit_id": "925",
+        "similarity": 0.9945268630981445
       },
       {
         "family": "diff_amps",
-        "circuit_id": "930",
-        "similarity": -0.031088458374142647
+        "circuit_id": "88",
+        "similarity": 0.986580491065979
       }
     ],
     "FC": [
       {
         "family": "diff_amps",
-        "circuit_id": "620",
-        "similarity": 0.25084277987480164
+        "circuit_id": "925",
+        "similarity": 0.9827430844306946
       },
       {
         "family": "diff_amps",
-        "circuit_id": "930",
-        "similarity": 0.012880600057542324
+        "circuit_id": "924",
+        "similarity": 0.9820094704627991
       },
       {
         "family": "diff_amps",
-        "circuit_id": "614",
-        "similarity": 0.011625882238149643
+        "circuit_id": "88",
+        "similarity": 0.9608787298202515
       }
     ],
     "comp": [
       {
         "family": "comparators",
-        "circuit_id": "1062",
-        "similarity": 0.014142274856567383
+        "circuit_id": "1051",
+        "similarity": 0.9969238638877869
       },
       {
         "family": "comparators",
-        "circuit_id": "1048",
-        "similarity": -0.09770362079143524
+        "circuit_id": "1057",
+        "similarity": 0.9959854483604431
       },
       {
         "family": "comparators",
-        "circuit_id": "1056",
-        "similarity": -0.10059665888547897
+        "circuit_id": "1054",
+        "similarity": 0.9899243712425232
       }
     ],
     "ldo": [
       {
         "family": "LDO",
-        "circuit_id": "2332",
-        "similarity": -0.07192373275756836
+        "circuit_id": "2317",
+        "similarity": 0.9940506815910339
       },
       {
         "family": "LDO",
-        "circuit_id": "2333",
-        "similarity": -0.07371245324611664
+        "circuit_id": "2311",
+        "similarity": 0.9933981895446777
       },
       {
         "family": "LDO",
-        "circuit_id": "2318",
-        "similarity": -0.09480410814285278
+        "circuit_id": "2312",
+        "similarity": 0.9931290745735168
       }
     ]
   },
-  "baseline_correct": 89,
-  "retrieval_correct": 99,
+  "baseline_correct": 118,
+  "retrieval_correct": 120,
   "baseline_parse_fail": 0,
   "retrieval_parse_fail": 0,
-  "baseline_accuracy": 0.47593582887700536,
-  "retrieval_accuracy": 0.5294117647058824,
-  "accuracy_gain": 0.053475935828877004,
+  "baseline_accuracy": 0.6310160427807486,
+  "retrieval_accuracy": 0.6417112299465241,
+  "accuracy_gain": 0.0106951871657754,
   "by_circuit": {
     "FC": {
       "num_eval": 35,
-      "baseline_correct": 19,
-      "retrieval_correct": 21,
+      "baseline_correct": 22,
+      "retrieval_correct": 22,
       "baseline_parse_fail": 0,
       "retrieval_parse_fail": 0,
-      "baseline_accuracy": 0.5428571428571428,
-      "retrieval_accuracy": 0.6,
-      "accuracy_gain": 0.05714285714285714,
+      "baseline_accuracy": 0.6285714285714286,
+      "retrieval_accuracy": 0.6285714285714286,
+      "accuracy_gain": 0.0,
       "retrieved_circuits": [
         {
           "family": "diff_amps",
-          "circuit_id": "620",
-          "similarity": 0.25084277987480164
+          "circuit_id": "925",
+          "similarity": 0.9827430844306946
         },
         {
           "family": "diff_amps",
-          "circuit_id": "930",
-          "similarity": 0.012880600057542324
+          "circuit_id": "924",
+          "similarity": 0.9820094704627991
         },
         {
           "family": "diff_amps",
-          "circuit_id": "614",
-          "similarity": 0.011625882238149643
+          "circuit_id": "88",
+          "similarity": 0.9608787298202515
         }
       ]
     },
     "amp2": {
       "num_eval": 53,
-      "baseline_correct": 30,
-      "retrieval_correct": 31,
+      "baseline_correct": 34,
+      "retrieval_correct": 38,
       "baseline_parse_fail": 0,
       "retrieval_parse_fail": 0,
-      "baseline_accuracy": 0.5660377358490566,
-      "retrieval_accuracy": 0.5849056603773585,
-      "accuracy_gain": 0.018867924528301886,
+      "baseline_accuracy": 0.6415094339622641,
+      "retrieval_accuracy": 0.7169811320754716,
+      "accuracy_gain": 0.07547169811320754,
       "retrieved_circuits": [
         {
           "family": "diff_amps",
-          "circuit_id": "620",
-          "similarity": 0.26783397793769836
+          "circuit_id": "924",
+          "similarity": 0.9951793551445007
         },
         {
           "family": "diff_amps",
-          "circuit_id": "614",
-          "similarity": -0.009494629688560963
+          "circuit_id": "925",
+          "similarity": 0.9945268630981445
         },
         {
           "family": "diff_amps",
-          "circuit_id": "930",
-          "similarity": -0.031088458374142647
+          "circuit_id": "88",
+          "similarity": 0.986580491065979
         }
       ]
     },
     "comp": {
       "num_eval": 62,
-      "baseline_correct": 26,
-      "retrieval_correct": 27,
+      "baseline_correct": 43,
+      "retrieval_correct": 43,
       "baseline_parse_fail": 0,
       "retrieval_parse_fail": 0,
-      "baseline_accuracy": 0.41935483870967744,
-      "retrieval_accuracy": 0.43548387096774194,
-      "accuracy_gain": 0.016129032258064516,
+      "baseline_accuracy": 0.6935483870967742,
+      "retrieval_accuracy": 0.6935483870967742,
+      "accuracy_gain": 0.0,
       "retrieved_circuits": [
         {
           "family": "comparators",
-          "circuit_id": "1062",
-          "similarity": 0.014142274856567383
+          "circuit_id": "1051",
+          "similarity": 0.9969238638877869
         },
         {
           "family": "comparators",
-          "circuit_id": "1048",
-          "similarity": -0.09770362079143524
+          "circuit_id": "1057",
+          "similarity": 0.9959854483604431
         },
         {
           "family": "comparators",
-          "circuit_id": "1056",
-          "similarity": -0.10059665888547897
+          "circuit_id": "1054",
+          "similarity": 0.9899243712425232
         }
       ]
     },
     "ldo": {
       "num_eval": 37,
-      "baseline_correct": 14,
-      "retrieval_correct": 20,
+      "baseline_correct": 19,
+      "retrieval_correct": 17,
       "baseline_parse_fail": 0,
       "retrieval_parse_fail": 0,
-      "baseline_accuracy": 0.3783783783783784,
-      "retrieval_accuracy": 0.5405405405405406,
-      "accuracy_gain": 0.16216216216216217,
+      "baseline_accuracy": 0.5135135135135135,
+      "retrieval_accuracy": 0.4594594594594595,
+      "accuracy_gain": -0.05405405405405406,
       "retrieved_circuits": [
         {
           "family": "LDO",
-          "circuit_id": "2332",
-          "similarity": -0.07192373275756836
+          "circuit_id": "2317",
+          "similarity": 0.9940506815910339
         },
         {
           "family": "LDO",
-          "circuit_id": "2333",
-          "similarity": -0.07371245324611664
+          "circuit_id": "2311",
+          "similarity": 0.9933981895446777
         },
         {
           "family": "LDO",
-          "circuit_id": "2318",
-          "similarity": -0.09480410814285278
+          "circuit_id": "2312",
+          "similarity": 0.9931290745735168
         }
       ]
     }

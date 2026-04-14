@@ -3,11 +3,23 @@
   --config gnn_training/config/full_training_diff_amps_comparators_LDO_opamp_all.yaml \
   --data.data_dir /home/karthik/sim_clean/AMS-opt/netlists
 
+CUDA_VISIBLE_DEVICES=0 /home/karthik/.conda/envs/analog-rep/bin/python -u gnn_training/scripts/train.py \
+  --config gnn_training/config/full_training_diff_amps_comparators_LDO_opamp_all.yaml \
+  --data.data_dir /home/karthik/sim_clean/AMS-opt/AMS-opt/netlists \
+  --training.device cuda
+
 # Visualization
 /home/karthik/miniconda3/envs/analog-rep/bin/python -u gnn_training/scripts/analyze_sg_skg_embeddings.py \
   --checkpoint checkpoints_sg_vs_skg/best_model.pt \
   --netlists_root /home/karthik/sim_clean/AMS-opt/netlists \
   --out_dir /home/karthik/sim_clean/AMS-opt/umap_results_full/sg_skg_analysis \
+  --export_llmbo_json
+
+In euclid:
+/home/karthik/miniconda3/envs/analog-rep/bin/python -u gnn_training/scripts/analyze_sg_skg_embeddings.py \
+  --checkpoint checkpoints_sg_vs_skg/best_model.pt \
+  --netlists_root /home/karthik/sim_clean/AMS-opt/AMS-opt/netlists \
+  --out_dir /home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/sg_skg_analysis \
   --export_llmbo_json
 
 python3 scripts/visualize_embeddings_umap.py   --config gnn_training/config/full_training_diff_amps_comparators_LDO_opamp_all.yaml   --device cpu
@@ -110,11 +122,32 @@ OPENAI_API_KEY="$OPENAI_API_KEY" /home/karthik/.conda/envs/analog-rep/bin/python
   --k 3 \
   --gnn_embedding_mode sg \
   --vllm_base_url https://api.openai.com \
-  --vllm_model gpt-4o-mini \
+  --vllm_model gpt-5 \
   --temperature 0 \
   --max_tokens 8 \
   --out_jsonl filtered_qa_eval_gpt4o_mini.jsonl \
   --summary_json filtered_qa_eval_gpt4o_mini_summary.json
+  --gnn_checkpoint /home/karthik/sim_clean/AMS-opt/AMS-opt/checkpoints_sg_vs_skg/best_model.pt  
+  --embeddings_json /home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/gnn_embeddings_sg_sg_vs_skg.json
+
 
 # QA Accuracy for 5.1 model
-OPENAI_API_KEY="$OPENAI_API_KEY" /home/karthik/.conda/envs/analog-rep/bin/python QA_Task/eval_filtered_qa.py   --eval_vllm   --log_timings   --circuits amp2  --k 1   --kg_max_chars 12000   --gnn_embedding_mode sg   --vllm_base_url https://api.openai.com   --vllm_model gpt-5.1  --timeout_s 60   --max_completion_tokens 8   --out_jsonl filtered_qa_eval_gpt4o_mini.jsonl   --summary_json filtered_qa_eval_gpt4o_mini_summary.json
+OPENAI_API_KEY="$OPENAI_API_KEY" /home/karthik/.conda/envs/analog-rep/bin/python QA_Task/eval_filtered_qa.py   --eval_vllm   --log_timings   --circuits amp2  --k 1   --kg_max_chars 12000   --gnn_embedding_mode sg   --vllm_base_url https://api.openai.com   --vllm_model gpt-5.1  --timeout_s 60   --max_completion_tokens 8   --out_jsonl filtered_qa_eval_gpt4o_mini.jsonl   --summary_json filtered_qa_eval_gpt4o_mini_summary.json --gnn_checkpoint /home/karthik/sim_clean/AMS-opt/AMS-opt/checkpoints_sg_vs_skg/best_model.pt   --embeddings_json /home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/
+
+OPENAI_API_KEY="$OPENAI_API_KEY" /home/karthik/.conda/envs/analog-rep/bin/python QA_Task/eval_filtered_qa.py \
+  --eval_vllm \
+  --log_timings \
+  --circuits FC comp \
+  --k 1 \
+  --gnn_embedding_mode sg \
+  --gnn_checkpoint /home/karthik/sim_clean/AMS-opt/AMS-opt/checkpoints_sg_vs_skg/best_model.pt \
+  --embeddings_json /home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/gnn_embeddings_sg_sg_vs_skg.json \
+  --vllm_base_url https://api.openai.com \
+  --vllm_model gpt-5.1 \
+  --temperature 1 \
+  --max_tokens 8 \
+  --max_completion_tokens 64 \
+  --timeout_s 120gnn_embeddings_sg_sg_vs_skg.json
+
+# QA accuracy non-gpt models
+CUDA_VISIBLE_DEVICES=1,2,3,4 /home/karthik/.conda/envs/analog-rep/bin/python QA_Task/eval_filtered_qa.py   --eval_vllm_local   --log_timings   --enforce_eager   --circuits ldo   --k 2   --gnn_embedding_mode sg   --gnn_checkpoint /home/karthik/sim_clean/AMS-opt/AMS-opt/checkpoints_sg_vs_skg/best_model.pt   --embeddings_json /home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/gnn_embeddings_sg_sg_vs_skg.json   --cuda_visible_devices 1,2,3,4   --vllm_model llama3-70b   --apply_chat_template   --temperature 1   --max_tokens 8   --batch_size 4 --gnn_embedding_mode sg --tensor_parallel_size 2 --kg_max_chars 10000

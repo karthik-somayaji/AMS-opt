@@ -259,24 +259,31 @@ def main(config_path: str = None, **kwargs):
     ema_train_loss = None
     ema_train_nt_xent = None
     ema_train_consistency = None
+    ema_train_sg_vs_skg = None
+    last_val_metrics = None
     
     for epoch in range(num_epochs):
         # Train
-        train_loss, train_nt_xent, train_consistency = trainer.train_epoch(train_sampler, num_batches=100)
+        train_loss, train_nt_xent, train_consistency, train_sg_vs_skg = trainer.train_epoch(train_sampler, num_batches=100)
 
         # EMA smoothing for nicer plots
         if ema_train_loss is None:
             ema_train_loss = train_loss
             ema_train_nt_xent = train_nt_xent
             ema_train_consistency = train_consistency
+            ema_train_sg_vs_skg = train_sg_vs_skg
         else:
             ema_train_loss = ema_beta * ema_train_loss + (1.0 - ema_beta) * train_loss
             ema_train_nt_xent = ema_beta * ema_train_nt_xent + (1.0 - ema_beta) * train_nt_xent
             ema_train_consistency = ema_beta * ema_train_consistency + (1.0 - ema_beta) * train_consistency
+            ema_train_sg_vs_skg = ema_beta * ema_train_sg_vs_skg + (1.0 - ema_beta) * train_sg_vs_skg
         
         if (epoch + 1) % log_interval == 0:
-            if consistency_weight > 0:
-                logger.info(f"Epoch {epoch+1}/{num_epochs} - Loss: {train_loss:.4f} (NT-Xent: {train_nt_xent:.4f}, Consistency: {train_consistency:.4f})")
+            if consistency_weight > 0 or sg_vs_skg_weight > 0:
+                logger.info(
+                    f"Epoch {epoch+1}/{num_epochs} - Loss: {train_loss:.4f} "
+                    f"(NT-Xent: {train_nt_xent:.4f}, Consistency: {train_consistency:.4f}, SG-vs-SKG: {train_sg_vs_skg:.4f})"
+                )
             else:
                 logger.info(f"Epoch {epoch+1}/{num_epochs} - Train Loss: {train_loss:.4f}")
 
@@ -284,24 +291,47 @@ def main(config_path: str = None, **kwargs):
             tb_writer.add_scalar('loss/train_epoch', train_loss, epoch)
             tb_writer.add_scalar('loss/train_nt_xent_epoch', train_nt_xent, epoch)
             tb_writer.add_scalar('loss/train_consistency_epoch', train_consistency, epoch)
+            tb_writer.add_scalar('loss/train_sg_vs_skg_epoch', train_sg_vs_skg, epoch)
 
             # Smoothed metrics (EMA)
             tb_writer.add_scalar('loss_ema/train_epoch', ema_train_loss, epoch)
             tb_writer.add_scalar('loss_ema/train_nt_xent_epoch', ema_train_nt_xent, epoch)
             tb_writer.add_scalar('loss_ema/train_consistency_epoch', ema_train_consistency, epoch)
+            tb_writer.add_scalar('loss_ema/train_sg_vs_skg_epoch', ema_train_sg_vs_skg, epoch)
 
             # LR
             tb_writer.add_scalar('lr', optimizer.param_groups[0]['lr'], epoch)
         
         # Validate
         if val_sampler is not None and (epoch + 1) % val_interval == 0:
-            val_metrics = validator.validate(model, loss_fn, val_sampler, num_batches=50)
+            val_metrics = validator.validate(
+                model,
+                loss_fn,
+                val_sampler,
+                num_batches=50,
+                consistency_loss_fn=consistency_loss_fn,
+                consistency_weight=consistency_weight,
+                nt_xent_weight=nt_xent_weight,
+                sg_vs_skg=sg_vs_skg_weight,
+                sg_vs_skg_loss_fn=sg_vs_skg_loss,
+            )
+            last_val_metrics = val_metrics
             val_loss = val_metrics['loss']
 
             tb_writer.add_scalar('loss/val_epoch', val_loss, epoch)
+            tb_writer.add_scalar('loss/val_nt_xent_epoch', val_metrics.get('nt_xent_loss', 0.0), epoch)
+            tb_writer.add_scalar('loss/val_consistency_epoch', val_metrics.get('consistency_loss', 0.0), epoch)
+            tb_writer.add_scalar('loss/val_sg_vs_skg_epoch', val_metrics.get('sg_vs_skg_loss', 0.0), epoch)
             
             logger.info(f"Epoch {epoch+1}/{num_epochs} - Val Loss: {val_loss:.4f}")
-            tb_writer.add_scalar('loss/val_epoch', val_loss, epoch)
+            logger.info(
+                "Validation Components - NT-Xent: %.4f, Consistency: %.4f, SG-vs-SKG: %.4f",
+                val_metrics.get('nt_xent_loss', 0.0),
+                val_metrics.get('consistency_loss', 0.0),
+                val_metrics.get('sg_vs_skg_loss', 0.0),
+            )
+
+            trainer.save_checkpoint(epoch + 1, val_metrics, save_epoch_checkpoint=False)
             
             # Early stopping
             if early_stopping.should_stop(val_loss):
@@ -310,7 +340,8 @@ def main(config_path: str = None, **kwargs):
         
         # Save checkpoint
         if (epoch + 1) % 10 == 0:
-            trainer.save_checkpoint(epoch + 1, {'loss': train_loss})
+            checkpoint_metrics = last_val_metrics if last_val_metrics is not None else {'loss': train_loss}
+            trainer.save_checkpoint(epoch + 1, checkpoint_metrics)
         
         # Step learning rate scheduler
         scheduler.step()

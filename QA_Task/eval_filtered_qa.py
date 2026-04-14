@@ -1238,6 +1238,7 @@ def eval_with_vllm_server(args: argparse.Namespace) -> Dict[str, Any]:
                 api_key=args.vllm_api_key,
                 temperature=args.temperature,
                 max_tokens=args.max_tokens,
+                max_completion_tokens=args.max_completion_tokens,
                 timeout_s=args.timeout_s,
                 extra={"top_p": args.top_p} if args.top_p is not None else None,
                 dry_run=bool(args.dry_run),
@@ -1249,6 +1250,7 @@ def eval_with_vllm_server(args: argparse.Namespace) -> Dict[str, Any]:
                 api_key=args.vllm_api_key,
                 temperature=args.temperature,
                 max_tokens=args.max_tokens,
+                max_completion_tokens=args.max_completion_tokens,
                 timeout_s=args.timeout_s,
                 extra={"top_p": args.top_p} if args.top_p is not None else None,
                 dry_run=bool(args.dry_run),
@@ -1357,6 +1359,7 @@ def eval_with_vllm_server(args: argparse.Namespace) -> Dict[str, Any]:
             "temperature": float(args.temperature),
             "top_p": float(args.top_p) if args.top_p is not None else None,
             "max_tokens": int(args.max_tokens),
+            "max_completion_tokens": int(args.max_completion_tokens) if args.max_completion_tokens is not None else None,
             "timeout_s": float(args.timeout_s),
         },
         "timing_s": float(total_s),
@@ -1404,6 +1407,7 @@ def run_api_probe(args: argparse.Namespace) -> None:
         api_key=args.vllm_api_key,
         temperature=args.temperature,
         max_tokens=max(1, int(args.max_tokens)),
+        max_completion_tokens=args.max_completion_tokens,
         timeout_s=args.timeout_s,
         extra={"top_p": args.top_p} if args.top_p is not None else None,
         dry_run=False,
@@ -1446,6 +1450,12 @@ def main() -> None:
     ap.add_argument("--temperature", type=float, default=0.0)
     ap.add_argument("--top_p", type=float, default=None)
     ap.add_argument("--max_tokens", type=int, default=8)
+    ap.add_argument(
+        "--max_completion_tokens",
+        type=int,
+        default=None,
+        help="Completion token budget for APIs/models that use max_completion_tokens, such as gpt-5.*",
+    )
     ap.add_argument("--timeout_s", type=float, default=120.0)
     ap.add_argument(
         "--api_probe_only",

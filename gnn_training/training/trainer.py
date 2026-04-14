@@ -47,7 +47,7 @@ class Trainer:
         self.sg_vs_skg = sg_vs_skg  # Whether to treat SG vs SG+KG as positive pairs 
         self.sg_vs_skg_loss = sg_vs_skg_loss
     
-    def train_epoch(self, batch_loader, num_batches: Optional[int] = None) -> Tuple[float, float, float]:
+    def train_epoch(self, batch_loader, num_batches: Optional[int] = None) -> Tuple[float, float, float, float]:
         """
         Train for one epoch.
         
@@ -56,12 +56,13 @@ class Trainer:
             num_batches: max number of batches to process (for debugging)
         
         Returns:
-            tuple of (avg_total_loss, avg_nt_xent_loss, avg_consistency_loss)
+            tuple of (avg_total_loss, avg_nt_xent_loss, avg_consistency_loss, avg_sg_vs_skg_loss)
         """
         self.model.train()
         total_loss = 0.0
         total_nt_xent = 0.0
         total_consistency = 0.0
+        total_sg_vs_skg = 0.0
 
         num_pairs_processed = 0
         num_batches_processed = 0
@@ -83,9 +84,11 @@ class Trainer:
             batch_consistency_loss = None
             sg_vs_skg_loss = torch.tensor(0.0, device=self.device)
 
-            # 1) NT-Xent: compute over the batch of positive pairs.
-            # This requires batch_size > 1 to provide in-batch negatives.
+            # First backward pass: NT-Xent + consistency.
             num_pos_pairs = min(len(anchors), len(positives))
+            batch_anchor_emb_list = []
+            z_anchor_b = None
+
             if num_pos_pairs > 0:
                 z_anchor_list = []
                 z_pos_list = []
@@ -98,55 +101,18 @@ class Trainer:
                     adj_pos = torch.tensor(pos_graph['adjacency'], dtype=torch.float32, device=self.device)
                     z_pos_list.append(self.model.encode(h_pos, adj_pos))
 
-                z_anchor_b = torch.stack(z_anchor_list, dim=0)  # [B, D]
-                z_pos_b = torch.stack(z_pos_list, dim=0)  # [B, D]
-
-                # Default to a no-op tensor so the backward expression is always valid.
-                sg_vs_skg_loss = torch.tensor(0.0, dtype=torch.float32, device=self.device)
-
-                # 1.5) Structural graph (SG) & structural+knowledge graph (SG+KG) as positive pairs
-                # -----------------------------SG vs SG+KG Loss start------------------------------- #
-                if self.sg_vs_skg > 0 and len(structural_graphs) > 0:
-                    z_structural_list = []
-                    for structural_graph in structural_graphs:
-                        h_structural = torch.tensor(structural_graph['features'], dtype=torch.float32, device=self.device)
-                        adj_structural = torch.tensor(structural_graph['adjacency'], dtype=torch.float32, device=self.device)
-                        z_structural = self.model.encode(h_structural, adj_structural)
-                        z_structural_list.append(z_structural)
-
-                    z_structural_b = torch.stack(z_structural_list, dim=0)  # [B, D]
-
-                    sg_vs_skg_loss = self.sg_vs_skg_loss(z_anchor_b, z_structural_b)
-
-                    total_nt_xent += float(sg_vs_skg_loss.item())
-                    num_pairs_processed += int(len(structural_graphs))
-                # -------------------------------------End----------------------------------------- #
-
-                self.optimizer.zero_grad(set_to_none=True)
+                z_anchor_b = torch.stack(z_anchor_list, dim=0)
+                z_pos_b = torch.stack(z_pos_list, dim=0)
                 batch_nt_xent_loss = self.loss_fn(z_anchor_b, z_pos_b)
-                (self.nt_xent_weight * batch_nt_xent_loss + self.sg_vs_skg * sg_vs_skg_loss).backward()
-                self.optimizer.step()
-
                 total_nt_xent += float(batch_nt_xent_loss.item())
                 num_pairs_processed += int(num_pos_pairs)
-                self.global_step += 1
 
-                if self.summary_writer is not None:
-                    self.summary_writer.add_scalar(
-                        'loss/train_nt_xent_step',
-                        float(batch_nt_xent_loss.item()),
-                        self.global_step,
-                    )
-
-            
-            # 2) Consistency: compute once per batch (over anchor embeddings) if enabled.
             if (
                 self.consistency_loss_fn is not None
                 and self.consistency_weight > 0
                 and similarity_matrix is not None
                 and len(anchors) > 1
             ):
-                batch_anchor_emb_list = []
                 for i, anchor_graph in enumerate(anchors):
                     h_anchor = torch.tensor(anchor_graph['features'], dtype=torch.float32, device=self.device)
                     adj_anchor = torch.tensor(anchor_graph['adjacency'], dtype=torch.float32, device=self.device)
@@ -158,24 +124,73 @@ class Trainer:
                     batch_emb = torch.stack(batch_anchor_emb_list, dim=0)
                     sim_matrix = torch.tensor(similarity_matrix, dtype=torch.float32, device=self.device)
                     if batch_emb.shape[0] == sim_matrix.shape[0]:
-                        self.optimizer.zero_grad(set_to_none=True)
                         batch_consistency_loss = self.consistency_loss_fn(batch_emb, sim_matrix)
-                        (self.consistency_weight * batch_consistency_loss).backward()
-                        self.optimizer.step()
-
                         total_consistency += float(batch_consistency_loss.item())
 
-                        if self.summary_writer is not None:
-                            self.summary_writer.add_scalar(
-                                'loss/train_consistency_step',
-                                float(batch_consistency_loss.item()),
-                                self.global_step,
-                            )
+            first_pass_loss = None
+            if batch_nt_xent_loss is not None and batch_consistency_loss is not None:
+                first_pass_loss = self.nt_xent_weight * batch_nt_xent_loss + self.consistency_weight * batch_consistency_loss
+            elif batch_nt_xent_loss is not None:
+                first_pass_loss = self.nt_xent_weight * batch_nt_xent_loss
+            elif batch_consistency_loss is not None:
+                first_pass_loss = self.consistency_weight * batch_consistency_loss
+
+            if first_pass_loss is not None:
+                self.optimizer.zero_grad(set_to_none=True)
+                first_pass_loss.backward()
+                self.optimizer.step()
+                self.global_step += 1
+
+                if self.summary_writer is not None:
+                    if batch_nt_xent_loss is not None:
+                        self.summary_writer.add_scalar(
+                            'loss/train_nt_xent_step',
+                            float(batch_nt_xent_loss.item()),
+                            self.global_step,
+                        )
+                    if batch_consistency_loss is not None:
+                        self.summary_writer.add_scalar(
+                            'loss/train_consistency_step',
+                            float(batch_consistency_loss.item()),
+                            self.global_step,
+                        )
+
+            # Second backward pass: SG vs SG+KG alignment only.
+            if self.sg_vs_skg > 0 and len(structural_graphs) > 0 and num_pos_pairs > 0:
+                z_anchor_list = []
+                z_structural_list = []
+                for anchor_graph, structural_graph in zip(anchors[:num_pos_pairs], structural_graphs[:num_pos_pairs]):
+                    h_anchor = torch.tensor(anchor_graph['features'], dtype=torch.float32, device=self.device)
+                    adj_anchor = torch.tensor(anchor_graph['adjacency'], dtype=torch.float32, device=self.device)
+                    z_anchor_list.append(self.model.encode(h_anchor, adj_anchor))
+
+                    h_structural = torch.tensor(structural_graph['features'], dtype=torch.float32, device=self.device)
+                    adj_structural = torch.tensor(structural_graph['adjacency'], dtype=torch.float32, device=self.device)
+                    z_structural_list.append(self.model.encode(h_structural, adj_structural))
+
+                if z_anchor_list and z_structural_list:
+                    z_anchor_b = torch.stack(z_anchor_list, dim=0)
+                    z_structural_b = torch.stack(z_structural_list, dim=0)
+                    sg_vs_skg_loss = self.sg_vs_skg_loss(z_anchor_b, z_structural_b)
+                    self.optimizer.zero_grad(set_to_none=True)
+                    (self.sg_vs_skg * sg_vs_skg_loss).backward()
+                    self.optimizer.step()
+
+                    total_sg_vs_skg += float(sg_vs_skg_loss.item())
+
+                    if self.summary_writer is not None:
+                        self.summary_writer.add_scalar(
+                            'loss/train_sg_vs_skg_step',
+                            float(sg_vs_skg_loss.item()),
+                            self.global_step,
+                        )
 
             # 3) Total loss bookkeeping (for epoch-level reporting)
             batch_total = 0.0
             if batch_nt_xent_loss is not None:
                 batch_total += self.nt_xent_weight * float(batch_nt_xent_loss.item())
+                if self.sg_vs_skg > 0:
+                    batch_total += self.sg_vs_skg * float(sg_vs_skg_loss.item())
             if batch_consistency_loss is not None:
                 batch_total += self.consistency_weight * float(batch_consistency_loss.item())
             total_loss += batch_total
@@ -186,10 +201,11 @@ class Trainer:
         avg_loss = total_loss / max(num_batches_processed, 1)
         avg_nt_xent = total_nt_xent / max(num_batches_processed, 1)
         avg_consistency = total_consistency / max(num_batches_processed, 1)
+        avg_sg_vs_skg = total_sg_vs_skg / max(num_batches_processed, 1)
         
-        return avg_loss, avg_nt_xent, avg_consistency
+        return avg_loss, avg_nt_xent, avg_consistency, avg_sg_vs_skg
     
-    def save_checkpoint(self, epoch: int, metrics: Dict[str, float] = None):
+    def save_checkpoint(self, epoch: int, metrics: Dict[str, float] = None, save_epoch_checkpoint: bool = True):
         """Save model checkpoint."""
         checkpoint = {
             'epoch': epoch,
@@ -200,8 +216,9 @@ class Trainer:
             'metrics': metrics or {},
         }
         
-        path = self.checkpoint_dir / f'checkpoint_epoch_{epoch:03d}.pt'
-        torch.save(checkpoint, path)
+        if save_epoch_checkpoint:
+            path = self.checkpoint_dir / f'checkpoint_epoch_{epoch:03d}.pt'
+            torch.save(checkpoint, path)
         
         # Keep only best checkpoint
         if metrics and 'loss' in metrics and metrics['loss'] < self.best_loss:
@@ -229,8 +246,19 @@ class Validator:
         """
         self.device = device
     
-    def validate(self, model: nn.Module, loss_fn: nn.Module, batch_loader,
-                 num_batches: Optional[int] = None) -> Dict[str, float]:
+    def validate(
+        self,
+        model: nn.Module,
+        loss_fn: nn.Module,
+        batch_loader,
+        num_batches: Optional[int] = None,
+        *,
+        consistency_loss_fn: Optional[nn.Module] = None,
+        consistency_weight: float = 0.0,
+        nt_xent_weight: float = 1.0,
+        sg_vs_skg: float = 0.0,
+        sg_vs_skg_loss_fn: Optional[nn.Module] = None,
+    ) -> Dict[str, float]:
         """
         Validate model.
         
@@ -245,43 +273,93 @@ class Validator:
         """
         model.eval()
         total_loss = 0.0
-        num_processed = 0
+        total_nt_xent = 0.0
+        total_consistency = 0.0
+        total_sg_vs_skg = 0.0
+        num_batches_processed = 0
         
         with torch.no_grad():
             for batch_idx, batch in enumerate(batch_loader):
                 if num_batches is not None and batch_idx >= num_batches:
                     break
-                
+
+                num_batches_processed += 1
                 anchors = batch['anchors']
                 positives = batch.get('positives', [])
-                hard_negatives = batch.get('hard_negatives', [])
-                
-                for i, (anchor_graph, pos_graph) in enumerate(zip(anchors, positives)):
-                    h_anchor = torch.tensor(anchor_graph['features'], dtype=torch.float32, device=self.device)
-                    adj_anchor = torch.tensor(anchor_graph['adjacency'], dtype=torch.float32, device=self.device)
-                    
-                    h_pos = torch.tensor(pos_graph['features'], dtype=torch.float32, device=self.device)
-                    adj_pos = torch.tensor(pos_graph['adjacency'], dtype=torch.float32, device=self.device)
-                    
-                    z_anchor = model.encode(h_anchor, adj_anchor).unsqueeze(0)
-                    z_pos = model.encode(h_pos, adj_pos).unsqueeze(0)
-                    
-                    hard_negs_tensor = None
-                    if i < len(hard_negatives) and hard_negatives[i] is not None:
-                        hard_neg_graph = hard_negatives[i]
-                        h_neg = torch.tensor(hard_neg_graph['features'], dtype=torch.float32, device=self.device)
-                        adj_neg = torch.tensor(hard_neg_graph['adjacency'], dtype=torch.float32, device=self.device)
-                        hard_negs_tensor = model.encode(h_neg, adj_neg).unsqueeze(0)
-                    
-                    loss = loss_fn(z_anchor, z_pos, hard_negs_i=hard_negs_tensor)
-                    total_loss += loss.item()
-                    num_processed += 1
-        
-        avg_loss = total_loss / max(num_processed, 1)
-        
+                similarity_matrix = batch.get('similarity_matrix', None)
+                anchor_circuit_ids = batch.get('anchor_circuit_ids', [])
+                structural_graphs = batch.get('structural_graphs', [])
+
+                batch_total = 0.0
+
+                num_pos_pairs = min(len(anchors), len(positives))
+                if num_pos_pairs > 0:
+                    z_anchor_list = []
+                    z_pos_list = []
+                    for anchor_graph, pos_graph in zip(anchors[:num_pos_pairs], positives[:num_pos_pairs]):
+                        h_anchor = torch.tensor(anchor_graph['features'], dtype=torch.float32, device=self.device)
+                        adj_anchor = torch.tensor(anchor_graph['adjacency'], dtype=torch.float32, device=self.device)
+                        z_anchor_list.append(model.encode(h_anchor, adj_anchor))
+
+                        h_pos = torch.tensor(pos_graph['features'], dtype=torch.float32, device=self.device)
+                        adj_pos = torch.tensor(pos_graph['adjacency'], dtype=torch.float32, device=self.device)
+                        z_pos_list.append(model.encode(h_pos, adj_pos))
+
+                    z_anchor_b = torch.stack(z_anchor_list, dim=0)
+                    z_pos_b = torch.stack(z_pos_list, dim=0)
+
+                    batch_nt_xent_loss = loss_fn(z_anchor_b, z_pos_b)
+                    total_nt_xent += float(batch_nt_xent_loss.item())
+                    batch_total += nt_xent_weight * float(batch_nt_xent_loss.item())
+
+                    if sg_vs_skg > 0 and sg_vs_skg_loss_fn is not None and len(structural_graphs) > 0:
+                        z_structural_list = []
+                        for structural_graph in structural_graphs[:num_pos_pairs]:
+                            h_structural = torch.tensor(structural_graph['features'], dtype=torch.float32, device=self.device)
+                            adj_structural = torch.tensor(structural_graph['adjacency'], dtype=torch.float32, device=self.device)
+                            z_structural_list.append(model.encode(h_structural, adj_structural))
+
+                        if z_structural_list:
+                            z_structural_b = torch.stack(z_structural_list, dim=0)
+                            batch_sg_vs_skg_loss = sg_vs_skg_loss_fn(z_anchor_b[:len(z_structural_list)], z_structural_b)
+                            total_sg_vs_skg += float(batch_sg_vs_skg_loss.item())
+                            batch_total += sg_vs_skg * float(batch_sg_vs_skg_loss.item())
+
+                if (
+                    consistency_loss_fn is not None
+                    and consistency_weight > 0
+                    and similarity_matrix is not None
+                    and len(anchors) > 1
+                ):
+                    batch_anchor_emb_list = []
+                    for i, anchor_graph in enumerate(anchors):
+                        h_anchor = torch.tensor(anchor_graph['features'], dtype=torch.float32, device=self.device)
+                        adj_anchor = torch.tensor(anchor_graph['adjacency'], dtype=torch.float32, device=self.device)
+                        z_anchor = model.encode(h_anchor, adj_anchor)
+                        if i < len(anchor_circuit_ids):
+                            batch_anchor_emb_list.append(z_anchor)
+
+                    if batch_anchor_emb_list:
+                        batch_emb = torch.stack(batch_anchor_emb_list, dim=0)
+                        sim_matrix = torch.tensor(similarity_matrix, dtype=torch.float32, device=self.device)
+                        if batch_emb.shape[0] == sim_matrix.shape[0]:
+                            batch_consistency_loss = consistency_loss_fn(batch_emb, sim_matrix)
+                            total_consistency += float(batch_consistency_loss.item())
+                            batch_total += consistency_weight * float(batch_consistency_loss.item())
+
+                total_loss += batch_total
+
+        avg_loss = total_loss / max(num_batches_processed, 1)
+        avg_nt_xent = total_nt_xent / max(num_batches_processed, 1)
+        avg_consistency = total_consistency / max(num_batches_processed, 1)
+        avg_sg_vs_skg = total_sg_vs_skg / max(num_batches_processed, 1)
+
         return {
             'loss': avg_loss,
-            'num_samples': num_processed,
+            'nt_xent_loss': avg_nt_xent,
+            'consistency_loss': avg_consistency,
+            'sg_vs_skg_loss': avg_sg_vs_skg,
+            'num_batches': num_batches_processed,
         }
 
 
