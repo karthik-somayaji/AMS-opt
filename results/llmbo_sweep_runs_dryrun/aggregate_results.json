@@ -1,0 +1,38 @@
+[
+  {
+    "history": 1,
+    "circuit": "comp",
+    "mode": "topk",
+    "trial_id": 1,
+    "status": "dry_run",
+    "returncode": null,
+    "duration_sec": null,
+    "run_dir": "/home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs_dryrun/history_1/comp/topk/trial_01",
+    "log_path": "/home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs_dryrun/history_1/comp/topk/trial_01/stdout.log",
+    "summary_path": "/home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs_dryrun/history_1/comp/topk/trial_01/summary.json"
+  },
+  {
+    "history": 1,
+    "circuit": "comp",
+    "mode": "bottomk",
+    "trial_id": 1,
+    "status": "dry_run",
+    "returncode": null,
+    "duration_sec": null,
+    "run_dir": "/home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs_dryrun/history_1/comp/bottomk/trial_01",
+    "log_path": "/home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs_dryrun/history_1/comp/bottomk/trial_01/stdout.log",
+    "summary_path": "/home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs_dryrun/history_1/comp/bottomk/trial_01/summary.json"
+  },
+  {
+    "history": 0,
+    "circuit": "comp",
+    "mode": null,
+    "trial_id": 1,
+    "status": "dry_run",
+    "returncode": null,
+    "duration_sec": null,
+    "run_dir": "/home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs_dryrun/history_0/comp/trial_01",
+    "log_path": "/home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs_dryrun/history_0/comp/trial_01/stdout.log",
+    "summary_path": "/home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs_dryrun/history_0/comp/trial_01/summary.json"
+  }
+]

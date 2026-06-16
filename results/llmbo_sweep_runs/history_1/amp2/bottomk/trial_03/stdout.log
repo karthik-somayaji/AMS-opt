@@ -1,0 +1,898 @@
+[LLMBO Sweep] Started at 2026-04-14T23:30:05.207765+00:00
+[LLMBO Sweep] Command: /home/karthik/miniconda3/envs/analog-rep/bin/python /home/karthik/sim_clean/AMS-opt/LLMBO/llmbo.py --history 1 --refined 0 --related_k 2 --gnn_embedding_mode sg --gnn_checkpoint /home/karthik/sim_clean/AMS-opt/checkpoints_sg_vs_skg/best_model.pt --embeddings_json /home/karthik/sim_clean/AMS-opt/umap_results_full/gnn_embeddings_sg_sg_vs_skg.json --target_id amp2 --circuit amp2 --n_itr 12 --numpy_seed 977156848 --torch_seed 981738595 --openai_api_seed 1298439022 --early_stop_fom 1.0 --run_output_dir /home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs/history_1/amp2/bottomk/trial_03 --path_checkpoints /home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs/history_1/amp2/bottomk/trial_03/checkpoints --trial_id 3 --gnn_device cpu --related_mode bottomk
+
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+[LLMBO] Using LLMBO anchor embedding for --target_id 'amp2' (D=128) with reference embeddings umap_results_full/gnn_embeddings_sg_sg_vs_skg.json
+[LLMBO] Optimization circuit: amp2
+[LLMBO] Task path: /home/karthik/sim_clean/AMS-opt/LLMBO/tasks/amp2/amp2.json
+IN  AMP
+3
+['To achieve the desired performance specifications for the two-stage differential amplifier, you can adjust the sizing of parameters such as transistor widths (w*), transistor lengths (l*), resistances (r*), and capacitances (c*) within the specified design space. \n\nHere are three recommended sets of parameters within the normalized design space [0,1] to aim for high target values:\n\n1. Set 1:\n.param l1=0.5 w1=0.8 l2=0.3 w2=0.6 l3=0.6 w3=0.4 l4=0.4 w4=0.7 l5=0.7 w5=0.3 l6=0.8 w6=0.5 l7=0.4 w7=0.8 l8=0.6 w8=0.6 r1=0.7 c1=0.3\n\n2. Set 2:\n.param l1=0.3 w1=0.4 l2=0.7 w2=0.8 l3=0.5 w3=0.6 l4=0.6 w4=0.5 l5=0.8 w5=0.7 l6=0.4 w6=0.3 l7=0.7 w7=0.6 l8=0.5 w8=0.8 r1=0.5 c1=0.7\n\n3. Set 3:\n.param l1=0.8 w1=0.5 l2=0.4 w2=0.7 l3=0.7 w3=0.3 l4=0.5 w4=0.8 l5=0.6 w5=0.6 l6=0.3 w6=0.4 l7=0.8 w7=0.6 l8=0.6 w8=0.5 r1=0.6 c1=0.8\n\nBy exploring different combinations of these parameters within the specified design space, you can optimize the differential amplifier circuit to meet or exceed the desired performance metrics of gain, common-mode rejection ratio, gain bandwidth product, and phase margin.']
+Parameters to evaluate: {'l1': '0.5', 'w1': '0.8', 'l2': '0.3', 'w2': '0.6', 'l3': '0.6', 'w3': '0.4', 'l4': '0.4', 'w4': '0.7', 'l5': '0.7', 'w5': '0.3', 'l6': '0.8', 'w6': '0.5', 'l7': '0.4', 'w7': '0.8', 'l8': '0.6', 'w8': '0.6', 'r1': '0.7', 'c1': '0.3'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.5
+w1 0.8
+l2 0.3
+w2 0.6
+l3 0.6
+w3 0.4
+l4 0.4
+w4 0.7
+l5 0.7
+w5 0.3
+l6 0.8
+w6 0.5
+l7 0.4
+w7 0.8
+l8 0.6
+w8 0.6
+r1 0.7
+c1 0.3
+params: .param l1=0.5
+.param w1=0.8
+.param l2=0.3
+.param w2=0.6
+.param l3=0.6
+.param w3=0.4
+.param l4=0.4
+.param w4=0.7
+.param l5=0.7
+.param w5=0.3
+.param l6=0.8
+.param w6=0.5
+.param l7=0.4
+.param w7=0.8
+.param l8=0.6
+.param w8=0.6
+.param r1=0.7
+.param c1=0.3
+
+metrics:  gain=-30.042 cmrr=38.660 gbw=-10000000.000 pow=0.000 
+targets: 0.161
+aux_info: The following mosfets are not in saturation region:
+ xp1: Subth
+ xp2: Subth
+ xn1: Subth
+ xn2: Subth
+ xpo: Linear
+ 
+Parameters to evaluate: {'l1': '0.3', 'w1': '0.4', 'l2': '0.7', 'w2': '0.8', 'l3': '0.5', 'w3': '0.6', 'l4': '0.6', 'w4': '0.5', 'l5': '0.8', 'w5': '0.7', 'l6': '0.4', 'w6': '0.3', 'l7': '0.7', 'w7': '0.6', 'l8': '0.5', 'w8': '0.8', 'r1': '0.5', 'c1': '0.7'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.3
+w1 0.4
+l2 0.7
+w2 0.8
+l3 0.5
+w3 0.6
+l4 0.6
+w4 0.5
+l5 0.8
+w5 0.7
+l6 0.4
+w6 0.3
+l7 0.7
+w7 0.6
+l8 0.5
+w8 0.8
+r1 0.5
+c1 0.7
+params: .param l1=0.3
+.param w1=0.4
+.param l2=0.7
+.param w2=0.8
+.param l3=0.5
+.param w3=0.6
+.param l4=0.6
+.param w4=0.5
+.param l5=0.8
+.param w5=0.7
+.param l6=0.4
+.param w6=0.3
+.param l7=0.7
+.param w7=0.6
+.param l8=0.5
+.param w8=0.8
+.param r1=0.5
+.param c1=0.7
+
+metrics:  gain=-32.832 cmrr=65.186 gbw=-10000000.000 pow=0.000 
+targets: 0.500
+aux_info: The following mosfets are not in saturation region:
+ xp1: Subth
+ xp2: Subth
+ xn1: Subth
+ xn2: Subth
+ xnb: Subth
+ xnc: Subth
+ xpo: Subth
+ xno: Subth
+ 
+Parameters to evaluate: {'l1': '0.8', 'w1': '0.5', 'l2': '0.4', 'w2': '0.7', 'l3': '0.7', 'w3': '0.3', 'l4': '0.5', 'w4': '0.8', 'l5': '0.6', 'w5': '0.6', 'l6': '0.3', 'w6': '0.4', 'l7': '0.8', 'w7': '0.6', 'l8': '0.6', 'w8': '0.5', 'r1': '0.6', 'c1': '0.8'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.8
+w1 0.5
+l2 0.4
+w2 0.7
+l3 0.7
+w3 0.3
+l4 0.5
+w4 0.8
+l5 0.6
+w5 0.6
+l6 0.3
+w6 0.4
+l7 0.8
+w7 0.6
+l8 0.6
+w8 0.5
+r1 0.6
+c1 0.8
+params: .param l1=0.8
+.param w1=0.5
+.param l2=0.4
+.param w2=0.7
+.param l3=0.7
+.param w3=0.3
+.param l4=0.5
+.param w4=0.8
+.param l5=0.6
+.param w5=0.6
+.param l6=0.3
+.param w6=0.4
+.param l7=0.8
+.param w7=0.6
+.param l8=0.6
+.param w8=0.5
+.param r1=0.6
+.param c1=0.8
+
+metrics:  gain=-16.725 cmrr=52.850 gbw=-10000000.000 pow=0.000 
+targets: 0.220
+aux_info: The following mosfets are not in saturation region:
+ xp1: Subth
+ xp2: Subth
+ xn1: Subth
+ xn2: Subth
+ xnb: Subth
+ xnc: Subth
+ xpo: Linear
+ xno: Subth
+ 
+Initializing BO GP with data_init...
+Initial best target value: 0.50
+Beginning Design Cycle
+Current iteration:1.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.85', 'w1': '0.75', 'l2': '0.65', 'w2': '0.85', 'l3': '0.75', 'w3': '0.65', 'l4': '0.55', 'w4': '0.85', 'l5': '0.85', 'w5': '0.55', 'l6': '0.75', 'w6': '0.75', 'l7': '0.65', 'w7': '0.85', 'l8': '0.75', 'w8': '0.65', 'r1': '0.45', 'c1': '0.55'}
+l1 0.85
+w1 0.75
+l2 0.65
+w2 0.85
+l3 0.75
+w3 0.65
+l4 0.55
+w4 0.85
+l5 0.85
+w5 0.55
+l6 0.75
+w6 0.75
+l7 0.65
+w7 0.85
+l8 0.75
+w8 0.65
+r1 0.45
+c1 0.55
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.6', 'w1': '0.3', 'l2': '0.9', 'w2': '0.7', 'l3': '0.5', 'w3': '0.4', 'l4': '0.7', 'w4': '0.4', 'l5': '0.4', 'w5': '0.4', 'l6': '0.7', 'w6': '0.9', 'l7': '1.0', 'w7': '0.3', 'l8': '0.5', 'w8': '0.5', 'r1': '0.4', 'c1': '0.2'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.6
+w1 0.3
+l2 0.9
+w2 0.7
+l3 0.5
+w3 0.4
+l4 0.7
+w4 0.4
+l5 0.4
+w5 0.4
+l6 0.7
+w6 0.9
+l7 1.0
+w7 0.3
+l8 0.5
+w8 0.5
+r1 0.4
+c1 0.2
+Best metrics {'gain': -32.83225068, 'cmrr': 65.18646072, 'gbw': -10000000.0, 'pow': 9.162843703999998e-06}
+Best BO metrics {'gain': -43.66855057, 'cmrr': 51.663176420000006, 'gbw': -10000000.0, 'pow': 1.9750955691999997e-05}
+Best LLM metrics {'gain': 1.699254882, 'cmrr': 56.800052271999995, 'gbw': 161880.5462, 'pow': 3.3981890049e-05}
+At iteration: 1, the best target value is: 0.500, llm best target: 0.288, bo best target: 0.465
+Current iteration:2.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.8', 'w1': '0.9', 'l2': '0.7', 'w2': '0.9', 'l3': '0.8', 'w3': '0.7', 'l4': '0.7', 'w4': '0.8', 'l5': '0.8', 'w5': '0.7', 'l6': '0.9', 'w6': '0.8', 'l7': '0.7', 'w7': '0.9', 'l8': '0.8', 'w8': '0.9', 'r1': '0.3', 'c1': '0.6'}
+l1 0.8
+w1 0.9
+l2 0.7
+w2 0.9
+l3 0.8
+w3 0.7
+l4 0.7
+w4 0.8
+l5 0.8
+w5 0.7
+l6 0.9
+w6 0.8
+l7 0.7
+w7 0.9
+l8 0.8
+w8 0.9
+r1 0.3
+c1 0.6
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.8', 'w1': '0.3', 'l2': '1.0', 'w2': '0.4', 'l3': '0.4', 'w3': '0.6', 'l4': '0.4', 'w4': '0.9', 'l5': '0.3', 'w5': '0.4', 'l6': '0.7', 'w6': '0.4', 'l7': '0.5', 'w7': '0.5', 'l8': '0.2', 'w8': '0.9', 'r1': '0.5', 'c1': '0.8'}
+l1 0.8
+w1 0.3
+l2 1.0
+w2 0.4
+l3 0.4
+w3 0.6
+l4 0.4
+w4 0.9
+l5 0.3
+w5 0.4
+l6 0.7
+w6 0.4
+l7 0.5
+w7 0.5
+l8 0.2
+w8 0.9
+r1 0.5
+c1 0.8
+Best metrics {'gain': -32.83225068, 'cmrr': 65.18646072, 'gbw': -10000000.0, 'pow': 9.162843703999998e-06}
+Best BO metrics {'gain': -43.66855057, 'cmrr': 51.663176420000006, 'gbw': -10000000.0, 'pow': 1.9750955691999997e-05}
+Best LLM metrics {'gain': 7.6197714, 'cmrr': 66.55583232000001, 'gbw': 240310.739, 'pow': 3.0228449825e-05}
+At iteration: 2, the best target value is: 0.500, llm best target: 0.358, bo best target: 0.465
+Current iteration:3.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.75', 'w1': '0.8', 'l2': '0.6', 'w2': '0.9', 'l3': '0.45', 'w3': '0.7', 'l4': '0.7', 'w4': '0.6', 'l5': '0.65', 'w5': '0.75', 'l6': '0.8', 'w6': '0.85', 'l7': '0.6', 'w7': '0.8', 'l8': '0.55', 'w8': '0.7', 'r1': '0.6', 'c1': '0.4'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.75
+w1 0.8
+l2 0.6
+w2 0.9
+l3 0.45
+w3 0.7
+l4 0.7
+w4 0.6
+l5 0.65
+w5 0.75
+l6 0.8
+w6 0.85
+l7 0.6
+w7 0.8
+l8 0.55
+w8 0.7
+r1 0.6
+c1 0.4
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.5', 'w1': '0.8', 'l2': '0.8', 'w2': '1.0', 'l3': '0.4', 'w3': '0.4', 'l4': '0.3', 'w4': '0.5', 'l5': '0.5', 'w5': '1.0', 'l6': '0.2', 'w6': '0.6', 'l7': '0.3', 'w7': '0.5', 'l8': '0.2', 'w8': '0.6', 'r1': '0.3', 'c1': '0.4'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.5
+w1 0.8
+l2 0.8
+w2 1.0
+l3 0.4
+w3 0.4
+l4 0.3
+w4 0.5
+l5 0.5
+w5 1.0
+l6 0.2
+w6 0.6
+l7 0.3
+w7 0.5
+l8 0.2
+w8 0.6
+r1 0.3
+c1 0.4
+Best metrics {'gain': -32.83225068, 'cmrr': 65.18646072, 'gbw': -10000000.0, 'pow': 9.162843703999998e-06}
+Best BO metrics Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+{'gain': -43.66855057, 'cmrr': 51.663176420000006, 'gbw': -10000000.0, 'pow': 1.9750955691999997e-05}
+Best LLM metrics {'gain': -26.45956905, 'cmrr': 59.92394928, 'gbw': -10000000.0, 'pow': 1.3308248014999998e-05}
+At iteration: 3, the best target value is: 0.500, llm best target: 0.500, bo best target: 0.465
+Current iteration:4.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.85', 'w1': '0.7', 'l2': '0.65', 'w2': '0.8', 'l3': '0.55', 'w3': '0.75', 'l4': '0.75', 'w4': '0.65', 'l5': '0.7', 'w5': '0.8', 'l6': '0.85', 'w6': '0.9', 'l7': '0.65', 'w7': '0.8', 'l8': '0.6', 'w8': '0.7', 'r1': '0.6', 'c1': '0.5'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.85
+w1 0.7
+l2 0.65
+w2 0.8
+l3 0.55
+w3 0.75
+l4 0.75
+w4 0.65
+l5 0.7
+w5 0.8
+l6 0.85
+w6 0.9
+l7 0.65
+w7 0.8
+l8 0.6
+w8 0.7
+r1 0.6
+c1 0.5
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.8', 'w1': '0.6', 'l2': '0.6', 'w2': '0.1', 'l3': '0.8', 'w3': '0.4', 'l4': '0.3', 'w4': '0.0', 'l5': '0.5', 'w5': '0.2', 'l6': '0.3', 'w6': '0.3', 'l7': '1.0', 'w7': '0.2', 'l8': '0.6', 'w8': '0.9', 'r1': '0.4', 'c1': '0.4'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.8
+w1 0.6
+l2 0.6
+w2 0.1
+l3 0.8
+w3 0.4
+l4 0.3
+w4 0.0
+l5 0.5
+w5 0.2
+l6 0.3
+w6 0.3
+l7 1.0
+w7 0.2
+l8 0.6
+w8 0.9
+r1 0.4
+c1 0.4
+Best metrics {'gain': -32.83225068, 'cmrr': 65.18646072, 'gbw': -10000000.0, 'pow': 9.162843703999998e-06}
+Best BO metrics {'gain': -43.66855057, 'cmrr': 51.663176420000006, 'gbw': -10000000.0, 'pow': 1.9750955691999997e-05}
+Best LLM metrics {'gain': -25.52733845, 'cmrr': 68.69857741, 'gbw': -10000000.0, 'pow': 1.323802771e-05}
+At iteration: 4, the best target value is: 0.500, llm best target: 0.500, bo best target: 0.465
+Current iteration:5.
+[Rate Limiter] Sleeping for 39.99s to avoid hitting the token limit...
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.15', 'w1': '0.85', 'l2': '0.25', 'w2': '0.75', 'l3': '0.35', 'w3': '0.65', 'l4': '0.45', 'w4': '0.55', 'l5': '0.55', 'w5': '0.45', 'l6': '0.65', 'w6': '0.35', 'l7': '0.75', 'w7': '0.25', 'l8': '0.85', 'w8': '0.15', 'r1': '0.6', 'c1': '0.8'}
+l1 0.15
+w1 0.85
+l2 0.25
+w2 0.75
+l3 0.35
+w3 0.65
+l4 0.45
+w4 0.55
+l5 0.55
+w5 0.45
+l6 0.65
+w6 0.35
+l7 0.75
+w7 0.25
+l8 0.85
+w8 0.15
+r1 0.6
+c1 0.8
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.1', 'w1': '1.0', 'l2': '0.9', 'w2': '0.7', 'l3': '0.7', 'w3': '0.7', 'l4': '0.1', 'w4': '0.4', 'l5': '0.2', 'w5': '0.4', 'l6': '0.2', 'w6': '0.3', 'l7': '0.5', 'w7': '0.2', 'l8': '0.7', 'w8': '0.2', 'r1': '0.9', 'c1': '0.2'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.1
+w1 1.0
+l2 0.9
+w2 0.7
+l3 0.7
+w3 0.7
+l4 0.1
+w4 0.4
+l5 0.2
+w5 0.4
+l6 0.2
+w6 0.3
+l7 0.5
+w7 0.2
+l8 0.7
+w8 0.2
+r1 0.9
+c1 0.2
+Best metrics {'gain': 13.8642421, 'cmrr': 57.64165665, 'gbw': 283038.3418, 'pow': 1.0047913697e-05}
+Best BO metrics {'gain': -43.66855057, 'cmrr': 51.663176420000006, 'gbw': -10000000.0, 'pow': 1.9750955691999997e-05}
+Best LLM metrics {'gain': 13.8642421, 'cmrr': 57.64165665, 'gbw': 283038.3418, 'pow': 1.0047913697e-05}
+At iteration: 5, the best target value is: 0.648, llm best target: 0.648, bo best target: 0.465
+Current iteration:6.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.25', 'w1': '0.75', 'l2': '0.6', 'w2': '0.4', 'l3': '0.4', 'w3': '0.6', 'l4': '0.7', 'w4': '0.3', 'l5': '0.6', 'w5': '0.4', 'l6': '0.3', 'w6': '0.7', 'l7': '0.7', 'w7': '0.5', 'l8': '0.5', 'w8': '0.7', 'r1': '0.4', 'c1': '0.6'}
+l1 0.25
+w1 0.75
+l2 0.6
+w2 0.4
+l3 0.4
+w3 0.6
+l4 0.7
+w4 0.3
+l5 0.6
+w5 0.4
+l6 0.3
+w6 0.7
+l7 0.7
+w7 0.5
+l8 0.5
+w8 0.7
+r1 0.4
+c1 0.6
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.2', 'w1': '0.1', 'l2': '0.3', 'w2': '0.2', 'l3': '0.3', 'w3': '0.8', 'l4': '0.5', 'w4': '0.2', 'l5': '0.3', 'w5': '0.8', 'l6': '1.0', 'w6': '0.7', 'l7': '0.6', 'w7': '0.7', 'l8': '0.5', 'w8': '0.7', 'r1': '0.7', 'c1': '0.7'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.2
+w1 0.1
+l2 0.3
+w2 0.2
+l3 0.3
+w3 0.8
+l4 0.5
+w4 0.2
+l5 0.3
+w5 0.8
+l6 1.0
+w6 0.7
+l7 0.6
+w7 0.7
+l8 0.5
+w8 0.7
+r1 0.7
+c1 0.7
+Best metrics {'gain': 45.14722166, 'cmrr': 50.236772465, 'gbw': 3434472.696, 'pow': 4.3767556338e-05}
+Best BO metrics {'gain': -43.65846211, 'cmrr': 62.715477390000004, 'gbw': -10000000.0, 'pow': 7.812170642e-06}
+Best LLM metrics {'gain': 45.14722166, 'cmrr': 50.236772465, 'gbw': 3434472.696, 'pow': 4.3767556338e-05}
+At iteration: 6, the best target value is: 0.709, llm best target: 0.709, bo best target: 0.500
+Current iteration:7.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.05', 'w1': '0.95', 'l2': '0.15', 'w2': '0.85', 'l3': '0.25', 'w3': '0.75', 'l4': '0.35', 'w4': '0.65', 'l5': '0.65', 'w5': '0.35', 'l6': '0.75', 'w6': '0.25', 'l7': '0.85', 'w7': '0.15', 'l8': '0.95', 'w8': '0.05', 'r1': '0.3', 'c1': '0.5'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.05
+w1 0.95
+l2 0.15
+w2 0.85
+l3 0.25
+w3 0.75
+l4 0.35
+w4 0.65
+l5 0.65
+w5 0.35
+l6 0.75
+w6 0.25
+l7 0.85
+w7 0.15
+l8 0.95
+w8 0.05
+r1 0.3
+c1 0.5
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.1', 'w1': '0.7', 'l2': '0.5', 'w2': '0.6', 'l3': '0.6', 'w3': '0.7', 'l4': '0.7', 'w4': '0.8', 'l5': '0.5', 'w5': '0.5', 'l6': '0.4', 'w6': '0.5', 'l7': '0.4', 'w7': '0.2', 'l8': '0.3', 'w8': '0.6', 'r1': '0.6', 'c1': '0.2'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.1
+w1 0.7
+l2 0.5
+w2 0.6
+l3 0.6
+w3 0.7
+l4 0.7
+w4 0.8
+l5 0.5
+w5 0.5
+l6 0.4
+w6 0.5
+l7 0.4
+w7 0.2
+l8 0.3
+w8 0.6
+r1 0.6
+c1 0.2
+Best metrics {'gain': 45.14722166, 'cmrr': 50.236772465, 'gbw': 3434472.696, 'pow': 4.3767556338e-05}
+Best BO metrics {'gain': -43.65846211, 'cmrr': 62.715477390000004, 'gbw': -10000000.0, 'pow': 7.812170642e-06}
+Best LLM metrics {'gain': 45.14722166, 'cmrr': 50.236772465, 'gbw': 3434472.696, 'pow': 4.3767556338e-05}
+At iteration: 7, the best target value is: 0.709, llm best target: 0.709, bo best target: 0.500
+Current iteration:8.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.85', 'w1': '0.15', 'l2': '0.75', 'w2': '0.25', 'l3': '0.65', 'w3': '0.35', 'l4': '0.55', 'w4': '0.45', 'l5': '0.45', 'w5': '0.55', 'l6': '0.35', 'w6': '0.65', 'l7': '0.25', 'w7': '0.75', 'l8': '0.15', 'w8': '0.85', 'r1': '0.3', 'c1': '0.4'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.85
+w1 0.15
+l2 0.75
+w2 0.25
+l3 0.65
+w3 0.35
+l4 0.55
+w4 0.45
+l5 0.45
+w5 0.55
+l6 0.35
+w6 0.65
+l7 0.25
+w7 0.75
+l8 0.15
+w8 0.85
+r1 0.3
+c1 0.4
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.2', 'w1': '0.5', 'l2': '0.2', 'w2': '0.5', 'l3': '0.3', 'w3': '0.6', 'l4': '0.7', 'w4': '0.9', 'l5': '0.5', 'w5': '0.3', 'l6': '0.5', 'w6': '1.0', 'l7': '0.3', 'w7': '0.3', 'l8': '0.0', 'w8': '0.6', 'r1': '0.9', 'c1': '0.6'}
+l1 0.2
+w1 0.5
+l2 0.2
+w2 0.5
+l3 0.3
+w3 0.6
+l4 0.7
+w4 0.9
+l5 0.5
+w5 0.3
+l6 0.5
+w6 1.0
+l7 0.3
+w7 0.3
+l8 0.0
+w8 0.6
+r1 0.9
+c1 0.6
+Best metrics {'gain': 45.14722166, 'cmrr': 50.236772465, 'gbw': 3434472.696, 'pow': 4.3767556338e-05}
+Best BO metrics {'gain': 26.24232497, 'cmrr': 47.200457459999996, 'gbw': 19953251.89, 'pow': 5.7772265277999994e-05}
+Best LLM metrics {'gain': 45.14722166, 'cmrr': 50.236772465, 'gbw': 3434472.696, 'pow': 4.3767556338e-05}
+At iteration: 8, the best target value is: 0.709, llm best target: 0.709, bo best target: 0.611
+Current iteration:9.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.35', 'w1': '0.65', 'l2': '0.45', 'w2': '0.55', 'l3': '0.55', 'w3': '0.45', 'l4': '0.65', 'w4': '0.35', 'l5': '0.75', 'w5': '0.25', 'l6': '0.85', 'w6': '0.15', 'l7': '0.75', 'w7': '0.25', 'l8': '0.85', 'w8': '0.15', 'r1': '0.2', 'c1': '0.3'}
+l1 0.35
+w1 0.65
+l2 0.45
+w2 0.55
+l3 0.55
+w3 0.45
+l4 0.65
+w4 0.35
+l5 0.75
+w5 0.25
+l6 0.85
+w6 0.15
+l7 0.75
+w7 0.25
+l8 0.85
+w8 0.15
+r1 0.2
+c1 0.3
+IN BO LOOP
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Parameters to evaluate: {'l1': '0.2', 'w1': '0.1', 'l2': '0.5', 'w2': '0.0', 'l3': '0.7', 'w3': '0.2', 'l4': '0.6', 'w4': '0.7', 'l5': '0.6', 'w5': '0.9', 'l6': '0.6', 'w6': '1.0', 'l7': '0.0', 'w7': '0.0', 'l8': '0.9', 'w8': '0.8', 'r1': '0.3', 'c1': '0.1'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.2
+w1 0.1
+l2 0.5
+w2 0.0
+l3 0.7
+w3 0.2
+l4 0.6
+w4 0.7
+l5 0.6
+w5 0.9
+l6 0.6
+w6 1.0
+l7 0.0
+w7 0.0
+l8 0.9
+w8 0.8
+r1 0.3
+c1 0.1
+Best metrics {'gain': 10.68023288, 'cmrr': 64.03351621, 'gbw': 1635773.09, 'pow': 8.691388781999999e-06}
+Best BO metrics {'gain': 26.24232497, 'cmrr': 47.200457459999996, 'gbw': 19953251.89, 'pow': 5.7772265277999994e-05}
+Best LLM metrics {'gain': 10.68023288, 'cmrr': 64.03351621, 'gbw': 1635773.09, 'pow': 8.691388781999999e-06}
+At iteration: 9, the best target value is: 0.817, llm best target: 0.817, bo best target: 0.611
+Current iteration:10.
+[Rate Limiter] Sleeping for 40.81s to avoid hitting the token limit...
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.75', 'w1': '0.25', 'l2': '0.85', 'w2': '0.15', 'l3': '0.65', 'w3': '0.35', 'l4': '0.75', 'w4': '0.25', 'l5': '0.55', 'w5': '0.45', 'l6': '0.45', 'w6': '0.55', 'l7': '0.35', 'w7': '0.65', 'l8': '0.55', 'w8': '0.45', 'r1': '0.3', 'c1': '0.4'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.75
+w1 0.25
+l2 0.85
+w2 0.15
+l3 0.65
+w3 0.35
+l4 0.75
+w4 0.25
+l5 0.55
+w5 0.45
+l6 0.45
+w6 0.55
+l7 0.35
+w7 0.65
+l8 0.55
+w8 0.45
+r1 0.3
+c1 0.4
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.7', 'w1': '0.4', 'l2': '0.8', 'w2': '0.7', 'l3': '0.2', 'w3': '0.7', 'l4': '0.2', 'w4': '0.3', 'l5': '0.8', 'w5': '0.7', 'l6': '0.3', 'w6': '0.7', 'l7': '0.3', 'w7': '0.5', 'l8': '0.1', 'w8': '0.6', 'r1': '0.1', 'c1': '0.3'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.7
+w1 0.4
+l2 0.8
+w2 0.7
+l3 0.2
+w3 0.7
+l4 0.2
+w4 0.3
+l5 0.8
+w5 0.7
+l6 0.3
+w6 0.7
+l7 0.3
+w7 0.5
+l8 0.1
+w8 0.6
+r1 0.1
+c1 0.3
+Best metrics {'gain': 10.68023288, 'cmrr': 64.03351621, 'gbw': 1635773.09, 'pow': 8.691388781999999e-06}
+Best BO metrics {'gain': 26.24232497, 'cmrr': 47.200457459999996, 'gbw': 19953251.89, 'pow': 5.7772265277999994e-05}
+Best LLM metrics {'gain': 10.68023288, 'cmrr': 64.03351621, 'gbw': 1635773.09, 'pow': 8.691388781999999e-06}
+At iteration: 10, the best target value is: 0.817, llm best target: 0.817, bo best target: 0.611
+Current iteration:11.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.8', 'w1': '0.6', 'l2': '0.7', 'w2': '0.4', 'l3': '0.9', 'w3': '0.7', 'l4': '0.8', 'w4': '0.5', 'l5': '0.9', 'w5': '0.6', 'l6': '0.7', 'w6': '0.5', 'l7': '0.6', 'w7': '0.3', 'l8': '0.5', 'w8': '0.4', 'r1': '0.3', 'c1': '0.1'}
+l1 0.8
+w1 0.6
+l2 0.7
+w2 0.4
+l3 0.9
+w3 0.7
+l4 0.8
+w4 0.5
+l5 0.9
+w5 0.6
+l6 0.7
+w6 0.5
+l7 0.6
+w7 0.3
+l8 0.5
+w8 0.4
+r1 0.3
+c1 0.1
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.9', 'w1': '0.7', 'l2': '0.7', 'w2': '0.2', 'l3': '0.9', 'w3': '0.1', 'l4': '0.2', 'w4': '0.3', 'l5': '0.8', 'w5': '0.6', 'l6': '1.0', 'w6': '0.5', 'l7': '0.7', 'w7': '0.8', 'l8': '0.2', 'w8': '0.6', 'r1': '0.5', 'c1': '0.2'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.9
+w1 0.7
+l2 0.7
+w2 0.2
+l3 0.9
+w3 0.1
+l4 0.2
+w4 0.3
+l5 0.8
+w5 0.6
+l6 1.0
+w6 0.5
+l7 0.7
+w7 0.8
+l8 0.2
+w8 0.6
+r1 0.5
+c1 0.2
+Best metrics {'gain': 10.68023288, 'cmrr': 64.03351621, 'gbw': 1635773.09, 'pow': 8.691388781999999e-06}
+Best BO metrics {'gain': 26.24232497, 'cmrr': 47.200457459999996, 'gbw': 19953251.89, 'pow': 5.7772265277999994e-05}
+Best LLM metrics {'gain': 10.68023288, 'cmrr': 64.03351621, 'gbw': 1635773.09, 'pow': 8.691388781999999e-06}
+At iteration: 11, the best target value is: 0.817, llm best target: 0.817, bo best target: 0.611
+Current iteration:12.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.45', 'w1': '0.25', 'l2': '0.55', 'w2': '0.35', 'l3': '0.65', 'w3': '0.15', 'l4': '0.75', 'w4': '0.25', 'l5': '0.65', 'w5': '0.35', 'l6': '0.35', 'w6': '0.65', 'l7': '0.75', 'w7': '0.15', 'l8': '0.85', 'w8': '0.05', 'r1': '0.5', 'c1': '0.4'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.45
+w1 0.25
+l2 0.55
+w2 0.35
+l3 0.65
+w3 0.15
+l4 0.75
+w4 0.25
+l5 0.65
+w5 0.35
+l6 0.35
+w6 0.65
+l7 0.75
+w7 0.15
+l8 0.85
+w8 0.05
+r1 0.5
+c1 0.4
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.7', 'w1': '0.3', 'l2': '0.6', 'w2': '0.7', 'l3': '0.6', 'w3': '0.9', 'l4': '0.4', 'w4': '1.0', 'l5': '0.6', 'w5': '0.6', 'l6': '0.2', 'w6': '0.3', 'l7': '0.9', 'w7': '0.2', 'l8': '0.6', 'w8': '0.5', 'r1': '0.6', 'c1': '0.8'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.7
+w1 0.3
+l2 0.6
+w2 0.7
+l3 0.6
+w3 0.9
+l4 0.4
+w4 1.0
+l5 0.6
+w5 0.6
+l6 0.2
+w6 0.3
+l7 0.9
+w7 0.2
+l8 0.6
+w8 0.5
+r1 0.6
+c1 0.8
+Best metrics {'gain': 10.68023288, 'cmrr': 64.03351621, 'gbw': 1635773.09, 'pow': 8.691388781999999e-06}
+Best BO metrics {'gain': 26.24232497, 'cmrr': 47.200457459999996, 'gbw': 19953251.89, 'pow': 5.7772265277999994e-05}
+Best LLM metrics {'gain': 10.68023288, 'cmrr': 64.03351621, 'gbw': 1635773.09, 'pow': 8.691388781999999e-06}
+At iteration: 12, the best target value is: 0.817, llm best target: 0.817, bo best target: 0.611

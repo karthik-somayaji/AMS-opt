@@ -1,0 +1,4 @@
+Best metrics {'gain': 36.24632962, 'ugf': 973221.8111, 'offset': -0.007621262258, 'hyst_err': 0.3220367305}
+Best BO metrics {'gain': 36.24632962, 'ugf': 973221.8111, 'offset': -0.007621262258, 'hyst_err': 0.3220367305}
+Best LLM metrics {'gain': 47.54128863, 'ugf': 22651.13225, 'offset': -0.009585405234, 'hyst_err': 0.352195067}
+Recorded iteration: 20, best target value: 0.977, llm best target: 0.807, bo best target: 0.977

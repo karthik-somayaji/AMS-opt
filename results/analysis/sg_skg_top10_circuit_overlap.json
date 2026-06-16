@@ -1,0 +1,244 @@
+{
+  "topk": 10,
+  "compare_by": "circuit_id",
+  "results": {
+    "amp2": {
+      "sg_topk": [
+        "77",
+        "316",
+        "327",
+        "82",
+        "303",
+        "332",
+        "336",
+        "299",
+        "300",
+        "331"
+      ],
+      "skg_topk": [
+        "71",
+        "80",
+        "97",
+        "921",
+        "618",
+        "94",
+        "69",
+        "617",
+        "620",
+        "738"
+      ],
+      "sg_topk_families": [
+        "diff_amps",
+        "op-amp",
+        "op-amp",
+        "diff_amps",
+        "op-amp",
+        "op-amp",
+        "op-amp",
+        "op-amp",
+        "op-amp",
+        "op-amp"
+      ],
+      "skg_topk_families": [
+        "diff_amps",
+        "diff_amps",
+        "diff_amps",
+        "diff_amps",
+        "diff_amps",
+        "diff_amps",
+        "diff_amps",
+        "diff_amps",
+        "diff_amps",
+        "comparators"
+      ],
+      "compare_by": "circuit_id",
+      "overlap_items": [],
+      "overlap_count": 0,
+      "overlap_at_k": 0.0,
+      "jaccard": 0.0
+    },
+    "FC": {
+      "sg_topk": [
+        "318",
+        "635",
+        "632",
+        "926",
+        "925",
+        "88",
+        "94",
+        "300",
+        "740",
+        "1071"
+      ],
+      "skg_topk": [
+        "925",
+        "1056",
+        "614",
+        "317",
+        "923",
+        "1055",
+        "632",
+        "619",
+        "69",
+        "635"
+      ],
+      "sg_topk_families": [
+        "op-amp",
+        "comparators",
+        "comparators",
+        "diff_amps",
+        "diff_amps",
+        "diff_amps",
+        "diff_amps",
+        "op-amp",
+        "comparators",
+        "comparators"
+      ],
+      "skg_topk_families": [
+        "diff_amps",
+        "comparators",
+        "diff_amps",
+        "op-amp",
+        "diff_amps",
+        "comparators",
+        "comparators",
+        "diff_amps",
+        "diff_amps",
+        "comparators"
+      ],
+      "compare_by": "circuit_id",
+      "overlap_items": [
+        "635",
+        "632",
+        "925"
+      ],
+      "overlap_count": 3,
+      "overlap_at_k": 0.3,
+      "jaccard": 0.17647058823529413
+    },
+    "comp": {
+      "sg_topk": [
+        "1051",
+        "1058",
+        "633",
+        "335",
+        "1057",
+        "1062",
+        "1053",
+        "1047",
+        "1063",
+        "311"
+      ],
+      "skg_topk": [
+        "1058",
+        "1047",
+        "1063",
+        "1057",
+        "1053",
+        "1062",
+        "317",
+        "633",
+        "740",
+        "1056"
+      ],
+      "sg_topk_families": [
+        "comparators",
+        "comparators",
+        "comparators",
+        "op-amp",
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators",
+        "op-amp"
+      ],
+      "skg_topk_families": [
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators",
+        "op-amp",
+        "comparators",
+        "comparators",
+        "comparators"
+      ],
+      "compare_by": "circuit_id",
+      "overlap_items": [
+        "1058",
+        "633",
+        "1057",
+        "1062",
+        "1053",
+        "1047",
+        "1063"
+      ],
+      "overlap_count": 7,
+      "overlap_at_k": 0.7,
+      "jaccard": 0.5384615384615384
+    },
+    "ldo": {
+      "sg_topk": [
+        "634",
+        "1045",
+        "633",
+        "1059",
+        "1058",
+        "1050",
+        "1051",
+        "1057",
+        "1063",
+        "335"
+      ],
+      "skg_topk": [
+        "633",
+        "1063",
+        "1058",
+        "1057",
+        "1047",
+        "1062",
+        "1053",
+        "932",
+        "1050",
+        "632"
+      ],
+      "sg_topk_families": [
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators",
+        "op-amp"
+      ],
+      "skg_topk_families": [
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators",
+        "diff_amps",
+        "comparators",
+        "comparators"
+      ],
+      "compare_by": "circuit_id",
+      "overlap_items": [
+        "633",
+        "1058",
+        "1050",
+        "1057",
+        "1063"
+      ],
+      "overlap_count": 5,
+      "overlap_at_k": 0.5,
+      "jaccard": 0.3333333333333333
+    }
+  }
+}

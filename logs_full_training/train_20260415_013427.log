@@ -1,0 +1,383 @@
+2026-04-15 01:34:27,337 - __main__ - INFO - Starting training with config: gnn_training/config/full_training_diff_amps_comparators_LDO_opamp_all.yaml
+2026-04-15 01:34:27,337 - __main__ - INFO - Config: {
+  "data": {
+    "batch_size": 32,
+    "cache_graphs": false,
+    "data_dir": "/home/karthik/sim_clean/AMS-opt/netlists",
+    "family_balance": "equal",
+    "pos_neg_ratio": 1.0,
+    "shuffle": true,
+    "circuits": {
+      "diff_amps": [
+        69,
+        71,
+        75,
+        77,
+        80,
+        82,
+        84,
+        86,
+        88,
+        90,
+        92,
+        94,
+        96,
+        97,
+        614,
+        615,
+        616,
+        617,
+        618,
+        619,
+        620,
+        621,
+        921,
+        922,
+        923,
+        924,
+        925,
+        926,
+        927,
+        928,
+        929,
+        930,
+        931,
+        932
+      ],
+      "comparators": [
+        632,
+        633,
+        634,
+        635,
+        738,
+        740,
+        741,
+        742,
+        746,
+        747,
+        748,
+        749,
+        1045,
+        1046,
+        1047,
+        1048,
+        1049,
+        1050,
+        1051,
+        1053,
+        1054,
+        1055,
+        1056,
+        1057,
+        1058,
+        1059,
+        1060,
+        1062,
+        1063,
+        1065,
+        1071,
+        1073
+      ],
+      "LDO": [
+        2300,
+        2301,
+        2302,
+        2303,
+        2304,
+        2305,
+        2306,
+        2307,
+        2308,
+        2309,
+        2310,
+        2311,
+        2312,
+        2313,
+        2314,
+        2315,
+        2316,
+        2317,
+        2318,
+        2319,
+        2320,
+        2321,
+        2322,
+        2323,
+        2324,
+        2325,
+        2326,
+        2327,
+        2328,
+        2329,
+        2330,
+        2331,
+        2332,
+        2333,
+        2334,
+        2335,
+        2336,
+        2337,
+        2338,
+        2339,
+        2340,
+        2341,
+        2342,
+        2343,
+        2344,
+        2345,
+        2346,
+        2347,
+        2348,
+        2349,
+        2350
+      ],
+      "op-amp": [
+        281,
+        282,
+        283,
+        284,
+        287,
+        289,
+        290,
+        293,
+        294,
+        295,
+        296,
+        297,
+        299,
+        300,
+        302,
+        303,
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324,
+        325,
+        326,
+        327,
+        328,
+        329,
+        331,
+        332,
+        333,
+        334,
+        335,
+        336
+      ]
+    },
+    "test_circuits": {
+      "diff_amps": [
+        82,
+        96,
+        615,
+        619,
+        620,
+        923,
+        927
+      ],
+      "comparators": [
+        632,
+        742,
+        1046,
+        1054,
+        1057,
+        1060,
+        1062
+      ],
+      "LDO": [
+        2300,
+        2305,
+        2309,
+        2311,
+        2318,
+        2319,
+        2325,
+        2327,
+        2338,
+        2345,
+        2350
+      ],
+      "op-amp": [
+        282,
+        290,
+        299,
+        303,
+        306,
+        308,
+        317,
+        318,
+        319,
+        328
+      ]
+    }
+  },
+  "early_stopping": {
+    "min_delta": 0.0001,
+    "patience": 10
+  },
+  "logging": {
+    "log_level": "INFO",
+    "tensorboard_dir": "./logs_full_training",
+    "verbose": true
+  },
+  "loss": {
+    "hard_neg_weight": 1.0,
+    "temperature": 0.07,
+    "type": "nt_xent",
+    "sg_vs_skg": true,
+    "sg_vs_skg_weight": 3.1,
+    "nt_xent_weight": 0.5,
+    "consistency": {
+      "enabled": true,
+      "type": "mse",
+      "weight": 0.5,
+      "max_dist": 1.0
+    }
+  },
+  "model": {
+    "dropout": 0.1,
+    "embedding_dim": 128,
+    "hidden_dims": [
+      64,
+      64,
+      32
+    ],
+    "input_dim": 329,
+    "projection_dim": 128,
+    "use_batch_norm": true
+  },
+  "optimizer": {
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "lr": 0.001,
+    "type": "adam",
+    "weight_decay": 1e-05
+  },
+  "scheduler": {
+    "type": "cosine"
+  },
+  "training": {
+    "checkpoint_dir": "./checkpoints_sg_vs_skg",
+    "device": "cpu",
+    "epochs": 20,
+    "log_interval": 2,
+    "seed": 42,
+    "val_interval": 2
+  },
+  "testing": {
+    "remove_knowledge_graph": true
+  }
+}
+2026-04-15 01:34:27,338 - __main__ - INFO - Using device: cpu
+2026-04-15 01:34:27,353 - __main__ - INFO - Model architecture:
+ContrastiveGINModel(
+  (encoder): GINEncoder(
+    (gin_layers): ModuleList(
+      (0): GINConv(
+        (mlp): Sequential(
+          (0): Linear(in_features=329, out_features=64, bias=True)
+          (1): ReLU()
+          (2): Linear(in_features=64, out_features=64, bias=True)
+        )
+      )
+      (1): GINConv(
+        (mlp): Sequential(
+          (0): Linear(in_features=64, out_features=64, bias=True)
+          (1): ReLU()
+          (2): Linear(in_features=64, out_features=64, bias=True)
+        )
+      )
+      (2): GINConv(
+        (mlp): Sequential(
+          (0): Linear(in_features=64, out_features=32, bias=True)
+          (1): ReLU()
+          (2): Linear(in_features=32, out_features=32, bias=True)
+        )
+      )
+    )
+    (batch_norms): ModuleList(
+      (0-1): 2 x BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (dropout): Dropout(p=0.1, inplace=False)
+    (readout_mlp): Sequential(
+      (0): Linear(in_features=32, out_features=128, bias=True)
+      (1): ReLU()
+      (2): Linear(in_features=128, out_features=128, bias=True)
+    )
+  )
+  (projection_head): ProjectionHead(
+    (mlp): Sequential(
+      (0): Linear(in_features=128, out_features=128, bias=True)
+      (1): ReLU()
+      (2): Linear(in_features=128, out_features=128, bias=True)
+    )
+  )
+)
+2026-04-15 01:34:27,353 - __main__ - INFO - Treating SG vs SG+KG pairs as positive pairs with PositiveOnlyContrastiveLoss
+2026-04-15 01:34:27,353 - __main__ - INFO - Loss function: nt_xent
+2026-04-15 01:34:27,353 - __main__ - INFO - NT-Xent weight: 0.5
+2026-04-15 01:34:27,353 - __main__ - INFO - Consistency loss enabled: type=mse, weight=0.5
+2026-04-15 01:34:27,879 - __main__ - INFO - Optimizer: adam
+2026-04-15 01:34:27,885 - __main__ - INFO - Train circuits: {'diff_amps': [69, 71, 75, 77, 80, 84, 86, 88, 90, 92, 94, 97, 614, 616, 617, 618, 621, 921, 922, 924, 925, 926, 928, 929, 930, 931, 932], 'comparators': [633, 634, 635, 738, 740, 741, 746, 747, 748, 749, 1045, 1047, 1048, 1049, 1050, 1051, 1053, 1055, 1056, 1058, 1059, 1063, 1065, 1071, 1073], 'LDO': [2301, 2302, 2303, 2304, 2306, 2307, 2308, 2310, 2312, 2313, 2314, 2315, 2316, 2317, 2320, 2321, 2322, 2323, 2324, 2326, 2328, 2329, 2330, 2331, 2332, 2333, 2334, 2335, 2336, 2337, 2339, 2340, 2341, 2342, 2343, 2344, 2346, 2347, 2348, 2349], 'op-amp': [281, 283, 284, 287, 289, 293, 294, 295, 296, 297, 300, 302, 304, 305, 307, 309, 310, 311, 312, 314, 315, 316, 320, 321, 322, 323, 324, 325, 326, 327, 329, 331, 332, 333, 334, 335, 336]}
+2026-04-15 01:34:27,885 - __main__ - INFO - Test circuits: {'diff_amps': [82, 96, 615, 619, 620, 923, 927], 'comparators': [632, 742, 1046, 1054, 1057, 1060, 1062], 'LDO': [2300, 2305, 2309, 2311, 2318, 2319, 2325, 2327, 2338, 2345, 2350], 'op-amp': [282, 290, 299, 303, 306, 308, 317, 318, 319, 328]}
+2026-04-15 01:34:38,665 - __main__ - INFO - Starting training...
+2026-04-15 01:35:05,824 - __main__ - INFO - Epoch 2/20 - Loss: -2.4230 (NT-Xent: 0.8774, Consistency: 0.2734, SG-vs-SKG: -0.9672)
+2026-04-15 01:35:08,343 - __main__ - INFO - Epoch 2/20 - Val Loss: -0.2031
+2026-04-15 01:35:08,343 - __main__ - INFO - Validation Components - NT-Xent: 1.3354, Consistency: 0.3728, SG-vs-SKG: -0.3410
+2026-04-15 01:35:08,351 - __main__ - INFO - Current LR: 0.000976
+2026-04-15 01:35:35,202 - __main__ - INFO - Epoch 4/20 - Loss: -2.4606 (NT-Xent: 0.8437, Consistency: 0.2806, SG-vs-SKG: -0.9751)
+2026-04-15 01:35:37,809 - __main__ - INFO - Epoch 4/20 - Val Loss: -0.5897
+2026-04-15 01:35:37,809 - __main__ - INFO - Validation Components - NT-Xent: 0.9646, Consistency: 0.3670, SG-vs-SKG: -0.4050
+2026-04-15 01:35:37,815 - __main__ - INFO - Current LR: 0.000905
+2026-04-15 01:36:04,935 - __main__ - INFO - Epoch 6/20 - Loss: -2.5130 (NT-Xent: 0.7560, Consistency: 0.2844, SG-vs-SKG: -0.9784)
+2026-04-15 01:36:07,318 - __main__ - INFO - Epoch 6/20 - Val Loss: -0.6466
+2026-04-15 01:36:07,318 - __main__ - INFO - Validation Components - NT-Xent: 0.8751, Consistency: 0.3625, SG-vs-SKG: -0.4082
+2026-04-15 01:36:07,324 - __main__ - INFO - Current LR: 0.000794
+2026-04-15 01:36:35,778 - __main__ - INFO - Epoch 8/20 - Loss: -2.5312 (NT-Xent: 0.7412, Consistency: 0.2754, SG-vs-SKG: -0.9805)
+2026-04-15 01:36:38,209 - __main__ - INFO - Epoch 8/20 - Val Loss: -1.3936
+2026-04-15 01:36:38,209 - __main__ - INFO - Validation Components - NT-Xent: 0.9291, Consistency: 0.3906, SG-vs-SKG: -0.6624
+2026-04-15 01:36:38,213 - __main__ - INFO - Current LR: 0.000655
+2026-04-15 01:37:07,368 - __main__ - INFO - Epoch 10/20 - Loss: -2.5752 (NT-Xent: 0.6600, Consistency: 0.2712, SG-vs-SKG: -0.9809)
+2026-04-15 01:37:09,657 - __main__ - INFO - Epoch 10/20 - Val Loss: -1.0948
+2026-04-15 01:37:09,657 - __main__ - INFO - Validation Components - NT-Xent: 0.8230, Consistency: 0.3618, SG-vs-SKG: -0.5443
+2026-04-15 01:37:09,662 - __main__ - INFO - Current LR: 0.000500
+2026-04-15 01:37:39,148 - __main__ - INFO - Epoch 12/20 - Loss: -2.6100 (NT-Xent: 0.6225, Consistency: 0.2601, SG-vs-SKG: -0.9843)
+2026-04-15 01:37:41,628 - __main__ - INFO - Epoch 12/20 - Val Loss: -1.4144
+2026-04-15 01:37:41,628 - __main__ - INFO - Validation Components - NT-Xent: 0.9280, Consistency: 0.3944, SG-vs-SKG: -0.6695
+2026-04-15 01:37:41,632 - __main__ - INFO - Current LR: 0.000345
+2026-04-15 01:38:11,200 - __main__ - INFO - Epoch 14/20 - Loss: -2.6379 (NT-Xent: 0.5998, Consistency: 0.2452, SG-vs-SKG: -0.9872)
+2026-04-15 01:38:13,617 - __main__ - INFO - Epoch 14/20 - Val Loss: -0.7258
+2026-04-15 01:38:13,617 - __main__ - INFO - Validation Components - NT-Xent: 0.9358, Consistency: 0.3836, SG-vs-SKG: -0.4469
+2026-04-15 01:38:13,617 - __main__ - INFO - Current LR: 0.000206
+2026-04-15 01:38:42,913 - __main__ - INFO - Epoch 16/20 - Loss: -2.6488 (NT-Xent: 0.5753, Consistency: 0.2458, SG-vs-SKG: -0.9869)
+2026-04-15 01:38:45,286 - __main__ - INFO - Epoch 16/20 - Val Loss: -0.7023
+2026-04-15 01:38:45,286 - __main__ - INFO - Validation Components - NT-Xent: 1.0558, Consistency: 0.3947, SG-vs-SKG: -0.4605
+2026-04-15 01:38:45,286 - __main__ - INFO - Current LR: 0.000095
+2026-04-15 01:39:14,776 - __main__ - INFO - Epoch 18/20 - Loss: -2.6686 (NT-Xent: 0.5549, Consistency: 0.2361, SG-vs-SKG: -0.9884)
+2026-04-15 01:39:17,206 - __main__ - INFO - Epoch 18/20 - Val Loss: -0.9071
+2026-04-15 01:39:17,206 - __main__ - INFO - Validation Components - NT-Xent: 0.8882, Consistency: 0.4003, SG-vs-SKG: -0.5004
+2026-04-15 01:39:17,207 - __main__ - INFO - Current LR: 0.000024
+2026-04-15 01:39:46,677 - __main__ - INFO - Epoch 20/20 - Loss: -2.6689 (NT-Xent: 0.5585, Consistency: 0.2365, SG-vs-SKG: -0.9892)
+2026-04-15 01:39:49,218 - __main__ - INFO - Epoch 20/20 - Val Loss: -0.7766
+2026-04-15 01:39:49,218 - __main__ - INFO - Validation Components - NT-Xent: 0.9094, Consistency: 0.3893, SG-vs-SKG: -0.4600
+2026-04-15 01:39:49,225 - __main__ - INFO - Current LR: 0.000000
+2026-04-15 01:39:49,225 - __main__ - INFO - Training complete!

@@ -170,7 +170,7 @@ data:
     - 334
     - 335
     - 336
-  data_dir: /home/karthik/sim_clean/AMS-opt/AMS-opt/netlists
+  data_dir: /home/karthik/sim_clean/AMS-opt/netlists
   family_balance: equal
   pos_neg_ratio: 1.0
   shuffle: true
@@ -228,9 +228,9 @@ loss:
     type: mse
     weight: 0.5
   hard_neg_weight: 1.0
-  nt_xent_weight: 0.5
+  nt_xent_weight: 0.8
   sg_vs_skg: true
-  sg_vs_skg_weight: 2.1
+  sg_vs_skg_weight: 3.1
   temperature: 0.07
   type: nt_xent
 model:
@@ -256,8 +256,8 @@ testing:
   remove_knowledge_graph: true
 training:
   checkpoint_dir: ./checkpoints_sg_vs_skg
-  device: cuda
-  epochs: 20
+  device: cpu
+  epochs: 30
   log_interval: 2
   seed: 42
   val_interval: 2

@@ -3,10 +3,17 @@
   --config gnn_training/config/full_training_diff_amps_comparators_LDO_opamp_all.yaml \
   --data.data_dir /home/karthik/sim_clean/AMS-opt/netlists
 
+-in euclid
 CUDA_VISIBLE_DEVICES=0 /home/karthik/.conda/envs/analog-rep/bin/python -u gnn_training/scripts/train.py \
   --config gnn_training/config/full_training_diff_amps_comparators_LDO_opamp_all.yaml \
   --data.data_dir /home/karthik/sim_clean/AMS-opt/AMS-opt/netlists \
   --training.device cuda
+
+-in leibniz
+  CUDA_VISIBLE_DEVICES=0 /home/karthik/miniconda3/envs/analog-rep/bin/python -u gnn_training/scripts/train.py \
+  --config gnn_training/config/full_training_diff_amps_comparators_LDO_opamp_all.yaml \
+  --data.data_dir /home/karthik/sim_clean/AMS-opt/netlists \
+  --training.device cpu
 
 # Visualization
 /home/karthik/miniconda3/envs/analog-rep/bin/python -u gnn_training/scripts/analyze_sg_skg_embeddings.py \
@@ -15,6 +22,18 @@ CUDA_VISIBLE_DEVICES=0 /home/karthik/.conda/envs/analog-rep/bin/python -u gnn_tr
   --out_dir /home/karthik/sim_clean/AMS-opt/umap_results_full/sg_skg_analysis \
   --export_llmbo_json
 
+# Visualization with family-colored UMAP background and the 4 anchors highlighted
+/home/karthik/miniconda3/envs/analog-rep/bin/python -u gnn_training/scripts/analyze_sg_skg_embeddings.py \
+  --checkpoint checkpoints_sg_vs_skg/best_model.pt \
+  --netlists_root /home/karthik/sim_clean/AMS-opt/netlists \
+  --out_dir /home/karthik/sim_clean/AMS-opt/umap_results_full/sg_skg_analysis_anchor_views \
+  --export_llmbo_json
+
+# Key output figures:
+# /home/karthik/sim_clean/AMS-opt/umap_results_full/sg_skg_analysis_anchor_views/umap_skg_with_anchors.png
+# /home/karthik/sim_clean/AMS-opt/umap_results_full/sg_skg_analysis_anchor_views/umap_sg_with_anchors.png
+# /home/karthik/sim_clean/AMS-opt/umap_results_full/sg_skg_analysis_anchor_views/umap_pairs.png
+
 In euclid:
 /home/karthik/miniconda3/envs/analog-rep/bin/python -u gnn_training/scripts/analyze_sg_skg_embeddings.py \
   --checkpoint checkpoints_sg_vs_skg/best_model.pt \
@@ -22,10 +41,26 @@ In euclid:
   --out_dir /home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/sg_skg_analysis \
   --export_llmbo_json
 
+/home/karthik/miniconda3/envs/analog-rep/bin/python -u gnn_training/scripts/analyze_sg_skg_embeddings.py \
+  --checkpoint checkpoints_sg_vs_skg/best_model.pt \
+  --netlists_root /home/karthik/sim_clean/AMS-opt/AMS-opt/netlists \
+  --out_dir /home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/sg_skg_analysis_anchor_views \
+  --export_llmbo_json
+
 python3 scripts/visualize_embeddings_umap.py   --config gnn_training/config/full_training_diff_amps_comparators_LDO_opamp_all.yaml   --device cpu
 
 # Optimization
 cd /home/karthik/sim_clean/AMS-opt && /home/karthik/miniconda3/envs/analog-rep/bin/python LLMBO/llmbo.py   --history 1 --related_mode bottomk --related_k 3 --target_id FC   --gnn_embedding_mode sg
+
+cd /home/karthik/sim_clean/AMS-opt && \
+/home/karthik/miniconda3/envs/analog-rep/bin/python LLMBO/llmbo.py \
+  --history 1 \
+  --related_mode topk \
+  --related_k 3 \
+  --target_id FC \
+  --gnn_embedding_mode sg \
+  --gnn_checkpoint /home/karthik/sim_clean/AMS-opt/checkpoints_sg_vs_skg/best_model.pt \
+  --embeddings_json /home/karthik/sim_clean/AMS-opt/umap_results_full/gnn_embeddings_skg_sg_vs_skg.json
 
 # QA Dataset Generation
 cd /home/karthik/sim_clean/AMS-opt
@@ -236,3 +271,16 @@ OPENAI_API_KEY="$OPENAI_API_KEY" /home/karthik/.conda/envs/analog-rep/bin/python
 
 # QA accuracy non-gpt models
 CUDA_VISIBLE_DEVICES=1,2,3,4 /home/karthik/.conda/envs/analog-rep/bin/python QA_Task/eval_filtered_qa.py   --eval_vllm_local   --log_timings   --enforce_eager   --circuits ldo   --k 2   --gnn_embedding_mode sg   --gnn_checkpoint /home/karthik/sim_clean/AMS-opt/AMS-opt/checkpoints_sg_vs_skg/best_model.pt   --embeddings_json /home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/gnn_embeddings_sg_sg_vs_skg.json   --cuda_visible_devices 1,2,3,4   --vllm_model llama3-70b   --apply_chat_template   --temperature 1   --max_tokens 8   --batch_size 4 --gnn_embedding_mode sg --tensor_parallel_size 2 --kg_max_chars 10000
+
+
+# FOM checking functions
+
+#################
+cd /home/karthik/sim_clean/AMS-opt && /home/karthik/miniconda3/envs/analog-rep/bin/python - <<'PY'
+from LLMBO.fom_utils import compute_amp2_fom, compute_fc_fom, compute_comp_fom, compute_ldo_fom
+
+print('amp2_nonperfect', compute_amp2_fom(gain=48.9788449, cmrr=56.758348043, gbw=4632428.778, pow=1.7571350237999998e-05)['fom'])
+print('fc_nonperfect', compute_fc_fom(gain=62.42690592, cmrr=58.441984395000006, gbw=2328343.932, pow=5.3072414395e-05)['fom'])
+print('comp_nonperfect', compute_comp_fom(gain=44.61450094, ugf=41791.71357, offset=-0.01524131561, hyst_err=0.3368452863)['fom'])
+print('ldo_nonperfect', compute_ldo_fom(q_curr=0.005013675, stability=0.0, output_voltage_difference=1.25456486)['fom'])
+PY

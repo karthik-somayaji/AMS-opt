@@ -1,0 +1,993 @@
+[LLMBO Sweep] Started at 2026-04-15T00:29:36.459125+00:00
+[LLMBO Sweep] Command: /home/karthik/miniconda3/envs/analog-rep/bin/python /home/karthik/sim_clean/AMS-opt/LLMBO/llmbo.py --history 1 --refined 0 --related_k 2 --gnn_embedding_mode sg --gnn_checkpoint /home/karthik/sim_clean/AMS-opt/checkpoints_sg_vs_skg/best_model.pt --embeddings_json /home/karthik/sim_clean/AMS-opt/umap_results_full/gnn_embeddings_sg_sg_vs_skg.json --target_id comp --circuit comp --n_itr 12 --numpy_seed 1532373706 --torch_seed 1432632997 --openai_api_seed 377133071 --early_stop_fom 1.0 --run_output_dir /home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs/history_1/comp/topk/trial_04 --path_checkpoints /home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs/history_1/comp/topk/trial_04/checkpoints --trial_id 4 --gnn_device cpu --related_mode topk
+
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+[LLMBO] Using LLMBO anchor embedding for --target_id 'comp' (D=128) with reference embeddings umap_results_full/gnn_embeddings_sg_sg_vs_skg.json
+[LLMBO] Optimization circuit: comp
+[LLMBO] Task path: /home/karthik/sim_clean/AMS-opt/LLMBO/tasks/comp/comp_test.json
+IN  comp
+3
+['.param l1=0.4 w1=0.6 l3=0.2 w3=0.8 l5=0.6 w5=0.4 l6=0.4 w6=0.6 l8=0.3 w8=0.7 l10=0.7 w10=0.3\n.param l1=0.6 w1=0.4 l3=0.8 w3=0.2 l5=0.4 w5=0.6 l6=0.6 w6=0.4 l8=0.7 w8=0.3 l10=0.3 w10=0.7\n.param l1=0.5 w1=0.5 l3=0.5 w3=0.5 l5=0.5 w5=0.5 l6=0.5 w6=0.5 l8=0.5 w8=0.5 l10=0.5 w10=0.5']
+Parameters to evaluate: {'l1': '0.4', 'w1': '0.6', 'l3': '0.2', 'w3': '0.8', 'l5': '0.6', 'w5': '0.4', 'l6': '0.4', 'w6': '0.6', 'l8': '0.3', 'w8': '0.7', 'l10': '0.7', 'w10': '0.3'}
+Evaluating point: .param l1=0.4
+.param w1=0.6
+.param l3=0.2
+.param w3=0.8
+.param l5=0.6
+.param w5=0.4
+.param l6=0.4
+.param w6=0.6
+.param l8=0.3
+.param w8=0.7
+.param l10=0.7
+.param w10=0.3
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.4
+w1 0.6
+l3 0.2
+w3 0.8
+l5 0.6
+w5 0.4
+l6 0.4
+w6 0.6
+l8 0.3
+w8 0.7
+l10 0.7
+w10 0.3
+params: .param l1=0.4
+.param w1=0.6
+.param l3=0.2
+.param w3=0.8
+.param l5=0.6
+.param w5=0.4
+.param l6=0.4
+.param w6=0.6
+.param l8=0.3
+.param w8=0.7
+.param l10=0.7
+.param w10=0.3
+
+metrics:  gain=44.935 ugf=426004.922 offset=-0.029 hyst_err=0.676 
+targets: 0.500
+aux_info: The following mosfets are not in saturation region:
+ xnb: Subth
+ xn5: Subth
+ xn1: Cutoff
+ xn2: Subth
+ xp3: Subth
+ xp4: Subth
+ xp6: Subth
+ xp7: Subth
+ xp8: Subth
+ xp9: Subth
+ xn10: Subth
+ xn11: Subth
+ 
+Parameters to evaluate: {'l1': '0.6', 'w1': '0.4', 'l3': '0.8', 'w3': '0.2', 'l5': '0.4', 'w5': '0.6', 'l6': '0.6', 'w6': '0.4', 'l8': '0.7', 'w8': '0.3', 'l10': '0.3', 'w10': '0.7'}
+Evaluating point: .param l1=0.6
+.param w1=0.4
+.param l3=0.8
+.param w3=0.2
+.param l5=0.4
+.param w5=0.6
+.param l6=0.6
+.param w6=0.4
+.param l8=0.7
+.param w8=0.3
+.param l10=0.3
+.param w10=0.7
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.6
+w1 0.4
+l3 0.8
+w3 0.2
+l5 0.4
+w5 0.6
+l6 0.6
+w6 0.4
+l8 0.7
+w8 0.3
+l10 0.3
+w10 0.7
+params: .param l1=0.6
+.param w1=0.4
+.param l3=0.8
+.param w3=0.2
+.param l5=0.4
+.param w5=0.6
+.param l6=0.6
+.param w6=0.4
+.param l8=0.7
+.param w8=0.3
+.param l10=0.3
+.param w10=0.7
+
+metrics:  gain=54.407 ugf=7880.536 offset=-0.036 hyst_err=0.659 
+targets: 0.270
+aux_info: The following mosfets are not in saturation region:
+ xnb: Subth
+ xn5: Subth
+ xn1: Cutoff
+ xn2: Subth
+ xp3: Subth
+ xp4: Subth
+ xp6: Subth
+ xp7: Linear
+ xp8: Linear
+ xp9: Subth
+ xn10: Subth
+ xn11: Subth
+ 
+Parameters to evaluate: {'l1': '0.5', 'w1': '0.5', 'l3': '0.5', 'w3': '0.5', 'l5': '0.5', 'w5': '0.5', 'l6': '0.5', 'w6': '0.5', 'l8': '0.5', 'w8': '0.5', 'l10': '0.5', 'w10': '0.5'}
+Evaluating point: .param l1=0.5
+.param w1=0.5
+.param l3=0.5
+.param w3=0.5
+.param l5=0.5
+.param w5=0.5
+.param l6=0.5
+.param w6=0.5
+.param l8=0.5
+.param w8=0.5
+.param l10=0.5
+.param w10=0.5
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.5
+w1 0.5
+l3 0.5
+w3 0.5
+l5 0.5
+w5 0.5
+l6 0.5
+w6 0.5
+l8 0.5
+w8 0.5
+l10 0.5
+w10 0.5
+params: .param l1=0.5
+.param w1=0.5
+.param l3=0.5
+.param w3=0.5
+.param l5=0.5
+.param w5=0.5
+.param l6=0.5
+.param w6=0.5
+.param l8=0.5
+.param w8=0.5
+.param l10=0.5
+.param w10=0.5
+
+metrics:  gain=42.892 ugf=170922.448 offset=-0.039 hyst_err=0.758 
+targets: 0.500
+aux_info: The following mosfets are not in saturation region:
+ xnb: Subth
+ xn5: Subth
+ xn1: Cutoff
+ xn2: Subth
+ xp3: Subth
+ xp4: Subth
+ xp6: Subth
+ xp7: Subth
+ xp8: Subth
+ xp9: Subth
+ xn10: Subth
+ xn11: Subth
+ 
+Initializing BO GP with data_init...
+Initial best target value: 0.50
+Beginning Design Cycle
+Current iteration:1.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.7', 'w1': '0.3', 'l3': '0.5', 'w3': '0.5', 'l5': '0.6', 'w5': '0.4', 'l6': '0.4', 'w6': '0.6', 'l8': '0.5', 'w8': '0.5', 'l10': '0.6', 'w10': '0.4'}
+Evaluating point: .param l1=0.7
+.param w1=0.3
+.param l3=0.5
+.param w3=0.5
+.param l5=0.6
+.param w5=0.4
+.param l6=0.4
+.param w6=0.6
+.param l8=0.5
+.param w8=0.5
+.param l10=0.6
+.param w10=0.4
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.7
+w1 0.3
+l3 0.5
+w3 0.5
+l5 0.6
+w5 0.4
+l6 0.4
+w6 0.6
+l8 0.5
+w8 0.5
+l10 0.6
+w10 0.4
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.5', 'w1': '0.5', 'l3': '0.4', 'w3': '0.6', 'l5': '0.5', 'w5': '0.5', 'l6': '0.5', 'w6': '0.5', 'l8': '0.5', 'w8': '0.5', 'l10': '0.5', 'w10': '0.5'}
+Evaluating point: .param l1=0.5
+.param w1=0.5
+.param l3=0.4
+.param w3=0.6
+.param l5=0.5
+.param w5=0.5
+.param l6=0.5
+.param w6=0.5
+.param l8=0.5
+.param w8=0.5
+.param l10=0.5
+.param w10=0.5
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.5
+w1 0.5
+l3 0.4
+w3 0.6
+l5 0.5
+w5 0.5
+l6 0.5
+w6 0.5
+l8 0.5
+w8 0.5
+l10 0.5
+w10 0.5
+Best metrics {'gain': 44.93469089, 'ugf': 426004.9217, 'offset': -0.02900490467, 'hyst_err': 0.6759819943}
+Best BO metrics {'gain': 41.5742496, 'ugf': 96444.40145, 'offset': -0.04363522455, 'hyst_err': 0.7980235453}
+Best LLM metrics {'gain': 44.22818855, 'ugf': 458924.5484, 'offset': -0.03777516575, 'hyst_err': 0.7714282461}
+At iteration: 1, the best target value is: 0.500, llm best target: 0.500, bo best target: 0.491
+Current iteration:2.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.5', 'w1': '0.5', 'l3': '0.5', 'w3': '0.5', 'l5': '0.5', 'w5': '0.5', 'l6': '0.5', 'w6': '0.5', 'l8': '0.5', 'w8': '0.5', 'l10': '0.5', 'w10': '0.5'}
+Evaluating point: .param l1=0.5
+.param w1=0.5
+.param l3=0.5
+.param w3=0.5
+.param l5=0.5
+.param w5=0.5
+.param l6=0.5
+.param w6=0.5
+.param l8=0.5
+.param w8=0.5
+.param l10=0.5
+.param w10=0.5
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.5
+w1 0.5
+l3 0.5
+w3 0.5
+l5 0.5
+w5 0.5
+l6 0.5
+w6 0.5
+l8 0.5
+w8 0.5
+l10 0.5
+w10 0.5
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.6', 'w1': '0.7', 'l3': '0.8', 'w3': '0.8', 'l5': '0.1', 'w5': '0.5', 'l6': '0.3', 'w6': '0.4', 'l8': '1.0', 'w8': '0.9', 'l10': '0.0', 'w10': '0.9'}
+Evaluating point: .param l1=0.6
+.param w1=0.7
+.param l3=0.8
+.param w3=0.8
+.param l5=0.1
+.param w5=0.5
+.param l6=0.3
+.param w6=0.4
+.param l8=1.0
+.param w8=0.9
+.param l10=0.0
+.param w10=0.9
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.6
+w1 0.7
+l3 0.8
+w3 0.8
+l5 0.1
+w5 0.5
+l6 0.3
+w6 0.4
+l8 1.0
+w8 0.9
+l10 0.0
+w10 0.9
+Best metrics {'gain': 44.93469089, 'ugf': 426004.9217, 'offset': -0.02900490467, 'hyst_err': 0.6759819943}
+Best BO metrics {'gain': 41.5742496, 'ugf': 96444.40145, 'offset': -0.04363522455, 'hyst_err': 0.7980235453}
+Best LLM metrics {'gain': 44.22818855, 'ugf': 458924.5484, 'offset': -0.03777516575, 'hyst_err': 0.7714282461}
+At iteration: 2, the best target value is: 0.500, llm best target: 0.500, bo best target: 0.491
+Current iteration:3.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.1', 'w1': '0.9', 'l3': '0.1', 'w3': '0.9', 'l5': '0.9', 'w5': '0.1', 'l6': '0.1', 'w6': '0.9', 'l8': '0.9', 'w8': '0.1', 'l10': '0.9', 'w10': '0.1'}
+Evaluating point: .param l1=0.1
+.param w1=0.9
+.param l3=0.1
+.param w3=0.9
+.param l5=0.9
+.param w5=0.1
+.param l6=0.1
+.param w6=0.9
+.param l8=0.9
+.param w8=0.1
+.param l10=0.9
+.param w10=0.1
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.1
+w1 0.9
+l3 0.1
+w3 0.9
+l5 0.9
+w5 0.1
+l6 0.1
+w6 0.9
+l8 0.9
+w8 0.1
+l10 0.9
+w10 0.1
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.0', 'w1': '0.8', 'l3': '0.6', 'w3': '0.6', 'l5': '0.4', 'w5': '0.8', 'l6': '0.1', 'w6': '0.2', 'l8': '0.1', 'w8': '0.7', 'l10': '0.5', 'w10': '0.5'}
+Evaluating point: .param l1=0.0
+.param w1=0.8
+.param l3=0.6
+.param w3=0.6
+.param l5=0.4
+.param w5=0.8
+.param l6=0.1
+.param w6=0.2
+.param l8=0.1
+.param w8=0.7
+.param l10=0.5
+.param w10=0.5
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.0
+w1 0.8
+l3 0.6
+w3 0.6
+l5 0.4
+w5 0.8
+l6 0.1
+w6 0.2
+l8 0.1
+w8 0.7
+l10 0.5
+w10 0.5
+Best metrics {'gain': 44.93469089, 'ugf': 426004.9217, 'offset': -0.02900490467, 'hyst_err': 0.6759819943}
+Best BO metrics Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+{'gain': 41.5742496, 'ugf': 96444.40145, 'offset': -0.04363522455, 'hyst_err': 0.7980235453}
+Best LLM metrics {'gain': 44.22818855, 'ugf': 458924.5484, 'offset': -0.03777516575, 'hyst_err': 0.7714282461}
+At iteration: 3, the best target value is: 0.500, llm best target: 0.500, bo best target: 0.491
+Current iteration:4.
+[Rate Limiter] Sleeping for 46.14s to avoid hitting the token limit...
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.7', 'w1': '0.3', 'l3': '0.5', 'w3': '0.5', 'l5': '0.6', 'w5': '0.4', 'l6': '0.4', 'w6': '0.6', 'l8': '0.5', 'w8': '0.5', 'l10': '0.6', 'w10': '0.4'}
+Evaluating point: .param l1=0.7
+.param w1=0.3
+.param l3=0.5
+.param w3=0.5
+.param l5=0.6
+.param w5=0.4
+.param l6=0.4
+.param w6=0.6
+.param l8=0.5
+.param w8=0.5
+.param l10=0.6
+.param w10=0.4
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.7
+w1 0.3
+l3 0.5
+w3 0.5
+l5 0.6
+w5 0.4
+l6 0.4
+w6 0.6
+l8 0.5
+w8 0.5
+l10 0.6
+w10 0.4
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.8', 'w1': '0.1', 'l3': '0.1', 'w3': '0.6', 'l5': '0.6', 'w5': '0.5', 'l6': '0.1', 'w6': '0.5', 'l8': '0.7', 'w8': '0.6', 'l10': '0.2', 'w10': '0.7'}
+Evaluating point: .param l1=0.8
+.param w1=0.1
+.param l3=0.1
+.param w3=0.6
+.param l5=0.6
+.param w5=0.5
+.param l6=0.1
+.param w6=0.5
+.param l8=0.7
+.param w8=0.6
+.param l10=0.2
+.param w10=0.7
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.8
+w1 0.1
+l3 0.1
+w3 0.6
+l5 0.6
+w5 0.5
+l6 0.1
+w6 0.5
+l8 0.7
+w8 0.6
+l10 0.2
+w10 0.7
+Best metrics {'gain': 44.93469089, 'ugf': 426004.9217, 'offset': -0.02900490467, 'hyst_err': 0.6759819943}
+Best BO metrics {'gain': 41.5742496, 'ugf': 96444.40145, 'offset': -0.04363522455, 'hyst_err': 0.7980235453}
+Best LLM metrics {'gain': 44.22818855, 'ugf': 458924.5484, 'offset': -0.03777516575, 'hyst_err': 0.7714282461}
+At iteration: 4, the best target value is: 0.500, llm best target: 0.500, bo best target: 0.491
+Current iteration:5.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.4', 'w1': '0.6', 'l3': '0.5', 'w3': '0.5', 'l5': '0.5', 'w5': '0.5', 'l6': '0.5', 'w6': '0.5', 'l8': '0.5', 'w8': '0.5', 'l10': '0.5', 'w10': '0.5'}
+Evaluating point: .param l1=0.4
+.param w1=0.6
+.param l3=0.5
+.param w3=0.5
+.param l5=0.5
+.param w5=0.5
+.param l6=0.5
+.param w6=0.5
+.param l8=0.5
+.param w8=0.5
+.param l10=0.5
+.param w10=0.5
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.4
+w1 0.6
+l3 0.5
+w3 0.5
+l5 0.5
+w5 0.5
+l6 0.5
+w6 0.5
+l8 0.5
+w8 0.5
+l10 0.5
+w10 0.5
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.1', 'w1': '0.3', 'l3': '0.1', 'w3': '0.7', 'l5': '0.8', 'w5': '0.5', 'l6': '0.6', 'w6': '0.0', 'l8': '0.9', 'w8': '0.9', 'l10': '0.0', 'w10': '0.1'}
+Evaluating point: .param l1=0.1
+.param w1=0.3
+.param l3=0.1
+.param w3=0.7
+.param l5=0.8
+.param w5=0.5
+.param l6=0.6
+.param w6=0.0
+.param l8=0.9
+.param w8=0.9
+.param l10=0.0
+.param w10=0.1
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.1
+w1 0.3
+l3 0.1
+w3 0.7
+l5 0.8
+w5 0.5
+l6 0.6
+w6 0.0
+l8 0.9
+w8 0.9
+l10 0.0
+w10 0.1
+Best metrics {'gain': 24.88916052, 'ugf': 284289.148, 'offset': -0.04789018539, 'hyst_err': 0.2996945594}
+Best BO metrics {'gain': 24.88916052, 'ugf': 284289.148, 'offset': -0.04789018539, 'hyst_err': 0.2996945594}
+Best LLM metrics {'gain': 44.22818855, 'ugf': 458924.5484, 'offset': -0.03777516575, 'hyst_err': 0.7714282461}
+At iteration: 5, the best target value is: 0.656, llm best target: 0.500, bo best target: 0.656
+Current iteration:6.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.8', 'w1': '0.1', 'l3': '0.4', 'w3': '0.7', 'l5': '0.6', 'w5': '0.5', 'l6': '0.3', 'w6': '0.6', 'l8': '0.9', 'w8': '0.2', 'l10': '0.2', 'w10': '0.4'}
+Evaluating point: .param l1=0.8
+.param w1=0.1
+.param l3=0.4
+.param w3=0.7
+.param l5=0.6
+.param w5=0.5
+.param l6=0.3
+.param w6=0.6
+.param l8=0.9
+.param w8=0.2
+.param l10=0.2
+.param w10=0.4
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.8
+w1 0.1
+l3 0.4
+w3 0.7
+l5 0.6
+w5 0.5
+l6 0.3
+w6 0.6
+l8 0.9
+w8 0.2
+l10 0.2
+w10 0.4
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.5', 'w1': '0.5', 'l3': '0.2', 'w3': '0.4', 'l5': '0.1', 'w5': '0.7', 'l6': '0.8', 'w6': '0.6', 'l8': '0.8', 'w8': '0.8', 'l10': '0.3', 'w10': '0.9'}
+Evaluating point: .param l1=0.5
+.param w1=0.5
+.param l3=0.2
+.param w3=0.4
+.param l5=0.1
+.param w5=0.7
+.param l6=0.8
+.param w6=0.6
+.param l8=0.8
+.param w8=0.8
+.param l10=0.3
+.param w10=0.9
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.5
+w1 0.5
+l3 0.2
+w3 0.4
+l5 0.1
+w5 0.7
+l6 0.8
+w6 0.6
+l8 0.8
+w8 0.8
+l10 0.3
+w10 0.9
+Best metrics {'gain': 24.88916052, 'ugf': 284289.148, 'offset': -0.04789018539, 'hyst_err': 0.2996945594}
+Best BO metrics {'gain': 24.88916052, 'ugf': 284289.148, 'offset': -0.04789018539, 'hyst_err': 0.2996945594}
+Best LLM metrics {'gain': 44.22818855, 'ugf': 458924.5484, 'offset': -0.03777516575, 'hyst_err': 0.7714282461}
+At iteration: 6, the best target value is: 0.656, llm best target: 0.500, bo best target: 0.656
+Current iteration:7.
+[Rate Limiter] Sleeping for 1.53s to avoid hitting the token limit...
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.20', 'w1': '0.70', 'l3': '0.20', 'w3': '0.80', 'l5': '0.70', 'w5': '0.30', 'l6': '0.50', 'w6': '0.90', 'l8': '0.90', 'w8': '0.80', 'l10': '0.10', 'w10': '0.80'}
+Evaluating point: .param l1=0.20
+.param w1=0.70
+.param l3=0.20
+.param w3=0.80
+.param l5=0.70
+.param w5=0.30
+.param l6=0.50
+.param w6=0.90
+.param l8=0.90
+.param w8=0.80
+.param l10=0.10
+.param w10=0.80
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.20
+w1 0.70
+l3 0.20
+w3 0.80
+l5 0.70
+w5 0.30
+l6 0.50
+w6 0.90
+l8 0.90
+w8 0.80
+l10 0.10
+w10 0.80
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.9', 'w1': '0.6', 'l3': '0.5', 'w3': '0.8', 'l5': '0.3', 'w5': '0.8', 'l6': '0.6', 'w6': '0.2', 'l8': '0.7', 'w8': '0.9', 'l10': '1.0', 'w10': '0.0'}
+Evaluating point: .param l1=0.9
+.param w1=0.6
+.param l3=0.5
+.param w3=0.8
+.param l5=0.3
+.param w5=0.8
+.param l6=0.6
+.param w6=0.2
+.param l8=0.7
+.param w8=0.9
+.param l10=1.0
+.param w10=0.0
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.9
+w1 0.6
+l3 0.5
+w3 0.8
+l5 0.3
+w5 0.8
+l6 0.6
+w6 0.2
+l8 0.7
+w8 0.9
+l10 1.0
+w10 0.0
+Best metrics {'gain': 24.88916052, 'ugf': 284289.148, 'offset': -0.04789018539, 'hyst_err': 0.2996945594}
+Best BO metrics {'gain': 24.88916052, 'ugf': 284289.148, 'offset': -0.04789018539, 'hyst_err': 0.2996945594}
+Best LLM metrics {'gain': 44.22818855, 'ugf': 458924.5484, 'offset': -0.03777516575, 'hyst_err': 0.7714282461}
+At iteration: 7, the best target value is: 0.656, llm best target: 0.500, bo best target: 0.656
+Current iteration:8.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.9', 'w1': '0.1', 'l3': '0.1', 'w3': '0.8', 'l5': '0.8', 'w5': '0.2', 'l6': '0.6', 'w6': '0.0', 'l8': '0.9', 'w8': '0.9', 'l10': '0.0', 'w10': '0.1'}
+Evaluating point: .param l1=0.9
+.param w1=0.1
+.param l3=0.1
+.param w3=0.8
+.param l5=0.8
+.param w5=0.2
+.param l6=0.6
+.param w6=0.0
+.param l8=0.9
+.param w8=0.9
+.param l10=0.0
+.param w10=0.1
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.9
+w1 0.1
+l3 0.1
+w3 0.8
+l5 0.8
+w5 0.2
+l6 0.6
+w6 0.0
+l8 0.9
+w8 0.9
+l10 0.0
+w10 0.1
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.1', 'w1': '0.3', 'l3': '0.9', 'w3': '0.2', 'l5': '0.6', 'w5': '0.3', 'l6': '0.2', 'w6': '0.2', 'l8': '0.0', 'w8': '0.7', 'l10': '0.8', 'w10': '0.6'}
+Evaluating point: .param l1=0.1
+.param w1=0.3
+.param l3=0.9
+.param w3=0.2
+.param l5=0.6
+.param w5=0.3
+.param l6=0.2
+.param w6=0.2
+.param l8=0.0
+.param w8=0.7
+.param l10=0.8
+.param w10=0.6
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.1
+w1 0.3
+l3 0.9
+w3 0.2
+l5 0.6
+w5 0.3
+l6 0.2
+w6 0.2
+l8 0.0
+w8 0.7
+l10 0.8
+w10 0.6
+Best metrics {'gain': 30.8035814, 'ugf': 292710.6304, 'offset': -0.03334616781, 'hyst_err': 0.351323467}
+Best BO metrics Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/comp_ati_new/comp.sp' -o /home/karthik/sim_clean/LLMBO/comp_ati_new/comp.lis
+
+>info:         ***** hspice job concluded
+{'gain': 30.8035814, 'ugf': 292710.6304, 'offset': -0.03334616781, 'hyst_err': 0.351323467}
+Best LLM metrics {'gain': 24.72676522, 'ugf': 261918.5396, 'offset': -0.05380089625, 'hyst_err': 0.3271544592}
+At iteration: 8, the best target value is: 0.693, llm best target: 0.655, bo best target: 0.693
+Current iteration:9.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.8', 'w1': '0.4', 'l3': '0.9', 'w3': '0.2', 'l5': '0.5', 'w5': '0.6', 'l6': '0.3', 'w6': '0.4', 'l8': '0.1', 'w8': '0.7', 'l10': '0.9', 'w10': '0.5'}
+Evaluating point: .param l1=0.8
+.param w1=0.4
+.param l3=0.9
+.param w3=0.2
+.param l5=0.5
+.param w5=0.6
+.param l6=0.3
+.param w6=0.4
+.param l8=0.1
+.param w8=0.7
+.param l10=0.9
+.param w10=0.5
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.8
+w1 0.4
+l3 0.9
+w3 0.2
+l5 0.5
+w5 0.6
+l6 0.3
+w6 0.4
+l8 0.1
+w8 0.7
+l10 0.9
+w10 0.5
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.4', 'w1': '0.5', 'l3': '0.4', 'w3': '0.9', 'l5': '0.0', 'w5': '0.4', 'l6': '0.3', 'w6': '1.0', 'l8': '0.2', 'w8': '0.8', 'l10': '0.9', 'w10': '0.9'}
+Evaluating point: .param l1=0.4
+.param w1=0.5
+.param l3=0.4
+.param w3=0.9
+.param l5=0.0
+.param w5=0.4
+.param l6=0.3
+.param w6=1.0
+.param l8=0.2
+.param w8=0.8
+.param l10=0.9
+.param w10=0.9
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.4
+w1 0.5
+l3 0.4
+w3 0.9
+l5 0.0
+w5 0.4
+l6 0.3
+w6 1.0
+l8 0.2
+w8 0.8
+l10 0.9
+w10 0.9
+Best metrics {'gain': 30.8035814, 'ugf': 292710.6304, 'offset': -0.03334616781, 'hyst_err': 0.351323467}
+Best BO metrics {'gain': 30.8035814, 'ugf': 292710.6304, 'offset': -0.03334616781, 'hyst_err': 0.351323467}
+Best LLM metrics {'gain': 24.72676522, 'ugf': 261918.5396, 'offset': -0.05380089625, 'hyst_err': 0.3271544592}
+At iteration: 9, the best target value is: 0.693, llm best target: 0.655, bo best target: 0.693
+Current iteration:10.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.1', 'w1': '0.3', 'l3': '0.9', 'w3': '0.2', 'l5': '0.6', 'w5': '0.3', 'l6': '0.2', 'w6': '0.2', 'l8': '0.0', 'w8': '0.7', 'l10': '0.8', 'w10': '0.6'}
+Evaluating point: .param l1=0.1
+.param w1=0.3
+.param l3=0.9
+.param w3=0.2
+.param l5=0.6
+.param w5=0.3
+.param l6=0.2
+.param w6=0.2
+.param l8=0.0
+.param w8=0.7
+.param l10=0.8
+.param w10=0.6
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.1
+w1 0.3
+l3 0.9
+w3 0.2
+l5 0.6
+w5 0.3
+l6 0.2
+w6 0.2
+l8 0.0
+w8 0.7
+l10 0.8
+w10 0.6
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.9', 'w1': '0.0', 'l3': '0.3', 'w3': '0.5', 'l5': '0.7', 'w5': '0.4', 'l6': '0.1', 'w6': '0.4', 'l8': '0.2', 'w8': '0.5', 'l10': '0.3', 'w10': '0.8'}
+Evaluating point: .param l1=0.9
+.param w1=0.0
+.param l3=0.3
+.param w3=0.5
+.param l5=0.7
+.param w5=0.4
+.param l6=0.1
+.param w6=0.4
+.param l8=0.2
+.param w8=0.5
+.param l10=0.3
+.param w10=0.8
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.9
+w1 0.0
+l3 0.3
+w3 0.5
+l5 0.7
+w5 0.4
+l6 0.1
+w6 0.4
+l8 0.2
+w8 0.5
+l10 0.3
+w10 0.8
+Best metrics {'gain': 30.8035814, 'ugf': 292710.6304, 'offset': -0.03334616781, 'hyst_err': 0.351323467}
+Best BO metrics {'gain': 30.8035814, 'ugf': 292710.6304, 'offset': -0.03334616781, 'hyst_err': 0.351323467}
+Best LLM metrics {'gain': 30.8035814, 'ugf': 292710.6304, 'offset': -0.03334616781, 'hyst_err': 0.351323467}
+At iteration: 10, the best target value is: 0.693, llm best target: 0.693, bo best target: 0.693
+Current iteration:11.
+[Rate Limiter] Sleeping for 46.51s to avoid hitting the token limit...
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.5', 'w1': '0.7', 'l3': '0.8', 'w3': '0.6', 'l5': '0.6', 'w5': '0.8', 'l6': '0.3', 'w6': '0.3', 'l8': '0.2', 'w8': '0.6', 'l10': '0.9', 'w10': '0.7'}
+Evaluating point: .param l1=0.5
+.param w1=0.7
+.param l3=0.8
+.param w3=0.6
+.param l5=0.6
+.param w5=0.8
+.param l6=0.3
+.param w6=0.3
+.param l8=0.2
+.param w8=0.6
+.param l10=0.9
+.param w10=0.7
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.5
+w1 0.7
+l3 0.8
+w3 0.6
+l5 0.6
+w5 0.8
+l6 0.3
+w6 0.3
+l8 0.2
+w8 0.6
+l10 0.9
+w10 0.7
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.2', 'w1': '0.9', 'l3': '0.9', 'w3': '0.2', 'l5': '0.4', 'w5': '0.3', 'l6': '0.2', 'w6': '0.9', 'l8': '0.1', 'w8': '0.8', 'l10': '0.9', 'w10': '0.5'}
+Evaluating point: .param l1=0.2
+.param w1=0.9
+.param l3=0.9
+.param w3=0.2
+.param l5=0.4
+.param w5=0.3
+.param l6=0.2
+.param w6=0.9
+.param l8=0.1
+.param w8=0.8
+.param l10=0.9
+.param w10=0.5
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.2
+w1 0.9
+l3 0.9
+w3 0.2
+l5 0.4
+w5 0.3
+l6 0.2
+w6 0.9
+l8 0.1
+w8 0.8
+l10 0.9
+w10 0.5
+Best metrics {'gain': 30.8035814, 'ugf': 292710.6304, 'offset': -0.03334616781, 'hyst_err': 0.351323467}
+Best BO metrics {'gain': 30.8035814, 'ugf': 292710.6304, 'offset': -0.03334616781, 'hyst_err': 0.351323467}
+Best LLM metrics {'gain': 30.8035814, 'ugf': 292710.6304, 'offset': -0.03334616781, 'hyst_err': 0.351323467}
+At iteration: 11, the best target value is: 0.693, llm best target: 0.693, bo best target: 0.693
+Current iteration:12.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.6', 'w1': '0.4', 'l3': '0.3', 'w3': '0.5', 'l5': '0.2', 'w5': '0.8', 'l6': '0.5', 'w6': '0.3', 'l8': '0.4', 'w8': '0.6', 'l10': '0.3', 'w10': '0.6'}
+Evaluating point: .param l1=0.6
+.param w1=0.4
+.param l3=0.3
+.param w3=0.5
+.param l5=0.2
+.param w5=0.8
+.param l6=0.5
+.param w6=0.3
+.param l8=0.4
+.param w8=0.6
+.param l10=0.3
+.param w10=0.6
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.6
+w1 0.4
+l3 0.3
+w3 0.5
+l5 0.2
+w5 0.8
+l6 0.5
+w6 0.3
+l8 0.4
+w8 0.6
+l10 0.3
+w10 0.6
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.2', 'w1': '0.9', 'l3': '0.5', 'w3': '0.5', 'l5': '0.4', 'w5': '0.2', 'l6': '0.4', 'w6': '0.4', 'l8': '0.9', 'w8': '0.3', 'l10': '0.3', 'w10': '1.0'}
+Evaluating point: .param l1=0.2
+.param w1=0.9
+.param l3=0.5
+.param w3=0.5
+.param l5=0.4
+.param w5=0.2
+.param l6=0.4
+.param w6=0.4
+.param l8=0.9
+.param w8=0.3
+.param l10=0.3
+.param w10=1.0
+, writing to /home/karthik/sim_clean/LLMBO/comp_ati_new/param0.inc
+l1 0.2
+w1 0.9
+l3 0.5
+w3 0.5
+l5 0.4
+w5 0.2
+l6 0.4
+w6 0.4
+l8 0.9
+w8 0.3
+l10 0.3
+w10 1.0
+Best metrics {'gain': 30.8035814, 'ugf': 292710.6304, 'offset': -0.03334616781, 'hyst_err': 0.351323467}
+Best BO metrics {'gain': 30.8035814, 'ugf': 292710.6304, 'offset': -0.03334616781, 'hyst_err': 0.351323467}
+Best LLM metrics {'gain': 30.8035814, 'ugf': 292710.6304, 'offset': -0.03334616781, 'hyst_err': 0.351323467}
+At iteration: 12, the best target value is: 0.693, llm best target: 0.693, bo best target: 0.693

@@ -1,0 +1,84 @@
+{
+  "circuit": "comp",
+  "target_id": "comp",
+  "history": 1,
+  "refined": 0,
+  "related_mode": "random_family",
+  "related_k": 2,
+  "trial_id": 2,
+  "numpy_seed": 901133676,
+  "torch_seed": 441537819,
+  "openai_api_seed": 1146906349,
+  "iteration_budget": 12,
+  "executed_iterations": 2,
+  "recorded_iteration": 2,
+  "stopped_early": true,
+  "early_stop_fom": 1.0,
+  "best_fom": 1.0,
+  "best_llm_fom": 1.0,
+  "best_bo_fom": 0.8550306065810658,
+  "best_metrics": {
+    "gain": 42.75119394,
+    "ugf": 1092635.165,
+    "offset": -0.01254856258,
+    "hyst_err": 0.3296653767
+  },
+  "best_llm_metrics": {
+    "gain": 42.75119394,
+    "ugf": 1092635.165,
+    "offset": -0.01254856258,
+    "hyst_err": 0.3296653767
+  },
+  "best_bo_metrics": {
+    "gain": 40.87296842,
+    "ugf": 42012.82251,
+    "offset": -0.003317274801,
+    "hyst_err": 0.2879734203
+  },
+  "best_params": {
+    "l1": "0.8",
+    "w1": "0.9",
+    "l3": "0.1",
+    "w3": "0.5",
+    "l5": "0.6",
+    "w5": "0.7",
+    "l6": "0.2",
+    "w6": "0.4",
+    "l8": "0.5",
+    "w8": "0.8",
+    "l10": "0.7",
+    "w10": "0.6"
+  },
+  "best_llm_params": {
+    "l1": "0.8",
+    "w1": "0.9",
+    "l3": "0.1",
+    "w3": "0.5",
+    "l5": "0.6",
+    "w5": "0.7",
+    "l6": "0.2",
+    "w6": "0.4",
+    "l8": "0.5",
+    "w8": "0.8",
+    "l10": "0.7",
+    "w10": "0.6"
+  },
+  "best_bo_params": {
+    "l1": "0.1",
+    "w1": "1.0",
+    "l3": "0",
+    "w3": "0.3",
+    "l5": "1.0",
+    "w5": "0.3",
+    "l6": "0.4",
+    "w6": "0.5",
+    "l8": "0.4",
+    "w8": "0.9",
+    "l10": "0.5",
+    "w10": "0.8"
+  },
+  "fom_trace": [
+    0.8550306065810658,
+    1.0
+  ]
+}

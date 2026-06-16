@@ -1,0 +1,154 @@
+{
+  "topk": 5,
+  "compare_by": "circuit_id",
+  "results": {
+    "amp2": {
+      "sg_topk": [
+        "77",
+        "316",
+        "327",
+        "82",
+        "303"
+      ],
+      "skg_topk": [
+        "71",
+        "80",
+        "97",
+        "921",
+        "618"
+      ],
+      "sg_topk_families": [
+        "diff_amps",
+        "op-amp",
+        "op-amp",
+        "diff_amps",
+        "op-amp"
+      ],
+      "skg_topk_families": [
+        "diff_amps",
+        "diff_amps",
+        "diff_amps",
+        "diff_amps",
+        "diff_amps"
+      ],
+      "compare_by": "circuit_id",
+      "overlap_items": [],
+      "overlap_count": 0,
+      "overlap_at_k": 0.0,
+      "jaccard": 0.0
+    },
+    "FC": {
+      "sg_topk": [
+        "318",
+        "635",
+        "632",
+        "926",
+        "925"
+      ],
+      "skg_topk": [
+        "925",
+        "1056",
+        "614",
+        "317",
+        "923"
+      ],
+      "sg_topk_families": [
+        "op-amp",
+        "comparators",
+        "comparators",
+        "diff_amps",
+        "diff_amps"
+      ],
+      "skg_topk_families": [
+        "diff_amps",
+        "comparators",
+        "diff_amps",
+        "op-amp",
+        "diff_amps"
+      ],
+      "compare_by": "circuit_id",
+      "overlap_items": [
+        "925"
+      ],
+      "overlap_count": 1,
+      "overlap_at_k": 0.2,
+      "jaccard": 0.1111111111111111
+    },
+    "comp": {
+      "sg_topk": [
+        "1051",
+        "1058",
+        "633",
+        "335",
+        "1057"
+      ],
+      "skg_topk": [
+        "1058",
+        "1047",
+        "1063",
+        "1057",
+        "1053"
+      ],
+      "sg_topk_families": [
+        "comparators",
+        "comparators",
+        "comparators",
+        "op-amp",
+        "comparators"
+      ],
+      "skg_topk_families": [
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators"
+      ],
+      "compare_by": "circuit_id",
+      "overlap_items": [
+        "1058",
+        "1057"
+      ],
+      "overlap_count": 2,
+      "overlap_at_k": 0.4,
+      "jaccard": 0.25
+    },
+    "ldo": {
+      "sg_topk": [
+        "634",
+        "1045",
+        "633",
+        "1059",
+        "1058"
+      ],
+      "skg_topk": [
+        "633",
+        "1063",
+        "1058",
+        "1057",
+        "1047"
+      ],
+      "sg_topk_families": [
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators"
+      ],
+      "skg_topk_families": [
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators",
+        "comparators"
+      ],
+      "compare_by": "circuit_id",
+      "overlap_items": [
+        "633",
+        "1058"
+      ],
+      "overlap_count": 2,
+      "overlap_at_k": 0.4,
+      "jaccard": 0.25
+    }
+  }
+}

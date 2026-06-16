@@ -212,6 +212,77 @@ def _make_plots(
 
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    anchor_indices = [i for i, r in enumerate(refs) if r.source == "llmbo"]
+    netlist_family_colors = {
+        "diff_amps": "#6a4c93",
+        "comparators": "#1982c4",
+        "LDO": "#8ac926",
+        "op-amp": "#ffca3a",
+        "masala_chai": "#ff595e",
+    }
+
+    def _plot_umap_with_anchors(
+        points: np.ndarray,
+        title: str,
+        filename: str,
+        anchor_suffix: str,
+    ) -> None:
+        plt.figure(figsize=(10, 8))
+
+        base_indices = [i for i in range(points.shape[0]) if i not in anchor_indices]
+        if base_indices:
+            family_to_indices: Dict[str, List[int]] = {}
+            for idx in base_indices:
+                family_to_indices.setdefault(refs[idx].family, []).append(idx)
+
+            for family, indices in sorted(family_to_indices.items()):
+                color = netlist_family_colors.get(family, "#9aa0a6")
+                plt.scatter(
+                    points[indices, 0],
+                    points[indices, 1],
+                    s=10,
+                    alpha=0.35,
+                    c=color,
+                    label=f"Netlists: {family}",
+                )
+
+        anchor_colors = {
+            "amp2": "#d62728",
+            "FC": "#1f77b4",
+            "comp": "#2ca02c",
+            "ldo": "#ff7f0e",
+        }
+        for idx in anchor_indices:
+            ref = refs[idx]
+            x, y = points[idx]
+            color = anchor_colors.get(ref.family, "#111111")
+            plt.scatter(
+                [x],
+                [y],
+                s=140,
+                c=color,
+                edgecolors="black",
+                linewidths=0.8,
+                marker="*",
+                zorder=5,
+                label=f"Anchor: {ref.family}",
+            )
+            plt.annotate(
+                f"{ref.family} ({anchor_suffix})",
+                xy=(x, y),
+                xytext=(6, 6),
+                textcoords="offset points",
+                fontsize=9,
+                color=color,
+                weight="bold",
+            )
+
+        plt.title(title)
+        plt.legend(loc="best")
+        plt.tight_layout()
+        plt.savefig(out_dir / filename, dpi=200)
+        plt.close()
+
     # 1) PCA paired plot (normalized embeddings)
     X = np.concatenate([_l2_normalize(emb_skg), _l2_normalize(emb_sg)], axis=0)
     pca = PCA(n_components=2, random_state=0)
@@ -258,6 +329,19 @@ def _make_plots(
         plt.tight_layout()
         plt.savefig(out_dir / "umap_pairs.png", dpi=200)
         plt.close()
+
+        _plot_umap_with_anchors(
+            skg_u,
+            "SKG embeddings (UMAP, anchors highlighted)",
+            "umap_skg_with_anchors.png",
+            "SKG",
+        )
+        _plot_umap_with_anchors(
+            sg_u,
+            "SG embeddings (UMAP, anchors highlighted)",
+            "umap_sg_with_anchors.png",
+            "SG",
+        )
     except Exception:
         pass
 

@@ -1,0 +1,4 @@
+Best metrics {'gain': 62.99350364, 'cmrr': 96.28886617, 'gbw': 2148916.164, 'pow': 5.338083019900001e-05}
+Best BO metrics {'gain': -17.9884035, 'cmrr': 46.12074509, 'gbw': -10000000.0, 'pow': 4.2651340024e-05}
+Best LLM metrics {'gain': 62.99350364, 'cmrr': 96.28886617, 'gbw': 2148916.164, 'pow': 5.338083019900001e-05}
+Recorded iteration: 2, best target value: 1.000, llm best target: 1.000, bo best target: 0.394

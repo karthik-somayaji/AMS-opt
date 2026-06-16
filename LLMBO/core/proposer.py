@@ -98,6 +98,13 @@ class LLMProposer(FewShotAgent):
             "comp": "comparators",
         }
 
+        ado_kt_map = {
+            "amp2": ["FC"],
+            "FC": ["amp2"],
+            "comp": ["amp2"],
+            "ldo": ["amp2", "comp"],
+        }
+
         # IMPORTANT: `netlists/<family>/<id>` is used only to load related-circuit KG context
         # (fun_graph.json) for prompting. Optimization/simulation targets come from each task's
         # `ckt_dir` (e.g., `LLMBO/*_ati_new/`).
@@ -175,11 +182,48 @@ class LLMProposer(FewShotAgent):
 
         def _load_fun_graph_text(family: str, circuit_id: str) -> str:
             path = os.path.join(_repo_root(), "netlists", family, str(circuit_id), "fun_graph.json")
+            return _load_fun_graph_text_from_path(path)
+
+        def _load_fun_graph_text_from_path(path: str) -> str:
             with open(path, "r") as f:
                 # LangChain PromptTemplate uses `{...}` for variables; escape braces in raw JSON.
                 txt = f.read()
                 txt = txt.replace("{", "{{").replace("}", "}}")
                 return txt
+
+        def _infer_target_circuit_key() -> str | None:
+            circuit = getattr(args, "circuit", None)
+            if circuit in ado_kt_map:
+                return str(circuit)
+
+            target_id = getattr(args, "target_id", None)
+            if target_id in ado_kt_map:
+                return str(target_id)
+
+            desc = str(self.ckt_name_description or "")
+            desc_lower = desc.lower()
+            if "folded" in desc_lower and "cascode" in desc_lower:
+                return "FC"
+            if "hysteresis" in desc_lower and "comparator" in desc_lower:
+                return "comp"
+            if "dropout" in desc_lower or "ldo" in desc_lower:
+                return "ldo"
+            if "two-stage" in desc_lower or "two stage" in desc_lower:
+                return "amp2"
+            return None
+
+        def _pick_ado_kt_related(target_circuit: str):
+            if target_circuit not in ado_kt_map:
+                raise ValueError(
+                    "related_mode='ado-kt' is supported only for amp2, FC, comp, and ldo. "
+                    f"Got target circuit: {target_circuit!r}."
+                )
+
+            related = []
+            for circuit_name in ado_kt_map[target_circuit]:
+                kg_path = os.path.join(_repo_root(), "LLMBO", f"{circuit_name}_ati_new", "fun_graph.json")
+                related.append({"circuit": circuit_name, "kg_path": kg_path})
+            return related
 
         def _infer_target_family_and_id():
             target_family = family_map.get(self.ckt_name_description, None)
@@ -202,24 +246,40 @@ class LLMProposer(FewShotAgent):
 
         multiline_history = ""
         if args.history:
-            target_family, target_id = _infer_target_family_and_id()
-            if related_mode == "random_family":
-                related = _pick_random_same_family(target_family, target_id, related_k)
-            elif related_mode == "bottomk":
-                related = _pick_k_similar(target_family, target_id, related_k, descending=False)
+            if related_mode == "ado-kt":
+                target_circuit = _infer_target_circuit_key()
+                if target_circuit is None:
+                    raise ValueError(
+                        "Unable to infer the optimization circuit for related_mode='ado-kt'. "
+                        "Pass --circuit explicitly."
+                    )
+                related = _pick_ado_kt_related(target_circuit)
+                for item in related:
+                    try:
+                        kg_json = _load_fun_graph_text_from_path(item["kg_path"])
+                        header = f"\n\n[RELATED_CIRCUIT circuit={item['circuit']} source=ado-kt]\n"
+                        multiline_history += header + kg_json
+                    except FileNotFoundError:
+                        continue
             else:
-                related = _pick_k_similar(target_family, target_id, related_k, descending=True)
+                target_family, target_id = _infer_target_family_and_id()
+                if related_mode == "random_family":
+                    related = _pick_random_same_family(target_family, target_id, related_k)
+                elif related_mode == "bottomk":
+                    related = _pick_k_similar(target_family, target_id, related_k, descending=False)
+                else:
+                    related = _pick_k_similar(target_family, target_id, related_k, descending=True)
 
-            for rid, rfamily, score in related:
-                try:
-                    kg_json = _load_fun_graph_text(rfamily, rid)
-                    header = f"\n\n[RELATED_CIRCUIT family={rfamily} id={rid}"
-                    if score is not None:
-                        header += f" similarity={score:.4f}"
-                    header += "]\n"
-                    multiline_history += header + kg_json
-                except FileNotFoundError:
-                    continue
+                for rid, rfamily, score in related:
+                    try:
+                        kg_json = _load_fun_graph_text(rfamily, rid)
+                        header = f"\n\n[RELATED_CIRCUIT family={rfamily} id={rid}"
+                        if score is not None:
+                            header += f" similarity={score:.4f}"
+                        header += "]\n"
+                        multiline_history += header + kg_json
+                    except FileNotFoundError:
+                        continue
 
         # Include related-circuit KG context if enabled
         if args.history and multiline_history:

@@ -1,0 +1,290 @@
+[LLMBO Sweep] Started at 2026-04-14T23:25:20.574862+00:00
+[LLMBO Sweep] Command: /home/karthik/miniconda3/envs/analog-rep/bin/python /home/karthik/sim_clean/AMS-opt/LLMBO/llmbo.py --history 1 --refined 0 --related_k 2 --gnn_embedding_mode sg --gnn_checkpoint /home/karthik/sim_clean/AMS-opt/checkpoints_sg_vs_skg/best_model.pt --embeddings_json /home/karthik/sim_clean/AMS-opt/umap_results_full/gnn_embeddings_sg_sg_vs_skg.json --target_id amp2 --circuit amp2 --n_itr 12 --numpy_seed 902667819 --torch_seed 1237521907 --openai_api_seed 1673735417 --early_stop_fom 1.0 --run_output_dir /home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs/history_1/amp2/topk/trial_05 --path_checkpoints /home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs/history_1/amp2/topk/trial_05/checkpoints --trial_id 5 --gnn_device cpu --related_mode topk
+
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.sp' -o /home/karthik/sim_clean/LLMBO/amp2_ati_new/amp2_0.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+[LLMBO] Using LLMBO anchor embedding for --target_id 'amp2' (D=128) with reference embeddings umap_results_full/gnn_embeddings_sg_sg_vs_skg.json
+[LLMBO] Optimization circuit: amp2
+[LLMBO] Task path: /home/karthik/sim_clean/AMS-opt/LLMBO/tasks/amp2/amp2.json
+IN  AMP
+3
+['To achieve the desired performance metrics in the differential amplifier circuit, the following adjustments can be made:\n\n1. Increase the widths (w*) of the transistors to improve gain and bandwidth.\n2. Adjust the lengths (l*) of the transistors to optimize gain and phase margin.\n3. Fine-tune the resistance (r1) and capacitance (c1) values for stability and bandwidth enhancement.\n\nRecommended parameter sets within the normalized design space [0,1]:\n\n1. Set 1:\n.param l1=0.3 w1=0.7 l2=0.4 w2=0.6 l3=0.5 w3=0.5 l4=0.6 w4=0.4 l5=0.4 w5=0.6 l6=0.3 w6=0.7 l7=0.6 w7=0.4 l8=0.5 w8=0.5 r1=0.5 c1=0.6\n\n2. Set 2:\n.param l1=0.4 w1=0.6 l2=0.3 w2=0.7 l3=0.6 w3=0.4 l4=0.5 w4=0.5 l5=0.7 w5=0.3 l6=0.4 w6=0.6 l7=0.5 w7=0.5 l8=0.3 w8=0.7 r1=0.6 c1=0.5\n\n3. Set 3:\n.param l1=0.5 w1=0.5 l2=0.6 w2=0.4 l3=0.7 w3=0.3 l4=0.4 w4=0.6 l5=0.3 w5=0.7 l6=0.5 w6=0.5 l7=0.4 w7=0.6 l8=0.6 w8=0.4 r1=0.4 c1=0.7']
+Parameters to evaluate: {'l1': '0.3', 'w1': '0.7', 'l2': '0.4', 'w2': '0.6', 'l3': '0.5', 'w3': '0.5', 'l4': '0.6', 'w4': '0.4', 'l5': '0.4', 'w5': '0.6', 'l6': '0.3', 'w6': '0.7', 'l7': '0.6', 'w7': '0.4', 'l8': '0.5', 'w8': '0.5', 'r1': '0.5', 'c1': '0.6'}
+l1 0.3
+w1 0.7
+l2 0.4
+w2 0.6
+l3 0.5
+w3 0.5
+l4 0.6
+w4 0.4
+l5 0.4
+w5 0.6
+l6 0.3
+w6 0.7
+l7 0.6
+w7 0.4
+l8 0.5
+w8 0.5
+r1 0.5
+c1 0.6
+params: .param l1=0.3
+.param w1=0.7
+.param l2=0.4
+.param w2=0.6
+.param l3=0.5
+.param w3=0.5
+.param l4=0.6
+.param w4=0.4
+.param l5=0.4
+.param w5=0.6
+.param l6=0.3
+.param w6=0.7
+.param l7=0.6
+.param w7=0.4
+.param l8=0.5
+.param w8=0.5
+.param r1=0.5
+.param c1=0.6
+
+metrics:  gain=18.980 cmrr=61.005 gbw=1301168.005 pow=0.000 
+targets: 0.869
+aux_info: The following mosfets are not in saturation region:
+ xp1: Subth
+ xp2: Subth
+ xn1: Subth
+ xn2: Subth
+ xnb: Subth
+ xnc: Subth
+ xpo: Subth
+ xno: Subth
+ 
+Parameters to evaluate: {'l1': '0.4', 'w1': '0.6', 'l2': '0.3', 'w2': '0.7', 'l3': '0.6', 'w3': '0.4', 'l4': '0.5', 'w4': '0.5', 'l5': '0.7', 'w5': '0.3', 'l6': '0.4', 'w6': '0.6', 'l7': '0.5', 'w7': '0.5', 'l8': '0.3', 'w8': '0.7', 'r1': '0.6', 'c1': '0.5'}
+l1 0.4
+w1 0.6
+l2 0.3
+w2 0.7
+l3 0.6
+w3 0.4
+l4 0.5
+w4 0.5
+l5 0.7
+w5 0.3
+l6 0.4
+w6 0.6
+l7 0.5
+w7 0.5
+l8 0.3
+w8 0.7
+r1 0.6
+c1 0.5
+params: .param l1=0.4
+.param w1=0.6
+.param l2=0.3
+.param w2=0.7
+.param l3=0.6
+.param w3=0.4
+.param l4=0.5
+.param w4=0.5
+.param l5=0.7
+.param w5=0.3
+.param l6=0.4
+.param w6=0.6
+.param l7=0.5
+.param w7=0.5
+.param l8=0.3
+.param w8=0.7
+.param r1=0.6
+.param c1=0.5
+
+metrics:  gain=60.186 cmrr=62.091 gbw=11816761.440 pow=0.000 
+targets: 0.750
+aux_info: The following mosfets are not in saturation region:
+ 
+Parameters to evaluate: {'l1': '0.5', 'w1': '0.5', 'l2': '0.6', 'w2': '0.4', 'l3': '0.7', 'w3': '0.3', 'l4': '0.4', 'w4': '0.6', 'l5': '0.3', 'w5': '0.7', 'l6': '0.5', 'w6': '0.5', 'l7': '0.4', 'w7': '0.6', 'l8': '0.6', 'w8': '0.4', 'r1': '0.4', 'c1': '0.7'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.5
+w1 0.5
+l2 0.6
+w2 0.4
+l3 0.7
+w3 0.3
+l4 0.4
+w4 0.6
+l5 0.3
+w5 0.7
+l6 0.5
+w6 0.5
+l7 0.4
+w7 0.6
+l8 0.6
+w8 0.4
+r1 0.4
+c1 0.7
+params: .param l1=0.5
+.param w1=0.5
+.param l2=0.6
+.param w2=0.4
+.param l3=0.7
+.param w3=0.3
+.param l4=0.4
+.param w4=0.6
+.param l5=0.3
+.param w5=0.7
+.param l6=0.5
+.param w6=0.5
+.param l7=0.4
+.param w7=0.6
+.param l8=0.6
+.param w8=0.4
+.param r1=0.4
+.param c1=0.7
+
+metrics:  gain=-61.737 cmrr=16.784 gbw=-10000000.000 pow=0.000 
+targets: 0.320
+aux_info: The following mosfets are not in saturation region:
+ xp1: Subth
+ xp2: Subth
+ xn1: Subth
+ xn2: Subth
+ xnb: Subth
+ xnc: Subth
+ xpo: Linear
+ xno: Subth
+ 
+Initializing BO GP with data_init...
+Initial best target value: 0.87
+Beginning Design Cycle
+Current iteration:1.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.7', 'w1': '0.3', 'l2': '0.8', 'w2': '0.2', 'l3': '0.6', 'w3': '0.4', 'l4': '0.7', 'w4': '0.3', 'l5': '0.4', 'w5': '0.6', 'l6': '0.5', 'w6': '0.5', 'l7': '0.6', 'w7': '0.4', 'l8': '0.5', 'w8': '0.5', 'r1': '0.3', 'c1': '0.8'}
+l1 0.7
+w1 0.3
+l2 0.8
+w2 0.2
+l3 0.6
+w3 0.4
+l4 0.7
+w4 0.3
+l5 0.4
+w5 0.6
+l6 0.5
+w6 0.5
+l7 0.6
+w7 0.4
+l8 0.5
+w8 0.5
+r1 0.3
+c1 0.8
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.1', 'w1': '0.9', 'l2': '0.4', 'w2': '0.7', 'l3': '0.5', 'w3': '0.4', 'l4': '0.9', 'w4': '0.9', 'l5': '0.2', 'w5': '0.6', 'l6': '0.2', 'w6': '0.8', 'l7': '0.7', 'w7': '0.0', 'l8': '0.4', 'w8': '0.2', 'r1': '0.1', 'c1': '0.2'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.1
+w1 0.9
+l2 0.4
+w2 0.7
+l3 0.5
+w3 0.4
+l4 0.9
+w4 0.9
+l5 0.2
+w5 0.6
+l6 0.2
+w6 0.8
+l7 0.7
+w7 0.0
+l8 0.4
+w8 0.2
+r1 0.1
+c1 0.2
+Best metrics {'gain': 18.9796278, 'cmrr': 61.005078049999995, 'gbw': 1301168.005, 'pow': 1.8338726858e-05}
+Best BO metrics {'gain': -11.46122725, 'cmrr': 8.76929813, 'gbw': -10000000.0, 'pow': 1.9887551547e-05}
+Best LLM metrics {'gain': 8.760923114, 'cmrr': 62.311211124, 'gbw': 23080.48845, 'pow': 2.0254196616e-05}
+At iteration: 1, the best target value is: 0.869, llm best target: 0.311, bo best target: 0.287
+Current iteration:2.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.8', 'w1': '0.5', 'l2': '0.7', 'w2': '0.6', 'l3': '0.6', 'w3': '0.7', 'l4': '0.5', 'w4': '0.8', 'l5': '0.4', 'w5': '0.9', 'l6': '0.3', 'w6': '0.8', 'l7': '0.6', 'w7': '0.7', 'l8': '0.7', 'w8': '0.6', 'r1': '0.3', 'c1': '0.8'}
+l1 0.8
+w1 0.5
+l2 0.7
+w2 0.6
+l3 0.6
+w3 0.7
+l4 0.5
+w4 0.8
+l5 0.4
+w5 0.9
+l6 0.3
+w6 0.8
+l7 0.6
+w7 0.7
+l8 0.7
+w8 0.6
+r1 0.3
+c1 0.8
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.1', 'w1': '0.1', 'l2': '0.3', 'w2': '0.7', 'l3': '0.1', 'w3': '0.9', 'l4': '0.4', 'w4': '0.7', 'l5': '0.2', 'w5': '0.6', 'l6': '0.2', 'w6': '0.4', 'l7': '0.1', 'w7': '0.4', 'l8': '0.7', 'w8': '0.8', 'r1': '0.3', 'c1': '0.3'}
+Failed to read gbw from the file
+Failed to read pm from the file
+l1 0.1
+w1 0.1
+l2 0.3
+w2 0.7
+l3 0.1
+w3 0.9
+l4 0.4
+w4 0.7
+l5 0.2
+w5 0.6
+l6 0.2
+w6 0.4
+l7 0.1
+w7 0.4
+l8 0.7
+w8 0.8
+r1 0.3
+c1 0.3
+Best metrics {'gain': 60.95559315, 'cmrr': 63.661638474, 'gbw': 1050872.74, 'pow': 1.7715576586e-05}
+Best BO metrics {'gain': -54.78599266, 'cmrr': 39.63843658, 'gbw': -10000000.0, 'pow': 9.788053591e-06}
+Best LLM metrics {'gain': 60.95559315, 'cmrr': 63.661638474, 'gbw': 1050872.74, 'pow': 1.7715576586e-05}
+At iteration: 2, the best target value is: 1.000, llm best target: 1.000, bo best target: 0.415
+[LLMBO] Early stopping at iteration 2: best target 1.000 reached threshold 1.000

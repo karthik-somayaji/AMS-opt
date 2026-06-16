@@ -1,0 +1,1351 @@
+[LLMBO Sweep] Started at 2026-04-14T23:51:49.448471+00:00
+[LLMBO Sweep] Command: /home/karthik/miniconda3/envs/analog-rep/bin/python /home/karthik/sim_clean/AMS-opt/LLMBO/llmbo.py --history 1 --refined 0 --related_k 2 --gnn_embedding_mode sg --gnn_checkpoint /home/karthik/sim_clean/AMS-opt/checkpoints_sg_vs_skg/best_model.pt --embeddings_json /home/karthik/sim_clean/AMS-opt/umap_results_full/gnn_embeddings_sg_sg_vs_skg.json --target_id FC --circuit FC --n_itr 12 --numpy_seed 304653186 --torch_seed 242207792 --openai_api_seed 1850396700 --early_stop_fom 1.0 --run_output_dir /home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs/history_1/FC/topk/trial_03 --path_checkpoints /home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs/history_1/FC/topk/trial_03/checkpoints --trial_id 3 --gnn_device cpu --related_mode topk
+
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+[LLMBO] Using LLMBO anchor embedding for --target_id 'FC' (D=128) with reference embeddings umap_results_full/gnn_embeddings_sg_sg_vs_skg.json
+[LLMBO] Optimization circuit: FC
+[LLMBO] Task path: /home/karthik/sim_clean/AMS-opt/LLMBO/tasks/FC/FC.json
+IN  FC
+3
+['.param l1=0.09u w1=148.5u l2=0.09u w2=148.5u l3=0.09u w3=148.5u l4=0.09u w4=148.5u l5=0.09u w5=148.5u l6=0.09u w6=148.5u l7=0.09u w7=148.5u l8=0.09u w8=148.5u l9=0.09u w9=148.5u l10=0.09u w10=148.5u l11=0.09u w11=148.5u l12=0.09u w12=148.5u l13=0.09u w13=148.5u l14=0.09u w14=148.5u l15=0.09u w15=148.5u r1=100k r2=100k\n\n.param l1=0.9u w1=0.09u l2=0.9u w2=0.09u l3=0.9u w3=0.09u l4=0.9u w4=0.09u l5=0.9u w5=0.09u l6=0.9u w6=0.09u l7=0.9u w7=0.09u l8=0.9u w8=0.09u l9=0.9u w9=0.09u l10=0.9u w10=0.09u l11=0.9u w11=0.09u l12=0.9u w12=0.09u l13=0.9u w13=0.09u l14=0.9u w14=0.09u l15=0.9u w15=0.09u r1=10k r2=10k\n\n.param l1=0.9u w1=148.5u l2=0.9u w2=148.5u l3=0.9u w3=148.5u l4=0.9u w4=148.5u l5=0.9u w5=148.5u l6=0.9u w6=148.5u l7=0.9u w7=148.5u l8=0.9u w8=148.5u l9=0.9u w9=148.5u l10=0.9u w10=148.5u l11=0.9u w11=148.5u l12=0.9u w12=148.5u l13=0.9u w13=148.5u l14=0.9u w14=148.5u l15=0.9u w15=148.5u r1=100k r2=10k']
+Parameters to evaluate: {'l1': '0.09', 'w1': '148.5', 'l2': '0.09', 'w2': '148.5', 'l3': '0.09', 'w3': '148.5', 'l4': '0.09', 'w4': '148.5', 'l5': '0.09', 'w5': '148.5', 'l6': '0.09', 'w6': '148.5', 'l7': '0.09', 'w7': '148.5', 'l8': '0.09', 'w8': '148.5', 'l9': '0.09', 'w9': '148.5', 'l10': '0.09', 'w10': '148.5', 'l11': '0.09', 'w11': '148.5', 'l12': '0.09', 'w12': '148.5', 'l13': '0.09', 'w13': '148.5', 'l14': '0.09', 'w14': '148.5', 'l15': '0.09', 'w15': '148.5', 'r1': '100', 'r2': '100'}
+{'fom': 0.28757624989725716, 'gbw': 830256.6998, 'gain': 13.85720481, 'cmrr': 40.33788229, 'pm': -91.8080345, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Linear\n x14: Subth\n x1: Subth\n x2: Subth\n x3: Subth\n x4: Subth\n x5: Subth\n x6: Subth\n x7: Subth\n x8: Linear\n x9: Linear\n x10: Subth\n x11: Subth\n ', 'pow_vol': 0.0002249717059, 'pow_cur': -9.312622686e-06, 'pow': 0.000215659083214, 'acm': -26.48067748, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Linear', 'x14': 'Subth', 'x1': 'Subth', 'x2': 'Subth', 'x3': 'Subth', 'x4': 'Subth', 'x5': 'Subth', 'x6': 'Subth', 'x7': 'Subth', 'x8': 'Linear', 'x9': 'Linear', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 0.4151280574640287, 'gain_normed': 0.2309534135, 'cmrr_normed': 0.5042235286250001, 'pow_normed': 0.0}
+l1 0.09
+w1 148.5
+l2 0.09
+w2 148.5
+l3 0.09
+w3 148.5
+l4 0.09
+w4 148.5
+l5 0.09
+w5 148.5
+l6 0.09
+w6 148.5
+l7 0.09
+w7 148.5
+l8 0.09
+w8 148.5
+l9 0.09
+w9 148.5
+l10 0.09
+w10 148.5
+l11 0.09
+w11 148.5
+l12 0.09
+w12 148.5
+l13 0.09
+w13 148.5
+l14 0.09
+w14 148.5
+l15 0.09
+w15 148.5
+r1 100
+r2 100
+params: .param l1=0.09
+.param w1=148.5
+.param l2=0.09
+.param w2=148.5
+.param l3=0.09
+.param w3=148.5
+.param l4=0.09
+.param w4=148.5
+.param l5=0.09
+.param w5=148.5
+.param l6=0.09
+.param w6=148.5
+.param l7=0.09
+.param w7=148.5
+.param l8=0.09
+.param w8=148.5
+.param l9=0.09
+.param w9=148.5
+.param l10=0.09
+.param w10=148.5
+.param l11=0.09
+.param w11=148.5
+.param l12=0.09
+.param w12=148.5
+.param l13=0.09
+.param w13=148.5
+.param l14=0.09
+.param w14=148.5
+.param l15=0.09
+.param w15=148.5
+.param r1=100
+.param r2=100
+
+metrics:  gain=13.857 cmrr=40.338 gbw=830256.700 pow=0.000 
+targets: 0.288
+aux_info: The following mosfets are not in saturation region:
+ x15: Subth
+ x12: Subth
+ x13: Linear
+ x14: Subth
+ x1: Subth
+ x2: Subth
+ x3: Subth
+ x4: Subth
+ x5: Subth
+ x6: Subth
+ x7: Subth
+ x8: Linear
+ x9: Linear
+ x10: Subth
+ x11: Subth
+ 
+Parameters to evaluate: {'l1': '0.9', 'w1': '0.09', 'l2': '0.9', 'w2': '0.09', 'l3': '0.9', 'w3': '0.09', 'l4': '0.9', 'w4': '0.09', 'l5': '0.9', 'w5': '0.09', 'l6': '0.9', 'w6': '0.09', 'l7': '0.9', 'w7': '0.09', 'l8': '0.9', 'w8': '0.09', 'l9': '0.9', 'w9': '0.09', 'l10': '0.9', 'w10': '0.09', 'l11': '0.9', 'w11': '0.09', 'l12': '0.9', 'w12': '0.09', 'l13': '0.9', 'w13': '0.09', 'l14': '0.9', 'w14': '0.09', 'l15': '0.9', 'w15': '0.09', 'r1': '10', 'r2': '10'}
+Failed to read gbw from the file
+Failed to read pm from the file
+{'fom': 0.25, 'gbw': -10000000.0, 'gain': -105.0591393, 'cmrr': -12.189618389999993, 'pm': -180.0, 'aux_info': 'The following mosfets are not in saturation region:\n x12: Linear\n x13: Linear\n x1: Linear\n x2: Linear\n x3: Linear\n x6: Cutoff\n x7: Cutoff\n x8: Subth\n x9: Subth\n x10: Subth\n x11: Subth\n ', 'pow_vol': 2.733347768e-05, 'pow_cur': -7.916634199e-06, 'pow': 1.9416843481e-05, 'acm': -92.86952091, 'work_regions': {'x12': 'Linear', 'x13': 'Linear', 'x1': 'Linear', 'x2': 'Linear', 'x3': 'Linear', 'x6': 'Cutoff', 'x7': 'Cutoff', 'x8': 'Subth', 'x9': 'Subth', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 0.0, 'gain_normed': 0.0, 'cmrr_normed': 0.0, 'pow_normed': 1.0}
+l1 0.9
+w1 0.09
+l2 0.9
+w2 0.09
+l3 0.9
+w3 0.09
+l4 0.9
+w4 0.09
+l5 0.9
+w5 0.09
+l6 0.9
+w6 0.09
+l7 0.9
+w7 0.09
+l8 0.9
+w8 0.09
+l9 0.9
+w9 0.09
+l10 0.9
+w10 0.09
+l11 0.9
+w11 0.09
+l12 0.9
+w12 0.09
+l13 0.9
+w13 0.09
+l14 0.9
+w14 0.09
+l15 0.9
+w15 0.09
+r1 10
+r2 10
+params: .param l1=0.9
+.param w1=0.09
+.param l2=0.9
+.param w2=0.09
+.param l3=0.9
+.param w3=0.09
+.param l4=0.9
+.param w4=0.09
+.param l5=0.9
+.param w5=0.09
+.param l6=0.9
+.param w6=0.09
+.param l7=0.9
+.param w7=0.09
+.param l8=0.9
+.param w8=0.09
+.param l9=0.9
+.param w9=0.09
+.param l10=0.9
+.param w10=0.09
+.param l11=0.9
+.param w11=0.09
+.param l12=0.9
+.param w12=0.09
+.param l13=0.9
+.param w13=0.09
+.param l14=0.9
+.param w14=0.09
+.param l15=0.9
+.param w15=0.09
+.param r1=10
+.param r2=10
+
+metrics:  gain=-105.059 cmrr=-12.190 gbw=-10000000.000 pow=0.000 
+targets: 0.250
+aux_info: The following mosfets are not in saturation region:
+ x12: Linear
+ x13: Linear
+ x1: Linear
+ x2: Linear
+ x3: Linear
+ x6: Cutoff
+ x7: Cutoff
+ x8: Subth
+ x9: Subth
+ x10: Subth
+ x11: Subth
+ 
+Parameters to evaluate: {'l1': '0.9', 'w1': '148.5', 'l2': '0.9', 'w2': '148.5', 'l3': '0.9', 'w3': '148.5', 'l4': '0.9', 'w4': '148.5', 'l5': '0.9', 'w5': '148.5', 'l6': '0.9', 'w6': '148.5', 'l7': '0.9', 'w7': '148.5', 'l8': '0.9', 'w8': '148.5', 'l9': '0.9', 'w9': '148.5', 'l10': '0.9', 'w10': '148.5', 'l11': '0.9', 'w11': '148.5', 'l12': '0.9', 'w12': '148.5', 'l13': '0.9', 'w13': '148.5', 'l14': '0.9', 'w14': '148.5', 'l15': '0.9', 'w15': '148.5', 'r1': '100', 'r2': '10'}
+{'fom': 0.5339030266022451, 'gbw': 1492136.175, 'gain': 35.99488812, 'cmrr': 63.17034751, 'pm': -136.2435395, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Linear\n x14: Subth\n x1: Subth\n x2: Subth\n x3: Subth\n x4: Subth\n x5: Subth\n x6: Subth\n x7: Subth\n x8: Linear\n x9: Subth\n x10: Subth\n x11: Subth\n ', 'pow_vol': 0.0001751181969, 'pow_cur': -9.134487911e-06, 'pow': 0.000165983708989, 'acm': -27.17545939, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Linear', 'x14': 'Subth', 'x1': 'Subth', 'x2': 'Subth', 'x3': 'Subth', 'x4': 'Subth', 'x5': 'Subth', 'x6': 'Subth', 'x7': 'Subth', 'x8': 'Linear', 'x9': 'Subth', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 0.7460679605339803, 'gain_normed': 0.599914802, 'cmrr_normed': 0.789629343875, 'pow_normed': 0.0}
+l1 0.9
+w1 148.5
+l2 0.9
+w2 148.5
+l3 0.9
+w3 148.5
+l4 0.9
+w4 148.5
+l5 0.9
+w5 148.5
+l6 0.9
+w6 148.5
+l7 0.9
+w7 148.5
+l8 0.9
+w8 148.5
+l9 0.9
+w9 148.5
+l10 0.9
+w10 148.5
+l11 0.9
+w11 148.5
+l12 0.9
+w12 148.5
+l13 0.9
+w13 148.5
+l14 0.9
+w14 148.5
+l15 0.9
+w15 148.5
+r1 100
+r2 10
+params: .param l1=0.9
+.param w1=148.5
+.param l2=0.9
+.param w2=148.5
+.param l3=0.9
+.param w3=148.5
+.param l4=0.9
+.param w4=148.5
+.param l5=0.9
+.param w5=148.5
+.param l6=0.9
+.param w6=148.5
+.param l7=0.9
+.param w7=148.5
+.param l8=0.9
+.param w8=148.5
+.param l9=0.9
+.param w9=148.5
+.param l10=0.9
+.param w10=148.5
+.param l11=0.9
+.param w11=148.5
+.param l12=0.9
+.param w12=148.5
+.param l13=0.9
+.param w13=148.5
+.param l14=0.9
+.param w14=148.5
+.param l15=0.9
+.param w15=148.5
+.param r1=100
+.param r2=10
+
+metrics:  gain=35.995 cmrr=63.170 gbw=1492136.175 pow=0.000 
+targets: 0.534
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+aux_info: The following mosfets are not in saturation region:
+ x15: Subth
+ x12: Subth
+ x13: Linear
+ x14: Subth
+ x1: Subth
+ x2: Subth
+ x3: Subth
+ x4: Subth
+ x5: Subth
+ x6: Subth
+ x7: Subth
+ x8: Linear
+ x9: Subth
+ x10: Subth
+ x11: Subth
+ 
+Initializing BO GP with data_init...
+Initial best target value: 0.53
+Beginning Design Cycle
+Current iteration:1.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.9', 'w1': '0.9', 'l2': '0.9', 'w2': '0.9', 'l3': '0.9', 'w3': '0.9', 'l4': '0.9', 'w4': '0.9', 'l5': '0.9', 'w5': '0.9', 'l6': '0.9', 'w6': '0.9', 'l7': '0.9', 'w7': '0.9', 'l8': '0.9', 'w8': '0.9', 'l9': '0.9', 'w9': '0.9', 'l10': '0.9', 'w10': '0.9', 'l11': '0.9', 'w11': '0.9', 'l12': '0.9', 'w12': '0.9', 'l13': '0.9', 'w13': '0.9', 'l14': '0.9', 'w14': '0.9', 'l15': '0.9', 'w15': '0.9', 'r1': '100', 'r2': '10'}
+{'fom': 0.7343511369714952, 'gbw': 1638544.104, 'gain': 27.24901137, 'cmrr': 53.11859174, 'pm': -92.52734357, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Linear\n x1: Subth\n x2: Subth\n x3: Subth\n x6: Linear\n x7: Linear\n x8: Linear\n x9: Subth\n x10: Subth\n x11: Subth\n ', 'pow_vol': 5.040617935e-05, 'pow_cur': -8.369515595e-06, 'pow': 4.2036663755e-05, 'acm': -25.86958037, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Linear', 'x1': 'Subth', 'x2': 'Subth', 'x3': 'Subth', 'x6': 'Linear', 'x7': 'Linear', 'x8': 'Linear', 'x9': 'Subth', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 0.8192719616359808, 'gain_normed': 0.4541501895, 'cmrr_normed': 0.66398239675, 'pow_normed': 1.0}
+l1 0.9
+w1 0.9
+l2 0.9
+w2 0.9
+l3 0.9
+w3 0.9
+l4 0.9
+w4 0.9
+l5 0.9
+w5 0.9
+l6 0.9
+w6 0.9
+l7 0.9
+w7 0.9
+l8 0.9
+w8 0.9
+l9 0.9
+w9 0.9
+l10 0.9
+w10 0.9
+l11 0.9
+w11 0.9
+l12 0.9
+w12 0.9
+l13 0.9
+w13 0.9
+l14 0.9
+w14 0.9
+l15 0.9
+w15 0.9
+r1 100
+r2 10
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.1', 'w1': '0.5', 'l2': '0.2', 'w2': '0.7', 'l3': '0.9', 'w3': '0.4', 'l4': '0.9', 'w4': '0.0', 'l5': '1.0', 'w5': '0.2', 'l6': '0.0', 'w6': '0.3', 'l7': '1.0', 'w7': '0.8', 'l8': '1.0', 'w8': '0.1', 'l9': '0.5', 'w9': '0.4', 'l10': '0.4', 'w10': '0.0', 'l11': '0.6', 'w11': '0.2', 'l12': '0.6', 'w12': '0.5', 'l13': '0.2', 'w13': '0.6', 'l14': '0.4', 'w14': '0.3', 'l15': '0.1', 'w15': '0.3', 'r1': '0.2', 'r2': '0.5'}
+Failed to read gbw from the file
+Failed to read pm from the file
+{'fom': 0.25, 'gbw': -10000000.0, 'gain': -125.8886509, 'cmrr': -14.621077600000007, 'pm': -180.0, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x1: Linear\n x2: Linear\n x3: Subth\n x6: Cutoff\n x7: Cutoff\n x8: Subth\n x9: Subth\n x10: Subth\n x11: Subth\n ', 'pow_vol': 3.769876455e-05, 'pow_cur': -8.305570124e-06, 'pow': 2.9393194426e-05, 'acm': -111.2675733, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x1': 'Linear', 'x2': 'Linear', 'x3': 'Subth', 'x6': 'Cutoff', 'x7': 'Cutoff', 'x8': 'Subth', 'x9': 'Subth', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 0.0, 'gain_normed': 0.0, 'cmrr_normed': 0.0, 'pow_normed': 1.0}
+l1 0.1
+w1 0.5
+l2 0.2
+w2 0.7
+l3 0.9
+w3 0.4
+l4 0.9
+w4 0.0
+l5 1.0
+w5 0.2
+l6 0.0
+w6 0.3
+l7 1.0
+w7 0.8
+l8 1.0
+w8 0.1
+l9 0.5
+w9 0.4
+l10 0.4
+w10 0.0
+l11 0.6
+w11 0.2
+l12 0.6
+w12 0.5
+l13 0.2
+w13 0.6
+l14 0.4
+w14 0.3
+l15 0.1
+w15 0.3
+r1 0.2
+r2 0.5
+Best metrics {'gain': 27.24901137, 'cmrr': 53.11859174, 'gbw': 1638544.104, 'pow': 4.2036663755e-05}
+Best BO metrics {'gain': -125.8886509, 'cmrr': -14.621077600000007, 'gbw': -10000000.0, 'pow': 2.9393194426e-05}
+Best LLM metrics {'gain': 27.24901137, 'cmrr': 53.11859174, 'gbw': 1638544.104, 'pow': 4.2036663755e-05}
+At iteration: 1, the best target value is: 0.734, llm best target: 0.734, bo best target: 0.250
+Current iteration:2.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.75', 'w1': '0.65', 'l2': '0.82', 'w2': '0.75', 'l3': '0.68', 'w3': '0.72', 'l4': '0.78', 'w4': '0.68', 'l5': '0.72', 'w5': '0.65', 'l6': '0.77', 'w6': '0.70', 'l7': '0.70', 'w7': '0.60', 'l8': '0.80', 'w8': '0.72', 'l9': '0.75', 'w9': '0.68', 'l10': '0.85', 'w10': '0.77', 'l11': '0.78', 'w11': '0.70', 'l12': '0.80', 'w12': '0.75', 'l13': '0.72', 'w13': '0.68', 'l14': '0.85', 'w14': '0.80', 'l15': '0.75', 'w15': '0.72', 'r1': '0.55', 'r2': '0.70'}
+{'fom': 0.7544919744814997, 'gbw': 1820037.42, 'gain': 25.13406418, 'cmrr': 55.12385306, 'pm': -106.6626447, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Linear\n x1: Subth\n x2: Subth\n x3: Subth\n x6: Subth\n x7: Subth\n x8: Subth\n x9: Linear\n x10: Subth\n x11: Subth\n ', 'pow_vol': 5.899019884e-05, 'pow_cur': -8.348953163e-06, 'pow': 5.0641245677e-05, 'acm': -29.98978888, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Linear', 'x1': 'Subth', 'x2': 'Subth', 'x3': 'Subth', 'x6': 'Subth', 'x7': 'Subth', 'x8': 'Subth', 'x9': 'Linear', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 0.9100186650093325, 'gain_normed': 0.4189010696666667, 'cmrr_normed': 0.6890481632500001, 'pow_normed': 1.0}
+l1 0.75
+w1 0.65
+l2 0.82
+w2 0.75
+l3 0.68
+w3 0.72
+l4 0.78
+w4 0.68
+l5 0.72
+w5 0.65
+l6 0.77
+w6 0.70
+l7 0.70
+w7 0.60
+l8 0.80
+w8 0.72
+l9 0.75
+w9 0.68
+l10 0.85
+w10 0.77
+l11 0.78
+w11 0.70
+l12 0.80
+w12 0.75
+l13 0.72
+w13 0.68
+l14 0.85
+w14 0.80
+l15 0.75
+w15 0.72
+r1 0.55
+r2 0.70
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.9', 'w1': '0', 'l2': '0.4', 'w2': '1.0', 'l3': '0', 'w3': '0', 'l4': '0', 'w4': '0.6', 'l5': '0.2', 'w5': '0.1', 'l6': '1.0', 'w6': '0.7', 'l7': '0.5', 'w7': '1.0', 'l8': '0.6', 'w8': '0.1', 'l9': '0', 'w9': '0', 'l10': '0.4', 'w10': '0.9', 'l11': '0.2', 'w11': '0.5', 'l12': '0.7', 'w12': '0', 'l13': '0', 'w13': '0.9', 'l14': '0.5', 'w14': '1.0', 'l15': '0.3', 'w15': '0.8', 'r1': '1.0', 'r2': '0.0'}
+Failed to read gbw from the file
+Failed to read pm from the file
+{'fom': 0.25, 'gbw': -10000000.0, 'gain': -46.13794586, 'cmrr': -4.23630661, 'pm': -180.0, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x13: Subth\n x14: Subth\n x2: Linear\n x4: Subth\n x5: Subth\n x6: Subth\n x7: Cutoff\n x8: Subth\n x9: Subth\n x10: Subth\n x11: Subth\n ', 'pow_vol': 1.20671142e-05, 'pow_cur': -8.441372289e-06, 'pow': 3.625741911e-06, 'acm': -41.90163925, 'work_regions': {'x15': 'Subth', 'x13': 'Subth', 'x14': 'Subth', 'x2': 'Linear', 'x4': 'Subth', 'x5': 'Subth', 'x6': 'Subth', 'x7': 'Cutoff', 'x8': 'Subth', 'x9': 'Subth', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 0.0, 'gain_normed': 0.0, 'cmrr_normed': 0.0, 'pow_normed': 1.0}
+l1 0.9
+w1 0
+l2 0.4
+w2 1.0
+l3 0
+w3 0
+l4 0
+w4 0.6
+l5 0.2
+w5 0.1
+l6 1.0
+w6 0.7
+l7 0.5
+w7 1.0
+l8 0.6
+w8 0.1
+l9 0
+w9 0
+l10 0.4
+w10 0.9
+l11 0.2
+w11 0.5
+l12 0.7
+w12 0
+l13 0
+w13 0.9
+l14 0.5
+w14 1.0
+l15 0.3
+w15 0.8
+r1 1.0
+r2 0.0
+Best metrics {'gain': 25.13406418, 'cmrr': 55.12385306, 'gbw': 1820037.42, 'pow': 5.0641245677e-05}
+Best BO metrics {'gain': -125.8886509, 'cmrr': -14.621077600000007, 'gbw': -10000000.0, 'pow': 2.9393194426e-05}
+Best LLM metrics {'gain': 25.13406418, 'cmrr': 55.12385306, 'gbw': 1820037.42, 'pow': 5.0641245677e-05}
+At iteration: 2, the best target value is: 0.754, llm best target: 0.754, bo best target: 0.250
+Current iteration:3.
+[Rate Limiter] Sleeping for 48.96s to avoid hitting the token limit...
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.85', 'w1': '0.80', 'l2': '0.88', 'w2': '0.75', 'l3': '0.82', 'w3': '0.78', 'l4': '0.85', 'w4': '0.70', 'l5': '0.80', 'w5': '0.65', 'l6': '0.84', 'w6': '0.72', 'l7': '0.78', 'w7': '0.68', 'l8': '0.86', 'w8': '0.75', 'l9': '0.82', 'w9': '0.70', 'l10': '0.88', 'w10': '0.78', 'l11': '0.85', 'w11': '0.72', 'l12': '0.87', 'w12': '0.80', 'l13': '0.82', 'w13': '0.75', 'l14': '0.89', 'w14': '0.78', 'l15': '0.86', 'w15': '0.72', 'r1': '0.60', 'r2': '0.75'}
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+{'fom': 0.8468818884583333, 'gbw': 2243660.254, 'gain': 32.24774573, 'cmrr': 68.00521, 'pm': -97.42829337, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Linear\n x1: Subth\n x2: Subth\n x3: Subth\n x7: Linear\n x8: Subth\n x9: Subth\n x10: Subth\n x11: Subth\n ', 'pow_vol': 6.309288278e-05, 'pow_cur': -8.334474874e-06, 'pow': 5.4758407906000006e-05, 'acm': -35.75746427, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Linear', 'x1': 'Subth', 'x2': 'Subth', 'x3': 'Subth', 'x7': 'Linear', 'x8': 'Subth', 'x9': 'Subth', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 1.0, 'gain_normed': 0.5374624288333333, 'cmrr_normed': 0.8500651250000001, 'pow_normed': 1.0}
+l1 0.85
+w1 0.80
+l2 0.88
+w2 0.75
+l3 0.82
+w3 0.78
+l4 0.85
+w4 0.70
+l5 0.80
+w5 0.65
+l6 0.84
+w6 0.72
+l7 0.78
+w7 0.68
+l8 0.86
+w8 0.75
+l9 0.82
+w9 0.70
+l10 0.88
+w10 0.78
+l11 0.85
+w11 0.72
+l12 0.87
+w12 0.80
+l13 0.82
+w13 0.75
+l14 0.89
+w14 0.78
+l15 0.86
+w15 0.72
+r1 0.60
+r2 0.75
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.8', 'w1': '0.5', 'l2': '0.8', 'w2': '0.7', 'l3': '0.7', 'w3': '0.7', 'l4': '0.8', 'w4': '0.7', 'l5': '0.7', 'w5': '0.6', 'l6': '0.8', 'w6': '0.6', 'l7': '0.6', 'w7': '0.5', 'l8': '0.8', 'w8': '0.7', 'l9': '0.8', 'w9': '0.6', 'l10': '0.8', 'w10': '0.6', 'l11': '0.7', 'w11': '0.7', 'l12': '0.7', 'w12': '0.7', 'l13': '0.7', 'w13': '0.7', 'l14': '0.8', 'w14': '0.8', 'l15': '0.8', 'w15': '0.7', 'r1': '0.6', 'r2': '0.7'}
+Failed to read gbw from the file
+Failed to read pm from the file
+{'fom': 0.38787641200625, 'gbw': -10000000.0, 'gain': -1.459323638, 'cmrr': 44.120451842, 'pm': -180.0, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Linear\n x3: Subth\n x7: Subth\n x8: Subth\n x9: Linear\n x10: Subth\n x11: Subth\n ', 'pow_vol': 6.129788787e-05, 'pow_cur': -8.33722708e-06, 'pow': 5.2960660789999996e-05, 'acm': -45.57977548, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Linear', 'x3': 'Subth', 'x7': 'Subth', 'x8': 'Subth', 'x9': 'Linear', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 0.0, 'gain_normed': 0.0, 'cmrr_normed': 0.551505648025, 'pow_normed': 1.0}
+l1 0.8
+w1 0.5
+l2 0.8
+w2 0.7
+l3 0.7
+w3 0.7
+l4 0.8
+w4 0.7
+l5 0.7
+w5 0.6
+l6 0.8
+w6 0.6
+l7 0.6
+w7 0.5
+l8 0.8
+w8 0.7
+l9 0.8
+w9 0.6
+l10 0.8
+w10 0.6
+l11 0.7
+w11 0.7
+l12 0.7
+w12 0.7
+l13 0.7
+w13 0.7
+l14 0.8
+w14 0.8
+l15 0.8
+w15 0.7
+r1 0.6
+r2 0.7
+Best metrics {'gain': 32.24774573, 'cmrr': 68.00521, 'gbw': 2243660.254, 'pow': 5.4758407906000006e-05}
+Best BO metrics {'gain': -1.459323638, 'cmrr': 44.120451842, 'gbw': -10000000.0, 'pow': 5.2960660789999996e-05}
+Best LLM metrics {'gain': 32.24774573, 'cmrr': 68.00521, 'gbw': 2243660.254, 'pow': 5.4758407906000006e-05}
+At iteration: 3, the best target value is: 0.847, llm best target: 0.847, bo best target: 0.388
+Current iteration:4.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.85', 'w1': '0.80', 'l2': '0.82', 'w2': '0.75', 'l3': '0.78', 'w3': '0.78', 'l4': '0.85', 'w4': '0.70', 'l5': '0.80', 'w5': '0.65', 'l6': '0.84', 'w6': '0.72', 'l7': '0.78', 'w7': '0.68', 'l8': '0.86', 'w8': '0.75', 'l9': '0.82', 'w9': '0.70', 'l10': '0.88', 'w10': '0.78', 'l11': '0.85', 'w11': '0.72', 'l12': '0.87', 'w12': '0.80', 'l13': '0.82', 'w13': '0.75', 'l14': '0.89', 'w14': '0.78', 'l15': '0.86', 'w15': '0.72', 'r1': '0.60', 'r2': '0.75'}
+{'fom': 0.9002042547123397, 'gbw': 2326224.858, 'gain': 38.59674619, 'cmrr': 76.85206635, 'pm': -98.90974763, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Linear\n x1: Subth\n x2: Subth\n x3: Subth\n x8: Subth\n x9: Subth\n x10: Subth\n x11: Subth\n ', 'pow_vol': 6.353678941e-05, 'pow_cur': -8.33445002e-06, 'pow': 5.5202339389999995e-05, 'acm': -38.25532016, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Linear', 'x1': 'Subth', 'x2': 'Subth', 'x3': 'Subth', 'x8': 'Subth', 'x9': 'Subth', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 1.0, 'gain_normed': 0.6432791031666666, 'cmrr_normed': 0.960650829375, 'pow_normed': 0.9968870863076923}
+l1 0.85
+w1 0.80
+l2 0.82
+w2 0.75
+l3 0.78
+w3 0.78
+l4 0.85
+w4 0.70
+l5 0.80
+w5 0.65
+l6 0.84
+w6 0.72
+l7 0.78
+w7 0.68
+l8 0.86
+w8 0.75
+l9 0.82
+w9 0.70
+l10 0.88
+w10 0.78
+l11 0.85
+w11 0.72
+l12 0.87
+w12 0.80
+l13 0.82
+w13 0.75
+l14 0.89
+w14 0.78
+l15 0.86
+w15 0.72
+r1 0.60
+r2 0.75
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.9', 'w1': '0.6', 'l2': '0.9', 'w2': '0.7', 'l3': '1.0', 'w3': '0.8', 'l4': '0.8', 'w4': '0.7', 'l5': '0.8', 'w5': '0.7', 'l6': '0.9', 'w6': '0.7', 'l7': '0.9', 'w7': '0.8', 'l8': '0.9', 'w8': '0.8', 'l9': '0.9', 'w9': '0.7', 'l10': '0.9', 'w10': '0.8', 'l11': '0.8', 'w11': '0.7', 'l12': '0.9', 'w12': '0.9', 'l13': '0.9', 'w13': '0.8', 'l14': '1.0', 'w14': '0.8', 'l15': '0.8', 'w15': '0.7', 'r1': '0.7', 'r2': '0.8'}
+{'fom': 0.728729994938088, 'gbw': 1582991.667, 'gain': 32.94041054, 'cmrr': 56.982877290000005, 'pm': -105.5703497, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Linear\n x1: Subth\n x2: Subth\n x3: Subth\n x8: Linear\n x9: Linear\n x10: Subth\n x11: Subth\n ', 'pow_vol': 7.229928469e-05, 'pow_cur': -8.337828423e-06, 'pow': 6.3961456267e-05, 'acm': -24.04246675, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Linear', 'x1': 'Subth', 'x2': 'Subth', 'x3': 'Subth', 'x8': 'Linear', 'x9': 'Linear', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 0.7914957292478646, 'gain_normed': 0.5490068423333334, 'cmrr_normed': 0.7122859661250001, 'pow_normed': 0.8621314420461537}
+l1 0.9
+w1 0.6
+l2 0.9
+w2 0.7
+l3 1.0
+w3 0.8
+l4 0.8
+w4 0.7
+l5 0.8
+w5 0.7
+l6 0.9
+w6 0.7
+l7 0.9
+w7 0.8
+l8 0.9
+w8 0.8
+l9 0.9
+w9 0.7
+l10 0.9
+w10 0.8
+l11 0.8
+w11 0.7
+l12 0.9
+w12 0.9
+l13 0.9
+w13 0.8
+l14 1.0
+w14 0.8
+l15 0.8
+w15 0.7
+r1 0.7
+r2 0.8
+Best metrics {'gain': 38.59674619, 'cmrr': 76.85206635, 'gbw': 2326224.858, 'pow': 5.5202339389999995e-05}
+Best BO metrics {'gain': 32.94041054, 'cmrr': 56.982877290000005, 'gbw': 1582991.667, 'pow': 6.3961456267e-05}
+Best LLM metrics {'gain': 38.59674619, 'cmrr': 76.85206635, 'gbw': 2326224.858, 'pow': 5.5202339389999995e-05}
+At iteration: 4, the best target value is: 0.900, llm best target: 0.900, bo best target: 0.729
+Current iteration:5.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.75', 'w1': '0.65', 'l2': '0.82', 'w2': '0.75', 'l3': '0.68', 'w3': '0.72', 'l4': '0.78', 'w4': '0.68', 'l5': '0.72', 'w5': '0.65', 'l6': '0.77', 'w6': '0.70', 'l7': '0.70', 'w7': '0.60', 'l8': '0.80', 'w8': '0.72', 'l9': '0.75', 'w9': '0.68', 'l10': '0.85', 'w10': '0.77', 'l11': '0.78', 'w11': '0.70', 'l12': '0.80', 'w12': '0.75', 'l13': '0.72', 'w13': '0.68', 'l14': '0.85', 'w14': '0.80', 'l15': '0.75', 'w15': '0.72', 'r1': '0.55', 'r2': '0.70'}
+{'fom': 0.7544919744814997, 'gbw': 1820037.42, 'gain': 25.13406418, 'cmrr': 55.12385306, 'pm': -106.6626447, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Linear\n x1: Subth\n x2: Subth\n x3: Subth\n x6: Subth\n x7: Subth\n x8: Subth\n x9: Linear\n x10: Subth\n x11: Subth\n ', 'pow_vol': 5.899019884e-05, 'pow_cur': -8.348953163e-06, 'pow': 5.0641245677e-05, 'acm': -29.98978888, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Linear', 'x1': 'Subth', 'x2': 'Subth', 'x3': 'Subth', 'x6': 'Subth', 'x7': 'Subth', 'x8': 'Subth', 'x9': 'Linear', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 0.9100186650093325, 'gain_normed': 0.4189010696666667, 'cmrr_normed': 0.6890481632500001, 'pow_normed': 1.0}
+l1 0.75
+w1 0.65
+l2 0.82
+w2 0.75
+l3 0.68
+w3 0.72
+l4 0.78
+w4 0.68
+l5 0.72
+w5 0.65
+l6 0.77
+w6 0.70
+l7 0.70
+w7 0.60
+l8 0.80
+w8 0.72
+l9 0.75
+w9 0.68
+l10 0.85
+w10 0.77
+l11 0.78
+w11 0.70
+l12 0.80
+w12 0.75
+l13 0.72
+w13 0.68
+l14 0.85
+w14 0.80
+l15 0.75
+w15 0.72
+r1 0.55
+r2 0.70
+IN BO LOOP
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Parameters to evaluate: {'l1': '0.8', 'w1': '1.0', 'l2': '0.5', 'w2': '0.8', 'l3': '0.6', 'w3': '0.9', 'l4': '0.9', 'w4': '0.7', 'l5': '0.8', 'w5': '0.8', 'l6': '0.8', 'w6': '0.8', 'l7': '0.8', 'w7': '0.6', 'l8': '0.9', 'w8': '0.8', 'l9': '0.9', 'w9': '0.8', 'l10': '1.0', 'w10': '0.8', 'l11': '0.9', 'w11': '0.8', 'l12': '0.9', 'w12': '0.9', 'l13': '0.9', 'w13': '0.7', 'l14': '0.9', 'w14': '0.8', 'l15': '0.9', 'w15': '0.7', 'r1': '0.3', 'r2': '0.6'}
+{'fom': 0.7743716577421474, 'gbw': 3117580.632, 'gain': 28.16515312, 'cmrr': 61.910025329999996, 'pm': -102.5514301, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Linear\n x1: Subth\n x2: Subth\n x3: Subth\n x6: Subth\n x7: Linear\n x8: Subth\n x9: Subth\n x10: Subth\n x11: Subth\n ', 'pow_vol': 7.280127063e-05, 'pow_cur': -8.323756849e-06, 'pow': 6.4477513781e-05, 'acm': -33.74487221, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Linear', 'x1': 'Subth', 'x2': 'Subth', 'x3': 'Subth', 'x6': 'Subth', 'x7': 'Linear', 'x8': 'Subth', 'x9': 'Subth', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 1.0, 'gain_normed': 0.46941921866666664, 'cmrr_normed': 0.773875316625, 'pow_normed': 0.854192095676923}
+l1 0.8
+w1 1.0
+l2 0.5
+w2 0.8
+l3 0.6
+w3 0.9
+l4 0.9
+w4 0.7
+l5 0.8
+w5 0.8
+l6 0.8
+w6 0.8
+l7 0.8
+w7 0.6
+l8 0.9
+w8 0.8
+l9 0.9
+w9 0.8
+l10 1.0
+w10 0.8
+l11 0.9
+w11 0.8
+l12 0.9
+w12 0.9
+l13 0.9
+w13 0.7
+l14 0.9
+w14 0.8
+l15 0.9
+w15 0.7
+r1 0.3
+r2 0.6
+Best metrics {'gain': 38.59674619, 'cmrr': 76.85206635, 'gbw': 2326224.858, 'pow': 5.5202339389999995e-05}
+Best BO metrics {'gain': 28.16515312, 'cmrr': 61.910025329999996, 'gbw': 3117580.632, 'pow': 6.4477513781e-05}
+Best LLM metrics {'gain': 38.59674619, 'cmrr': 76.85206635, 'gbw': 2326224.858, 'pow': 5.5202339389999995e-05}
+At iteration: 5, the best target value is: 0.900, llm best target: 0.900, bo best target: 0.774
+Current iteration:6.
+[Rate Limiter] Sleeping for 47.71s to avoid hitting the token limit...
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.75', 'w1': '0.80', 'l2': '0.70', 'w2': '0.75', 'l3': '0.78', 'w3': '0.78', 'l4': '0.85', 'w4': '0.70', 'l5': '0.80', 'w5': '0.65', 'l6': '0.72', 'w6': '0.72', 'l7': '0.68', 'w7': '0.68', 'l8': '0.75', 'w8': '0.75', 'l9': '0.70', 'w9': '0.70', 'l10': '0.78', 'w10': '0.78', 'l11': '0.72', 'w11': '0.72', 'l12': '0.80', 'w12': '0.80', 'l13': '0.75', 'w13': '0.75', 'l14': '0.78', 'w14': '0.78', 'l15': '0.72', 'w15': '0.72', 'r1': '0.60', 'r2': '0.75'}
+{'fom': 0.9449262842916667, 'gbw': 2074416.954, 'gain': 46.78230823, 'cmrr': 88.88044787, 'pm': -103.1879593, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Linear\n x1: Subth\n x2: Subth\n x3: Subth\n x6: Subth\n x7: Subth\n x8: Subth\n x9: Subth\n x10: Subth\n x11: Subth\n ', 'pow_vol': 5.879973988e-05, 'pow_cur': -8.353410064e-06, 'pow': 5.0446329815999996e-05, 'acm': -42.09813964, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Linear', 'x1': 'Subth', 'x2': 'Subth', 'x3': 'Subth', 'x6': 'Subth', 'x7': 'Subth', 'x8': 'Subth', 'x9': 'Subth', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 1.0, 'gain_normed': 0.7797051371666667, 'cmrr_normed': 1.0, 'pow_normed': 1.0}
+l1 0.75
+w1 0.80
+l2 0.70
+w2 0.75
+l3 0.78
+w3 0.78
+l4 0.85
+w4 0.70
+l5 0.80
+w5 0.65
+l6 0.72
+w6 0.72
+l7 0.68
+w7 0.68
+l8 0.75
+w8 0.75
+l9 0.70
+w9 0.70
+l10 0.78
+w10 0.78
+l11 0.72
+w11 0.72
+l12 0.80
+w12 0.80
+l13 0.75
+w13 0.75
+l14 0.78
+w14 0.78
+l15 0.72
+w15 0.72
+r1 0.60
+r2 0.75
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.9', 'w1': '0.7', 'l2': '0.7', 'w2': '0.7', 'l3': '0.6', 'w3': '0.7', 'l4': '0.7', 'w4': '0.7', 'l5': '0.9', 'w5': '0.5', 'l6': '0.9', 'w6': '0.7', 'l7': '0.8', 'w7': '0.8', 'l8': '0.6', 'w8': '0.7', 'l9': '0.7', 'w9': '0.6', 'l10': '0.8', 'w10': '1.0', 'l11': '0.8', 'w11': '0.6', 'l12': '0.9', 'w12': '0.7', 'l13': '0.7', 'w13': '0.6', 'l14': '0.9', 'w14': '0.8', 'l15': '0.8', 'w15': '0.8', 'r1': '0.9', 'r2': '0.9'}
+Failed to read gbw from the file
+Failed to read pm from the file
+{'fom': 0.3370015786875, 'gbw': -10000000.0, 'gain': -41.23285709, 'cmrr': 27.84050518, 'pm': -180.0, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Linear\n x1: Subth\n x2: Subth\n x3: Subth\n x6: Subth\n x7: Cutoff\n x8: Subth\n x9: Linear\n x10: Subth\n x11: Subth\n ', 'pow_vol': 4.931568342e-05, 'pow_cur': -8.360887252e-06, 'pow': 4.0954796168e-05, 'acm': -69.07336227, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Linear', 'x1': 'Subth', 'x2': 'Subth', 'x3': 'Subth', 'x6': 'Subth', 'x7': 'Cutoff', 'x8': 'Subth', 'x9': 'Linear', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 0.0, 'gain_normed': 0.0, 'cmrr_normed': 0.34800631475, 'pow_normed': 1.0}
+l1 0.9
+w1 0.7
+l2 0.7
+w2 0.7
+l3 0.6
+w3 0.7
+l4 0.7
+w4 0.7
+l5 0.9
+w5 0.5
+l6 0.9
+w6 0.7
+l7 0.8
+w7 0.8
+l8 0.6
+w8 0.7
+l9 0.7
+w9 0.6
+l10 0.8
+w10 1.0
+l11 0.8
+w11 0.6
+l12 0.9
+w12 0.7
+l13 0.7
+w13 0.6
+l14 0.9
+w14 0.8
+l15 0.8
+w15 0.8
+r1 0.9
+r2 0.9
+Best metrics {'gain': 46.78230823, 'cmrr': 88.88044787, 'gbw': 2074416.954, 'pow': 5.0446329815999996e-05}
+Best BO metrics {'gain': 28.16515312, 'cmrr': 61.910025329999996, 'gbw': 3117580.632, 'pow': 6.4477513781e-05}
+Best LLM metrics {'gain': 46.78230823, 'cmrr': 88.88044787, 'gbw': 2074416.954, 'pow': 5.0446329815999996e-05}
+At iteration: 6, the best target value is: 0.945, llm best target: 0.945, bo best target: 0.774
+Current iteration:7.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.60', 'w1': '0.60', 'l2': '0.60', 'w2': '0.60', 'l3': '0.60', 'w3': '0.60', 'l4': '0.60', 'w4': '0.60', 'l5': '0.60', 'w5': '0.60', 'l6': '0.60', 'w6': '0.60', 'l7': '0.60', 'w7': '0.60', 'l8': '0.60', 'w8': '0.60', 'l9': '0.60', 'w9': '0.60', 'l10': '0.60', 'w10': '0.60', 'l11': '0.60', 'w11': '0.60', 'l12': '0.60', 'w12': '0.60', 'l13': '0.60', 'w13': '0.60', 'l14': '0.60', 'w14': '0.60', 'l15': '0.60', 'w15': '0.60', 'r1': '0.60', 'r2': '0.60'}
+{'fom': 0.9990861830884615, 'gbw': 2212234.816, 'gain': 64.56170895, 'cmrr': 86.53679946, 'pm': -95.27628833, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Linear\n x1: Subth\n x2: Subth\n x3: Subth\n x8: Subth\n x9: Subth\n x10: Subth\n x11: Subth\n ', 'pow_vol': 6.357649173e-05, 'pow_cur': -8.338899333e-06, 'pow': 5.5237592397e-05, 'acm': -21.97509051, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Linear', 'x1': 'Subth', 'x2': 'Subth', 'x3': 'Subth', 'x8': 'Subth', 'x9': 'Subth', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 1.0, 'gain_normed': 1.0, 'cmrr_normed': 1.0, 'pow_normed': 0.9963447323538461}
+l1 0.60
+w1 0.60
+l2 0.60
+w2 0.60
+l3 0.60
+w3 0.60
+l4 0.60
+w4 0.60
+l5 0.60
+w5 0.60
+l6 0.60
+w6 0.60
+l7 0.60
+w7 0.60
+l8 0.60
+w8 0.60
+l9 0.60
+w9 0.60
+l10 0.60
+w10 0.60
+l11 0.60
+w11 0.60
+l12 0.60
+w12 0.60
+l13 0.60
+w13 0.60
+l14 0.60
+w14 0.60
+l15 0.60
+w15 0.60
+r1 0.60
+r2 0.60
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.7', 'w1': '0.9', 'l2': '0', 'w2': '0.9', 'l3': '0.7', 'w3': '0.7', 'l4': '0.9', 'w4': '0.4', 'l5': '0.7', 'w5': '0.7', 'l6': '0.6', 'w6': '0.1', 'l7': '0.2', 'w7': '0.1', 'l8': '0.5', 'w8': '0.0', 'l9': '0.7', 'w9': '0.9', 'l10': '0.9', 'w10': '0.7', 'l11': '0.2', 'w11': '0.4', 'l12': '1.0', 'w12': '0.9', 'l13': '0.7', 'w13': '0.9', 'l14': '0.9', 'w14': '0.1', 'l15': '0.9', 'w15': '0.4', 'r1': '0.0', 'r2': '0.5'}
+Failed to read gbw from the file
+Failed to read pm from the file
+{'fom': 0.06495475490625, 'gbw': -10000000.0, 'gain': -28.90543277, 'cmrr': 20.785521569999997, 'pm': -180.0, 'aux_info': 'The following mosfets are not in saturation region:\n x1: Subth\n x2: Subth\n x4: Linear\n x5: Linear\n x6: Linear\n x7: Linear\n x8: Linear\n ', 'pow_vol': 0.000219948712, 'pow_cur': -8.222908874e-06, 'pow': 0.000211725803126, 'acm': -49.69095434, 'work_regions': {'x1': 'Subth', 'x2': 'Subth', 'x4': 'Linear', 'x5': 'Linear', 'x6': 'Linear', 'x7': 'Linear', 'x8': 'Linear'}, 'gbw_normed': 0.0, 'gain_normed': 0.0, 'cmrr_normed': 0.259819019625, 'pow_normed': 0.0}
+l1 0.7
+w1 0.9
+l2 0
+w2 0.9
+l3 0.7
+w3 0.7
+l4 0.9
+w4 0.4
+l5 0.7
+w5 0.7
+l6 Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+0.6
+w6 0.1
+l7 0.2
+w7 0.1
+l8 0.5
+w8 0.0
+l9 0.7
+w9 0.9
+l10 0.9
+w10 0.7
+l11 0.2
+w11 0.4
+l12 1.0
+w12 0.9
+l13 0.7
+w13 0.9
+l14 0.9
+w14 0.1
+l15 0.9
+w15 0.4
+r1 0.0
+r2 0.5
+Best metrics {'gain': 64.56170895, 'cmrr': 86.53679946, 'gbw': 2212234.816, 'pow': 5.5237592397e-05}
+Best BO metrics {'gain': 28.16515312, 'cmrr': 61.910025329999996, 'gbw': 3117580.632, 'pow': 6.4477513781e-05}
+Best LLM metrics {'gain': 64.56170895, 'cmrr': 86.53679946, 'gbw': 2212234.816, 'pow': 5.5237592397e-05}
+At iteration: 7, the best target value is: 0.999, llm best target: 0.999, bo best target: 0.774
+Current iteration:8.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.70', 'w1': '0.70', 'l2': '0.65', 'w2': '0.70', 'l3': '0.75', 'w3': '0.75', 'l4': '0.75', 'w4': '0.65', 'l5': '0.70', 'w5': '0.60', 'l6': '0.70', 'w6': '0.70', 'l7': '0.65', 'w7': '0.65', 'l8': '0.70', 'w8': '0.70', 'l9': '0.65', 'w9': '0.65', 'l10': '0.75', 'w10': '0.75', 'l11': '0.70', 'w11': '0.70', 'l12': '0.75', 'w12': '0.75', 'l13': '0.70', 'w13': '0.70', 'l14': '0.75', 'w14': '0.75', 'l15': '0.70', 'w15': '0.70', 'r1': '0.65', 'r2': '0.70'}
+{'fom': 0.751251732778221, 'gbw': 1799951.635, 'gain': 21.04981281, 'cmrr': 60.33607601, 'pm': -102.4896783, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Linear\n x1: Subth\n x2: Subth\n x3: Subth\n x6: Subth\n x7: Subth\n x8: Subth\n x9: Linear\n x10: Subth\n x11: Subth\n ', 'pow_vol': 5.904270252e-05, 'pow_cur': -8.351322512e-06, 'pow': 5.0691380008e-05, 'acm': -39.2862632, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Linear', 'x1': 'Subth', 'x2': 'Subth', 'x3': 'Subth', 'x6': 'Subth', 'x7': 'Subth', 'x8': 'Subth', 'x9': 'Linear', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 0.8999757674878838, 'gain_normed': 0.3508302135, 'cmrr_normed': 0.754200950125, 'pow_normed': 1.0}
+l1 0.70
+w1 0.70
+l2 0.65
+w2 0.70
+l3 0.75
+w3 0.75
+l4 0.75
+w4 0.65
+l5 0.70
+w5 0.60
+l6 0.70
+w6 0.70
+l7 0.65
+w7 0.65
+l8 0.70
+w8 0.70
+l9 0.65
+w9 0.65
+l10 0.75
+w10 0.75
+l11 0.70
+w11 0.70
+l12 0.75
+w12 0.75
+l13 0.70
+w13 0.70
+l14 0.75
+w14 0.75
+l15 0.70
+w15 0.70
+r1 0.65
+r2 0.70
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.6', 'w1': '0.7', 'l2': '0.7', 'w2': '0.5', 'l3': '1.0', 'w3': '0.6', 'l4': '0.7', 'w4': '0.8', 'l5': '0.4', 'w5': '0.4', 'l6': '0.5', 'w6': '0.7', 'l7': '0.7', 'w7': '0.5', 'l8': '0.8', 'w8': '0.3', 'l9': '0.3', 'w9': '0.6', 'l10': '0.3', 'w10': '0.4', 'l11': '0.3', 'w11': '0.6', 'l12': '0.6', 'w12': '0.1', 'l13': '0.8', 'w13': '0.2', 'l14': '0.7', 'w14': '0.5', 'l15': '0.7', 'w15': '0.5', 'r1': '0.5', 'r2': '0.6'}
+Failed to read gbw from the file
+Failed to read pm from the file
+{'fom': 0.32593498637499996, 'gbw': -10000000.0, 'gain': -65.36875267, 'cmrr': 24.299195639999994, 'pm': -180.0, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x1: Subth\n x2: Subth\n x3: Subth\n x6: Cutoff\n x7: Cutoff\n x8: Subth\n x9: Subth\n x10: Subth\n x11: Subth\n ', 'pow_vol': 3.384568058e-05, 'pow_cur': -8.291319024e-06, 'pow': 2.5554361556000003e-05, 'acm': -89.66794831, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x1': 'Subth', 'x2': 'Subth', 'x3': 'Subth', 'x6': 'Cutoff', 'x7': 'Cutoff', 'x8': 'Subth', 'x9': 'Subth', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 0.0, 'gain_normed': 0.0, 'cmrr_normed': 0.30373994549999994, 'pow_normed': 1.0}
+l1 0.6
+w1 0.7
+l2 0.7
+w2 0.5
+l3 1.0
+w3 0.6
+l4 0.7
+w4 0.8
+l5 0.4
+w5 0.4
+l6 0.5
+w6 0.7
+l7 0.7
+w7 0.5
+l8 0.8
+w8 0.3
+l9 0.3
+w9 0.6
+l10 0.3
+w10 0.4
+l11 0.3
+w11 0.6
+l12 0.6
+w12 0.1
+l13 0.8
+w13 0.2
+l14 0.7
+w14 0.5
+l15 0.7
+w15 0.5
+r1 0.5
+r2 0.6
+Best metrics {'gain': 64.56170895, 'cmrr': 86.53679946, 'gbw': 2212234.816, 'pow': 5.5237592397e-05}
+Best BO metrics {'gain': 28.16515312, 'cmrr': 61.910025329999996, 'gbw': 3117580.632, 'pow': 6.4477513781e-05}
+Best LLM metrics {'gain': 64.56170895, 'cmrr': 86.53679946, 'gbw': 2212234.816, 'pow': 5.5237592397e-05}
+At iteration: 8, the best target value is: 0.999, llm best target: 0.999, bo best target: 0.774
+Current iteration:9.
+[Rate Limiter] Sleeping for 46.21s to avoid hitting the token limit...
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.50', 'w1': '0.50', 'l2': '0.55', 'w2': '0.50', 'l3': '0.60', 'w3': '0.60', 'l4': '0.50', 'w4': '0.50', 'l5': '0.45', 'w5': '0.45', 'l6': '0.50', 'w6': '0.50', 'l7': '0.55', 'w7': '0.55', 'l8': '0.50', 'w8': '0.50', 'l9': '0.55', 'w9': '0.55', 'l10': '0.50', 'w10': '0.50', 'l11': '0.55', 'w11': '0.55', 'l12': '0.50', 'w12': '0.50', 'l13': '0.55', 'w13': '0.55', 'l14': '0.50', 'w14': '0.50', 'l15': '0.50', 'w15': '0.50', 'r1': '0.50', 'r2': '0.50'}
+{'fom': 0.7965538401641026, 'gbw': 2132201.597, 'gain': 24.51581501, 'cmrr': 62.225026760000006, 'pm': -97.98700915, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Linear\n x1: Subth\n x2: Subth\n x3: Subth\n x7: Subth\n x8: Subth\n x9: Linear\n x10: Subth\n x11: Subth\n ', 'pow_vol': 6.333555227e-05, 'pow_cur': -8.322916876e-06, 'pow': 5.5012635393999996e-05, 'acm': -37.70921175, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Linear', 'x1': 'Subth', 'x2': 'Subth', 'x3': 'Subth', 'x7': 'Subth', 'x8': 'Subth', 'x9': 'Linear', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 1.0, 'gain_normed': 0.4085969168333333, 'cmrr_normed': 0.7778128345, 'pow_normed': 0.9998056093230769}
+l1 0.50
+w1 0.50
+l2 0.55
+w2 0.50
+l3 0.60
+w3 0.60
+l4 0.50
+w4 0.50
+l5 0.45
+w5 0.45
+l6 0.50
+w6 0.50
+l7 0.55
+w7 0.55
+l8 0.50
+w8 0.50
+l9 0.55
+w9 0.55
+l10 0.50
+w10 0.50
+l11 0.55
+w11 0.55
+l12 0.50
+w12 0.50
+l13 0.55
+w13 0.55
+l14 0.50
+w14 0.50
+l15 0.50
+w15 0.50
+r1 0.50
+r2 0.50
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.8', 'w1': '0.6', 'l2': '0.6', 'w2': '0.6', 'l3': '0.8', 'w3': '0.6', 'l4': '0.6', 'w4': '0.5', 'l5': '0.7', 'w5': '0.7', 'l6': '0.7', 'w6': '0.5', 'l7': '0.6', 'w7': '0.6', 'l8': '0.6', 'w8': '0.7', 'l9': '0.8', 'w9': '0.6', 'l10': '0.5', 'w10': '0.2', 'l11': '0.7', 'w11': '0.6', 'l12': '0.6', 'w12': '0.8', 'l13': '0.6', 'w13': '0.5', 'l14': '0.6', 'w14': '0.7', 'l15': '0.6', 'w15': '0.6', 'r1': '0.6', 'r2': '0.6'}
+Failed to read gbw from the file
+Failed to read pm from the file
+{'fom': 0.40826609973197114, 'gbw': -10000000.0, 'gain': -2.176102891, 'cmrr': 61.645324329, 'pm': -180.0, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Linear\n x1: Subth\n x2: Subth\n x3: Subth\n x8: Subth\n x9: Linear\n ', 'pow_vol': 7.227688066e-05, 'pow_cur': -8.339240573e-06, 'pow': 6.3937640087e-05, 'acm': -63.82142722, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Linear', 'x1': 'Subth', 'x2': 'Subth', 'x3': 'Subth', 'x8': 'Subth', 'x9': 'Linear'}, 'gbw_normed': 0.0, 'gain_normed': 0.0, 'cmrr_normed': 0.7705665541125, 'pow_normed': 0.8624978448153846}
+l1 0.8
+w1 0.6
+l2 0.6
+w2 0.6
+l3 0.8
+w3 0.6
+l4 0.6
+w4 0.5
+l5 0.7
+w5 0.7
+l6 0.7
+w6 0.5
+l7 0.6
+w7 0.6
+l8 0.6
+w8 0.7
+l9 0.8
+w9 0.6
+l10 0.5
+w10 0.2
+l11 0.7
+w11 0.6
+l12 0.6
+w12 0.8
+l13 0.6
+w13 0.5
+l14 0.6
+w14 0.7
+l15 0.6
+w15 0.6
+r1 0.6
+r2 0.6
+Best metrics {'gain': 64.56170895, 'cmrr': 86.53679946, 'gbw': 2212234.816, 'pow': 5.5237592397e-05}
+Best BO metrics {'gain': 28.16515312, 'cmrr': 61.910025329999996, 'gbw': 3117580.632, 'pow': 6.4477513781e-05}
+Best LLM metrics {'gain': 64.56170895, 'cmrr': 86.53679946, 'gbw': 2212234.816, 'pow': 5.5237592397e-05}
+At iteration: 9, the best target value is: 0.999, llm best target: 0.999, bo best target: 0.774
+Current iteration:10.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.40', 'w1': '0.40', 'l2': '0.45', 'w2': '0.45', 'l3': '0.50', 'w3': '0.50', 'l4': '0.55', 'w4': '0.55', 'l5': '0.60', 'w5': '0.60', 'l6': '0.65', 'w6': '0.65', 'l7': '0.70', 'w7': '0.70', 'l8': '0.75', 'w8': '0.75', 'l9': '0.80', 'w9': '0.80', 'l10': '0.85', 'w10': '0.85', 'l11': '0.90', 'w11': '0.90', 'l12': '0.95', 'w12': '0.95', 'l13': '0.50', 'w13': '0.50', 'l14': '0.55', 'w14': '0.55', 'l15': '0.60', 'w15': '0.60', 'r1': '0.40', 'r2': '0.45'}
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+{'fom': 0.9033503847021634, 'gbw': 2049904.451, 'gain': 62.23032202, 'cmrr': 60.649663821000004, 'pm': -95.49191989, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Linear\n x1: Subth\n x2: Subth\n x3: Subth\n x8: Subth\n x9: Subth\n x10: Subth\n x11: Subth\n ', 'pow_vol': 7.274546363e-05, 'pow_cur': -8.338711798e-06, 'pow': 6.4406751832e-05, 'acm': 1.580658199, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Linear', 'x1': 'Subth', 'x2': 'Subth', 'x3': 'Subth', 'x8': 'Subth', 'x9': 'Subth', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 1.0, 'gain_normed': 1.0, 'cmrr_normed': 0.7581207977625001, 'pow_normed': 0.8552807410461538}
+l1 0.40
+w1 0.40
+l2 0.45
+w2 0.45
+l3 0.50
+w3 0.50
+l4 0.55
+w4 0.55
+l5 0.60
+w5 0.60
+l6 0.65
+w6 0.65
+l7 0.70
+w7 0.70
+l8 0.75
+w8 0.75
+l9 0.80
+w9 0.80
+l10 0.85
+w10 0.85
+l11 0.90
+w11 0.90
+l12 0.95
+w12 0.95
+l13 0.50
+w13 0.50
+l14 0.55
+w14 0.55
+l15 0.60
+w15 0.60
+r1 0.40
+r2 0.45
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.8', 'w1': '1.0', 'l2': '0.7', 'w2': '0.8', 'l3': '0.5', 'w3': '0.9', 'l4': '0.7', 'w4': '0.8', 'l5': '0.9', 'w5': '0.7', 'l6': '0.6', 'w6': '0.8', 'l7': '0.6', 'w7': '0.6', 'l8': '0.3', 'w8': '0.9', 'l9': '0.8', 'w9': '0.8', 'l10': '0.4', 'w10': '0.1', 'l11': '0.9', 'w11': '0.8', 'l12': '0.9', 'w12': '0.9', 'l13': '0.7', 'w13': '0.9', 'l14': '0.8', 'w14': '0.7', 'l15': '0.8', 'w15': '0.7', 'r1': '0.4', 'r2': '0.7'}
+Failed to read gbw from the file
+Failed to read pm from the file
+{'fom': 0.34795749051874997, 'gbw': -10000000.0, 'gain': -8.864816136, 'cmrr': 46.131957574, 'pm': -180.0, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Linear\n x2: Subth\n x3: Subth\n x6: Subth\n x7: Subth\n x8: Subth\n x9: Linear\n x11: Linear\n ', 'pow_vol': 7.535028086e-05, 'pow_cur': -8.337012866e-06, 'pow': 6.7013267994e-05, 'acm': -54.99677371, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Linear', 'x2': 'Subth', 'x3': 'Subth', 'x6': 'Subth', 'x7': 'Subth', 'x8': 'Subth', 'x9': 'Linear', 'x11': 'Linear'}, 'gbw_normed': 0.0, 'gain_normed': 0.0, 'cmrr_normed': 0.576649469675, 'pow_normed': 0.8151804923999999}
+l1 0.8
+w1 1.0
+l2 0.7
+w2 0.8
+l3 0.5
+w3 0.9
+l4 0.7
+w4 0.8
+l5 0.9
+w5 0.7
+l6 0.6
+w6 0.8
+l7 0.6
+w7 0.6
+l8 0.3
+w8 0.9
+l9 0.8
+w9 0.8
+l10 0.4
+w10 0.1
+l11 0.9
+w11 0.8
+l12 0.9
+w12 0.9
+l13 0.7
+w13 0.9
+l14 0.8
+w14 0.7
+l15 0.8
+w15 0.7
+r1 0.4
+r2 0.7
+Best metrics {'gain': 64.56170895, 'cmrr': 86.53679946, 'gbw': 2212234.816, 'pow': 5.5237592397e-05}
+Best BO metrics {'gain': 28.16515312, 'cmrr': 61.910025329999996, 'gbw': 3117580.632, 'pow': 6.4477513781e-05}
+Best LLM metrics {'gain': 64.56170895, 'cmrr': 86.53679946, 'gbw': 2212234.816, 'pow': 5.5237592397e-05}
+At iteration: 10, the best target value is: 0.999, llm best target: 0.999, bo best target: 0.774
+Current iteration:11.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.75', 'w1': '0.80', 'l2': '0.70', 'w2': '0.75', 'l3': '0.78', 'w3': '0.78', 'l4': '0.85', 'w4': '0.70', 'l5': '0.80', 'w5': '0.65', 'l6': '0.72', 'w6': '0.72', 'l7': '0.68', 'w7': '0.68', 'l8': '0.75', 'w8': '0.75', 'l9': '0.70', 'w9': '0.70', 'l10': '0.78', 'w10': '0.78', 'l11': '0.72', 'w11': '0.72', 'l12': '0.80', 'w12': '0.80', 'l13': '0.75', 'w13': '0.75', 'l14': '0.78', 'w14': '0.78', 'l15': '0.72', 'w15': '0.72', 'r1': '0.60', 'r2': '0.75'}
+{'fom': 0.9449262842916667, 'gbw': 2074416.954, 'gain': 46.78230823, 'cmrr': 88.88044787, 'pm': -103.1879593, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Linear\n x1: Subth\n x2: Subth\n x3: Subth\n x6: Subth\n x7: Subth\n x8: Subth\n x9: Subth\n x10: Subth\n x11: Subth\n ', 'pow_vol': 5.879973988e-05, 'pow_cur': -8.353410064e-06, 'pow': 5.0446329815999996e-05, 'acm': -42.09813964, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Linear', 'x1': 'Subth', 'x2': 'Subth', 'x3': 'Subth', 'x6': 'Subth', 'x7': 'Subth', 'x8': 'Subth', 'x9': 'Subth', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 1.0, 'gain_normed': 0.7797051371666667, 'cmrr_normed': 1.0, 'pow_normed': 1.0}
+l1 0.75
+w1 0.80
+l2 0.70
+w2 0.75
+l3 0.78
+w3 0.78
+l4 0.85
+w4 0.70
+l5 0.80
+w5 0.65
+l6 0.72
+w6 0.72
+l7 0.68
+w7 0.68
+l8 0.75
+w8 0.75
+l9 0.70
+w9 0.70
+l10 0.78
+w10 0.78
+l11 0.72
+w11 0.72
+l12 0.80
+w12 0.80
+l13 0.75
+w13 0.75
+l14 0.78
+w14 0.78
+l15 0.72
+w15 0.72
+r1 0.60
+r2 0.75
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.1', 'w1': '0.5', 'l2': '0.4', 'w2': '1.0', 'l3': '0.3', 'w3': '1.0', 'l4': '0.6', 'w4': '1.0', 'l5': '0.3', 'w5': '0.4', 'l6': '0.4', 'w6': '0', 'l7': '0.5', 'w7': '0.4', 'l8': '1.0', 'w8': '0.2', 'l9': '0.9', 'w9': '0.4', 'l10': '0.0', 'w10': '0.3', 'l11': '0.7', 'w11': '0.2', 'l12': '0.9', 'w12': '0.3', 'l13': '1.0', 'w13': '0.2', 'l14': '0.8', 'w14': '0.9', 'l15': '1.0', 'w15': '0.3', 'r1': '0.2', 'r2': '1.0'}
+Failed to read gbw from the file
+Failed to read pm from the file
+{'fom': 0.11596884521153845, 'gbw': -10000000.0, 'gain': -103.5199771, 'cmrr': -6.990215610000007, 'pm': -180.0, 'aux_info': 'The following mosfets are not in saturation region:\n x1: Linear\n x2: Linear\n x6: Cutoff\n x7: Cutoff\n x8: Subth\n x9: Subth\n x10: Subth\n x11: Subth\n ', 'pow_vol': 9.800343003e-05, 'pow_cur': -8.155329785e-06, 'pow': 8.9848100245e-05, 'acm': -96.52976149, 'work_regions': {'x1': 'Linear', 'x2': 'Linear', 'x6': 'Cutoff', 'x7': 'Cutoff', 'x8': 'Subth', 'x9': 'Subth', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 0.0, 'gain_normed': 0.0, 'cmrr_normed': 0.0, 'pow_normed': 0.4638753808461538}
+l1 0.1
+w1 0.5
+l2 0.4
+w2 1.0
+l3 0.3
+w3 1.0
+l4 0.6
+w4 1.0
+l5 0.3
+w5 0.4
+l6 0.4
+w6 0
+l7 0.5
+w7 0.4
+l8 1.0
+w8 0.2
+l9 0.9
+w9 0.4
+l10 0.0
+w10 0.3
+l11 0.7
+w11 0.2
+l12 0.9
+w12 0.3
+l13 1.0
+w13 0.2
+l14 0.8
+w14 0.9
+l15 1.0
+w15 0.3
+r1 0.2
+r2 1.0
+Best metrics {'gain': 64.56170895, 'cmrr': 86.53679946, 'gbw': 2212234.816, 'pow': 5.5237592397e-05}
+Best BO metrics {'gain': 28.16515312, 'cmrr': 61.910025329999996, 'gbw': 3117580.632, 'pow': 6.4477513781e-05}
+Best LLM metrics {'gain': 64.56170895, 'cmrr': 86.53679946, 'gbw': 2212234.816, 'pow': 5.5237592397e-05}
+At iteration: 11, the best target value is: 0.999, llm best target: 0.999, bo best target: 0.774
+Current iteration:12.
+[Rate Limiter] Sleeping for 47.80s to avoid hitting the token limit...
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.85', 'w1': '0.75', 'l2': '0.75', 'w2': '0.80', 'l3': '0.80', 'w3': '0.75', 'l4': '0.90', 'w4': '0.70', 'l5': '0.85', 'w5': '0.65', 'l6': '0.75', 'w6': '0.75', 'l7': '0.70', 'w7': '0.70', 'l8': '0.80', 'w8': '0.75', 'l9': '0.75', 'w9': '0.70', 'l10': '0.80', 'w10': '0.80', 'l11': '0.75', 'w11': '0.75', 'l12': '0.85', 'w12': '0.80', 'l13': '0.80', 'w13': '0.75', 'l14': '0.85', 'w14': '0.80', 'l15': '0.75', 'w15': '0.75', 'r1': '0.60', 'r2': '0.75'}
+{'fom': 0.6417491088867635, 'gbw': 1429688.502, 'gain': 10.82966583, 'cmrr': 53.732631729999994, 'pm': -90.64811875, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Linear\n x1: Subth\n x2: Subth\n x3: Subth\n x6: Subth\n x7: Subth\n x8: Subth\n x9: Linear\n x10: Subth\n x11: Subth\n ', 'pow_vol': 5.578889723e-05, 'pow_cur': -8.356319846e-06, 'pow': 4.7432577384e-05, 'acm': -42.9029659, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Linear', 'x1': 'Subth', 'x2': 'Subth', 'x3': 'Subth', 'x6': 'Subth', 'x7': 'Subth', 'x8': 'Subth', 'x9': 'Linear', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 0.7148441084220543, 'gain_normed': 0.1804944305, 'cmrr_normed': 0.671657896625, 'pow_normed': 1.0}
+l1 0.85
+w1 0.75
+l2 0.75
+w2 0.80
+l3 0.80
+w3 0.75
+l4 0.90
+w4 0.70
+l5 0.85
+w5 0.65
+l6 0.75
+w6 0.75
+l7 0.70
+w7 0.70
+l8 0.80
+w8 0.75
+l9 0.75
+w9 0.70
+l10 0.80
+w10 0.80
+l11 0.75
+w11 0.75
+l12 0.85
+w12 0.80
+l13 0.80
+w13 0.75
+l14 0.85
+w14 0.80
+l15 0.75
+w15 0.75
+r1 0.60
+r2 0.75
+IN BO LOOP
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.sp' -o /home/karthik/sim_clean/LLMBO/FC_ati_new/fc_og.lis
+
+>info:         ***** hspice job concluded
+
+>info:         ***** hspice job concluded
+Parameters to evaluate: {'l1': '0.4', 'w1': '0.6', 'l2': '0.5', 'w2': '0.4', 'l3': '0.5', 'w3': '0.7', 'l4': '0.8', 'w4': '0.3', 'l5': '0.8', 'w5': '0.4', 'l6': '0.9', 'w6': '0.3', 'l7': '0.6', 'w7': '0.4', 'l8': '0.7', 'w8': '0.5', 'l9': '0.7', 'w9': '0.4', 'l10': '0.6', 'w10': '0.7', 'l11': '0.5', 'w11': '0.4', 'l12': '0.9', 'w12': '0.7', 'l13': '0.3', 'w13': '0.9', 'l14': '0.8', 'w14': '0.2', 'l15': '0.4', 'w15': '0.7', 'r1': '0.2', 'r2': '0.3'}
+Failed to read gbw from the file
+Failed to read pm from the file
+{'fom': 0.439034182671875, 'gbw': -10000000.0, 'gain': -1.351620735, 'cmrr': 60.490938455000006, 'pm': -180.0, 'aux_info': 'The following mosfets are not in saturation region:\n x15: Subth\n x12: Subth\n x13: Subth\n x1: Subth\n x2: Subth\n x3: Subth\n x5: Linear\n x7: Linear\n x8: Subth\n x9: Subth\n x10: Subth\n x11: Subth\n ', 'pow_vol': 4.923819837e-05, 'pow_cur': -8.398293708e-06, 'pow': 4.0839904661999995e-05, 'acm': -61.84255919, 'work_regions': {'x15': 'Subth', 'x12': 'Subth', 'x13': 'Subth', 'x1': 'Subth', 'x2': 'Subth', 'x3': 'Subth', 'x5': 'Linear', 'x7': 'Linear', 'x8': 'Subth', 'x9': 'Subth', 'x10': 'Subth', 'x11': 'Subth'}, 'gbw_normed': 0.0, 'gain_normed': 0.0, 'cmrr_normed': 0.7561367306875001, 'pow_normed': 1.0}
+l1 0.4
+w1 0.6
+l2 0.5
+w2 0.4
+l3 0.5
+w3 0.7
+l4 0.8
+w4 0.3
+l5 0.8
+w5 0.4
+l6 0.9
+w6 0.3
+l7 0.6
+w7 0.4
+l8 0.7
+w8 0.5
+l9 0.7
+w9 0.4
+l10 0.6
+w10 0.7
+l11 0.5
+w11 0.4
+l12 0.9
+w12 0.7
+l13 0.3
+w13 0.9
+l14 0.8
+w14 0.2
+l15 0.4
+w15 0.7
+r1 0.2
+r2 0.3
+Best metrics {'gain': 64.56170895, 'cmrr': 86.53679946, 'gbw': 2212234.816, 'pow': 5.5237592397e-05}
+Best BO metrics {'gain': 28.16515312, 'cmrr': 61.910025329999996, 'gbw': 3117580.632, 'pow': 6.4477513781e-05}
+Best LLM metrics {'gain': 64.56170895, 'cmrr': 86.53679946, 'gbw': 2212234.816, 'pow': 5.5237592397e-05}
+At iteration: 12, the best target value is: 0.999, llm best target: 0.999, bo best target: 0.774

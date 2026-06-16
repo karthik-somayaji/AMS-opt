@@ -17,6 +17,18 @@ import utils
 import argparse
 
 
+def _json_ready(value):
+    if isinstance(value, dict):
+        return {str(k): _json_ready(v) for k, v in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [_json_ready(v) for v in value]
+    if isinstance(value, np.ndarray):
+        return value.tolist()
+    if isinstance(value, np.generic):
+        return value.item()
+    return value
+
+
 def _resolve_llmbo_relative_path(path: str) -> str:
     if os.path.isabs(path):
         return path
@@ -35,6 +47,34 @@ def _repo_root() -> str:
 def _workspace_root() -> str:
     """Return the checked-out repository root (parent of `LLMBO/`)."""
     return os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+
+def _default_task_path(circuit: str) -> str:
+    circuit = str(circuit)
+    task_rel = {
+        "amp2": "tasks/amp2/amp2.json",
+        "FC": "tasks/FC/FC.json",
+        "comp": "tasks/comp/comp_test.json",
+        "ldo": "tasks/ldo/ldo.json",
+    }.get(circuit)
+    if task_rel is None:
+        raise ValueError(f"Unknown circuit '{circuit}'. Expected one of amp2, FC, comp, ldo.")
+    return _resolve_llmbo_relative_path(task_rel)
+
+
+def _infer_optimization_circuit(args) -> str:
+    explicit_circuit = getattr(args, "circuit", None)
+    if explicit_circuit:
+        return str(explicit_circuit)
+
+    target_id = getattr(args, "target_id", None)
+    symbolic_targets = {"amp2", "FC", "comp", "ldo"}
+    if target_id in symbolic_targets:
+        return str(target_id)
+
+    # Preserve previous behavior for numeric/non-symbolic target ids when no
+    # explicit circuit is provided.
+    return "FC"
 
 
 def _infer_gnn_model_cfg_from_state_dict(state_dict: dict) -> dict:
@@ -416,9 +456,90 @@ class LLMBO(object):
         self.target_best = max(self.data_collected["targets"])
         print(f"Initial best target value: {self.target_best:.2f}")
 
+    def _build_run_summary(self, args, fom_array, iteration_completed, stopped_early):
+        executed_iterations = int(iteration_completed)
+        recorded_iteration = executed_iterations if stopped_early else int(self.n_itr)
+        return {
+            "circuit": _infer_optimization_circuit(args),
+            "target_id": getattr(args, "target_id", None),
+            "history": int(getattr(args, "history", 0)),
+            "refined": int(getattr(args, "refined", 0)),
+            "related_mode": getattr(args, "related_mode", None),
+            "related_k": int(getattr(args, "related_k", 0)),
+            "trial_id": getattr(args, "trial_id", None),
+            "numpy_seed": int(getattr(args, "numpy_seed", 114)),
+            "torch_seed": int(getattr(args, "torch_seed", 114)),
+            "openai_api_seed": int(getattr(args, "openai_api_seed", self.openai_api_seed)),
+            "iteration_budget": int(self.n_itr),
+            "executed_iterations": executed_iterations,
+            "recorded_iteration": recorded_iteration,
+            "stopped_early": bool(stopped_early),
+            "early_stop_fom": getattr(args, "early_stop_fom", None),
+            "best_fom": float(self.target_best),
+            "best_llm_fom": float(self.target_best_llm),
+            "best_bo_fom": float(self.target_best_bo),
+            "best_metrics": _json_ready(self.data_collected["metrics"][self.target_best_index]),
+            "best_llm_metrics": _json_ready(self.data_collected_llm["metrics"][self.target_best_index_llm]),
+            "best_bo_metrics": _json_ready(self.data_collected_bo["metrics"][self.target_best_index_bo]),
+            "best_params": _json_ready(self.data_collected["params"][self.target_best_index]),
+            "best_llm_params": _json_ready(self.data_collected_llm["params"][self.target_best_index_llm]),
+            "best_bo_params": _json_ready(self.data_collected_bo["params"][self.target_best_index_bo]),
+            "fom_trace": [float(x) for x in fom_array],
+        }
+
+    def _write_run_outputs(self, args, summary):
+        run_output_dir = getattr(args, "run_output_dir", None)
+        if run_output_dir:
+            os.makedirs(run_output_dir, exist_ok=True)
+            summary_path = os.path.join(run_output_dir, "summary.json")
+            with open(summary_path, "w") as f:
+                json.dump(_json_ready(summary), f, indent=2)
+
+            fom_trace_path = os.path.join(run_output_dir, "fom_trace.txt")
+            np.savetxt(fom_trace_path, np.array(summary["fom_trace"]), fmt="%.6f")
+
+            summary_text_path = os.path.join(run_output_dir, "summary.txt")
+            with open(summary_text_path, "w") as f:
+                print("Best metrics", summary["best_metrics"], file=f)
+                print("Best BO metrics", summary["best_bo_metrics"], file=f)
+                print("Best LLM metrics", summary["best_llm_metrics"], file=f)
+                print(
+                    (
+                        f"Recorded iteration: {summary['recorded_iteration']}, "
+                        f"best target value: {summary['best_fom']:.3f}, "
+                        f"llm best target: {summary['best_llm_fom']:.3f}, "
+                        f"bo best target: {summary['best_bo_fom']:.3f}"
+                    ),
+                    file=f,
+                )
+            return
+
+        os.makedirs("results", exist_ok=True)
+        model_label = getattr(args, "model", None) or "nomodel"
+        with open(f"results/{args.history}_{args.refined}_comp_{model_label}.txt", 'w') as f:
+            print("Best metrics", summary["best_metrics"], file=f)
+            print("Best BO metrics", summary["best_bo_metrics"], file=f)
+            print("Best LLM metrics", summary["best_llm_metrics"], file=f)
+            print(
+                (
+                    f"At iteration: {summary['recorded_iteration']}, the best target value is: {summary['best_fom']:.3f}, "
+                    f"llm best target: {summary['best_llm_fom']:.3f}, bo best target: {summary['best_bo_fom']:.3f}"
+                ),
+                file=f,
+            )
+
+        np.savetxt(
+            f"results/foms_{args.history}_{args.refined}_comp_{model_label}.txt",
+            np.array(summary["fom_trace"]),
+            fmt="%.4f",
+        )
+
     def optimize(self, args):
         print("Beginning Design Cycle")
         fom_array = []
+        early_stop_fom = getattr(args, "early_stop_fom", None)
+        stopped_early = False
+        iteration_completed = 0
         for itr in range(self.n_itr):
             print(f"Current iteration:{itr+1}.")
             # Sample high quality data for llm using sampler;
@@ -473,20 +594,23 @@ class LLMBO(object):
             print(f"At iteration: {itr + 1}, the best target value is: {self.target_best:.3f}, llm best target: {self.target_best_llm:.3f}, bo best target: {self.target_best_bo:.3f}")
 
             fom_array.append(self.target_best)
+            iteration_completed = itr + 1
             
 
             # Log current iteration information and save checkpoints; TODO:
             self.save_checkpoints(itr)
 
-        os.makedirs("results", exist_ok=True)
-        model_label = getattr(args, "model", None) or "nomodel"
-        with open(f"results/{args.history}_{args.refined}_comp_{model_label}.txt" , 'w') as f:
-            print("Best metrics",  self.data_collected["metrics"][self.target_best_index], file=f)
-            print("Best BO metrics",  self.data_collected_bo["metrics"][self.target_best_index_bo], file=f)
-            print("Best LLM metrics",  self.data_collected_llm["metrics"][self.target_best_index_llm], file=f)
-            print(f"At iteration: {itr + 1}, the best target value is: {self.target_best:.3f}, llm best target: {self.target_best_llm:.3f}, bo best target: {self.target_best_bo:.3f}", file=f)
+            if early_stop_fom is not None and self.target_best >= early_stop_fom:
+                stopped_early = True
+                print(
+                    f"[LLMBO] Early stopping at iteration {iteration_completed}: "
+                    f"best target {self.target_best:.3f} reached threshold {float(early_stop_fom):.3f}"
+                )
+                break
 
-        np.savetxt(f"results/foms_{args.history}_{args.refined}_comp_{model_label}.txt", np.array(fom_array), fmt="%.4f")
+        summary = self._build_run_summary(args, fom_array, iteration_completed, stopped_early)
+        self._write_run_outputs(args, summary)
+        return summary
 
 
     def critic(self, file_name):
@@ -530,13 +654,6 @@ class LLMBO(object):
 
 
 if __name__ == "__main__":
-
-    # np.random.seed(14)
-    # torch.random.manual_seed(14)
-    np.random.seed(114)
-    torch.random.manual_seed(114)
-    openai_api_seed = 514
-
     parser = argparse.ArgumentParser(description="Simple argparse example")
     # String argument
     parser.add_argument('--model', type=str, help='Your name: DeepSeek-R1-Distill-Llama-70B')
@@ -550,10 +667,34 @@ if __name__ == "__main__":
                             'For the symbolic ids, the anchor embedding is computed from '
                             '`LLMBO/<id>_ati_new/comb_graph_gnn.npz` using `--gnn_checkpoint`.'
                         ))
-    parser.add_argument('--related_mode', type=str, default='topk', choices=['topk', 'bottomk', 'random_family'],
-                        help='How to pick related circuits for KG context.')
+    parser.add_argument('--circuit', type=str, default=None, choices=['amp2', 'FC', 'comp', 'ldo'],
+                        help=(
+                            'Optimization target circuit. If omitted and --target_id is one of '
+                            '{amp2, FC, comp, ldo}, that symbolic target_id is also used as the '
+                            'optimization circuit. Otherwise defaults to FC for backward compatibility.'
+                        ))
+    parser.add_argument('--task_path', type=str, default=None,
+                        help='Optional path to task JSON. Overrides --circuit inference when provided.')
+    parser.add_argument('--related_mode', type=str, default='topk', choices=['topk', 'bottomk', 'random_family', 'ado-kt'],
+                        help='How to pick related circuits for KG context. Use ado-kt for hardcoded cross-circuit KG context.')
     parser.add_argument('--related_k', type=int, default=3,
                         help='Number of related circuits whose fun_graph.json to include.')
+    parser.add_argument('--n_itr', type=int, default=10,
+                        help='Maximum number of LLMBO iterations to run.')
+    parser.add_argument('--numpy_seed', type=int, default=114,
+                        help='NumPy seed for randomized initialization and BO sampling.')
+    parser.add_argument('--torch_seed', type=int, default=114,
+                        help='Torch seed for model-related randomness.')
+    parser.add_argument('--openai_api_seed', type=int, default=514,
+                        help='Seed forwarded to the GPT backend.')
+    parser.add_argument('--early_stop_fom', type=float, default=None,
+                        help='If set, stop the optimization loop as soon as best FOM reaches this threshold.')
+    parser.add_argument('--run_output_dir', type=str, default=None,
+                        help='Optional directory where per-run summary and FOM trace will be written.')
+    parser.add_argument('--path_checkpoints', type=str, default='./checkpoints',
+                        help='Base checkpoint directory for this run.')
+    parser.add_argument('--trial_id', type=int, default=None,
+                        help='Optional trial index for bookkeeping in batch sweeps.')
     parser.add_argument('--embeddings_json', type=str, default='umap_results_full/gnn_embeddings.json',
                         help='Path to *raw GNN* embeddings+metadata JSON for similarity search (same D as the trained encoder).')
     parser.add_argument('--reference_metadata_json', type=str, default='umap_results_full/umap_embeddings.json',
@@ -576,6 +717,11 @@ if __name__ == "__main__":
     parser.add_argument('--related_ckts', nargs='+', help='List of items')
     args = parser.parse_args()
 
+    np.random.seed(args.numpy_seed)
+    torch.random.manual_seed(args.torch_seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(args.torch_seed)
+
     _maybe_prepare_llmbo_anchor_embedding(args)
 
     # Optimization must only target these curated circuits.
@@ -588,16 +734,10 @@ if __name__ == "__main__":
     ]
 
     # LLMBO + GPBO;
-    # print(_resolve_llmbo_relative_path("tasks/ldo/ldo.json"))
-    # task_path = _resolve_llmbo_relative_path("tasks/ldo/ldo.json")
-    # print(_resolve_llmbo_relative_path("tasks/comp/comp.json"))
-    # task_path = _resolve_llmbo_relative_path("tasks/comp/comp.json")
-    # print(_resolve_llmbo_relative_path("tasks/comp/comp_test.json"))
-    # task_path = _resolve_llmbo_relative_path("tasks/comp/comp_test.json")
-    print(_resolve_llmbo_relative_path("tasks/FC/FC.json"))
-    task_path = _resolve_llmbo_relative_path("tasks/FC/FC.json")
-    # print(_resolve_llmbo_relative_path("tasks/amp2/amp2.json"))
-    # task_path = _resolve_llmbo_relative_path("tasks/amp2/amp2.json")
+    selected_circuit = _infer_optimization_circuit(args)
+    task_path = args.task_path or _default_task_path(selected_circuit)
+    print(f"[LLMBO] Optimization circuit: {selected_circuit}")
+    print(f"[LLMBO] Task path: {task_path}")
     try:
         import json as _json
         with open(task_path, "r") as _f:
@@ -611,8 +751,8 @@ if __name__ == "__main__":
         #"tasks/comp/comp.json",
         #"tasks/ldo/ldo.json",
         #"tasks/dcdc/dcdc.json",
-        openai_api_seed=openai_api_seed,
-        gpt_version="3.5",
+        openai_api_seed=args.openai_api_seed,
+        gpt_version="4", #"3.5",
         #n_init_data=5, # for amp
         n_init_data=3,
         #n_init_data=1,
@@ -620,7 +760,8 @@ if __name__ == "__main__":
         #n_proposal_llm=3,
         n_proposal_bo=1,
         # n_itr=30,
-        n_itr=10, #20,
+        n_itr=args.n_itr,
+        path_checkpoints=args.path_checkpoints,
         rank_based_on_bo = False#True #True#True# True
     )
 

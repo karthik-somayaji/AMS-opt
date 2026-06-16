@@ -1,0 +1,2599 @@
+[LLMBO Sweep] Started at 2026-04-15T01:41:50.227903+00:00
+[LLMBO Sweep] Command: /home/karthik/miniconda3/envs/analog-rep/bin/python /home/karthik/sim_clean/AMS-opt/LLMBO/llmbo.py --history 1 --refined 0 --related_k 2 --gnn_embedding_mode sg --gnn_checkpoint /home/karthik/sim_clean/AMS-opt/checkpoints_sg_vs_skg/best_model.pt --embeddings_json /home/karthik/sim_clean/AMS-opt/umap_results_full/gnn_embeddings_sg_sg_vs_skg.json --target_id ldo --circuit ldo --n_itr 12 --numpy_seed 1002029998 --torch_seed 1857780182 --openai_api_seed 688950218 --early_stop_fom 1.0 --run_output_dir /home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs/history_1/ldo/random_family/trial_03 --path_checkpoints /home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs/history_1/ldo/random_family/trial_03/checkpoints --trial_id 3 --gnn_device cpu --related_mode random_family
+
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+[LLMBO] Using LLMBO anchor embedding for --target_id 'ldo' (D=128) with reference embeddings umap_results_full/gnn_embeddings_sg_sg_vs_skg.json
+[LLMBO] Optimization circuit: ldo
+[LLMBO] Task path: /home/karthik/sim_clean/AMS-opt/LLMBO/tasks/ldo/ldo.json
+IN  LDO
+3
+['.param l1=0.3 w1=100.5 l2=0.2 w2=75.6 l3=0.5 w3=120.3 l4=0.4 w4=85.8 l5=0.6 w5=130.2 l6=0.5 w6=95.7 l7=0.7 w7=140.1 l8=0.6 w8=105.6 l9=0.8 w9=148.5 l10=0.7 w10=115.2 l11=0.9 w11=135.9 l12=0.8 w12=125.4 l13=0.3 w13=110.7 l14=0.6 w14=145.8 l15=0.5 w15=120.3 l16=0.4 w16=90.9 l17=0.7 w17=130.2 l18=0.6 w18=100.5 l19=0.8 w19=140.1 l20=0.7 w20=110.7\n\n.param l1=0.4 w1=120.3 l2=0.3 w2=95.7 l3=0.6 w3=130.2 l4=0.5 w4=105.6 l5=0.7 w5=140.1 l6=0.6 w6=115.2 l7=0.8 w7=148.5 l8=0.7 w8=125.4 l9=0.9 w9=135.9 l10=0.8 w10=120.3 l11=0.5 w11=100.5 l12=0.7 w12=130.2 l13=0.4 w13=110.7 l14=0.7 w14=145.8 l15=0.6 w15=120.3 l16=0.5 w16=90.9 l17=0.8 w17=130.2 l18=0.7 w18=100.5 l19=0.9 w19=140.1 l20=0.8 w20=110.7\n\n.param l1=0.5 w1=130.2 l2=0.4 w2=105.6 l3=0.7 w3=140.1 l4=0.6 w4=115.2 l5=0.8 w5=148.5 l6=0.7 w6=125.4 l7=0.9 w7=135.9 l8=0.8 w8=120.3 l9=0.5 w9=100.5 l10=0.7 w10=130.2 l11=0.6 w11=110.7 l12=0.8 w12=145.8 l13=0.7 w13=120.3 l14=0.6 w14=90.9 l15=0.8 w15=130.2 l16=0.7 w16=100.5 l17=0.9 w17=140.1 l18=0.8 w18=110.7 l19=0.6 w19=120.3 l20=0.5 w20=95.7']
+Parameters to evaluate: {'l1': '0.3', 'w1': '100.5', 'l2': '0.2', 'w2': '75.6', 'l3': '0.5', 'w3': '120.3', 'l4': '0.4', 'w4': '85.8', 'l5': '0.6', 'w5': '130.2', 'l6': '0.5', 'w6': '95.7', 'l7': '0.7', 'w7': '140.1', 'l8': '0.6', 'w8': '105.6', 'l9': '0.8', 'w9': '148.5', 'l10': '0.7', 'w10': '115.2', 'l11': '0.9', 'w11': '135.9', 'l12': '0.8', 'w12': '125.4', 'l13': '0.3', 'w13': '110.7', 'l14': '0.6', 'w14': '145.8', 'l15': '0.5', 'w15': '120.3', 'l16': '0.4', 'w16': '90.9', 'l17': '0.7', 'w17': '130.2', 'l18': '0.6', 'w18': '100.5', 'l19': '0.8', 'w19': '140.1', 'l20': '0.7', 'w20': '110.7'}
+point_to_ebaluate:  .param l1=0.3
+.param w1=100.5
+.param l2=0.2
+.param w2=75.6
+.param l3=0.5
+.param w3=120.3
+.param l4=0.4
+.param w4=85.8
+.param l5=0.6
+.param w5=130.2
+.param l6=0.5
+.param w6=95.7
+.param l7=0.7
+.param w7=140.1
+.param l8=0.6
+.param w8=105.6
+.param l9=0.8
+.param w9=148.5
+.param l10=0.7
+.param w10=115.2
+.param l11=0.9
+.param w11=135.9
+.param l12=0.8
+.param w12=125.4
+.param l13=0.3
+.param w13=110.7
+.param l14=0.6
+.param w14=145.8
+.param l15=0.5
+.param w15=120.3
+.param l16=0.4
+.param w16=90.9
+.param l17=0.7
+.param w17=130.2
+.param l18=0.6
+.param w18=100.5
+.param l19=0.8
+.param w19=140.1
+.param l20=0.7
+.param w20=110.7
+
+l1 0.3
+w1 100.5
+l2 0.2
+w2 75.6
+l3 0.5
+w3 120.3
+l4 0.4
+w4 85.8
+l5 0.6
+w5 130.2
+l6 0.5
+w6 95.7
+l7 0.7
+w7 140.1
+l8 0.6
+w8 105.6
+l9 0.8
+w9 148.5
+l10 0.7
+w10 115.2
+l11 0.9
+w11 135.9
+l12 0.8
+w12 125.4
+l13 0.3
+w13 110.7
+l14 0.6
+w14 145.8
+l15 0.5
+w15 120.3
+l16 0.4
+w16 90.9
+l17 0.7
+w17 130.2
+l18 0.6
+w18 100.5
+l19 0.8
+w19 140.1
+l20 0.7
+w20 110.7
+params: .param l1=0.3
+.param w1=100.5
+.param l2=0.2
+.param w2=75.6
+.param l3=0.5
+.param w3=120.3
+.param l4=0.4
+.param w4=85.8
+.param l5=0.6
+.param w5=130.2
+.param l6=0.5
+.param w6=95.7
+.param l7=0.7
+.param w7=140.1
+.param l8=0.6
+.param w8=105.6
+.param l9=0.8
+.param w9=148.5
+.param l10=0.7
+.param w10=115.2
+.param l11=0.9
+.param w11=135.9
+.param l12=0.8
+.param w12=125.4
+.param l13=0.3
+.param w13=110.7
+.param l14=0.6
+.param w14=145.8
+.param l15=0.5
+.param w15=120.3
+.param l16=0.4
+.param w16=90.9
+.param l17=0.7
+.param w17=130.2
+.param l18=0.6
+.param w18=100.5
+.param l19=0.8
+.param w19=140.1
+.param l20=0.7
+.param w20=110.7
+
+metrics:  q_curr=0.038 stability=0.000 output_voltage_difference=0.204 
+targets: 0.522
+aux_info: 
+Parameters to evaluate: {'l1': '0.4', 'w1': '120.3', 'l2': '0.3', 'w2': '95.7', 'l3': '0.6', 'w3': '130.2', 'l4': '0.5', 'w4': '105.6', 'l5': '0.7', 'w5': '140.1', 'l6': '0.6', 'w6': '115.2', 'l7': '0.8', 'w7': '148.5', 'l8': '0.7', 'w8': '125.4', 'l9': '0.9', 'w9': '135.9', 'l10': '0.8', 'w10': '120.3', 'l11': '0.5', 'w11': '100.5', 'l12': '0.7', 'w12': '130.2', 'l13': '0.4', 'w13': '110.7', 'l14': '0.7', 'w14': '145.8', 'l15': '0.6', 'w15': '120.3', 'l16': '0.5', 'w16': '90.9', 'l17': '0.8', 'w17': '130.2', 'l18': '0.7', 'w18': '100.5', 'l19': '0.9', 'w19': '140.1', 'l20': '0.8', 'w20': '110.7'}
+point_to_ebaluate:  .param l1=0.4
+.param w1=120.3
+.param l2=0.3
+.param w2=95.7
+.param l3=0.6
+.param w3=130.2
+.param l4=0.5
+.param w4=105.6
+.param l5=0.7
+.param w5=140.1
+.param l6=0.6
+.param w6=115.2
+.param l7=0.8
+.param w7=148.5
+.param l8=0.7
+.param w8=125.4
+.param l9=0.9
+.param w9=135.9
+.param l10=0.8
+.param w10=120.3
+.param l11=0.5
+.param w11=100.5
+.param l12=0.7
+.param w12=130.2
+.param l13=0.4
+.param w13=110.7
+.param l14=0.7
+.param w14=145.8
+.param l15=0.6
+.param w15=120.3
+.param l16=0.5
+.param w16=90.9
+.param l17=0.8
+.param w17=130.2
+.param l18=0.7
+.param w18=100.5
+.param l19=0.9
+.param w19=140.1
+.param l20=0.8
+.param w20=110.7
+
+l1 0.4
+w1 120.3
+l2 0.3
+w2 95.7
+l3 0.6
+w3 130.2
+l4 0.5
+w4 105.6
+l5 0.7
+w5 140.1
+l6 0.6
+w6 115.2
+l7 0.8
+w7 148.5
+l8 0.7
+w8 125.4
+l9 0.9
+w9 135.9
+l10 0.8
+w10 120.3
+l11 0.5
+w11 100.5
+l12 0.7
+w12 130.2
+l13 0.4
+w13 110.7
+l14 0.7
+w14 145.8
+l15 0.6
+w15 120.3
+l16 0.5
+w16 90.9
+l17 0.8
+w17 130.2
+l18 0.7
+w18 100.5
+l19 0.9
+w19 140.1
+l20 0.8
+w20 110.7
+params: .param l1=0.4
+.param w1=120.3
+.param l2=0.3
+.param w2=95.7
+.param l3=0.6
+.param w3=130.2
+.param l4=0.5
+.param w4=105.6
+.param l5=0.7
+.param w5=140.1
+.param l6=0.6
+.param w6=115.2
+.param l7=0.8
+.param w7=148.5
+.param l8=0.7
+.param w8=125.4
+.param l9=0.9
+.param w9=135.9
+.param l10=0.8
+.param w10=120.3
+.param l11=0.5
+.param w11=100.5
+.param l12=0.7
+.param w12=130.2
+.param l13=0.4
+.param w13=110.7
+.param l14=0.7
+.param w14=145.8
+.param l15=0.6
+.param w15=120.3
+.param l16=0.5
+.param w16=90.9
+.param l17=0.8
+.param w17=130.2
+.param l18=0.7
+.param w18=100.5
+.param l19=0.9
+.param w19=140.1
+.param l20=0.8
+.param w20=110.7
+
+metrics:  q_curr=0.037 stability=0.000 output_voltage_difference=0.215 
+targets: 0.517
+aux_info: 
+Parameters to evaluate: {'l1': '0.5', 'w1': '130.2', 'l2': '0.4', 'w2': '105.6', 'l3': '0.7', 'w3': '140.1', 'l4': '0.6', 'w4': '115.2', 'l5': '0.8', 'w5': '148.5', 'l6': '0.7', 'w6': '125.4', 'l7': '0.9', 'w7': '135.9', 'l8': '0.8', 'w8': '120.3', 'l9': '0.5', 'w9': '100.5', 'l10': '0.7', 'w10': '130.2', 'l11': '0.6', 'w11': '110.7', 'l12': '0.8', 'w12': '145.8', 'l13': '0.7', 'w13': '120.3', 'l14': '0.6', 'w14': '90.9', 'l15': '0.8', 'w15': '130.2', 'l16': '0.7', 'w16': '100.5', 'l17': '0.9', 'w17': '140.1', 'l18': '0.8', 'w18': '110.7', 'l19': '0.6', 'w19': '120.3', 'l20': '0.5', 'w20': '95.7'}
+point_to_ebaluate:  .param l1=0.5
+.param w1=130.2
+.param l2=0.4
+.param w2=105.6
+.param l3=0.7
+.param w3=140.1
+.param l4=0.6
+.param w4=115.2
+.param l5=0.8
+.param w5=148.5
+.param l6=0.7
+.param w6=125.4
+.param l7=0.9
+.param w7=135.9
+.param l8=0.8
+.param w8=120.3
+.param l9=0.5
+.param w9=100.5
+.param l10=0.7
+.param w10=130.2
+.param l11=0.6
+.param w11=110.7
+.param l12=0.8
+.param w12=145.8
+.param l13=0.7
+.param w13=120.3
+.param l14=0.6
+.param w14=90.9
+.param l15=0.8
+.param w15=130.2
+.param l16=0.7
+.param w16=100.5
+.param l17=0.9
+.param w17=140.1
+.param l18=0.8
+.param w18=110.7
+.param l19=0.6
+.param w19=120.3
+.param l20=0.5
+.param w20=95.7
+
+l1 0.5
+w1 130.2
+l2 0.4
+w2 105.6
+l3 0.7
+w3 140.1
+l4 0.6
+w4 115.2
+l5 0.8
+w5 148.5
+l6 0.7
+w6 125.4
+l7 0.9
+w7 135.9
+l8 0.8
+w8 120.3
+l9 0.5
+w9 100.5
+l10 0.7
+w10 130.2
+l11 0.6
+w11 110.7
+l12 0.8
+w12 145.8
+l13 0.7
+w13 120.3
+l14 0.6
+w14 90.9
+l15 0.8
+w15 130.2
+l16 0.7
+w16 100.5
+l17 0.9
+w17 140.1
+l18 0.8
+w18 110.7
+l19 0.6
+w19 120.3
+l20 0.5
+w20 95.7
+params: .param l1=0.5
+.param w1=130.2
+.param l2=0.4
+.param w2=105.6
+.param l3=0.7
+.param w3=140.1
+.param l4=0.6
+.param w4=115.2
+.param l5=0.8
+.param w5=148.5
+.param l6=0.7
+.param w6=125.4
+.param l7=0.9
+.param w7=135.9
+.param l8=0.8
+.param w8=120.3
+.param l9=0.5
+.param w9=100.5
+.param l10=0.7
+.param w10=130.2
+.param l11=0.6
+.param w11=110.7
+.param l12=0.8
+.param w12=145.8
+.param l13=0.7
+.param w13=120.3
+.param l14=0.6
+.param w14=90.9
+.param l15=0.8
+.param w15=130.2
+.param l16=0.7
+.param w16=100.5
+.param l17=0.9
+.param w17=140.1
+.param l18=0.8
+.param w18=110.7
+.param l19=0.6
+.param w19=120.3
+.param l20=0.5
+.param w20=95.7
+
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>error          ***** hspice job aborted
+metrics:  q_curr=0.036 stability=0.000 output_voltage_difference=0.234 
+targets: 0.504
+aux_info: 
+Initializing BO GP with data_init...
+Initial best target value: 0.52
+Beginning Design Cycle
+Current iteration:1.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.5', 'w1': '0.4', 'l2': '0.6', 'w2': '0.3', 'l3': '0.7', 'w3': '0.5', 'l4': '0.6', 'w4': '0.4', 'l5': '0.8', 'w5': '0.6', 'l6': '0.7', 'w6': '0.5', 'l7': '0.9', 'w7': '0.7', 'l8': '0.8', 'w8': '0.6', 'l9': '0.5', 'w9': '0.4', 'l10': '0.7', 'w10': '0.6', 'l11': '0.6', 'w11': '0.5', 'l12': '0.8', 'w12': '0.7', 'l13': '0.7', 'w13': '0.6', 'l14': '0.6', 'w14': '0.5', 'l15': '0.8', 'w15': '0.7', 'l16': '0.7', 'w16': '0.6', 'l17': '0.9', 'w17': '0.8', 'l18': '0.8', 'w18': '0.7', 'l19': '0.6', 'w19': '0.5', 'l20': '0.5', 'w20': '0.4'}
+point_to_ebaluate:  .param l1=0.5
+.param w1=0.4
+.param l2=0.6
+.param w2=0.3
+.param l3=0.7
+.param w3=0.5
+.param l4=0.6
+.param w4=0.4
+.param l5=0.8
+.param w5=0.6
+.param l6=0.7
+.param w6=0.5
+.param l7=0.9
+.param w7=0.7
+.param l8=0.8
+.param w8=0.6
+.param l9=0.5
+.param w9=0.4
+.param l10=0.7
+.param w10=0.6
+.param l11=0.6
+.param w11=0.5
+.param l12=0.8
+.param w12=0.7
+.param l13=0.7
+.param w13=0.6
+.param l14=0.6
+.param w14=0.5
+.param l15=0.8
+.param w15=0.7
+.param l16=0.7
+.param w16=0.6
+.param l17=0.9
+.param w17=0.8
+.param l18=0.8
+.param w18=0.7
+.param l19=0.6
+.param w19=0.5
+.param l20=0.5
+.param w20=0.4
+
+l1 0.5
+w1 0.4
+l2 0.6
+w2 0.3
+l3 0.7
+w3 0.5
+l4 0.6
+w4 0.4
+l5 0.8
+w5 0.6
+l6 0.7
+w6 0.5
+l7 0.9
+w7 0.7
+l8 0.8
+w8 0.6
+l9 0.5
+w9 0.4
+l10 0.7
+w10 0.6
+l11 0.6
+w11 0.5
+l12 0.8
+w12 0.7
+l13 0.7
+w13 0.6
+l14 0.6
+w14 0.5
+l15 0.8
+w15 0.7
+l16 0.7
+w16 0.6
+l17 0.9
+w17 0.8
+l18 0.8
+w18 0.7
+l19 0.6
+w19 0.5
+l20 0.5
+w20 0.4
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.3', 'w1': '0.4', 'l2': '0.5', 'w2': '0.7', 'l3': '0.5', 'w3': '0.6', 'l4': '0.2', 'w4': '0.9', 'l5': '0.3', 'w5': '0.3', 'l6': '0.7', 'w6': '0.5', 'l7': '0.9', 'w7': '0.7', 'l8': '0.8', 'w8': '0.2', 'l9': '0.8', 'w9': '0.0', 'l10': '0.2', 'w10': '0.1', 'l11': '0.1', 'w11': '0.3', 'l12': '0.7', 'w12': '0.7', 'l13': '0.5', 'w13': '0.8', 'l14': '0.3', 'w14': '0.4', 'l15': '0.9', 'w15': '0.2', 'l16': '0.3', 'w16': '0.8', 'l17': '0.4', 'w17': '0.9', 'l18': '0.5', 'w18': '0.3', 'l19': '0.4', 'w19': '0.0', 'l20': '0.1', 'w20': '0.3'}
+point_to_ebaluate:  .param l1=0.3
+.param w1=0.4
+.param l2=0.5
+.param w2=0.7
+.param l3=0.5
+.param w3=0.6
+.param l4=0.2
+.param w4=0.9
+.param l5=0.3
+.param w5=0.3
+.param l6=0.7
+.param w6=0.5
+.param l7=0.9
+.param w7=0.7
+.param l8=0.8
+.param w8=0.2
+.param l9=0.8
+.param w9=0.0
+.param l10=0.2
+.param w10=0.1
+.param l11=0.1
+.param w11=0.3
+.param l12=0.7
+.param w12=0.7
+.param l13=0.5
+.param w13=0.8
+.param l14=0.3
+.param w14=0.4
+.param l15=0.9
+.param w15=0.2
+.param l16=0.3
+.param w16=0.8
+.param l17=0.4
+.param w17=0.9
+.param l18=0.5
+.param w18=0.3
+.param l19=0.4
+.param w19=0.0
+.param l20=0.1
+.param w20=0.3
+
+l1 0.3
+w1 0.4
+l2 0.5
+w2 0.7
+l3 0.5
+w3 0.6
+l4 0.2
+w4 0.9
+l5 0.3
+w5 0.3
+l6 0.7
+w6 0.5
+l7 0.9
+w7 0.7
+l8 0.8
+w8 0.2
+l9 0.8
+w9 0.0
+l10 0.2
+w10 0.1
+l11 0.1
+w11 0.3
+l12 0.7
+w12 0.7
+l13 0.5
+w13 0.8
+l14 0.3
+w14 0.4
+l15 0.9
+w15 0.2
+l16 0.3
+w16 0.8
+l17 0.4
+w17 0.9
+l18 0.5
+w18 0.3
+l19 0.4
+w19 0.0
+l20 0.1
+w20 0.3
+Best metrics {'q_curr': np.float64(0.004322023), 'stability': 0.0, 'output_voltage_difference': 1.913396}
+Best BO metrics {'q_curr': np.float64(0.004322023), 'stability': 0.0, 'output_voltage_difference': 1.913396}
+Best LLM metrics {'q_curr': np.float64(0.003279883), 'stability': 0.0, 'output_voltage_difference': 2.0702637}
+At iteration: 1, the best target value is: 0.621, llm best target: 0.619, bo best target: 0.621
+Current iteration:2.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.8', 'w1': '0.2', 'l2': '0.5', 'w2': '0.6', 'l3': '0.6', 'w3': '0.4', 'l4': '0.7', 'w4': '0.5', 'l5': '0.9', 'w5': '0.3', 'l6': '0.7', 'w6': '0.7', 'l7': '0.6', 'w7': '0.9', 'l8': '0.8', 'w8': '0.2', 'l9': '0.7', 'w9': '0.8', 'l10': '0.4', 'w10': '0.6', 'l11': '0.5', 'w11': '0.4', 'l12': '0.3', 'w12': '0.7', 'l13': '0.6', 'w13': '0.5', 'l14': '0.8', 'w14': '0.3', 'l15': '0.4', 'w15': '0.9', 'l16': '0.7', 'w16': '0.6', 'l17': '0.5', 'w17': '0.8', 'l18': '0.9', 'w18': '0.7', 'l19': '0.3', 'w19': '0.5', 'l20': '0.2', 'w20': '0.8'}
+point_to_ebaluate:  .param l1=0.8
+.param w1=0.2
+.param l2=0.5
+.param w2=0.6
+.param l3=0.6
+.param w3=0.4
+.param l4=0.7
+.param w4=0.5
+.param l5=0.9
+.param w5=0.3
+.param l6=0.7
+.param w6=0.7
+.param l7=0.6
+.param w7=0.9
+.param l8=0.8
+.param w8=0.2
+.param l9=0.7
+.param w9=0.8
+.param l10=0.4
+.param w10=0.6
+.param l11=0.5
+.param w11=0.4
+.param l12=0.3
+.param w12=0.7
+.param l13=0.6
+.param w13=0.5
+.param l14=0.8
+.param w14=0.3
+.param l15=0.4
+.param w15=0.9
+.param l16=0.7
+.param w16=0.6
+.param l17=0.5
+.param w17=0.8
+.param l18=0.9
+.param w18=0.7
+.param l19=0.3
+.param w19=0.5
+.param l20=0.2
+.param w20=0.8
+
+l1 0.8
+w1 0.2
+l2 0.5
+w2 0.6
+l3 0.6
+w3 0.4
+l4 0.7
+w4 0.5
+l5 0.9
+w5 0.3
+l6 0.7
+w6 0.7
+l7 0.6
+w7 0.9
+l8 0.8
+w8 0.2
+l9 0.7
+w9 0.8
+l10 0.4
+w10 0.6
+l11 0.5
+w11 0.4
+l12 0.3
+w12 0.7
+l13 0.6
+w13 0.5
+l14 0.8
+w14 0.3
+l15 0.4
+w15 0.9
+l16 0.7
+w16 0.6
+l17 0.5
+w17 0.8
+l18 0.9
+w18 0.7
+l19 0.3
+w19 0.5
+l20 0.2
+w20 0.8
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.3', 'w1': '0.5', 'l2': '0.2', 'w2': '0.5', 'l3': '0.6', 'w3': '0.4', 'l4': '0.8', 'w4': '0.7', 'l5': '0.2', 'w5': '0.3', 'l6': '0.4', 'w6': '0.5', 'l7': '0.8', 'w7': '0.5', 'l8': '0.7', 'w8': '0.9', 'l9': '0.5', 'w9': '0.5', 'l10': '0.2', 'w10': '0.3', 'l11': '0.9', 'w11': '0.0', 'l12': '0.4', 'w12': '0.6', 'l13': '0.2', 'w13': '0.8', 'l14': '0.6', 'w14': '0.1', 'l15': '0.7', 'w15': '0.7', 'l16': '0.9', 'w16': '1.0', 'l17': '0.6', 'w17': '0.7', 'l18': '0.1', 'w18': '0.3', 'l19': '0.6', 'w19': '0.1', 'l20': '0.1', 'w20': '0.6'}
+point_to_ebaluate:  .param l1=0.3
+.param w1=0.5
+.param l2=0.2
+.param w2=0.5
+.param l3=0.6
+.param w3=0.4
+.param l4=0.8
+.param w4=0.7
+.param l5=0.2
+.param w5=0.3
+.param l6=0.4
+.param w6=0.5
+.param l7=0.8
+.param w7=0.5
+.param l8=0.7
+.param w8=0.9
+.param l9=0.5
+.param w9=0.5
+.param l10=0.2
+.param w10=0.3
+.param l11=0.9
+.param w11=0.0
+.param l12=0.4
+.param w12=0.6
+.param l13=0.2
+.param w13=0.8
+.param l14=0.6
+.param w14=0.1
+.param l15=0.7
+.param w15=0.7
+.param l16=0.9
+.param w16=1.0
+.param l17=0.6
+.param w17=0.7
+.param l18=0.1
+.param w18=0.3
+.param l19=0.6
+.param w19=0.1
+.param l20=0.1
+.param w20=0.6
+
+l1 0.3
+w1 0.5
+l2 0.2
+w2 0.5
+l3 0.6
+w3 0.4
+l4 0.8
+w4 0.7
+l5 0.2
+w5 0.3
+l6 0.4
+w6 0.5
+l7 0.8
+w7 0.5
+l8 0.7
+w8 0.9
+l9 0.5
+w9 0.5
+l10 0.2
+w10 0.3
+l11 0.9
+w11 0.0
+l12 0.4
+w12 0.6
+l13 0.2
+w13 0.8
+l14 0.6
+w14 0.1
+l15 0.7
+w15 0.7
+l16 0.9
+w16 1.0
+l17 0.6
+w17 0.7
+l18 0.1
+w18 0.3
+l19 0.6
+w19 0.1
+l20 0.1
+w20 0.6
+Best metrics {'q_curr': np.float64(0.004322023), 'stability': 0.0, 'output_voltage_difference': 1.913396}
+Best BO metrics {'q_curr': np.float64(0.004322023), 'stability': 0.0, 'output_voltage_difference': 1.913396}
+Best LLM metrics {'q_curr': np.float64(0.004627695), 'stability': 0.0, 'output_voltage_difference': 1.9668641}
+At iteration: 2, the best target value is: 0.621, llm best target: 0.620, bo best target: 0.621
+Current iteration:3.
+[Rate Limiter] Sleeping for 45.87s to avoid hitting the token limit...
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.3', 'w1': '0.4', 'l2': '0.5', 'w2': '0.7', 'l3': '0.5', 'w3': '0.6', 'l4': '0.2', 'w4': '0.9', 'l5': '0.3', 'w5': '0.3', 'l6': '0.7', 'w6': '0.5', 'l7': '0.9', 'w7': '0.7', 'l8': '0.8', 'w8': '0.2', 'l9': '0.8', 'w9': '0.0', 'l10': '0.2', 'w10': '0.1', 'l11': '0.1', 'w11': '0.3', 'l12': '0.7', 'w12': '0.7', 'l13': '0.5', 'w13': '0.8', 'l14': '0.3', 'w14': '0.4', 'l15': '0.9', 'w15': '0.2', 'l16': '0.3', 'w16': '0.8', 'l17': '0.4', 'w17': '0.9', 'l18': '0.5', 'w18': '0.3', 'l19': '0.4', 'w19': '0.0', 'l20': '0.1', 'w20': '0.3'}
+point_to_ebaluate:  Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>error          ***** hspice job aborted
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>error          ***** hspice job aborted
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+.param l1=0.3
+.param w1=0.4
+.param l2=0.5
+.param w2=0.7
+.param l3=0.5
+.param w3=0.6
+.param l4=0.2
+.param w4=0.9
+.param l5=0.3
+.param w5=0.3
+.param l6=0.7
+.param w6=0.5
+.param l7=0.9
+.param w7=0.7
+.param l8=0.8
+.param w8=0.2
+.param l9=0.8
+.param w9=0.0
+.param l10=0.2
+.param w10=0.1
+.param l11=0.1
+.param w11=0.3
+.param l12=0.7
+.param w12=0.7
+.param l13=0.5
+.param w13=0.8
+.param l14=0.3
+.param w14=0.4
+.param l15=0.9
+.param w15=0.2
+.param l16=0.3
+.param w16=0.8
+.param l17=0.4
+.param w17=0.9
+.param l18=0.5
+.param w18=0.3
+.param l19=0.4
+.param w19=0.0
+.param l20=0.1
+.param w20=0.3
+
+l1 0.3
+w1 0.4
+l2 0.5
+w2 0.7
+l3 0.5
+w3 0.6
+l4 0.2
+w4 0.9
+l5 0.3
+w5 0.3
+l6 0.7
+w6 0.5
+l7 0.9
+w7 0.7
+l8 0.8
+w8 0.2
+l9 0.8
+w9 0.0
+l10 0.2
+w10 0.1
+l11 0.1
+w11 0.3
+l12 0.7
+w12 0.7
+l13 0.5
+w13 0.8
+l14 0.3
+w14 0.4
+l15 0.9
+w15 0.2
+l16 0.3
+w16 0.8
+l17 0.4
+w17 0.9
+l18 0.5
+w18 0.3
+l19 0.4
+w19 0.0
+l20 0.1
+w20 0.3
+IN BO LOOP
+Parameters to evaluate: {'l1': '1.0', 'w1': '1.0', 'l2': '0', 'w2': '1.0', 'l3': '0.7', 'w3': '0', 'l4': '0.6', 'w4': '0.5', 'l5': '0.8', 'w5': '0.9', 'l6': '1.0', 'w6': '1.0', 'l7': '0', 'w7': '0', 'l8': '0', 'w8': '0.0', 'l9': '0.8', 'w9': '0.5', 'l10': '0.2', 'w10': '0.6', 'l11': '0.5', 'w11': '1.0', 'l12': '0', 'w12': '0', 'l13': '0', 'w13': '1.0', 'l14': '0.2', 'w14': '1.0', 'l15': '1.0', 'w15': '0.0', 'l16': '0.2', 'w16': '0.9', 'l17': '0.8', 'w17': '0', 'l18': '0', 'w18': '0.8', 'l19': '1.0', 'w19': '1.0', 'l20': '0.4', 'w20': '1.0'}
+point_to_ebaluate:  .param l1=1.0
+.param w1=1.0
+.param l2=0
+.param w2=1.0
+.param l3=0.7
+.param w3=0
+.param l4=0.6
+.param w4=0.5
+.param l5=0.8
+.param w5=0.9
+.param l6=1.0
+.param w6=1.0
+.param l7=0
+.param w7=0
+.param l8=0
+.param w8=0.0
+.param l9=0.8
+.param w9=0.5
+.param l10=0.2
+.param w10=0.6
+.param l11=0.5
+.param w11=1.0
+.param l12=0
+.param w12=0
+.param l13=0
+.param w13=1.0
+.param l14=0.2
+.param w14=1.0
+.param l15=1.0
+.param w15=0.0
+.param l16=0.2
+.param w16=0.9
+.param l17=0.8
+.param w17=0
+.param l18=0
+.param w18=0.8
+.param l19=1.0
+.param w19=1.0
+.param l20=0.4
+.param w20=1.0
+
+l1 1.0
+w1 1.0
+l2 0
+w2 1.0
+l3 0.7
+w3 0
+l4 0.6
+w4 0.5
+l5 0.8
+w5 0.9
+l6 1.0
+w6 1.0
+l7 0
+w7 0
+l8 0
+w8 0.0
+l9 0.8
+w9 0.5
+l10 0.2
+w10 0.6
+l11 0.5
+w11 1.0
+l12 0
+w12 0
+l13 0
+w13 1.0
+l14 0.2
+w14 1.0
+l15 1.0
+w15 0.0
+l16 0.2
+w16 0.9
+l17 0.8
+w17 0
+l18 0
+w18 0.8
+l19 1.0
+w19 1.0
+l20 0.4
+w20 1.0
+Best metrics {'q_curr': np.float64(0.004322023), 'stability': 0.0, 'output_voltage_difference': 1.913396}
+Best BO metrics {'q_curr': np.float64(0.004322023), 'stability': 0.0, 'output_voltage_difference': 1.913396}
+Best LLM metrics {'q_curr': np.float64(0.004322023), 'stability': 0.0, 'output_voltage_difference': 1.913396}
+At iteration: 3, the best target value is: 0.621, llm best target: 0.621, bo best target: 0.621
+Current iteration:4.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.80', 'w1': '0.70', 'l2': '0.20', 'w2': '0.90', 'l3': '0.70', 'w3': '0.50', 'l4': '0.90', 'w4': '0.70', 'l5': '0.30', 'w5': '0.30', 'l6': '0.70', 'w6': '0.50', 'l7': '0.90', 'w7': '0.70', 'l8': '0.80', 'w8': '0.20', 'l9': '0.80', 'w9': '0.50', 'l10': '0.20', 'w10': '0.10', 'l11': '0.10', 'w11': '0.30', 'l12': '0.70', 'w12': '0.70', 'l13': '0.50', 'w13': '0.80', 'l14': '0.30', 'w14': '0.40', 'l15': '0.90', 'w15': '0.20', 'l16': '0.30', 'w16': '0.80', 'l17': '0.40', 'w17': '0.90', 'l18': '0.50', 'w18': '0.30', 'l19': '0.40', 'w19': '0.00', 'l20': '0.10', 'w20': '0.30'}
+point_to_ebaluate:  .param l1=0.80
+.param w1=0.70
+.param l2=0.20
+.param w2=0.90
+.param l3=0.70
+.param w3=0.50
+.param l4=0.90
+.param w4=0.70
+.param l5=0.30
+.param w5=0.30
+.param l6=0.70
+.param w6=0.50
+.param l7=0.90
+.param w7=0.70
+.param l8=0.80
+.param w8=0.20
+.param l9=0.80
+.param w9=0.50
+.param l10=0.20
+.param w10=0.10
+.param l11=0.10
+.param w11=0.30
+.param l12=0.70
+.param w12=0.70
+.param l13=0.50
+.param w13=0.80
+.param l14=0.30
+.param w14=0.40
+.param l15=0.90
+.param w15=0.20
+.param l16=0.30
+.param w16=0.80
+.param l17=0.40
+.param w17=0.90
+.param l18=0.50
+.param w18=0.30
+.param l19=0.40
+.param w19=0.00
+.param l20=0.10
+.param w20=0.30
+
+l1 0.80
+w1 0.70
+l2 0.20
+w2 0.90
+l3 0.70
+w3 0.50
+l4 0.90
+w4 0.70
+l5 0.30
+w5 0.30
+l6 0.70
+w6 0.50
+l7 0.90
+w7 0.70
+l8 0.80
+w8 0.20
+l9 0.80
+w9 0.50
+l10 0.20
+w10 0.10
+l11 0.10
+w11 0.30
+l12 0.70
+w12 0.70
+l13 0.50
+w13 0.80
+l14 0.30
+w14 0.40
+l15 0.90
+w15 0.20
+l16 0.30
+w16 0.80
+l17 0.40
+w17 0.90
+l18 0.50
+w18 0.30
+l19 0.40
+w19 0.00
+l20 0.10
+w20 0.30
+IN BO LOOP
+Parameters to evaluate: {'l1': '1.0', 'w1': '0', 'l2': '1.0', 'w2': '0.8', 'l3': '0.1', 'w3': '0.0f', 'l4': '0.1', 'w4': '0.2', 'l5': '1.0', 'w5': '0.5', 'l6': '0', 'w6': '0', 'l7': '1.0', 'w7': '0', 'l8': '0', 'w8': '0.3', 'l9': '0.5', 'w9': '0.8', 'l10': '0.6', 'w10': '0.3', 'l11': '0.0', 'w11': '0.2', 'l12': '1.0', 'w12': '0', 'l13': '0', 'w13': '0.8', 'l14': '0.7', 'w14': '1.0', 'l15': '0', 'w15': '0.1', 'l16': '0.7', 'w16': '0.5', 'l17': '0.9', 'w17': '0', 'l18': '0.4', 'w18': '0.9', 'l19': '0', 'w19': '0.7', 'l20': '0.5', 'w20': '1.0'}
+point_to_ebaluate:  .param l1=1.0
+.param w1=0
+.param l2=1.0
+.param w2=0.8
+.param l3=0.1
+.param w3=0.0f
+.param l4=0.1
+.param w4=0.2
+.param l5=1.0
+.param w5=0.5
+.param l6=0
+.param w6=0
+.param l7=1.0
+.param w7=0
+.param l8=0
+.param w8=0.3
+.param l9=0.5
+.param w9=0.8
+.param l10=0.6
+.param w10=0.3
+.param l11=0.0
+.param w11=0.2
+.param l12=1.0
+.param w12=0
+.param l13=0
+.param w13=0.8
+.param l14=0.7
+.param w14=1.0
+.param l15=0
+.param w15=0.1
+.param l16=0.7
+.param w16=0.5
+.param l17=0.9
+.param w17=0
+.param l18=0.4
+.param w18=0.9
+.param l19=0
+.param w19=0.7
+.param l20=0.5
+.param w20=1.0
+
+l1 1.0
+w1 0
+l2 1.0
+w2 0.8
+l3 0.1
+w3 0.0f
+l4 0.1
+w4 0.2
+l5 1.0
+w5 0.5
+l6 0
+w6 0
+l7 1.0
+w7 0
+l8 0
+w8 0.3
+l9 0.5
+w9 0.8
+l10 0.6
+w10 0.3
+l11 0.0
+w11 0.2
+l12 1.0
+w12 0
+l13 0
+w13 0.8
+l14 0.7
+w14 1.0
+l15 0
+w15 0.1
+l16 0.7
+w16 0.5
+l17 0.9
+w17 0
+l18 0.4
+w18 0.9
+l19 0
+w19 0.7
+l20 0.5
+w20 1.0
+Best metrics {'q_curr': np.float64(0.004322023), 'stability': 0.0, 'output_voltage_difference': 1.913396}
+Best BO metrics {'q_curr': np.float64(0.004322023), 'stability': 0.0, 'output_voltage_difference': 1.913396}
+Best LLM metrics {'q_curr': np.float64(0.004322023), 'stability': 0.0, 'output_voltage_difference': 1.913396}
+At iteration: 4, the best target value is: 0.621, llm best target: 0.621, bo best target: 0.621
+Current iteration:5.
+[Rate Limiter] Sleeping for 52.35s to avoid hitting the token limit...
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.8', 'w1': '0.5', 'l2': '0.4', 'w2': '0.9', 'l3': '0.2', 'w3': '0.6', 'l4': '0.7', 'w4': '0.3', 'l5': '0.5', 'w5': '0.7', 'l6': '0.1', 'w6': '0.8', 'l7': '0.9', 'w7': '0.1', 'l8': '0.3', 'w8': '0.4', 'l9': '0.6', 'w9': '0.2', 'l10': '0.4', 'w10': '0.7', 'l11': '0.2', 'w11': '0.5', 'l12': '0.8', 'w12': '0.6', 'l13': '0.5', 'w13': '0.3', 'l14': '0.7', 'w14': '0.8', 'l15': '0.3', 'w15': '0.9', 'l16': '0.6', 'w16': '0.4', 'l17': '0.1', 'w17': '0.2', 'l18': '0.9', 'w18': '0.7', 'l19': '0.2', 'w19': '0.8', 'l20': '0.8', 'w20': '0.5'}
+point_to_ebaluate:  .param l1=0.8
+.param w1=0.5
+.param l2=0.4
+.param w2=0.9
+.param l3=0.2
+.param w3=0.6
+.param l4=0.7
+.param w4=0.3
+.param l5=0.5
+.param w5=0.7
+.param l6=0.1
+.param w6=0.8
+.param l7=0.9
+.param w7=0.1
+.param l8=0.3
+.param w8=0.4
+.param l9=0.6
+.param w9=0.2
+.param l10=0.4
+.param w10=0.7
+.param l11=0.2
+.param w11=0.5
+.param l12=0.8
+.param w12=0.6
+.param l13=0.5
+.param w13=0.3
+.param l14=0.7
+.param w14=0.8
+.param l15=0.3
+.param w15=0.9
+.param l16=0.6
+.param w16=0.4
+.param l17=0.1
+.param w17=0.2
+.param l18=0.9
+.param w18=0.7
+.param l19=0.2
+.param w19=0.8
+.param l20=0.8
+.param w20=0.5
+
+l1 0.8
+w1 0.5
+l2 0.4
+w2 0.9
+l3 0.2
+w3 0.6
+l4 0.7
+w4 0.3
+l5 0.5
+w5 0.7
+l6 0.1
+w6 0.8
+l7 0.9
+w7 0.1
+l8 0.3
+w8 0.4
+l9 0.6
+w9 0.2
+l10 0.4
+w10 0.7
+l11 0.2
+w11 0.5
+l12 0.8
+w12 0.6
+l13 0.5
+w13 0.3
+l14 0.7
+w14 0.8
+l15 0.3
+w15 0.9
+l16 0.6
+w16 0.4
+l17 0.1
+w17 0.2
+l18 0.9
+w18 0.7
+l19 0.2
+w19 0.8
+l20 0.8
+w20 0.5
+IN BO LOOP
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>error          ***** hspice job aborted
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>error          ***** hspice job aborted
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+Parameters to evaluate: {'l1': '0', 'w1': '1.0', 'l2': '0', 'w2': '0.7', 'l3': '0.3', 'w3': '1.0', 'l4': '0.7', 'w4': '0.8', 'l5': '0.8', 'w5': '0.4', 'l6': '0', 'w6': '1.0', 'l7': '0', 'w7': '1.0', 'l8': '0', 'w8': '0.1', 'l9': '0.4', 'w9': '0.2', 'l10': '0.5', 'w10': '0.2', 'l11': '0.6', 'w11': '1.0', 'l12': '0', 'w12': '1.0', 'l13': '0.6', 'w13': '0.6', 'l14': '0.1', 'w14': '0', 'l15': '1.0', 'w15': '0.6', 'l16': '0.9', 'w16': '0', 'l17': '0.9', 'w17': '0', 'l18': '0.1', 'w18': '0.2', 'l19': '0.4', 'w19': '0.5', 'l20': '0.2', 'w20': '1.0'}
+point_to_ebaluate:  .param l1=0
+.param w1=1.0
+.param l2=0
+.param w2=0.7
+.param l3=0.3
+.param w3=1.0
+.param l4=0.7
+.param w4=0.8
+.param l5=0.8
+.param w5=0.4
+.param l6=0
+.param w6=1.0
+.param l7=0
+.param w7=1.0
+.param l8=0
+.param w8=0.1
+.param l9=0.4
+.param w9=0.2
+.param l10=0.5
+.param w10=0.2
+.param l11=0.6
+.param w11=1.0
+.param l12=0
+.param w12=1.0
+.param l13=0.6
+.param w13=0.6
+.param l14=0.1
+.param w14=0
+.param l15=1.0
+.param w15=0.6
+.param l16=0.9
+.param w16=0
+.param l17=0.9
+.param w17=0
+.param l18=0.1
+.param w18=0.2
+.param l19=0.4
+.param w19=0.5
+.param l20=0.2
+.param w20=1.0
+
+l1 0
+w1 1.0
+l2 0
+w2 0.7
+l3 0.3
+w3 1.0
+l4 0.7
+w4 0.8
+l5 0.8
+w5 0.4
+l6 0
+w6 1.0
+l7 0
+w7 1.0
+l8 0
+w8 0.1
+l9 0.4
+w9 0.2
+l10 0.5
+w10 0.2
+l11 0.6
+w11 1.0
+l12 0
+w12 1.0
+l13 0.6
+w13 0.6
+l14 0.1
+w14 0
+l15 1.0
+w15 0.6
+l16 0.9
+w16 0
+l17 0.9
+w17 0
+l18 0.1
+w18 0.2
+l19 0.4
+w19 0.5
+l20 0.2
+w20 1.0
+Best metrics {'q_curr': np.float64(0.004130556), 'stability': 0.0, 'output_voltage_difference': 1.8839804}
+Best BO metrics {'q_curr': np.float64(0.004130556), 'stability': 0.0, 'output_voltage_difference': 1.8839804}
+Best LLM metrics {'q_curr': np.float64(0.004130556), 'stability': 0.0, 'output_voltage_difference': 1.8839804}
+At iteration: 5, the best target value is: 0.621, llm best target: 0.621, bo best target: 0.621
+Current iteration:6.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.3', 'w1': '0.4', 'l2': '0.5', 'w2': '0.7', 'l3': '0.5', 'w3': '0.6', 'l4': '0.2', 'w4': '0.9', 'l5': '0.3', 'w5': '0.3', 'l6': '0.7', 'w6': '0.5', 'l7': '0.9', 'w7': '0.7', 'l8': '0.8', 'w8': '0.2', 'l9': '0.8', 'w9': '0.0', 'l10': '0.2', 'w10': '0.1', 'l11': '0.1', 'w11': '0.3', 'l12': '0.7', 'w12': '0.7', 'l13': '0.5', 'w13': '0.8', 'l14': '0.3', 'w14': '0.4', 'l15': '0.9', 'w15': '0.2', 'l16': '0.3', 'w16': '0.8', 'l17': '0.4', 'w17': '0.9', 'l18': '0.5', 'w18': '0.3', 'l19': '0.4', 'w19': '0.0', 'l20': '0.1', 'w20': '0.3'}
+point_to_ebaluate:  .param l1=0.3
+.param w1=0.4
+.param l2=0.5
+.param w2=0.7
+.param l3=0.5
+.param w3=0.6
+.param l4=0.2
+.param w4=0.9
+.param l5=0.3
+.param w5=0.3
+.param l6=0.7
+.param w6=0.5
+.param l7=0.9
+.param w7=0.7
+.param l8=0.8
+.param w8=0.2
+.param l9=0.8
+.param w9=0.0
+.param l10=0.2
+.param w10=0.1
+.param l11=0.1
+.param w11=0.3
+.param l12=0.7
+.param w12=0.7
+.param l13=0.5
+.param w13=0.8
+.param l14=0.3
+.param w14=0.4
+.param l15=0.9
+.param w15=0.2
+.param l16=0.3
+.param w16=0.8
+.param l17=0.4
+.param w17=0.9
+.param l18=0.5
+.param w18=0.3
+.param l19=0.4
+.param w19=0.0
+.param l20=0.1
+.param w20=0.3
+
+l1 0.3
+w1 0.4
+l2 0.5
+w2 0.7
+l3 0.5
+w3 0.6
+l4 0.2
+w4 0.9
+l5 0.3
+w5 0.3
+l6 0.7
+w6 0.5
+l7 0.9
+w7 0.7
+l8 0.8
+w8 0.2
+l9 0.8
+w9 0.0
+l10 0.2
+w10 0.1
+l11 0.1
+w11 0.3
+l12 0.7
+w12 0.7
+l13 0.5
+w13 0.8
+l14 0.3
+w14 0.4
+l15 0.9
+w15 0.2
+l16 0.3
+w16 0.8
+l17 0.4
+w17 0.9
+l18 0.5
+w18 0.3
+l19 0.4
+w19 0.0
+l20 0.1
+w20 0.3
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.2', 'w1': '1.0', 'l2': '1.0', 'w2': '0.7', 'l3': '0.4', 'w3': '0', 'l4': '0.0', 'w4': '0.8', 'l5': '0.2', 'w5': '0.2', 'l6': '0', 'w6': '0', 'l7': '0', 'w7': '0', 'l8': '0', 'w8': '0.2', 'l9': '0.5', 'w9': '0.8', 'l10': '0.5', 'w10': '0.7', 'l11': '0.1', 'w11': '0.5', 'l12': '0', 'w12': '1.0', 'l13': '0.9', 'w13': '0.4', 'l14': '0.7', 'w14': '0', 'l15': '1.0', 'w15': '0.8', 'l16': '0.5', 'w16': '0.9', 'l17': '0.6', 'w17': '0', 'l18': '0.4', 'w18': '0.4', 'l19': '0.7', 'w19': '0.7', 'l20': '0.9', 'w20': '0'}
+point_to_ebaluate:  .param l1=0.2
+.param w1=1.0
+.param l2=1.0
+.param w2=0.7
+.param l3=0.4
+.param w3=0
+.param l4=0.0
+.param w4=0.8
+.param l5=0.2
+.param w5=0.2
+.param l6=0
+.param w6=0
+.param l7=0
+.param w7=0
+.param l8=0
+.param w8=0.2
+.param l9=0.5
+.param w9=0.8
+.param l10=0.5
+.param w10=0.7
+.param l11=0.1
+.param w11=0.5
+.param l12=0
+.param w12=1.0
+.param l13=0.9
+.param w13=0.4
+.param l14=0.7
+.param w14=0
+.param l15=1.0
+.param w15=0.8
+.param l16=0.5
+.param w16=0.9
+.param l17=0.6
+.param w17=0
+.param l18=0.4
+.param w18=0.4
+.param l19=0.7
+.param w19=0.7
+.param l20=0.9
+.param w20=0
+
+l1 0.2
+w1 1.0
+l2 1.0
+w2 0.7
+l3 0.4
+w3 0
+l4 0.0
+w4 0.8
+l5 0.2
+w5 0.2
+l6 0
+w6 0
+l7 0
+w7 0
+l8 0
+w8 0.2
+l9 0.5
+w9 0.8
+l10 0.5
+w10 0.7
+l11 0.1
+w11 0.5
+l12 0
+w12 1.0
+l13 0.9
+w13 0.4
+l14 0.7
+w14 0
+l15 1.0
+w15 0.8
+l16 0.5
+w16 0.9
+l17 0.6
+w17 0
+l18 0.4
+w18 0.4
+l19 0.7
+w19 0.7
+l20 0.9
+w20 0
+Best metrics {'q_curr': np.float64(0.004130556), 'stability': 0.0, 'output_voltage_difference': 1.8839804}
+Best BO metrics {'q_curr': np.float64(0.004130556), 'stability': 0.0, 'output_voltage_difference': 1.8839804}
+Best LLM metrics {'q_curr': np.float64(0.004130556), 'stability': 0.0, 'output_voltage_difference': 1.8839804}
+At iteration: 6, the best target value is: 0.621, llm best target: 0.621, bo best target: 0.621
+Current iteration:7.
+[AF] RETRYING LLM REQUEST 1/3...
+None
+Error code: 400 - {'error': {'message': "This model's maximum context length is 16385 tokens. However, your messages resulted in 18226 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+[Rate Limiter] Sleeping for 54.86s to avoid hitting the token limit...
+[AF] RETRYING LLM REQUEST 2/3...
+None
+Error code: 400 - {'error': {'message': "This model's maximum context length is 16385 tokens. However, your messages resulted in 18226 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+[AF] RETRYING LLM REQUEST 3/3...
+None
+Error code: 400 - {'error': {'message': "This model's maximum context length is 16385 tokens. However, your messages resulted in 18226 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+Fewshot agent fails to get response from the LLM API after 3 attempts!
+Api call fails!
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.4', 'w1': '0.7', 'l2': '0.5', 'w2': '0.6', 'l3': '0.3', 'w3': '0.4', 'l4': '0.6', 'w4': '0.8', 'l5': '0.2', 'w5': '0.5', 'l6': '0.7', 'w6': '0.3', 'l7': '0.8', 'w7': '0.2', 'l8': '0.4', 'w8': '0.9', 'l9': '0.3', 'w9': '0.6', 'l10': '0.6', 'w10': '0.4', 'l11': '0.5', 'w11': '0.7', 'l12': '0.2', 'w12': '0.8', 'l13': '0.8', 'w13': '0.5', 'l14': '0.1', 'w14': '0.4', 'l15': '0.9', 'w15': '0.1', 'l16': '0.7', 'w16': '0.6', 'l17': '0.5', 'w17': '0.8', 'l18': '0.6', 'w18': '0.2', 'l19': '0.4', 'w19': '0.3', 'l20': '0.2', 'w20': '0.1'}
+point_to_ebaluate:  .param l1=0.4
+.param w1=0.7
+.param l2=0.5
+.param w2=0.6
+.param l3=0.3
+.param w3=0.4
+.param l4=0.6
+.param w4=0.8
+.param l5=0.2
+.param w5=0.5
+.param l6=0.7
+.param w6=0.3
+.param l7=0.8
+.param w7=0.2
+.param l8=0.4
+.param w8=0.9
+.param l9=0.3
+.param w9=0.6
+.param l10=0.6
+.param w10=0.4
+.param l11=0.5
+.param w11=0.7
+.param l12=0.2
+.param w12=0.8
+.param l13=0.8
+.param w13=0.5
+.param l14=0.1
+.param w14=0.4
+.param l15=0.9
+.param w15=0.1
+.param l16=0.7
+.param w16=0.6
+.param l17=0.5
+.param w17=0.8
+.param l18=0.6
+.param w18=0.2
+.param l19=0.4
+.param w19=0.3
+.param l20=0.2
+.param w20=0.1
+
+l1 0.4
+w1 0.7
+l2 0.5
+w2 0.6
+l3 0.3
+w3 0.4
+l4 0.6
+w4 0.8
+l5 0.2
+w5 0.5
+l6 0.7
+w6 0.3
+l7 0.8
+w7 0.2
+l8 0.4
+w8 0.9
+l9 0.3
+w9 0.6
+l10 0.6
+w10 0.4
+l11 0.5
+w11 0.7
+l12 0.2
+w12 0.8
+l13 0.8
+w13 0.5
+l14 0.1
+w14 0.4
+l15 0.9
+w15 0.1
+l16 0.7
+w16 0.6
+l17 0.5
+w17 0.8
+l18 0.6
+w18 0.2
+l19 0.4
+w19 0.3
+l20 0.2
+w20 0.1
+IN BO LOOP
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>error          ***** hspice job aborted
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+Parameters to evaluate: {'l1': '0.9', 'w1': '1.0', 'l2': '0', 'w2': '0.1', 'l3': '0', 'w3': '1.0', 'l4': '0.4', 'w4': '0.7', 'l5': '0.1', 'w5': '1.0', 'l6': '1.0', 'w6': '1.0', 'l7': '0', 'w7': '0', 'l8': '0', 'w8': '0.5', 'l9': '1.0', 'w9': '0.9', 'l10': '0.4', 'w10': '0.5', 'l11': '0.9', 'w11': '0.8', 'l12': '0', 'w12': '1.0', 'l13': '0', 'w13': '1.0', 'l14': '0.7', 'w14': '1.0', 'l15': '0', 'w15': '0.1', 'l16': '0.6', 'w16': '1.0', 'l17': '0.7', 'w17': '1.0', 'l18': '0.8', 'w18': '0.0', 'l19': '1.0', 'w19': '0.0', 'l20': '0.7', 'w20': '0'}
+point_to_ebaluate:  .param l1=0.9
+.param w1=1.0
+.param l2=0
+.param w2=0.1
+.param l3=0
+.param w3=1.0
+.param l4=0.4
+.param w4=0.7
+.param l5=0.1
+.param w5=1.0
+.param l6=1.0
+.param w6=1.0
+.param l7=0
+.param w7=0
+.param l8=0
+.param w8=0.5
+.param l9=1.0
+.param w9=0.9
+.param l10=0.4
+.param w10=0.5
+.param l11=0.9
+.param w11=0.8
+.param l12=0
+.param w12=1.0
+.param l13=0
+.param w13=1.0
+.param l14=0.7
+.param w14=1.0
+.param l15=0
+.param w15=0.1
+.param l16=0.6
+.param w16=1.0
+.param l17=0.7
+.param w17=1.0
+.param l18=0.8
+.param w18=0.0
+.param l19=1.0
+.param w19=0.0
+.param l20=0.7
+.param w20=0
+
+l1 0.9
+w1 1.0
+l2 0
+w2 0.1
+l3 0
+w3 1.0
+l4 0.4
+w4 0.7
+l5 0.1
+w5 1.0
+l6 1.0
+w6 1.0
+l7 0
+w7 0
+l8 0
+w8 0.5
+l9 1.0
+w9 0.9
+l10 0.4
+w10 0.5
+l11 0.9
+w11 0.8
+l12 0
+w12 1.0
+l13 0
+w13 1.0
+l14 0.7
+w14 1.0
+l15 0
+w15 0.1
+l16 0.6
+w16 1.0
+l17 0.7
+w17 1.0
+l18 0.8
+w18 0.0
+l19 1.0
+w19 0.0
+l20 0.7
+w20 0
+Best metrics {'q_curr': np.float64(0.003646378), 'stability': 0.0, 'output_voltage_difference': 1.8131865}
+Best BO metrics {'q_curr': np.float64(0.003646378), 'stability': 0.0, 'output_voltage_difference': 1.8131865}
+Best LLM metrics {'q_curr': np.float64(0.003646378), 'stability': 0.0, 'output_voltage_difference': 1.8131865}
+At iteration: 7, the best target value is: 0.622, llm best target: 0.622, bo best target: 0.622
+Current iteration:8.
+[Rate Limiter] Sleeping for 52.04s to avoid hitting the token limit...
+[AF] RETRYING LLM REQUEST 1/3...
+None
+Error code: 400 - {'error': {'message': "This model's maximum context length is 16385 tokens. However, your messages resulted in 17225 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+[AF] RETRYING LLM REQUEST 2/3...
+None
+Error code: 400 - {'error': {'message': "This model's maximum context length is 16385 tokens. However, your messages resulted in 17225 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+[AF] RETRYING LLM REQUEST 3/3...
+None
+Error code: 400 - {'error': {'message': "This model's maximum context length is 16385 tokens. However, your messages resulted in 17225 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+Fewshot agent fails to get response from the LLM API after 3 attempts!
+Api call fails!
+[AF] RETRYING LLM REQUEST 1/3...
+None
+Error code: 400 - {'error': {'message': "This model's maximum context length is 16385 tokens. However, your messages resulted in 17161 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+[Rate Limiter] Sleeping for 59.55s to avoid hitting the token limit...
+[AF] RETRYING LLM REQUEST 2/3...
+None
+Error code: 400 - {'error': {'message': "This model's maximum context length is 16385 tokens. However, your messages resulted in 17161 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+[AF] RETRYING LLM REQUEST 3/3...
+None
+Error code: 400 - {'error': {'message': "This model's maximum context length is 16385 tokens. However, your messages resulted in 17161 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+Fewshot agent fails to get response from the LLM API after 3 attempts!
+Api call fails!
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.35', 'w1': '0.65', 'l2': '0.25', 'w2': '0.75', 'l3': '0.45', 'w3': '0.55', 'l4': '0.75', 'w4': '0.35', 'l5': '0.15', 'w5': '0.65', 'l6': '0.65', 'w6': '0.25', 'l7': '0.85', 'w7': '0.15', 'l8': '0.25', 'w8': '0.85', 'l9': '0.35', 'w9': '0.45', 'l10': '0.55', 'w10': '0.45', 'l11': '0.65', 'w11': '0.75', 'l12': '0.25', 'w12': '0.95', 'l13': '0.85', 'w13': '0.55', 'l14': '0.05', 'w14': '0.35', 'l15': '0.95', 'w15': '0.05', 'l16': '0.75', 'w16': '0.65', 'l17': '0.55', 'w17': '0.85', 'l18': '0.65', 'w18': '0.05', 'l19': '0.45', 'w19': '0.25', 'l20': '0.25', 'w20': '0.75'}
+point_to_ebaluate:  .param l1=0.35
+.param w1=0.65
+.param l2=0.25
+.param w2=0.75
+.param l3=0.45
+.param w3=0.55
+.param l4=0.75
+.param w4=0.35
+.param l5=0.15
+.param w5=0.65
+.param l6=0.65
+.param w6=0.25
+.param l7=0.85
+.param w7=0.15
+.param l8=0.25
+.param w8=0.85
+.param l9=0.35
+.param w9=0.45
+.param l10=0.55
+.param w10=0.45
+.param l11=0.65
+.param w11=0.75
+.param l12=0.25
+.param w12=0.95
+.param l13=0.85
+.param w13=0.55
+.param l14=0.05
+.param w14=0.35
+.param l15=0.95
+.param w15=0.05
+.param l16=0.75
+.param w16=0.65
+.param l17=0.55
+.param w17=0.85
+.param l18=0.65
+.param w18=0.05
+.param l19=0.45
+.param w19=0.25
+.param l20=0.25
+.param w20=0.75
+
+l1 0.35
+w1 0.65
+l2 0.25
+w2 0.75
+l3 0.45
+w3 0.55
+l4 0.75
+w4 0.35
+l5 0.15
+w5 0.65
+l6 0.65
+w6 0.25
+l7 0.85
+w7 0.15
+l8 0.25
+w8 0.85
+l9 0.35
+w9 0.45
+l10 0.55
+w10 0.45
+l11 0.65
+w11 0.75
+l12 0.25
+w12 0.95
+l13 0.85
+w13 0.55
+l14 0.05
+w14 0.35
+l15 0.95
+w15 0.05
+l16 0.75
+w16 0.65
+l17 0.55
+w17 0.85
+l18 0.65
+w18 0.05
+l19 0.45
+w19 0.25
+l20 0.25
+w20 0.75
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.6', 'w1': '0.4', 'l2': '0.1', 'w2': '0.8', 'l3': '0.3', 'w3': '0.9', 'l4': '0.7', 'w4': '0.5', 'l5': '0.5', 'w5': '0.8', 'l6': '0.2', 'w6': '1.0', 'l7': '0.9', 'w7': '0.9', 'l8': '0', 'w8': '0.3', 'l9': '0.5', 'w9': '0.3', 'l10': '0.7', 'w10': '0.0', 'l11': '0.3', 'w11': '0.9', 'l12': '0.2', 'w12': '0', 'l13': '1.0', 'w13': '0.9', 'l14': '0.4', 'w14': '0.1', 'l15': '0.2', 'w15': '0.3', 'l16': '0.3', 'w16': '0.7', 'l17': '0.4', 'w17': '0.4', 'l18': '0.7', 'w18': '0.6', 'l19': '0.7', 'w19': '0.9', 'l20': '0.1', 'w20': '0'}
+point_to_ebaluate:  .param l1=0.6
+.param w1=0.4
+.param l2=0.1
+.param w2=0.8
+.param l3=0.3
+.param w3=0.9
+.param l4=0.7
+.param w4=0.5
+.param l5=0.5
+.param w5=0.8
+.param l6=0.2
+.param w6=1.0
+.param l7=0.9
+.param w7=0.9
+.param l8=0
+.param w8=0.3
+.param l9=0.5
+.param w9=0.3
+.param l10=0.7
+.param w10=0.0
+.param l11=0.3
+.param w11=0.9
+.param l12=0.2
+.param w12=0
+.param l13=1.0
+.param w13=0.9
+.param l14=0.4
+.param w14=0.1
+.param l15=0.2
+.param w15=0.3
+.param l16=0.3
+.param w16=0.7
+.param l17=0.4
+.param w17=0.4
+.param l18=0.7
+.param w18=0.6
+.param l19=0.7
+.param w19=0.9
+.param l20=0.1
+.param w20=0
+
+l1 0.6
+w1 0.4
+l2 0.1
+w2 0.8
+l3 0.3
+w3 0.9
+l4 0.7
+w4 0.5
+l5 0.5
+w5 0.8
+l6 0.2
+w6 1.0
+l7 0.9
+w7 0.9
+l8 0
+w8 0.3
+l9 0.5
+w9 0.3
+l10 0.7
+w10 0.0
+l11 0.3
+w11 0.9
+l12 0.2
+w12 0
+l13 1.0
+w13 0.9
+l14 0.4
+w14 0.1
+l15 0.2
+w15 0.3
+l16 0.3
+w16 0.7
+l17 0.4
+w17 0.4
+l18 0.7
+w18 0.6
+l19 0.7
+w19 0.9
+l20 0.1
+w20 0
+Best metrics {'q_curr': np.float64(0.003646378), 'stability': 0.0, 'output_voltage_difference': 1.8131865}
+Best BO metrics {'q_curr': np.float64(0.003646378), 'stability': 0.0, 'output_voltage_difference': 1.8131865}
+Best LLM metrics {'q_curr': np.float64(0.003646378), 'stability': 0.0, 'output_voltage_difference': 1.8131865}
+At iteration: 8, the best target value is: 0.622, llm best target: 0.622, bo best target: 0.622
+Current iteration:9.
+[Rate Limiter] Sleeping for 53.00s to avoid hitting the token limit...
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+Parameters to evaluate: {'l1': '0.7', 'w1': '0.5', 'l2': '0.1', 'w2': '0.7', 'l3': '0.3', 'w3': '0.8', 'l4': '0.6', 'w4': '0.6', 'l5': '0.5', 'w5': '0.7', 'l6': '0.2', 'w6': '0.9', 'l7': '0.8', 'w7': '0.4', 'l8': '0.4', 'w8': '0.8', 'l9': '0.3', 'w9': '0.6', 'l10': '0.5', 'w10': '0.5', 'l11': '0.7', 'w11': '0.6', 'l12': '0.2', 'w12': '0.8', 'l13': '0.8', 'w13': '0.5', 'l14': '0.1', 'w14': '0.4', 'l15': '0.9', 'w15': '0.1', 'l16': '0.7', 'w16': '0.6', 'l17': '0.5', 'w17': '0.8', 'l18': '0.6', 'w18': '0.2', 'l19': '0.4', 'w19': '0.3', 'l20': '0.2', 'w20': '0.1'}
+point_to_ebaluate:  .param l1=0.7
+.param w1=0.5
+.param l2=0.1
+.param w2=0.7
+.param l3=0.3
+.param w3=0.8
+.param l4=0.6
+.param w4=0.6
+.param l5=0.5
+.param w5=0.7
+.param l6=0.2
+.param w6=0.9
+.param l7=0.8
+.param w7=0.4
+.param l8=0.4
+.param w8=0.8
+.param l9=0.3
+.param w9=0.6
+.param l10=0.5
+.param w10=0.5
+.param l11=0.7
+.param w11=0.6
+.param l12=0.2
+.param w12=0.8
+.param l13=0.8
+.param w13=0.5
+.param l14=0.1
+.param w14=0.4
+.param l15=0.9
+.param w15=0.1
+.param l16=0.7
+.param w16=0.6
+.param l17=0.5
+.param w17=0.8
+.param l18=0.6
+.param w18=0.2
+.param l19=0.4
+.param w19=0.3
+.param l20=0.2
+.param w20=0.1
+
+l1 0.7
+w1 0.5
+l2 0.1
+w2 0.7
+l3 0.3
+w3 0.8
+l4 0.6
+w4 0.6
+l5 0.5
+w5 0.7
+l6 0.2
+w6 0.9
+l7 0.8
+w7 0.4
+l8 0.4
+w8 0.8
+l9 0.3
+w9 0.6
+l10 0.5
+w10 0.5
+l11 0.7
+w11 0.6
+l12 0.2
+w12 0.8
+l13 0.8
+w13 0.5
+l14 0.1
+w14 0.4
+l15 0.9
+w15 0.1
+l16 0.7
+w16 0.6
+l17 0.5
+w17 0.8
+l18 0.6
+w18 0.2
+l19 0.4
+w19 0.3
+l20 0.2
+w20 0.1
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.5', 'w1': '0.8', 'l2': '0.4', 'w2': '0.3', 'l3': '0.5', 'w3': '0.5', 'l4': '0.2', 'w4': '0.9', 'l5': '0.2', 'w5': '0.3', 'l6': '0.5', 'w6': '0.3', 'l7': '0.6', 'w7': '0.7', 'l8': '0.9', 'w8': '0.7', 'l9': '0.5', 'w9': '0.3', 'l10': '0.4', 'w10': '0.9', 'l11': '0.1', 'w11': '0.6', 'l12': '0.3', 'w12': '0.8', 'l13': '0.9', 'w13': '0.2', 'l14': '0.5', 'w14': '0.7', 'l15': '0.6', 'w15': '0.3', 'l16': '0.2', 'w16': '0.8', 'l17': '0.6', 'w17': '0.8', 'l18': '0.7', 'w18': '0.3', 'l19': '0.2', 'w19': '0.3', 'l20': '0.9', 'w20': '0.3'}
+point_to_ebaluate:  .param l1=0.5
+.param w1=0.8
+.param l2=0.4
+.param w2=0.3
+.param l3=0.5
+.param w3=0.5
+.param l4=0.2
+.param w4=0.9
+.param l5=0.2
+.param w5=0.3
+.param l6=0.5
+.param w6=0.3
+.param l7=0.6
+.param w7=0.7
+.param l8=0.9
+.param w8=0.7
+.param l9=0.5
+.param w9=0.3
+.param l10=0.4
+.param w10=0.9
+.param l11=0.1
+.param w11=0.6
+.param l12=0.3
+.param w12=0.8
+.param l13=0.9
+.param w13=0.2
+.param l14=0.5
+.param w14=0.7
+.param l15=0.6
+.param w15=0.3
+.param l16=0.2
+.param w16=0.8
+.param l17=0.6
+.param w17=0.8
+.param l18=0.7
+.param w18=0.3
+.param l19=0.2
+.param w19=0.3
+.param l20=0.9
+.param w20=0.3
+
+l1 0.5
+w1 0.8
+l2 0.4
+w2 0.3
+l3 0.5
+w3 0.5
+l4 0.2
+w4 0.9
+l5 0.2
+w5 0.3
+l6 0.5
+w6 0.3
+l7 0.6
+w7 0.7
+l8 0.9
+w8 0.7
+l9 0.5
+w9 0.3
+l10 0.4
+w10 0.9
+l11 0.1
+w11 0.6
+l12 0.3
+w12 0.8
+l13 0.9
+w13 0.2
+l14 0.5
+w14 0.7
+l15 0.6
+w15 0.3
+l16 0.2
+w16 0.8
+l17 0.6
+w17 0.8
+l18 0.7
+w18 0.3
+l19 0.2
+w19 0.3
+l20 0.9
+w20 0.3
+Best metrics {'q_curr': np.float64(0.003646378), 'stability': 0.0, 'output_voltage_difference': 1.8131865}
+Best BO metrics {'q_curr': np.float64(0.003646378), 'stability': 0.0, 'output_voltage_difference': 1.8131865}
+Best LLM metrics {'q_curr': np.float64(0.003646378), 'stability': 0.0, 'output_voltage_difference': 1.8131865}
+At iteration: 9, the best target value is: 0.622, llm best target: 0.622, bo best target: 0.622
+Current iteration:10.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.40', 'w1': '0.70', 'l2': '0.50', 'w2': '0.60', 'l3': '0.30', 'w3': '0.40', 'l4': '0.60', 'w4': '0.80', 'l5': '0.20', 'w5': '0.50', 'l6': '0.70', 'w6': '0.30', 'l7': '0.80', 'w7': '0.20', 'l8': '0.40', 'w8': '0.90', 'l9': '0.30', 'w9': '0.60', 'l10': '0.60', 'w10': '0.40', 'l11': '0.50', 'w11': '0.70', 'l12': '0.20', 'w12': '0.80', 'l13': '0.80', 'w13': '0.50', 'l14': '0.10', 'w14': '0.40', 'l15': '0.90', 'w15': '0.10', 'l16': '0.70', 'w16': '0.60', 'l17': '0.50', 'w17': '0.80', 'l18': '0.60', 'w18': '0.20', 'l19': '0.40', 'w19': '0.30', 'l20': '0.20', 'w20': '0.10'}
+point_to_ebaluate:  .param l1=0.40
+.param w1=0.70
+.param l2=0.50
+.param w2=0.60
+.param l3=0.30
+.param w3=0.40
+.param l4=0.60
+.param w4=0.80
+.param l5=0.20
+.param w5=0.50
+.param l6=0.70
+.param w6=0.30
+.param l7=0.80
+.param w7=0.20
+.param l8=0.40
+.param w8=0.90
+.param l9=0.30
+.param w9=0.60
+.param l10=0.60
+.param w10=0.40
+.param l11=0.50
+.param w11=0.70
+.param l12=0.20
+.param w12=0.80
+.param l13=0.80
+.param w13=0.50
+.param l14=0.10
+.param w14=0.40
+.param l15=0.90
+.param w15=0.10
+.param l16=0.70
+.param w16=0.60
+.param l17=0.50
+.param w17=0.80
+.param l18=0.60
+.param w18=0.20
+.param l19=0.40
+.param w19=0.30
+.param l20=0.20
+.param w20=0.10
+
+l1 0.40
+w1 0.70
+l2 0.50
+w2 0.60
+l3 0.30
+w3 0.40
+l4 0.60
+w4 0.80
+l5 0.20
+w5 0.50
+l6 0.70
+w6 0.30
+l7 0.80
+w7 0.20
+l8 0.40
+w8 0.90
+l9 0.30
+w9 0.60
+l10 0.60
+w10 0.40
+l11 0.50
+w11 0.70
+l12 0.20
+w12 0.80
+l13 0.80
+w13 0.50
+l14 0.10
+w14 0.40
+l15 0.90
+w15 0.10
+l16 0.70
+w16 0.60
+l17 0.50
+w17 0.80
+l18 0.60
+w18 0.20
+l19 0.40
+w19 0.30
+l20 0.20
+w20 0.10
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.1', 'w1': '0', 'l2': '1.0', 'w2': '0.4', 'l3': '0.8', 'w3': '1.0', 'l4': '0.6', 'w4': '0.5', 'l5': '0.2', 'w5': '0.5', 'l6': '1.0', 'w6': '1.0', 'l7': '1.0', 'w7': '1.0', 'l8': '0', 'w8': '0.9', 'l9': '0.1', 'w9': '0.1', 'l10': '0.6', 'w10': '0.7', 'l11': '0.6', 'w11': '0.8', 'l12': '0', 'w12': '1.0', 'l13': '0', 'w13': '0.2', 'l14': '0.2', 'w14': '1.0', 'l15': '0', 'w15': '0.2', 'l16': '0.8', 'w16': '0.6', 'l17': '0.8', 'w17': '1.0', 'l18': '0.2', 'w18': '0.9', 'l19': '1.0', 'w19': '0.1', 'l20': '0.5', 'w20': '1.0'}
+point_to_ebaluate:  .param l1=0.1
+.param w1=0
+.param l2=1.0
+.param w2=0.4
+.param l3=0.8
+.param w3=1.0
+.param l4=0.6
+.param w4=0.5
+.param l5=0.2
+.param w5=0.5
+.param l6=1.0
+.param w6=1.0
+.param l7=1.0
+.param w7=1.0
+.param l8=0
+.param w8=0.9
+.param l9=0.1
+.param w9=0.1
+.param l10=0.6
+.param w10=0.7
+.param l11=0.6
+.param w11=0.8
+.param l12=0
+.param w12=1.0
+.param l13=0
+.param w13=0.2
+.param l14=0.2
+.param w14=1.0
+.param l15=0
+.param w15=0.2
+.param l16=0.8
+.param w16=0.6
+.param l17=0.8
+.param w17=1.0
+.param l18=0.2
+.param w18=0.9
+.param l19=1.0
+.param w19=0.1
+.param l20=0.5
+.param w20=1.0
+
+l1 0.1
+w1 0
+l2 1.0
+w2 0.4
+l3 0.8
+w3 1.0
+l4 0.6
+w4 0.5
+l5 0.2
+w5 0.5
+l6 1.0
+w6 1.0
+l7 1.0
+w7 1.0
+l8 0
+w8 0.9
+l9 0.1
+w9 0.1
+l10 0.6
+w10 0.7
+l11 0.6
+w11 0.8
+l12 0
+w12 1.0
+l13 0
+w13 0.2
+l14 0.2
+w14 1.0
+l15 0
+w15 0.2
+l16 0.8
+w16 0.6
+l17 0.8
+w17 1.0
+l18 0.2
+w18 0.9
+l19 1.0
+w19 0.1
+l20 0.5
+w20 1.0
+Best metrics {'q_curr': np.float64(0.002135643), 'stability': 0.0, 'output_voltage_difference': 1.7022974999999998}
+Best BO metrics {'q_curr': np.float64(0.002135643), 'stability': 0.0, 'output_voltage_difference': 1.7022974999999998}
+Best LLM metrics {'q_curr': np.float64(0.003646378), 'stability': 0.0, 'output_voltage_difference': 1.8131865}
+At iteration: 10, the best target value is: 0.623, llm best target: 0.622, bo best target: 0.623
+Current iteration:11.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.80', 'w1': '0.40', 'l2': '0.60', 'w2': '0.80', 'l3': '0.40', 'w3': '0.60', 'l4': '0.70', 'w4': '0.30', 'l5': '0.20', 'w5': '0.50', 'l6': '0.90', 'w6': '0.20', 'l7': '0.80', 'w7': '0.20', 'l8': '0.50', 'w8': '0.90', 'l9': '0.20', 'w9': '0.60', 'l10': '0.50', 'w10': '0.40', 'l11': '0.80', 'w11': '0.60', 'l12': '0.20', 'w12': '0.80', 'l13': '0.80', 'w13': '0.50', 'l14': '0.10', 'w14': '0.40', 'l15': '0.90', 'w15': '0.10', 'l16': '0.70', 'w16': '0.60', 'l17': '0.50', 'w17': '0.80', 'l18': '0.60', 'w18': '0.20', 'l19': '0.40', 'w19': '0.30', 'l20': '0.20', 'w20': '0.10'}
+point_to_ebaluate:  Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+.param l1=0.80
+.param w1=0.40
+.param l2=0.60
+.param w2=0.80
+.param l3=0.40
+.param w3=0.60
+.param l4=0.70
+.param w4=0.30
+.param l5=0.20
+.param w5=0.50
+.param l6=0.90
+.param w6=0.20
+.param l7=0.80
+.param w7=0.20
+.param l8=0.50
+.param w8=0.90
+.param l9=0.20
+.param w9=0.60
+.param l10=0.50
+.param w10=0.40
+.param l11=0.80
+.param w11=0.60
+.param l12=0.20
+.param w12=0.80
+.param l13=0.80
+.param w13=0.50
+.param l14=0.10
+.param w14=0.40
+.param l15=0.90
+.param w15=0.10
+.param l16=0.70
+.param w16=0.60
+.param l17=0.50
+.param w17=0.80
+.param l18=0.60
+.param w18=0.20
+.param l19=0.40
+.param w19=0.30
+.param l20=0.20
+.param w20=0.10
+
+l1 0.80
+w1 0.40
+l2 0.60
+w2 0.80
+l3 0.40
+w3 0.60
+l4 0.70
+w4 0.30
+l5 0.20
+w5 0.50
+l6 0.90
+w6 0.20
+l7 0.80
+w7 0.20
+l8 0.50
+w8 0.90
+l9 0.20
+w9 0.60
+l10 0.50
+w10 0.40
+l11 0.80
+w11 0.60
+l12 0.20
+w12 0.80
+l13 0.80
+w13 0.50
+l14 0.10
+w14 0.40
+l15 0.90
+w15 0.10
+l16 0.70
+w16 0.60
+l17 0.50
+w17 0.80
+l18 0.60
+w18 0.20
+l19 0.40
+w19 0.30
+l20 0.20
+w20 0.10
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.6', 'w1': '0.5', 'l2': '0.3', 'w2': '0.4', 'l3': '0.6', 'w3': '0.8', 'l4': '0.6', 'w4': '0.9', 'l5': '0.1', 'w5': '0.4', 'l6': '0.2', 'w6': '0.5', 'l7': '0.5', 'w7': '0.4', 'l8': '0.6', 'w8': '0.1', 'l9': '0.6', 'w9': '0.7', 'l10': '0.1', 'w10': '0.5', 'l11': '0.8', 'w11': '0.4', 'l12': '0.6', 'w12': '0.6', 'l13': '0.1', 'w13': '0.1', 'l14': '0.1', 'w14': '0.3', 'l15': '0.8', 'w15': '0.4', 'l16': '0.3', 'w16': '0.9', 'l17': '0.9', 'w17': '0.7', 'l18': '0.5', 'w18': '0.8', 'l19': '0.7', 'w19': '0.5', 'l20': '0.2', 'w20': '0.4'}
+point_to_ebaluate:  .param l1=0.6
+.param w1=0.5
+.param l2=0.3
+.param w2=0.4
+.param l3=0.6
+.param w3=0.8
+.param l4=0.6
+.param w4=0.9
+.param l5=0.1
+.param w5=0.4
+.param l6=0.2
+.param w6=0.5
+.param l7=0.5
+.param w7=0.4
+.param l8=0.6
+.param w8=0.1
+.param l9=0.6
+.param w9=0.7
+.param l10=0.1
+.param w10=0.5
+.param l11=0.8
+.param w11=0.4
+.param l12=0.6
+.param w12=0.6
+.param l13=0.1
+.param w13=0.1
+.param l14=0.1
+.param w14=0.3
+.param l15=0.8
+.param w15=0.4
+.param l16=0.3
+.param w16=0.9
+.param l17=0.9
+.param w17=0.7
+.param l18=0.5
+.param w18=0.8
+.param l19=0.7
+.param w19=0.5
+.param l20=0.2
+.param w20=0.4
+
+l1 0.6
+w1 0.5
+l2 0.3
+w2 0.4
+l3 0.6
+w3 0.8
+l4 0.6
+w4 0.9
+l5 0.1
+w5 0.4
+l6 0.2
+w6 0.5
+l7 0.5
+w7 0.4
+l8 0.6
+w8 0.1
+l9 0.6
+w9 0.7
+l10 0.1
+w10 0.5
+l11 0.8
+w11 0.4
+l12 0.6
+w12 0.6
+l13 0.1
+w13 0.1
+l14 0.1
+w14 0.3
+l15 0.8
+w15 0.4
+l16 0.3
+w16 0.9
+l17 0.9
+w17 0.7
+l18 0.5
+w18 0.8
+l19 0.7
+w19 0.5
+l20 0.2
+w20 0.4
+Best metrics {'q_curr': np.float64(0.002135643), 'stability': 0.0, 'output_voltage_difference': 1.7022974999999998}
+Best BO metrics {'q_curr': np.float64(0.002135643), 'stability': 0.0, 'output_voltage_difference': 1.7022974999999998}
+Best LLM metrics {'q_curr': np.float64(0.003646378), 'stability': 0.0, 'output_voltage_difference': 1.8131865}
+At iteration: 11, the best target value is: 0.623, llm best target: 0.622, bo best target: 0.623
+Current iteration:12.
+[Rate Limiter] Sleeping for 43.52s to avoid hitting the token limit...
+[AF] RETRYING LLM REQUEST 1/3...
+None
+Error code: 400 - {'error': {'message': "This model's maximum context length is 16385 tokens. However, your messages resulted in 17481 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+[AF] RETRYING LLM REQUEST 2/3...
+None
+Error code: 400 - {'error': {'message': "This model's maximum context length is 16385 tokens. However, your messages resulted in 17481 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+[AF] RETRYING LLM REQUEST 3/3...
+None
+Error code: 400 - {'error': {'message': "This model's maximum context length is 16385 tokens. However, your messages resulted in 17481 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+Fewshot agent fails to get response from the LLM API after 3 attempts!
+Api call fails!
+[Rate Limiter] Sleeping for 59.69s to avoid hitting the token limit...
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.6', 'w1': '0.7', 'l2': '0.5', 'w2': '0.6', 'l3': '0.4', 'w3': '0.7', 'l4': '0.6', 'w4': '0.8', 'l5': '0.3', 'w5': '0.6', 'l6': '0.7', 'w6': '0.8', 'l7': '0.8', 'w7': '0.7', 'l8': '0.7', 'w8': '0.9', 'l9': '0.6', 'w9': '0.8', 'l10': '0.6', 'w10': '0.8', 'l11': '0.5', 'w11': '0.7', 'l12': '0.4', 'w12': '0.9', 'l13': '0.4', 'w13': '0.7', 'l14': '0.6', 'w14': '0.9', 'l15': '0.3', 'w15': '0.8', 'l16': '0.7', 'w16': '0.6', 'l17': '0.6', 'w17': '0.9', 'l18': '0.5', 'w18': '0.8', 'l19': '0.7', 'w19': '0.6', 'l20': '0.5', 'w20': '0.8'}
+point_to_ebaluate:  .param l1=0.6
+.param w1=0.7
+.param l2=0.5
+.param w2=0.6
+.param l3=0.4
+.param w3=0.7
+.param l4=0.6
+.param w4=0.8
+.param l5=0.3
+.param w5=0.6
+.param l6=0.7
+.param w6=0.8
+.param l7=0.8
+.param w7=0.7
+.param l8=0.7
+.param w8=0.9
+.param l9=0.6
+.param w9=0.8
+.param l10=0.6
+.param w10=0.8
+.param l11=0.5
+.param w11=0.7
+.param l12=0.4
+.param w12=0.9
+.param l13=0.4
+.param w13=0.7
+.param l14=0.6
+.param w14=0.9
+.param l15=0.3
+.param w15=0.8
+.param l16=0.7
+.param w16=0.6
+.param l17=0.6
+.param w17=0.9
+.param l18=0.5
+.param w18=0.8
+.param l19=0.7
+.param w19=0.6
+.param l20=0.5
+.param w20=0.8
+
+l1 0.6
+w1 0.7
+l2 0.5
+w2 0.6
+l3 0.4
+w3 0.7
+l4 0.6
+w4 0.8
+l5 0.3
+w5 0.6
+l6 0.7
+w6 0.8
+l7 0.8
+w7 0.7
+l8 0.7
+w8 0.9
+l9 0.6
+w9 0.8
+l10 0.6
+w10 0.8
+l11 0.5
+w11 0.7
+l12 0.4
+w12 0.9
+l13 0.4
+w13 0.7
+l14 0.6
+w14 0.9
+l15 0.3
+w15 0.8
+l16 0.7
+w16 0.6
+l17 0.6
+w17 0.9
+l18 0.5
+w18 0.8
+l19 0.7
+w19 0.6
+l20 0.5
+w20 0.8
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.1', 'w1': '0.7', 'l2': '0.4', 'w2': '0.2', 'l3': '0.6', 'w3': '0.2', 'l4': '0.2', 'w4': '0.9', 'l5': '0.6', 'w5': '0.9', 'l6': '0.2', 'w6': '0.0', 'l7': '0.3', 'w7': '0.2', 'l8': '0.4', 'w8': '0.5', 'l9': '0.1', 'w9': '1.0', 'l10': '0.4', 'w10': '0.6', 'l11': '0.3', 'w11': '0.6', 'l12': '0.6', 'w12': '0.4', 'l13': '0.5', 'w13': '0.1', 'l14': '0.3', 'w14': '0.2', 'l15': '0.4', 'w15': '0.6', 'l16': '0.7', 'w16': '0.6', 'l17': '0.0', 'w17': '0.6', 'l18': '0.4', 'w18': '0.1', 'l19': '0.3', 'w19': '0.7', 'l20': '0.4', 'w20': '0.2'}
+point_to_ebaluate:  .param l1=0.1
+.param w1=0.7
+.param l2=0.4
+.param w2=0.2
+.param l3=0.6
+.param w3=0.2
+.param l4=0.2
+.param w4=0.9
+.param l5=0.6
+.param w5=0.9
+.param l6=0.2
+.param w6=0.0
+.param l7=0.3
+.param w7=0.2
+.param l8=0.4
+.param w8=0.5
+.param l9=0.1
+.param w9=1.0
+.param l10=0.4
+.param w10=0.6
+.param l11=0.3
+.param w11=0.6
+.param l12=0.6
+.param w12=0.4
+.param l13=0.5
+.param w13=0.1
+.param l14=0.3
+.param w14=0.2
+.param l15=0.4
+.param w15=0.6
+.param l16=0.7
+.param w16=0.6
+.param l17=0.0
+.param w17=0.6
+.param l18=0.4
+.param w18=0.1
+.param l19=0.3
+.param w19=0.7
+.param l20=0.4
+.param w20=0.2
+
+l1 0.1
+w1 0.7
+l2 0.4
+w2 0.2
+l3 0.6
+w3 0.2
+l4 0.2
+w4 0.9
+l5 0.6
+w5 0.9
+l6 0.2
+w6 0.0
+l7 0.3
+w7 0.2
+l8 0.4
+w8 0.5
+l9 0.1
+w9 1.0
+l10 0.4
+w10 0.6
+l11 0.3
+w11 0.6
+l12 0.6
+w12 0.4
+l13 0.5
+w13 0.1
+l14 0.3
+w14 0.2
+l15 0.4
+w15 0.6
+l16 0.7
+w16 0.6
+l17 0.0
+w17 0.6
+l18 0.4
+w18 0.1
+l19 0.3
+w19 0.7
+l20 0.4
+w20 0.2
+Best metrics {'q_curr': np.float64(0.005016709), 'stability': 0.0, 'output_voltage_difference': 0.25677379999999994}
+Best BO metrics {'q_curr': np.float64(0.005016709), 'stability': 0.0, 'output_voltage_difference': 0.25677379999999994}
+Best LLM metrics {'q_curr': np.float64(0.003646378), 'stability': 0.0, 'output_voltage_difference': 1.8131865}
+At iteration: 12, the best target value is: 0.756, llm best target: 0.622, bo best target: 0.756

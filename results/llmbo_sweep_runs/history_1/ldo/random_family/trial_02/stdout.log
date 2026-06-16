@@ -1,0 +1,340 @@
+[LLMBO Sweep] Started at 2026-04-15T01:40:35.736602+00:00
+[LLMBO Sweep] Command: /home/karthik/miniconda3/envs/analog-rep/bin/python /home/karthik/sim_clean/AMS-opt/LLMBO/llmbo.py --history 1 --refined 0 --related_k 2 --gnn_embedding_mode sg --gnn_checkpoint /home/karthik/sim_clean/AMS-opt/checkpoints_sg_vs_skg/best_model.pt --embeddings_json /home/karthik/sim_clean/AMS-opt/umap_results_full/gnn_embeddings_sg_sg_vs_skg.json --target_id ldo --circuit ldo --n_itr 12 --numpy_seed 1335030370 --torch_seed 1964293400 --openai_api_seed 772022820 --early_stop_fom 1.0 --run_output_dir /home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs/history_1/ldo/random_family/trial_02 --path_checkpoints /home/karthik/sim_clean/AMS-opt/results/llmbo_sweep_runs/history_1/ldo/random_family/trial_02/checkpoints --trial_id 2 --gnn_device cpu --related_mode random_family
+
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>error          ***** hspice job aborted
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>error          ***** hspice job aborted
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>error          ***** hspice job aborted
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>info:         ***** hspice job concluded
+Using: /ece/synopsys/hspice/T-2022.06-SP1-1/hspice/linux64/hspice  '/home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.sp' -o /home/karthik/sim_clean/LLMBO/ldo_ati_new/ldo_0.lis
+
+>error          ***** hspice job aborted
+[LLMBO] Using LLMBO anchor embedding for --target_id 'ldo' (D=128) with reference embeddings umap_results_full/gnn_embeddings_sg_sg_vs_skg.json
+[LLMBO] Optimization circuit: ldo
+[LLMBO] Task path: /home/karthik/sim_clean/AMS-opt/LLMBO/tasks/ldo/ldo.json
+IN  LDO
+3
+['.param l1=0.5 w1=100 l2=0.3 w2=80 l3=0.4 w3=120 l4=0.6 w4=140 l5=0.2 w5=60 l6=0.8 w6=148 . . .  \n.param l1=0.7 w1=130 l2=0.5 w2=100 l3=0.6 w3=120 l4=0.4 w4=80 l5=0.3 w5=70 l6=0.9 w6=148 . . .  \n.param l1=0.3 w1=80 l2=0.2 w2=60 l3=0.5 w3=100 l4=0.7 w4=130 l5=0.4 w5=90 l6=0.8 w6=146 . . .  ']
+Parameters to evaluate: {'l1': '0.5', 'w1': '100', 'l2': '0.3', 'w2': '80', 'l3': '0.4', 'w3': '120', 'l4': '0.6', 'w4': '140', 'l5': '0.2', 'w5': '60', 'l6': '0.8', 'w6': '148'}
+point_to_ebaluate:  .param l1=0.5
+.param w1=100
+.param l2=0.3
+.param w2=80
+.param l3=0.4
+.param w3=120
+.param l4=0.6
+.param w4=140
+.param l5=0.2
+.param w5=60
+.param l6=0.8
+.param w6=148
+
+l1 0.5
+w1 100
+l2 0.3
+w2 80
+l3 0.4
+w3 120
+l4 0.6
+w4 140
+l5 0.2
+w5 60
+l6 0.8
+w6 148
+params: .param l1=0.5
+.param w1=100
+.param l2=0.3
+.param w2=80
+.param l3=0.4
+.param w3=120
+.param l4=0.6
+.param w4=140
+.param l5=0.2
+.param w5=60
+.param l6=0.8
+.param w6=148
+
+metrics:  q_curr=0.016 stability=0.001 output_voltage_difference=0.048 
+targets: 0.905
+aux_info: 
+Parameters to evaluate: {'l1': '0.7', 'w1': '130', 'l2': '0.5', 'w2': '100', 'l3': '0.6', 'w3': '120', 'l4': '0.4', 'w4': '80', 'l5': '0.3', 'w5': '70', 'l6': '0.9', 'w6': '148'}
+point_to_ebaluate:  .param l1=0.7
+.param w1=130
+.param l2=0.5
+.param w2=100
+.param l3=0.6
+.param w3=120
+.param l4=0.4
+.param w4=80
+.param l5=0.3
+.param w5=70
+.param l6=0.9
+.param w6=148
+
+l1 0.7
+w1 130
+l2 0.5
+w2 100
+l3 0.6
+w3 120
+l4 0.4
+w4 80
+l5 0.3
+w5 70
+l6 0.9
+w6 148
+params: .param l1=0.7
+.param w1=130
+.param l2=0.5
+.param w2=100
+.param l3=0.6
+.param w3=120
+.param l4=0.4
+.param w4=80
+.param l5=0.3
+.param w5=70
+.param l6=0.9
+.param w6=148
+
+metrics:  q_curr=0.016 stability=0.001 output_voltage_difference=0.048 
+targets: 0.905
+aux_info: 
+Parameters to evaluate: {'l1': '0.3', 'w1': '80', 'l2': '0.2', 'w2': '60', 'l3': '0.5', 'w3': '100', 'l4': '0.7', 'w4': '130', 'l5': '0.4', 'w5': '90', 'l6': '0.8', 'w6': '146'}
+point_to_ebaluate:  .param l1=0.3
+.param w1=80
+.param l2=0.2
+.param w2=60
+.param l3=0.5
+.param w3=100
+.param l4=0.7
+.param w4=130
+.param l5=0.4
+.param w5=90
+.param l6=0.8
+.param w6=146
+
+l1 0.3
+w1 80
+l2 0.2
+w2 60
+l3 0.5
+w3 100
+l4 0.7
+w4 130
+l5 0.4
+w5 90
+l6 0.8
+w6 146
+params: .param l1=0.3
+.param w1=80
+.param l2=0.2
+.param w2=60
+.param l3=0.5
+.param w3=100
+.param l4=0.7
+.param w4=130
+.param l5=0.4
+.param w5=90
+.param l6=0.8
+.param w6=146
+
+metrics:  q_curr=0.016 stability=0.001 output_voltage_difference=0.048 
+targets: 0.905
+aux_info: 
+Initializing BO GP with data_init...
+Initial best target value: 0.90
+Beginning Design Cycle
+Current iteration:1.
+************* IN HISTORY *************
+************* OUT HISTORY *************
+IN LLM LOOP
+Parameters to evaluate: {'l1': '0.55', 'w1': '85', 'l2': '0.45', 'w2': '105', 'l3': '0.35', 'w3': '75', 'l4': '0.65', 'w4': '125', 'l5': '0.25', 'w5': '55', 'l6': '0.75', 'w6': '145', 'l7': '0.5', 'w7': '95', 'l8': '0.4', 'w8': '115', 'l9': '0.3', 'w9': '65', 'l10': '0.7', 'w10': '135', 'l11': '0.6', 'w11': '105', 'l12': '0.8', 'w12': '143', 'l13': '0.2', 'w13': '75', 'l14': '0.9', 'w14': '150', 'l15': '0.7', 'w15': '110', 'l16': '0.4', 'w16': '125', 'l17': '0.3', 'w17': '70', 'l18': '0.5', 'w18': '90', 'l19': '0.6', 'w19': '130', 'l20': '0.8', 'w20': '140'}
+point_to_ebaluate:  .param l1=0.55
+.param w1=85
+.param l2=0.45
+.param w2=105
+.param l3=0.35
+.param w3=75
+.param l4=0.65
+.param w4=125
+.param l5=0.25
+.param w5=55
+.param l6=0.75
+.param w6=145
+.param l7=0.5
+.param w7=95
+.param l8=0.4
+.param w8=115
+.param l9=0.3
+.param w9=65
+.param l10=0.7
+.param w10=135
+.param l11=0.6
+.param w11=105
+.param l12=0.8
+.param w12=143
+.param l13=0.2
+.param w13=75
+.param l14=0.9
+.param w14=150
+.param l15=0.7
+.param w15=110
+.param l16=0.4
+.param w16=125
+.param l17=0.3
+.param w17=70
+.param l18=0.5
+.param w18=90
+.param l19=0.6
+.param w19=130
+.param l20=0.8
+.param w20=140
+
+l1 0.55
+w1 85
+l2 0.45
+w2 105
+l3 0.35
+w3 75
+l4 0.65
+w4 125
+l5 0.25
+w5 55
+l6 0.75
+w6 145
+l7 0.5
+w7 95
+l8 0.4
+w8 115
+l9 0.3
+w9 65
+l10 0.7
+w10 135
+l11 0.6
+w11 105
+l12 0.8
+w12 143
+l13 0.2
+w13 75
+l14 0.9
+w14 150
+l15 0.7
+w15 110
+l16 0.4
+w16 125
+l17 0.3
+w17 70
+l18 0.5
+w18 90
+l19 0.6
+w19 130
+l20 0.8
+w20 140
+IN BO LOOP
+Parameters to evaluate: {'l1': '0.4', 'w1': '0.9', 'l2': '0.6', 'w2': '0.4', 'l3': '0.7', 'w3': '0.7', 'l4': '0.4', 'w4': '0.7', 'l5': '0.1', 'w5': '0.5', 'l6': '0.6', 'w6': '0.3', 'l7': '0.3', 'w7': '0.7', 'l8': '0.2', 'w8': '0.8', 'l9': '0.6', 'w9': '0.8', 'l10': '0.4', 'w10': '0.5', 'l11': '0.1', 'w11': '1.0', 'l12': '0.6', 'w12': '0.9', 'l13': '0.1', 'w13': '0.3', 'l14': '0.6', 'w14': '0.8', 'l15': '0.1', 'w15': '0.8', 'l16': '0.5', 'w16': '0.5', 'l17': '0.5', 'w17': '0.2', 'l18': '0.3', 'w18': '0.0', 'l19': '0.7', 'w19': '0.9', 'l20': '0.6', 'w20': '0.6'}
+point_to_ebaluate:  .param l1=0.4
+.param w1=0.9
+.param l2=0.6
+.param w2=0.4
+.param l3=0.7
+.param w3=0.7
+.param l4=0.4
+.param w4=0.7
+.param l5=0.1
+.param w5=0.5
+.param l6=0.6
+.param w6=0.3
+.param l7=0.3
+.param w7=0.7
+.param l8=0.2
+.param w8=0.8
+.param l9=0.6
+.param w9=0.8
+.param l10=0.4
+.param w10=0.5
+.param l11=0.1
+.param w11=1.0
+.param l12=0.6
+.param w12=0.9
+.param l13=0.1
+.param w13=0.3
+.param l14=0.6
+.param w14=0.8
+.param l15=0.1
+.param w15=0.8
+.param l16=0.5
+.param w16=0.5
+.param l17=0.5
+.param w17=0.2
+.param l18=0.3
+.param w18=0.0
+.param l19=0.7
+.param w19=0.9
+.param l20=0.6
+.param w20=0.6
+
+l1 0.4
+w1 0.9
+l2 0.6
+w2 0.4
+l3 0.7
+w3 0.7
+l4 0.4
+w4 0.7
+l5 0.1
+w5 0.5
+l6 0.6
+w6 0.3
+l7 0.3
+w7 0.7
+l8 0.2
+w8 0.8
+l9 0.6
+w9 0.8
+l10 0.4
+w10 0.5
+l11 0.1
+w11 1.0
+l12 0.6
+w12 0.9
+l13 0.1
+w13 0.3
+l14 0.6
+w14 0.8
+l15 0.1
+w15 0.8
+l16 0.5
+w16 0.5
+l17 0.5
+w17 0.2
+l18 0.3
+w18 0.0
+l19 0.7
+w19 0.9
+l20 0.6
+w20 0.6
+Best metrics {'q_curr': np.float64(0.01573612), 'stability': 0.0007898000000000072, 'output_voltage_difference': 0.047698999999999936}
+Best BO metrics {'q_curr': np.float64(0.02277599), 'stability': -0.00021099999999996122, 'output_voltage_difference': 0.07500899999999988}
+Best LLM metrics {'q_curr': np.float64(0.02277599), 'stability': -0.00021099999999996122, 'output_voltage_difference': 0.07500899999999988}
+At iteration: 1, the best target value is: 0.905, llm best target: 0.811, bo best target: 0.811
+Current iteration:2.
+[Rate Limiter] Sleeping for 52.90s to avoid hitting the token limit...
+************* IN HISTORY *************
+************* OUT HISTORY *************
+Traceback (most recent call last):
+  File "/home/karthik/sim_clean/AMS-opt/LLMBO/llmbo.py", line 780, in <module>
+    llmbo.optimize(args)
+  File "/home/karthik/sim_clean/AMS-opt/LLMBO/llmbo.py", line 557, in optimize
+    params_proposed_bo = self.bo_proposer.propose_params(self.data_collected)
+  File "/home/karthik/sim_clean/AMS-opt/LLMBO/core/bo.py", line 127, in propose_params
+    self.initialize_model(data_collected=data_collected, state_dict=self.gp.state_dict())
+  File "/home/karthik/sim_clean/AMS-opt/LLMBO/core/bo.py", line 89, in initialize_model
+    train_x = torch.tensor(params_numpy_list)#torch.tensor(np.array(params_numpy_list), dtype=torch.double)
+ValueError: expected sequence of length 12 at dim 1 (got 40)
