@@ -1,0 +1,187 @@
+{
+  "mode": "eval_filtered_qa_vllm",
+  "dry_run": false,
+  "filtered_qa_root": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/filtered_QA",
+  "circuits": [
+    "amp2",
+    "FC",
+    "comp"
+  ],
+  "embeddings_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/gnn_embeddings_sg_sg_vs_skg.json",
+  "embedding_mode": "sg",
+  "num_reference": 164,
+  "embedding_dim": 128,
+  "k": 2,
+  "related_mode": "bottomk",
+  "kg_max_chars": 12000,
+  "netlist_max_chars": 12000,
+  "limit_per_circuit": 0,
+  "num_files": 3,
+  "num_seen": 150,
+  "num_eval": 150,
+  "kg_missing": 2,
+  "netlist_missing": 0,
+  "vllm": {
+    "base_url": "https://api.openai.com",
+    "model": "gpt-4.1",
+    "model_source": "gpt-4.1",
+    "resolved_model": "gpt-4.1",
+    "profile": "gpt-4.1",
+    "is_reasoning_model": false,
+    "temperature": 0.0,
+    "top_p": null,
+    "max_tokens": 8,
+    "max_completion_tokens": 64,
+    "timeout_s": 120.0
+  },
+  "timing_s": 216.16836732113734,
+  "stage_timings": {
+    "prepare_eval_rows_s": 2.4353358703665435,
+    "chat_template_total_s": 0.0,
+    "chat_template_calls": 0,
+    "first_chat_template_s": null,
+    "per_circuit": {
+      "amp2": {
+        "load_items_s": 0.0004835110157728195,
+        "retrieval_s": 2.3789048129692674,
+        "netlist_load_s": 0.00014624791219830513,
+        "kg_load_s": 0.00016042497009038925,
+        "prompt_build_s": 0.000706791877746582,
+        "total_s": 2.380655800923705
+      },
+      "FC": {
+        "load_items_s": 0.0005293958820402622,
+        "retrieval_s": 0.005024095997214317,
+        "netlist_load_s": 0.0001295558176934719,
+        "kg_load_s": 0.00014045089483261108,
+        "prompt_build_s": 0.0005284189246594906,
+        "total_s": 0.006528055761009455
+      },
+      "comp": {
+        "load_items_s": 0.0009594778530299664,
+        "retrieval_s": 0.009234263096004725,
+        "netlist_load_s": 0.0007272572256624699,
+        "kg_load_s": 9.882589802145958e-05,
+        "prompt_build_s": 0.000661955215036869,
+        "total_s": 0.011911136098206043
+      }
+    },
+    "request_total_s": 213.67181808687747,
+    "eval_total_server_s": 216.16836732113734
+  },
+  "out_jsonl": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_eval_gpt-4_1_bottomk.jsonl",
+  "summary_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_eval_gpt-4_1_bottomk_summary.json",
+  "retrieved_circuits": {
+    "amp2": [
+      {
+        "family": "diff_amps",
+        "circuit_id": "618",
+        "similarity": 0.2388119399547577
+      },
+      {
+        "family": "diff_amps",
+        "circuit_id": "617",
+        "similarity": 0.2611245810985565
+      }
+    ],
+    "FC": [
+      {
+        "family": "diff_amps",
+        "circuit_id": "618",
+        "similarity": 0.2293434888124466
+      },
+      {
+        "family": "diff_amps",
+        "circuit_id": "617",
+        "similarity": 0.2508775293827057
+      }
+    ],
+    "comp": [
+      {
+        "family": "comparators",
+        "circuit_id": "1049",
+        "similarity": -0.2551344633102417
+      },
+      {
+        "family": "comparators",
+        "circuit_id": "746",
+        "similarity": 0.09395355731248856
+      }
+    ]
+  },
+  "baseline_correct": 101,
+  "retrieval_correct": 101,
+  "baseline_parse_fail": 0,
+  "retrieval_parse_fail": 0,
+  "baseline_accuracy": 0.6733333333333333,
+  "retrieval_accuracy": 0.6733333333333333,
+  "accuracy_gain": 0.0,
+  "by_circuit": {
+    "FC": {
+      "num_eval": 35,
+      "baseline_correct": 25,
+      "retrieval_correct": 26,
+      "baseline_parse_fail": 0,
+      "retrieval_parse_fail": 0,
+      "baseline_accuracy": 0.7142857142857143,
+      "retrieval_accuracy": 0.7428571428571429,
+      "accuracy_gain": 0.02857142857142857,
+      "retrieved_circuits": [
+        {
+          "family": "diff_amps",
+          "circuit_id": "618",
+          "similarity": 0.2293434888124466
+        },
+        {
+          "family": "diff_amps",
+          "circuit_id": "617",
+          "similarity": 0.2508775293827057
+        }
+      ]
+    },
+    "amp2": {
+      "num_eval": 53,
+      "baseline_correct": 40,
+      "retrieval_correct": 40,
+      "baseline_parse_fail": 0,
+      "retrieval_parse_fail": 0,
+      "baseline_accuracy": 0.7547169811320755,
+      "retrieval_accuracy": 0.7547169811320755,
+      "accuracy_gain": 0.0,
+      "retrieved_circuits": [
+        {
+          "family": "diff_amps",
+          "circuit_id": "618",
+          "similarity": 0.2388119399547577
+        },
+        {
+          "family": "diff_amps",
+          "circuit_id": "617",
+          "similarity": 0.2611245810985565
+        }
+      ]
+    },
+    "comp": {
+      "num_eval": 62,
+      "baseline_correct": 36,
+      "retrieval_correct": 35,
+      "baseline_parse_fail": 0,
+      "retrieval_parse_fail": 0,
+      "baseline_accuracy": 0.5806451612903226,
+      "retrieval_accuracy": 0.5645161290322581,
+      "accuracy_gain": -0.016129032258064516,
+      "retrieved_circuits": [
+        {
+          "family": "comparators",
+          "circuit_id": "1049",
+          "similarity": -0.2551344633102417
+        },
+        {
+          "family": "comparators",
+          "circuit_id": "746",
+          "similarity": 0.09395355731248856
+        }
+      ]
+    }
+  }
+}

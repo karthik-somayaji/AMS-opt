@@ -1,0 +1,75 @@
+{
+  "mode": "eval_filtered_qa_vllm",
+  "dry_run": true,
+  "filtered_qa_root": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/filtered_QA",
+  "circuits": [
+    "amp2"
+  ],
+  "embeddings_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/gnn_embeddings_sg.json",
+  "embedding_mode": "sg",
+  "num_reference": 164,
+  "embedding_dim": 128,
+  "k": 3,
+  "related_mode": "random",
+  "kg_max_chars": 12000,
+  "netlist_max_chars": 12000,
+  "limit_per_circuit": 1,
+  "num_files": 1,
+  "num_seen": 1,
+  "num_eval": 1,
+  "kg_missing": 0,
+  "netlist_missing": 0,
+  "vllm": {
+    "base_url": "http://localhost:8000",
+    "model": "llama3_8b",
+    "model_source": "/data/karthik/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct",
+    "resolved_model": "/data/karthik/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/8afb486c1db24fe5011ec46dfbe5b5dccdb575c2",
+    "profile": "llama3-8b-instruct",
+    "is_reasoning_model": false,
+    "temperature": 0.0,
+    "top_p": null,
+    "max_tokens": 8,
+    "max_completion_tokens": null,
+    "timeout_s": 120.0
+  },
+  "timing_s": 1.600324459373951,
+  "stage_timings": {
+    "prepare_eval_rows_s": 1.5388955799862742,
+    "chat_template_total_s": 0.0,
+    "chat_template_calls": 0,
+    "first_chat_template_s": null,
+    "per_circuit": {
+      "amp2": {
+        "load_items_s": 0.00048064906150102615,
+        "retrieval_s": 1.501824202015996,
+        "netlist_load_s": 0.0001940196380019188,
+        "kg_load_s": 0.00022181589156389236,
+        "prompt_build_s": 7.996801286935806e-05,
+        "total_s": 1.5029355203732848
+      }
+    },
+    "request_total_s": 0.06067200703546405,
+    "eval_total_server_s": 1.600324459373951
+  },
+  "out_jsonl": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_random_dryrun.jsonl",
+  "summary_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_random_dryrun_summary.json",
+  "retrieved_circuits": {
+    "amp2": [
+      {
+        "family": "diff_amps",
+        "circuit_id": "929",
+        "similarity": 0.9469256401062012
+      },
+      {
+        "family": "diff_amps",
+        "circuit_id": "615",
+        "similarity": 0.8548287749290466
+      },
+      {
+        "family": "diff_amps",
+        "circuit_id": "926",
+        "similarity": 0.9834594130516052
+      }
+    ]
+  }
+}

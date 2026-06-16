@@ -1,0 +1,195 @@
+{
+  "mode": "eval_filtered_qa_vllm_local",
+  "dry_run": false,
+  "filtered_qa_root": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/filtered_QA",
+  "circuits": [
+    "amp2",
+    "FC",
+    "comp"
+  ],
+  "embeddings_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/gnn_embeddings_sg_sg_vs_skg.json",
+  "embedding_mode": "sg",
+  "num_reference": 164,
+  "embedding_dim": 128,
+  "k": 2,
+  "related_mode": "bottomk",
+  "kg_max_chars": 10000,
+  "netlist_max_chars": 12000,
+  "limit_per_circuit": 0,
+  "num_files": 3,
+  "num_seen": 150,
+  "num_eval": 150,
+  "kg_missing": 2,
+  "netlist_missing": 0,
+  "vllm_local": {
+    "model": "llama3-70b",
+    "model_source": "/data/karthik/huggingface/hub/models--meta-llama--Meta-Llama-3-70B-Instruct",
+    "resolved_model": "/data/karthik/huggingface/hub/models--meta-llama--Meta-Llama-3-70B-Instruct/snapshots/28bd9fa9d94b23cb6ded08f92d5672b2aabe695f",
+    "profile": "llama3-70b-instruct",
+    "is_reasoning_model": false,
+    "tensor_parallel_size": 2,
+    "gpu_memory_utilization": 0.95,
+    "dtype": "auto",
+    "max_model_len": null,
+    "trust_remote_code": false,
+    "download_dir": null,
+    "apply_chat_template": true,
+    "temperature": 0.0,
+    "top_p": null,
+    "max_tokens": 8,
+    "batch_size": 4,
+    "cuda_visible_devices": "1,2,3,4",
+    "enforce_eager": true
+  },
+  "timing_s": 641.2647614949383,
+  "stage_timings": {
+    "prepare_eval_rows_s": 4.62962015485391,
+    "chat_template_total_s": 3.034569347742945,
+    "chat_template_calls": 300,
+    "first_chat_template_s": 3.015817840117961,
+    "per_circuit": {
+      "amp2": {
+        "load_items_s": 0.0006046839989721775,
+        "retrieval_s": 1.5326995109207928,
+        "netlist_load_s": 0.00040116719901561737,
+        "kg_load_s": 0.0005100499838590622,
+        "prompt_build_s": 3.0222890391014516,
+        "total_s": 4.557073798030615
+      },
+      "FC": {
+        "load_items_s": 0.00037895794957876205,
+        "retrieval_s": 0.015660197008401155,
+        "netlist_load_s": 0.000137238297611475,
+        "kg_load_s": 0.00015190383419394493,
+        "prompt_build_s": 0.005479943472892046,
+        "total_s": 0.021999537013471127
+      },
+      "comp": {
+        "load_items_s": 0.0009443922899663448,
+        "retrieval_s": 0.0030875359661877155,
+        "netlist_load_s": 0.00037525640800595284,
+        "kg_load_s": 9.987317025661469e-05,
+        "prompt_build_s": 0.009176569059491158,
+        "total_s": 0.013926252257078886
+      }
+    },
+    "vllm_load_s": 393.1202244479209,
+    "generation_s": 243.51444469531998,
+    "eval_total_local_s": 641.2647614949383
+  },
+  "out_jsonl": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_eval_llama3_70b_bottomk.jsonl",
+  "summary_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_eval_llama3_70b_bottomk_summary.json",
+  "retrieved_circuits": {
+    "amp2": [
+      {
+        "family": "diff_amps",
+        "circuit_id": "618",
+        "similarity": 0.2388119399547577
+      },
+      {
+        "family": "diff_amps",
+        "circuit_id": "617",
+        "similarity": 0.2611245810985565
+      }
+    ],
+    "FC": [
+      {
+        "family": "diff_amps",
+        "circuit_id": "618",
+        "similarity": 0.2293434888124466
+      },
+      {
+        "family": "diff_amps",
+        "circuit_id": "617",
+        "similarity": 0.2508775293827057
+      }
+    ],
+    "comp": [
+      {
+        "family": "comparators",
+        "circuit_id": "1049",
+        "similarity": -0.2551344633102417
+      },
+      {
+        "family": "comparators",
+        "circuit_id": "746",
+        "similarity": 0.09395355731248856
+      }
+    ]
+  },
+  "baseline_correct": 98,
+  "retrieval_correct": 98,
+  "baseline_parse_fail": 0,
+  "retrieval_parse_fail": 0,
+  "baseline_accuracy": 0.6533333333333333,
+  "retrieval_accuracy": 0.6533333333333333,
+  "accuracy_gain": 0.0,
+  "by_circuit": {
+    "FC": {
+      "num_eval": 35,
+      "baseline_correct": 21,
+      "retrieval_correct": 20,
+      "baseline_parse_fail": 0,
+      "retrieval_parse_fail": 0,
+      "baseline_accuracy": 0.6,
+      "retrieval_accuracy": 0.5714285714285714,
+      "accuracy_gain": -0.02857142857142857,
+      "retrieved_circuits": [
+        {
+          "family": "diff_amps",
+          "circuit_id": "618",
+          "similarity": 0.2293434888124466
+        },
+        {
+          "family": "diff_amps",
+          "circuit_id": "617",
+          "similarity": 0.2508775293827057
+        }
+      ]
+    },
+    "amp2": {
+      "num_eval": 53,
+      "baseline_correct": 35,
+      "retrieval_correct": 37,
+      "baseline_parse_fail": 0,
+      "retrieval_parse_fail": 0,
+      "baseline_accuracy": 0.660377358490566,
+      "retrieval_accuracy": 0.6981132075471698,
+      "accuracy_gain": 0.03773584905660377,
+      "retrieved_circuits": [
+        {
+          "family": "diff_amps",
+          "circuit_id": "618",
+          "similarity": 0.2388119399547577
+        },
+        {
+          "family": "diff_amps",
+          "circuit_id": "617",
+          "similarity": 0.2611245810985565
+        }
+      ]
+    },
+    "comp": {
+      "num_eval": 62,
+      "baseline_correct": 42,
+      "retrieval_correct": 41,
+      "baseline_parse_fail": 0,
+      "retrieval_parse_fail": 0,
+      "baseline_accuracy": 0.6774193548387096,
+      "retrieval_accuracy": 0.6612903225806451,
+      "accuracy_gain": -0.016129032258064516,
+      "retrieved_circuits": [
+        {
+          "family": "comparators",
+          "circuit_id": "1049",
+          "similarity": -0.2551344633102417
+        },
+        {
+          "family": "comparators",
+          "circuit_id": "746",
+          "similarity": 0.09395355731248856
+        }
+      ]
+    }
+  }
+}

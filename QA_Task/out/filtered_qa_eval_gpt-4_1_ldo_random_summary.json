@@ -1,0 +1,101 @@
+{
+  "mode": "eval_filtered_qa_vllm",
+  "dry_run": false,
+  "filtered_qa_root": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/filtered_QA",
+  "circuits": [
+    "ldo"
+  ],
+  "embeddings_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/umap_results_full/gnn_embeddings_sg_sg_vs_skg.json",
+  "embedding_mode": "sg",
+  "num_reference": 164,
+  "embedding_dim": 128,
+  "k": 2,
+  "related_mode": "random",
+  "kg_max_chars": 12000,
+  "netlist_max_chars": 12000,
+  "limit_per_circuit": 0,
+  "num_files": 1,
+  "num_seen": 37,
+  "num_eval": 37,
+  "kg_missing": 0,
+  "netlist_missing": 0,
+  "vllm": {
+    "base_url": "https://api.openai.com",
+    "model": "gpt-4.1",
+    "model_source": "gpt-4.1",
+    "resolved_model": "gpt-4.1",
+    "profile": "gpt-4.1",
+    "is_reasoning_model": false,
+    "temperature": 0.0,
+    "top_p": null,
+    "max_tokens": 8,
+    "max_completion_tokens": 64,
+    "timeout_s": 120.0
+  },
+  "timing_s": 77.441245816648,
+  "stage_timings": {
+    "prepare_eval_rows_s": 1.9275465607643127,
+    "chat_template_total_s": 0.0,
+    "chat_template_calls": 0,
+    "first_chat_template_s": null,
+    "per_circuit": {
+      "ldo": {
+        "load_items_s": 0.00034354813396930695,
+        "retrieval_s": 1.8896672911942005,
+        "netlist_load_s": 0.00025177793577313423,
+        "kg_load_s": 0.0003472506068646908,
+        "prompt_build_s": 0.0006535733118653297,
+        "total_s": 1.8914817650802433
+      }
+    },
+    "request_total_s": 75.50793833844364,
+    "eval_total_server_s": 77.441245816648
+  },
+  "out_jsonl": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_eval_gpt-4_1_ldo_random.jsonl",
+  "summary_json": "/home/karthik/sim_clean/AMS-opt/AMS-opt/QA_Task/out/filtered_qa_eval_gpt-4_1_ldo_random_summary.json",
+  "retrieved_circuits": {
+    "ldo": [
+      {
+        "family": "LDO",
+        "circuit_id": "2320",
+        "similarity": -0.08240370452404022
+      },
+      {
+        "family": "LDO",
+        "circuit_id": "2346",
+        "similarity": -0.1498391479253769
+      }
+    ]
+  },
+  "baseline_correct": 30,
+  "retrieval_correct": 32,
+  "baseline_parse_fail": 0,
+  "retrieval_parse_fail": 0,
+  "baseline_accuracy": 0.8108108108108109,
+  "retrieval_accuracy": 0.8648648648648649,
+  "accuracy_gain": 0.05405405405405406,
+  "by_circuit": {
+    "ldo": {
+      "num_eval": 37,
+      "baseline_correct": 30,
+      "retrieval_correct": 32,
+      "baseline_parse_fail": 0,
+      "retrieval_parse_fail": 0,
+      "baseline_accuracy": 0.8108108108108109,
+      "retrieval_accuracy": 0.8648648648648649,
+      "accuracy_gain": 0.05405405405405406,
+      "retrieved_circuits": [
+        {
+          "family": "LDO",
+          "circuit_id": "2320",
+          "similarity": -0.08240370452404022
+        },
+        {
+          "family": "LDO",
+          "circuit_id": "2346",
+          "similarity": -0.1498391479253769
+        }
+      ]
+    }
+  }
+}

@@ -105,6 +105,9 @@ _MODEL_PRESETS: List[Dict[str, Any]] = [
         "name": "qwen2.5-32b-instruct",
         "filename_slug": "qwen2.5_32b",
         "aliases": [
+            "qwen2_30b",
+            "qwen2-30b",
+            "qwen2-30b-instruct",
             "qwen2.5_32b",
             "qwen2_5_32b",
             "qwen2.5-32b",
@@ -116,6 +119,32 @@ _MODEL_PRESETS: List[Dict[str, Any]] = [
         "hf_repo_id": "Qwen/Qwen2.5-32B-Instruct",
         "is_reasoning_model": False,
         "recommended_gpu_memory_utilization": 0.95,
+    },
+    {
+        "name": "gpt-4.1",
+        "filename_slug": "gpt4_1",
+        "aliases": [
+            "gpt-4.1",
+            "gpt4.1",
+            "gpt4_1",
+        ],
+        "cache_dir_name": None,
+        "hf_repo_id": "gpt-4.1",
+        "is_reasoning_model": False,
+        "recommended_gpu_memory_utilization": None,
+    },
+    {
+        "name": "gpt-5.1",
+        "filename_slug": "gpt5_1",
+        "aliases": [
+            "gpt-5.1",
+            "gpt5.1",
+            "gpt5_1",
+        ],
+        "cache_dir_name": None,
+        "hf_repo_id": "gpt-5.1",
+        "is_reasoning_model": False,
+        "recommended_gpu_memory_utilization": None,
     },
     {
         "name": "phi-4-reasoning",
@@ -237,10 +266,14 @@ def resolve_model_profile(model_id_or_path: str) -> Dict[str, Any]:
     hf_repo_id = requested
     model_source = requested
     if preset is not None:
-        cache_dir_name = str(preset["cache_dir_name"])
-        hf_repo_id = str(preset["hf_repo_id"])
-        cached_dir = _resolve_cached_model_dir(cache_dir_name)
-        model_source = str(cached_dir) if cached_dir is not None else hf_repo_id
+        raw_cache_dir_name = preset.get("cache_dir_name")
+        cache_dir_name = str(raw_cache_dir_name).strip() if raw_cache_dir_name else None
+        hf_repo_id = str(preset.get("hf_repo_id") or requested)
+        if cache_dir_name:
+            cached_dir = _resolve_cached_model_dir(cache_dir_name)
+            model_source = str(cached_dir) if cached_dir is not None else hf_repo_id
+        else:
+            model_source = hf_repo_id
     else:
         requested_path = Path(requested).expanduser()
         if requested_path.exists():
@@ -262,7 +295,9 @@ def resolve_model_profile(model_id_or_path: str) -> Dict[str, Any]:
         "resolved_model": resolved_model,
         "is_reasoning_model": bool(preset["is_reasoning_model"]) if preset is not None else _infer_reasoning_model(requested),
         "recommended_gpu_memory_utilization": (
-            float(preset["recommended_gpu_memory_utilization"]) if preset is not None else None
+            float(preset["recommended_gpu_memory_utilization"])
+            if preset is not None and preset.get("recommended_gpu_memory_utilization") is not None
+            else None
         ),
     }
 
@@ -692,14 +727,23 @@ def get_anchor_embedding(args: argparse.Namespace, circuit: str) -> np.ndarray:
     return anchor
 
 
-def cosine_topk_from_anchor(
+def _stable_related_seed(base_seed: int, *parts: Any) -> int:
+    value = int(base_seed) & 0xFFFFFFFF
+    for part in parts:
+        for ch in str(part):
+            value = ((value * 33) + ord(ch)) & 0xFFFFFFFF
+    return value
+
+
+def cosine_related_from_anchor(
     embeddings: np.ndarray,
     metadata: List[Dict[str, str]],
     *,
     query_family: str,
     query_vector: np.ndarray,
     k: int,
-    descending: bool = True,
+    mode: str = "topk",
+    random_seed: int = 0,
 ) -> List[Dict[str, Any]]:
     family_indices = [index for index, meta in enumerate(metadata) if str(meta.get("family")) == str(query_family)]
     if not family_indices:
@@ -715,11 +759,21 @@ def cosine_topk_from_anchor(
 
     denom = np.linalg.norm(family_embeddings, axis=1) * (np.linalg.norm(query) + 1e-8) + 1e-8
     sims = (family_embeddings @ query) / denom
-    order = np.argsort(-sims if descending else sims)
     top_count = min(max(int(k), 1), len(family_indices))
 
+    selection_mode = str(mode).lower()
+    if selection_mode == "topk":
+        selected_local_indices = np.argsort(-sims)[:top_count].tolist()
+    elif selection_mode == "bottomk":
+        selected_local_indices = np.argsort(sims)[:top_count].tolist()
+    elif selection_mode == "random":
+        rng = np.random.default_rng(_stable_related_seed(random_seed, query_family, top_count, len(family_indices)))
+        selected_local_indices = rng.permutation(len(family_indices))[:top_count].tolist()
+    else:
+        raise ValueError(f"Unsupported related selection mode: {mode!r}")
+
     out: List[Dict[str, Any]] = []
-    for local_idx in order[:top_count].tolist():
+    for local_idx in selected_local_indices:
         global_idx = family_indices[local_idx]
         meta = metadata[global_idx]
         out.append(
@@ -821,15 +875,15 @@ def prepare_eval_rows(args: argparse.Namespace) -> Dict[str, Any]:
         if args.limit_per_circuit and int(args.limit_per_circuit) > 0:
             items = items[: int(args.limit_per_circuit)]
 
-        descending = str(args.related_mode).lower() != "bottomk"
         anchor_t0 = time.perf_counter()
-        related = cosine_topk_from_anchor(
+        related = cosine_related_from_anchor(
             embeddings,
             metadata,
             query_family=TARGET_ALIAS_TO_REF_FAMILY[circuit],
             query_vector=get_anchor_embedding(args, circuit),
             k=args.k,
-            descending=descending,
+            mode=args.related_mode,
+            random_seed=int(args.random_seed),
         )
         retrieval_s = time.perf_counter() - anchor_t0
         current_netlist = load_current_circuit_netlist(
@@ -1432,7 +1486,8 @@ def main() -> None:
     ap.add_argument("--dry_run", action="store_true")
 
     ap.add_argument("--k", type=int, default=2, help="How many SG-retrieved circuits to include.")
-    ap.add_argument("--related_mode", type=str, default="topk", choices=["topk", "bottomk"])
+    ap.add_argument("--related_mode", type=str, default="topk", choices=["topk", "bottomk", "random"])
+    ap.add_argument("--random_seed", type=int, default=0, help="Seed used for deterministic random retrieval.")
     ap.add_argument("--kg_max_chars", type=int, default=12000)
     ap.add_argument("--netlist_max_chars", type=int, default=_DEFAULT_NETLIST_MAX_CHARS)
     ap.add_argument("--gnn_embedding_mode", type=str, default="sg", choices=["sg", "skg"])
